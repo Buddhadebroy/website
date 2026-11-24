@@ -1,0 +1,63 @@
+cat	tier	icon	name	desc
+catalog	free	catalog	Catalog Mode	Turn the store into a catalog: hide Add to Cart site-wide or for selected products.
+catalog	pro	lock	Private Store Mode	Hide prices and Add to Cart until shoppers log in, for a members-only store.
+catalog	pro	eye	Strategic Price Visibility	Show or hide prices by user role, login status, product or category.
+catalog	pro	cart	Add to Cart + Send Enquiry	Keep Add to Cart, or show it alongside a Send Enquiry button.
+catalog	pro	eyeoff	Exclusion Hub	Decide which users, roles and products are excluded from catalog, quote and enquiry rules.
+catalog	pro	users	Product-Specific Management	Tailor access, pricing and buttons for individual products and customers.
+enquiry	free	msg	Enquiry Button	Add an Enquiry button to product pages so shoppers can ask before buying.
+enquiry	free	layout	Flexible Enquiry Form Display	Show the enquiry form as a popup or inline on the product page.
+enquiry	free	link	Product Link in Request Emails	Every enquiry email links straight to the product it is about.
+enquiry	free	globe	WPML Compatibility	Translate forms, buttons and emails for multilingual stores.
+enquiry	pro	move	Customizable Enquiry Form Position	Place the enquiry form exactly where it converts best.
+enquiry	pro	list	Multi Enquiry Support	Let customers ask about several products in one request.
+enquiry	pro	cart	Enquiry Cart	Collect products in an enquiry cart for bulk or high-value requests.
+enquiry	pro	mail	Enquiry Email Template	Brand and customize the emails sent for every enquiry.
+enquiry	pro	edit	Drag-and-Drop Form Builder	Add text, dropdown, checkbox, radio, date and file fields with required or optional rules.
+enquiry	pro	shield	CAPTCHA and Anti-Spam	Protect enquiry forms with CAPTCHA and other spam protection.
+enquiry	pro	upload	File Attachments	Let customers attach specs, artwork or documents to an enquiry.
+enquiry	pro	inbox	Enquiry Portal	Every customer conversation in one inbox, with tags, pins and attachments.
+enquiry	pro	box	Out-of-Stock Enquiries	Capture demand on out-of-stock items instead of losing the visit.
+enquiry	pro	shield	Role-Based Enquiry	Control which user roles can send enquiries.
+quotation	free	quote	Add to Quote Button	Put an Add to Quote button on product pages.
+quotation	free	layers	Variable Product Support	Quotes work with variations such as size and color.
+quotation	free	globe	Universal Quote Access	Let every visitor request quotes, or limit it later.
+quotation	free	refresh	Cart to Quote Conversion	Turn a full cart into a single quote request.
+quotation	pro	brush	Customizable Add to Quote Button	Change the button's text, colors and placement.
+quotation	pro	pdf	PDF Quote Viewing	Send branded PDF quotes customers can download and accept.
+quotation	pro	heart	Custom Thank You Page	Show your own page after a quote request is sent.
+quotation	pro	edit	Custom Quote Creation	Build quotes from the admin with your own pricing, discount and tax.
+quotation	pro	checkbox	Quote Acceptance and Rejection	Customers accept or reject a quote; accepted quotes become orders.
+quotation	pro	bell	Admin Quote Notifications	Get notified the moment a new quote request arrives.
+quotation	pro	user	User Quote Management	Customers see and manage their quotes from My Account.
+quotation	pro	clock	Quote Expiration	Set how long a quote stays valid.
+quotation	pro	search	Quote Search	Find any customer quote quickly from the quotation list.
+quotation	pro	tag	Customer Offered Price	Buyers suggest the price they want; you accept, counter or decline.
+wholesale	pro	user	Wholesale Customer Role	A new role for wholesale buyers, with its own prices and rules.
+wholesale	pro	eyeoff	Show/Hide Retail Prices	Hide retail prices from wholesale customers, or show both.
+wholesale	pro	tag	Wholesale Pricing Input Fields	Set wholesale prices on simple and variable products.
+wholesale	pro	percent	Coupon Restriction for Wholesale	Block WooCommerce coupons for wholesale orders.
+wholesale	pro	eye	Hide Products Without Wholesale Prices	Wholesale buyers only see products priced for them.
+wholesale	pro	globe	Global Wholesale Pricing	One rule to set wholesale pricing across the whole store.
+wholesale	pro	cart	Minimum Cart Quantity	Require a minimum number of items for wholesale orders.
+wholesale	pro	box	Per-Product Minimum Requirement	Set minimum quantities product by product.
+wholesale	pro	list	Wholesale Order Form	A fast order list page for bulk buyers.
+pricing	pro	users	Role-Based Pricing Rules	Different prices for retail, wholesale, VIP and guest roles.
+pricing	pro	user	Customer-Specific Pricing	Special prices for individual customers.
+pricing	pro	tag	Flexible Fixed Pricing	Set a fixed price instead of a discount.
+pricing	pro	percent	Discounts and Markups	Apply amount or percentage discounts, or markups.
+pricing	pro	layers	Bulk Pricing Adjustments	Change prices across many products at once.
+pricing	pro	sliders	Quantity-Based Rules	Tiered prices by quantity, for example 50+ units at 20% off.
+pricing	pro	refresh	Price Replacement for Markups	Replace the displayed price when a markup applies.
+pricing	pro	settings	Custom User Roles	Create new customer roles without code.
+pricing	pro	move	Drag-and-Drop Rule Priority	Reorder rules to decide which one wins.
+pricing	pro	box	Product-Level Pricing Rules	Rules for single products, categories or the whole store.
+pricing	pro	trend	Multi-Tiered Pricing	Stack price tiers for growing order sizes.
+builder	free	msg	Enquiry Button Block	Drop an enquiry button into any page or post.
+builder	free	quote	Ask Quote Button Block	Drop an Add to Quote button anywhere in the block editor.
+builder	free	list	Quote List Block	Show the customer's quote list for review before submitting.
+builder	pro	cart	Enquiry Cart Block	Show all products added for enquiry on any page.
+builder	pro	layers	Multi Enquiry Button	One button to enquire about several products.
+builder	pro	truck	Wholesale Order List Block	A dedicated wholesale product list page.
+builder	pro	brush	Live Page Builder	Style buttons and shop pages in real time with a live preview.
+builder	pro	move	Drag-and-Drop Button Placement	Move buttons around the product page without code.
