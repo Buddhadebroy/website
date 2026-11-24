@@ -2,328 +2,572 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MultiVendorX – Your Marketplace, Your Rules</title>
-<meta name="description" content="MultiVendorX turns your WooCommerce store into a full-featured multi-vendor marketplace. Commissions, vendor dashboards, payouts, shipping and more — one price, all features.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MultiVendorX: Your Marketplace, Your Rules</title>
+<meta name="description" content="Launch franchise, B2B, rental, booking and auction multi-vendor marketplaces on WooCommerce.">
+<link rel="stylesheet" href="assets/css/mvx.css">
+<link rel="stylesheet" href="assets/css/v2.css">
 </head>
-<body>
+<body class="pg-home">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 006 0 3 3 0 006 0 3 3 0 006 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></symbol>
+<symbol id="percent" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+<symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M16 4.5a3.5 3.5 0 010 7"/><path d="M18 14a6.5 6.5 0 013.5 6"/></symbol>
+<symbol id="chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/></symbol>
+<symbol id="box" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></symbol>
+<symbol id="truck" viewBox="0 0 24 24"><path d="M2 5h12v11H2z"/><path d="M14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/></symbol>
+<symbol id="tick" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+<symbol id="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="star" viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></symbol>
+<symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a14 14 0 010 19 14 14 0 010-19z"/></symbol>
+<symbol id="lang" viewBox="0 0 24 24"><path d="M4 5h9"/><path d="M8.5 3v2"/><path d="M11 5c-1 4-4 7-7 8.5"/><path d="M6 9c1.5 2 3.5 3.5 6 4.5"/><path d="M13 21l4-9 4 9"/><path d="M14.5 18h5"/></symbol>
+<symbol id="coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v5c0 1.7 2.7 3 6 3s6-1.3 6-3V7"/><path d="M3 12v5c0 1.7 2.7 3 6 3 1.4 0 2.7-.2 3.7-.6"/><circle cx="17.5" cy="16.5" r="4"/></symbol>
+<symbol id="wp" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M5 8l4 11 3-8 3 8 4-11"/><path d="M4 8h4M16 8h4"/></symbol>
+<symbol id="plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5"/><path d="M6 7h12v4a6 6 0 01-12 0z"/><path d="M12 17v5"/></symbol>
+<symbol id="headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1.5-2 2-5 2"/></symbol>
+<symbol id="refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.5-4.5L3 9"/><path d="M3 4v5h5"/><path d="M4 13a8 8 0 0014.5 4.5L21 15"/><path d="M21 20v-5h-5"/></symbol>
+<symbol id="zap" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+<symbol id="heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.7-8-10.5A4.5 4.5 0 0112 7a4.5 4.5 0 018 2.5C20 15.3 12 20 12 20z"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10v-6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+<symbol id="tag" viewBox="0 0 24 24"><path d="M3 12V3h9l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+<symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+<symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5"/><path d="M11.5 11.5L20 3M16 7l3 3M14 9l2 2"/></symbol>
+<symbol id="gavel" viewBox="0 0 24 24"><path d="M14 4l6 6M11 7l6 6M12.5 5.5l-5 5 6 6 5-5"/><path d="M10 13l-7 7"/><path d="M13 21h8"/></symbol>
+<symbol id="repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 12V10a4 4 0 014-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 12v2a4 4 0 01-4 4H3"/></symbol>
+<symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+<symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+<symbol id="rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-4 5-9 14-9 0 9-5 13-9 14z"/><circle cx="15" cy="9" r="1.8"/></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></symbol>
+<symbol id="msg" viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.5 7.2L4 20.5l1.3-5A8 8 0 1121 12z"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+<symbol id="cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h11.5L21 7H6.2"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 016.5 2H20v17H6.5A2.5 2.5 0 004 21.5z"/><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/></symbol>
+<symbol id="code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+<symbol id="file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+<symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+<symbol id="image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></symbol>
+<symbol id="layers" viewBox="0 0 24 24"><path d="M12 2l10 5-10 5L2 7z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></symbol>
+<symbol id="compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+<symbol id="flag" viewBox="0 0 24 24"><path d="M4 22V3"/><path d="M4 4h13l-2 4 2 4H4"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 00-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="dollar" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></symbol>
+<symbol id="building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1.5"/><path d="M9 22v-4h6v4M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2"/></symbol>
+<symbol id="trend" viewBox="0 0 24 24"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+<symbol id="bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V16h8v-1.3A7 7 0 0012 2z"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+<symbol id="calendar-days" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></symbol>
+<symbol id="grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+<symbol id="share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
+<symbol id="megaphone" viewBox="0 0 24 24"><path d="M3 11v3a1 1 0 001 1h3l6 5V5L7 10H4a1 1 0 00-1 1z"/><path d="M17 8a5 5 0 010 8"/></symbol>
+<symbol id="fb" viewBox="0 0 24 24"><path d="M15 3h-2.5A4.5 4.5 0 008 7.5V10H5.5v3.5H8V21h3.5v-7.5H14l.8-3.5h-3.3V8a1 1 0 011-1H15z"/></symbol>
+<symbol id="ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></symbol>
+<symbol id="xlogo" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20" /></symbol>
+<symbol id="filter" viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></symbol>
+<symbol id="sort" viewBox="0 0 24 24"><path d="M7 4v16M3 16l4 4 4-4M17 20V4M13 8l4-4 4 4"/></symbol>
+<symbol id="list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></symbol>
+<symbol id="crown" viewBox="0 0 24 24"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 12H5z"/></symbol>
+<symbol id="video" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="14" height="13" rx="2.5"/><path d="M16.5 10l5-3v10l-5-3"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 018 0v3.5"/></symbol>
+<symbol id="speed" viewBox="0 0 24 24"><path d="M4 18a9 9 0 1116 0"/><path d="M12 14l4-5"/></symbol>
+</svg>
 
-<!-- Announcement -->
-<div class="announce">
-  <span class="pill">5.0</span>
-  Multi-store. Franchise. Facilitator. AI tools — everything your marketplace needs, now in one platform.
-  <a href="https://multivendorx.com/release/">Release notes →</a>
-</div>
-
-<!-- Nav -->
-<header class="nav" id="top">
-  <div class="container nav-inner">
-    <a class="logo" href="https://multivendorx.com/" aria-label="MultiVendorX home">
-      <span class="logo-mark">M</span><span>MultiVendor<b>X</b></span>
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="https://multivendorx.com/features/">Features</a>
-      <div class="dropdown">
-        <button class="dd-btn" aria-haspopup="true">Marketplaces <span aria-hidden="true">▾</span></button>
-        <div class="dd-menu">
-          <a href="https://multivendorx.com/niche-marketplace/"><b>Niche</b><small>Tailored tools. Targeted success.</small></a>
-          <a href="https://multivendorx.com/subscription-marketplace/"><b>Subscription</b><small>Recurring revenue, made simple.</small></a>
-          <a href="https://multivendorx.com/auction-marketplace/"><b>Auction</b><small>Bid big, build fast.</small></a>
-          <a href="https://multivendorx.com/booking-marketplace/"><b>Booking</b><small>Calendars, slots & reservations.</small></a>
-          <a href="https://multivendorx.com/rental-marketplace/"><b>Rental</b><small>Availability-based renting.</small></a>
+<div class="topbar"><div class="wrap">
+  <span class="fb"><svg class="i" aria-hidden="true"><use href="#fb"/></svg></span>
+  <span class="tb-t">Join the <b>MultiVendorX Facebook Community</b><span class="tb-s"> · Contact, share, and grow with thousands of MultiVendorX users.</span></span>
+  <a href="https://www.facebook.com/groups/" target="_blank" rel="noopener">Join our Facebook community <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+</div></div>
+<header class="hdr"><div class="hdr-bar">
+  <a class="logo" href="index.html" aria-label="MultiVendorX home">MultiVendor<span class="x">X</span></a>
+  <nav class="nav" aria-label="Main">
+    <div class="item"><a class="nl " href="features.html">Features</a></div>
+    <div class="item has-mega"><a class="nl " href="#" aria-haspopup="true">Marketplaces <svg class="i" aria-hidden="true"><use href="#chev"/></svg></a>
+      <div class="mega"><div class="mega-in mm-mk" data-spot>
+        <div class="mm-list">
+          <h6>Marketplace types</h6>
+          <a class="mm-i on" data-pv="niche" href="niche-marketplace.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#target"/></svg></span><div><b>Niche Marketplace</b><span>For brands with a unique voice.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="booking" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#cal"/></svg></span><div><b>Booking Marketplace</b><span>Turn time into your most valuable product.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="rental" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#key"/></svg></span><div><b>Rental Marketplace</b><span>Monetize what you're not using.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="subs" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg></span><div><b>Subscription Marketplace</b><span>Recurring revenue, simplified.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="auction" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#gavel"/></svg></span><div><b>Auction Marketplace</b><span>Let the highest bidder win.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="b2b" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#building"/></svg></span><div><b>B2B Marketplace</b><span>Wholesale and bulk buying between businesses.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
         </div>
-      </div>
-      <div class="dropdown">
-        <button class="dd-btn" aria-haspopup="true">Resources <span aria-hidden="true">▾</span></button>
-        <div class="dd-menu">
-          <a href="https://multivendorx.com/docs/"><b>Documentation</b><small>Guides for every module.</small></a>
-          <a href="https://multivendorx.com/community/"><b>Community</b><small>Share ideas & collaborate.</small></a>
-          <a href="https://multivendorx.com/support/"><b>Support</b><small>Help from team & users.</small></a>
-          <a href="https://multivendorx.com/migration/"><b>Migration</b><small>Switch from other plugins.</small></a>
-          <a href="https://multivendorx.com/blog/"><b>Blog</b><small>Marketplace strategies.</small></a>
+        <div class="mm-pv">
+          <div class="pv on" data-pv="niche"><div class="pv-art art-niche"><i></i><i></i><i></i><b></b><span class="c1">Handmade</span><span class="c2">Pet Products</span><span class="c3">Gamer's Gear</span></div>
+            <small>Niche</small><h4>Curated shopping for one obsessed audience</h4><p>Custom product types and niche-specific vendor tools, built for precision.</p></div>
+          <div class="pv" data-pv="booking"><div class="pv-art art-book"><div class="cal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><u></u></div><span class="slot">11:00 booked <svg class="i" aria-hidden="true"><use href="#check"/></svg></span></div>
+            <small>Booking</small><h4>Hourly, daily or monthly bookings</h4><p>Vendors publish availability and customers pick a slot in seconds.</p></div>
+          <div class="pv" data-pv="rental"><div class="pv-art art-rent"><span class="k"><svg class="i" aria-hidden="true"><use href="#key"/></svg></span><div class="days"><i></i><i class="x"></i><i class="on"></i><i class="on"></i><i></i><i class="x"></i><i></i></div><span class="pr">$18 <small>/ day</small></span></div>
+            <small>Rental</small><h4>Availability calendars and pickup</h4><p>List rentals with geo-filters, deposits and pickup options.</p></div>
+          <div class="pv" data-pv="subs"><div class="pv-art art-subs"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="40"/><circle class="a" cx="50" cy="50" r="40"/></svg><b>$24<small>renews monthly</small></b></div>
+            <small>Subscription</small><h4>Recurring payments and member perks</h4><p>Vendor-specific billing that renews on its own.</p></div>
+          <div class="pv" data-pv="auction"><div class="pv-art art-auc"><span class="t"><svg class="i" aria-hidden="true"><use href="#clock"/></svg> 00:04:12</span><div class="bids"><p><span>@hifi_kate</span><b>$1,310</b></p><p><span>@retroaudio</span><b>$1,240</b></p><p><span>@vinylhead</span><b>$1,180</b></p></div></div>
+            <small>Auction</small><h4>Timed auctions and live bidding</h4><p>Vendor-managed bidding with dynamic pricing.</p></div>
+          <div class="pv" data-pv="b2b"><div class="pv-art art-b2b"><div class="crates"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="tiers"><span>10+ <b>-5%</b></span><span>50+ <b>-12%</b></span><span>100+ <b>-20%</b></span></div></div>
+            <small>B2B</small><h4>Wholesale between businesses</h4><p>Bulk pricing, minimum quantities and business-only catalogs.</p></div>
         </div>
-      </div>
-      <a href="#pricing">Pricing</a>
-    </nav>
-    <div class="nav-cta">
-      <a class="btn btn-ghost" href="https://multivendorx.com/custom-development/">Hire Experts</a>
-      <a class="btn btn-primary" href="https://multivendorx.com/pricing/">Get Started</a>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <a class="mm-foot" href="niche-marketplace.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#book"/></svg></span><span><b>The Ultimate Niche Marketplace Playbook</b> From zero to thriving community in 90 days.</span><em>Read the playbook <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></em></a>
+      </div></div>
     </div>
+    <div class="item has-mega"><a class="nl " href="#" aria-haspopup="true">Resources <svg class="i" aria-hidden="true"><use href="#chev"/></svg></a>
+      <div class="mega"><div class="mega-in mm-res" data-spot>
+        <div class="mr-col"><h6>Learn</h6>
+          <a class="mr-i" href="blog.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#book"/></svg></span><div><b>Blog</b><span>Marketplace insights &amp; strategies</span></div></a>
+          <a class="mr-i" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#code"/></svg></span><div><b>API documentation</b><span>Docs, guides &amp; dev tools</span></div></a>
+          <a class="mr-i" href="compare-features.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#layers"/></svg></span><div><b>Compare Features</b><span>Every feature, side by side</span></div></a>
+          <a class="mr-i" href="multivendorx-vs-dokan.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#target"/></svg></span><div><b>MultiVendorX vs Dokan</b><span>The honest comparison</span></div></a>
+        </div>
+        <div class="mr-col"><h6>Get help</h6>
+          <a class="mr-i" href="support.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#headset"/></svg></span><div><b>Support</b><span>Free help or a direct line to Pro</span></div></a>
+          <a class="mr-i" href="community.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#users"/></svg></span><div><b>Community</b><span>Build smarter. Grow faster. Together.</span></div></a>
+          <a class="mr-i" href="migration.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#refresh"/></svg></span><div><b>Migration</b><span>Move from Dokan, WCFM or WC Vendors</span></div></a>
+        </div>
+        <div class="mr-col"><h6>Company</h6>
+          <a class="mr-i" href="about-us.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#info"/></svg></span><div><b>About Us</b><span>It all started with a vision</span></div></a>
+          <a class="mr-i" href="why-multivendorx.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#award"/></svg></span><div><b>Why MultiVendorX</b><span>Support, reliability, value</span></div></a>
+        </div>
+        <a class="mr-feat" href="blog.html">
+          <div class="mr-art"><svg viewBox="0 0 220 90" aria-hidden="true"><path class="g" d="M0 70 C 30 68, 50 50, 80 52 S 130 30, 160 26 S 200 12, 220 8 L220 90 L0 90Z"/><path class="l" d="M0 70 C 30 68, 50 50, 80 52 S 130 30, 160 26 S 200 12, 220 8"/></svg><span class="pill"><svg class="i" aria-hidden="true"><use href="#trend"/></svg> Predictive insights</span></div>
+          <small>From the blog · Analytics</small><b>Predictive Analytics for Marketplaces: How AI-Driven Insights Help You Grow Revenue</b><em>Read the guide <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></em></a>
+      </div></div>
+    </div>
+    <div class="item"><a class="nl " href="pricing.html">Pricing</a></div>
+    <span class="nav-pill" aria-hidden="true"></span>
+  </nav>
+  <div class="hdr-r">
+    <a class="icon-btn" href="#" aria-label="Account"><svg class="i" aria-hidden="true"><use href="#user"/></svg></a>
+    <a class="icon-btn cart" href="#" aria-label="Cart"><svg class="i" aria-hidden="true"><use href="#cart"/></svg><span class="n">0</span></a>
+    <a class="btn btn-ghost btn-sm hire" href="support.html">Hire Experts!</a>
+    <a class="btn btn-primary btn-sm go" href="pricing.html">Get Started <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+    <button class="burger" aria-label="Open menu"><span></span><span></span></button>
   </div>
-</header>
+</div></header>
+<div class="drawer" aria-hidden="true"><div class="scrim"></div><div class="panel">
+  <div class="d-top"><a class="logo" href="index.html">MultiVendor<span class="x">X</span></a><button class="d-close" aria-label="Close menu"><svg class="i" aria-hidden="true"><use href="#x"/></svg></button></div>
+  <a class="d-link" href="features.html"><svg class="i" aria-hidden="true"><use href="#grid"/></svg> Features</a>
+  <div class="d-acc"><button><span><svg class="i" aria-hidden="true"><use href="#store"/></svg> Marketplaces</span><svg class="i" aria-hidden="true"><use href="#chev"/></svg></button><div class="d-body"><a href="niche-marketplace.html"><svg class="i" aria-hidden="true"><use href="#target"/></svg> Niche</a><a href="#"><svg class="i" aria-hidden="true"><use href="#cal"/></svg> Booking</a><a href="#"><svg class="i" aria-hidden="true"><use href="#key"/></svg> Rental</a><a href="#"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg> Subscription</a><a href="#"><svg class="i" aria-hidden="true"><use href="#gavel"/></svg> Auction</a><a href="#"><svg class="i" aria-hidden="true"><use href="#building"/></svg> B2B</a></div></div>
+  <div class="d-acc"><button><span><svg class="i" aria-hidden="true"><use href="#book"/></svg> Resources</span><svg class="i" aria-hidden="true"><use href="#chev"/></svg></button><div class="d-body"><a href="blog.html"><svg class="i" aria-hidden="true"><use href="#book"/></svg> Blog</a><a href="compare-features.html"><svg class="i" aria-hidden="true"><use href="#layers"/></svg> Compare Features</a><a href="multivendorx-vs-dokan.html"><svg class="i" aria-hidden="true"><use href="#target"/></svg> vs Dokan</a><a href="support.html"><svg class="i" aria-hidden="true"><use href="#headset"/></svg> Support</a><a href="community.html"><svg class="i" aria-hidden="true"><use href="#users"/></svg> Community</a><a href="migration.html"><svg class="i" aria-hidden="true"><use href="#refresh"/></svg> Migration</a><a href="about-us.html"><svg class="i" aria-hidden="true"><use href="#info"/></svg> About Us</a><a href="why-multivendorx.html"><svg class="i" aria-hidden="true"><use href="#award"/></svg> Why MultiVendorX</a></div></div>
+  <a class="d-link" href="pricing.html"><svg class="i" aria-hidden="true"><use href="#tag"/></svg> Pricing</a>
+  <div class="d-cta"><a class="btn btn-primary" href="pricing.html">Get Started <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-ghost" href="support.html">Hire Experts!</a></div>
+</div></div>
 
 <main>
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="container hero-grid">
-    <div class="hero-copy reveal">
-      <p class="eyebrow">It all starts with the right foundation</p>
-      <h1>Your marketplace.<br><span class="grad">Your rules.</span></h1>
-      <p class="lead">Turn your WooCommerce store into a full-featured multi-vendor marketplace — with flexible commissions, automated payouts and vendor dashboards your sellers will love.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="https://multivendorx.com/pricing/">Get Started Now</a>
-        <a class="btn btn-outline btn-lg" href="https://multivendordemo.com/">▶ View Live Demo</a>
-      </div>
-      <ul class="hero-checks">
-        <li>Most trusted solution</li>
-        <li>Flexible revenue models</li>
-        <li>Advanced vendor controls</li>
-      </ul>
+<section class="hero"><div class="grid-dots"></div><div class="wrap">
+  <div class="rv">
+    <span class="eyebrow">It all starts with the right foundation.</span>
+    <h1 class="h-xl">Your Marketplace, <span class="accent">Your Rules.</span></h1>
+    <p class="lead">Build it. Scale it. Own it. Your complete marketplace solution, exactly how you envision it.</p>
+    <div class="acts"><a class="btn btn-primary" href="pricing.html">Get Started Now <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-ghost" href="#"><svg class="i" aria-hidden="true"><use href="#play"/></svg> View Live Demo</a></div>
+    <p class="fine">Launch franchise, B2B, rental, booking, auction multi-vendor marketplaces with flexible WooCommerce marketplace platform.</p>
+    <div class="trust" data-stagger="120">
+      <span class="chip"><svg class="i" aria-hidden="true"><use href="#award"/></svg> Most Trusted Solution</span>
+      <span class="chip"><svg class="i" aria-hidden="true"><use href="#coins"/></svg> Flexible Revenue Models</span>
+      <span class="chip"><svg class="i" aria-hidden="true"><use href="#shield"/></svg> Advanced Vendor Controls</span>
     </div>
-
-    <div class="hero-visual reveal" aria-hidden="true">
-      <div class="dash">
-        <div class="dash-top"><i></i><i></i><i></i><span>Marketplace overview</span></div>
-        <div class="dash-body">
+  </div>
+  <div class="dash rv r">
+    <div class="mock tilt">
+      <div class="mock-bar"><i></i><i></i><i></i><span>yourmarketplace.com/dashboard</span></div>
+      <div class="dash-body">
+        <div class="dash-side">
+          <span class="on"><svg class="i" aria-hidden="true"><use href="#grid"/></svg> Overview</span><span><svg class="i" aria-hidden="true"><use href="#box"/></svg> Products</span><span><svg class="i" aria-hidden="true"><use href="#cart"/></svg> Orders</span><span><svg class="i" aria-hidden="true"><use href="#percent"/></svg> Commission</span><span><svg class="i" aria-hidden="true"><use href="#truck"/></svg> Shipping</span><span><svg class="i" aria-hidden="true"><use href="#card"/></svg> Payouts</span><span><svg class="i" aria-hidden="true"><use href="#chart"/></svg> Analytics</span><span><svg class="i" aria-hidden="true"><use href="#store"/></svg> Storefront</span>
+        </div>
+        <div class="dash-main">
+          <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:15px">Good morning, Maria</b><span class="tag green"><span class="live-dot"></span>&nbsp; Store open</span></div>
           <div class="kpis">
-            <div><small>Gross sales</small><b>$84,210</b><em class="up">+18.4%</em></div>
-            <div><small>Commission</small><b>$12,631</b><em class="up">+9.2%</em></div>
-            <div><small>Active vendors</small><b>342</b><em class="up">+27</em></div>
+            <div class="kpi"><small>Sales this month</small><b class="count" data-to="24860" data-pre="$">$24,860</b><em>↑ 18.2%</em></div>
+            <div class="kpi"><small>Orders</small><b class="count" data-to="312">312</b><em>↑ 9.4%</em></div>
+            <div class="kpi"><small>Next payout</small><b class="count" data-to="3120" data-pre="$">$3,120</b><em style="color:var(--brand)">Fri · Stripe</em></div>
           </div>
-          <div class="chart">
-            <svg viewBox="0 0 300 110" preserveAspectRatio="none">
-              <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7c3aed" stop-opacity=".35"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/></linearGradient></defs>
-              <path d="M0 90 L30 80 L60 84 L90 64 L120 70 L150 50 L180 56 L210 36 L240 40 L270 22 L300 14 L300 110 L0 110Z" fill="url(#g)"/>
-              <path d="M0 90 L30 80 L60 84 L90 64 L120 70 L150 50 L180 56 L210 36 L240 40 L270 22 L300 14" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
-            </svg>
+          <div class="kpi"><small style="margin-bottom:10px">Sales overview</small>
+            <div class="bars"><i class="l" style="height:40%"></i><i class="l" style="height:55%"></i><i class="l" style="height:48%"></i><i style="height:66%"></i><i style="height:58%"></i><i style="height:78%"></i><i style="height:70%"></i><i style="height:92%"></i><i style="height:84%"></i><i style="height:100%"></i></div>
           </div>
-          <div class="vendors">
-            <div><span class="av" style="--c:#f59e0b">A</span>Artisan Prints<b>$4,120</b></div>
-            <div><span class="av" style="--c:#10b981">G</span>Green Grocer<b>$3,870</b></div>
-            <div><span class="av" style="--c:#3b82f6">U</span>Urban Rentals<b>$2,945</b></div>
+          <div>
+            <div class="row-li"><i class="av" style="background:#ffe1d6"></i><span style="flex:1"><b>#4821</b> · Handmade ceramic mug</span><span class="tag green">Paid</span></div>
+            <div class="row-li"><i class="av" style="background:#e7dcff"></i><span style="flex:1"><b>#4820</b> · Linen tote bag</span><span class="tag amber">Processing</span></div>
           </div>
         </div>
       </div>
-      <div class="float f1"><span class="dot ok"></span>Payout sent to <b>Green Grocer</b></div>
-      <div class="float f2"><span class="dot pu"></span>New vendor approved</div>
+    </div>
+    <div class="float float-a" style="left:-34px;bottom:56px"><span class="ico green"><svg class="i" aria-hidden="true"><use href="#dollar"/></svg></span><div><b>Commission split</b><small>Admin 10% · Vendor 90%</small></div></div>
+    <div class="toast">
+      <div class="float"><span class="ico coral"><svg class="i" aria-hidden="true"><use href="#users"/></svg></span><div><b>New vendor approved</b><small>Bloom &amp; Clay Studio</small></div></div>
+      <div class="float"><span class="ico green"><svg class="i" aria-hidden="true"><use href="#card"/></svg></span><div><b>Payout sent · $1,240</b><small>Realtime to vendor</small></div></div>
+      <div class="float"><span class="ico"><svg class="i" aria-hidden="true"><use href="#cart"/></svg></span><div><b>New order #4822</b><small>Split across 2 vendors</small></div></div>
     </div>
   </div>
-</section>
+</div></section>
 
-<!-- Stats -->
-<section class="stats">
-  <div class="container stats-grid">
-    <div><b>90%+</b><span>resolution rate on WordPress.org</span></div>
-    <div><b>6–7h</b><span>average support reply time</span></div>
-    <div><b>1.52s</b><span>average load time vs 2.3s competitors</span></div>
-    <div><b>15-day</b><span>full refund, no fine print</span></div>
-  </div>
-</section>
-
-<!-- Features -->
-<section class="section" id="features">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Marketplace mastery</p>
-      <h2>Tools that keep your vendors happy <span class="grad">and profitable</span></h2>
-      <p class="sub">Effortless store management, revenue optimization and seamless vendor onboarding — all in one plugin.</p>
-    </div>
-    <div class="tabs reveal" role="tablist" id="featTabs"></div>
-    <div class="feat-panel reveal" id="featPanel"></div>
-    <div class="center mt"><a class="btn btn-outline" href="https://multivendorx.com/features/">Explore All Features →</a></div>
-  </div>
-</section>
-
-<!-- Why -->
-<section class="section alt">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Why MultiVendorX</p>
-      <h2>The decision is clear</h2>
-      <p class="sub">We heard the frustrations marketplace owners have with other plugins — and built the answer.</p>
-    </div>
-    <div class="why-grid">
-      <article class="why reveal">
-        <div class="why-ic">💬</div>
-        <h3>Tired of waiting days for support?</h3>
-        <ul><li>90%+ resolution rate on WordPress.org</li><li>Replies in 6–7 hours, not days</li><li>Premium-level help – even for free users</li></ul>
-      </article>
-      <article class="why reveal">
-        <div class="why-ic">🚀</div>
-        <h3>Frustrated by plugins that never improve?</h3>
-        <ul><li>Bi-weekly updates with real features</li><li>70% of updates driven by customer requests</li><li>Full codebase refresh every 3 years</li></ul>
-      </article>
-      <article class="why reveal">
-        <div class="why-ic">⚙️</div>
-        <h3>Need full control over your marketplace?</h3>
-        <ul><li>Powered by React & REST API</li><li>1.52s average load vs 2.3s competitors</li><li>Lightweight codebase built to scale</li></ul>
-      </article>
-      <article class="why reveal">
-        <div class="why-ic">🤝</div>
-        <h3>Feel like you're building alone?</h3>
-        <ul><li>Active user & developer forums</li><li>Weekly expert webinars</li><li>2.5x faster growth among community members</li></ul>
-      </article>
-      <article class="why reveal">
-        <div class="why-ic">🛡️</div>
-        <h3>We deliver – or your money back</h3>
-        <ul><li>15-day full refund</li><li>No fine print</li><li>Real, human support</li></ul>
-      </article>
-      <article class="why reveal">
-        <div class="why-ic">🎁</div>
-        <h3>Paying extra for basic features?</h3>
-        <ul><li>Store manager dashboard</li><li>Vendor registration, reviews & withdrawals</li><li>Product & order management, email notifications</li></ul>
-      </article>
+<section class="sec white"><div class="wrap happy">
+  <div class="rv l">
+    <span class="eyebrow">Vendor dashboard</span>
+    <h2 class="h-lg" style="margin-top:18px">This is why your vendors stay Happy <span class="accent">(and Profitable)</span></h2>
+    <p class="lead" style="margin-top:18px">Streamline products, orders, analytics, and shipping in one powerful dashboard that eliminates confusion and maximizes control.</p>
+    <div class="pts" data-stagger="120">
+      <div class="pt lift"><span class="ico"><svg class="i" aria-hidden="true"><use href="#box"/></svg></span><div><b>Products</b><span>Add, edit, publish and bulk-manage the catalog.</span></div></div>
+      <div class="pt lift"><span class="ico coral"><svg class="i" aria-hidden="true"><use href="#cart"/></svg></span><div><b>Orders</b><span>Split orders, status updates and order notes.</span></div></div>
+      <div class="pt lift"><span class="ico green"><svg class="i" aria-hidden="true"><use href="#chart"/></svg></span><div><b>Analytics &amp; shipping</b><span>Sales reports and shipping rules in the same place.</span></div></div>
     </div>
   </div>
-</section>
-
-<!-- Marketplace types -->
-<section class="section" id="marketplaces">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Any model, one platform</p>
-      <h2>Build any marketplace you envision</h2>
-    </div>
-    <div class="types reveal">
-      <a class="type" href="https://multivendorx.com/niche-marketplace/"><span>🎯</span><h3>Niche</h3><p>Tailored tools and targeted success for focused communities.</p><em>See how niche marketplaces succeed →</em></a>
-      <a class="type" href="https://multivendorx.com/booking-marketplace/"><span>📅</span><h3>Booking</h3><p>Calendars, availability, appointments and reservations.</p><em>Build a booking marketplace →</em></a>
-      <a class="type" href="https://multivendorx.com/rental-marketplace/"><span>🔑</span><h3>Rental</h3><p>Rent anything with time-based pricing and inventory.</p><em>Build a rental marketplace →</em></a>
-      <a class="type" href="https://multivendorx.com/subscription-marketplace/"><span>🔁</span><h3>Subscription</h3><p>Recurring revenue with recurring commissions built in.</p><em>Launch a subscription marketplace →</em></a>
-      <a class="type" href="https://multivendorx.com/auction-marketplace/"><span>🔨</span><h3>Auction</h3><p>Bid big, build fast — live auctions across vendors.</p><em>Start an auction marketplace →</em></a>
-    </div>
-  </div>
-</section>
-
-<!-- Power of 5 -->
-<section class="section dark">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow light">The power of 5</p>
-      <h2>Features marketplace owners love</h2>
-    </div>
-    <div class="five">
-      <div class="five-card big reveal"><h3>Global payments, seamlessly handled</h3><p>Stripe Connect split payments, PayPal Marketplace payouts and secure gateways for smooth, trustworthy transactions worldwide.</p><div class="chips"><span>Stripe</span><span>PayPal</span><span>Auto payouts</span></div></div>
-      <div class="five-card reveal"><h3>Speak their language</h3><p>Multilingual support and region-specific configuration for a localized experience that converts.</p></div>
-      <div class="five-card reveal"><h3>Multiple currencies</h3><p>Let international customers shop in their own currency. Sell globally, earn locally.</p></div>
-      <div class="five-card reveal"><h3>WordPress DNA, WooCommerce muscle</h3><p>Built on WordPress, powered by WooCommerce — scalable and familiar.</p></div>
-      <div class="five-card reveal"><h3>Connects your ecosystem</h3><p>Works with the tools you already use.</p><div class="chips"><span>WPML</span><span>Elementor</span><span>Yoast</span><span>Rank Math</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing -->
-<section class="section" id="pricing">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Transparent pricing</p>
-      <h2>One price. <span class="grad">All features.</span></h2>
-      <p class="sub">Every plan includes every pro feature and every module. No surprises — just serious marketplace power.</p>
-    </div>
-    <div class="plans">
-      <div class="plan reveal">
-        <h3>Starter</h3>
-        <p class="plan-for">For a single marketplace</p>
-        <div class="price"><b>$149</b><span>/year · 1 site</span></div>
-        <ul><li>All pro features included</li><li>Access to every module</li><li>1 year support</li><li>1 year updates</li></ul>
-        <a class="btn btn-outline btn-block" href="https://multivendorx.com/cart/?add-to-cart=143434&amp;variation_id=143443&amp;attribute_pa_site-license=1-site-yearly">Buy Starter</a>
+  <div class="mock rv r">
+    <div class="mock-bar"><i></i><i></i><i></i><span>Vendor dashboard · Analytics</span></div>
+    <div style="padding:22px;display:grid;gap:14px">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+        <div class="kpi"><small>Revenue</small><b class="count" data-to="48.2" data-pre="$" data-suf="k">$48.2k</b><em>↑ 12%</em></div>
+        <div class="kpi"><small>Orders</small><b class="count" data-to="1284">1,284</b><em>↑ 7%</em></div>
+        <div class="kpi"><small>Avg. order</small><b class="count" data-to="37.5" data-pre="$">$37.5</b><em>↑ 4%</em></div>
+        <div class="kpi"><small>Stock alerts</small><b>6</b><em style="color:var(--coral)">Low stock</em></div>
       </div>
-      <div class="plan featured reveal">
-        <span class="badge">Best value</span>
-        <h3>Agency</h3>
-        <p class="plan-for">For agencies & multiple projects</p>
-        <div class="price"><b>$299</b><span>/year · 10 sites</span></div>
-        <ul><li>All pro features included</li><li>Access to every module</li><li>1 year support</li><li>1 year updates</li></ul>
-        <a class="btn btn-primary btn-block" href="https://multivendorx.com/cart/?add-to-cart=143434&amp;variation_id=143440&amp;attribute_pa_site-license=10-site-yearly">Buy Agency</a>
+      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:12px">
+        <div class="kpi"><small style="margin-bottom:12px">Sales by category</small>
+          <div class="bars" style="height:150px"><i style="height:62%"></i><i class="l" style="height:40%"></i><i style="height:88%"></i><i class="l" style="height:52%"></i><i style="height:74%"></i><i class="l" style="height:35%"></i><i style="height:96%"></i></div></div>
+        <div class="kpi"><small style="margin-bottom:6px">Shipping</small>
+          <div class="row-li" style="border:0"><svg class="i" aria-hidden="true"><use href="#truck"/></svg><span style="flex:1">Zone wise</span><span class="tag">On</span></div>
+          <div class="row-li"><svg class="i" aria-hidden="true"><use href="#pin"/></svg><span style="flex:1">Distance-based</span><span class="tag">On</span></div>
+          <div class="row-li"><svg class="i" aria-hidden="true"><use href="#box"/></svg><span style="flex:1">Local pickup</span><span class="tag green">New</span></div>
+          <div class="row-li"><svg class="i" aria-hidden="true"><use href="#tag"/></svg><span style="flex:1">Free shipping</span><span class="tag amber">$50+</span></div>
+        </div>
       </div>
     </div>
-    <p class="center note">🛡️ 15-day money-back guarantee · Real human support</p>
   </div>
+</div></section>
+
+<section class="sec" id="features"><div class="wrap">
+  <div class="sec-head center rv">
+    <span class="eyebrow">Features</span>
+    <h2 class="h-lg" style="margin-top:18px">Marketplace mastery: tools that <span class="accent">Dominate</span></h2>
+    <div class="three-pts"><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> Effortless store management</span><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> Revenue optimization tools</span><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> Seamless vendor onboarding</span></div>
+  </div>
+  <div class="fx rv" data-tabs data-fx>
+    <div class="fx-bar" role="tablist"><button class="fx-t on" type="button" role="tab" data-tab="st"><span class="fx-ic"><svg class="i" aria-hidden="true"><use href="#store"/></svg></span>Store Management<em>16</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="co"><span class="fx-ic"><svg class="i" aria-hidden="true"><use href="#percent"/></svg></span>Commission<em>10</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="ve"><span class="fx-ic"><svg class="i" aria-hidden="true"><use href="#users"/></svg></span>Vendor Engagement<em>10</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="an"><span class="fx-ic"><svg class="i" aria-hidden="true"><use href="#chart"/></svg></span>Analytics &amp; SEO<em>11</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="ca"><span class="fx-ic"><svg class="i" aria-hidden="true"><use href="#box"/></svg></span>Catalog Control<em>8</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="sh"><span class="fx-ic"><svg class="i" aria-hidden="true"><use href="#truck"/></svg></span>Shipping<em>11</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="pa"><span class="fx-ic"><svg class="i" aria-hidden="true"><use href="#card"/></svg></span>Payment &amp; Order<em>9</em><i class="fx-p"></i></button></div>
+    <div class="fx-body">
+      <div class="fx-pn on" data-panel="st">
+        <div class="fx-spot"><div class="vz vz-store"><div class="aw"></div><div class="sf"><b>Bloom &amp; Clay</b><span class="open"><i></i>Open now</span></div><div class="pg"><i></i><i></i><i></i></div></div><span class="fx-n"><b>16</b> features</span><h3>Everything a vendor needs to run their store</h3><p>Storefronts, policies, store hours, invoices and location tools that make every vendor look professional.</p></div>
+        <ul class="fx-list"><li style="--d:0"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Store Location</span></li><li style="--d:1"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Storefront Customization</span></li><li style="--d:2"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>PDF Invoicing</span></li><li style="--d:3"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Geolocation Mapping</span></li><li style="--d:4"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Auto-Reopen Reminder</span></li><li style="--d:5"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Time Zone Support</span></li><li style="--d:6"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Store Policies</span></li><li style="--d:7"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Terms &amp; Conditions</span></li><li style="--d:8"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Holiday Notification</span></li><li style="--d:9"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Packing Slip</span></li><li style="--d:10"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Local Pickup Options</span></li><li style="--d:11"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Holiday Scheduling</span></li><li style="--d:12"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Vacation Mode Toggle</span></li><li style="--d:13"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Location-Based Search</span></li><li style="--d:14"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Shop Customization</span></li><li style="--d:15"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Customizable Operating Hours</span></li></ul>
+      </div>
+      <div class="fx-pn" data-panel="co">
+        <div class="fx-spot"><div class="vz vz-split"><div class="dn"><b>$100<small>order</small></b></div><div class="lg"><span><i></i>Vendor <b>$80</b></span><span><i class="a"></i>Admin <b>$20</b></span></div></div><span class="fx-n"><b>10</b> features</span><h3>Commission rules that fit any revenue model</h3><p>Fixed, percentage, tiered or category-based: set commissions per vendor, product or user type.</p></div>
+        <ul class="fx-list"><li style="--d:0"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Tax Handling in Commissions</span></li><li style="--d:1"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Dynamic Commission Flow</span></li><li style="--d:2"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>User Types Commission</span></li><li style="--d:3"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Tiered Commission Plans</span></li><li style="--d:4"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Category-Based Commissions</span></li><li style="--d:5"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Commission On Tax</span></li><li style="--d:6"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Recurring Subscription Commissions</span></li><li style="--d:7"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Fixed/Percentage Commissions</span></li><li style="--d:8"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Payment Gateway Charge</span></li><li style="--d:9"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Refund Adjustments</span></li></ul>
+      </div>
+      <div class="fx-pn" data-panel="ve">
+        <div class="fx-spot"><div class="vz vz-chat"><p class="b1">Is this mug dishwasher safe?</p><p class="b2">Yes! Glazed and dishwasher safe.</p><p class="ty"><i></i><i></i><i></i></p></div><span class="fx-n"><b>10</b> features</span><h3>Keep buyers and vendors talking</h3><p>Reviews, follows and live vendor-buyer chat that build trust and repeat sales.</p></div>
+        <ul class="fx-list"><li style="--d:0"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Store Reviews</span></li><li style="--d:1"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Store Follow Button</span></li><li style="--d:2"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Sales Analytics</span></li><li style="--d:3"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Star Rating System</span></li><li style="--d:4"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Follower Notifications</span></li><li style="--d:5"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Review Analytics</span></li><li style="--d:6"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Chat History</span></li><li style="--d:7"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Typing Indicators</span></li><li style="--d:8"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Vendor-Buyer Chat</span></li><li style="--d:9"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Chat Analytics</span></li></ul>
+      </div>
+      <div class="fx-pn" data-panel="an">
+        <div class="fx-spot"><div class="vz vz-chart"><div class="bars"><i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:44%"></i><i style="--h:66%"></i><i style="--h:58%"></i><i style="--h:82%"></i><i style="--h:94%"></i></div><span class="kp"><svg class="i" aria-hidden="true"><use href="#trend"/></svg> Sales +24%</span></div><span class="fx-n"><b>11</b> features</span><h3>Reports and search visibility built in</h3><p>Seller reports, Google Analytics and Yoast / Rank Math support so stores get found.</p></div>
+        <ul class="fx-list"><li style="--d:0"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Google Analytics Integration</span></li><li style="--d:1"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>SEO Support (Structured Data)</span></li><li style="--d:2"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>SEO Integration (Yoast/Rank Math)</span></li><li style="--d:3"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Social Media Open Graph</span></li><li style="--d:4"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Seller's Advanced Reports</span></li><li style="--d:5"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Sales Overview</span></li><li style="--d:6"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Sales by Product</span></li><li style="--d:7"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Sales by Category</span></li><li style="--d:8"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Stock &amp; Inventory Reports</span></li><li style="--d:9"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Tax &amp; Transaction Reports</span></li><li style="--d:10"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Inventory Alerts</span></li></ul>
+      </div>
+      <div class="fx-pn" data-panel="ca">
+        <div class="fx-spot"><div class="vz vz-cat"><div class="gr"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="imp"><span><svg class="i" aria-hidden="true"><use href="#file"/></svg> products.csv</span><div class="bar"><i></i></div></div></div><span class="fx-n"><b>8</b> features</span><h3>A catalog that manages itself</h3><p>Bulk import, bulk edit and single product multiple vendor keep big catalogs tidy.</p></div>
+        <ul class="fx-list"><li style="--d:0"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Product Comparison Table</span></li><li style="--d:1"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Single Product Multiple Vendor</span></li><li style="--d:2"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Bulk Product Import/Export</span></li><li style="--d:3"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Product Bulk Edit</span></li><li style="--d:4"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Duplicate Product</span></li><li style="--d:5"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Upload Media Files</span></li><li style="--d:6"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Add/Edit/Publish Products</span></li><li style="--d:7"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Product Inventory</span></li></ul>
+      </div>
+      <div class="fx-pn" data-panel="sh">
+        <div class="fx-spot"><div class="vz vz-ship"><svg viewBox="0 0 260 90" aria-hidden="true"><path d="M20 70 C 80 10, 170 90, 240 24"/></svg><span class="p1"><svg class="i" aria-hidden="true"><use href="#store"/></svg></span><span class="p2"><svg class="i" aria-hidden="true"><use href="#pin"/></svg></span><span class="tr"><svg class="i" aria-hidden="true"><use href="#truck"/></svg></span></div><span class="fx-n"><b>11</b> features</span><h3>Every shipping rule your vendors ask for</h3><p>Table rate, zone, distance and country-wise shipping, with tracking for every order.</p></div>
+        <ul class="fx-list"><li style="--d:0"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Seller Shipping Options</span></li><li style="--d:1"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Shipping Rate Control</span></li><li style="--d:2"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Table Rate Shipping</span></li><li style="--d:3"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Flat Rate Shipping</span></li><li style="--d:4"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Zone Wise Shipping</span></li><li style="--d:5"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Distance-Based Shipping</span></li><li style="--d:6"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Country-Wise Shipping Setup</span></li><li style="--d:7"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Add Shipping Tracking</span></li><li style="--d:8"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Service Area Radius</span></li><li style="--d:9"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Free Shipping Options</span></li><li style="--d:10"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Payment Gateway Charge Handling</span></li></ul>
+      </div>
+      <div class="fx-pn" data-panel="pa">
+        <div class="fx-spot"><div class="vz vz-pay"><span class="n o"><svg class="i" aria-hidden="true"><use href="#cart"/></svg><small>Order</small></span><span class="ln"><i></i></span><span class="n m"><svg class="i" aria-hidden="true"><use href="#percent"/></svg><small>Split</small></span><span class="ln"><i></i></span><span class="n w"><svg class="i" aria-hidden="true"><use href="#card"/></svg><small>Payout</small></span></div><span class="fx-n"><b>9</b> features</span><h3>Get vendors paid, automatically</h3><p>Split orders, realtime and automated payouts through PayPal and Stripe.</p></div>
+        <ul class="fx-list"><li style="--d:0"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Order Fulfillment Tools</span></li><li style="--d:1"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Order Notes</span></li><li style="--d:2"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Split Orders</span></li><li style="--d:3"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Order Status Updates</span></li><li style="--d:4"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Realtime Payout to Vendors</span></li><li style="--d:5"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>PayPal Payment</span></li><li style="--d:6"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Withdrawal Requests</span></li><li style="--d:7"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Automated Vendor Payouts</span></li><li style="--d:8"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Stripe Payment</span></li></ul>
+      </div>
+    </div>
+    <div class="fx-foot"><span class="fx-hint"><svg class="i" aria-hidden="true"><use href="#zap"/></svg> Tabs switch on their own. Hover to pause.</span><a class="btn btn-primary" href="features.html">Explore All Features <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-ghost" href="pricing.html">Get Started Now</a></div>
+  </div>
+</div></section>
+
+<section class="sec choice"><div class="wrap">
+  <div class="sec-head rv">
+    <span class="eyebrow">Why MultiVendorX</span>
+    <h2 class="h-lg" style="margin-top:18px">MultiVendorX: the Choice</h2>
+    <p class="lead">Fast support. Relentless updates. Real community. Transparent pricing. Developer freedom. Rock-solid reliability. Guaranteed results.</p>
+  </div>
+  <div class="bento" data-stagger="90">
+    <div class="bc w3"><span class="lab"><svg class="i" aria-hidden="true"><use href="#headset"/></svg> Support</span><h3>Tired of waiting days for support?</h3>
+      <ul><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>90%+ resolution rate on WordPress.org</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Replies in 6–7 hours, not days</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Premium-level help - even for free users</li></ul>
+      <p class="end">More 5-star support reviews than most plugins have total reviews.</p></div>
+    <div class="bc w3"><span class="lab"><svg class="i" aria-hidden="true"><use href="#refresh"/></svg> Reliability</span><h3>Frustrated by plugins that never improve?</h3>
+      <ul><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Full codebase refresh every 3 years</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Bi-weekly updates with real features</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>70% of updates driven by customer requests</li></ul>
+      <p class="end">Forget maintenance updates. We evolve based on your feedback.</p></div>
+    <div class="bc"><span class="lab"><svg class="i" aria-hidden="true"><use href="#zap"/></svg> Feature &amp; Performance</span><h3>Need full control over your marketplace?</h3>
+      <div class="big"><span class="count" data-to="1.52" data-suf="s">1.52s</span> <small>avg. load vs 2.3s competitors</small></div>
+      <ul><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Powered by React &amp; REST API</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Lightweight codebase built to scale</li></ul>
+      <p class="end">Built for performance, scalability, and developer happiness.</p></div>
+    <div class="bc"><span class="lab"><svg class="i" aria-hidden="true"><use href="#users"/></svg> Social Proof</span><h3>Feel like you're building your marketplace alone?</h3>
+      <div class="big"><span class="count" data-to="2.5" data-suf="x">2.5x</span> <small>faster growth among community members</small></div>
+      <ul><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Active user &amp; developer forums</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Weekly expert webinars</li></ul>
+      <p class="end">You're not just installing a plugin; you're joining a movement.</p></div>
+    <div class="bc"><span class="lab"><svg class="i" aria-hidden="true"><use href="#shield"/></svg> Credibility</span><h3>We deliver what we promise - or your money back</h3>
+      <div class="big"><span class="count" data-to="15">15</span>-day <small>full refund</small></div>
+      <ul><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>No fine print</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Real, human support</li></ul>
+      <p class="end">Try us risk-free. If you're not satisfied, you're protected.</p></div>
+    <div class="bc" style="grid-column:span 6;flex-direction:row;align-items:center;gap:40px">
+      <div style="flex:1.1"><span class="lab"><svg class="i" aria-hidden="true"><use href="#tag"/></svg> Pricing &amp; Value</span><h3 style="margin-top:12px">Paying extra for basic features?</h3><p class="c-muted" style="margin-top:8px">Free with MultiVendorX (others charge $149+):</p></div>
+      <ul style="flex:1.6;grid-template-columns:1fr 1fr;column-gap:24px"><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Store Manager Dashboard</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Vendor Reviews &amp; Withdrawals</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Vendor Registration</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Product &amp; Order Management</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Email Notifications</li><li><svg class="i" aria-hidden="true"><use href="#tick"/></svg>Admin Coupons, Frontend Products</li></ul>
+      <div style="flex:.9;text-align:right"><p class="c-muted" style="font-size:14px">Upgrade for just <b>$299 /year</b> for even more power features.</p><a class="btn btn-primary" href="pricing.html" style="margin-top:14px">Get Started Now <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:36px" class="rv"><a class="link" href="why-multivendorx.html">See why thousands choose MultiVendorX <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+</div></section>
+
+<section class="sec white"><div class="wrap">
+  <div class="sec-head center rv">
+    <span class="eyebrow">Pricing</span>
+    <h2 class="h-lg" style="margin-top:18px">The decision is clear: <span class="accent">MultiVendorX Delivers</span></h2>
+    <div class="three-pts"><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> Plans that grow with you.</span><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> One price. All features.</span><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> No surprises - just serious marketplace power.</span></div>
+  </div>
+  <div class="plans3" data-stagger="120">
+  <div class="plan">
+    <div class="p-head"><span class="p-ico"><svg class="i" aria-hidden="true"><use href="#user"/></svg></span><div><h3>Starter</h3><p>Solo freelancers and experts</p></div></div>
+    <div class="p-price"><sup>$</sup><b>149</b><span>/year</span></div>
+    <div class="p-sites" style="--n:1"><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><b>1 Site</b></div>
+    <a class="btn btn-ghost" href="pricing.html">Buy now <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+    <ul class="p-list"><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> Everything in Free &amp; Pro</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> 50+ Modules</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> 1 Year Support</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> 1 Year Updates</li></ul>
+  </div>
+  <div class="plan pop">
+    <span class="ribbon"><svg class="i" aria-hidden="true"><use href="#star"/></svg> Most popular</span>
+    <div class="p-head"><span class="p-ico"><svg class="i" aria-hidden="true"><use href="#store"/></svg></span><div><h3>Growth</h3><p>Individual online store owners</p></div></div>
+    <div class="p-price"><sup>$</sup><b>199</b><span>/year</span></div>
+    <div class="p-sites" style="--n:3"><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><b>3 Sites</b></div>
+    <a class="btn btn-primary" href="pricing.html">Buy now <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+    <ul class="p-list"><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> Everything in Free &amp; Pro</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> 50+ Modules</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> 1 Year Support</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> 1 Year Updates</li></ul>
+  </div>
+  <div class="plan">
+    <div class="p-head"><span class="p-ico"><svg class="i" aria-hidden="true"><use href="#building"/></svg></span><div><h3>Agency</h3><p>Agencies with multiple projects</p></div></div>
+    <div class="p-price"><sup>$</sup><b>299</b><span>/year</span></div>
+    <div class="p-sites" style="--n:10"><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><div class="win"><i></i></div><b>10 Sites</b></div>
+    <a class="btn btn-ghost" href="pricing.html">Buy now <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+    <ul class="p-list"><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> Everything in Free &amp; Pro</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> 50+ Modules</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> 1 Year Support</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> 1 Year Updates</li></ul>
+  </div>
+</div>
+
+  <p class="muted rv" style="text-align:center;margin-top:24px;font-size:14.5px">MultiVendorX doesn't just help you build a marketplace - it helps you build the right marketplace.</p>
+</div></section>
+
+<section class="sec mks-sec" id="types"><div class="wrap">
+  <div class="sec-head center rv">
+    <span class="eyebrow">Marketplace types</span>
+    <h2 class="h-lg" style="margin-top:18px">Build any versatile marketplace you envision</h2>
+    <p class="lead">Your idea isn't one-size-fits-all. Neither is our plugin. We adapt to your business model</p>
+  </div>
+</div>
+<div class="mks" data-mks style="--n:5">
+  <div class="mks-stick"><div class="wrap mks-in">
+    <div class="mks-nav" role="tablist"><button class="mks-t on" type="button" data-i="0"><span class="ico"><svg class="i" aria-hidden="true"><use href="#target"/></svg></span><span class="tx"><b>Niche</b><small>For brands with a unique voice</small></span><i class="bar"><u></u></i></button><button class="mks-t" type="button" data-i="1"><span class="ico"><svg class="i" aria-hidden="true"><use href="#cal"/></svg></span><span class="tx"><b>Booking</b><small>Turn time into your most valuable product</small></span><i class="bar"><u></u></i></button><button class="mks-t" type="button" data-i="2"><span class="ico"><svg class="i" aria-hidden="true"><use href="#key"/></svg></span><span class="tx"><b>Rental</b><small>Monetize what you're not using</small></span><i class="bar"><u></u></i></button><button class="mks-t" type="button" data-i="3"><span class="ico"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg></span><span class="tx"><b>Subscription</b><small>Recurring revenue, simplified</small></span><i class="bar"><u></u></i></button><button class="mks-t" type="button" data-i="4"><span class="ico"><svg class="i" aria-hidden="true"><use href="#gavel"/></svg></span><span class="tx"><b>Auction</b><small>Let the highest bidder win</small></span><i class="bar"><u></u></i></button><p class="mks-hint"><svg class="i" aria-hidden="true"><use href="#chev"/></svg> Keep scrolling to switch</p></div>
+    <div class="mks-stage">
+    <article class="mks-p on" data-i="0">
+      <div class="mks-l"><span class="mks-k"><span class="ico"><svg class="i" aria-hidden="true"><use href="#target"/></svg></span>01 / 05 · For brands with a unique voice</span><h3 class="h-md">Niche Marketplace</h3>
+        <p class="muted">Deliver curated shopping experiences tailored to specific audiences. From custom product types to niche-specific vendor tools, everything is built for precision.</p>
+        <div class="chips"><span class="chip"><svg class="i" aria-hidden="true"><use href="#tag"/></svg>Fashion</span><span class="chip"><svg class="i" aria-hidden="true"><use href="#heart"/></svg>Handmade Goods</span><span class="chip"><svg class="i" aria-hidden="true"><use href="#grid"/></svg>Furniture</span><span class="chip"><svg class="i" aria-hidden="true"><use href="#store"/></svg>Retail</span><span class="chip"><svg class="i" aria-hidden="true"><use href="#heart"/></svg>Pet Products</span><span class="chip"><svg class="i" aria-hidden="true"><use href="#sparkle"/></svg>Organic &amp; Wellness</span><span class="chip"><svg class="i" aria-hidden="true"><use href="#bulb"/></svg>Mental Health Tools</span><span class="chip"><svg class="i" aria-hidden="true"><use href="#zap"/></svg>Gamer's Gear</span></div>
+        <a class="btn btn-primary" href="niche-marketplace.html">See how niche marketplaces succeed <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      <div class="mks-r"><div class="mm float-a"><div class="mm-h"><i class="av"></i><div><b>Bloom &amp; Clay Studio</b><br><span class="muted" style="font-size:12px">Handmade ceramics · 4.9 ★</span></div><span class="tag" style="margin-left:auto">Follow</span></div>
+        <div class="shop-g"><div class="prd"><i style="background:linear-gradient(135deg,#ffd9c7,#ffb59a)"></i><div><b>Speckled mug</b>$28</div></div><div class="prd"><i style="background:linear-gradient(135deg,#e7dcff,#b9a0ff)"></i><div><b>Bud vase</b>$34</div></div><div class="prd"><i style="background:linear-gradient(135deg,#d6f2e6,#93d9bc)"></i><div><b>Serving bowl</b>$52</div></div></div></div>
+        <div class="quote"><span class="av">G</span><div><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p style="margin:4px 0">The response is very fast, they help you in whatever you need.</p><b style="font-size:13px">gsocaranza</b> <span class="muted" style="font-size:12px">· Marketplace Owner</span></div></div></div>
+    </article>
+    <article class="mks-p" data-i="1">
+      <div class="mks-l"><span class="mks-k"><span class="ico"><svg class="i" aria-hidden="true"><use href="#cal"/></svg></span>02 / 05 · Turn time into your most valuable product</span><h3 class="h-md">Booking Marketplace</h3>
+        <p class="muted">Enable vendors to offer hourly, daily, or monthly bookings with ease.</p>
+        <div class="chips"><span class="chip">Gaming Lounges</span><span class="chip">Boutique Stays &amp; Heritage Homes</span><span class="chip">Beauty &amp; Grooming Appointments</span><span class="chip">Adventure &amp; Wellness Retreats</span><span class="chip">Car &amp; Bike Rentals</span><span class="chip">Expert-Led Skill Workshops</span><span class="chip">Event Spaces &amp; Studios</span><span class="chip">Private Tutors &amp; Academic Coaches</span></div>
+        <a class="btn btn-primary" href="#">Build a booking marketplace that works <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      <div class="mks-r"><div class="mm float-a"><div class="mm-h"><i class="av" style="background:linear-gradient(135deg,#a68bff,#5b1fd6)"></i><b>Pick a date · Yoga retreat</b><span class="tag coral" style="margin-left:auto">2 left</span></div>
+        <div class="cal7"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span><span>3</span><span class="b">4</span><span>5</span><span class="b">6</span><span>7</span><span class="pick">8</span><span class="b">9</span><span>10</span><span>11</span><span class="b">12</span><span>13</span><span>14</span><span class="b">15</span><span>16</span></div>
+        <div class="slots"><span>09:00</span><span class="on">11:00</span><span>14:00</span><span>16:30</span></div></div>
+        <div class="quote"><span class="av">K</span><div><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p style="margin:4px 0">Excellent support via chat – thank you</p><b style="font-size:13px">klickleute</b></div></div></div>
+    </article>
+    <article class="mks-p" data-i="2">
+      <div class="mks-l"><span class="mks-k"><span class="ico"><svg class="i" aria-hidden="true"><use href="#key"/></svg></span>03 / 05 · Monetize what you're not using</span><h3 class="h-md">Rental Marketplace</h3>
+        <p class="muted">List rentals with availability calendars, pickup options, and geo-filters.</p>
+        <div class="chips"><span class="chip">Designer Dress Rentals</span><span class="chip">Tools &amp; DIY Equipment</span><span class="chip">Outdoor &amp; Camping Gear</span><span class="chip">Photography Gear Sharing</span><span class="chip">Fitness Equipment</span><span class="chip">Home Decor</span><span class="chip">Film &amp; Studio Equipment</span><span class="chip">Pet Sitting</span></div>
+        <a class="btn btn-primary" href="#">Learn how to build a rental marketplace <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      <div class="mks-r"><div class="mm float-a"><div class="mm-h"><svg class="i" aria-hidden="true"><use href="#pin"/></svg><b>Near you · 3 km</b><span class="tag green" style="margin-left:auto">Pickup</span></div>
+        <div class="rent"><div class="item"><i style="background:linear-gradient(135deg,#d6f2e6,#93d9bc)"></i><div><b>Camping tent · 4p</b><br><span class="muted">$18 / day</span></div><div class="avail"><u></u><u class="x"></u><u class="on"></u><u></u><u></u><u class="x"></u><u></u></div></div>
+        <div class="item"><i style="background:linear-gradient(135deg,#ffd9c7,#ffb59a)"></i><div><b>Mirrorless camera</b><br><span class="muted">$35 / day</span></div><div class="avail"><u class="x"></u><u class="x"></u><u></u><u class="on"></u><u></u><u></u><u></u></div></div>
+        <div class="item"><i style="background:linear-gradient(135deg,#e7dcff,#b9a0ff)"></i><div><b>Designer dress</b><br><span class="muted">$42 / day</span></div><div class="avail"><u></u><u></u><u></u><u class="x"></u><u class="on"></u><u></u><u class="x"></u></div></div></div></div>
+        <div class="quote"><span class="av">D</span><div><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p style="margin:4px 0">They have developed extensive custom development for our Marketplace project and continue to be an integral part of this project. Highly recommended.</p><b style="font-size:13px">dzzstudio</b></div></div></div>
+    </article>
+    <article class="mks-p" data-i="3">
+      <div class="mks-l"><span class="mks-k"><span class="ico"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg></span>04 / 05 · Recurring revenue, simplified</span><h3 class="h-md">Subscription Marketplace</h3>
+        <p class="muted">Support recurring payments, member perks, and vendor-specific billing.</p>
+        <div class="chips"><span class="chip">Artisan Coffee Boxes</span><span class="chip">Curated Book Clubs</span><span class="chip">Beauty &amp; Skincare Kits</span><span class="chip">Quirky Socks &amp; Apparel</span><span class="chip">Pet Toys &amp; Treats</span><span class="chip">DIY Craft Kits</span><span class="chip">Mindfulness Packs</span><span class="chip">Global Snack Samplers</span></div>
+        <a class="btn btn-primary" href="#">Launch your subscription marketplace today <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      <div class="mks-r"><div class="mm float-a" style="padding-bottom:8px"><div class="mm-h"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg><b>Coffee box · monthly</b><span class="tag green" style="margin-left:auto">Active</span></div>
+        <div class="renew"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="#efe9ff" stroke-width="8"/><circle cx="50" cy="50" r="44" fill="none" stroke="#5b1fd6" stroke-width="8" stroke-dasharray="200 277" stroke-linecap="round"/></svg><div class="mid"><div><b>$24</b>renews in 9 days</div></div></div></div>
+        <div class="quote"><span class="av">R</span><div><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p style="margin:4px 0">10 of 10 for best suport! Our monthly subscription marketplace serves indie creators. With MultiVendorX, managing renewals and payouts is seamless.</p><b style="font-size:13px">rimezic</b></div></div></div>
+    </article>
+    <article class="mks-p" data-i="4">
+      <div class="mks-l"><span class="mks-k"><span class="ico"><svg class="i" aria-hidden="true"><use href="#gavel"/></svg></span>05 / 05 · Let the highest bidder win</span><h3 class="h-md">Auction Marketplace</h3>
+        <p class="muted">Run timed auctions, vendor-managed bidding, and dynamic pricing models with ease.</p>
+        <div class="chips"><span class="chip">Art &amp; Collectibles</span><span class="chip">Vintage Fashion Finds</span><span class="chip">Music Memorabilia</span><span class="chip">Car Enthusiast Auctions</span><span class="chip">Jewelry &amp; Watches</span><span class="chip">Historical Artifacts</span><span class="chip">Retro Gaming Treasures</span><span class="chip">Limited Edition Coins</span></div>
+        <a class="btn btn-primary" href="#">Start your own auction marketplace <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      <div class="mks-r"><div class="mm float-a"><div class="mm-h"><svg class="i" aria-hidden="true"><use href="#gavel"/></svg><b>Vintage turntable · Lot 214</b><span class="live-dot" style="margin-left:auto"></span></div>
+        <div class="bid"><div class="now"><div><small class="muted">Current bid</small><br><b>$1,240</b></div><span class="timer">00:04:12</span></div>
+        <div class="feed"><div><p><span>@retroaudio</span><b>$1,240</b></p><p><span>@vinylhead</span><b>$1,180</b></p><p><span>@hifi_kate</span><b>$1,120</b></p><p><span>@retroaudio</span><b>$1,050</b></p><p><span>@vinylhead</span><b>$990</b></p><p><span>@sam_b</span><b>$900</b></p><p><span>@hifi_kate</span><b>$850</b></p><p><span>@sam_b</span><b>$800</b></p></div></div></div></div>
+        <div class="quote"><span class="av">G</span><div><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p style="margin:4px 0">Amazing plugin and free. Vendors can list, bid, and sell independently, while I stay in control.</p><b style="font-size:13px">guilhermesouza007</b></div></div></div>
+    </article>
+    </div>
+  </div></div>
+</div></section>
+
+<section class="sec white"><div class="wrap">
+  <div class="sec-head rv">
+    <span class="eyebrow">The power of 5</span>
+    <h2 class="h-lg" style="margin-top:18px">The power of 5: MultiVendorX features marketplace owners <span class="accent">Love</span></h2>
+    <p class="lead">Discover the game-changing capabilities that separate thriving marketplaces from the rest - and why these five features make all the difference.</p>
+  </div>
+  <div class="p5v" data-stagger="100">
+    <div class="p5c c-pay">
+      <div class="p5-art art-pay" aria-hidden="true">
+        <div class="ck"><div class="ck-h"><i></i><i></i><i></i></div><small>Total</small><b>$128.00</b><div class="ck-btn">Pay now</div></div>
+        <span class="gw g1" style="color:#635bff">stripe</span><span class="gw g2" style="color:#072654">Razorpay</span><span class="gw g3" style="color:#0b5cff">mangopay</span><span class="gw g4" style="color:#003087">PayPal</span>
+        <span class="toast"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span><b>Payment received</b><small>Split to 3 vendors</small></span></span>
+      </div>
+      <div class="p5-tx"><span class="p5-k"><svg class="i" aria-hidden="true"><use href="#card"/></svg> Payments</span><h3>Global Payments, Seamlessly Handled</h3><p>Empower transactions with confidence. MultiVendorX supports secure payment gateways, ensuring smooth, trustworthy transactions for buyers and vendors worldwide.</p></div>
+    </div>
+    <div class="p5c c-lang">
+      <div class="p5-art art-lang" aria-hidden="true"><div class="globe"><i></i><i></i><i></i><u></u></div>
+        <div class="say">Shop <span class="accent" data-rotate="now|ahora|jetzt|maintenant|अभी">now</span></div></div>
+      <div class="p5-tx"><span class="p5-k"><svg class="i" aria-hidden="true"><use href="#lang"/></svg> Multilingual</span><h3>Speak their language, win their loyalty</h3><p>Expand into new markets effortlessly. With multilingual support and region-specific configurations, MultiVendorX delivers a localized marketplace experience that builds trust and drives conversions.</p></div>
+    </div>
+    <div class="p5c c-cur">
+      <div class="p5-art art-cur" aria-hidden="true"><div class="price">Price: <span class="tick"><span><b>$49.00</b><b>€45.20</b><b>£38.90</b><b>₹4,099</b></span></span></div>
+        <div class="coins"><span>$</span><span>€</span><span>£</span><span>₹</span></div></div>
+      <div class="p5-tx"><span class="p5-k"><svg class="i" aria-hidden="true"><use href="#coins"/></svg> Multi-currency</span><h3>Multiple currencies, one marketplace</h3><p>Sell globally, earn locally. MultiVendorX supports multiple currencies, offering your international customers the ease of shopping in their own currency, boosting conversions and eliminating guesswork.</p></div>
+    </div>
+    <div class="p5c c-wp">
+      <div class="p5-art art-wp" aria-hidden="true"><span class="nd wpn"><svg class="i" aria-hidden="true"><use href="#wp"/></svg></span><span class="ln"><i></i></span><span class="nd x">X</span><span class="ln"><i></i></span><span class="nd woo">Woo</span></div>
+      <div class="p5-tx"><span class="p5-k"><svg class="i" aria-hidden="true"><use href="#wp"/></svg> Foundation</span><h3>WordPress DNA, WooCommerce muscle</h3><p>Demand synergy, not just compatibility. Built on WordPress and powered by WooCommerce, MultiVendorX combines two industry leaders into a seamless, scalable marketplace solution.</p></div>
+    </div>
+    <div class="p5c c-eco">
+      <div class="p5-art art-eco" aria-hidden="true"><span class="hub">X</span><span class="e e1">WPML</span><span class="e e2">Elementor</span><span class="e e3">Yoast SEO</span><span class="e e4">Rank Math</span></div>
+      <div class="p5-tx"><span class="p5-k"><svg class="i" aria-hidden="true"><use href="#plug"/></svg> Integrations</span><h3>Connects your favorite ecosystem</h3>
+        <ul class="p5-ul"><li><svg class="i" aria-hidden="true"><use href="#check"/></svg>Fully compatible with WPML for language support</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg>Seamless integration with Elementor for design customization</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg>Optimized for Yoast SEO &amp; Rank Math SEO to boost visibility</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" style="overflow:hidden"><div class="wrap">
+  <div class="sec-head rv" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none;gap:40px">
+    <div style="max-width:720px"><span class="eyebrow">Customer stories</span>
+    <h2 class="h-lg" style="margin-top:18px">Voices of change: real stories from those who switched and soared.</h2>
+    <p class="lead">From first-time founders to seasoned marketplace operators, discover how MultiVendorX helped them build faster, scale smarter, and support thousands of vendors without breaking a sweat.</p></div>
+    <span class="wp-badge"><span class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></span> 4.9 / 5 on WordPress.org</span>
+  </div></div>
+  <div class="marquee tm"><div class="track"><div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p><b>Amazing Plugin for Marketplaces! MultiVendorX is a game-changer!</b></p><div class="who"><span class="av" style="background:#5b1fd6">R</span>@rishiratanmishra</div></div>
+<div class="card tcard"><div class="video"><span><svg class="i" aria-hidden="true"><use href="#play"/></svg></span></div><p>Knowing that we will get the help we need if a problem arises is very comforting, and MultiVendorX gives excellent support whether the problem is big or not, whether we have the free or paid version.</p><div class="who"><span class="av" style="background:#13a06b">P</span>@paulinenalu</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>MultivendorX (formerly WCMp) is the best solution we found for our unique need for creating single-vendor websites for Artists and Photographers to sell their art and photography online as fine art prints which DigitalFusion fulfills.</p><div class="who"><span class="av" style="background:#ff5d50">D</span>@digitalfusion</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>I am quite happy with the service so far. I had already liked the product and reached out via chat for help and information.</p><div class="who"><span class="av" style="background:#e8a10b">M</span>@metrocentral</div></div><div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p><b>Amazing Plugin for Marketplaces! MultiVendorX is a game-changer!</b></p><div class="who"><span class="av" style="background:#5b1fd6">R</span>@rishiratanmishra</div></div>
+<div class="card tcard"><div class="video"><span><svg class="i" aria-hidden="true"><use href="#play"/></svg></span></div><p>Knowing that we will get the help we need if a problem arises is very comforting, and MultiVendorX gives excellent support whether the problem is big or not, whether we have the free or paid version.</p><div class="who"><span class="av" style="background:#13a06b">P</span>@paulinenalu</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>MultivendorX (formerly WCMp) is the best solution we found for our unique need for creating single-vendor websites for Artists and Photographers to sell their art and photography online as fine art prints which DigitalFusion fulfills.</p><div class="who"><span class="av" style="background:#ff5d50">D</span>@digitalfusion</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>I am quite happy with the service so far. I had already liked the product and reached out via chat for help and information.</p><div class="who"><span class="av" style="background:#e8a10b">M</span>@metrocentral</div></div></div></div>
+  <div class="marquee tm rev" style="margin-top:18px"><div class="track"><div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>This is the best plugin for multivendors and the support is the best they solve rally quickly any problem you have</p><div class="who"><span class="av" style="background:#2a2350">Q</span>@quenecesitasenvios</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>This plugin is offering all you need to setup a multi vendor market place and the support is great.</p><div class="who"><span class="av" style="background:#5b1fd6">S</span>@samgth</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>The support team is very reactive once you asked some help, even in emergency request.</p><div class="who"><span class="av" style="background:#13a06b">C</span>@chrisreg61</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>This plugin is very affordable and most importantly offers a great amount of tools to help you grow your online marketplace without coding a whole website.</p><div class="who"><span class="av" style="background:#ff5d50">M</span>@maxence1502</div></div><div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>This is the best plugin for multivendors and the support is the best they solve rally quickly any problem you have</p><div class="who"><span class="av" style="background:#2a2350">Q</span>@quenecesitasenvios</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>This plugin is offering all you need to setup a multi vendor market place and the support is great.</p><div class="who"><span class="av" style="background:#5b1fd6">S</span>@samgth</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>The support team is very reactive once you asked some help, even in emergency request.</p><div class="who"><span class="av" style="background:#13a06b">C</span>@chrisreg61</div></div>
+<div class="card tcard"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>This plugin is very affordable and most importantly offers a great amount of tools to help you grow your online marketplace without coding a whole website.</p><div class="who"><span class="av" style="background:#ff5d50">M</span>@maxence1502</div></div></div></div>
 </section>
 
-<!-- Testimonials -->
-<section class="section alt">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Voices of change</p>
-      <h2>Real stories from those who switched and soared</h2>
-    </div>
-    <div class="quotes">
-      <figure class="quote reveal"><div class="stars">★★★★★</div><blockquote>MultivendorX is the best solution we found for our unique need — creating single-vendor websites for artists and photographers to sell their work online as fine art prints.</blockquote><figcaption>@rishiratanmishra</figcaption></figure>
-      <figure class="quote reveal"><div class="stars">★★★★★</div><blockquote>I am quite happy with the service so far. I had already liked the product and reached out via chat for help and information.</blockquote><figcaption>@digitalfusion</figcaption></figure>
-      <figure class="quote reveal"><div class="stars">★★★★★</div><blockquote>The support team is very reactive once you ask for help, even on emergency requests.</blockquote><figcaption>@samgth</figcaption></figure>
-      <figure class="quote reveal"><div class="stars">★★★★★</div><blockquote>Very affordable, and most importantly offers a great amount of tools to help you grow your online marketplace without coding a whole website.</blockquote><figcaption>@chrisreg61</figcaption></figure>
-    </div>
+<section class="sec white blog"><div class="wrap">
+  <div class="sec-head rv" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none">
+    <div><span class="eyebrow">Blog</span><h2 class="h-lg" style="margin-top:18px">Marketplace insights &amp; strategies</h2>
+      <div class="three-pts" style="justify-content:flex-start"><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> Explore marketplace trends</span><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> Unlock growth strategies</span><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> Get practical tips</span></div></div>
+    <a class="btn btn-ghost" href="#">Words Worth Reading <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
   </div>
-</section>
+  <div class="grid g3" data-stagger="100">
+    <a class="card lift" href="#"><div class="th" style="background:linear-gradient(135deg,#efe7ff,#d9c8ff)"><b>Smarter Insights, Bigger Growth</b><div class="art"><i style="height:40%"></i><i style="height:65%"></i><i style="height:55%"></i><i style="height:90%"></i></div></div><div class="bd"><span class="tag">Analytics</span><h3>Predictive Analytics for Marketplaces: How AI-Driven Insights Help You Grow Revenue, Retain Vendors, and Scale Smarter (2026 Guide)</h3><p class="meta">Purnendu Dash · July 6, 2026 · 27 mins read</p></div></a>
+    <a class="card lift" href="#"><div class="th" style="background:linear-gradient(135deg,#fff0ee,#ffd3cc)"><b>Build the Right Marketplace</b><div class="art"><i style="height:70%"></i><i style="height:45%"></i><i style="height:85%"></i><i style="height:60%"></i></div></div><div class="bd"><span class="tag coral">Strategy</span><h3>Etsy, Airbnb, Fiverr – Which Marketplace Model Should You Actually Build?</h3><p class="meta">Purnendu Dash · June 22, 2026 · 8 mins read</p></div></a>
+    <a class="card lift" href="#"><div class="th" style="background:linear-gradient(135deg,#e6f7f0,#bfead7)"><b>Smart Revenue Model. Stronger Marketplace.</b><div class="art"><i style="height:35%"></i><i style="height:55%"></i><i style="height:75%"></i><i style="height:95%"></i></div></div><div class="bd"><span class="tag green">Revenue</span><h3>Marketplace Revenue Models in 2027: How to Choose the Right Way to Make Money</h3><p class="meta">Purnendu Dash · July 28, 2025 · 36 mins read</p></div></a>
+  </div>
+</div></section>
 
-<!-- Blog -->
-<section class="section">
-  <div class="container">
-    <div class="section-head row reveal">
-      <div><p class="eyebrow">Marketplace insights</p><h2>Strategies to grow faster</h2></div>
-      <a class="btn btn-outline" href="https://multivendorx.com/blog/">Read the blog →</a>
-    </div>
-    <div class="posts">
-      <a class="post reveal" href="https://multivendorx.com/blog/"><div class="post-img p1"></div><span class="tag">AI · 27 min read</span><h3>Predictive Analytics for Marketplaces: How AI-Driven Insights Help You Grow Revenue</h3></a>
-      <a class="post reveal" href="https://multivendorx.com/blog/"><div class="post-img p2"></div><span class="tag">Strategy · 8 min read</span><h3>Etsy, Airbnb, Fiverr – Which Marketplace Model Should You Actually Build?</h3></a>
-      <a class="post reveal" href="https://multivendorx.com/blog/"><div class="post-img p3"></div><span class="tag">Revenue · 36 min read</span><h3>Marketplace Revenue Models in 2027: How to Choose the Right Way to Make Money</h3></a>
-    </div>
+<section class="sec"><div class="wrap faqwrap">
+  <div class="side rv l">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="h-lg" style="margin-top:18px">Answers that matter</h2>
+    <ul class="check"><li><svg class="i" aria-hidden="true"><use href="#check"/></svg>Get answers to your marketplace questions</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg>Maximize your plugin's potential</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg>Support for every step of the journey</li></ul>
+    <div class="card helpbox"><span class="ico"><svg class="i" aria-hidden="true"><use href="#msg"/></svg></span><div><b>Still Curious?</b><p class="muted" style="font-size:14px">Talk to our team.</p></div><a class="link" href="support.html" style="margin-left:auto">Ask <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
   </div>
-</section>
+  <div class="faq rv r">
+    <div class="item open"><button class="q">What is MultiVendorX?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">MultiVendorX is a powerful WordPress plugin that transforms your WooCommerce store into a full-featured multivendor marketplace, allowing multiple vendors to sell products and manage their own stores.</div></div>
+    <div class="item"><button class="q">What is a multi-vendor marketplace and how does it work?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">A multi-vendor marketplace allows multiple sellers to create their own stores, manage products, fulfill orders, and sell through a single WooCommerce-powered platform. Marketplace owners can manage commissions, vendor approvals, payouts, shipping, and marketplace operations from one centralized dashboard using MultiVendorX.</div></div>
+    <div class="item"><button class="q">Can I create a multi-vendor marketplace with WooCommerce using MultiVendorX?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">Yes. MultiVendorX extends WooCommerce and transforms your WordPress website into a fully functional multi-vendor marketplace. You can onboard unlimited vendors, create independent storefronts, automate commissions and payouts, and support physical, digital, booking, rental, or subscription-based marketplaces. Using modules like Shared Listings, Marketplace Membership, Staff Manager, Wholesale, and Store Analytics, you can build advanced marketplace business models without custom development.</div></div>
+    <div class="item"><button class="q">Can customers search vendors and stores by location?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">MultiVendorX supports location-based vendor discovery, allowing customers to search nearby stores, vendors, and products based on city, region, or geographic location. Using the Geo Location, vendors can pin store locations on maps, while customers can discover nearby sellers more easily. This is ideal for hyperlocal delivery, local services, restaurant marketplaces, pharmacy marketplaces, and city-based delivery platforms.</div></div>
+    <div class="item"><button class="q">Does MultiVendorX support Stripe Connect split payments?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">MultiVendorX supports Stripe Connect split payments, enabling automatic commission distribution between marketplace admins and vendors. Using the Stripe Marketplace and Marketplace Fee modules, admins can configure flexible commission structures, vendor payout schedules, transaction fees, and region-based payout workflows directly from the marketplace dashboard.</div></div>
+    <div class="item"><button class="q">Does MultiVendorX support PayPal Marketplace payouts?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">MultiVendorX integrates with PayPal Marketplace to support vendor payouts, commission management, and marketplace payment distribution across multiple vendors. Using PayPal Marketplace, Vendor Withdrawal, and Marketplace Fee modules, admins can manage secure vendor disbursement workflows for global and cross-border marketplaces.</div></div>
+    <div class="item"><button class="q">Can vendors manage their own products, shipping, and orders from the frontend dashboard?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">MultiVendorX provides vendors with a dedicated frontend dashboard where they can manage products, inventory, orders, shipping methods, refunds, analytics, earnings, bookings, subscriptions, and customer communication. Modules like Vendor Dashboard, Store Shipping, Store Analytics, Vacation, Staff Manager, and Store Policies help vendors operate independently without needing WordPress admin access.</div></div>
+    <div class="item"><button class="q">Can multiple vendors sell the same product with different prices and stock?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">MultiVendorX supports Shared Listings, allowing multiple vendors to sell the same product with different pricing, stock levels, shipping rules, delivery locations, and storefront policies. Using the Shared Listing and Franchise modules, marketplaces can support distributed inventory systems, regional fulfillment, and franchise-style commerce models similar to Amazon and enterprise retail marketplaces.</div></div>
+    <div class="item"><button class="q">Can vendors create booking, rental, appointment, or service marketplaces?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">MultiVendorX supports booking, rental, appointment, accommodation, and service-based marketplace models through WooCommerce-compatible integrations. Using Booking, Accommodation, Rental, and Appointments modules, vendors can manage calendars, availability, pricing, reservations, and appointment workflows directly from their frontend dashboard.</div></div>
+    <div class="item"><button class="q">Can admins create different commission structures for different vendors or product wise?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">MultiVendorX allows admins to configure flexible commission structures based on vendor plans, memberships, product categories, regions, or subscription levels. Using Marketplace Membership, Marketplace Fee, and Commission modules, admins can create percentage-based, fixed, hybrid, or tiered commission systems for different marketplace business models.</div></div>
+    <div class="item"><button class="q">Is MultiVendorX scalable for large or enterprise multi-vendor marketplaces?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">MultiVendorX is designed to support scalable WooCommerce marketplaces with large vendor catalogs, distributed storefronts, regional operations, advanced commission systems, and enterprise marketplace workflows. Using modules like Shared Listings, Franchise, Staff Manager, Wholesale, Store Analytics, and Geo Location, businesses can build enterprise-grade marketplaces with centralized management and decentralized vendor operations.</div></div>
+  </div>
+</div></section>
 
-<!-- FAQ -->
-<section class="section alt" id="faq">
-  <div class="container narrow">
-    <div class="section-head reveal">
-      <p class="eyebrow">Answers that matter</p>
-      <h2>Frequently asked questions</h2>
-    </div>
-    <div class="faq reveal">
-      <details open><summary>What is MultiVendorX?</summary><p>MultiVendorX is a powerful WordPress plugin that transforms your WooCommerce store into a full-featured multi-vendor marketplace, allowing multiple vendors to sell products and manage their own stores.</p></details>
-      <details><summary>Can I create a multi-vendor marketplace with WooCommerce?</summary><p>Yes. MultiVendorX extends WooCommerce so you can onboard unlimited vendors, create independent storefronts, automate commissions and payouts, and support physical, digital, booking, rental or subscription products.</p></details>
-      <details><summary>Does MultiVendorX support Stripe Connect split payments?</summary><p>Yes. Stripe Connect split payments enable automatic commission distribution between admins and vendors, with flexible commission structures, payout schedules and transaction fees.</p></details>
-      <details><summary>Does it support PayPal Marketplace payouts?</summary><p>Yes. The PayPal Marketplace integration handles vendor payouts, commission management and payment distribution across multiple vendors.</p></details>
-      <details><summary>Can multiple vendors sell the same product?</summary><p>Yes. Shared Listings let multiple vendors sell the same product with different pricing, stock levels, shipping rules and storefront policies.</p></details>
-      <details><summary>Can admins set different commissions per vendor or product?</summary><p>Yes. Configure percentage, fixed, hybrid or tiered commissions based on vendor plans, memberships, product categories, regions or subscription levels.</p></details>
-      <details><summary>Is MultiVendorX scalable for enterprise marketplaces?</summary><p>Yes. It supports large vendor catalogs, distributed storefronts, regional operations and advanced workflows via Shared Listings, Franchise, Staff Manager, Wholesale and more.</p></details>
-    </div>
-    <p class="center mt"><a href="https://multivendorx.com/docs/faqs/" class="link">Still curious? See all FAQs →</a></p>
-  </div>
-</section>
+<section class="cta-band" style="background:var(--bg)"><div class="wrap"><div class="cta-box rv s">
+  <div><span class="eyebrow">Get started</span><h2 style="margin-top:18px">Your marketplace vision deserves nothing less</h2>
+  <h2><span class="rot" data-rotate="Smart commissions|Developer friendly|Realtime payouts|Lightning fast">Smart commissions</span></h2></div>
+  <div class="acts"><a class="btn btn-primary" href="pricing.html">Launch Your Marketplace! <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+  <span class="note"><svg class="i" aria-hidden="true"><use href="#shield"/></svg> 15-day full refund · No fine print</span></div></div></div></section>
 
-<!-- CTA -->
-<section class="cta">
-  <div class="container cta-inner reveal">
-    <h2>Your marketplace vision deserves nothing less</h2>
-    <div class="chips light"><span>Smart commissions</span><span>Vendor-focused design</span><span>Payment flexibility</span><span>Community powered</span><span>Developer friendly</span></div>
-    <div class="hero-actions center-row">
-      <a class="btn btn-white btn-lg" href="https://multivendorx.com/pricing/">Launch Your Marketplace</a>
-      <a class="btn btn-outline-light btn-lg" href="https://multivendorx.com/consult-with-marketplace-experts/">Book a free strategy call</a>
-    </div>
-  </div>
-</section>
 </main>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container foot-grid">
-    <div class="foot-brand">
-      <a class="logo light" href="https://multivendorx.com/"><span class="logo-mark">M</span><span>MultiVendor<b>X</b></span></a>
-      <p>The complete WooCommerce multi-vendor marketplace solution.</p>
-      <form class="newsletter" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed ✓'">
-        <input type="email" required placeholder="Your email" aria-label="Email address">
-        <button type="submit">Subscribe</button>
-      </form>
+<footer class="ftr"><div class="wrap">
+  <div class="ftr-top">
+    <div class="ftr-brand">
+      <a class="logo" href="index.html">MultiVendor<span class="x">X</span></a>
+      <p class="tagline">Powering Marketplaces That Scale, Sell, and Succeed.</p>
+      <div class="news"><label for="ftr-email">Email Newsletter</label>
+        <form><input id="ftr-email" type="email" placeholder="Email Address"><button type="button">Subscribe <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></button></form></div>
+      <div class="social"><a href="#" aria-label="Facebook"><svg class="i" aria-hidden="true"><use href="#fb"/></svg></a><a href="#" aria-label="Instagram"><svg class="i" aria-hidden="true"><use href="#ig"/></svg></a><a href="#" aria-label="Twitter / X"><svg class="i" aria-hidden="true"><use href="#xlogo"/></svg></a><a href="#" aria-label="WordPress"><svg class="i" aria-hidden="true"><use href="#wp"/></svg></a></div>
     </div>
-    <div><h4>Marketplaces</h4>
-      <a href="https://multivendorx.com/niche-marketplace/">Niche</a><a href="https://multivendorx.com/subscription-marketplace/">Subscription</a><a href="https://multivendorx.com/auction-marketplace/">Auction</a><a href="https://multivendorx.com/booking-marketplace/">Booking</a><a href="https://multivendorx.com/rental-marketplace/">Rental</a></div>
-    <div><h4>Resources</h4>
-      <a href="https://multivendorx.com/docs/">Documentation</a><a href="https://multivendorx.com/community/">Community</a><a href="https://multivendorx.com/support/">Support</a><a href="https://multivendorx.com/migration/">Migration guide</a><a href="https://multivendorx.com/multivendorx-changelog/">Changelog</a><a href="https://multivendorx.com/third-party-plugins/">Third-party plugins</a></div>
-    <div><h4>Company</h4>
-      <a href="https://multivendorx.com/about-us/">About us</a><a href="https://multivendorx.com/contact-us/">Contact us</a><a href="https://multivendorx.com/brand-assets/">Brand assets</a><a href="https://multivendorx.com/multivendorx-support-policy/">Support policy</a><a href="https://multivendorx.com/refund-policy/">Refund policy</a></div>
+    <div>
+      <h5>Resources</h5><p class="sub">Docs, guides &amp; dev tools</p>
+      <ul>
+        <li><a href="#">API documentation</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="migration.html">Migration guide</a></li>
+        <li><a href="#">Changelog</a></li>
+        <li><a href="#">Third party plugins</a></li>
+        <li><a href="#">Third party themes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5><p class="sub">Who we are &amp; policies</p>
+      <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="about-us.html#locate">Contact us</a></li>
+        <li><a href="#">Brand assets</a></li>
+        <li><a href="#">Support policy</a></li>
+        <li><a href="#">Refund policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>MultiVendorX vs</h5><p class="sub">Side-by-side feature comparisons</p>
+      <div class="vs">
+        <a href="compare-features.html"><em>VS</em>All alternatives <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a href="#"><em>VS</em>WCFM <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a href="multivendorx-vs-dokan.html"><em>VS</em>Dokan <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+      <h5 class="mt">Our products</h5>
+      <div class="prods">
+        <a class="prod" href="#"><i>C</i><span>CatalogX<small>Plugin</small></span></a>
+        <a class="prod" href="#"><i class="n">N</i><span>Notifima<small>Plugin</small></span></a>
+      </div>
+    </div>
   </div>
-  <div class="container foot-bottom">
-    <p>© 2026 MultiVendorX</p>
-    <div><a href="https://www.facebook.com/groups/226246620006065/">Facebook</a><a href="https://wordpress.org/plugins/dc-woocommerce-multi-vendor/">WordPress</a><a href="https://github.com/multivendorx">GitHub</a></div>
-  </div>
+  <div class="ftr-bot"><span>Copyright © 2026 MultiVendorX</span><nav><a href="#">Affiliates</a><a href="#">Terms &amp; Conditions</a><a href="#">Privacy Policy</a></nav></div>
+</div>
+<div class="ftr-word" aria-hidden="true">MultiVendorX</div>
 </footer>
 
-<script src="assets/main.js"></script>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/mvx.js"></script>
 </body>
 </html>
