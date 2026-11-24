@@ -103,3 +103,12 @@
     $('.blk').each(function () { $(this).toggleClass('hide', t !== 'all' && $(this).data('tier') !== t); });
   });
 })(jQuery);
+
+/* blog category filter */
+(function ($) {
+  $('.blog-tabs .fx-cat').on('click', function () {
+    var c = $(this).data('cat');
+    $(this).addClass('on').siblings().removeClass('on');
+    $('.blog-wrap .post').each(function () { $(this).toggleClass('hide', c !== 'all' && $(this).data('cat') !== c); });
+  });
+})(jQuery);
