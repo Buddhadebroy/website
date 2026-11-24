@@ -641,12 +641,3 @@ ul.mixl b{color:var(--ink);margin-right:4px}
 .hub i{border-radius:8px;animation:none;opacity:.6}
 @media (max-width:600px){.ws-r{grid-template-columns:90px 1fr 74px;font-size:12.5px}.ws-l{grid-template-columns:1fr}}
 @media (max-width:900px){.tl{grid-template-columns:1fr}}
-
-/* lighter weights everywhere */
-h1,h2,h3,h4,h5,h6,.h-xl,.h-lg,.h-md,.h-sm{font-weight:500!important}
-b,strong{font-weight:500}
-.btn,.eyebrow,.tag{font-weight:500}
-.tl-t,.mt-t{position:relative;overflow:hidden}
-.ap{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--brand);pointer-events:none}
-.mt-t.on .ap{background:#fff;opacity:.7}
-.tl-t.on .ap{background:var(--brand)}

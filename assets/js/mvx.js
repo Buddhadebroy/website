@@ -343,32 +343,3 @@ jQuery(function ($) {
     $d.prop('open', open); $(this).text(open ? 'Close all categories' : 'Open all categories');
   });
 });
-
-/* v3: auto-advance tools + marketplace tabs while visible (pause on hover), with a progress line */
-jQuery(function ($) {
-  function auto($box, tabSel, ms) {
-    var vis = false, hov = false, t0 = Date.now(), $tabs = $box.find(tabSel);
-    $tabs.append('<i class="ap"></i>');
-    $box.on('mouseenter', function () { hov = true; }).on('mouseleave', function () { hov = false; t0 = Date.now(); });
-    $box.on('click', tabSel, function (e) { if (e.originalEvent) t0 = Date.now(); });
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; t0 = Date.now(); }, { threshold: .3 }).observe($box[0]); else vis = true;
-    setInterval(function () {
-      var $on = $tabs.filter('.on'), p = Math.min(1, (Date.now() - t0) / ms);
-      if (!vis || hov) { t0 = Date.now() - p * ms; return; }
-      $tabs.find('.ap').css('width', 0); $on.find('.ap').css('width', (p * 100) + '%');
-      if (p >= 1) { t0 = Date.now(); var $n = $tabs.eq(($tabs.index($on) + 1) % $tabs.length); $n.trigger('click'); }
-    }, 60);
-  }
-  $('[data-tlx]').each(function () { auto($(this), '.tl-t', 5500); });
-  $('[data-mtx]').each(function () { auto($(this), '.mt-t', 6500); });
-  /* dashboard numbers count up when their pane opens */
-  $('[data-vd]').on('click', '.vd-nav button', function () {}).find('.vd-k b').each(function () { $(this).attr('data-final', $(this).text()); });
-  setInterval(function () {
-    $('.vd-p.on .vd-k b:not(.done)').each(function () {
-      var $b = $(this), f = $b.attr('data-final'), m = f.match(/[\d.,]+/); if (!m) return;
-      var to = parseFloat(m[0].replace(/,/g, '')), dec = (m[0].split('.')[1] || '').length;
-      $b.addClass('done'); $({ v: 0 }).animate({ v: to }, { duration: 1100, step: function (v) { $b.text(f.replace(m[0], v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }))); }, complete: function () { $b.text(f); } });
-    });
-    $('.vd-p:not(.on) .vd-k b.done').removeClass('done');
-  }, 300);
-});
