@@ -153,7 +153,7 @@ jQuery(function ($) {
         });
       }
       $r.find('[data-fp-n]').text(n); $r.find('[data-fp-l]').text(st.view === 'feat' ? (n === 1 ? 'feature' : 'features') : (n === 1 ? 'module' : 'modules'));
-      $r.find('.fp-empty, .fz-empty').prop('hidden', n > 0);
+      $r.find('.fp-empty').prop('hidden', n > 0);
     }
     $q.on('input', function () { st.q = this.value; $q.not(this).val(this.value); apply(); });
     $q.first().on('keydown', function (e) { if (e.key === 'Enter') $('html,body').animate({ scrollTop: $r.offset().top - 90 }, 400); });
@@ -208,7 +208,7 @@ jQuery(function ($) {
         });
         $s.toggle(c > 0); if (q || diff || ex || cat !== 'all') $s.addClass('open'); n += c;
       });
-      $r.find('[data-cf-n]').text(n); $r.find('.fp-empty, .fz-empty').prop('hidden', n > 0);
+      $r.find('[data-cf-n]').text(n); $r.find('.fp-empty').prop('hidden', n > 0);
     }
     $r.find('[data-cf-q]').on('input', apply);
     $r.find('[data-cf-cat],[data-cf-diff],[data-cf-ex]').on('change', apply);
@@ -224,13 +224,13 @@ jQuery(function ($) {
     var $r = $(this), cat = 'All', $q = $('[data-bl-q]');
     function apply() {
       var q = ($q.val() || '').trim().toLowerCase(), n = 0;
-      $r.find('.bl-card, .bz-card').each(function () {
+      $r.find('.bl-card').each(function () {
         var ok = (cat === 'All' || $(this).data('bc') === cat) && (!q || $(this).data('n').indexOf(q) > -1);
         $(this).toggle(ok); if (ok) n++;
       });
-      $r.find('[data-bl-n]').text(n); $r.find('.fp-empty, .fz-empty').prop('hidden', n > 0);
+      $r.find('[data-bl-n]').text(n); $r.find('.fp-empty').prop('hidden', n > 0);
     }
-    $r.find('.bl-c, .bz-c').on('click', function () { cat = $(this).data('bc'); $(this).addClass('on').siblings().removeClass('on'); apply(); });
+    $r.find('.bl-c').on('click', function () { cat = $(this).data('bc'); $(this).addClass('on').siblings().removeClass('on'); apply(); });
     $q.on('input', function () { apply(); if (this.value.length === 1) $('html,body').animate({ scrollTop: $r.offset().top - 90 }, 400); });
   });
 
@@ -269,77 +269,4 @@ jQuery(function ($) {
     var o = $(this).offset(), x = (e.pageX - o.left) / $(this).outerWidth() - .5, y = (e.pageY - o.top) / $(this).outerHeight() - .5;
     $(this).css('transform', 'perspective(1200px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg)');
   }).on('mouseleave', function () { $(this).css('transform', ''); });
-});
-
-/* v3: vendor dashboard demo cycles its panes while visible */
-jQuery(function ($) {
-  $('[data-vd]').each(function () {
-    var $d = $(this), $b = $d.find('.vd-nav button'), i = 0, t = null, vis = false, hov = false;
-    function go(n) { i = n % $b.length; $b.removeClass('on').eq(i).addClass('on'); $d.find('.vd-p').removeClass('on').eq(i).addClass('on'); }
-    function tick() { clearInterval(t); t = setInterval(function () { if (vis && !hov) go(i + 1); }, 4200); }
-    $b.on('click', function () { go($b.index(this)); tick(); });
-    $d.on('mouseenter', function () { hov = true; }).on('mouseleave', function () { hov = false; });
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }, { threshold: .3 }).observe(this); else vis = true;
-    tick();
-  });
-});
-
-/* v3: tools tabs */
-jQuery(function ($) {
-  $('[data-tlx]').each(function () {
-    var $x = $(this);
-    $x.on('click', '.tl-t', function () {
-      var id = $(this).data('tl');
-      $x.find('.tl-t').removeClass('on'); $(this).addClass('on');
-      $x.find('.tl-p').removeClass('on').filter('[data-tl="' + id + '"]').addClass('on');
-    });
-  });
-});
-
-/* v3: marketplace type tabs */
-jQuery(function ($) {
-  $('[data-mtx]').on('click', '.mt-t', function () {
-    var $x = $(this).closest('[data-mtx]'), i = $(this).data('mt');
-    $x.find('.mt-t').removeClass('on'); $(this).addClass('on');
-    $x.find('.mt-p').removeClass('on').filter('[data-mt="' + i + '"]').addClass('on');
-  });
-});
-
-/* v3: features filter (segment, module, for who, price, search) */
-jQuery(function ($) {
-  var $f = $('[data-fz]'); if (!$f.length) return;
-  var st = { seg: 'all', mod: 'all', who: [], price: [], q: '' };
-  function lab(k, v) { return $f.find('.fz-o[data-k="' + k + '"][data-v="' + v + '"] span').text(); }
-  function run() {
-    var n = 0;
-    $f.find('.fz-c').each(function () {
-      var $c = $(this), w = ($c.data('who') || '').split(' ');
-      var ok = (st.seg === 'all' || $c.data('seg') === st.seg) && (st.mod === 'all' || $c.data('mod') === st.mod)
-        && (!st.who.length || st.who.some(function (x) { return w.indexOf(x) > -1; }))
-        && (!st.price.length || st.price.indexOf($c.data('price')) > -1)
-        && (!st.q || $c.text().toLowerCase().indexOf(st.q) > -1);
-      $c.toggle(ok); if (ok) n++;
-    });
-    $f.find('.fz-s').each(function () { var k = $(this).find('.fz-c:visible').length; $(this).toggle(k > 0).find('h3 em').text('(' + k + ')'); });
-    $f.find('[data-fz-n]').text(n); $f.find('.fz-empty').prop('hidden', n > 0);
-    var ch = '<span>' + (st.seg === 'all' ? 'All Segment' : lab('seg', st.seg)) + '</span><span>' + (st.mod === 'all' ? 'All Modules' : lab('mod', st.mod)) + '</span>';
-    st.who.concat(st.price).forEach(function (x) { ch += '<span>' + x.charAt(0).toUpperCase() + x.slice(1) + '</span>'; });
-    if (st.q) ch += '<span>"' + $('<i>').text(st.q).html() + '"</span>';
-    $f.find('[data-fz-chips]').html(ch + '<button type="button" data-fz-clear>Clear All</button>');
-  }
-  $f.on('click', '.fz-o', function () { var k = $(this).data('k'); $f.find('.fz-o[data-k="' + k + '"]').removeClass('on'); $(this).addClass('on'); st[k] = $(this).data('v'); run(); });
-  $f.on('change', '.fz-ck input', function () { var k = $(this).data('k'); st[k] = $f.find('.fz-ck input[data-k="' + k + '"]:checked').map(function () { return this.value; }).get(); run(); });
-  $f.on('click', '.fz-more', function () { var $g = $(this).closest('.fz-grp').toggleClass('open'); $(this).text($g.hasClass('open') ? '- Show less' : '+ Show more'); });
-  $f.on('click', '.fz-tog', function () { $(this).closest('.fz-side').toggleClass('open'); });
-  $(document).on('click', '[data-fz-clear]', function () { st = { seg: 'all', mod: 'all', who: [], price: [], q: '' }; $f.find('.fz-o').removeClass('on').filter('[data-v="all"]').addClass('on'); $f.find('.fz-ck input').prop('checked', false); $('[data-fz-q]').val(''); run(); });
-  $('[data-fz-q]').on('input', function () { st.q = $.trim(this.value).toLowerCase(); run(); });
-  run();
-});
-
-/* v3: dokan page */
-jQuery(function ($) {
-  $('[data-dv-all]').on('click', function () {
-    var $d = $('.dv-cat'), open = $d.filter('[open]').length < $d.length;
-    $d.prop('open', open); $(this).text(open ? 'Close all categories' : 'Open all categories');
-  });
 });
