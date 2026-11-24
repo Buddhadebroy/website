@@ -337,3 +337,33 @@ jQuery(function ($) {
   run();
 });
 
+$(function () {
+  /* vs Dokan: feature tables with fixed side counter */
+  $('[data-fscroll]').each(function () {
+    var $w = $(this), $cats = $w.find('.fs-cat'), $li = $w.find('[data-fs-i]');
+    var total = +$w.find('[data-fs-total]').data('fs-total') || 1, cur = -1;
+    var $tm = $w.find('[data-fs-tm]'), $td = $w.find('[data-fs-td]'), $bm = $w.find('[data-fs-bm]'), $bd = $w.find('[data-fs-bd]');
+    function count($el, to) {
+      var el = $el[0]; if (!el) return;
+      if (el._raf) cancelAnimationFrame(el._raf);
+      var from = +el.textContent || 0, t0 = null; if (from === to) return;
+      (function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 450);
+        el.textContent = Math.round(from + (to - from) * k); if (k < 1) el._raf = requestAnimationFrame(step); })(performance.now());
+    }
+    function upd() {
+      var line = window.innerHeight * 0.45, idx = 0;
+      $cats.each(function (i) { if (this.getBoundingClientRect().top <= line) idx = i; });
+      if (idx === cur) return; cur = idx;
+      var m = 0, d = 0;
+      $cats.each(function (i) { if (i <= idx) { m += +$(this).data('m'); d += +$(this).data('d'); } });
+      $li.each(function (i) { $(this).toggleClass('done', i < idx).toggleClass('on', i === idx); });
+      count($tm, m); count($td, d);
+      $bm.css('--w', (m / total * 100) + '%'); $bd.css('--w', (d / total * 100) + '%');
+    }
+    $li.on('click', function () {
+      var t = $cats.eq(+$(this).data('fs-i')).offset().top - 150;
+      $('html,body').animate({ scrollTop: t }, 500);
+    });
+    $(window).on('scroll resize', upd); upd();
+  });
+});
