@@ -244,7 +244,6 @@ jQuery(function ($) {
 
   /* rotating words */
   $('[data-rotate]').each(function () {
-    if ($(this).closest('h1,h2,h3').length) return; /* headings stay still */
     var $e = $(this), words = $e.data('rotate').split('|'), i = 0;
     setInterval(function () {
       i = (i + 1) % words.length;
@@ -266,63 +265,8 @@ jQuery(function ($) {
   });
 
   /* tilt on hover for .tilt elements */
-  $('.tilt-off').on('mousemove', function (e) {
+  $('.tilt').on('mousemove', function (e) {
     var o = $(this).offset(), x = (e.pageX - o.left) / $(this).outerWidth() - .5, y = (e.pageY - o.top) / $(this).outerHeight() - .5;
     $(this).css('transform', 'perspective(1200px) rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg)');
   }).on('mouseleave', function () { $(this).css('transform', ''); });
-});
-
-/* v3: vendor dashboard demo cycles its panes while visible */
-jQuery(function ($) {
-  $('[data-vd]').each(function () {
-    var $d = $(this), $b = $d.find('.vd-nav button'), i = 0, t = null, vis = false, hov = false;
-    function go(n) { i = n % $b.length; $b.removeClass('on').eq(i).addClass('on'); $d.find('.vd-p').removeClass('on').eq(i).addClass('on'); }
-    function tick() { clearInterval(t); t = setInterval(function () { if (vis && !hov) go(i + 1); }, 4200); }
-    $b.on('click', function () { go($b.index(this)); tick(); });
-    $d.on('mouseenter', function () { hov = true; }).on('mouseleave', function () { hov = false; });
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }, { threshold: .3 }).observe(this); else vis = true;
-    tick();
-  });
-});
-
-/* v3: tools tabs */
-jQuery(function ($) {
-  $('[data-tlx]').each(function () {
-    var $x = $(this);
-    $x.on('click', '.tl-t', function () {
-      var id = $(this).data('tl');
-      $x.find('.tl-t').removeClass('on'); $(this).addClass('on');
-      $x.find('.tl-p').removeClass('on').filter('[data-tl="' + id + '"]').addClass('on');
-    });
-  });
-});
-/* v3: dokan page */
-jQuery(function ($) {
-  $('[data-dv-all]').on('click', function () {
-    var $d = $('.dv-cat'), open = $d.filter('[open]').length < $d.length;
-    $d.prop('open', open); $(this).text(open ? 'Close all categories' : 'Open all categories');
-  });
-});
-
-/* round 5: feature-gap bars grow when visible */
-jQuery(function ($) {
-  $('[data-gp]').each(function () {
-    var el = this;
-    if (!('IntersectionObserver' in window)) { $(el).addClass('in'); return; }
-    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { $(el).addClass('in'); io.disconnect(); } }, { threshold: .25 });
-    io.observe(el);
-  });
-});
-
-/* round 5: language / currency graphics step through their states together */
-jQuery(function ($) {
-  $('[data-loc]').each(function () {
-    var $b = $(this), $p = $b.find('.loc-pills span'), $t = $b.find('[data-l]'), i = 0;
-    setInterval(function () {
-      i = (i + 1) % $p.length;
-      $p.removeClass('on').eq(i).addClass('on');
-      $t.addClass('out');
-      setTimeout(function () { $t.each(function () { $(this).text($(this).data('l').split('|')[i]); }).removeClass('out'); }, 250);
-    }, 2600);
-  });
 });
