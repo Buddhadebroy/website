@@ -1570,3 +1570,54 @@ ul.mixl b{font-size:15px;color:var(--ink)}
 .dx-ladder .dxb em{text-align:right}
 .dx-price{align-items:start}
 .dx-tl .tl{border:0!important;padding:0!important;background:none!important;margin:0!important;box-shadow:none!important}
+/* ===== pricing redesign (round 8) ===== */
+.pq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;text-align:left;align-items:stretch}
+.pq{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 20px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--sh)}
+.pq.pop{background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box;border:1.5px solid transparent;box-shadow:0 24px 50px -30px rgba(80,7,170,.45)}
+.pq.free{background:#faf9fd}
+.pq .rib{position:absolute;top:-12px;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:5px;white-space:nowrap;background:var(--brand);color:#fff;font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:99px}
+.pq .rib svg.i{width:12px;height:12px;fill:#fff;stroke:none}
+.pq .pqh{display:flex;gap:11px;align-items:center}
+.pq .pqi{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--brand-50);color:var(--brand);flex:none}
+.pq.pop .pqi{background:var(--brand);color:#fff}
+.pq h3{font-size:18px;font-weight:600}
+.pq .pqh p{font-size:12.5px;color:var(--muted);line-height:1.35}
+.pq .pqp{display:flex;align-items:baseline;gap:4px}
+.pq .pqp sup{font-size:18px;font-weight:600;align-self:flex-start;margin-top:6px}
+.pq .pqp b{font-size:44px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.pq.pop .pqp b{color:var(--brand)}
+.pq .pqp span{font-size:14px;color:var(--muted);margin-left:2px}
+.pq .pqs{display:grid;gap:8px;padding:12px;border-radius:10px;background:var(--bg)}
+.pq .dots{display:grid;grid-template-columns:repeat(10,1fr);gap:4px}
+.pq .dots i{height:9px;border-radius:3px;background:#e4dff2}
+.pq .dots i.on{background:var(--brand)}
+.pq .pqs span{font-size:13px;color:var(--muted)}.pq .pqs b{color:var(--ink);font-weight:600}
+.pq ul{list-style:none;display:grid;gap:8px;padding:12px;border-radius:10px;background:#fff;border:1px dashed var(--line)}
+.pq li{display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--ink-2)}
+.pq li svg.i{width:15px;height:15px;color:var(--brand);stroke-width:2.4}
+.pq .btn{justify-content:center;margin-top:auto}
+.pq-inc{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 22px;padding:14px 20px;border-radius:14px;background:var(--brand-50);font-size:14px;font-weight:600;color:var(--ink-2)}
+.pq-inc span{display:inline-flex;align-items:center;gap:7px}
+.pq-inc svg.i{width:17px;height:17px;color:var(--brand)}
+.pq-inc .lab{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
+.pq-trust{margin-top:12px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;font-size:13.5px;color:var(--muted)}
+.pq-trust span{display:inline-flex;align-items:center;gap:7px}
+.pq-trust svg.i{width:16px;height:16px;color:var(--green)}
+.pq-trust b{color:var(--ink-2);font-weight:600}
+.cmp2{max-width:880px;margin:0 auto;padding:8px 24px 12px}
+.ch2,.cr2{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;align-items:center}
+.ch2{padding:14px 0;border-bottom:1px solid var(--line);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.ch2 .pro{color:var(--brand)}
+.cr2{padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.cr2:last-child{border-bottom:0}
+.cr2 .cnm{font-weight:600;color:var(--ink)}
+.cr2 .cfv{color:var(--muted)}
+.cr2 .cfv .no{font-style:normal;font-size:13px;color:var(--faint)}
+.cr2 .cpv{display:flex;align-items:center;gap:10px}
+.cr2 .cpv b{font-weight:700;color:var(--brand)}
+.cr2 .cpv em{font-style:normal;font-size:11.5px;font-weight:700;color:var(--green);background:var(--green-50);padding:2px 8px;border-radius:6px}
+.cr2 .cpv em.eq{color:var(--faint);background:var(--bg)}
+@media (max-width:1100px){.pq-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.pq-grid{grid-template-columns:1fr}.pq-inc{justify-content:flex-start}.pq-trust{justify-content:flex-start;text-align:left}.cmp2{padding:6px 14px 10px}.ch2,.cr2{grid-template-columns:1.3fr .8fr 1fr;gap:8px;font-size:13.5px}}
+.pq-trust .link{font-size:inherit}
+.pr-hero{padding-bottom:72px!important}
