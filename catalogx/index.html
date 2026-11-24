@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CatalogX: The WooCommerce Catalog Plugin That Turns Browsers Into Buyers</title>
+<meta name="description" content="Hide prices, replace Add to Cart with enquiry or quote forms, set wholesale pricing by role, and manage every customer conversation from one dashboard.">
+<script>document.documentElement.className+=" js"</script>
+<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/catalogx.css?v=5eb1d3ea">
+</head>
+<body class="pg-home">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+<symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+<symbol id="cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.6l2.4 12.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.5L21.5 8H6"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.3a3.5 3.5 0 0 1 0 7.4M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+<symbol id="quote" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h3M8 17h8M15 12.5h-1.2a1 1 0 0 0 0 2h.9a1 1 0 0 1 0 2H13.4M14.3 11.5v1M14.3 16.5v1"/></symbol>
+<symbol id="msg" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/><path d="M9 11h6M9 14.5h3.5"/></symbol>
+<symbol id="help" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/><path d="M10.2 9.6a2 2 0 0 1 3.8.7c0 1.3-2 1.8-2 3M12 16h.01"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M12 6.5C10.5 5 8 4.5 4 4.5v14c4 0 6.5.5 8 2 1.5-1.5 4-2 8-2v-14c-4 0-6.5.5-8 2zM12 6.5v14"/></symbol>
+<symbol id="catalog" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></symbol>
+<symbol id="list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+<symbol id="tag" viewBox="0 0 24 24"><path d="M3 12.6V4a1 1 0 0 1 1-1h8.6a2 2 0 0 1 1.4.6l7.4 7.4a2 2 0 0 1 0 2.8l-7.6 7.6a2 2 0 0 1-2.8 0L3.6 14a2 2 0 0 1-.6-1.4z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+<symbol id="percent" viewBox="0 0 24 24"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+<symbol id="layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 12 10 5 10-5M2 17l10 5 10-5"/></symbol>
+<symbol id="layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+<symbol id="brush" viewBox="0 0 24 24"><path d="M18.4 2.6a2 2 0 0 1 2.9 2.9L12 14.8 9.2 12z"/><path d="M9.2 12c-2.4 0-4.2 1.8-4.2 4.2 0 1.6-.8 2.8-2 3.3 4 1.3 8.7.2 9-3.7z"/></symbol>
+<symbol id="bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></symbol>
+<symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="eyeoff" viewBox="0 0 24 24"><path d="M10.6 5.1A10 10 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-2.2 3.1M6.6 6.6C3.7 8.4 2 12 2 12s3.5 7 10 7a9.7 9.7 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2M2 2l20 20"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="store" viewBox="0 0 24 24"><path d="M3 9 4.5 4h15L21 9M3 9v1.5a3 3 0 0 0 6 0V9m0 0v1.5a3 3 0 0 0 6 0V9m0 0v1.5a3 3 0 0 0 6 0V9M3 9h18M5 13.5V21h14v-7.5M10 21v-5h4v5"/></symbol>
+<symbol id="truck" viewBox="0 0 24 24"><path d="M14 17V5H2v12h2M14 17H9M14 8h4l4 4.5V17h-2"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></symbol>
+<symbol id="building" viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="1.5"/><path d="M9 21.5v-4h6v4M8.5 7h.01M12 7h.01M15.5 7h.01M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 15h.01M15.5 15h.01"/></symbol>
+<symbol id="sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1.5 14h5M9.5 8h5M17.5 16h5"/></symbol>
+<symbol id="zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+<symbol id="pdf" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 17v-4h1.3a1.3 1.3 0 0 1 0 2.6H8M13 13v4h.8a1.6 1.6 0 0 0 1.6-1.6v-.8a1.6 1.6 0 0 0-1.6-1.6zM18 13h-1.5v4M16.5 15h1.3"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="trend" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></symbol>
+<symbol id="trenddown" viewBox="0 0 24 24"><path d="m3 7 6 6 4-4 8 8M15 17h6v-6"/></symbol>
+<symbol id="refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.4 6.4L3 16M3 12a9 9 0 0 1 15.4-6.4L21 8M21 3v5h-5M3 21v-5h5"/></symbol>
+<symbol id="edit" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+<symbol id="inbox" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13l3.5 7v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+<symbol id="badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.8-1.5 8 5-3 5 3-1.5-8"/><path d="m9.8 9 1.6 1.6L14.4 7.6"/></symbol>
+<symbol id="star" viewBox="0 0 24 24"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></symbol>
+<symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
+<symbol id="move" viewBox="0 0 24 24"><path d="M5 9 2 12l3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></symbol>
+<symbol id="settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+<symbol id="github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5a3 3 0 0 0-.9-2.4c2.9-.3 6-1.4 6-6.5a5 5 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.3-3.6 1.4a12.3 12.3 0 0 0-6.4 0C6.1 1.4 5 1.7 5 1.7a4.7 4.7 0 0 0-.1 3.5A5 5 0 0 0 3.5 8.7c0 5.1 3.1 6.2 6 6.5a3 3 0 0 0-.9 2.4V21"/></symbol>
+<symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><rect x="2" y="4.5" width="20" height="15" rx="4"/><path d="m10 9 5 3-5 3z"/></symbol>
+<symbol id="file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+<symbol id="link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+<symbol id="box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+<symbol id="filter" viewBox="0 0 24 24"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"/></symbol>
+<symbol id="bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21.5h4M12 2.5a6.5 6.5 0 0 0-4 11.6c.7.6 1 1.4 1 2.2V17h6v-.7c0-.8.4-1.6 1-2.2a6.5 6.5 0 0 0-4-11.6z"/></symbol>
+<symbol id="alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></symbol>
+<symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></symbol>
+<symbol id="grip" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1"/><circle cx="15" cy="6" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="18" r="1"/><circle cx="15" cy="18" r="1"/></symbol>
+<symbol id="type" viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></symbol>
+<symbol id="checkbox" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol>
+<symbol id="calendar" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></symbol>
+<symbol id="chair" viewBox="0 0 24 24"><path d="M6 11V6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v5"/><path d="M4 11a2 2 0 0 1 2 2v1h12v-1a2 2 0 1 1 4 0v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2zM5 19v2M19 19v2"/></symbol>
+<symbol id="shirt" viewBox="0 0 24 24"><path d="M20.4 6.5 16 3.5a4 4 0 0 1-8 0L3.6 6.5a1 1 0 0 0-.4 1.3l1.6 3a1 1 0 0 0 1.3.4L8 10v10a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V10l1.9 1.2a1 1 0 0 0 1.3-.4l1.6-3a1 1 0 0 0-.4-1.3z"/></symbol>
+<symbol id="bike" viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M15 6h2l1.5 11M5.5 17 9 9h7M9 9 12 17h6.5"/></symbol>
+<symbol id="glasses" viewBox="0 0 24 24"><circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><path d="M10 15a2 2 0 0 1 4 0M2.5 13 5 5.5M21.5 13 19 5.5"/></symbol>
+<symbol id="watch" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><path d="M12 9.5V12l1.5 1.5M9 6.6 9.5 2h5l.5 4.6M9 17.4l.5 4.6h5l.5-4.6"/></symbol>
+<symbol id="lamp" viewBox="0 0 24 24"><path d="M8 2h8l3 8H5zM12 10v9M8 22h8"/></symbol>
+<symbol id="cap" viewBox="0 0 24 24"><path d="M3.5 16a7.5 7.5 0 0 1 15 0z"/><path d="M18.5 16H22l-1.2-1.6a2 2 0 0 0-1.6-.8h-.9M11 8.5V7"/></symbol>
+<symbol id="fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+<symbol id="yt" viewBox="0 0 24 24"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+<symbol id="xlogo" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20" /></symbol>
+<symbol id="cursor" viewBox="0 0 24 24"><path d="M4 3l16 7-7 2-2 7z" fill="currentColor" stroke="#fff" stroke-width="1.5"/></symbol>
+</defs>
+</svg>
+
+<header class="hdr" id="top">
+  <div class="wrap hdr-bar">
+    <a class="logo" href="index.html" aria-label="CatalogX home">
+      <span class="logo-mark"><svg class="i" aria-hidden="true"><use href="#cart"/></svg></span><span class="logo-word">Catalog<b>X</b></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <div class="nav-item has-mega">
+        <button class="nav-link " type="button" aria-expanded="false">Features <svg class="i" aria-hidden="true"><use href="#chev"/></svg></button>
+        <div class="mega mega-features">
+          <div class="mega-in">
+            <div class="mega-col">
+              <h6>Modules</h6>
+              <div class="mega-grid">
+                <a class="mm" href="quotation.html"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#quote"/></svg></span><span><b>Quotation</b><small>Tailor-made pricing for unique requests and volume orders.</small></span></a>
+                <a class="mm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#msg"/></svg></span><span><b>Enquiry</b><small>Let shoppers ask about a product before they buy.</small></span></a>
+                <a class="mm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#catalog"/></svg></span><span><b>Product Catalog</b><small>Flexible showcase layouts with Add to Cart hidden.</small></span></a>
+                <a class="mm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#eyeoff"/></svg></span><span><b>Exclusion Hub</b><small>Control who sees the catalog, quotes and enquiries.</small></span></a>
+                <a class="mm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#truck"/></svg></span><span><b>Wholesale</b><small>Separate pricing and order forms for bulk buyers.</small></span></a>
+                <a class="mm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#inbox"/></svg></span><span><b>Enquiry Portal</b><small>Every customer conversation in one inbox.</small></span></a>
+                <a class="mm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#brush"/></svg></span><span><b>Real-Time Page Builder</b><small>Style buttons and shop pages with a live preview.</small></span></a>
+                <a class="mm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#percent"/></svg></span><span><b>Dynamic &amp; Role-Based Pricing</b><small>Price rules by role, quantity, product or category.</small></span></a>
+              </div>
+            </div>
+            <aside class="mega-side">
+              <div class="ms-art" aria-hidden="true">
+                <div class="ms-prod"><span class="ms-thumb"><svg class="i" aria-hidden="true"><use href="#chair"/></svg></span><div><b>Accent chair</b><small>Price on request</small></div></div>
+                <div class="ms-btn"><svg class="i" aria-hidden="true"><use href="#quote"/></svg> Request a quote</div>
+                <div class="ms-toast"><svg class="i" aria-hidden="true"><use href="#check"/></svg> Quote sent · $135 / unit</div>
+              </div>
+              <b>See every feature</b>
+              <p>Browse all CatalogX features and filter them by module, Free or Pro.</p>
+              <a class="txt-link" href="features.html">All features <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link " href="pricing.html">Pricing</a></div>
+      <div class="nav-item has-mega">
+        <button class="nav-link " type="button" aria-expanded="false">Resources <svg class="i" aria-hidden="true"><use href="#chev"/></svg></button>
+        <div class="mega mega-res">
+          <div class="mega-in">
+            <div class="mega-col">
+              <h6>Learn &amp; connect</h6>
+              <a class="mm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#file"/></svg></span><span><b>Blog</b><small>Guides and ideas for catalog stores.</small></span></a>
+              <a class="mm" href="community.html"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#users"/></svg></span><span><b>Community</b><small>Share ideas and shape the roadmap.</small></span></a>
+              <a class="mm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#help"/></svg></span><span><b>Support</b><small>Get help from the CatalogX team.</small></span></a>
+              <a class="mm" href="blocks.html"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#layers"/></svg></span><span><b>Blocks</b><small>Enquiry and quote blocks for the editor.</small></span></a>
+            </div>
+            <div class="mega-col">
+              <h6>Other resources</h6>
+              <a class="mm sm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#book"/></svg></span><b>Documentation</b></a>
+              <a class="mm sm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#play"/></svg></span><b>Videos</b></a>
+              <a class="mm sm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#eye"/></svg></span><b>Live Preview</b></a>
+              <a class="mm sm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#refresh"/></svg></span><b>Release Notes</b></a>
+              <a class="mm sm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#mail"/></svg></span><b>Contact Us</b></a>
+              <a class="mm sm" href="#"><span class="mm-ico"><svg class="i" aria-hidden="true"><use href="#sparkle"/></svg></span><b>Hire Experts</b></a>
+            </div>
+            <aside class="mega-side">
+              <div class="ms-art ms-art-res" aria-hidden="true">
+                <div class="ms-post"><i></i><span><b>Smart Enquiry Forms</b><small>4 min read</small></span></div>
+                <div class="ms-post"><i class="b"></i><span><b>Why upgrade to Pro?</b><small>5 min read</small></span></div>
+              </div>
+              <b>Fresh from the blog</b>
+              <p>WholesaleX losing ground? Why bold stores are upgrading to CatalogX.</p>
+              <a class="txt-link" href="#">Read the post <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="hdr-act">
+      <a class="ico-btn" href="#" aria-label="Cart"><svg class="i" aria-hidden="true"><use href="#cart"/></svg><span class="cnt">0</span></a>
+      <a class="ico-btn" href="#" aria-label="My account"><svg class="i" aria-hidden="true"><use href="#user"/></svg></a>
+      <a class="btn btn-p btn-sm" href="#">Contact Sales</a>
+      <button class="ico-btn burger" type="button" aria-label="Open menu"><svg class="i" aria-hidden="true"><use href="#menu"/></svg></button>
+    </div>
+  </div>
+  <div class="drawer" aria-hidden="true">
+    <div class="dr-sec"><button class="dr-h" type="button">Features <svg class="i" aria-hidden="true"><use href="#chev"/></svg></button>
+      <div class="dr-b"><a href="features.html">All features</a><a href="quotation.html">Quotation</a><a href="#">Enquiry</a><a href="#">Product Catalog</a><a href="#">Exclusion Hub</a><a href="#">Wholesale</a><a href="#">Enquiry Portal</a><a href="#">Real-Time Page Builder</a><a href="#">Dynamic &amp; Role-Based Pricing</a></div></div>
+    <a class="dr-l" href="pricing.html">Pricing</a>
+    <div class="dr-sec"><button class="dr-h" type="button">Resources <svg class="i" aria-hidden="true"><use href="#chev"/></svg></button>
+      <div class="dr-b"><a href="#">Blog</a><a href="community.html">Community</a><a href="#">Support</a><a href="blocks.html">Blocks</a><a href="#">Documentation</a><a href="#">Videos</a><a href="#">Live Preview</a><a href="#">Release Notes</a><a href="#">Contact Us</a><a href="#">Hire Experts</a></div></div>
+    <a class="btn btn-p" href="#">Contact Sales</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="rv">
+        <span class="eyebrow"><span class="dot"></span>#1 WooCommerce catalog plugin</span>
+        <h1>The WooCommerce catalog plugin that turns <em>browsers into buyers</em></h1>
+        <p class="lead">CatalogX lets you hide prices, replace the Add to Cart button with smart enquiry or quote forms, set wholesale pricing by user role, and manage every customer conversation from one dashboard.</p>
+        <p class="sub">Built for B2B stores, wholesale suppliers, and marketplace operators who need more than a default WooCommerce shop.</p>
+        <div class="btns"><a class="btn btn-p" href="pricing.html">Power Up With CatalogX <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-o" href="#"><svg class="i" aria-hidden="true"><use href="#eye"/></svg> See It Live</a></div>
+        <div class="hero-meta"><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> Free version available</span><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> 15-day money back</span><span><svg class="i" aria-hidden="true"><use href="#check"/></svg> Works with MultiVendorX</span></div>
+      </div>
+      <div class="flow rv" aria-label="How a quote request flows through CatalogX">
+        <div class="flow-steps" role="tablist">
+          <span class="on"><b>1</b>Customer requests</span>
+          <span><b>2</b>Admin reviews</span>
+          <span><b>3</b>Quote sent</span>
+        </div>
+        <div class="flow-stage">
+          <div class="fs on">
+            <div class="ui">
+              <div class="ui-bar"><i></i><i></i><i></i><span>yourstore.com/product/accent-chair</span></div>
+              <div class="prod-page">
+                <div class="prod-img"><svg class="i" aria-hidden="true"><use href="#chair"/></svg></div>
+                <div class="prod-info">
+                  <h4>Modern Accent Chair</h4>
+                  <div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div>
+                  <div class="price-hidden"><svg class="i" aria-hidden="true"><use href="#lock"/></svg> Price shown on request</div>
+                  <div class="ui-btn btn-quote"><svg class="i" aria-hidden="true"><use href="#quote"/></svg> Request a Quote</div>
+                  <div class="mini-form">
+                    <div class="fld-2"><div class="fld"><label>Name</label><div class="in">John Doe</div></div><div class="fld"><label>Quantity</label><div class="in focus">50<span class="caret"></span></div></div></div>
+                    <div class="fld"><label>Requirements</label><div class="in ta">Need delivery to 3 offices by May.</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fs">
+            <div class="ui">
+              <div class="dash">
+                <div class="dash-side"><div class="lg"><i></i>CatalogX</div><span><svg class="i" aria-hidden="true"><use href="#layout"/></svg> Dashboard</span><span class="on"><svg class="i" aria-hidden="true"><use href="#quote"/></svg> Quotes <em>3</em></span><span><svg class="i" aria-hidden="true"><use href="#msg"/></svg> Enquiries</span><span><svg class="i" aria-hidden="true"><use href="#catalog"/></svg> Products</span><span><svg class="i" aria-hidden="true"><use href="#percent"/></svg> Pricing</span><span><svg class="i" aria-hidden="true"><use href="#settings"/></svg> Settings</span></div>
+                <div class="dash-main">
+                  <div class="dash-top"><h5 style="margin:0">Quote requests</h5><span class="pill">3 new</span></div>
+                  <div class="dash-tabs"><span class="on">All</span><span>Pending</span><span>Accepted</span><span>Expired</span></div>
+                  <div class="ui-row hl-row"><span class="thumb t-a"><svg class="i" aria-hidden="true"><use href="#chair"/></svg></span><div class="grow"><b>John Doe</b><small>Accent chair · Qty 50</small></div><span class="amt">$145.00</span><span class="pill warn">New</span></div>
+                  <div class="ui-row"><span class="thumb t-b"><svg class="i" aria-hidden="true"><use href="#lamp"/></svg></span><div class="grow"><b>Jewel Store</b><small>Floor lamp · Qty 12</small></div><span class="amt">$105.00</span><span class="pill blue">Reviewing</span></div>
+                  <div class="ui-row"><span class="thumb t-d"><svg class="i" aria-hidden="true"><use href="#shirt"/></svg></span><div class="grow"><b>Nikki Austin</b><small>Linen shirt · Qty 200</small></div><span class="amt">$1,450</span><span class="pill ok">Accepted</span></div>
+                  <div class="ui-row"><span class="thumb t-c"><svg class="i" aria-hidden="true"><use href="#bike"/></svg></span><div class="grow"><b>Ride Co.</b><small>City bike · Qty 8</small></div><span class="amt">$3,000</span><span class="pill ok">Accepted</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fs">
+            <div class="ui">
+              <div class="ui-bar"><i></i><i></i><i></i><span>Create quote · #6204</span></div>
+              <div class="quote-card">
+                <div class="qc-prod"><span class="thumb t-a"><svg class="i" aria-hidden="true"><use href="#chair"/></svg></span><div class="grow"><b style="color:var(--ink)">Modern Accent Chair</b><small style="display:block;color:var(--mut)">Requested qty: 50</small></div></div>
+                <div class="fld-2"><div class="fld"><label>Price per unit</label><div class="in">$135.00</div></div><div class="fld"><label>Valid until</label><div class="in">Jun 30, 2026</div></div></div>
+                <div class="fld-2"><div class="fld"><label>Discount</label><div class="in">5% bulk</div></div><div class="fld"><label>Tax</label><div class="in">10%</div></div></div>
+                <div class="qc-tot"><span>Total for 50 units</span><em>$7,053.75</em></div>
+                <div class="ui-btn"><svg class="i" aria-hidden="true"><use href="#mail"/></svg> Send Quote</div>
+              </div>
+              <div class="sent-toast"><span class="ico"><svg class="i" aria-hidden="true"><use href="#check"/></svg></span>Quote sent as PDF</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="probs">
+      <div class="prob rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#msg"/></svg></span><div><b>Visitors browse but never enquire</b><p>Replace Add to Cart with a smart enquiry button and form.</p></div><div class="num"><strong>30–40%</strong><small>more discovery</small></div></div>
+      <div class="prob rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#quote"/></svg></span><div><b>B2B buyers need quotes, not a checkout</b><p>Let customers request a quote on any product.</p></div><div class="num"><strong>15–35%</strong><small>higher conversion</small></div></div>
+      <div class="prob rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#users"/></svg></span><div><b>Wholesale and retail see the same price</b><p>Set role-based pricing automatically.</p></div><div class="num"><strong>15–25%</strong><small>higher order value</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec band">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow"><span class="dot"></span>Your needs, our solutions</span>
+      <h2>Your eCommerce site holds unlimited potential. Let's maximize it with powerful catalog marketing.</h2>
+      <p>CatalogX is tailored to fit your unique business landscape.</p>
+    </div>
+    <div class="grid g3">
+      <div class="sol rv"><div class="sol-top"><span class="ico"><svg class="i" aria-hidden="true"><use href="#catalog"/></svg></span><h3>Smart Catalog Display</h3></div><p>Turn browsers into buyers with personalized interactions.</p><div class="chips"><span class="chip c-conv"><svg class="i" aria-hidden="true"><use href="#msg"/></svg> Conversion Rate</span><span class="chip c-cart"><svg class="i" aria-hidden="true"><use href="#cart"/></svg> Cart Abandonment</span></div></div>
+      <div class="sol rv"><div class="sol-top"><span class="ico"><svg class="i" aria-hidden="true"><use href="#quote"/></svg></span><h3>Custom Quote Accelerator</h3></div><p>Streamline sales and drive high-value transactions with ease.</p><div class="chips"><span class="chip c-aov">$ Average Order Value</span><span class="chip c-conv"><svg class="i" aria-hidden="true"><use href="#msg"/></svg> Conversion Rate</span></div></div>
+      <div class="sol rv"><div class="sol-top"><span class="ico"><svg class="i" aria-hidden="true"><use href="#truck"/></svg></span><h3>Wholesale Success Center</h3></div><p>Boost B2B sales with instant wholesale pricing and VIP order forms.</p><div class="chips"><span class="chip c-aov">$ Average Order Value</span><span class="chip c-conv"><svg class="i" aria-hidden="true"><use href="#msg"/></svg> Conversion Rate</span></div></div>
+      <div class="sol rv"><div class="sol-top"><span class="ico"><svg class="i" aria-hidden="true"><use href="#help"/></svg></span><h3>Smart Enquiry System</h3></div><p>Streamline customer communication and close deals efficiently.</p><div class="chips"><span class="chip c-disc"><svg class="i" aria-hidden="true"><use href="#cart"/></svg> Product Discovery</span><span class="chip c-time"><svg class="i" aria-hidden="true"><use href="#clock"/></svg> Time Spent</span></div></div>
+      <div class="sol rv"><div class="sol-top"><span class="ico"><svg class="i" aria-hidden="true"><use href="#sliders"/></svg></span><h3>Deploy Dynamic Pricing</h3></div><p>Create role-based and volume-based pricing rules.</p><div class="chips"><span class="chip c-cart"><svg class="i" aria-hidden="true"><use href="#cart"/></svg> Cart Abandonment</span><span class="chip c-aov">$ Average Order Value</span><span class="chip c-conv"><svg class="i" aria-hidden="true"><use href="#msg"/></svg> Conversion Rate</span></div></div>
+      <div class="sol rv"><div class="sol-top"><span class="ico"><svg class="i" aria-hidden="true"><use href="#badge"/></svg></span><h3>Build Customer Loyalty</h3></div><p>Engage customers with personalized communication and offers.</p><div class="chips"><span class="chip c-disc"><svg class="i" aria-hidden="true"><use href="#cart"/></svg> Product Discovery</span><span class="chip c-time"><svg class="i" aria-hidden="true"><use href="#clock"/></svg> Time Spent</span><span class="chip c-conv"><svg class="i" aria-hidden="true"><use href="#msg"/></svg> Conversion Rate</span></div></div>
+    </div>
+    <div class="stats">
+      <div class="stat rv"><small>Product Discovery</small><strong>30–40% <svg class="i" aria-hidden="true"><use href="#trend"/></svg></strong><span>Revenue Growth</span></div>
+      <div class="stat rv"><small>Conversion Rate</small><strong>15–35% <svg class="i" aria-hidden="true"><use href="#trend"/></svg></strong><span>Sales Performance</span></div>
+      <div class="stat rv"><small>Time Spent</small><strong>10–20% <svg class="i" aria-hidden="true"><use href="#trend"/></svg></strong><span>Brand Loyalty</span></div>
+      <div class="stat rv"><small>Average Order Value</small><strong>15–25% <svg class="i" aria-hidden="true"><use href="#trend"/></svg></strong><span>Profit Margins</span></div>
+      <div class="stat rv"><small>Cart Abandonment</small><strong>10–15% <svg class="i" aria-hidden="true"><use href="#trenddown"/></svg></strong><span>Lost Sales Recovery</span></div>
+    </div>
+    <div class="band-cta rv">
+      <div><b>Why wait? Supercharge your business with CatalogX!</b><p>Boost sales through customized catalogs, targeted discounts, streamlined quotations, and intelligent enquiry management.</p></div>
+      <a class="btn btn-p" href="pricing.html">Power Up With CatalogX <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow"><span class="dot"></span>14 reasons</span>
+      <h2>14 reasons CatalogX is your WooCommerce <span class="hl">profit multiplier</span></h2>
+      <p>Unleash the full potential of your WooCommerce store with these game-changing capabilities.</p>
+    </div>
+    <div class="reasons">
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#help"/></svg></span><div><b>Smart Enquiry System</b><small>Capture intent before the sale</small></div><span class="n">01</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#cart"/></svg></span><div><b>Enquiry Cart</b><small>Bulk enquiry across products</small></div><span class="n">02</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#edit"/></svg></span><div><b>Customizable Enquiry Forms</b><small>Drag-and-drop field builder</small></div><span class="n">03</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#brush"/></svg></span><div><b>Live Page Builder</b><small>Real-time design control</small></div><span class="n">04</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#lock"/></svg></span><div><b>Private Store Mode</b><small>Members-only visibility</small></div><span class="n">05</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#inbox"/></svg></span><div><b>Enquiry Portal</b><small>Centralised conversation inbox</small></div><span class="n">06</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#shield"/></svg></span><div><b>Role-Based Enquiry</b><small>Control who can enquire</small></div><span class="n">07</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#tag"/></svg></span><div><b>Wholesale Price Display</b><small>Separate rates per buyer type</small></div><span class="n">08</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#users"/></svg></span><div><b>Multiple User Role Levels</b><small>Retail, wholesale, VIP, guest</small></div><span class="n">09</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#percent"/></svg></span><div><b>Role-Based Pricing</b><small>Dynamic price rules per role</small></div><span class="n">10</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#bell"/></svg></span><div><b>Instant Notifications</b><small>Email alerts for every enquiry</small></div><span class="n">11</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#eye"/></svg></span><div><b>Strategic Price Visibility</b><small>Show or hide prices by role</small></div><span class="n">12</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#zap"/></svg></span><div><b>Efficient Response System</b><small>Reply and quote in one place</small></div><span class="n">13</span></div>
+      <div class="rs rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#store"/></svg></span><div><b>Multi-Vendor Compatible</b><small>Works with MultiVendorX</small></div><span class="n">14</span></div>
+      <a class="rs rv" href="features.html" style="background:var(--p-50);border-color:var(--p-100)"><span class="ico" style="background:var(--p);color:#fff"><svg class="i" aria-hidden="true"><use href="#list"/></svg></span><div><b>See every feature</b><small>Filter by module, Free or Pro</small></div></a>
+      <a class="rs rv" href="pricing.html" style="background:var(--ink);border-color:var(--ink)"><span class="ico" style="background:rgba(255,255,255,.12);color:#fff"><svg class="i" aria-hidden="true"><use href="#tag"/></svg></span><div><b style="color:#fff">Compare plans</b><small style="color:#b7b2cf">From $129 per year</small></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec soft">
+  <div class="wrap" data-tabs>
+    <div class="head rv">
+      <span class="eyebrow"><span class="dot"></span>Profit-boosting pillars</span>
+      <h2>Profit-boosting pillars of CatalogX</h2>
+      <p>CatalogX transforms your e-commerce store into a profit powerhouse by unlocking revenue streams you never knew existed.</p>
+    </div>
+    <div class="tabs rv" role="tablist">
+      <button class="tab on" type="button" role="tab" aria-selected="true"><svg class="i" aria-hidden="true"><use href="#edit"/></svg> Enquiry Form</button>
+      <button class="tab" type="button" role="tab" aria-selected="false"><svg class="i" aria-hidden="true"><use href="#brush"/></svg> Live Design</button>
+      <button class="tab" type="button" role="tab" aria-selected="false"><svg class="i" aria-hidden="true"><use href="#inbox"/></svg> Enquiry Hub</button>
+    </div>
+    <div class="panes">
+      <div class="pane on">
+        <div>
+          <h3>Craft the perfect enquiry form: your gateway to quality leads</h3>
+          <p>Elevate your lead generation with CatalogX's customizable enquiry form builder.</p>
+          <div class="pts">
+            <div class="pt"><span class="ico"><svg class="i" aria-hidden="true"><use href="#sliders"/></svg></span><div><b>Flexible Form Customization</b><p>Easily add, edit, or remove form fields to tailor your lead capture process.</p></div></div>
+            <div class="pt"><span class="ico"><svg class="i" aria-hidden="true"><use href="#checkbox"/></svg></span><div><b>Precision Data Collection</b><p>Design forms that gather specific, high-quality information from potential leads.</p></div></div>
+            <div class="pt"><span class="ico"><svg class="i" aria-hidden="true"><use href="#msg"/></svg></span><div><b>Streamlined Communication</b><p>Optimize the enquiry process for efficient follow-ups and improved conversions.</p></div></div>
+          </div>
+          <a class="btn btn-p btn-sm" href="#">Learn More <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+        <div class="ui" aria-hidden="true">
+          <div class="ui-bar"><i></i><i></i><i></i><span>CatalogX · Form builder</span></div>
+          <div class="fb">
+            <div class="fb-pal"><small>Fields</small><span><svg class="i" aria-hidden="true"><use href="#type"/></svg> Text</span><span><svg class="i" aria-hidden="true"><use href="#mail"/></svg> Email</span><span class="drag"><svg class="i" aria-hidden="true"><use href="#list"/></svg> Dropdown</span><span><svg class="i" aria-hidden="true"><use href="#checkbox"/></svg> Checkbox</span><span><svg class="i" aria-hidden="true"><use href="#calendar"/></svg> Date</span><span><svg class="i" aria-hidden="true"><use href="#upload"/></svg> File upload</span><span><svg class="i" aria-hidden="true"><use href="#shield"/></svg> reCAPTCHA</span></div>
+            <div class="fb-can">
+              <h5>Enquiry Form</h5>
+              <div class="fld"><label>Your name *</label><div class="in"></div></div>
+              <div class="fld"><label>Your email *</label><div class="in"></div></div>
+              <div class="fld"><label>Mobile number</label><div class="in"></div></div>
+              <div class="fb-drop">Drop field here</div>
+              <div class="fld" style="margin-top:9px"><label>Enquiry about</label><div class="in ta"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pane">
+        <div>
+          <h3>Revolutionize your online store: boost sales with live design</h3>
+          <p>Seamlessly customize your storefront in real-time, optimize for conversions, and deliver an unparalleled shopping experience.</p>
+          <div class="pts">
+            <div class="pt"><span class="ico"><svg class="i" aria-hidden="true"><use href="#eye"/></svg></span><div><b>Real-Time Visual Editing</b><p>See changes instantly as you customize your shop page.</p></div></div>
+            <div class="pt"><span class="ico"><svg class="i" aria-hidden="true"><use href="#move"/></svg></span><div><b>Drag-and-Drop Simplicity</b><p>Easily reposition elements without coding knowledge.</p></div></div>
+            <div class="pt"><span class="ico"><svg class="i" aria-hidden="true"><use href="#brush"/></svg></span><div><b>Comprehensive Button Customization</b><p>Fine-tune text, colors, fonts, and destinations.</p></div></div>
+          </div>
+          <a class="btn btn-p btn-sm" href="#">Learn More <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+        <div class="ui" aria-hidden="true">
+          <div class="ui-bar"><i></i><i></i><i></i><span>Live page builder · Single product</span></div>
+          <div class="lb">
+            <div class="lb-can">
+              <div class="prod-img"><svg class="i" aria-hidden="true"><use href="#cap"/></svg></div>
+              <div class="lb-btns"><div class="ui-btn sel">Buy Now</div><div class="ui-btn o"><svg class="i" aria-hidden="true"><use href="#msg"/></svg> Send Enquiry</div></div>
+            </div>
+            <div class="lb-ctl">
+              <small>Button color</small><div class="sw"><i class="sel"></i><i></i><i></i><i></i></div>
+              <small>Corner radius</small><div class="rng"><i></i></div>
+              <small>Label</small><div class="fld" style="margin:0"><div class="in">Buy Now</div></div>
+              <small>Position</small><div class="seg"><span>Above</span><span class="on">Below</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pane">
+        <div>
+          <h3>Unified enquiry hub: turbocharge your sales conversations</h3>
+          <p>Streamline your customer interactions with CatalogX's centralized enquiry management system.</p>
+          <div class="pts">
+            <div class="pt"><span class="ico"><svg class="i" aria-hidden="true"><use href="#inbox"/></svg></span><div><b>Centralized Communication</b><p>Manage and respond to all enquiries from one unified enquiry box.</p></div></div>
+            <div class="pt"><span class="ico"><svg class="i" aria-hidden="true"><use href="#tag"/></svg></span><div><b>Enhanced Organization</b><p>Tag users and products, pin important messages, and share attachments directly in conversations.</p></div></div>
+            <div class="pt"><span class="ico"><svg class="i" aria-hidden="true"><use href="#quote"/></svg></span><div><b>Seamless Quote Generation</b><p>Create and send quotes effortlessly from within the chat interface.</p></div></div>
+          </div>
+          <a class="btn btn-p btn-sm" href="#">Learn More <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+        <div class="ui" aria-hidden="true">
+          <div class="ui-bar"><i></i><i></i><i></i><span>Enquiry Center</span></div>
+          <div class="hub">
+            <div class="hub-list">
+              <div class="ui-row on"><span class="av">AM</span><div class="grow"><b>Anna M.</b><small>Berry cap · bulk</small></div></div>
+              <div class="ui-row"><span class="av a2">RK</span><div class="grow"><b>Rishi K.</b><small>Steel bolts</small></div></div>
+              <div class="ui-row"><span class="av a3">LT</span><div class="grow"><b>Lena T.</b><small>Oak table</small></div></div>
+              <div class="ui-row"><span class="av a4">DW</span><div class="grow"><b>Dan W.</b><small>Linen shirts</small></div></div>
+            </div>
+            <div class="hub-chat">
+              <div class="pin"><svg class="i" aria-hidden="true"><use href="#star"/></svg> Pinned · needs 500 units</div>
+              <div class="bub">Hi! I'm interested in buying the Berry Casual Cap in bulk. What would 500 units cost?</div>
+              <div class="bub me">Great choice. I can offer a tiered price for that volume.</div>
+              <div class="bub att"><svg class="i" aria-hidden="true"><use href="#file"/></svg> logo-placement.pdf</div>
+              <div class="bub quote"><b style="font-size:12px">Quote #6211 · Berry Casual Cap</b><span style="font-size:11.5px;color:var(--mut)">500 units × $18.95</span><div class="ui-btn" style="height:28px">Accept &amp; Checkout</div></div>
+              <div class="typing"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow"><span class="dot"></span>A tidy store</span>
+      <h2>Do you know how to make your <span class="hl">WooCommerce store</span> tidy using CatalogX?</h2>
+    </div>
+    <div class="bento">
+      <div class="bt bt-a rv">
+        <div><h3>Turn enquiries into sales with <span class="hl">smart quotes</span></h3><p>Turn customer interest into revenue with personalized quotes and faster deal closures.</p></div>
+        <div class="ui" aria-hidden="true"><div class="ty"><span class="ck"><svg class="i" aria-hidden="true"><use href="#check"/></svg></span><b>Thank you</b><p>Your personalized quotation is ready for review. You can send it to the customer or make any further adjustments.</p><div class="ui-btn" style="width:150px">View Order</div></div></div>
+      </div>
+      <div class="bt bt-b rv">
+        <div><h3>Organize your <span class="hl">product catalog</span></h3><p>Sort products into tidy categories with customized visibility. Show or hide products by user role or login status.</p></div>
+        <div class="ui" aria-hidden="true">
+          <div class="role-sw"><span>Guest</span><span class="on">Wholesale</span><span>VIP</span></div>
+          <div class="cat-grid">
+            <div><span class="thumb t-b"><svg class="i" aria-hidden="true"><use href="#tag"/></svg></span><b>Leather belt</b><small>$55.00</small></div>
+            <div><span class="thumb t-a"><svg class="i" aria-hidden="true"><use href="#cap"/></svg></span><b>Cap</b><small>$10.00</small></div>
+            <div class="lockd"><span class="thumb t-e"><svg class="i" aria-hidden="true"><use href="#shirt"/></svg></span><b>Hoodie</b><small><svg class="i" aria-hidden="true"><use href="#lock"/></svg> VIP only</small></div>
+            <div><span class="thumb t-c"><svg class="i" aria-hidden="true"><use href="#glasses"/></svg></span><b>Spectacles</b><small>$28.00</small></div>
+            <div class="lockd"><span class="thumb t-d"><svg class="i" aria-hidden="true"><use href="#watch"/></svg></span><b>Watch</b><small><svg class="i" aria-hidden="true"><use href="#eyeoff"/></svg> Hidden</small></div>
+            <div><span class="thumb t-a"><svg class="i" aria-hidden="true"><use href="#lamp"/></svg></span><b>Lamp</b><small>$19.00</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="bt bt-c rv">
+        <div><h3>Retail to empire: ignite <span class="hl">wholesale growth</span></h3><p>Empower bulk buyers with a streamlined shopping experience featuring instant wholesale pricing and a dedicated ordering portal.</p></div>
+        <div class="ui" aria-hidden="true"><div class="ui-body">
+          <h5>Wholesale application</h5>
+          <div class="fld"><label>Business name</label><div class="in">North Supply Co.</div></div>
+          <div class="fld-2"><div class="fld"><label>Tax ID</label><div class="in">GB-2219</div></div><div class="fld"><label>Role</label><div class="in">Wholesale <svg class="i" aria-hidden="true"><use href="#chev"/></svg></div></div></div>
+          <div class="ui-btn">Submit application</div>
+        </div></div>
+      </div>
+      <div class="bt bt-d rv">
+        <div><h3>Dynamic pricing magic: label your <span class="hl">discounts</span> to dazzle</h3><p>Create a well-ordered discount system with dynamic rules. Apply neat discounts based on products, categories, or user roles.</p></div>
+        <div class="ui" aria-hidden="true"><div class="rule">
+          <h5 style="color:var(--p);font-size:16px">Add new rule</h5>
+          <div class="fld"><label>Name</label><div class="in focus">Spring bulk deal<span class="caret"></span></div></div>
+          <div class="fld"><label>Applicable for</label><div class="seg"><span class="on">Product</span><span>Category</span><span>User role</span></div></div>
+          <div class="fld-2"><div class="fld"><label>Discount</label><div class="in">15</div></div><div class="fld"><label>Type</label><div class="in">Percentage <svg class="i" aria-hidden="true"><use href="#chev"/></svg></div></div></div>
+          <div style="display:flex;justify-content:flex-end"><div class="ui-btn" style="width:150px">Add and Activate</div></div>
+        </div></div>
+      </div>
+      <div class="bt bt-e rv">
+        <div><h3>Real-time product page builder: craft your dream <span class="hl">store instantly</span></h3><p>Transform your WooCommerce store instantly with CatalogX's real-time shop page builder, featuring sleek customizable elements that captivate customers and boost conversions.</p></div>
+        <div class="ui" aria-hidden="true">
+          <div class="lb" style="min-height:0">
+            <div class="lb-can" style="padding:14px"><div class="prod-img" style="height:100px;width:140px"><svg class="i" aria-hidden="true"><use href="#cap"/></svg></div><div class="lb-btns"><div class="ui-btn sel">Buy Now</div><div class="ui-btn o">Add To Cart</div></div></div>
+            <div class="lb-ctl"><small>Color</small><div class="sw"><i class="sel"></i><i></i><i></i><i></i></div><small>Font size</small><div class="rng"><i></i></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="bt bt-f rv">
+        <div class="split-2">
+          <div><h3>File away <span class="hl">wholesale</span> concerns</h3><p style="margin-top:8px">Tidily separate your wholesale and retail operations. Create dedicated wholesale-only product pages, ensuring a clear and organized shopping experience for every customer type.</p></div>
+          <div class="ui" aria-hidden="true">
+            <table class="ws-tbl">
+              <thead><tr><th>Product</th><th>Price</th><th>Quantity</th></tr></thead>
+              <tbody>
+                <tr class="hl-row"><td><span class="pn"><span class="thumb t-a"><svg class="i" aria-hidden="true"><use href="#cap"/></svg></span>Abc Cap</span></td><td><s>$310</s><strong>$250</strong><br><small style="color:var(--mut);font-size:10.5px">50% on 20+ products</small></td><td><span class="qty"><i>−</i><b>20</b><i>+</i></span></td></tr>
+                <tr><td><span class="pn"><span class="thumb t-c"><svg class="i" aria-hidden="true"><use href="#glasses"/></svg></span>EBC spectacles</span></td><td><strong>$288</strong><br><small style="color:var(--mut);font-size:10.5px">30% on 30+ products</small></td><td><span class="qty"><i>−</i><b>1</b><i>+</i></span></td></tr>
+                <tr><td><span class="pn"><span class="thumb t-b"><svg class="i" aria-hidden="true"><use href="#bike"/></svg></span>Yue Cycle</span></td><td><strong>$3,000</strong><br><small style="color:var(--mut);font-size:10.5px">10% on 5+ products</small></td><td><span class="qty"><i>−</i><b>1</b><i>+</i></span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec soft">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow"><span class="dot"></span>Loved by store owners</span>
+      <h2>Here's what our <span class="hl">customers</span> are saying</h2>
+      <p>Real stores, real results with CatalogX.</p>
+    </div>
+    <div class="testi">
+      <div class="tq hi rv"><span class="metric"><svg class="i" aria-hidden="true"><use href="#trend"/></svg> +40% wholesale growth</span><p>"CatalogX paid for itself in the first month. My wholesale business grew 40% after implementing the wholesale portal."</p><div class="who"><span class="av">ST</span><div><b>Sarah T.</b><small>Fashion Retailer</small></div></div></div>
+      <div class="tq rv"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>"Finally, a plugin that understands both B2B and B2C needs. The quote system alone saved us hours each week."</p><div class="who"><span class="av a2">RR</span><div><b>Rishi R.</b><small>Industrial Supplies</small></div></div></div>
+      <div class="tq rv"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>"I had the impression that since update 2.0 this plugin isn't what it used to be. Team MultiVendorX jumped on the wagon to find a solution. And yes, I'm talking about the free version."</p><div class="who"><span class="av a3">CR</span><div><b>@crossroast</b><small>WordPress.org review</small></div></div></div>
+      <div class="tq rv"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>"Effortless design with CatalogX. The free version is simple and does the job for me and works well, thanks!"</p><div class="who"><span class="av a4">Y4</span><div><b>@y4niv</b><small>WordPress.org review</small></div></div></div>
+      <div class="tq rv"><span class="metric"><svg class="i" aria-hidden="true"><use href="#box"/></svg> 50,000+ products</span><p>"What impressed me most was how CatalogX handled our 50,000+ product catalog without any slowdown. Best plugin in WordPress."</p><div class="who"><span class="av a5">AL</span><div><b>Ali</b><small>Electronics Distributor</small></div></div></div>
+      <div class="tq rv"><span class="metric"><svg class="i" aria-hidden="true"><use href="#trend"/></svg> +52% average order value</span><p>"The dynamic pricing feature revolutionized our seasonal sales. We've seen a 52% increase in average order value since switching to CatalogX."</p><div class="who"><span class="av">NI</span><div><b>Nitu</b><small>Outdoor Equipment Store</small></div></div></div>
+      <div class="tq rv"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>"This versatile product catalog plugin offers comprehensive features for an enhanced online presence. The expert support team ensures seamless issue resolution with their deep knowledge and customer-oriented approach."</p><div class="who"><span class="av a2">AD</span><div><b>@adelaidedownee</b><small>Wholesale Vendor</small></div></div></div>
+      <div class="tq rv"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>"CatalogX made managing product enquiries and quotations so easy. The Enquiry Dashboard is a must-have for seamless communication. Highly recommended for anyone looking to enhance their catalog and enquiry management."</p><div class="who"><span class="av a3">AX</span><div><b>Alex</b><small>Pipeline Business Owner</small></div></div></div>
+      <div class="tq rv"><div class="stars"><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg><svg class="i" aria-hidden="true"><use href="#star"/></svg></div><p>"CatalogX's dynamic pricing and real-time customization options have given us full control over our store's user experience."</p><div class="who"><span class="av a4">DI</span><div><b>Diana</b><small>Furniture Store</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head-row rv">
+      <div class="head left">
+        <span class="eyebrow"><span class="dot"></span>From the blog</span>
+        <h2>Our latest <span class="hl">blogs</span></h2>
+        <p>Tips, trends, and expert advice to grow your catalog store.</p>
+      </div>
+      <a class="btn btn-o" href="#">View All <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+    <div class="blog">
+      <a class="post big rv" href="#">
+        <div class="post-art pa4"><small>CatalogX</small><div class="vs"><div><span><svg class="i" aria-hidden="true"><use href="#building"/></svg></span>WholesaleX<small style="font-weight:600;color:var(--ink-2)">Traditional</small></div><em>vs</em><div class="w"><span><svg class="i" aria-hidden="true"><use href="#catalog"/></svg></span>CatalogX<small style="font-weight:600;color:var(--ink-2)">Modern, smart</small></div></div></div>
+        <div><h3>WholesaleX losing ground? Why bold stores are upgrading to CatalogX</h3><div class="meta"><span>CatalogX</span><span>May 9, 2025</span><span>5 min read</span></div><p>A shift in the wholesale world: the B2B landscape isn't what it used to be.</p></div>
+      </a>
+      <div class="posts">
+        <a class="post rv" href="#"><div class="post-art pa1"><svg class="i" aria-hidden="true"><use href="#edit"/></svg></div><div><h3>Smart Enquiry Forms that Transform Customer Engagement: The CatalogX Edge</h3><div class="meta"><span>Shivam Vidya Sah</span><span>Jan 3, 2025</span><span>4 min read</span></div></div></a>
+        <a class="post rv" href="#"><div class="post-art pa2"><svg class="i" aria-hidden="true"><use href="#sparkle"/></svg></div><div><h3>Why Upgrade to CatalogX Pro? Here's What You'll Love (and What You Might Miss)</h3><div class="meta"><span>Moumita Halder</span><span>Nov 20, 2024</span><span>5 min read</span></div></div></a>
+        <a class="post rv" href="#"><div class="post-art pa3"><svg class="i" aria-hidden="true"><use href="#catalog"/></svg></div><div><h3>Introducing CatalogX: Your Ultimate Solution for Catalog Marketing</h3><div class="meta"><span>Moumita Halder</span><span>Nov 8, 2024</span><span>5 min read</span></div></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec soft">
+  <div class="wrap faq-split">
+    <div class="head left rv">
+      <span class="eyebrow"><span class="dot"></span>FAQ</span>
+      <h2>We're here to <span class="hl">answer</span> all your questions</h2>
+      <p>CatalogX helps you turn casual shoppers into loyal customers with advanced catalog management, customized pricing, and engagement tools.</p>
+      <a class="txt-link" href="community.html" style="margin-top:16px">Ask the community <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+    </div>
+    <div class="faq">
+      <div class="qa open rv"><button class="qa-q" type="button" aria-expanded="true">Is CatalogX compatible with my theme?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="qa-a" style="display:block">CatalogX is designed to work with most WooCommerce-compatible themes. We recommend testing it with your specific theme to ensure optimal compatibility. If you run into any issues, please contact our support team.</div></div>
+      <div class="qa rv"><button class="qa-q" type="button" aria-expanded="false">Can I use multiple features simultaneously?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="qa-a">Yes. All CatalogX features are designed to work together, so you can run catalog mode, enquiries, quotes, wholesale and dynamic pricing at the same time.</div></div>
+      <div class="qa rv"><button class="qa-q" type="button" aria-expanded="false">Is there a limit to the number of pricing rules I can create?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="qa-a">There is no set limit. Very complex rule structures can affect page load times, so keep rules as simple as your pricing allows.</div></div>
+      <div class="qa rv"><button class="qa-q" type="button" aria-expanded="false">Can I customize the appearance of the enquiry and quote request buttons?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="qa-a">Yes. Use the Real-Time Page Builder to change colors, fonts, sizes and placement, with a live preview as you go.</div></div>
+      <div class="qa rv"><button class="qa-q" type="button" aria-expanded="false">How does the Wholesale Module work with existing WooCommerce discounts?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="qa-a">It works alongside WooCommerce's built-in discounts, and you decide which discounts apply to wholesale customers.</div></div>
+      <div class="qa rv"><button class="qa-q" type="button" aria-expanded="false">Can I export my quotations and enquiries?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="qa-a">Yes. You can export quotations and enquiries in CSV and PDF formats.</div></div>
+    </div>
+  </div>
+</section>
+<div style="height:72px"></div>
+
+</main>
+<section class="cta-band">
+  <div class="wrap"><div class="cta-in">
+    <div class="cta-art" aria-hidden="true">
+      <div class="ca-card"><span><svg class="i" aria-hidden="true"><use href="#quote"/></svg></span><b>Quote #6204</b><em class="pill ok">Accepted</em></div>
+      <div class="ca-card c2"><span><svg class="i" aria-hidden="true"><use href="#trend"/></svg></span><b>+45% quote-to-order</b></div>
+    </div>
+    <div class="cta-copy">
+      <h2>Transform your WooCommerce store from ordinary to extraordinary</h2>
+      <p>CatalogX is your key to unlocking unparalleled growth, efficiency, and customer satisfaction.</p>
+      <div class="btns"><a class="btn btn-w" href="pricing.html">Power Up With CatalogX <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-ow" href="#">Contact Support</a></div>
+    </div>
+  </div></div>
+</section>
+<footer class="ftr">
+  <div class="wrap ftr-top">
+    <div class="ftr-brand">
+      <a class="logo" href="index.html" aria-label="CatalogX home"><span class="logo-mark"><svg class="i" aria-hidden="true"><use href="#cart"/></svg></span><span class="logo-word">Catalog<b>X</b></span></a>
+      <p>Turn every product view into profit.</p>
+      <form class="sub" onsubmit="return false">
+        <label for="sub-email">Get product news</label>
+        <div class="sub-row"><input id="sub-email" type="email" placeholder="you@store.com" required><button class="btn btn-p btn-sm" type="submit">Subscribe</button></div>
+      </form>
+      <div class="soc"><a href="#" aria-label="Facebook"><svg class="i" aria-hidden="true"><use href="#fb"/></svg></a><a href="#" aria-label="YouTube"><svg class="i" aria-hidden="true"><use href="#yt"/></svg></a><a href="#" aria-label="X"><svg class="i" aria-hidden="true"><use href="#xlogo"/></svg></a></div>
+    </div>
+    <div class="ftr-col"><h6>Top features</h6><a href="#">Product Catalog</a><a href="quotation.html">Quotation</a><a href="#">Wholesale</a><a href="#">Enquiry</a><a href="#">Dynamic &amp; Role-Based Pricing</a><a href="features.html">All features</a></div>
+    <div class="ftr-col"><h6>Resources</h6><a href="#">Blog</a><a href="community.html">Community</a><a href="blocks.html">Blocks</a><a href="#">Documentation</a><a href="#">Release Notes</a><a href="#">Support</a></div>
+    <div class="ftr-col"><h6>Company</h6><a href="#">About Us</a><a href="pricing.html">Pricing</a><a href="#">Contact Us</a><a href="#">Terms and Conditions</a><a href="#">Support Policy</a><a href="#">Refund Policy</a></div>
+  </div>
+  <div class="wrap ftr-bot">
+    <span>© 2026 CatalogX, a subsidiary of <a href="#">MultiVendorX</a>. All rights reserved.</span>
+    <a class="totop" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+  </div>
+</footer>
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/catalogx.js?v=c69d9c69"></script>
+</body>
+</html>
