@@ -44,34 +44,57 @@
   </div>
 </div></section>
 
-<section class="sec white"><div class="wrap happy">
-  <div class="rv l">
+<section class="sec white"><div class="wrap">
+  <div class="sec-head center">
     <span class="eyebrow">Vendor dashboard</span>
-    <h2 class="h-lg" style="margin-top:18px">This is why your vendors stay Happy <span class="accent">(and Profitable)</span></h2>
-    <p class="lead" style="margin-top:18px">Streamline products, orders, analytics, and shipping in one powerful dashboard that eliminates confusion and maximizes control.</p>
-    <div class="pts" data-stagger="120">
-      <div class="pt lift"><span class="ico">{i:box}</span><div><b>Products</b><span>Add, edit, publish and bulk-manage the catalog.</span></div></div>
-      <div class="pt lift"><span class="ico coral">{i:cart}</span><div><b>Orders</b><span>Split orders, status updates and order notes.</span></div></div>
-      <div class="pt lift"><span class="ico green">{i:chart}</span><div><b>Analytics &amp; shipping</b><span>Sales reports and shipping rules in the same place.</span></div></div>
-    </div>
+    <h2 class="h-lg" style="margin-top:14px">This is why your vendors stay Happy <span class="accent">(and Profitable)</span></h2>
+    <p class="lead">Streamline products, orders, analytics, and shipping in one powerful dashboard that eliminates confusion and maximizes control.</p>
   </div>
-  <div class="mock rv r">
-    <div class="mock-bar"><i></i><i></i><i></i><span>Vendor dashboard · Analytics</span></div>
-    <div style="padding:22px;display:grid;gap:14px">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
-        <div class="kpi"><small>Revenue</small><b class="count" data-to="48.2" data-pre="$" data-suf="k">$48.2k</b><em>↑ 12%</em></div>
-        <div class="kpi"><small>Orders</small><b class="count" data-to="1284">1,284</b><em>↑ 7%</em></div>
-        <div class="kpi"><small>Avg. order</small><b class="count" data-to="37.5" data-pre="$">$37.5</b><em>↑ 4%</em></div>
-        <div class="kpi"><small>Stock alerts</small><b>6</b><em style="color:var(--coral)">Low stock</em></div>
-      </div>
-      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:12px">
-        <div class="kpi"><small style="margin-bottom:12px">Sales by category</small>
-          <div class="bars" style="height:150px"><i style="height:62%"></i><i class="l" style="height:40%"></i><i style="height:88%"></i><i class="l" style="height:52%"></i><i style="height:74%"></i><i class="l" style="height:35%"></i><i style="height:96%"></i></div></div>
-        <div class="kpi"><small style="margin-bottom:6px">Shipping</small>
-          <div class="row-li" style="border:0">{i:truck}<span style="flex:1">Zone wise</span><span class="tag">On</span></div>
-          <div class="row-li">{i:pin}<span style="flex:1">Distance-based</span><span class="tag">On</span></div>
-          <div class="row-li">{i:box}<span style="flex:1">Local pickup</span><span class="tag green">New</span></div>
-          <div class="row-li">{i:tag}<span style="flex:1">Free shipping</span><span class="tag amber">$50+</span></div>
+  <div class="vd" data-vd>
+    <div class="vd-top"><i></i><i></i><i></i><span>yourmarketplace.com/store-dashboard</span></div>
+    <div class="vd-in">
+      <aside class="vd-nav">
+        <div class="vd-store"><span class="lg">B</span><div><b>Bloom &amp; Clay</b><small>Vendor store</small></div></div>
+        <button class="on" data-v="0" type="button">{i:box}Products</button>
+        <button data-v="1" type="button">{i:cart}Orders</button>
+        <button data-v="2" type="button">{i:chart}Analytics</button>
+        <button data-v="3" type="button">{i:truck}Shipping</button>
+        <div class="vd-bal"><small>Available balance</small><b>$3,120.40</b><span>Next payout Fri</span></div>
+      </aside>
+      <div class="vd-main">
+        <div class="vd-p on" data-v="0">
+          <div class="vd-h"><div><b>Products</b><small>24 published · 3 drafts</small></div><span class="vd-btn">{i:plus}Add product</span></div>
+          <div class="vd-tb">
+            <div class="r h"><span>Product</span><span>Price</span><span>Stock</span><span>Status</span></div>
+            <div class="r"><span><i class="th t1"></i>Speckled mug</span><span>$28.00</span><span>42</span><span><em class="ok">Published</em></span></div>
+            <div class="r"><span><i class="th t2"></i>Serving bowl</span><span>$52.00</span><span>18</span><span><em class="ok">Published</em></span></div>
+            <div class="r"><span><i class="th t3"></i>Bud vase</span><span>$34.00</span><span class="lo">3</span><span><em class="wa">Low stock</em></span></div>
+            <div class="r"><span><i class="th t4"></i>Linen tote bag</span><span>$19.00</span><span>—</span><span><em>Draft</em></span></div>
+          </div>
+        </div>
+        <div class="vd-p" data-v="1">
+          <div class="vd-h"><div><b>Orders</b><small>12 new today</small></div><span class="vd-btn gh">{i:filter}Filter</span></div>
+          <div class="vd-tb">
+            <div class="r h"><span>Order</span><span>Customer</span><span>Total</span><span>Status</span></div>
+            <div class="r"><span>#4821</span><span>Emma W.</span><span>$84.00</span><span><em class="wa">Processing</em></span></div>
+            <div class="r"><span>#4820</span><span>Liam K.</span><span>$28.00</span><span><em class="ok">Completed</em></span></div>
+            <div class="r"><span>#4819</span><span>Sofia R.</span><span>$112.00</span><span><em class="in">Shipped</em></span></div>
+            <div class="r"><span>#4818</span><span>Noah P.</span><span>$52.00</span><span><em class="ok">Completed</em></span></div>
+          </div>
+        </div>
+        <div class="vd-p" data-v="2">
+          <div class="vd-h"><div><b>Analytics</b><small>Last 30 days</small></div><span class="vd-btn gh">{i:cal}30 days</span></div>
+          <div class="vd-k"><div><small>Revenue</small><b>$48.2k</b><em>↑ 12%</em></div><div><small>Orders</small><b>1,284</b><em>↑ 7%</em></div><div><small>Avg. order</small><b>$37.50</b><em>↑ 4%</em></div></div>
+          <div class="vd-ch"><svg viewBox="0 0 600 150" preserveAspectRatio="none" aria-hidden="true"><path class="g" d="M0 120 L60 104 L120 110 L180 84 L240 90 L300 62 L360 70 L420 46 L480 52 L540 28 L600 22 L600 150 L0 150Z"/><path class="l" d="M0 120 L60 104 L120 110 L180 84 L240 90 L300 62 L360 70 L420 46 L480 52 L540 28 L600 22"/></svg></div>
+        </div>
+        <div class="vd-p" data-v="3">
+          <div class="vd-h"><div><b>Shipping</b><small>4 methods active</small></div><span class="vd-btn gh">{i:plus}Add zone</span></div>
+          <div class="vd-sh">
+            <div>{i:pin}<span><b>Zone wise</b><small>Different rates per region</small></span><i class="sw on"></i></div>
+            <div>{i:truck}<span><b>Distance based</b><small>$0.80 per km</small></span><i class="sw on"></i></div>
+            <div>{i:store}<span><b>Local pickup</b><small>From the studio</small></span><i class="sw on"></i></div>
+            <div>{i:tag}<span><b>Free shipping</b><small>Orders over $50</small></span><i class="sw"></i></div>
+          </div>
         </div>
       </div>
     </div>
@@ -84,40 +107,11 @@
     <h2 class="h-lg" style="margin-top:18px">Marketplace mastery: tools that <span class="accent">Dominate</span></h2>
     <div class="three-pts"><span>{i:check} Effortless store management</span><span>{i:check} Revenue optimization tools</span><span>{i:check} Seamless vendor onboarding</span></div>
   </div>
-  <div class="fx rv" data-tabs data-fx>
-    <div class="fx-bar" role="tablist"><button class="fx-t on" type="button" role="tab" data-tab="st"><span class="fx-ic">{i:store}</span>Store Management<em>16</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="co"><span class="fx-ic">{i:percent}</span>Commission<em>10</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="ve"><span class="fx-ic">{i:users}</span>Vendor Engagement<em>10</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="an"><span class="fx-ic">{i:chart}</span>Analytics &amp; SEO<em>11</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="ca"><span class="fx-ic">{i:box}</span>Catalog Control<em>8</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="sh"><span class="fx-ic">{i:truck}</span>Shipping<em>11</em><i class="fx-p"></i></button><button class="fx-t" type="button" role="tab" data-tab="pa"><span class="fx-ic">{i:card}</span>Payment &amp; Order<em>9</em><i class="fx-p"></i></button></div>
-    <div class="fx-body">
-      <div class="fx-pn on" data-panel="st">
-        <div class="fx-spot"><div class="vz vz-store"><div class="aw"></div><div class="sf"><b>Bloom &amp; Clay</b><span class="open"><i></i>Open now</span></div><div class="pg"><i></i><i></i><i></i></div></div><span class="fx-n"><b>16</b> features</span><h3>Everything a vendor needs to run their store</h3><p>Storefronts, policies, store hours, invoices and location tools that make every vendor look professional.</p></div>
-        <ul class="fx-list"><li style="--d:0">{i:check}<span>Store Location</span></li><li style="--d:1">{i:check}<span>Storefront Customization</span></li><li style="--d:2">{i:check}<span>PDF Invoicing</span></li><li style="--d:3">{i:check}<span>Geolocation Mapping</span></li><li style="--d:4">{i:check}<span>Auto-Reopen Reminder</span></li><li style="--d:5">{i:check}<span>Time Zone Support</span></li><li style="--d:6">{i:check}<span>Store Policies</span></li><li style="--d:7">{i:check}<span>Terms &amp; Conditions</span></li><li style="--d:8">{i:check}<span>Holiday Notification</span></li><li style="--d:9">{i:check}<span>Packing Slip</span></li><li style="--d:10">{i:check}<span>Local Pickup Options</span></li><li style="--d:11">{i:check}<span>Holiday Scheduling</span></li><li style="--d:12">{i:check}<span>Vacation Mode Toggle</span></li><li style="--d:13">{i:check}<span>Location-Based Search</span></li><li style="--d:14">{i:check}<span>Shop Customization</span></li><li style="--d:15">{i:check}<span>Customizable Operating Hours</span></li></ul>
-      </div>
-      <div class="fx-pn" data-panel="co">
-        <div class="fx-spot"><div class="vz vz-split"><div class="dn"><b>$100<small>order</small></b></div><div class="lg"><span><i></i>Vendor <b>$80</b></span><span><i class="a"></i>Admin <b>$20</b></span></div></div><span class="fx-n"><b>10</b> features</span><h3>Commission rules that fit any revenue model</h3><p>Fixed, percentage, tiered or category-based: set commissions per vendor, product or user type.</p></div>
-        <ul class="fx-list"><li style="--d:0">{i:check}<span>Tax Handling in Commissions</span></li><li style="--d:1">{i:check}<span>Dynamic Commission Flow</span></li><li style="--d:2">{i:check}<span>User Types Commission</span></li><li style="--d:3">{i:check}<span>Tiered Commission Plans</span></li><li style="--d:4">{i:check}<span>Category-Based Commissions</span></li><li style="--d:5">{i:check}<span>Commission On Tax</span></li><li style="--d:6">{i:check}<span>Recurring Subscription Commissions</span></li><li style="--d:7">{i:check}<span>Fixed/Percentage Commissions</span></li><li style="--d:8">{i:check}<span>Payment Gateway Charge</span></li><li style="--d:9">{i:check}<span>Refund Adjustments</span></li></ul>
-      </div>
-      <div class="fx-pn" data-panel="ve">
-        <div class="fx-spot"><div class="vz vz-chat"><p class="b1">Is this mug dishwasher safe?</p><p class="b2">Yes! Glazed and dishwasher safe.</p><p class="ty"><i></i><i></i><i></i></p></div><span class="fx-n"><b>10</b> features</span><h3>Keep buyers and vendors talking</h3><p>Reviews, follows and live vendor-buyer chat that build trust and repeat sales.</p></div>
-        <ul class="fx-list"><li style="--d:0">{i:check}<span>Store Reviews</span></li><li style="--d:1">{i:check}<span>Store Follow Button</span></li><li style="--d:2">{i:check}<span>Sales Analytics</span></li><li style="--d:3">{i:check}<span>Star Rating System</span></li><li style="--d:4">{i:check}<span>Follower Notifications</span></li><li style="--d:5">{i:check}<span>Review Analytics</span></li><li style="--d:6">{i:check}<span>Chat History</span></li><li style="--d:7">{i:check}<span>Typing Indicators</span></li><li style="--d:8">{i:check}<span>Vendor-Buyer Chat</span></li><li style="--d:9">{i:check}<span>Chat Analytics</span></li></ul>
-      </div>
-      <div class="fx-pn" data-panel="an">
-        <div class="fx-spot"><div class="vz vz-chart"><div class="bars"><i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:44%"></i><i style="--h:66%"></i><i style="--h:58%"></i><i style="--h:82%"></i><i style="--h:94%"></i></div><span class="kp">{i:trend} Sales +24%</span></div><span class="fx-n"><b>11</b> features</span><h3>Reports and search visibility built in</h3><p>Seller reports, Google Analytics and Yoast / Rank Math support so stores get found.</p></div>
-        <ul class="fx-list"><li style="--d:0">{i:check}<span>Google Analytics Integration</span></li><li style="--d:1">{i:check}<span>SEO Support (Structured Data)</span></li><li style="--d:2">{i:check}<span>SEO Integration (Yoast/Rank Math)</span></li><li style="--d:3">{i:check}<span>Social Media Open Graph</span></li><li style="--d:4">{i:check}<span>Seller's Advanced Reports</span></li><li style="--d:5">{i:check}<span>Sales Overview</span></li><li style="--d:6">{i:check}<span>Sales by Product</span></li><li style="--d:7">{i:check}<span>Sales by Category</span></li><li style="--d:8">{i:check}<span>Stock &amp; Inventory Reports</span></li><li style="--d:9">{i:check}<span>Tax &amp; Transaction Reports</span></li><li style="--d:10">{i:check}<span>Inventory Alerts</span></li></ul>
-      </div>
-      <div class="fx-pn" data-panel="ca">
-        <div class="fx-spot"><div class="vz vz-cat"><div class="gr"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="imp"><span>{i:file} products.csv</span><div class="bar"><i></i></div></div></div><span class="fx-n"><b>8</b> features</span><h3>A catalog that manages itself</h3><p>Bulk import, bulk edit and single product multiple vendor keep big catalogs tidy.</p></div>
-        <ul class="fx-list"><li style="--d:0">{i:check}<span>Product Comparison Table</span></li><li style="--d:1">{i:check}<span>Single Product Multiple Vendor</span></li><li style="--d:2">{i:check}<span>Bulk Product Import/Export</span></li><li style="--d:3">{i:check}<span>Product Bulk Edit</span></li><li style="--d:4">{i:check}<span>Duplicate Product</span></li><li style="--d:5">{i:check}<span>Upload Media Files</span></li><li style="--d:6">{i:check}<span>Add/Edit/Publish Products</span></li><li style="--d:7">{i:check}<span>Product Inventory</span></li></ul>
-      </div>
-      <div class="fx-pn" data-panel="sh">
-        <div class="fx-spot"><div class="vz vz-ship"><svg viewBox="0 0 260 90" aria-hidden="true"><path d="M20 70 C 80 10, 170 90, 240 24"/></svg><span class="p1">{i:store}</span><span class="p2">{i:pin}</span><span class="tr">{i:truck}</span></div><span class="fx-n"><b>11</b> features</span><h3>Every shipping rule your vendors ask for</h3><p>Table rate, zone, distance and country-wise shipping, with tracking for every order.</p></div>
-        <ul class="fx-list"><li style="--d:0">{i:check}<span>Seller Shipping Options</span></li><li style="--d:1">{i:check}<span>Shipping Rate Control</span></li><li style="--d:2">{i:check}<span>Table Rate Shipping</span></li><li style="--d:3">{i:check}<span>Flat Rate Shipping</span></li><li style="--d:4">{i:check}<span>Zone Wise Shipping</span></li><li style="--d:5">{i:check}<span>Distance-Based Shipping</span></li><li style="--d:6">{i:check}<span>Country-Wise Shipping Setup</span></li><li style="--d:7">{i:check}<span>Add Shipping Tracking</span></li><li style="--d:8">{i:check}<span>Service Area Radius</span></li><li style="--d:9">{i:check}<span>Free Shipping Options</span></li><li style="--d:10">{i:check}<span>Payment Gateway Charge Handling</span></li></ul>
-      </div>
-      <div class="fx-pn" data-panel="pa">
-        <div class="fx-spot"><div class="vz vz-pay"><span class="n o">{i:cart}<small>Order</small></span><span class="ln"><i></i></span><span class="n m">{i:percent}<small>Split</small></span><span class="ln"><i></i></span><span class="n w">{i:card}<small>Payout</small></span></div><span class="fx-n"><b>9</b> features</span><h3>Get vendors paid, automatically</h3><p>Split orders, realtime and automated payouts through PayPal and Stripe.</p></div>
-        <ul class="fx-list"><li style="--d:0">{i:check}<span>Order Fulfillment Tools</span></li><li style="--d:1">{i:check}<span>Order Notes</span></li><li style="--d:2">{i:check}<span>Split Orders</span></li><li style="--d:3">{i:check}<span>Order Status Updates</span></li><li style="--d:4">{i:check}<span>Realtime Payout to Vendors</span></li><li style="--d:5">{i:check}<span>PayPal Payment</span></li><li style="--d:6">{i:check}<span>Withdrawal Requests</span></li><li style="--d:7">{i:check}<span>Automated Vendor Payouts</span></li><li style="--d:8">{i:check}<span>Stripe Payment</span></li></ul>
-      </div>
-    </div>
-    <div class="fx-foot"><span class="fx-hint">{i:zap} Tabs switch on their own. Hover to pause.</span><a class="btn btn-primary" href="features.html">Explore All Features {i:arrow}</a><a class="btn btn-ghost" href="pricing.html">Get Started Now</a></div>
+  <div class="tl" data-tlx>
+    <div class="tl-nav" role="tablist"><button class="tl-t on" type="button" data-tl="st"><span class="tl-ic">{i:store}</span><span class="tl-n">Store Management</span><em>16</em></button><button class="tl-t" type="button" data-tl="co"><span class="tl-ic">{i:percent}</span><span class="tl-n">Commission</span><em>10</em></button><button class="tl-t" type="button" data-tl="ve"><span class="tl-ic">{i:users}</span><span class="tl-n">Vendor Engagement</span><em>10</em></button><button class="tl-t" type="button" data-tl="an"><span class="tl-ic">{i:chart}</span><span class="tl-n">Analytics &amp; SEO</span><em>11</em></button><button class="tl-t" type="button" data-tl="ca"><span class="tl-ic">{i:box}</span><span class="tl-n">Catalog Control</span><em>8</em></button><button class="tl-t" type="button" data-tl="sh"><span class="tl-ic">{i:truck}</span><span class="tl-n">Shipping</span><em>11</em></button><button class="tl-t" type="button" data-tl="pa"><span class="tl-ic">{i:card}</span><span class="tl-n">Payment &amp; Order</span><em>9</em></button></div>
+    <div class="tl-body"><div class="tl-p on" data-tl="st"><div class="tl-ph"><b>Store Management</b><span>16 features</span></div><div class="tl-g"><div class="tl-c"><span class="tl-ci" style="--d:0">{i:pin}</span><span>Store Location</span></div><div class="tl-c"><span class="tl-ci" style="--d:1">{i:store}</span><span>Storefront Customization</span></div><div class="tl-c"><span class="tl-ci" style="--d:2">{i:file}</span><span>PDF Invoicing</span></div><div class="tl-c"><span class="tl-ci" style="--d:3">{i:pin}</span><span>Geolocation Mapping</span></div><div class="tl-c"><span class="tl-ci" style="--d:4">{i:cal}</span><span>Auto-Reopen Reminder</span></div><div class="tl-c"><span class="tl-ci" style="--d:5">{i:clock}</span><span>Time Zone Support</span></div><div class="tl-c"><span class="tl-ci" style="--d:6">{i:book}</span><span>Store Policies</span></div><div class="tl-c"><span class="tl-ci" style="--d:7">{i:book}</span><span>Terms &amp; Conditions</span></div><div class="tl-c"><span class="tl-ci" style="--d:8">{i:cal}</span><span>Holiday Notification</span></div><div class="tl-c"><span class="tl-ci" style="--d:9">{i:file}</span><span>Packing Slip</span></div><div class="tl-c"><span class="tl-ci" style="--d:10">{i:pin}</span><span>Local Pickup Options</span></div><div class="tl-c"><span class="tl-ci" style="--d:11">{i:clock}</span><span>Holiday Scheduling</span></div><div class="tl-c"><span class="tl-ci" style="--d:12">{i:cal}</span><span>Vacation Mode Toggle</span></div><div class="tl-c"><span class="tl-ci" style="--d:13">{i:pin}</span><span>Location-Based Search</span></div><div class="tl-c"><span class="tl-ci" style="--d:14">{i:sparkle}</span><span>Shop Customization</span></div><div class="tl-c"><span class="tl-ci" style="--d:15">{i:clock}</span><span>Customizable Operating Hours</span></div></div></div><div class="tl-p" data-tl="co"><div class="tl-ph"><b>Commission</b><span>10 features</span></div><div class="tl-g"><div class="tl-c"><span class="tl-ci" style="--d:0">{i:percent}</span><span>Tax Handling in Commissions</span></div><div class="tl-c"><span class="tl-ci" style="--d:1">{i:percent}</span><span>Dynamic Commission Flow</span></div><div class="tl-c"><span class="tl-ci" style="--d:2">{i:percent}</span><span>User Types Commission</span></div><div class="tl-c"><span class="tl-ci" style="--d:3">{i:percent}</span><span>Tiered Commission Plans</span></div><div class="tl-c"><span class="tl-ci" style="--d:4">{i:percent}</span><span>Category-Based Commissions</span></div><div class="tl-c"><span class="tl-ci" style="--d:5">{i:percent}</span><span>Commission On Tax</span></div><div class="tl-c"><span class="tl-ci" style="--d:6">{i:percent}</span><span>Recurring Subscription Commissions</span></div><div class="tl-c"><span class="tl-ci" style="--d:7">{i:percent}</span><span>Fixed/Percentage Commissions</span></div><div class="tl-c"><span class="tl-ci" style="--d:8">{i:card}</span><span>Payment Gateway Charge</span></div><div class="tl-c"><span class="tl-ci" style="--d:9">{i:check}</span><span>Refund Adjustments</span></div></div></div><div class="tl-p" data-tl="ve"><div class="tl-ph"><b>Vendor Engagement</b><span>10 features</span></div><div class="tl-g"><div class="tl-c"><span class="tl-ci" style="--d:0">{i:star}</span><span>Store Reviews</span></div><div class="tl-c"><span class="tl-ci" style="--d:1">{i:heart}</span><span>Store Follow Button</span></div><div class="tl-c"><span class="tl-ci" style="--d:2">{i:chart}</span><span>Sales Analytics</span></div><div class="tl-c"><span class="tl-ci" style="--d:3">{i:star}</span><span>Star Rating System</span></div><div class="tl-c"><span class="tl-ci" style="--d:4">{i:heart}</span><span>Follower Notifications</span></div><div class="tl-c"><span class="tl-ci" style="--d:5">{i:star}</span><span>Review Analytics</span></div><div class="tl-c"><span class="tl-ci" style="--d:6">{i:msg}</span><span>Chat History</span></div><div class="tl-c"><span class="tl-ci" style="--d:7">{i:check}</span><span>Typing Indicators</span></div><div class="tl-c"><span class="tl-ci" style="--d:8">{i:msg}</span><span>Vendor-Buyer Chat</span></div><div class="tl-c"><span class="tl-ci" style="--d:9">{i:msg}</span><span>Chat Analytics</span></div></div></div><div class="tl-p" data-tl="an"><div class="tl-ph"><b>Analytics &amp; SEO</b><span>11 features</span></div><div class="tl-g"><div class="tl-c"><span class="tl-ci" style="--d:0">{i:chart}</span><span>Google Analytics Integration</span></div><div class="tl-c"><span class="tl-ci" style="--d:1">{i:msg}</span><span>SEO Support (Structured Data)</span></div><div class="tl-c"><span class="tl-ci" style="--d:2">{i:search}</span><span>SEO Integration (Yoast/Rank Math)</span></div><div class="tl-c"><span class="tl-ci" style="--d:3">{i:check}</span><span>Social Media Open Graph</span></div><div class="tl-c"><span class="tl-ci" style="--d:4">{i:chart}</span><span>Seller's Advanced Reports</span></div><div class="tl-c"><span class="tl-ci" style="--d:5">{i:check}</span><span>Sales Overview</span></div><div class="tl-c"><span class="tl-ci" style="--d:6">{i:box}</span><span>Sales by Product</span></div><div class="tl-c"><span class="tl-ci" style="--d:7">{i:check}</span><span>Sales by Category</span></div><div class="tl-c"><span class="tl-ci" style="--d:8">{i:chart}</span><span>Stock &amp; Inventory Reports</span></div><div class="tl-c"><span class="tl-ci" style="--d:9">{i:chart}</span><span>Tax &amp; Transaction Reports</span></div><div class="tl-c"><span class="tl-ci" style="--d:10">{i:box}</span><span>Inventory Alerts</span></div></div></div><div class="tl-p" data-tl="ca"><div class="tl-ph"><b>Catalog Control</b><span>8 features</span></div><div class="tl-g"><div class="tl-c"><span class="tl-ci" style="--d:0">{i:box}</span><span>Product Comparison Table</span></div><div class="tl-c"><span class="tl-ci" style="--d:1">{i:box}</span><span>Single Product Multiple Vendor</span></div><div class="tl-c"><span class="tl-ci" style="--d:2">{i:layers}</span><span>Bulk Product Import/Export</span></div><div class="tl-c"><span class="tl-ci" style="--d:3">{i:layers}</span><span>Product Bulk Edit</span></div><div class="tl-c"><span class="tl-ci" style="--d:4">{i:box}</span><span>Duplicate Product</span></div><div class="tl-c"><span class="tl-ci" style="--d:5">{i:check}</span><span>Upload Media Files</span></div><div class="tl-c"><span class="tl-ci" style="--d:6">{i:box}</span><span>Add/Edit/Publish Products</span></div><div class="tl-c"><span class="tl-ci" style="--d:7">{i:box}</span><span>Product Inventory</span></div></div></div><div class="tl-p" data-tl="sh"><div class="tl-ph"><b>Shipping</b><span>11 features</span></div><div class="tl-g"><div class="tl-c"><span class="tl-ci" style="--d:0">{i:truck}</span><span>Seller Shipping Options</span></div><div class="tl-c"><span class="tl-ci" style="--d:1">{i:truck}</span><span>Shipping Rate Control</span></div><div class="tl-c"><span class="tl-ci" style="--d:2">{i:truck}</span><span>Table Rate Shipping</span></div><div class="tl-c"><span class="tl-ci" style="--d:3">{i:truck}</span><span>Flat Rate Shipping</span></div><div class="tl-c"><span class="tl-ci" style="--d:4">{i:truck}</span><span>Zone Wise Shipping</span></div><div class="tl-c"><span class="tl-ci" style="--d:5">{i:truck}</span><span>Distance-Based Shipping</span></div><div class="tl-c"><span class="tl-ci" style="--d:6">{i:truck}</span><span>Country-Wise Shipping Setup</span></div><div class="tl-c"><span class="tl-ci" style="--d:7">{i:truck}</span><span>Add Shipping Tracking</span></div><div class="tl-c"><span class="tl-ci" style="--d:8">{i:check}</span><span>Service Area Radius</span></div><div class="tl-c"><span class="tl-ci" style="--d:9">{i:truck}</span><span>Free Shipping Options</span></div><div class="tl-c"><span class="tl-ci" style="--d:10">{i:card}</span><span>Payment Gateway Charge Handling</span></div></div></div><div class="tl-p" data-tl="pa"><div class="tl-ph"><b>Payment &amp; Order</b><span>9 features</span></div><div class="tl-g"><div class="tl-c"><span class="tl-ci" style="--d:0">{i:cart}</span><span>Order Fulfillment Tools</span></div><div class="tl-c"><span class="tl-ci" style="--d:1">{i:cart}</span><span>Order Notes</span></div><div class="tl-c"><span class="tl-ci" style="--d:2">{i:cart}</span><span>Split Orders</span></div><div class="tl-c"><span class="tl-ci" style="--d:3">{i:chart}</span><span>Order Status Updates</span></div><div class="tl-c"><span class="tl-ci" style="--d:4">{i:clock}</span><span>Realtime Payout to Vendors</span></div><div class="tl-c"><span class="tl-ci" style="--d:5">{i:card}</span><span>PayPal Payment</span></div><div class="tl-c"><span class="tl-ci" style="--d:6">{i:card}</span><span>Withdrawal Requests</span></div><div class="tl-c"><span class="tl-ci" style="--d:7">{i:card}</span><span>Automated Vendor Payouts</span></div><div class="tl-c"><span class="tl-ci" style="--d:8">{i:card}</span><span>Stripe Payment</span></div></div></div></div>
   </div>
+  <div class="tl-foot"><a class="btn btn-primary" href="features.html">Explore All Features {i:arrow}</a><a class="btn btn-ghost" href="pricing.html">Get Started Now</a></div>
 </div></section>
 
 <section class="sec choice"><div class="wrap">
@@ -244,13 +238,17 @@
       <div class="p5-tx"><span class="p5-k">{i:card} Payments</span><h3>Global Payments, Seamlessly Handled</h3><p>Empower transactions with confidence. MultiVendorX supports secure payment gateways, ensuring smooth, trustworthy transactions for buyers and vendors worldwide.</p></div>
     </div>
     <div class="p5c c-lang">
-      <div class="p5-art art-lang" aria-hidden="true"><div class="globe"><i></i><i></i><i></i><u></u></div>
-        <div class="say">Shop <span class="accent" data-rotate="now|ahora|jetzt|maintenant|अभी">now</span></div></div>
+      <div class="p5-art art-loc" aria-hidden="true"><div class="loc" data-loc>
+        <div class="loc-pills"><span class="on">EN</span><span>ES</span><span>DE</span><span>HI</span></div>
+        <div class="loc-card"><i class="th"></i><div class="tx"><b data-l="Handmade mug|Taza artesanal|Handgemachte Tasse|हस्तनिर्मित मग">Handmade mug</b><small data-l="Free shipping|Envío gratis|Gratis Versand|मुफ़्त शिपिंग">Free shipping</small></div></div>
+        <span class="loc-btn" data-l="Add to cart|Añadir al carrito|In den Warenkorb|कार्ट में डालें">Add to cart</span></div></div>
       <div class="p5-tx"><span class="p5-k">{i:lang} Multilingual</span><h3>Speak their language, win their loyalty</h3><p>Expand into new markets effortlessly. With multilingual support and region-specific configurations, MultiVendorX delivers a localized marketplace experience that builds trust and drives conversions.</p></div>
     </div>
     <div class="p5c c-cur">
-      <div class="p5-art art-cur" aria-hidden="true"><div class="price">Price: <span class="tick"><span><b>$49.00</b><b>€45.20</b><b>£38.90</b><b>₹4,099</b></span></span></div>
-        <div class="coins"><span>$</span><span>€</span><span>£</span><span>₹</span></div></div>
+      <div class="p5-art art-loc" aria-hidden="true"><div class="loc" data-loc>
+        <div class="loc-pills"><span class="on">USD</span><span>EUR</span><span>GBP</span><span>INR</span></div>
+        <div class="loc-card"><i class="th t2"></i><div class="tx"><b>Speckled mug</b><small>Bloom &amp; Clay</small></div><strong data-l="$28.00|€25.90|£22.10|₹2,340">$28.00</strong></div>
+        <span class="loc-note">Vendor gets paid in <b>USD</b></span></div></div>
       <div class="p5-tx"><span class="p5-k">{i:coins} Multi-currency</span><h3>Multiple currencies, one marketplace</h3><p>Sell globally, earn locally. MultiVendorX supports multiple currencies, offering your international customers the ease of shopping in their own currency, boosting conversions and eliminating guesswork.</p></div>
     </div>
     <div class="p5c c-wp">
@@ -272,8 +270,7 @@
     <p class="lead">From first-time founders to seasoned marketplace operators, discover how MultiVendorX helped them build faster, scale smarter, and support thousands of vendors without breaking a sweat.</p></div>
     <span class="wp-badge"><span class="stars">{i:star}{i:star}{i:star}{i:star}{i:star}</span> 4.9 / 5 on WordPress.org</span>
   </div></div>
-  <div class="marquee tm"><div class="track">{TESTI}{TESTI}</div></div>
-  <div class="marquee tm rev" style="margin-top:18px"><div class="track">{TESTI2}{TESTI2}</div></div>
+  <div class="wrap"><div class="tgrid">{TESTI}{TESTI2}</div></div>
 </section>
 
 <section class="sec white blog"><div class="wrap">
