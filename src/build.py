@@ -34,6 +34,7 @@ for fn, src, title, desc, on in PAGES:
 <meta name="description" content="{desc}">
 <link rel="stylesheet" href="assets/css/mvx.css">
 <link rel="stylesheet" href="assets/css/v2.css">
+<link rel="stylesheet" href="assets/css/v3.css">
 </head>
 <body class="pg-{src}">
 {rd("icons.html")}

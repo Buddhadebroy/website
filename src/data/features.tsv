@@ -1,0 +1,110 @@
+segment	title	price	plan	for	module	description
+Marketplace operations	Shared product listings across stores	Free		Store Admin	MultiVendorX Core	Allow multiple stores to sell the same product while managing their own pricing and inventory.
+Marketplace operations	Multiple stores under one account	Free		Store Admin	MultiVendorX Core	Let one user create and manage multiple stores from a single account.
+Marketplace operations	Store staff roles & permissions	Free		Store Admin	MultiVendorX Core	Create staff accounts and control access to orders, products, reports, payouts, and store settings.
+Marketplace operations	Store approval workflow	Free		Store Admin	MultiVendorX Core	Approve, reject, suspend, or reactivate store applications manually or automatically.
+Marketplace operations	Facilitator commission management	Premium	Starter	Store Admin	Facilitator	Assign facilitators to stores and automatically share commissions based on marketplace rules.
+Marketplace operations	Facilitator payout management	Premium	Starter	Store Admin	Facilitator	Allow facilitators to receive payouts and manage commission earnings directly from the marketplace.
+Marketplace operations	Facilitator wallet access	Premium	Starter	Store Admin	Facilitator	Give facilitators access to wallet balance, transaction history, and withdrawal requests.
+Marketplace operations	Franchise store management	Premium	Starter	Store Admin	Franchise	Create franchise-based marketplaces where stores can sell approved products under franchise rules.
+Commission Management	Store Order & Item-Based Commission	Free		Store Admin	MultiVendorX Core	Apply commissions on the complete store order or calculate commissions separately for each product in the order based on your marketplace business model.
+Commission Management	Tax & Shipping Commission Distribution	Free		Store Admin	MultiVendorX Core	Control how taxes and shipping charges are distributed between the marketplace and stores during commission calculations, including commission-based tax handling.
+Commission Management	Marketplace Fee Management	Free		Store Admin	MultiVendorX Core	Add additional marketplace service fees as fixed amounts, percentage-based charges, or combined fee models. Choose whether the fee is added to customer checkout or deducted from vendor earnings.
+Commission Management	Facilitator Fee Distribution	Premium	Starter	Store Admin	MultiVendorX Core	Assign facilitator fees globally or per store using fixed, percentage, or combined fee structures deducted directly from store earnings.
+Commission Management	Payment Method Based Gateway Fees	Premium	Starter	Store Admin	MultiVendorX Core	Configure separate transaction fees for different payment methods such as direct bank transfer, cash on delivery, or online payment gateways.
+Commission Management	Payment Gateway Fee Management	Free		Store Admin	MultiVendorX Core	Decide whether payment gateway fees are paid by the admin, vendor, or shared between both during order transactions.
+Commission Management	Flexible Vendor Commission Rules	Free		Store Admin	MultiVendorX Core	Create flexible commission rules based on products, categories, vendors, memberships, or global marketplace settings.
+Commission Management	Multiple Commission Calculation Options	Free		Store Admin	MultiVendorX Core	Calculate commissions using fixed amounts, percentages, combined rules, quantity-based charges, or price-based conditions.
+Marketplace Membership	Flexible Membership Pricing	Premium	Starter	Store Admin	Marketplace Membership	Create free, one-time payment, or recurring subscription plans for different types of stores in your marketplace.
+Marketplace Membership	Automated Membership Renewals	Premium	Starter	Store Admin	Marketplace Membership	Automatically renew store membership plans based on weekly, monthly, or yearly billing cycles.
+Marketplace Membership	One-Time & Recurring Membership Payments	Premium	Starter	Store Admin	Marketplace Membership	Charge stores a signup fee, recurring subscription fee, or both depending on the selected membership plan.
+Marketplace Membership	Free Trial Access for Membership Plans	Premium	Starter	Store Admin	Marketplace Membership	Offer free trial periods so stores can test marketplace features before subscribing to a paid membership plan.
+Marketplace Membership	Featured Membership Plans	Premium	Starter	Store Admin	Marketplace Membership	Highlight recommended membership plans to encourage stores to choose preferred subscription options.
+Marketplace Membership	Membership Plan Highlights	Premium	Starter	Store Admin	Marketplace Membership	Display plan benefits, features, and promotional highlights directly on membership and checkout pages.
+Marketplace Membership	Store Access Control After Plan Expiry	Premium	Starter	Store Admin	Marketplace Membership	Automatically change store access, permissions, or account roles after membership plans expire or enter the grace period.
+Marketplace Membership	Plan-Based Marketplace Commission Rules	Premium	Starter	Store Admin	Marketplace Membership	Set different commission rates and earning structures for stores based on their active membership plan.
+Marketplace Membership	Plan-Based Product Type Access	Premium	Starter	Store Admin	Marketplace Membership	
+Marketplace Membership	Plan-Based Category Access	Premium	Starter	Store Admin	Marketplace Membership	
+Marketplace Membership	Plan-Based Listing Permissions	Premium	Starter	Store Admin	Marketplace Membership	
+Marketplace Membership	Plan-Based Premium Feature Access	Premium	Starter	Store Admin	Marketplace Membership	
+Marketplace Membership	Plan-Based Marketing & Sales Tools	Premium	Starter	Store Admin	Marketplace Membership	
+Marketplace Membership	Plan-Based Store Management Tools	Premium	Starter	Store Admin	Marketplace Membership	
+Marketplace Membership	Plan-Based Customer Support Features	Premium	Starter	Store Admin	Marketplace Membership	
+Marketplace Membership	Multiple Membership Payment Methods	Premium	Starter	Store Admin	Marketplace Membership	
+Refunds Management	Store-Wise Split Checkout View	Free		Customer	Marketplace Refund	
+Refunds Management	Order Shipment Tracking	Free		Store Admin Customer	Marketplace Refund	
+Refunds Management	Refund Request Approval Control	Free		Store Admin	Marketplace Refund	
+Refunds Management	Refund Rules & Conditions	Free		Store Admin	Marketplace Refund	
+Refunds Management	Customer Refund Requests	Free		Customer	Marketplace Refund	
+Refunds Management	Refund Request Image Upload	Free		Customer	Marketplace Refund	
+Analytics	See Store Visitor Insights	Free		Store	Store Analytics	
+Analytics	Better Product Sharing on Social Media	Free		Store	Store Analytics	
+Analytics	Higher Visibility on Google Search	Free		Store	Store Analytics	
+Analytics	Store Sales & Performance Reports	Free		Store	Store Analytics	
+Analytics	Rich Product Results on Google	Free		Store	Store Analytics	
+Analytics	Marketplace Sales & Vendor Analytics	Free		Admin	Store Analytics	
+Orders Management	Store-Wise Split Order Management	Free		Store	MultiVendorX Core	
+Orders Management	Store Order Dashboard	Free		Store	MultiVendorX Core	
+Orders Management	Order Notes & Customer Communication	Free		Store Customer	MultiVendorX Core	
+Orders Management	Order Status Management	Free		Store Admin	MultiVendorX Core	
+Orders Management	Marketplace Order Logs	Free		Store Admin	MultiVendorX Core	
+Invoicing	Downloadable Packing Slips	Premium	Starter	Store Admin	Invoice & Packing Slips	
+Invoicing	Store Invoice Management	Premium	Starter	Store Admin Customer	Invoice & Packing Slips	
+Invoicing	Custom Invoice Design	Premium	Starter	Store Admin Customer	Invoice & Packing Slips	
+Invoicing	Automatic PDF Invoice Delivery	Premium	Starter	Store Admin Customer	Invoice & Packing Slips	
+Invoicing	VAT & GST Invoice Support	Premium	Starter	Store Admin Customer	Invoice & Packing Slips	
+Invoicing	Monthly Tax Invoices for Stores	Premium	Starter	Store Admin	Invoice & Packing Slips	
+Invoicing	Membership Payment Invoices	Premium	Starter	Store	Invoice & Packing Slips	
+Payments & payouts	Minimum earnings required for payout	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Store withdrawal requests	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Automatic store payouts	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Shipping earnings distribution	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Coupon discount sharing	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Tax earnings distribution	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Payout based on order status	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Delayed payout protection period	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Minimum wallet reserve balance	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Withdrawal approval controls	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Withdrawal limits & processing fees	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Store payment & earnings history	Free		Store	MultiVendorX Core	
+Payments & payouts	Manual & automatic store payouts	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Razorpay marketplace payments	Free		Store Admin	Razorpay	
+Payments & payouts	Stripe card payments	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Bulk PayPal store payouts	Free		Store Admin	MultiVendorX Core	
+Payments & payouts	Instant split payments with Stripe	Premium	Starter	Store Admin Customer	Stripe Marketplace	
+Payments & payouts	Instant split payments with PayPal	Premium	Starter	Store Admin Customer	PayPal Marketplace	
+Payments & payouts	Multiple store withdrawal methods	Free		Store Admin	MultiVendorX Core	
+Product management	Low stock warning alerts	Premium	Starter	Store Admin	Store Inventory	
+Product management	Out-of-stock warning alerts	Premium	Starter	Store Admin	Store Inventory	
+Product management	Low stock limit controls	Premium	Starter	Store Admin	Store Inventory	
+Product management	Out-of-stock limit controls	Premium	Starter	Store Admin	Store Inventory	
+Product management	Product import & export	Premium	Starter	Store Admin	Import Export	
+Product management	Product image & media uploads	Free		Store Admin	MultiVendorX Core	
+Product management	Store coupon creation	Free		Store Admin	MultiVendorX Core	
+Product management	Store coupon management	Free		Store Admin	MultiVendorX Core	
+Product management	Product publishing without approval	Free		Store Admin	MultiVendorX Core	
+Product management	Product submission for review	Free		Store Admin	MultiVendorX Core	
+Product management	Published product editing	Free		Store Admin	MultiVendorX Core	
+Product management	Multiple stores selling the same product	Free		Store	MultiVendorX Core	
+Product management	Search products from other stores	Free		Store	MultiVendorX Core	
+Product management	Product comparison between stores	Free		Customer	MultiVendorX Core	
+Product management	Compare offers from multiple stores	Free		Customer	MultiVendorX Core	
+Product management	Bulk product editing	Free		Store Admin	MultiVendorX Core	
+Product management	Featured product display	Premium	Starter	Store	MultiVendorX Core	
+Product management	Custom product fields	Premium	Starter	Store	Advance Custom field	
+Product management	Bulk product management	Premium	Starter	Store Admin	MultiVendorX Pro Core	
+Product management	Product location display	Premium	Starter	Store Customer	GEO Location	
+Product management	Guided product category selection	Free		Store	MultiVendorX Core	
+Product management	Automatic SKU generation	Free		Store	MultiVendorX Core	
+Product management	Flexible SKU format controls	Free		Store	MultiVendorX Core	
+Product management	Related product recommendations	Free		Store Admin Customer	MultiVendorX Core	
+Product management	Multiple product selling models	Free		Store Admin	MultiVendorX Core	
+Product management	Shared product display priority	Free		Store Admin	MultiVendorX Core	
+Product management	Additional offer display position	Free		Store Admin	MultiVendorX Core	
+Product management	Product assignment for stores	Free		Store	MultiVendorX Core	
+Store management	Featured store badges	Premium	Starter	Store Customer	Marketplace Compliance	
+Store management	Verified store badges	Premium	Starter	Store Admin	Marketplace Compliance	
+Store management	Social profile verification	Premium	Starter	Store Admin	Marketplace Compliance	
+Store management	Store address verification	Premium	Starter	Store Admin	Marketplace Compliance	
+Store management	Store identity verification	Premium	Starter	Store Admin	Marketplace Compliance	
+Store management	Advanced store directory	Free		Store Admin	GEO Location	
