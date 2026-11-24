@@ -32,8 +32,8 @@ for fn, src, title, desc, on in PAGES:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="stylesheet" href="assets/css/mvx.css?v=r7">
-<link rel="stylesheet" href="assets/css/v2.css?v=r7">
+<link rel="stylesheet" href="assets/css/mvx.css?v=r8">
+<link rel="stylesheet" href="assets/css/v2.css?v=r8">
 </head>
 <body class="pg-{src}">
 {rd("icons.html")}
@@ -43,7 +43,7 @@ for fn, src, title, desc, on in PAGES:
 </main>
 {rd("footer.html")}
 <script src="assets/js/jquery-3.7.1.min.js"></script>
-<script src="assets/js/mvx.js?v=r7"></script>
+<script src="assets/js/mvx.js?v=r8"></script>
 </body>
 </html>
 '''
