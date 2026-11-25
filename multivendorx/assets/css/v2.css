@@ -2086,3 +2086,31 @@ ul.mixl b{font-size:15px;color:var(--ink)}
 .jy-c .go{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:16px;font-size:14px;font-weight:600;color:var(--brand)}
 .jy-c .go svg.i{width:15px;height:15px}
 @media (max-width:800px){.jy-g{grid-template-columns:1fr}.jy-g::before{display:none}}
+
+/* ---- Dark footer (r17) ---- */
+.ftr{background:#0b0912;color:#a8a3b8;border-top:0;isolation:isolate}
+.ftr::before{content:"";position:absolute;z-index:-1;left:50%;top:-220px;width:900px;height:440px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(124,58,237,.28),transparent);pointer-events:none}
+.ftr::after{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.45),transparent)}
+.ftr .logo{color:#fff}
+.ftr .tagline{color:#a8a3b8}
+.ftr h5{color:#fff}
+.ftr .sub{color:#6f6a80}
+.ftr ul a{color:#c7c2d6;font-weight:500}
+.ftr ul a:hover{color:#fff}
+.ftr ul a::before{background:#a78bfa}
+.ftr .news label{color:#fff}
+.ftr .news form{background:#15121f;border-color:#2a2538;box-shadow:none}
+.ftr .news form:focus-within{border-color:#7c3aed;box-shadow:0 0 0 4px rgba(124,58,237,.2)}
+.ftr .news input{color:#fff}
+.ftr .news input::placeholder{color:#6f6a80}
+.ftr .social a{background:#15121f;border-color:#2a2538;color:#c7c2d6}
+.ftr .social a:hover{background:#5007aa;border-color:#5007aa;color:#fff}
+.ftr .vs a,.ftr .prod{background:#15121f;border-color:#2a2538;color:#fff}
+.ftr .vs a:hover,.ftr .prod:hover{border-color:#5b3fa0;box-shadow:none}
+.ftr .vs a svg.i{color:#a78bfa}
+.ftr .vs em{background:rgba(124,58,237,.18);color:#c4b1ff}
+.ftr .prod small{color:#6f6a80}
+.ftr-bot{border-top-color:#221e2e;color:#8a8499;font-weight:500}
+.ftr-bot a:hover{color:#fff}
+.ftr-word{font-weight:800;color:#1a1626}
+@supports (-webkit-background-clip:text){.ftr-word{background:linear-gradient(180deg,rgba(167,139,250,.2),rgba(167,139,250,.02) 85%);-webkit-background-clip:text;background-clip:text;color:transparent}}

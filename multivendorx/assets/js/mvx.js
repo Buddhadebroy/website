@@ -394,3 +394,46 @@ $(function () {
   $(window).on('scroll resize', upd); upd();
 });
 
+
+/* Home: FAQ accordion + modules filter (uploaded design) */
+$(function(){
+  var $f=$('.rf [data-faq]');
+  if($f.length){
+    var paint=function($it,open){
+      var $b=$it.children('button'),$s=$b.children('span');
+      $b.attr('aria-expanded',open?'true':'false');
+      $it.children('p').prop('hidden',!open);
+      $s.eq(0).css('color',open?'#5007aa':'#9ca3af');
+      $s.eq(2).css({background:open?'#5007aa':'#f4eefb',color:open?'#fff':'#5007aa',transform:'rotate('+(open?45:0)+'deg)'});
+    };
+    $f.children('button').on('click',function(){
+      var $it=$(this).parent(),open=$(this).attr('aria-expanded')!=='true';
+      $f.each(function(){paint($(this),false)});
+      if(open)paint($it,true);
+    });
+  }
+  var $m=$('#modules');
+  if(!$m.length)return;
+  var CATS={"all": ["All modules", "Every module in MultiVendorX. Each one is a switch."], "marketplace_types": ["Marketplace Types", "Decide what kind of marketplace you run."], "product_types": ["Product Types", "Let stores sell more than simple products."], "store_management": ["Store Management", "The tools each store uses to run its shop."], "payment_management": ["Payment Management", "How money reaches your stores."], "shipping_management": ["Shipping Management", "How stores price and send parcels."], "customer_experience": ["Customer Experience", "Help shoppers trust and talk to stores."], "analytics_tools": ["Marketing Tools", "Help stores get found and sell more."], "marketplace_boosters": ["Marketplace Boosters", "Grow revenue and keep quality high."], "notification": ["Notification", "Keep every store in the loop."], "integration": ["Integration", "Connect the plugins you already use."]},cat='all',tier='all',$cards=$m.find('.rf-mxcard');
+  var inT=function($c){var p=$c.attr('data-p')==='1';return tier==='all'||(tier==='pro'?p:!p)};
+  var inC=function($c,id){return id==='all'||(' '+$c.attr('data-c')+' ').indexOf(' '+id+' ')>-1};
+  var draw=function(){
+    var n=0;
+    $cards.each(function(){var $c=$(this),on=inC($c,cat)&&inT($c);$c.toggleClass('is-off',!on);if(on)n++});
+    $m.find('[data-cat]').each(function(){
+      var $b=$(this),id=$b.attr('data-cat'),on=id===cat,k=0;
+      $cards.each(function(){if(inC($(this),id)&&inT($(this)))k++});
+      $b.css({background:on?'#f1ebfb':'transparent',color:on?'#5007aa':'#3d4155',fontWeight:on?700:500}).attr('aria-pressed',on);
+      $b.children('span').last().text(k);
+    });
+    $m.find('[data-tier]').each(function(){
+      var $b=$(this),on=$b.attr('data-tier')===tier;
+      $b.css({background:on?'#1f1b3e':'#fff',color:on?'#fff':'#1f1b3e',borderColor:on?'#1f1b3e':'#ece6f6'}).attr('aria-pressed',on);
+    });
+    var c=CATS[cat]||CATS.all;
+    $m.find('[data-mt]').text(c[0]);$m.find('[data-mb]').text(c[1]);
+    $m.find('[data-mn]').text(n===1?'1 module':n+' modules');
+  };
+  $m.on('click','[data-cat]',function(){cat=$(this).attr('data-cat');draw()});
+  $m.on('click','[data-tier]',function(){tier=$(this).attr('data-tier');draw()});
+});
