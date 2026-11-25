@@ -437,3 +437,30 @@ $(function(){
   $m.on('click','[data-cat]',function(){cat=$(this).attr('data-cat');draw()});
   $m.on('click','[data-tier]',function(){tier=$(this).attr('data-tier');draw()});
 });
+
+/* Home: marketplace type tabs + "show all modules" */
+$(function(){
+  var $t=$('.nx-types');
+  if($t.length){
+    $t.on('click','.nx-tab',function(){
+      var i=$(this).attr('data-tab');
+      $t.find('.nx-tab').removeClass('is-on').attr('aria-selected','false');
+      $(this).addClass('is-on').attr('aria-selected','true');
+      $t.find('.nx-panel').each(function(){var on=$(this).attr('data-panel')===i;$(this).toggleClass('is-on',on).prop('hidden',!on)});
+    });
+  }
+  var $w=$('.nx-mods');
+  if(!$w.length)return;
+  var open=false,LIMIT=12;
+  var cut=function(){
+    var n=0;
+    $w.find('.rf-mxcard').each(function(){var $c=$(this);$c.removeClass('is-cut');if(!$c.hasClass('is-off')){n++;if(n>LIMIT)$c.addClass('is-cut')}});
+    var short=!open&&n>LIMIT;
+    $w.toggleClass('is-short',short);
+    $w.find('.nx-more').prop('hidden',!short).find('button').text('Show all '+n+' modules');
+  };
+  $w.on('click','[data-cat],[data-tier]',function(){setTimeout(cut,0)});
+  $('#modules').on('click','[data-tier]',function(){setTimeout(cut,0)});
+  $w.on('click','[data-more]',function(){open=true;cut()});
+  cut();
+});

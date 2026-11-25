@@ -80,8 +80,7 @@
 /* ---- integration with site CSS (home only) ---- */
 body.pg-home{background:#fbfaff}
 .rf{line-height:normal;font-size:16px}
-.rf *,.rf *::before,.rf *::after{animation:none!important}
-.rf .rf-in{opacity:1}
+.rf section:not(.rf-live) *{animation:none!important}
 .rf .rf-pk{display:none}
 .rf h1,.rf h2,.rf h3,.rf h4,.rf h5{font-family:inherit;letter-spacing:inherit;font-weight:inherit;line-height:inherit;color:inherit}
 .rf .rf-h1{font-size:76px;line-height:1.02;letter-spacing:-0.035em;font-weight:800}
@@ -92,3 +91,9 @@ body.pg-home{background:#fbfaff}
 .rf-mxcard.is-off{display:none}
 @media (max-width:960px){.rf .rf-h1{font-size:50px}.rf .rf-h2{font-size:36px}}
 @media (max-width:620px){.rf .rf-h1{font-size:40px}.rf .rf-h2{font-size:30px}}
+
+/* hero motion (from the uploaded design) */
+@keyframes flow{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes appear{0%{opacity:0;transform:translateY(10px)}8%,92%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}

@@ -1750,7 +1750,7 @@ ul.mixl b{font-size:15px;color:var(--ink)}
    Every keyframe animation jumps straight to its end state, so nothing floats,
    pulses, spins or loops. Kept: scroll reveal (transitions), testimonial marquee,
    and the multilingual "Shop now" word on the home page. */
-*,*::before,*::after{animation-duration:.001s!important;animation-delay:0s!important;animation-iteration-count:1!important}
+:not(.rf-live *),:not(.rf-live *)::before,:not(.rf-live *)::after{animation-duration:.001s!important;animation-delay:0s!important;animation-iteration-count:1!important}
 .marquee .track{animation:marquee 40s linear infinite!important}
 .marquee.rev .track{animation-direction:reverse!important}
 .lift:hover,.card.lift:hover,.p5c:hover,.dk-vid:hover,.tilt:hover{transform:none!important}
