@@ -18,7 +18,7 @@ ver = lambda p: hashlib.md5((OUT / p).read_bytes()).hexdigest()[:8]
 PAGES = [
     # file, source, title, description, active nav
     ("index.html", "home", "Notifima: WooCommerce Back in Stock Notifications and Waitlists",
-     "Automatically notify customers when WooCommerce products are back in stock, track demand before you restock, and recover lost sales.", ""),
+     "Automatically notify customers when WooCommerce products are back in stock, track demand before you restock, and recover lost sales.", "home"),
     ("features.html", "features", "Features | Notifima",
      "From waitlist to cart in one click: back in stock alerts, double opt-in, reCAPTCHA, Mailchimp sync and a subscriber dashboard for WooCommerce.", "features"),
     ("pricing.html", "pricing", "Pricing | Notifima",
@@ -27,6 +27,8 @@ PAGES = [
      "News, tips and tutorials on WooCommerce back in stock alerts, waitlists and demand tracking.", "res"),
     ("changelog.html", "changelog", "Release Notes | Notifima",
      "Every Notifima release, from 1.0.0 to today: new features, fixes and compatibility updates.", "res"),
+    ("about.html", "about", "About Us | Notifima",
+     "Our vision, mission and plans: Notifima helps WooCommerce stores turn stockouts into revenue opportunities.", "res"),
 ]
 
 PARTS = {k: rd("partials/%s.html" % k.lower()) for k in ("PLANS", "TRUST")}
@@ -43,7 +45,7 @@ for fn, src, title, desc, on in PAGES:
     if sys.argv[1:] and src not in sys.argv[1:]:
         continue
     hdr = rd("header.html")
-    for k in ("features", "pricing", "res"):
+    for k in ("home", "features", "pricing", "res"):
         hdr = hdr.replace("{ON_%s}" % k, "on" if k == on else "")
     html = f"""<!doctype html>
 <html lang="en">
