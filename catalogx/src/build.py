@@ -128,6 +128,8 @@ for fn, src, title, desc, on in PAGES:
         body, src = module_page(MOD[src[4:]]), "module"
     else:
         body = rd("pages/%s.html" % src).replace("{FEATURES}", features())
+    for part in sorted((S / "partials").glob("*.html")):
+        body = body.replace("{%s}" % part.stem.upper(), part.read_text())
     html = f"""<!doctype html>
 <html lang="en">
 <head>
