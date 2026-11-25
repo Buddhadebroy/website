@@ -8,7 +8,7 @@ const EXTS = ["jpg", "jpeg", "png", "webp"];
 /** Finds /public/photos/<name>.<ext>. Server-side, so a missing photo costs nothing at runtime. */
 function findPhoto(name: string): string | null {
   for (const ext of EXTS) {
-    if (fs.existsSync(path.join(process.cwd(), "public", "photos", `${name}.${ext}`))) return `/photos/${name}.${ext}`;
+    if (fs.existsSync(path.join(process.cwd(), "public", "photos", `${name}.${ext}`))) return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/photos/${name}.${ext}`;
   }
   return null;
 }

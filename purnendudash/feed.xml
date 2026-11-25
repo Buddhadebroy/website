@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Purnendu Dash: Writing</title>
+    <link>https://purnendudash.com/blog</link>
+    <description>Founder and product architect behind MultiVendorX, DualCube and VuloLabs, building eCommerce and eLearning software on WordPress and WooCommerce.</description>
+    <language>en</language>
+    <atom:link href="https://purnendudash.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why most WooCommerce marketplaces get vendor payouts wrong</title>
+      <link>https://purnendudash.com/blog/vendor-payouts-woocommerce-marketplaces</link>
+      <guid isPermaLink="true">https://purnendudash.com/blog/vendor-payouts-woocommerce-marketplaces</guid>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Commission handling is the first thing that breaks when a WooCommerce store grows into a real marketplace. Here is what usually goes wrong, and how to design around it.</description>
+      <category>Marketplaces</category>
+      <category>WooCommerce</category>
+    </item>
+    <item>
+      <title>LMS and ecommerce do not have to be separate systems</title>
+      <link>https://purnendudash.com/blog/lms-and-ecommerce-dont-have-to-be-separate</link>
+      <guid isPermaLink="true">https://purnendudash.com/blog/lms-and-ecommerce-dont-have-to-be-separate</guid>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 GMT</pubDate>
+      <description>Most course platforms and most online stores are built by different teams solving different problems. When a business needs both, that split shows up as broken workflows.</description>
+      <category>LMS</category>
+      <category>Ecommerce</category>
+    </item>
+    <item>
+      <title>Fifteen years of building an open source WordPress plugin</title>
+      <link>https://purnendudash.com/blog/fifteen-years-open-source-wordpress-plugin</link>
+      <guid isPermaLink="true">https://purnendudash.com/blog/fifteen-years-open-source-wordpress-plugin</guid>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Lessons from maintaining MultiVendorX since 2015, from community support to keeping a plugin compatible with a decade of WordPress and WooCommerce releases.</description>
+      <category>Open Source</category>
+      <category>WordPress</category>
+    </item>
+    <item>
+      <title>A founder's guide to multi-vendor commission models</title>
+      <link>https://purnendudash.com/blog/founders-guide-multi-vendor-commission-models</link>
+      <guid isPermaLink="true">https://purnendudash.com/blog/founders-guide-multi-vendor-commission-models</guid>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Choosing a commission structure is a business decision as much as a technical one. A short breakdown of the models that actually work for marketplaces.</description>
+      <category>Marketplaces</category>
+      <category>Strategy</category>
+    </item>
+    <item>
+      <title>Speaking at WordCamp: lessons from organizing and presenting</title>
+      <link>https://purnendudash.com/blog/speaking-at-wordcamp-lessons</link>
+      <guid isPermaLink="true">https://purnendudash.com/blog/speaking-at-wordcamp-lessons</guid>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 GMT</pubDate>
+      <description>Notes from being both a WordCamp speaker and organizer, and what that experience taught me about explaining technical products to a non-technical room.</description>
+      <category>Speaking</category>
+      <category>Community</category>
+    </item>
+  </channel>
+</rss>

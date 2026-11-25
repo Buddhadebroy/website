@@ -1,0 +1,61 @@
+# Purnendu Dash
+
+> Founder and product architect behind MultiVendorX, DualCube and VuloLabs, building eCommerce and eLearning software on WordPress and WooCommerce. Based in Kolkata, West Bengal, India.
+
+I'm a product founder and system builder. I work at the intersection of ecommerce, marketplace platforms, and learning management systems, designing practical, scalable solutions for real operational problems.
+
+## Key facts
+
+- Name: Purnendu Dash
+- Role: Founder & CEO
+- Location: Kolkata, West Bengal, India
+- Key offering: Technology Advisory (senior technical leadership for marketplace, learning, and WordPress or WooCommerce businesses)
+- eCommerce: MultiVendorX, CatalogX, Notifima
+- eLearning: DualCube, MooWoodle
+- VuloLabs ecosystem: VuloMail, VuloPilot, VuloForm
+- Companies: MultiVendorX (since 2015), DualCube (since 2011), TechMonastic (founded 2014)
+- WordPress.org contributor since 2009; contributed to WordPress core releases 4.9 and 5.1
+- WordCamp speaker and organizer
+
+## Pages
+
+- [Home](https://purnendudash.com/): Overview, beliefs, ventures, and how to get in touch.
+- [Technology Advisory](https://purnendudash.com/advisory): Senior technical leadership: strategy, architecture, roadmap, team, and AI adoption, with FAQs.
+- [Brands](https://purnendudash.com/brands): One page for each product: MultiVendorX, CatalogX, Notifima, DualCube, MooWoodle, VuloLabs, VuloMail, VuloPilot, VuloForm.
+- [About](https://purnendudash.com/about): Background, skills, education, and open source contributions.
+- [Case studies](https://purnendudash.com/work): MultiVendorX, CatalogX, Notifima, and DualCube: the problem each solves and how.
+- [Writing](https://purnendudash.com/blog): Articles on marketplaces, learning platforms, and open source product building.
+- [Speaking](https://purnendudash.com/speaking): Talk topics and WordCamp history.
+- [Contact](https://purnendudash.com/contact): Email, LinkedIn, and a contact form.
+
+## Articles
+
+- [Why most WooCommerce marketplaces get vendor payouts wrong](https://purnendudash.com/blog/vendor-payouts-woocommerce-marketplaces): Why commission and payouts break first as a WooCommerce store becomes a marketplace, and how a rule-based design avoids a rebuild.
+- [LMS and ecommerce do not have to be separate systems](https://purnendudash.com/blog/lms-and-ecommerce-dont-have-to-be-separate): Why selling courses means keeping a store and an LMS in sync, and how designing them as one system avoids broken enrollments and refunds.
+- [Fifteen years of building an open source WordPress plugin](https://purnendudash.com/blog/fifteen-years-open-source-wordpress-plugin): What fifteen years of maintaining MultiVendorX taught about backward compatibility, community support and contributing to WordPress core.
+- [A founder's guide to multi-vendor commission models](https://purnendudash.com/blog/founders-guide-multi-vendor-commission-models): Flat, tiered or category-based: how each marketplace commission model affects which vendors join and stay, and how to keep it adjustable.
+- [Speaking at WordCamp: lessons from organizing and presenting](https://purnendudash.com/blog/speaking-at-wordcamp-lessons): What organizing and speaking at WordCamp taught about talking to store owners and developers: lead with the problem, not the plugin.
+
+## Common questions
+
+- What will I find on this site?
+- What does Purnendu Dash do?
+- What is MultiVendorX?
+- What is DualCube?
+- What is VuloLabs?
+- Is Purnendu Dash a WordPress contributor?
+- Does Purnendu offer technology advisory?
+- Can I work or collaborate with Purnendu?
+- Where is Purnendu Dash based?
+
+## Contact
+
+- Email: math.purnendu@gmail.com
+- LinkedIn: https://www.linkedin.com/in/dashpurnendu/
+- GitHub: https://github.com/purnendudash
+- WordPress.org: https://profiles.wordpress.org/purnendu/
+
+## Optional
+
+- [Full text of every article and FAQ](https://purnendudash.com/llms-full.txt)
+- [RSS feed](https://purnendudash.com/feed.xml)

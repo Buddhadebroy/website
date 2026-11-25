@@ -16,3 +16,5 @@ export default async function PostImage({ params }: { params: Promise<{ slug: st
   if (!post) notFound();
   return renderOg({ title: post.title, kicker: `Purnendu Dash · ${post.tags[0]}` });
 }
+
+export const dynamic = "force-static";
