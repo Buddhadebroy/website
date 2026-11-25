@@ -464,3 +464,18 @@ $(function(){
   $w.on('click','[data-more]',function(){open=true;cut()});
   cut();
 });
+
+/* Home: how-it-works stepper */
+$(function(){
+  var $j=$('.nx-journey');
+  if(!$j.length)return;
+  var go=function(i){
+    i=Math.max(0,Math.min(3,+i));
+    $j[0].style.setProperty('--at',i);
+    $j.find('.nx-node').each(function(k){$(this).toggleClass('is-on',k===i).toggleClass('is-done',k<i).attr('aria-current',k===i?'step':null)});
+    $j.find('.nx-stage-i').each(function(k){$(this).toggleClass('is-on',k===i).prop('hidden',k!==i)});
+  };
+  $j.on('click','.nx-node',function(){go($(this).attr('data-step'))});
+  $j.on('click','button[data-go]',function(){go($(this).attr('data-go'))});
+  go(0);
+});
