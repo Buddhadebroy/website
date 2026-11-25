@@ -30,7 +30,7 @@ for fn, src, title, desc in PAGES:
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <script>document.documentElement.className+=" js"</script>
-<link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/notifima.css?v={css_v}">
 </head>
 <body class="pg-{src}">
