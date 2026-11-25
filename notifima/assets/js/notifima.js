@@ -55,4 +55,22 @@
     $(this).attr('aria-expanded', open ? 'true' : 'false');
   });
 
+  /* blog category filter */
+  $('[data-cats] .cat-b').on('click', function () {
+    var c = $(this).data('cat');
+    $('.cat-b').removeClass('on'); $(this).addClass('on');
+    $('.post[data-cat]').each(function () { $(this).toggleClass('hide', c !== 'all' && $(this).data('cat') !== c); });
+  });
+
+  /* changelog type filter */
+  $('.cl-filter button').on('click', function () {
+    var t = $(this).data('t');
+    $('.cl-filter button').removeClass('on'); $(this).addClass('on');
+    $('.rel').each(function () {
+      var $li = $(this).find('li');
+      $li.each(function () { $(this).toggleClass('hide', t !== 'all' && $(this).data('t') !== t); });
+      $(this).toggleClass('hide', $li.not('.hide').length === 0);
+    });
+  });
+
 })(jQuery);
