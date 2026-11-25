@@ -31,6 +31,7 @@
   $('.burger').on('click', function () { var o = !$body.hasClass('menu-open'); $body.toggleClass('menu-open', o); $('.drawer').attr('aria-hidden', o ? 'false' : 'true'); });
   $('.dr-h').on('click', function () { $(this).parent().toggleClass('open'); });
   $('.drawer a').on('click', function () { $body.removeClass('menu-open'); });
+  $doc.on('click', function (e) { if ($body.hasClass('menu-open') && !$(e.target).closest('.hdr-bar').length) $body.removeClass('menu-open'); });
 
   /* reveal: fade up only (bottom to top) */
   var $rv = $('.rv');
@@ -40,15 +41,6 @@
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     $rv.each(function () { io.observe(this); });
   } else { $rv.addClass('in'); }
-
-  /* hero flow: plays the 3 steps once, then rests on the last one. Click a step to replay it. */
-  $('.flow').each(function () {
-    var $f = $(this), $s = $f.find('.flow-steps span'), $st = $f.find('.fs'), i = 0, t;
-    function go(n) { i = n; $s.removeClass('on').eq(n).addClass('on'); $st.removeClass('on').eq(n).addClass('on'); }
-    function play() { clearInterval(t); t = setInterval(function () { if (i >= $st.length - 1) { clearInterval(t); return; } go(i + 1); }, 4200); }
-    $s.on('click', function () { go($s.index(this)); play(); });
-    go(0); play();
-  });
 
   /* tabs (pillars) */
   $('[data-tabs]').each(function () {
