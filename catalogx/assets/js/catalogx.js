@@ -109,16 +109,6 @@
   $('.blog-tabs .fx-cat').on('click', function () {
     var c = $(this).data('cat');
     $(this).addClass('on').siblings().removeClass('on');
-    $('.blog-wrap .bc-card').each(function () { $(this).toggleClass('hide', c !== 'all' && $(this).data('cat') !== c); });
+    $('.blog-wrap .post').each(function () { $(this).toggleClass('hide', c !== 'all' && $(this).data('cat') !== c); });
   });
-  // blog post: highlight the current section in the table of contents
-  var $toc = $('.toc nav a');
-  if ($toc.length && 'IntersectionObserver' in window) {
-    var spy = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (e.isIntersecting) { $toc.removeClass('on').filter('[href="#' + e.target.id + '"]').addClass('on'); }
-      });
-    }, { rootMargin: '-15% 0px -75% 0px' });
-    $('.art h2[id]').each(function () { spy.observe(this); });
-  }
 })(jQuery);
