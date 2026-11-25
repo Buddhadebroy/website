@@ -437,3 +437,45 @@ $(function(){
   $m.on('click','[data-cat]',function(){cat=$(this).attr('data-cat');draw()});
   $m.on('click','[data-tier]',function(){tier=$(this).attr('data-tier');draw()});
 });
+
+/* Home: marketplace type tabs + "show all modules" */
+$(function(){
+  var $t=$('.nx-types');
+  if($t.length){
+    $t.on('click','.nx-tab',function(){
+      var i=$(this).attr('data-tab');
+      $t.find('.nx-tab').removeClass('is-on').attr('aria-selected','false');
+      $(this).addClass('is-on').attr('aria-selected','true');
+      $t.find('.nx-panel').each(function(){var on=$(this).attr('data-panel')===i;$(this).toggleClass('is-on',on).prop('hidden',!on)});
+    });
+  }
+  var $w=$('.nx-mods');
+  if(!$w.length)return;
+  var open=false,LIMIT=12;
+  var cut=function(){
+    var n=0;
+    $w.find('.rf-mxcard').each(function(){var $c=$(this);$c.removeClass('is-cut');if(!$c.hasClass('is-off')){n++;if(n>LIMIT)$c.addClass('is-cut')}});
+    var short=!open&&n>LIMIT;
+    $w.toggleClass('is-short',short);
+    $w.find('.nx-more').prop('hidden',!short).find('button').text('Show all '+n+' modules');
+  };
+  $w.on('click','[data-cat],[data-tier]',function(){setTimeout(cut,0)});
+  $('#modules').on('click','[data-tier]',function(){setTimeout(cut,0)});
+  $w.on('click','[data-more]',function(){open=true;cut()});
+  cut();
+});
+
+/* Home: how-it-works stepper */
+$(function(){
+  var $j=$('.nx-journey');
+  if(!$j.length)return;
+  var go=function(i){
+    i=Math.max(0,Math.min(3,+i));
+    $j[0].style.setProperty('--at',i);
+    $j.find('.nx-node').each(function(k){$(this).toggleClass('is-on',k===i).toggleClass('is-done',k<i).attr('aria-current',k===i?'step':null)});
+    $j.find('.nx-stage-i').each(function(k){$(this).toggleClass('is-on',k===i).prop('hidden',k!==i)});
+  };
+  $j.on('click','.nx-node',function(){go($(this).attr('data-step'))});
+  $j.on('click','button[data-go]',function(){go($(this).attr('data-go'))});
+  go(0);
+});
