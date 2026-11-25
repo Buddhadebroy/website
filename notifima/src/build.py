@@ -1,12 +1,13 @@
 """Builds the static Notifima site.
 
-    python3 src/build.py
+    python3 src/build.py            # all pages
+    python3 src/build.py pricing    # one page
 
 Pages are assembled from src/header.html, src/footer.html, src/icons.html and
 src/pages/<name>.html. Icons are written as {i:name} and become inline SVG.
 CSS and JS links get ?v=<content hash> so browsers always load the latest files.
 """
-import hashlib, pathlib, re
+import hashlib, pathlib, re, sys
 
 S = pathlib.Path(__file__).parent
 OUT = S.parent
@@ -15,13 +16,35 @@ icon = lambda t: re.sub(r"\{i:([\w-]+)\}", r'<svg class="i" aria-hidden="true"><
 ver = lambda p: hashlib.md5((OUT / p).read_bytes()).hexdigest()[:8]
 
 PAGES = [
-    # file, source, title, description
+    # file, source, title, description, active nav
     ("index.html", "home", "Notifima: WooCommerce Back in Stock Notifications and Waitlists",
-     "Automatically notify customers when WooCommerce products are back in stock, track demand before you restock, and recover lost sales."),
+     "Automatically notify customers when WooCommerce products are back in stock, track demand before you restock, and recover lost sales.", ""),
+    ("features.html", "features", "Features | Notifima",
+     "From waitlist to cart in one click: back in stock alerts, double opt-in, reCAPTCHA, Mailchimp sync and a subscriber dashboard for WooCommerce.", "features"),
+    ("pricing.html", "pricing", "Pricing | Notifima",
+     "Notifima plans from $49 a year. Every plan includes all Pro features, priority support and a 15-day money back guarantee.", "pricing"),
+    ("blog.html", "blog", "Blog | Notifima",
+     "News, tips and tutorials on WooCommerce back in stock alerts, waitlists and demand tracking.", "res"),
+    ("changelog.html", "changelog", "Release Notes | Notifima",
+     "Every Notifima release, from 1.0.0 to today: new features, fixes and compatibility updates.", "res"),
 ]
 
+PARTS = {k: rd("partials/%s.html" % k.lower()) for k in ("PLANS", "TRUST")}
+
+
+def body(src):
+    t = rd("pages/%s.html" % src)
+    for k, v in PARTS.items():
+        t = t.replace("{%s}" % k, v)
+    return t
+
 css_v, js_v = ver("assets/css/notifima.css"), ver("assets/js/notifima.js")
-for fn, src, title, desc in PAGES:
+for fn, src, title, desc, on in PAGES:
+    if sys.argv[1:] and src not in sys.argv[1:]:
+        continue
+    hdr = rd("header.html")
+    for k in ("features", "pricing", "res"):
+        hdr = hdr.replace("{ON_%s}" % k, "on" if k == on else "")
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -35,9 +58,9 @@ for fn, src, title, desc in PAGES:
 </head>
 <body class="pg-{src}">
 {rd("icons.html")}
-{rd("header.html")}
+{hdr}
 <main>
-{rd("pages/%s.html" % src)}
+{body(src)}
 </main>
 {rd("footer.html")}
 <script src="assets/js/jquery-3.7.1.min.js"></script>
