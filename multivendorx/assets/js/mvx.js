@@ -479,3 +479,27 @@ $(function(){
   $j.on('click','button[data-go]',function(){go($(this).attr('data-go'))});
   go(0);
 });
+
+/* Home: how-it-works scroll story */
+$(function(){
+  var $sx=$('.sx');
+  if(!$sx.length)return;
+  var $items=$sx.find('.sx-item'),$panes=$sx.find('.sx-pane'),cur=-1;
+  var set=function(i){
+    if(i===cur)return;cur=i;
+    $items.each(function(k){$(this).toggleClass('is-on',k===i).toggleClass('is-done',k<i)});
+    $panes.each(function(k){$(this).toggleClass('is-on',k===i)});
+    $sx[0].style.setProperty('--sxp',(i/($items.length-1)*100)+'%');
+  };
+  var pick=function(){
+    var mid=window.innerHeight*0.5,best=0,bd=1e9;
+    $panes.each(function(k){var r=this.getBoundingClientRect(),c=r.top+r.height/2,d=Math.abs(c-mid);if(d<bd){bd=d;best=k}});
+    set(best);
+  };
+  $(window).on('scroll resize',function(){window.requestAnimationFrame(pick)});
+  $items.on('click',function(){
+    var $p=$panes.eq(+$(this).attr('data-sx'));
+    window.scrollTo({top:$p.offset().top-(window.innerHeight-$p.outerHeight())/2,behavior:'smooth'});
+  });
+  pick();
+});

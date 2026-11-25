@@ -74,7 +74,7 @@
 .rf-wrap{padding:0 18px}
 }
 
-@media (prefers-reduced-motion:reduce){*{animation:none!important}
+@media (prefers-reduced-motion:reduce){.rf section:not(.rf-live) *{animation:none!important}
 }
 
 /* ---- integration with site CSS (home only) ---- */
