@@ -367,3 +367,31 @@ $(function () {
     $(window).on('scroll resize', upd); upd();
   });
 });
+
+/* home: marketplace types change tab on scroll */
+$(function () {
+  var $pin = $('[data-mtx-pin]'); if (!$pin.length) return;
+  var $x = $pin.find('[data-mtx]'), $t = $x.find('.mt-t'), n = $t.length, cur = -1;
+  function active() { return $pin.height() > window.innerHeight + 100; }
+  function show(i) {
+    if (i === cur) return; cur = i;
+    $t.removeClass('on').eq(i).addClass('on');
+    $x.find('.mt-p').removeClass('on').filter('[data-mt="' + i + '"]').addClass('on');
+  }
+  function upd() {
+    if (!active()) { $t.removeClass('done').find('.mt-pr').css('width', ''); return; }
+    var top = $pin.offset().top, span = $pin.height() - window.innerHeight;
+    var p = Math.min(0.9999, Math.max(0, ($(window).scrollTop() - top) / span));
+    var f = p * n, i = Math.floor(f);
+    show(i);
+    $t.each(function (k) { $(this).toggleClass('done', k < i).find('.mt-pr').css('width', k === i ? ((f - i) * 100) + '%' : (k < i ? '100%' : '0')); });
+  }
+  $x.on('click', '.mt-t', function (e) {
+    if (!active()) return;
+    e.stopImmediatePropagation();
+    var i = +$(this).data('mt'), top = $pin.offset().top, span = $pin.height() - window.innerHeight;
+    $('html,body').animate({ scrollTop: top + span * (i + 0.05) / n }, 450);
+  });
+  $(window).on('scroll resize', upd); upd();
+});
+
