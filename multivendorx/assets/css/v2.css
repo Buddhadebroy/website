@@ -2069,3 +2069,20 @@ ul.mixl b{font-size:15px;color:var(--ink)}
 @media (max-width:700px){.vh-proof{grid-template-columns:1fr 1fr;gap:10px}.vh-proof>div{padding:16px}.vh-proof>div:last-child{grid-column:span 2}.vh-proof b{font-size:26px;margin-top:12px}.vh-proof p{display:none}.vh-tbl .r{grid-template-columns:1fr 96px 52px;gap:6px}.vh-tbl .r.h{font-size:10.5px;letter-spacing:.02em}}
 @media (min-width:1001px){.vh-h1{font-size:62px}.vh-stats{grid-template-columns:repeat(4,1fr);gap:20px}}
 .vh-blob.b1{background:rgba(122,60,196,.16)}
+
+/* ===== Home round 16: one connected story (Build it / Scale it / Own it) ===== */
+.vh-eb .cn{font-weight:700;color:var(--brand);margin-right:2px}
+.vh-eb.dk .cn{color:#c8a8ff}
+.vh-eb:has(.cn)::before{display:none}
+.jy{padding:20px 0 72px}
+.jy-k{text-align:center;font-size:15px;color:var(--muted);margin-bottom:22px}
+.jy-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;position:relative}
+.jy-g::before{content:"";position:absolute;left:8%;right:8%;top:42px;height:2px;background:repeating-linear-gradient(90deg,#cbb8f0 0 8px,transparent 8px 16px);z-index:0}
+.jy-c{position:relative;z-index:1;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;transition:border-color .2s,box-shadow .2s}
+.jy-c:hover{border-color:rgba(80,7,170,.35);box-shadow:0 20px 40px -28px rgba(80,7,170,.45)}
+.jy-c .n{width:38px;height:38px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:600;box-shadow:0 0 0 6px #fbf9f6}
+.jy-c h3{font-size:24px;font-weight:600;margin-top:18px}
+.jy-c p{font-size:15px;color:var(--muted);margin-top:8px;line-height:1.55}
+.jy-c .go{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:16px;font-size:14px;font-weight:600;color:var(--brand)}
+.jy-c .go svg.i{width:15px;height:15px}
+@media (max-width:800px){.jy-g{grid-template-columns:1fr}.jy-g::before{display:none}}
