@@ -1016,3 +1016,47 @@ main:has(> .sec:last-child:not(.soft)) + .cta-band{padding-top:0}
 .ba-arrow{display:grid;place-items:center}
 .ba-arrow .i{width:44px;height:44px;padding:11px;border-radius:50%;background:var(--p);color:#fff;box-shadow:var(--sh-lg)}
 @media (max-width:900px){.ba{grid-template-columns:1fr}.ba-arrow .i{transform:rotate(90deg)}.steps.hw{grid-template-columns:1fr}}
+/* what is: simple chat before/after */
+.ba2{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);max-width:960px;margin:0 auto}
+.ba2-c{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column;gap:14px}
+.ba2-c.on{border-color:var(--p-200);box-shadow:0 0 0 4px var(--p-50),var(--sh)}
+.ba2-t{align-self:flex-start;display:inline-flex;gap:6px;align-items:center;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--ok);background:var(--ok-bg);padding:5px 10px;border-radius:var(--r-sm)}
+.ba2-t.no{color:var(--bad);background:var(--bad-bg)}
+.ba2-t .i{width:14px;height:14px;stroke-width:3}
+.ba2-s{display:flex;gap:10px;align-items:flex-end}
+.ba2-s.r{justify-content:flex-end}
+.ba2-e{width:36px;height:36px;border-radius:50%;background:var(--line-2);color:var(--mut);display:grid;place-items:center;flex:none}
+.ba2-e.st{background:var(--p);color:#fff}
+.ba2-e .i{width:17px;height:17px}
+.ba2-b{background:var(--soft);border:1px solid var(--line);border-radius:14px 14px 14px 4px;padding:12px 16px;font-size:15.5px;font-weight:600;color:var(--ink);max-width:80%}
+.ba2-s.r .ba2-b{border-radius:14px 14px 4px 14px}
+.ba2-b.gray{color:var(--mut);background:#fff;border-style:dashed}
+.ba2-b.p{background:var(--p);border-color:var(--p);color:#fff}
+.ba2-r{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-2);font-size:17px;font-weight:800;color:var(--ok)}
+.ba2-r.no{color:var(--bad)}
+/* modes v2: tabs on top, one balanced card */
+.m2-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.m2-tabs .tab .i{width:16px;height:16px}
+.m2-card{border:1px solid var(--line);border-radius:var(--r-lg);background:radial-gradient(500px 300px at 90% 0%,var(--p-100),transparent 70%),var(--soft);padding:40px;max-width:1000px;margin:0 auto}
+.m2 .pane{display:none}
+.m2 .pane.on{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;animation:mpin .35s ease}
+.m2-txt{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.m2-txt h3{font-size:clamp(24px,2.6vw,30px);letter-spacing:-.02em;line-height:1.2}
+.m2-txt p{font-size:17px;color:var(--ink-2);line-height:1.6}
+.m2-for{font-size:15px;color:var(--mut);border-left:3px solid var(--p);padding:4px 0 4px 12px}
+.m2-for b{display:block;color:var(--ink);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.m2 .ui{font-size:13px}
+.m2 .mp-body{grid-template-columns:130px 1fr;padding:18px}
+/* results v2 */
+.res2{background:var(--soft)}
+.res2-in{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh);display:grid;grid-template-columns:.8fr 2fr;align-items:center;overflow:hidden}
+.res2-h{padding:40px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.res2-h h2{font-size:clamp(26px,2.8vw,34px);letter-spacing:-.03em;line-height:1.15}
+.res2-g{display:grid;grid-template-columns:repeat(3,1fr);height:100%}
+.r2{padding:40px 28px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.r2-i{width:40px;height:40px;border-radius:var(--r);background:var(--p-50);color:var(--p);display:grid;place-items:center;margin-bottom:10px}
+.r2-i .i{width:20px;height:20px}
+.r2 strong{font-size:40px;font-weight:800;letter-spacing:-.03em;color:var(--p);line-height:1.05}
+.r2>span:last-child{font-size:15.5px;font-weight:600;color:var(--ink-2)}
+@media (max-width:900px){.ba2{grid-template-columns:1fr}.m2 .pane.on{grid-template-columns:1fr;gap:28px}.m2-card{padding:24px}.res2-in{grid-template-columns:1fr}.res2-h{padding:28px 28px 8px}.r2:first-child{border-left:0}}
+@media (max-width:640px){.res2-g{grid-template-columns:1fr}.r2{border-left:0;border-top:1px solid var(--line);padding:24px 28px}.m2-card{padding:16px}.m2 .mp-body{grid-template-columns:1fr}.m2-tabs .tab{padding:0 12px}}
