@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Logo({ size = 32 }: { size?: number }) {
   return (
     <Image
-      src="/photos/avatar.jpg"
+      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/photos/avatar.jpg`}
       alt=""
       width={size * 2}
       height={size * 2}

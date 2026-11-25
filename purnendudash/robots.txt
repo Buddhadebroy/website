@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://purnendudash.com
+Sitemap: https://purnendudash.com/sitemap.xml

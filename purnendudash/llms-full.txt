@@ -1,0 +1,243 @@
+# Purnendu Dash: full content
+
+Founder and product architect behind MultiVendorX, DualCube and VuloLabs, building eCommerce and eLearning software on WordPress and WooCommerce.
+
+I'm a product founder and system builder. I work at the intersection of ecommerce, marketplace platforms, and learning management systems, designing practical, scalable solutions for real operational problems.
+
+I lead product and engineering for MultiVendorX, a marketplace platform for WooCommerce. I care about customer service, clean systems, and building software that removes friction instead of adding it.
+
+Principle: Reduce complexity for the customer by solving deep system-level problems with clean, reliable product design.
+
+## Portfolio
+
+- eCommerce (since 2015): MultiVendorX, CatalogX, Notifima. Marketplace and store software for WooCommerce: vendors, commissions, quotes, and stock alerts, without the spreadsheet.
+- eLearning (since 2011): DualCube, MooWoodle. Learning platforms that connect courses to commerce, on WordPress and Moodle.
+- VuloLabs ecosystem (now, with ai): VuloMail, VuloPilot, VuloForm. AI-powered software and WordPress innovation.
+
+## Product case notes
+
+### MultiVendorX
+
+A WooCommerce-based marketplace ecosystem that removes the operational complexity of running multi-vendor ecommerce businesses.
+
+Problems it addresses:
+- Complexity of managing multiple vendors on a single platform
+- Lack of flexible, transparent commission systems
+- Inefficient order and fulfillment workflows
+- Difficulty scaling WooCommerce into true marketplace infrastructure
+
+What it delivers:
+- A modular marketplace engine built on WooCommerce
+- Flexible commission and revenue-sharing system
+- Vendor-first operational workflows
+- Extensible architecture for integrations and scaling
+
+### CatalogX
+
+A catalog and quote management layer for WooCommerce stores that need to sell without fixed pricing: request-a-quote, hidden pricing, and B2B catalogs.
+
+Problems it addresses:
+- Stores that need catalogs instead of instant checkout
+- B2B pricing that isn't meant to be public
+- No built-in way to convert enquiries into orders
+
+What it delivers:
+- Catalog-mode storefronts with optional hidden pricing
+- Request-a-quote workflows built for WooCommerce
+- Smooth path from enquiry to order
+
+### Notifima
+
+A stock and price alert system for WooCommerce, keeping customers and store owners informed without manual follow-up.
+
+Problems it addresses:
+- Lost sales from out-of-stock products
+- No automated way to notify customers when items return
+- Manual, ad-hoc customer follow-up
+
+What it delivers:
+- Automated back-in-stock and price-drop notifications
+- Configurable alerts across email and other channels
+- Reduced manual support overhead for store owners
+
+### DualCube
+
+Learning management solutions that help businesses and educators deliver, manage, and monetize digital learning within WordPress and Moodle ecosystems.
+
+Problems it addresses:
+- Disconnected learning and ecommerce systems limiting scalability
+- Complex, inefficient course creation and management
+- Limited flexibility in monetizing and packaging learning content
+
+What it delivers:
+- Structured, scalable learning platforms built on WordPress
+- Seamless integration of learning with commerce: sell, deliver, and track in one flow
+- Robust systems for course delivery, enrollment, and learner lifecycle
+
+## Technology Advisory
+
+Part-time senior technical leadership. Areas covered:
+
+- Technical strategy: Decide what to build, what to buy, and what to leave alone, tied to the business plan rather than the latest tool.
+- Architecture: Data models, extension points, and the logic for commissions or enrollment, designed so the product can grow without rewrites.
+- Product and roadmap: Turn customer problems into a sequenced roadmap the team can actually ship.
+- Team and process: Hiring bar, code review, release process, and how engineers and product people work together.
+- Reliability and upkeep: Compatibility, security updates, support load, and the long-term maintenance a plugin or open source product needs.
+- AI adoption: Where AI lowers the cost of building or serving customers, and where it adds risk for no gain.
+
+### What is technology advisory?
+
+Senior technical leadership for a company's product and team, on a part-time basis: technical direction, architecture, roadmap, hiring, and AI decisions, without the cost and commitment of a full-time executive.
+
+### How is this different from consulting?
+
+A consultant delivers a report and leaves. Advisory stays accountable for ongoing decisions and the people making them, week after week, until the team can carry on alone.
+
+### Which companies is it for?
+
+Early and growing companies that have a product or a plan but no senior technical leader. Marketplaces, learning platforms, and WordPress or WooCommerce based businesses are the closest fit, because that is where the experience is deepest.
+
+### How do engagements work?
+
+The shape is agreed per company after an initial conversation: how much time, what to focus on, and for how long. There are no fixed packages.
+
+### Can we talk before committing to anything?
+
+Yes. Send a short note about what you are building on the contact page. The first conversation is simply about whether it is a good fit.
+
+## Frequently asked questions
+
+### What will I find on this site?
+
+Practical writing on business, product strategy, AI, e-commerce, and eLearning. Each piece takes one real question, gives a clear answer, and shows the reasoning, drawing on years of building marketplace and learning software.
+
+### What does Purnendu Dash do?
+
+Purnendu Dash is an entrepreneur who builds software for people who sell and people who teach: marketplace software on WooCommerce through MultiVendorX, and learning platforms on WordPress and Moodle through DualCube.
+
+### What is MultiVendorX?
+
+MultiVendorX is a WooCommerce marketplace plugin that lets store owners run a multi-vendor marketplace, handling vendor management, commissions, orders, and payouts.
+
+### What is DualCube?
+
+DualCube builds learning management solutions that connect courses to commerce, so businesses and educators can sell, deliver, and track learning in one workflow on WordPress and Moodle.
+
+### What is VuloLabs?
+
+VuloLabs is the venture focused on AI-powered and intelligent software solutions, including WordPress innovation. Its ecosystem includes VuloMail, VuloPilot, and VuloForm.
+
+### Is Purnendu Dash a WordPress contributor?
+
+Yes. He has been a WordPress.org member since 2009, contributed to WordPress core releases 5.1 and 4.9, and was a WordCamp speaker and organizer in 2019.
+
+### Does Purnendu offer technology advisory?
+
+Yes. Technology advisory is a key offering: senior technical leadership covering technical strategy, architecture, roadmap, team and process, and AI adoption, mainly for marketplace, learning, and WordPress or WooCommerce businesses.
+
+### Can I work or collaborate with Purnendu?
+
+Conversations are open on business and product strategy, strategic partnerships, and technology and innovation. Use the contact page and say briefly what you are building.
+
+### Where is Purnendu Dash based?
+
+He is based in Kolkata, West Bengal, India.
+
+## Articles
+
+### Why most WooCommerce marketplaces get vendor payouts wrong
+
+Published August 4, 2026 · Marketplaces, WooCommerce
+URL: https://purnendudash.com/blog/vendor-payouts-woocommerce-marketplaces
+
+Most WooCommerce stores start as a single-vendor shop. The moment a second vendor joins, payouts become the hardest problem in the system.
+
+#### Why a flat commission rate breaks
+
+A flat commission rate feels simple at first. It breaks down fast once vendors sell different product categories, run promotions, or need different payout schedules. Stores that hardcode a single rate end up rebuilding their commission logic within a year.
+
+#### Treat commission as a rule engine
+
+The fix is to treat commission as a rule engine, not a number. Rules should apply by vendor, by category, and by product, with a clear order of precedence. Refunds, partial refunds, and disputed orders need their own payout logic too, since they touch money that has often already left the platform.
+
+#### Payout scheduling is the second failure point
+
+Payout scheduling is the second failure point. Vendors expect predictable payment dates, not a manual process the store owner runs when they remember to. Automating payout runs, even on a simple weekly schedule, removes a huge amount of support overhead.
+
+This is the core problem MultiVendorX was built to solve: giving store owners a flexible, rule-based commission and payout system instead of a single hardcoded percentage.
+
+### LMS and ecommerce do not have to be separate systems
+
+Published June 18, 2026 · LMS, Ecommerce
+URL: https://purnendudash.com/blog/lms-and-ecommerce-dont-have-to-be-separate
+
+A business selling courses usually ends up running two systems side by side: a store to take payment, and an LMS to deliver the content. Connecting them is often an afterthought, handled with a plugin or a manual export.
+
+#### What the split looks like to a learner
+
+The result is a learner experience with gaps. A student pays, then waits for enrollment to sync. A refund happens on the store side but access is not revoked on the LMS side. Reporting lives in two places that do not agree with each other.
+
+#### Design learning and commerce as one system
+
+Designing learning and commerce as one system from the start avoids this. Enrollment should be a direct result of a completed order, not a separate step. Access, refunds, and reporting should read from the same source of truth.
+
+This is the problem DualCube focuses on: building WordPress and Moodle based learning platforms where commerce and course delivery are part of the same workflow, not two systems bolted together.
+
+### Fifteen years of building an open source WordPress plugin
+
+Published April 22, 2026 · Open Source, WordPress
+URL: https://purnendudash.com/blog/fifteen-years-open-source-wordpress-plugin
+
+MultiVendorX started in 2015 as a small plugin to help one WooCommerce store manage a handful of vendors. It has since grown alongside WordPress itself, through major WooCommerce rewrites and years of core releases.
+
+#### Backward compatibility is a feature
+
+The biggest lesson has been that backward compatibility is a feature, not an afterthought. Store owners do not upgrade everything at once. A plugin has to work across a wide range of WordPress and WooCommerce versions at the same time.
+
+#### Community support shaped the product
+
+Community support shaped the product more than any roadmap document. Forum threads and support tickets surface real operational problems long before they show up in a feature request. Some of the most useful features in MultiVendorX came directly from a support conversation.
+
+#### What contributing to core changed
+
+Contributing to WordPress core, through releases like 5.1 and 4.9, also changed how I build plugins. Seeing how core decisions get made makes it easier to build products that respect the platform instead of fighting it.
+
+Fifteen years in, the plugin looks nothing like it did in 2015. The principle behind it has not changed: reduce operational complexity for the store owner, one release at a time.
+
+### A founder's guide to multi-vendor commission models
+
+Published February 11, 2026 · Marketplaces, Strategy
+URL: https://purnendudash.com/blog/founders-guide-multi-vendor-commission-models
+
+Founders often start a marketplace by picking a commission percentage and moving on. That decision deserves more attention, because it directly shapes which vendors want to join the platform.
+
+#### Why a flat percentage rarely stays fair
+
+A flat percentage is easy to explain but rarely fair across categories. A vendor selling low-margin goods and a vendor selling high-margin goods should not pay the same rate if the platform wants both to stay.
+
+#### Tiered commissions reward your best vendors
+
+Tiered commissions, where the rate drops as a vendor's sales volume grows, reward your best vendors and give newer ones an incentive to grow on your platform instead of leaving.
+
+#### Category-based commissions price risk and effort
+
+Category-based commissions let a marketplace price risk and effort differently. Categories with high return rates or high support costs can carry a different rate than low-maintenance categories.
+
+Whatever model a founder chooses, it needs to be visible to vendors and easy to change without a developer. Commission logic that lives only in code, instead of in settings vendors and admins can see, becomes a support burden the moment the business needs to adjust it.
+
+### Speaking at WordCamp: lessons from organizing and presenting
+
+Published November 30, 2025 · Speaking, Community
+URL: https://purnendudash.com/blog/speaking-at-wordcamp-lessons
+
+Organizing a WordCamp gives you a very different view of the WordPress community than speaking at one. As an organizer, you see how much volunteer effort goes into a single day of talks, from venue logistics to reviewing every session proposal.
+
+#### Talk about the problem, not the plugin
+
+As a speaker, the biggest lesson has been to talk less about the plugin and more about the problem. A room full of store owners and developers does not need a feature tour. They need to see themselves in the problem before they care about the solution.
+
+#### The best questions come after the talk
+
+The best questions after a talk are rarely about the product itself. They are about a specific operational headache the attendee is dealing with right now. Preparing to answer those, not just to deliver slides, is what makes a WordCamp talk useful instead of just a demo.
+
+Community events like WordCamp are also where a lot of real product feedback happens, in hallway conversations that never make it into a support ticket.

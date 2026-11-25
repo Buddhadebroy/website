@@ -104,7 +104,7 @@ function drawPortrait(c: Ctx) {
   if (typeof Image !== "undefined") {
     if (!portraitImg) {
       portraitImg = new Image();
-      portraitImg.src = "/photos/avatar.jpg";
+      portraitImg.src = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/photos/avatar.jpg`;
     }
     if (portraitImg.complete && portraitImg.naturalWidth > 0) {
       c.drawImage(portraitImg, 0, 0, 256, 256);
