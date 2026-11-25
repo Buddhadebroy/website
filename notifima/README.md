@@ -25,3 +25,7 @@ CSS and JS links get `?v=<hash>` so browsers load the new files after every chan
 - Graphics are HTML/CSS mockups of the Notifima UI. Nothing loops: text and cards fade up once on scroll.
 - Links to pages not built yet (docs, single blog posts, policies, contact) are `#` placeholders.
 - The newsletter form is front-end only.
+
+## WordPress (Astra child theme)
+
+`python3 notifima/wp/build_theme.py` builds `notifima/wp/notifima-astra-child.zip` from the same sources: Astra child theme with the Notifima header, mega menu and footer. On activation it creates every page with Kadence Blocks (Kadence Blocks plugin required). Theme PHP lives in `notifima/wp/theme/`.

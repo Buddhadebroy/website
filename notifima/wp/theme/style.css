@@ -1,0 +1,15 @@
+/*
+Theme Name:   Notifima Astra Child
+Theme URI:    https://notifima.com/
+Description:  Notifima website design for Astra. Adds the Notifima header, mega menu and footer, and on activation creates the Home, Features, Pricing, Blog, Release Notes and About Us pages built with Kadence Blocks.
+Author:       Notifima
+Template:     astra
+Version:      {{VER}}
+Requires at least: 6.3
+Requires PHP: 7.4
+License:      GNU General Public License v2 or later
+License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  notifima-astra-child
+*/
+
+/* All design styles live in assets/css/notifima.css. Add your own overrides below. */
