@@ -8,6 +8,7 @@ Open `index.html` in a browser. No server or build step is needed to view it.
 - `pricing.html` Pricing page (plans, what's included, Free vs Pro)
 - `blog.html` Blog listing with category filter
 - `changelog.html` Release notes with type filter
+- `about.html` About us (vision, mission, future plans, values)
 - `assets/css/notifima.css` all styles (its own design system: Outfit font, Astra global colours with #852aff primary, pill shapes, dark footer)
 - `assets/js/notifima.js` jQuery: mega menus, mobile drawer, fade-up on scroll, FAQ
 - `assets/fonts/` self-hosted Outfit, `assets/js/jquery-3.7.1.min.js` local jQuery
@@ -22,5 +23,5 @@ CSS and JS links get `?v=<hash>` so browsers load the new files after every chan
 
 ## Notes
 - Graphics are HTML/CSS mockups of the Notifima UI. Nothing loops: text and cards fade up once on scroll.
-- Links to pages not built yet (docs, single blog posts, policies) are `#` placeholders.
+- Links to pages not built yet (docs, single blog posts, policies, contact) are `#` placeholders.
 - The newsletter form is front-end only.
