@@ -394,3 +394,54 @@ $(function () {
   $(window).on('scroll resize', upd); upd();
 });
 
+
+/* home: interactive storefront (filter by store, add to cart, live commission split) */
+$(function () {
+  var $g = $('[data-hm]'); if (!$g.length) return;
+  var rate = 0.10, fmt = function (n) { return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','); };
+  function upd() {
+    var $in = $g.find('.hm-p.in'), t = 0, v = {};
+    $in.each(function () { t += +$(this).data('p'); v[$(this).data('v')] = 1; });
+    var nv = Object.keys(v).length;
+    $('[data-hm-n]').text($in.length);
+    $('[data-hm-t]').text(fmt(t));
+    $('[data-hm-v]').text(nv + (nv === 1 ? ' vendor' : ' vendors'));
+    $('[data-hm-c]').text(fmt(t * rate));
+    $('[data-hm-r]').text(fmt(t * (1 - rate)));
+  }
+  $('[data-hs]').on('click', function () {
+    var s = $(this).data('hs');
+    $('[data-hs]').removeClass('on'); $(this).addClass('on');
+    $g.find('.hm-p').each(function () { $(this).toggleClass('hide', s !== 'all' && $(this).data('s') !== s); });
+  });
+  $g.on('click', '.hm-add', function () { $(this).closest('.hm-p').toggleClass('in'); upd(); });
+  upd();
+});
+
+/* home: earnings calculator */
+$(function () {
+  var $c = $('[data-ec]'); if (!$c.length) return;
+  var $d = $c.find('[data-dots]'); for (var k = 0; k < 50; k++) $d.append('<i></i>');
+  var m = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  function run() {
+    var v = +$c.find('[data-i=v]').val(), s = +$c.find('[data-i=s]').val(), r = +$c.find('[data-i=c]').val();
+    $c.find('input[type=range]').each(function () { this.style.setProperty('--f', ((this.value - this.min) / (this.max - this.min) * 100) + '%'); });
+    var g = v * s, mo = g * r / 100, days = Math.max(1, Math.ceil(199 / (mo / 30)));
+    $c.find('[data-o=v]').text(v); $c.find('[data-o=s]').text(m(s)); $c.find('[data-o=c]').text(r + '%');
+    $c.find('[data-o=m],[data-o=m2]').text(m(mo)); $c.find('[data-o=ve]').text(m(g - mo));
+    $c.find('[data-o=g]').text(m(g)); $c.find('[data-o=y]').text(m(mo * 12));
+    $c.find('[data-o=d]').text(days + (days === 1 ? ' day' : ' days'));
+    $c.find('[data-w=you]').css('width', Math.max(r, 12) + '%'); $c.find('[data-w=ven]').css('width', (100 - Math.max(r, 12)) + '%');
+    $d.children().each(function (i) { $(this).toggleClass('on', i < Math.round(v / 10)); });
+  }
+  $c.on('input', 'input[type=range]', run); run();
+});
+
+/* home: currency switch */
+$(function () {
+  $('[data-cur]').on('click', '[data-c]', function () {
+    var $w = $(this).closest('[data-cur]');
+    $w.find('[data-c]').removeClass('on'); $(this).addClass('on');
+    $w.find('[data-cur-p]').text($(this).data('c'));
+  });
+});
