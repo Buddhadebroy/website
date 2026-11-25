@@ -1372,3 +1372,49 @@ main:has(> .sec.soft:last-child) + .cta-band{background:linear-gradient(180deg,v
 @media (max-width:760px){.pg-module .fx-list{grid-template-columns:minmax(0,1fr)}}
 .pg-module .fx-list .fx{grid-template-columns:40px minmax(0,1fr) auto;padding:16px 18px;align-items:start}
 .pg-module .fx-list .fx .tier{align-self:start}
+
+/* ===== v6: home feature rows in the Enquiry Portal style ===== */
+.split.rev>.fs-mock{order:-1}
+.split.rev{grid-template-columns:1.1fr .9fr}
+.fs-mock{position:relative}
+.fs-mock .ui{height:auto;box-shadow:0 40px 80px -40px rgba(50,6,110,.4),0 0 0 1px var(--line)}
+.fs-mock .ui-bar span{margin-left:10px;font-size:11.5px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.fs-mock .mp-body{grid-template-columns:44% 1fr;padding:22px;gap:22px}
+.fs-mock .mp-img{border-radius:12px;aspect-ratio:1/1.05;display:grid;place-items:center}
+.fs-mock .mp-img .i{width:64px;height:64px;stroke-width:1.3}
+.fs-mock .mp-info{display:grid;gap:10px;align-content:center}
+.fs-mock .mp-info h4{font-size:17px;margin:0;color:var(--ink)}
+.fs-mock .ui-btn{display:flex;gap:7px;justify-content:center;align-items:center;padding:10px;border-radius:99px;font-weight:600}
+.fs-mock .ui-btn .i{width:14px;height:14px}
+.hf-r{right:-24px;top:28px}
+.hf-ok .ico{background:var(--ok-bg);color:var(--ok)}
+.hf-r .ico{background:#f1ebff;color:var(--p)}
+.hf-r.hf-ok .ico{background:var(--ok-bg);color:var(--ok)}
+.fs-q{padding:18px 20px;display:grid;gap:10px}
+.fs-q .ui-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line-2);border-radius:12px}
+.fs-q .ui-row b{color:var(--ink);font-size:13.5px}
+.fs-q .ui-row small{display:block;color:var(--mut);font-size:12px}
+.fs-q .thumb{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;flex:none}
+.fs-q .thumb .i{width:20px;height:20px}
+.fs-tot{display:flex;justify-content:space-between;font-size:13px;color:var(--mut);padding:0 4px}
+.fs-tot em{font-style:normal;color:var(--ok);font-weight:600}
+.fs-tot.big{border-top:1px solid var(--line);padding-top:12px;font-size:15px;color:var(--ink);font-weight:600}
+.fs-tot.big em{color:var(--ink);font-size:20px;font-weight:700}
+.fs-acts{display:grid;grid-template-columns:1fr 2fr;gap:10px;margin-top:4px}
+.fs-shop{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:20px}
+.fs-p{display:grid;gap:8px}
+.fs-p b{font-size:13.5px;color:var(--ink)}
+.fs-lock{display:flex;gap:6px;align-items:center;font-size:11.5px;font-weight:600;color:var(--ink-2);background:var(--line-2);border-radius:8px;padding:6px 8px}
+.fs-lock .i{width:12px;height:12px;flex:none}
+.fs-lock.q{background:var(--p);color:#fff;border-radius:99px;justify-content:center}
+.fs-p .mp-img .i{width:40px;height:40px}
+.ml{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ml-i{display:flex;align-items:center;gap:12px;padding:16px;border:1px solid var(--line);border-radius:16px;background:#fff;color:var(--ink);transition:border-color .2s,transform .2s,box-shadow .2s}
+.ml-i:hover{border-color:var(--p-200);transform:translateY(-2px);box-shadow:0 18px 36px -24px rgba(50,6,110,.45)}
+.ml-i .ico{width:40px;height:40px;border-radius:12px;background:#f1ebff;color:var(--p);display:grid;place-items:center;flex:none}
+.ml-i .ico .i{width:19px;height:19px}
+.ml-i b{font-size:15px;font-weight:600;flex:1}
+@media (max-width:1000px){.split.rev{grid-template-columns:1fr}.split.rev>.fs-mock{order:0}.ml{grid-template-columns:repeat(2,minmax(0,1fr))}.hf-r{right:0}}
+@media (max-width:640px){.fs-mock .mp-body{grid-template-columns:1fr 1.2fr;padding:14px;gap:14px}.fs-shop{gap:8px;padding:12px}.fs-lock{font-size:10.5px;padding:5px 6px}.ml{grid-template-columns:minmax(0,1fr)}.fs-acts{grid-template-columns:1fr 1.6fr}}
+@media (max-width:1000px){.split,.split.rev{grid-template-columns:minmax(0,1fr)}.split>*{min-width:0}}
+@media (max-width:640px){.fs-mock .mp-body{grid-template-columns:minmax(0,1fr)}.fs-mock .mp-info{min-width:0}.fs-mock .mp-body>.mp-img{aspect-ratio:auto;height:150px}}
