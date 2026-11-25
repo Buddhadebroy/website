@@ -244,7 +244,7 @@ jQuery(function ($) {
 
   /* rotating words */
   $('[data-rotate]').each(function () {
-    if ($(this).closest('h1,h2,h3').length) return; /* headings stay still */
+    if (!$(this).closest('.p5-still').length) return; /* only the multilingual card rotates */
     var $e = $(this), words = $e.data('rotate').split('|'), i = 0;
     setInterval(function () {
       i = (i + 1) % words.length;
@@ -278,10 +278,9 @@ jQuery(function ($) {
     var $d = $(this), $b = $d.find('.vd-nav button'), i = 0, t = null, vis = false, hov = false;
     function go(n) { i = n % $b.length; $b.removeClass('on').eq(i).addClass('on'); $d.find('.vd-p').removeClass('on').eq(i).addClass('on'); }
     function tick() { clearInterval(t); t = setInterval(function () { if (vis && !hov) go(i + 1); }, 4200); }
-    $b.on('click', function () { go($b.index(this)); tick(); });
+    $b.on('click', function () { go($b.index(this)); });
     $d.on('mouseenter', function () { hov = true; }).on('mouseleave', function () { hov = false; });
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }, { threshold: .3 }).observe(this); else vis = true;
-    tick();
+    /* auto-cycling removed: panes change only on click */
   });
 });
 
