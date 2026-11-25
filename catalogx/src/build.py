@@ -135,6 +135,7 @@ for fn, src, title, desc, on in PAGES:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#5e2ede">
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <script>document.documentElement.className+=" js"</script>
