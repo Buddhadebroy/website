@@ -67,14 +67,14 @@ def module_page(m):
       <span class="eyebrow"><span class="dot"></span>{m["eyebrow"]}</span>
       <h1>{m["h1"]}</h1>
       <p class="lead">{m["lead"]}</p>
-      <div class="btns"><a class="btn btn-p" href="pricing.html">Power Up With CatalogX {{i:arrow}}</a><a class="btn btn-o" href="#">{{i:eye}} See It Live</a></div>
+      <div class="btns"><a class="btn btn-p" href="pricing.html">Get CatalogX {{i:arrow}}</a><a class="btn btn-o" href="#">{{i:eye}} Live demo</a></div>
     </div>
     <div class="rv" aria-hidden="true">{m["mock"]}</div>
   </div>
 </section>
 <section class="sec">
   <div class="wrap">
-    <div class="head rv"><span class="eyebrow"><span class="dot"></span>Why it matters</span><h2>What {m["name"]} does for your store</h2></div>
+    <div class="head rv"><span class="eyebrow"><span class="dot"></span>Why it matters</span><h2>What it does for <span class="hl">your store</span></h2></div>
     <div class="hubc">{hi}</div>
   </div>
 </section>
@@ -86,21 +86,27 @@ def module_page(m):
 </section>
 <section class="sec">
   <div class="wrap">
-    <div class="head-row rv"><div class="head left"><span class="eyebrow"><span class="dot"></span>Features</span><h2>Everything in {m["name"]}</h2><p>Free features work in the free plugin. Pro features come with every CatalogX Pro plan.</p></div><a class="btn btn-o" href="features.html">All features {{i:arrow}}</a></div>
+    <div class="head-row rv"><div class="head left"><span class="eyebrow"><span class="dot"></span>Features</span><h2>Everything in <span class="hl">{m["name"]}</span></h2><p>Free and Pro features at a glance.</p></div><a class="btn btn-o" href="features.html">All features {{i:arrow}}</a></div>
     <div class="fx-list">
 {fx}
     </div>
   </div>
 </section>
 <section class="sec soft">
-  <div class="wrap faq-split">
-    <div class="head left rv"><span class="eyebrow"><span class="dot"></span>FAQ</span><h2>{m["name"]} <span class="hl">questions</span></h2><p>Still unsure? Our team is happy to help.</p><a class="txt-link" href="contact.html" style="margin-top:16px">Contact us {{i:arrow}}</a></div>
-    <div class="faq">{faq}</div>
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow"><span class="dot"></span>Reviews</span><h2>Loved by <span class="hl">store owners</span></h2><p>What CatalogX customers say.</p></div>
+    {{TESTI}}
   </div>
 </section>
 <section class="sec">
+  <div class="wrap faq-split">
+    <div class="head left rv"><span class="eyebrow"><span class="dot"></span>FAQ</span><h2>{m["name"]} <span class="hl">questions</span></h2><p>Still unsure? Ask our team.</p><a class="txt-link" href="contact.html" style="margin-top:16px">Contact us {{i:arrow}}</a></div>
+    <div class="faq">{faq}</div>
+  </div>
+</section>
+<section class="sec soft">
   <div class="wrap">
-    <div class="head rv"><span class="eyebrow"><span class="dot"></span>Works together</span><h2>Pair it with other modules</h2><p>Every module shares the same settings, roles and rules.</p></div>
+    <div class="head rv"><span class="eyebrow"><span class="dot"></span>Works together</span><h2>Pair it with <span class="hl">other modules</span></h2><p>Every module shares the same settings, roles and rules.</p></div>
     <div class="reasons">{rel}</div>
   </div>
 </section>'''
@@ -109,6 +115,7 @@ def module_page(m):
 for m in MODULES:
     PAGES.append((m["slug"] + ".html", "mod:" + m["slug"], f'{m["name"]} | CatalogX', m["lead"].replace('"', "&quot;"), "features"))
 PAGES += [
+    ("blog-request-a-quote.html", "post-quote", "How to Add a Request a Quote Button to WooCommerce (2026 Guide) | CatalogX", "When quotes beat checkout, how to add a Request a Quote button to WooCommerce step by step, and how to win more of the quotes you send.", "res"),
     ("blog.html", "blog", "Blog | CatalogX", "Guides, comparisons and ideas for WooCommerce catalog, quote and wholesale stores.", "res"),
     ("support.html", "support", "Support | CatalogX", "Get help with CatalogX: docs, community forum and priority support for Pro customers.", "res"),
     ("contact.html", "contact", "Contact Us | CatalogX", "Talk to the CatalogX team about sales, support or partnerships.", "res"),
@@ -128,6 +135,8 @@ for fn, src, title, desc, on in PAGES:
         body, src = module_page(MOD[src[4:]]), "module"
     else:
         body = rd("pages/%s.html" % src).replace("{FEATURES}", features())
+    for part in sorted((S / "partials").glob("*.html")):
+        body = body.replace("{%s}" % part.stem.upper(), part.read_text())
     html = f"""<!doctype html>
 <html lang="en">
 <head>
