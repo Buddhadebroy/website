@@ -1307,3 +1307,36 @@ main:has(> .sec.soft:last-child) + .cta-band{background:linear-gradient(180deg,v
 .vh-hero.clean .vh-proof small{margin-top:2px}
 @media (max-width:1000px){.vh-hero.clean .vh-mock{padding:12px 0 40px}.vh-hero.clean .vh-chip.c2{left:8px}}
 @media (max-width:640px){.vh-hero.clean .vh-mock{padding-bottom:0}.vh-hero.clean .vh-chip.c2{position:relative;left:auto;bottom:auto;margin:-14px auto 0;width:max-content}}
+
+/* v8: modern hero, one product in three modes */
+.vh-hero.clean{position:relative;background:#fff;overflow:hidden}
+.vh-hero.clean::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(94,46,222,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(94,46,222,.07) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 72% 45%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 70% 80% at 72% 45%,#000 20%,transparent 75%);pointer-events:none}
+.vh-hero.clean::after{content:"";position:absolute;width:560px;height:560px;right:-60px;top:40px;border-radius:50%;background:radial-gradient(circle,rgba(124,82,255,.22),transparent 65%);pointer-events:none}
+.vh-hero.clean .wrap{z-index:1}
+.hx{display:grid;gap:18px;justify-items:center}
+.hx .hm-win{width:100%}
+.hx-modes{position:relative;display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px;box-shadow:0 10px 30px -18px rgba(50,6,110,.45);width:min(380px,100%)}
+.hx-modes span{position:relative;z-index:1;display:flex;gap:7px;align-items:center;justify-content:center;font-size:13.5px;font-weight:600;color:var(--mut);padding:9px 10px;border-radius:99px}
+.hx-modes span .i{width:15px;height:15px}
+.hx-ind{position:absolute;z-index:0;top:5px;bottom:5px;left:5px;width:calc((100% - 10px)/3);border-radius:99px;background:var(--p);box-shadow:0 8px 18px -8px rgba(94,46,222,.8);animation:hxInd 9s infinite}
+.hx-modes span:nth-of-type(1){animation:hxT1 9s infinite}.hx-modes span:nth-of-type(2){animation:hxT2 9s infinite}.hx-modes span:nth-of-type(3){animation:hxT3 9s infinite}
+.hx-stack{display:grid}
+.hx-s{grid-area:1/1;display:grid;gap:9px;align-content:start;opacity:0;animation:9s infinite}
+.hx-s.s1{animation-name:hxS1}.hx-s.s2{animation-name:hxS2}.hx-s.s3{animation-name:hxS3}
+.hx-price{font-size:24px;font-weight:700;color:var(--ink);letter-spacing:-.02em;padding:2px 0}
+.hx-c{opacity:0;animation:9s infinite}
+.hx-c.c-1{animation-name:hxS1}.hx-c.c-2{animation-name:hxS2}.hx-c.c-3{animation-name:hxS3}
+.hx-c .ic{background:#f1ebff;color:var(--p)}
+.hx-c .i-wrap{display:grid;place-items:center}
+.vh-hero.clean .vh-mock.hx{padding:0 0 30px 20px}
+.vh-hero.clean .hx .vh-chip.c2{left:-6px;bottom:0}
+@keyframes hxInd{0%,30%{transform:translateX(0)}33.3%,63%{transform:translateX(100%)}66.6%,96%{transform:translateX(200%)}100%{transform:translateX(0)}}
+@keyframes hxT1{0%,30%{color:#fff}33.3%,96%{color:var(--mut)}100%{color:#fff}}
+@keyframes hxT2{0%,30%{color:var(--mut)}33.3%,63%{color:#fff}66.6%,100%{color:var(--mut)}}
+@keyframes hxT3{0%,63%{color:var(--mut)}66.6%,96%{color:#fff}100%{color:var(--mut)}}
+@keyframes hxS1{0%,30%{opacity:1;transform:none}33.3%,96%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:none}}
+@keyframes hxS2{0%,30%{opacity:0;transform:translateY(6px)}33.3%,63%{opacity:1;transform:none}66.6%,100%{opacity:0;transform:translateY(6px)}}
+@keyframes hxS3{0%,63%{opacity:0;transform:translateY(6px)}66.6%,96%{opacity:1;transform:none}100%{opacity:0;transform:translateY(6px)}}
+@media (prefers-reduced-motion:reduce){.hx-ind,.hx-modes span,.hx-s,.hx-c{animation:none}.hx-ind{transform:translateX(200%)}.hx-modes span:nth-of-type(3){color:#fff}.hx-s.s3,.hx-c.c-3{opacity:1}}
+@media (max-width:640px){.vh-hero.clean .vh-mock.hx{padding:0}.vh-hero.clean .hx .vh-chip.c2{position:relative;left:auto;bottom:auto;margin:-28px auto 0;width:max-content;grid-area:auto}.hx .hx-c{display:none}.hx .hx-c.c-3{display:flex;opacity:1;animation:none}.hx-modes span{font-size:12.5px;padding:8px 6px}}
+@media (max-width:640px){.hx .hx-c.c-3{display:none}}
