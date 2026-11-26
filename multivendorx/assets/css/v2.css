@@ -2114,3 +2114,5 @@ ul.mixl b{font-size:15px;color:var(--ink)}
 .ftr-bot a:hover{color:#fff}
 .ftr-word{font-weight:800;color:#1a1626}
 @supports (-webkit-background-clip:text){.ftr-word{background:linear-gradient(180deg,rgba(167,139,250,.2),rgba(167,139,250,.02) 85%);-webkit-background-clip:text;background-clip:text;color:transparent}}
+/* footer wordmark: brand purple gradient */
+@supports (-webkit-background-clip:text){.ftr-word{background:linear-gradient(180deg,#a78bfa 0%,#7c3aed 38%,rgba(80,7,170,.55) 70%,rgba(80,7,170,0) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9}}

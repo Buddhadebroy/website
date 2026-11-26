@@ -428,7 +428,7 @@ $(function(){
     });
     $m.find('[data-tier]').each(function(){
       var $b=$(this),on=$b.attr('data-tier')===tier;
-      $b.css({background:on?'#1f1b3e':'#fff',color:on?'#fff':'#1f1b3e',borderColor:on?'#1f1b3e':'#ece6f6'}).attr('aria-pressed',on);
+      $b.attr('aria-pressed',on);
     });
     var c=CATS[cat]||CATS.all;
     $m.find('[data-mt]').text(c[0]);$m.find('[data-mb]').text(c[1]);
