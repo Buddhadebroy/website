@@ -711,3 +711,26 @@
  .bx-stage .tv-pic{aspect-ratio:1/1}.bx-stage .tv-pic>svg{width:70%}
 }
 @media(max-width:700px){.bx-0 .bx-stage,.bx-5 .bx-stage{zoom:.6}}
+
+/* ===== round 11: bento polish + section backgrounds ===== */
+.bxg{gap:24px}
+.bx:not(.bx-0):not(.bx-5) .bx-vis{-webkit-mask:none;mask:none;display:flex;justify-content:center;align-items:flex-start;padding-top:28px;height:262px}
+.bx:not(.bx-0):not(.bx-5) .bx-stage{position:relative;left:auto;top:auto;width:540px;flex:none;zoom:.6}
+.bx:not(.bx-0):not(.bx-5) .bx-vis::after{height:44px}
+.bx-tx{padding:26px 28px 28px}
+.bx-0 .bx-tx,.bx-5 .bx-tx{justify-content:center;padding:44px 40px}
+.bx-0 .bx-a,.bx-5 .bx-a{margin-top:0;padding-top:26px}
+.bx-0 .bx-vis,.bx-5 .bx-vis{min-height:380px}
+.bx-5 .bx-stage{zoom:.72}
+.bx-0 .bx-chips li,.bx-5 .bx-chips li{font-size:13.5px;padding:6px 12px}
+/* alternate section backgrounds so each section reads on its own */
+.rf.nx>section.nx-sec{position:relative;background:#fff!important;border-top:1px solid #eee8f7}
+.rf.nx>#how,.rf.nx>#types,.rf.nx>#migrate,.rf.nx>#reviews,.rf.nx>#faq{background:#f5f1fc!important}
+.rf.nx>#types .bx{box-shadow:0 1px 2px rgba(31,27,62,.05),0 12px 30px -24px rgba(80,7,170,.35)}
+.rf.nx>#modules .nx-mods{background:#fff}
+@media(max-width:700px){
+ .bx:not(.bx-0):not(.bx-5) .bx-vis{height:220px;padding-top:20px}
+ .bx:not(.bx-0):not(.bx-5) .bx-stage{zoom:.58}
+ .bx-0 .bx-vis,.bx-5 .bx-vis{min-height:0}
+ .bx-0 .bx-tx,.bx-5 .bx-tx{padding:22px 20px 24px}
+}
