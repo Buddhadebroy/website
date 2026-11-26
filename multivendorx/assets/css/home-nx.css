@@ -734,3 +734,25 @@
  .bx-0 .bx-vis,.bx-5 .bx-vis{min-height:0}
  .bx-0 .bx-tx,.bx-5 .bx-tx{padding:22px 20px 24px}
 }
+
+/* ===== round 12: each type card in its own colour ===== */
+.rf.nx>#types{background:#f7f7fa!important}
+.bx{background:var(--tnt)!important;border:1px solid color-mix(in srgb,var(--acc) 16%,transparent)!important;box-shadow:none!important}
+.bx:hover{box-shadow:0 30px 60px -34px color-mix(in srgb,var(--acc) 65%,transparent)!important}
+.bx-vis{background:linear-gradient(180deg,color-mix(in srgb,var(--acc) 13%,#fff) 0%,var(--tnt) 100%)!important;border:0!important}
+.bx-vis::before{background-image:linear-gradient(color-mix(in srgb,var(--acc) 12%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--acc) 12%,transparent) 1px,transparent 1px)}
+.bx-vis::after{background:linear-gradient(180deg,transparent,var(--tnt))!important}
+.bx-0 .bx-vis,.bx-5 .bx-vis{background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 14%,#fff),var(--tnt))!important}
+.bx-h>span:first-child{background:#fff!important;box-shadow:0 4px 10px -6px color-mix(in srgb,var(--acc) 60%,transparent)}
+.bx-h h3{color:color-mix(in srgb,var(--acc) 35%,#1f1b3e)}
+.bx-tx p{color:#4a4566}
+.bx-chips li{background:#fff;color:#3a3556;border:1px solid color-mix(in srgb,var(--acc) 10%,transparent)}
+.bx-a{align-self:flex-start;padding:10px 18px!important;margin-top:auto;border-radius:999px;background:var(--acc);color:#fff!important}
+.bx-0 .bx-a,.bx-5 .bx-a{margin-top:26px}
+.bx-tx{padding:24px 26px 26px;gap:0}
+.bx-tx p{margin-top:8px}
+.bx-chips{margin-top:14px}
+.bx:not(.bx-0):not(.bx-5) .bx-tx .bx-a{margin-top:22px}
+.bx:not(.bx-0):not(.bx-5) .bx-chips{flex:1;align-content:flex-start}
+.bx-0 .bx-tx,.bx-5 .bx-tx{padding:40px}
+.bx-0 .bx-vis,.bx-5 .bx-vis{min-height:360px}
