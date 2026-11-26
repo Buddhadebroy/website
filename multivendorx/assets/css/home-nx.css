@@ -805,3 +805,23 @@
 .rf .rf-h1,.rf-h1{font-weight:500!important;letter-spacing:-.03em!important}
 #top .rf-h1 *{font-weight:inherit!important}
 #top b,#top strong{font-weight:600}
+
+/* ===== round 16: modern SaaS details on clean cards ===== */
+.bxc .bx{--mx:50%;--my:0%;isolation:isolate}
+.bxc .bx::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;padding:1px;background:radial-gradient(420px circle at var(--mx) var(--my),color-mix(in srgb,var(--acc) 70%,transparent),transparent 45%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s ease}
+.bxc .bx::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx) var(--my),color-mix(in srgb,var(--acc) 7%,transparent),transparent 50%);opacity:0;transition:opacity .3s ease}
+.bxc .bx:hover::before,.bxc .bx:hover::after{opacity:1}
+.bxc .bx>*{position:relative;z-index:1}
+.bxc .bx-vis{position:relative}
+.bxc .bx-vis>.bx-stage{z-index:1}
+.bxc .bx-vis .bx-glow{position:absolute;left:50%;top:55%;width:70%;height:60%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,color-mix(in srgb,var(--acc) 28%,transparent),transparent);filter:blur(30px);z-index:0;pointer-events:none}
+.bxc .bx-vis::before{background-image:radial-gradient(color-mix(in srgb,var(--acc) 28%,#d9d8e3) 1px,transparent 1.2px)!important;-webkit-mask:radial-gradient(ellipse at 50% 40%,#000 25%,transparent 75%)!important;mask:radial-gradient(ellipse at 50% 40%,#000 25%,transparent 75%)!important;opacity:1}
+.bxc .bx-vis,.bxc .bx-0 .bx-vis,.bxc .bx-5 .bx-vis{background:#fafafc!important}
+.bxc .bx-top{position:absolute;left:0;right:0;top:0;height:3px;z-index:4;background:linear-gradient(90deg,transparent,var(--acc),transparent);opacity:.85}
+.bxc .bx-k{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;font:500 11.5px/1 "Geist Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.bxc .bx-k::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 15%,transparent)}
+.bxc .bx-a span{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:color-mix(in srgb,var(--acc) 12%,#fff);transition:transform .25s ease,background .25s ease,color .25s ease}
+.bxc .bx:hover .bx-a span{background:var(--acc);color:#fff;transform:translateX(3px)}
+.bxc .bx-h .rf-tag{display:none!important}
+.bxc .bx::after{background:radial-gradient(560px circle at var(--mx) var(--my),color-mix(in srgb,var(--acc) 11%,transparent),transparent 55%)}
+.bxc .bx-vis .bx-glow{opacity:.9;width:80%;height:70%}
