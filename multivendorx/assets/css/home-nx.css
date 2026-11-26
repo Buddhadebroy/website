@@ -890,3 +890,25 @@
  .bxc .bx-5 .bx-tx{padding:20px 20px 22px!important}
 }
 @media(max-width:700px){.bxc .bx-5 .bx-stage{position:relative!important;left:auto!important;top:auto!important;transform:none!important}}
+
+/* ===== round 18: picture and text read as one card (no inner frame) ===== */
+.bxc .bx-vis,.bxc .bx-0 .bx-vis,.bxc .bx-5 .bx-vis{margin:0!important;border:0!important;border-radius:0!important;background:linear-gradient(180deg,color-mix(in srgb,var(--acc) 6%,#fff),#fff)!important}
+.bxc .bx-0 .bx-vis{background:linear-gradient(270deg,color-mix(in srgb,var(--acc) 6%,#fff),#fff)!important}
+.bxc .bx-5 .bx-vis{background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 6%,#fff),#fff)!important}
+.bxc .bx-vis::before{-webkit-mask:radial-gradient(ellipse at 50% 45%,#000 15%,transparent 70%)!important;mask:radial-gradient(ellipse at 50% 45%,#000 15%,transparent 70%)!important}
+.bxc .bx:not(.bx-0):not(.bx-5) .bx-vis{height:270px}
+.bxc .bx:not(.bx-0):not(.bx-5) .bx-tx{padding-top:8px}
+.bxc .bx-0 .bx-tx{padding-right:8px}
+.bxc .bx-5 .bx-tx{padding-left:8px}
+@media(max-width:1020px){.bxc .bx-0 .bx-vis,.bxc .bx-5 .bx-vis{margin:0!important;background:linear-gradient(180deg,color-mix(in srgb,var(--acc) 6%,#fff),#fff)!important}.bxc .bx-0 .bx-tx,.bxc .bx-5 .bx-tx{padding-top:8px}}
+.bxc .bx:not(.bx-0):not(.bx-5) .bx-vis,.bxc .bx-0 .bx-vis,.bxc .bx-5 .bx-vis{border:0!important}
+.bxc .bx:not(.bx-0):not(.bx-5) .bx-vis{height:300px}
+@media(max-width:700px){
+ .bxc .bx .bx-vis,.bxc .bx:not(.bx-0):not(.bx-5) .bx-vis,.bxc .bx-0 .bx-vis{height:230px!important;min-height:0!important;padding:0!important;display:block}
+ .bxc .bx-0 .bx-stage{position:absolute!important;left:16px!important;top:20px!important;transform:none!important;zoom:.6}
+ .bxc .bx-5 .bx-vis{height:auto!important;padding:18px 10px!important;display:grid}
+ .bxc .bx .bx-tx,.bxc .bx-0 .bx-tx,.bxc .bx-5 .bx-tx{padding:6px 20px 22px!important}
+}
+@media(max-width:700px){.bxc .bx:not(.bx-5) .bx-stage{position:absolute!important;left:16px!important;right:auto!important;top:20px!important;transform:none!important;zoom:.6;width:540px}}
+@media(max-width:700px){.bxc .bx.bx-3 .bx-vis{height:270px!important}}
+@media(max-width:700px){#types .bx.bx-3 .bx-vis{height:290px!important}}
