@@ -1421,3 +1421,7 @@ main:has(> .sec.soft:last-child) + .cta-band{background:linear-gradient(180deg,v
 .ftr-bot a{color:#d9cfff}
 .ftr .legal a{color:#d4cfe9}
 .ftr .legal a:hover{color:#fff}
+/* v10: fewer borders in pricing */
+.pz{background:#f5f3fb;border:0;box-shadow:none}
+.pz-plan{border:0;box-shadow:0 14px 30px -26px rgba(50,6,110,.35)}
+.pz-incl{background:#fff}
