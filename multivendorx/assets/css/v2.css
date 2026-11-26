@@ -2116,3 +2116,6 @@ ul.mixl b{font-size:15px;color:var(--ink)}
 @supports (-webkit-background-clip:text){.ftr-word{background:linear-gradient(180deg,rgba(167,139,250,.2),rgba(167,139,250,.02) 85%);-webkit-background-clip:text;background-clip:text;color:transparent}}
 /* footer wordmark: brand purple gradient */
 @supports (-webkit-background-clip:text){.ftr-word{background:linear-gradient(180deg,#a78bfa 0%,#7c3aed 38%,rgba(80,7,170,.55) 70%,rgba(80,7,170,0) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9}}
+/* footer wordmark: soft white fade */
+@supports (-webkit-background-clip:text){.ftr-word{background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.08) 55%,rgba(255,255,255,0) 100%)!important;-webkit-background-clip:text;background-clip:text;color:transparent;opacity:1}}
+@supports (-webkit-background-clip:text){.ftr-word{-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}}

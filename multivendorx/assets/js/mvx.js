@@ -559,3 +559,10 @@ $(function(){
   };
   $(window).on('scroll resize',tick);tick();
 });
+
+/* Home: type cards spotlight follows the pointer */
+$(function(){
+  var $g=$('.bxc .bx');
+  if(!$g.length)return;
+  $g.on('pointermove',function(e){var r=this.getBoundingClientRect();this.style.setProperty('--mx',(e.clientX-r.left)+'px');this.style.setProperty('--my',(e.clientY-r.top)+'px')});
+});
