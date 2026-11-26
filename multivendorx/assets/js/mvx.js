@@ -566,3 +566,15 @@ $(function(){
   if(!$g.length)return;
   $g.on('pointermove',function(e){var r=this.getBoundingClientRect();this.style.setProperty('--mx',(e.clientX-r.left)+'px');this.style.setProperty('--my',(e.clientY-r.top)+'px')});
 });
+/* niche playbook: sticky stage tracker */
+$(function(){
+  var nav=document.querySelector('.np-snav'); if(!nav)return;
+  var secs=[].slice.call(document.querySelectorAll('section[data-stage]')), links=[].slice.call(nav.querySelectorAll('a'));
+  function upd(){
+    var mid=window.innerHeight*0.45, cur=-1;
+    secs.forEach(function(s){var r=s.getBoundingClientRect(); if(r.top<mid&&r.bottom>mid) cur=+s.getAttribute('data-stage');});
+    nav.classList.toggle('show',cur>=0);
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur);a.classList.toggle('done',cur>=0&&i<cur);});
+  }
+  window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
+});
