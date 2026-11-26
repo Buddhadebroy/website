@@ -624,3 +624,24 @@
 @media(max-width:620px){.mx-how{flex-direction:column;align-items:flex-start;gap:8px;max-width:340px}.mx-seg{width:100%}.mx-seg-b{flex:1;justify-content:center;padding:8px 6px}}
 .nx-mx3 .rf-mxcard.is-off,.nx-mods.is-short .rf-mxcard.is-cut{display:none!important}
 @media(max-width:960px){.mx-sh{display:none}}
+
+/* ===== round 9: module cards ===== */
+.nx-mx3 .rf-mxcard{gap:12px!important;padding:20px!important;border-radius:18px!important;border:1px solid #ece6f6!important;background:#fff!important;box-shadow:0 1px 2px rgba(31,27,62,.04)!important;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease!important;overflow:hidden}
+.nx-mx3 .rf-mxcard::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,#5007aa,#9b5cf6);opacity:0;transition:opacity .25s ease}
+.nx-mx3 .rf-mxcard:hover{transform:translateY(-3px);border-color:#d9ccf3!important;box-shadow:0 18px 36px -22px rgba(80,7,170,.45)!important}
+.nx-mx3 .rf-mxcard:hover::before{opacity:1}
+.mc-h{display:flex;align-items:flex-start;gap:12px}
+.mc-ic{flex:none;width:42px;height:42px;border-radius:13px;background:linear-gradient(160deg,#f6f1ff,#ece3fd);color:#5007aa;transition:background .25s ease,color .25s ease}
+.mc-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;padding-top:1px}
+.mc-n{font-size:15.5px;line-height:1.3}
+.mc-c{font-size:12px;color:#8b84a6;font-weight:500}
+.mc-h .mc-tag{margin-top:2px;flex:none}
+.mc-d{font-size:13.5px;line-height:1.55;color:#5d5874}
+.nx-mx3 .rf-mxcard:hover .mc-ic{background:#5007aa;color:#fff}
+.mc-m{display:flex;align-items:center;gap:8px;margin-top:4px}
+.mc-m .mc-tag{margin:0;font-size:11px;padding:2px 9px}
+/* r9b: Free/Pro tag in the card's top-right corner */
+.mc-h{padding-right:52px}
+.mc-m .mc-tag{position:absolute;top:18px;right:18px;font-size:11.5px;padding:4px 11px}
+.mc-h{flex-direction:column;gap:14px;padding-right:0}
+.mc-m .mc-tag{top:30px;right:20px}
