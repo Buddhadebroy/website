@@ -2119,3 +2119,23 @@ ul.mixl b{font-size:15px;color:var(--ink)}
 /* footer wordmark: soft white fade */
 @supports (-webkit-background-clip:text){.ftr-word{background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.08) 55%,rgba(255,255,255,0) 100%)!important;-webkit-background-clip:text;background-clip:text;color:transparent;opacity:1}}
 @supports (-webkit-background-clip:text){.ftr-word{-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}}
+
+/* Marketplaces menu: compact two-column list, no big preview panel */
+.mega-in.mm-mk{max-width:700px;grid-template-columns:1fr;border-radius:18px}
+.mm-mk .mm-pv{display:none}
+.mm-mk .mm-list{display:grid;grid-template-columns:1fr 1fr;gap:2px 6px;padding:14px 12px 10px}
+.mm-mk .mm-list h6{grid-column:1/-1;margin:2px 10px 6px}
+.mm-mk .mm-i{gap:12px;padding:9px 10px;border-radius:12px}
+.mm-mk .mm-i .ico{width:32px;height:32px;border-radius:10px;flex:none}
+.mm-mk .mm-i .ico svg.i{width:16px;height:16px}
+.mm-mk .mm-i b{font-size:14px;font-weight:600}
+.mm-mk .mm-i span:not(.ico){font-size:12.5px}
+.mm-mk .mm-i>svg.i{display:none}
+.mm-mk .mm-i.on{background:transparent}
+.mm-mk .mm-i.on .ico{background:#f3eefe;color:#5007aa;transform:none}
+.mm-mk .mm-i:hover{background:#f7f5fc}
+.mm-mk .mm-i:hover .ico{background:#5007aa;color:#fff;transform:none}
+.mm-mk .mm-foot{padding:12px 20px;font-size:13px}
+.mm-mk .mm-foot .ico{width:28px;height:28px;border-radius:9px}
+.mm-mk .mm-foot b{font-weight:600}
+.mm-mk .mm-foot em{font-weight:600}

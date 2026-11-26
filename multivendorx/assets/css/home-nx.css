@@ -912,3 +912,22 @@
 @media(max-width:700px){.bxc .bx:not(.bx-5) .bx-stage{position:absolute!important;left:16px!important;right:auto!important;top:20px!important;transform:none!important;zoom:.6;width:540px}}
 @media(max-width:700px){.bxc .bx.bx-3 .bx-vis{height:270px!important}}
 @media(max-width:700px){#types .bx.bx-3 .bx-vis{height:290px!important}}
+
+/* ===== round 19 ===== */
+/* trust strip: "works with" on its own line */
+.nx-trust-l br{display:block}
+.nx-trust-l span{display:block;margin-top:2px}
+.nx-trust-l span::before{content:none}
+/* how-it-works: step number and step name read as two different things */
+.hw-k{gap:12px;letter-spacing:0;text-transform:none;font-size:15px;font-weight:600;color:var(--acc)}
+.hw-k b{font:500 12px/1 "Geist Mono",ui-monospace,monospace;letter-spacing:.04em;text-transform:uppercase;padding:6px 10px;border-radius:8px;background:#fff;color:#8a86a0;border:1px solid #e9e8f0}
+/* pricing footer details */
+.px-foot{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:28px;font-size:14px;color:#4b4f63}
+.px-foot span{display:inline-flex;align-items:center;gap:8px}
+.px-foot svg.i{width:17px;height:17px;color:#15803d;flex:none}
+.px-foot span:nth-child(2) svg.i,.px-foot span:nth-child(3) svg.i{color:#5007aa}
+.px-foot b{font-weight:600;color:#1f1b3e}
+.px-foot a{color:#5007aa;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.px-tax{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;margin:12px 0 0;font-size:13px;color:#8a86a0;text-align:center}
+.px-tax svg.i{width:15px;height:15px}
+.px-tax a{color:#5007aa;font-weight:600;margin-left:6px}

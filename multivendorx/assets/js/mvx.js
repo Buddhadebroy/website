@@ -578,3 +578,15 @@ $(function(){
   }
   window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
 });
+/* features page: area cards drive the segment filter */
+$(function(){
+  var $a=$('.fx-area'); if(!$a.length)return;
+  $a.on('click',function(){
+    var v=$(this).data('area'), on=$(this).hasClass('on');
+    $a.removeClass('on'); if(!on)$(this).addClass('on');
+    $('.fz-o[data-k="seg"][data-v="'+(on?'all':v)+'"]').trigger('click');
+    var t=document.querySelector('[data-fz]'); if(t) window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-110,behavior:'smooth'});
+  });
+  $(document).on('click','.fz-o[data-k="seg"]',function(e){ if(e.originalEvent){var v=$(this).data('v');$a.removeClass('on').filter('[data-area="'+v+'"]').addClass('on');} });
+  $(document).on('click','[data-fz-clear]',function(){$a.removeClass('on');});
+});
