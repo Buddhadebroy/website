@@ -2139,3 +2139,6 @@ ul.mixl b{font-size:15px;color:var(--ink)}
 .mm-mk .mm-foot .ico{width:28px;height:28px;border-radius:9px}
 .mm-mk .mm-foot b{font-weight:600}
 .mm-mk .mm-foot em{font-weight:600}
+/* one weight scale for every mega menu (match home: 600 titles/labels, 400 body) */
+.mega h6,.mm-i b,.mm-foot b,.mm-foot em,.mr-i b,.mr-art .pill,.mr-feat small,.mr-feat b,.mr-feat em{font-weight:600!important}
+.mega-in small,.mega-in p,.mega-in span:not(.pill){font-weight:400}
