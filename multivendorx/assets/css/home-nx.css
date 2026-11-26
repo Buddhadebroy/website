@@ -756,3 +756,27 @@
 .bx:not(.bx-0):not(.bx-5) .bx-chips{flex:1;align-content:flex-start}
 .bx-0 .bx-tx,.bx-5 .bx-tx{padding:40px}
 .bx-0 .bx-vis,.bx-5 .bx-vis{min-height:360px}
+
+/* ===== round 13: type cards polish ===== */
+.bxg{gap:22px}
+.bx{border-radius:28px}
+.bx-vis::before{background-image:radial-gradient(color-mix(in srgb,var(--acc) 30%,transparent) 1px,transparent 1.3px)!important;background-size:18px 18px!important;-webkit-mask:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 70%)!important;mask:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 70%)!important}
+.bx-vis{background:radial-gradient(90% 80% at 50% 0%,color-mix(in srgb,var(--acc) 22%,#fff) 0%,var(--tnt) 75%)!important}
+.bx-0 .bx-vis,.bx-5 .bx-vis{background:radial-gradient(90% 90% at 60% 40%,color-mix(in srgb,var(--acc) 20%,#fff) 0%,var(--tnt) 75%)!important}
+.bx:not(.bx-0):not(.bx-5) .bx-vis{height:300px;padding-top:30px}
+.bx:not(.bx-0):not(.bx-5) .bx-stage{zoom:.66}
+.bx-stage .tv-win{box-shadow:0 30px 60px -30px color-mix(in srgb,var(--acc) 55%,transparent),0 2px 6px rgba(31,27,62,.06)}
+.bx-h{gap:12px}
+.bx-h>span:first-child{width:40px!important;height:40px!important;border-radius:12px!important}
+.bx-h h3{font-size:22px}
+.bx-0 .bx-h h3,.bx-5 .bx-h h3{font-size:28px}
+.bx-h .rf-tag{background:#fff!important;color:var(--acc)!important;border:1px solid color-mix(in srgb,var(--acc) 22%,transparent)!important}
+.bx-chips li{border-radius:999px;padding:5px 12px}
+.bx-a{box-shadow:0 10px 20px -12px var(--acc)}
+.bx-5{flex-direction:row-reverse}
+.bx-5 .bx-vis{border-left:0}
+@media(max-width:700px){.bx:not(.bx-0):not(.bx-5) .bx-vis{height:230px}.bx:not(.bx-0):not(.bx-5) .bx-stage{zoom:.6}.bx-5{flex-direction:column}}
+.bx:not(.bx-0):not(.bx-5) .bx-stage{zoom:.6}
+.bx:not(.bx-0):not(.bx-5) .bx-vis{height:284px}
+.bx-h h3{white-space:nowrap}
+.bx-0 .bx-h h3,.bx-5 .bx-h h3{font-size:27px}
