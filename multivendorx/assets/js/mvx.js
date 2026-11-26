@@ -545,3 +545,17 @@ $(function(){
   render();
   setInterval(function(){t++;if(t>125){t=0;src=(src+1)%3}render()},80);
 });
+
+/* Home: how-it-works timeline reveal + progress line */
+$(function(){
+  var $hw=$('.hw');
+  if(!$hw.length)return;
+  var rows=$hw.find('.hw-row').get();
+  var tick=function(){
+    var r=$hw[0].getBoundingClientRect(),vh=window.innerHeight;
+    var p=Math.max(0,Math.min(1,(vh*.6-r.top)/r.height));
+    $hw[0].style.setProperty('--hwp',p.toFixed(3));
+    rows.forEach(function(el){if(el.getBoundingClientRect().top<vh*.78)el.classList.add('is-in')});
+  };
+  $(window).on('scroll resize',tick);tick();
+});
