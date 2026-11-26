@@ -354,3 +354,46 @@ body:not(.pg-home) .wy2-eb svg.i{width:13px;height:13px}
  .pg-why .wy2-cta{padding:44px 20px}
  .pg-why .wy2-tk em{display:none}
 }
+
+/* ===== home-style flow on every inner page ===== */
+/* eyebrow pill like the home page: white pill, purple dot badge, sentence case */
+body:not(.pg-home) main .eyebrow{gap:8px;padding:5px 14px 5px 5px;border-radius:99px;background:#fff!important;border:1px solid #e6e1f2!important;box-shadow:0 1px 2px rgba(20,18,40,.04);font-size:13.5px!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;color:#1f1b3e!important}
+body:not(.pg-home) main .eyebrow::before{width:24px;height:24px;border-radius:50%;background:#5007aa radial-gradient(circle,#fff 0 3px,transparent 3.5px)}
+/* sections alternate white / soft tint with a hairline, like home */
+body:not(.pg-home) main .sec{background:#f8f6fc;border-top:1px solid #efedf5;padding:104px 0}
+body:not(.pg-home) main .sec.white{background:#fff}
+body:not(.pg-home) main .sec-head h2{font-size:44px;line-height:1.08}
+body:not(.pg-home) main .sec-head .lead,body:not(.pg-home) main .sec-head p{font-size:18px;color:#4b4f63}
+@media(max-width:760px){body:not(.pg-home) main .sec{padding:72px 0}body:not(.pg-home) main .sec-head h2{font-size:32px}}
+
+/* trust strip after every hero */
+.pt-trust{padding:0 0 40px;background:transparent;position:relative;z-index:2;margin-top:-8px}
+.pt-trustbar{display:flex;align-items:center;gap:28px;background:#fff;border:1px solid #e9e8f0;border-radius:18px;padding:18px 26px;box-shadow:0 18px 40px -30px rgba(80,7,170,.35)}
+.pt-trustbar p{margin:0;font-size:13.5px;font-weight:600;color:#6b6785;max-width:190px;line-height:1.4;flex:none}
+.pt-trustbar p span{font-weight:400;color:#8a86a0}
+.pt-logos{display:flex;flex-wrap:wrap;gap:8px 30px;align-items:center;flex:1;justify-content:space-between;border-left:1px solid #ecebf3;padding-left:28px}
+.pt-logos span{font-size:17px;font-weight:600;letter-spacing:-.01em;color:#8b86a0;font-family:Figtree,system-ui,sans-serif}
+@media(max-width:900px){.pt-trustbar{flex-direction:column;align-items:flex-start;gap:14px}.pt-logos{border-left:0;padding-left:0;gap:8px 20px;justify-content:flex-start}.pt-logos span{font-size:15px}}
+
+/* reviews strip before the FAQ */
+.pt-rev{background:#fff}
+.pt-rg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pt-rc{margin:0;display:flex;flex-direction:column;gap:14px;padding:26px;border-radius:18px;background:#fff;border:1px solid #e9e8f0;box-shadow:0 1px 2px rgba(20,18,40,.04)}
+.pt-rc .st{display:flex;gap:2px;color:#f5a524}.pt-rc .st svg.i{width:15px;height:15px;fill:currentColor}
+.pt-rc blockquote{margin:0;font-size:16px;line-height:1.6;color:#1f1b3e}
+.pt-rc figcaption{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:center;margin-top:auto}
+.pt-rc figcaption i{grid-row:span 2;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#f3eefe;color:#5007aa;font-style:normal;font-weight:600}
+.pt-rc figcaption b{font-size:14px;font-weight:600;color:#1f1b3e}
+.pt-rc figcaption small{font-size:12.5px;color:#8a86a0}
+@media(max-width:900px){.pt-rg{grid-template-columns:1fr}}
+
+/* closing CTA like home: centered card */
+body:not(.pg-home) .cta-band{padding:96px 0!important;background:#fff!important;border-top:1px solid #efedf5}
+body:not(.pg-home) .cta-box{grid-template-columns:1fr!important;justify-items:center;text-align:center;max-width:860px;margin:0 auto;padding:60px 40px!important;border-radius:24px!important;background:radial-gradient(120% 120% at 50% 0%,#f3eefe 0%,#fff 60%)!important;border:1px solid #e6e1f2!important;box-shadow:none!important;gap:28px!important}
+body:not(.pg-home) .cta-box::before,body:not(.pg-home) .cta-box::after{display:none!important}
+body:not(.pg-home) .cta-box h2{font-size:40px!important;line-height:1.1;max-width:680px;margin-left:auto;margin-right:auto}
+body:not(.pg-home) .cta-box p{margin-left:auto;margin-right:auto;max-width:560px}
+body:not(.pg-home) .cta-box .acts{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px}
+@media(max-width:760px){body:not(.pg-home) .cta-box h2{font-size:28px!important}body:not(.pg-home) .cta-box{padding:40px 20px!important}}
+body:not(.pg-home) main .sec.pt-rev{background:#fff}
+body:not(.pg-home) main .sec-head{margin-left:auto;margin-right:auto;text-align:center}body:not(.pg-home) main .sec-head .eyebrow{margin-left:auto;margin-right:auto}
