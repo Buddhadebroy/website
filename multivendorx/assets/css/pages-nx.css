@@ -492,3 +492,5 @@ body:not(.pg-home) main .eyebrow::before{width:24px;height:24px;border-radius:50
 .sg.sg-n .sg-r.hd span{background:#fbfbfe}
 .pg-niche .np-stage-in>.np-done{margin:0!important;justify-self:end;font-size:15px;padding:12px 16px}
 @media(max-width:900px){.pg-niche .np-stage-in>.np-done{justify-self:start}}
+/* closing CTA box spans the full page grid on every inner page */
+body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:border-box}
