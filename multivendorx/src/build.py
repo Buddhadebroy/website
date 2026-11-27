@@ -17,9 +17,9 @@ PAGES = [
   ("migration.html", "migration", "Migrate to MultiVendorX from Dokan, WCFM or WC Vendors", "A migration experience built on trust, guidance and simplicity.", "res"),
   ("pricing.html", "pricing", "Pricing | MultiVendorX", "Invest in success, not just software. 104+ premium features from $149/year.", "pricing"),
   ("about-us.html", "about", "About Us | MultiVendorX", "MultiVendorX: it all started with a vision.", "res"),
-  ("features.html", "features", "All Features | MultiVendorX", "Every MultiVendorX feature on one page. Filter by area, Free or Pro, or browse by module.", "features"),
+  ("features.html", "features", "All Features | MultiVendorX", "Every MultiVendorX feature in one place: stores, products, orders, commissions and payouts. Start free, add Pro when you grow.", "features"),
   ("blog.html", "blog", "Blog | MultiVendorX", "Marketplace insights, strategies and guides from the MultiVendorX team.", "res"),
-  ("compare-features.html", "compare", "Compare Features | MultiVendorX vs WCFM, WC Vendors and Dokan", "Every feature, side by side. Because smart decisions need clarity.", "res"),
+  ("compare-features.html", "compare", "Compare Features | MultiVendorX vs WCFM, WC Vendors and Dokan", "258 marketplace features compared side by side with Dokan, WCFM and WC Vendors.", "res"),
   ("multivendorx-vs-dokan.html", "dokan", "MultiVendorX vs Dokan | Honest Comparison", "MultiVendorX vs Dokan: features, support, pricing, reliability and credibility compared.", "res"),
 ]
 import sys
@@ -30,9 +30,9 @@ for fn, src, title, desc, on in PAGES:
     for k in ("features", "market", "res", "pricing"):
         hdr = hdr.replace("{ON_%s}" % k, "on" if k == on else "")
     body = rd("pages/" + src + ".html").replace("{PLANS}", rd("parts/plans.html")).replace("{TESTI}", rd("parts/testi.html")).replace("{TESTI2}", rd("parts/testi2.html")).replace("{TRUST}", rd("parts/trust.html")).replace("{REVIEWS}", rd("parts/reviews.html"))
-    EXTRA = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">\n<link rel="stylesheet" href="assets/css/home-ref.css?v=r31"><link rel="stylesheet" href="assets/css/home-nx.css?v=r31">\n') if src == 'home' else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">\n<link rel="stylesheet" href="assets/css/pages-gen.css?v=r31"><link rel="stylesheet" href="assets/css/pages-nx.css?v=r31">\n' if src != 'home' else '')
+    EXTRA = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">\n<link rel="stylesheet" href="assets/css/home-ref.css?v=r32"><link rel="stylesheet" href="assets/css/home-nx.css?v=r32">\n') if src == 'home' else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">\n<link rel="stylesheet" href="assets/css/pages-gen.css?v=r32"><link rel="stylesheet" href="assets/css/pages-nx.css?v=r32">\n' if src != 'home' else '')
     PB = ' pg-playbook' if src in ('subscription','auction','booking','rental','b2b') else ''
-    if PB: EXTRA += '<link rel="stylesheet" href="assets/css/mkt.css?v=r31">\n'
+    if PB: EXTRA += '<link rel="stylesheet" href="assets/css/mkt.css?v=r32">\n'
     html = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -40,8 +40,8 @@ for fn, src, title, desc, on in PAGES:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="stylesheet" href="assets/css/mvx.css?v=r31">
-<link rel="stylesheet" href="assets/css/v2.css?v=r31">
+<link rel="stylesheet" href="assets/css/mvx.css?v=r32">
+<link rel="stylesheet" href="assets/css/v2.css?v=r32">
 {EXTRA}</head>
 <body class="pg-{src}{PB}">
 {rd("icons.html")}
@@ -51,7 +51,7 @@ for fn, src, title, desc, on in PAGES:
 </main>
 {rd("footer.html")}
 <script src="assets/js/jquery-3.7.1.min.js"></script>
-<script src="assets/js/mvx.js?v=r31"></script>
+<script src="assets/js/mvx.js?v=r32"></script>
 </body>
 </html>
 '''
