@@ -2142,3 +2142,15 @@ ul.mixl b{font-size:15px;color:var(--ink)}
 /* one weight scale for every mega menu (match home: 600 titles/labels, 400 body) */
 .mega h6,.mm-i b,.mm-foot b,.mm-foot em,.mr-i b,.mr-art .pill,.mr-feat small,.mr-feat b,.mr-feat em{font-weight:600!important}
 .mega-in small,.mega-in p,.mega-in span:not(.pill){font-weight:400}
+/* one grid: header bar edges line up with page content (home .rf-wrap and inner .wrap both 1180 with 32px gutters) */
+.wrap{max-width:1180px}
+.hdr{padding-left:32px;padding-right:32px}
+.hdr-bar{max-width:1116px}
+@media(max-width:760px){.hdr{padding-left:18px;padding-right:18px}}
+/* tighter section rhythm, whole site */
+section.nx-sec:not(.nx-prod),section.rf-live.mg{padding-top:80px!important;padding-bottom:80px!important}
+section.nx-cta-s{padding-bottom:80px!important}
+body:not(.pg-home) main .sec{padding:80px 0!important}
+body:not(.pg-home) main .np-dark{padding:80px 0!important}
+body:not(.pg-home) main .cta-band{padding:72px 0!important}
+@media(max-width:760px){section.nx-sec:not(.nx-prod),section.rf-live.mg{padding-top:56px!important;padding-bottom:56px!important}body:not(.pg-home) main .sec,body:not(.pg-home) main .np-dark{padding:56px 0!important}body:not(.pg-home) main .cta-band{padding:48px 0!important}}
