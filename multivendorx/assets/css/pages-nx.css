@@ -463,6 +463,55 @@ body:not(.pg-home) main .lead,body:not(.pg-home) main .sec-head p{color:#4b4f63;
  .pg-dokan .dz-fx-gh{top:0}
 }
 
+/* 4 support: thread mockup + metric cards (r42) */
+.pg-dokan .dz-chat{display:grid;gap:14px}
+.pg-dokan .dz-cc{padding:16px 18px;border-radius:20px;background:#fff;box-shadow:0 24px 48px -36px rgba(31,27,62,.4)}
+.pg-dokan .dz-cch{display:flex;align-items:center;gap:10px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #f3f1f8}
+.pg-dokan .dz-cch .lg{width:26px;height:26px;font-size:12px;border-radius:8px!important}
+.pg-dokan .dz-cch b{font-size:14.5px;font-weight:600;color:var(--vd-ink)}
+.pg-dokan .dz-pill{margin-left:auto;display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:99px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.pg-dokan .dz-pill svg.i{width:13px;height:13px}
+.pg-dokan .dz-pill.ok{background:#ecfdf3;color:#15803d}
+.pg-dokan .dz-pill.slow{background:#fff4e5;color:#b45309}
+.pg-dokan .dz-bub{display:flex;align-items:flex-end;gap:8px}
+.pg-dokan .dz-bub.a{justify-content:flex-end}
+.pg-dokan .dz-bub>div{max-width:78%;padding:9px 13px;border-radius:14px;font-size:13.5px;line-height:1.45}
+.pg-dokan .dz-bub.q>div{background:#f3f1f8;color:var(--vd-ink);border-bottom-left-radius:4px}
+.pg-dokan .dz-cc.m .dz-bub.a>div{background:#5007aa;color:#fff;border-bottom-right-radius:4px}
+.pg-dokan .dz-cc.d .dz-bub.a>div{background:#e9e7f0;color:var(--vd-ink);border-bottom-right-radius:4px}
+.pg-dokan .dz-bub p{margin:0}
+.pg-dokan .dz-bub small{display:block;margin-top:3px;font-size:11px;opacity:.7}
+.pg-dokan .dz-bub .av{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#ffe4cc;color:#b45309;font-size:11.5px;font-weight:600}
+.pg-dokan .dz-cc.m .dz-bub .av.t{background:#5007aa;color:#fff}
+.pg-dokan .dz-cc.d .dz-bub .av.t{background:#4b4760;color:#fff}
+.pg-dokan .dz-gap{display:flex;align-items:center;gap:8px;margin:8px 0 8px 34px}
+.pg-dokan .dz-gap i{flex:1;height:0;border-top:2px dashed #d9d5e5}
+.pg-dokan .dz-gap span{font-size:11.5px;font-weight:600;color:#15803d;white-space:nowrap}
+.pg-dokan .dz-gap.long{margin:16px 0 16px 34px}
+.pg-dokan .dz-gap.long span{color:#b45309}
+.pg-dokan .dz-cc.m .dz-gap i{flex:none;width:28px}
+.pg-dokan .dz-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+.pg-dokan .dz-kpi{padding:22px;border-radius:22px;background:#fff;border:1px solid var(--vd-line);display:grid;gap:16px;align-content:start;transition:transform .2s ease,box-shadow .2s ease}
+.pg-dokan .dz-kpi:hover{transform:translateY(-2px);box-shadow:0 24px 48px -36px rgba(194,65,12,.45)}
+.pg-dokan .dz-kh{display:flex;align-items:center;gap:12px}
+.pg-dokan .dz-ki{flex:none;width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#fff2e6;color:#c2410c}
+.pg-dokan .dz-ki svg.i{width:20px;height:20px}
+.pg-dokan .dz-kh b{display:block;font-size:16px;font-weight:600;color:var(--vd-ink)}
+.pg-dokan .dz-kh small{font-size:12.5px;color:#8a86a0}
+.pg-dokan .dz-kc{display:grid;grid-template-columns:1fr 1fr;border-radius:14px;background:#faf9fd;overflow:hidden}
+.pg-dokan .dz-kc>div{padding:12px 14px}
+.pg-dokan .dz-kc>div+div{border-left:1px solid var(--vd-line)}
+.pg-dokan .dz-kc span{display:block;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#8a86a0}
+.pg-dokan .dz-kc b{display:block;margin-top:4px;font-size:28px;font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.pg-dokan .dz-kc .m b{color:#5007aa}.pg-dokan .dz-kc .d b{color:#4b4760}
+.pg-dokan .dz-race{display:grid;gap:5px}
+.pg-dokan .dz-race i{display:block;height:8px;width:var(--w);min-width:10px;border-radius:99px;background:#d6d2e1}
+.pg-dokan .dz-race i.m{background:linear-gradient(90deg,#7c3aed,#5007aa)}
+.pg-dokan .dz-kn{font-size:13.5px;line-height:1.5;color:var(--vd-mut)}
+.pg-dokan .dz-src-n{margin:14px 0 0;text-align:center;font-size:12.5px;color:#8a86a0}
+@media(max-width:980px){.pg-dokan .dz-kpis{grid-template-columns:1fr}}
+@media(max-width:760px){.pg-dokan .dz-cc{padding:14px}.pg-dokan .dz-pill{font-size:11.5px;padding:4px 9px}.pg-dokan .dz-cch b{font-size:13.5px}.pg-dokan .dz-bub>div{max-width:84%}}
+
 /* ===== shared home-style section kit (inner pages) ===== */
 body:not(.pg-home) .wy2-s{padding:104px 0;background:#fff;border-top:1px solid #efedf5}
 body:not(.pg-home) .wy2-tint{background:#f8f6fc}
