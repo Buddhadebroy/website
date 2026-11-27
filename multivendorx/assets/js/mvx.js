@@ -605,13 +605,36 @@ $(function () {
   upd();
 });
 
-/* vs Dokan: open the full feature list on demand */
+/* vs Dokan: feature explorer (area tabs, filter, search) */
 $(function () {
-  $('[data-dzopen]').on('click', function () {
-    var $f = $('[data-dzfull]'), open = $f.prop('hidden');
-    $f.prop('hidden', !open);
-    $(this).contents().first()[0].textContent = open ? 'Hide the full list ' : 'Open all 258 features ';
-    if (open) $('html,body').animate({ scrollTop: $f.offset().top - 140 }, 500);
-    $(window).trigger('scroll');
+  var $x = $('[data-dzfx]'); if (!$x.length) return;
+  var $t = $x.find('.dz-fx-t'), $p = $x.find('.dz-fx-p'), $q = $x.find('[data-q]'), $st = $x.find('[data-st]'), $e = $x.find('[data-empty]'), f = 'all';
+  function show(i) {
+    $t.removeClass('on').attr('aria-selected', 'false').eq(i).addClass('on').attr('aria-selected', 'true');
+    $p.prop('hidden', true).eq(i).prop('hidden', false);
+  }
+  function apply() {
+    var q = ($q.val() || '').trim().toLowerCase(), on = q || f !== 'all', n = 0;
+    $x.toggleClass('searching', !!q).toggleClass('open-all', on);
+    $x.find('.dz-fx-r').each(function () {
+      var r = this.dataset, ok = (!q || r.q.indexOf(q) > -1) && (f === 'all' || r[f] === '1');
+      $(this).toggleClass('hide', !ok); if (ok) n++;
+    });
+    $x.find('.dz-fx-g').each(function () { $(this).toggleClass('none', on && !$(this).find('.dz-fx-r:not(.hide)').length); });
+    $p.each(function () { $(this).toggleClass('none', !!q && !$(this).find('.dz-fx-r:not(.hide)').length); });
+    var vis = q ? n : $p.not('[hidden]').find('.dz-fx-r:not(.hide)').length;
+    $st.text(on ? (q ? n + ' of 258 features match' : vis + ' features in this area') : '');
+    $e.prop('hidden', !(q && !n));
+  }
+  $t.on('click', function () {
+    if ($q.val()) { $q.val(''); }
+    show(+$(this).data('t')); apply();
+    if (window.innerWidth < 980) this.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
   });
+  $x.find('[data-f] button').on('click', function () {
+    $(this).addClass('on').siblings().removeClass('on'); f = $(this).data('v'); apply();
+  });
+  $q.on('input', apply);
+  $x.on('click', '.dz-fx-more', function () { $(this).closest('.dz-fx-g').addClass('open'); $(this).remove(); });
+  apply();
 });
