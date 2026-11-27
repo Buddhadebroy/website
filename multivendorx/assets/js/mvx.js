@@ -661,7 +661,9 @@ jQuery(function ($) {
     if (paused || document.hidden) return;
     $t.removeClass('f'); $t.eq(i % $t.length).addClass('f'); i++;
   }, 2200);
-  var $s = $('[data-bwsticky]'), $h = $('.bw-hero'), $end = $('.bw-fin');
+});
+jQuery(function ($) {
+  var $s = $('[data-bwsticky]'), $h = $('.bw-hero'), $end = $('.bw-fin'); if (!$s.length) return;
   $(window).on('scroll', function () {
     var y = window.scrollY, past = y > $h.offset().top + $h.outerHeight() - 100;
     var atEnd = y + window.innerHeight > $end.offset().top + 120;
