@@ -571,7 +571,7 @@ $(function(){
 
 /* vs Dokan: pricing calculator (yearly list prices, checked 27 Nov 2026) */
 $(function () {
-  var $c = $('[data-vdcalc]'); if (!$c.length) return;
+  var $c = $('[data-dzcalc]'); if (!$c.length) return;
   var st = { s: 0, f: 2 };
   var DK = [
     { n: 'Starter', s: '1 site', m: '3 modules', p: 149 },
@@ -602,20 +602,20 @@ $(function () {
     if (sv > 0) { o('sv').text('You keep ' + f(sv) + ' a year'); o('s3').text('That is ' + f(sv * 3) + ' over three years, with every module included.'); $s.removeClass('flip'); }
     else { o('sv').text('Same price, more included'); o('s3').text('MultiVendorX gives every module at this price. Dokan ' + d.n + ' has ' + d.m + '.'); $s.addClass('flip'); }
   }
-  $c.on('click', '.vd-seg button', function () {
+  $c.on('click', '.dz-seg button', function () {
     var $b = $(this), $g = $b.parent(); $g.find('button').removeClass('on'); $b.addClass('on');
     st[$g.data('k')] = +$b.data('v'); upd();
   });
   upd();
 });
 
-/* vs Dokan: show the first group of each feature section, rest on demand */
+/* vs Dokan: open the full feature list on demand */
 $(function () {
-  $('.pg-dokan .fs-cat').each(function () {
-    var $c = $(this), $g = $c.find('.fs-g').slice(1); if (!$g.length) return;
-    var n = 0; $g.each(function () { n += $(this).find('.fr2').length; });
-    $g.addClass('vd-hide'); $c.addClass('vd-fold');
-    $('<button type="button" class="vd-more"></button>').text('Show ' + n + ' more in ' + $c.find('h3').first().text())
-      .appendTo($c).on('click', function () { $g.removeClass('vd-hide'); $(this).remove(); $(window).trigger('scroll'); });
+  $('[data-dzopen]').on('click', function () {
+    var $f = $('[data-dzfull]'), open = $f.prop('hidden');
+    $f.prop('hidden', !open);
+    $(this).contents().first()[0].textContent = open ? 'Hide the full list ' : 'Open all 258 features ';
+    if (open) $('html,body').animate({ scrollTop: $f.offset().top - 140 }, 500);
+    $(window).trigger('scroll');
   });
 });
