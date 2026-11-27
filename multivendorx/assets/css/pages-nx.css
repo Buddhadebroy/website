@@ -494,3 +494,42 @@ body:not(.pg-home) main .eyebrow::before{width:24px;height:24px;border-radius:50
 @media(max-width:900px){.pg-niche .np-stage-in>.np-done{justify-self:start}}
 /* closing CTA box spans the full page grid on every inner page */
 body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:border-box}
+/* niche: one plan block = 4 stage cards + weekly routine */
+.pg-niche .np-pl{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.pg-niche .np-pl h4{font-size:15px;font-weight:600;margin:0 0 14px;color:#1f1b3e}
+.pg-niche .np-pl h4 small{font-weight:500;color:#6b6885;margin-left:6px}
+.pg-niche .np-pl-g,.pg-niche .np-pl-w{background:#fff;border:1px solid #e9e8f0;border-radius:18px;padding:22px}
+.pg-niche .np-pl-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pg-niche .np-pl-s{display:flex;gap:12px;padding:16px;border-radius:14px;background:#f8f7fc;border:1px solid #efedf5;color:#1f1b3e;text-decoration:none;transition:border-color .2s}
+.pg-niche .np-pl-s:hover{border-color:#d4c6f0}
+.pg-niche .np-pl-n{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#5007aa;color:#fff;font-size:13px;font-weight:600}
+.pg-niche .np-pl-s strong{font-size:16px;font-weight:600;margin-right:8px}
+.pg-niche .np-pl-s small{font-size:12.5px;color:#6b6885}
+.pg-niche .np-pl-s p{margin:6px 0 4px;font-size:14px;color:#5007aa;font-weight:600;display:flex;gap:6px;align-items:center}
+.pg-niche .np-pl-s p svg{width:14px;height:14px;flex:none}
+.pg-niche .np-pl-s em{display:block;font-style:normal;font-size:12.5px;color:#6b6885}
+.pg-niche .np-pl-w ul{list-style:none;margin:0;padding:0}
+.pg-niche .np-pl-w li{display:grid;grid-template-columns:78px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-top:1px solid #f0eff5;font-size:14.5px}
+.pg-niche .np-pl-w li:first-child{border-top:0;padding-top:0}
+.pg-niche .np-pl-w li span{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#5007aa;font-weight:600}
+.pg-niche .np-pl-w li b{font-weight:500;color:#1f1b3e}
+.pg-niche .np-pl-w li em{font-style:normal;font-size:13px;color:#6b6885;white-space:nowrap}
+@media(max-width:900px){.pg-niche .np-pl{grid-template-columns:1fr}}
+@media(max-width:560px){.pg-niche .np-pl-cards{grid-template-columns:1fr}.pg-niche .np-pl-g,.pg-niche .np-pl-w{padding:16px}.pg-niche .np-pl-w li{grid-template-columns:70px 1fr auto}}
+/* niche: smaller stat rings inside the niche section */
+.pg-niche .np-stats-sm{margin:0 0 8px}
+.pg-niche .np-stats-sm>div{padding:18px 12px}
+.pg-niche .np-stats-sm svg{width:96px;height:96px}
+.pg-niche .np-stats-sm b{top:52px;font-size:22px}
+.pg-niche .np-stats-sm small{margin-top:10px;font-size:13.5px}
+.pg-niche .np-sub small{font-size:13px;font-weight:400;margin-left:6px}
+/* niche ideas: buyers + what sells */
+.pg-niche .ni-c{align-items:flex-start}
+.pg-niche .ni-c small em{font-style:normal;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#5007aa;font-weight:600;margin-right:6px}
+/* niche: how you earn tab */
+.pg-niche .np-earn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pg-niche .np-earn>div{padding:20px;border-radius:14px;background:#f8f7fc;border:1px solid #efedf5}
+.pg-niche .np-earn b{display:block;font-size:16px;font-weight:600;margin-top:12px}
+.pg-niche .np-earn em{display:block;font-style:normal;font-size:22px;font-weight:600;color:#5007aa;margin:4px 0 6px}
+.pg-niche .np-earn p{font-size:14px;color:#6b6885;margin:0}
+@media(max-width:760px){.pg-niche .np-earn{grid-template-columns:1fr}}
