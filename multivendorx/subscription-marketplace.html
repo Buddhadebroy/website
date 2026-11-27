@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subscription Marketplace Playbook | MultiVendorX</title>
+<meta name="description" content="Build a subscription marketplace that keeps customers coming back: a 90-day plan from niche to first renewals.">
+<link rel="stylesheet" href="assets/css/mvx.css?v=r29">
+<link rel="stylesheet" href="assets/css/v2.css?v=r29">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/pages-gen.css?v=r29"><link rel="stylesheet" href="assets/css/pages-nx.css?v=r29">
+</head>
+<body class="pg-subscription">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 006 0 3 3 0 006 0 3 3 0 006 0"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></symbol>
+<symbol id="percent" viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+<symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0"/><path d="M16 4.5a3.5 3.5 0 010 7"/><path d="M18 14a6.5 6.5 0 013.5 6"/></symbol>
+<symbol id="chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/></symbol>
+<symbol id="box" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></symbol>
+<symbol id="truck" viewBox="0 0 24 24"><path d="M2 5h12v11H2z"/><path d="M14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+<symbol id="card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/></symbol>
+<symbol id="tick" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+<symbol id="chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="star" viewBox="0 0 24 24"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></symbol>
+<symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a14 14 0 010 19 14 14 0 010-19z"/></symbol>
+<symbol id="lang" viewBox="0 0 24 24"><path d="M4 5h9"/><path d="M8.5 3v2"/><path d="M11 5c-1 4-4 7-7 8.5"/><path d="M6 9c1.5 2 3.5 3.5 6 4.5"/><path d="M13 21l4-9 4 9"/><path d="M14.5 18h5"/></symbol>
+<symbol id="coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v5c0 1.7 2.7 3 6 3s6-1.3 6-3V7"/><path d="M3 12v5c0 1.7 2.7 3 6 3 1.4 0 2.7-.2 3.7-.6"/><circle cx="17.5" cy="16.5" r="4"/></symbol>
+<symbol id="wp" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M5 8l4 11 3-8 3 8 4-11"/><path d="M4 8h4M16 8h4"/></symbol>
+<symbol id="plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5"/><path d="M6 7h12v4a6 6 0 01-12 0z"/><path d="M12 17v5"/></symbol>
+<symbol id="headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1.5-2 2-5 2"/></symbol>
+<symbol id="refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.5-4.5L3 9"/><path d="M3 4v5h5"/><path d="M4 13a8 8 0 0014.5 4.5L21 15"/><path d="M21 20v-5h-5"/></symbol>
+<symbol id="zap" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+<symbol id="heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.7-8-10.5A4.5 4.5 0 0112 7a4.5 4.5 0 018 2.5C20 15.3 12 20 12 20z"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 2.5l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10v-6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+<symbol id="tag" viewBox="0 0 24 24"><path d="M3 12V3h9l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+<symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+<symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5"/><path d="M11.5 11.5L20 3M16 7l3 3M14 9l2 2"/></symbol>
+<symbol id="gavel" viewBox="0 0 24 24"><path d="M14 4l6 6M11 7l6 6M12.5 5.5l-5 5 6 6 5-5"/><path d="M10 13l-7 7"/><path d="M13 21h8"/></symbol>
+<symbol id="repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4"/><path d="M3 12V10a4 4 0 014-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 12v2a4 4 0 01-4 4H3"/></symbol>
+<symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+<symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+<symbol id="rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-4 5-9 14-9 0 9-5 13-9 14z"/><circle cx="15" cy="9" r="1.8"/></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5l9 6.5 9-6.5"/></symbol>
+<symbol id="msg" viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.5 7.2L4 20.5l1.3-5A8 8 0 1121 12z"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+<symbol id="cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h11.5L21 7H6.2"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 016.5 2H20v17H6.5A2.5 2.5 0 004 21.5z"/><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/></symbol>
+<symbol id="code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+<symbol id="file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+<symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5v.5"/></symbol>
+<symbol id="image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></symbol>
+<symbol id="layers" viewBox="0 0 24 24"><path d="M12 2l10 5-10 5L2 7z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></symbol>
+<symbol id="compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+<symbol id="flag" viewBox="0 0 24 24"><path d="M4 22V3"/><path d="M4 4h13l-2 4 2 4H4"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 00-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="dollar" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></symbol>
+<symbol id="building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1.5"/><path d="M9 22v-4h6v4M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2"/></symbol>
+<symbol id="trend" viewBox="0 0 24 24"><path d="M22 7l-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+<symbol id="bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V16h8v-1.3A7 7 0 0012 2z"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+<symbol id="calendar-days" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></symbol>
+<symbol id="grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+<symbol id="share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
+<symbol id="megaphone" viewBox="0 0 24 24"><path d="M3 11v3a1 1 0 001 1h3l6 5V5L7 10H4a1 1 0 00-1 1z"/><path d="M17 8a5 5 0 010 8"/></symbol>
+<symbol id="fb" viewBox="0 0 24 24"><path d="M15 3h-2.5A4.5 4.5 0 008 7.5V10H5.5v3.5H8V21h3.5v-7.5H14l.8-3.5h-3.3V8a1 1 0 011-1H15z"/></symbol>
+<symbol id="ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></symbol>
+<symbol id="xlogo" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20" /></symbol>
+<symbol id="filter" viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></symbol>
+<symbol id="sort" viewBox="0 0 24 24"><path d="M7 4v16M3 16l4 4 4-4M17 20V4M13 8l4-4 4 4"/></symbol>
+<symbol id="list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></symbol>
+<symbol id="crown" viewBox="0 0 24 24"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 12H5z"/></symbol>
+<symbol id="video" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="14" height="13" rx="2.5"/><path d="M16.5 10l5-3v10l-5-3"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 018 0v3.5"/></symbol>
+<symbol id="speed" viewBox="0 0 24 24"><path d="M4 18a9 9 0 1116 0"/><path d="M12 14l4-5"/></symbol>
+</svg>
+
+<div class="topbar"><div class="wrap">
+  <span class="fb"><svg class="i" aria-hidden="true"><use href="#fb"/></svg></span>
+  <span class="tb-t">Join the <b>MultiVendorX Facebook Community</b><span class="tb-s"> · Contact, share, and grow with thousands of MultiVendorX users.</span></span>
+  <a href="https://www.facebook.com/groups/" target="_blank" rel="noopener">Join our Facebook community <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+</div></div>
+<header class="hdr"><div class="hdr-bar">
+  <a class="logo" href="index.html" aria-label="MultiVendorX home">MultiVendor<span class="x">X</span></a>
+  <nav class="nav" aria-label="Main">
+    <div class="item"><a class="nl " href="features.html">Features</a></div>
+    <div class="item has-mega"><a class="nl on" href="#" aria-haspopup="true">Marketplaces <svg class="i" aria-hidden="true"><use href="#chev"/></svg></a>
+      <div class="mega"><div class="mega-in mm-mk" data-spot>
+        <div class="mm-list">
+          <h6>Marketplace types</h6>
+          <a class="mm-i on" data-pv="niche" href="niche-marketplace.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#target"/></svg></span><div><b>Niche Marketplace</b><span>For brands with a unique voice.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="booking" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#cal"/></svg></span><div><b>Booking Marketplace</b><span>Turn time into your most valuable product.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="rental" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#key"/></svg></span><div><b>Rental Marketplace</b><span>Monetize what you're not using.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="subs" href="subscription-marketplace.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg></span><div><b>Subscription Marketplace</b><span>Recurring revenue, simplified.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="auction" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#gavel"/></svg></span><div><b>Auction Marketplace</b><span>Let the highest bidder win.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <a class="mm-i" data-pv="b2b" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#building"/></svg></span><div><b>B2B Marketplace</b><span>Wholesale and bulk buying between businesses.</span></div><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        </div>
+        <div class="mm-pv">
+          <div class="pv on" data-pv="niche"><div class="pv-art pv-ui"><div class="mgx mg-niche"><div class="mg-bar"><span class="on">All</span><span>Ceramics</span><span>Textiles</span><span>Wood</span></div>
+<div class="mg-prods"><div><i class="p1"></i><b>Speckled mug</b><small>Bloom &amp; Clay</small><em>$28</em></div><div><i class="p2"></i><b>Linen throw</b><small>North Loom</small><em>$64</em></div><div><i class="p3"></i><b>Oak board</b><small>Grain Co.</small><em>$45</em></div></div>
+<div class="mg-note"><svg class="i" aria-hidden="true"><use href="#users"/></svg><span><b>3 vendors</b> · one handmade audience</span></div></div></div>
+            <small>Niche</small><h4>Curated shopping for one obsessed audience</h4><p>Custom product types and niche-specific vendor tools, built for precision.</p></div>
+          <div class="pv" data-pv="booking"><div class="pv-art pv-ui"><div class="mgx mg-book"><div class="mg-h"><b>Yoga retreat · Tue 14</b><small>Pick a time</small></div>
+<div class="mg-slots"><span>09:00</span><span class="x">10:00</span><span class="sel">11:00</span><span>12:00</span><span class="x">14:00</span><span>15:00</span><span>16:00</span><span class="x">17:00</span></div>
+<div class="mg-ok"><svg class="i" aria-hidden="true"><use href="#check"/></svg><span>Booked for 11:00 · confirmation sent</span></div></div></div>
+            <small>Booking</small><h4>Hourly, daily or monthly bookings</h4><p>Vendors publish availability and customers pick a slot in seconds.</p></div>
+          <div class="pv" data-pv="rental"><div class="pv-art pv-ui"><div class="mgx mg-rent"><div class="mg-item"><i></i><div><b>Mirrorless camera kit</b><small><svg class="i" aria-hidden="true"><use href="#pin"/></svg> 3 km away · pickup</small></div><em>$18<small>/day</small></em></div>
+<div class="mg-days"><span>M</span><span>T</span><span class="in s">W</span><span class="in">T</span><span class="in e">F</span><span class="x">S</span><span>S</span></div>
+<div class="mg-sum"><span>3 days</span><span>Deposit $50</span><b>$54</b></div></div></div>
+            <small>Rental</small><h4>Availability calendars and pickup</h4><p>List rentals with geo-filters, deposits and pickup options.</p></div>
+          <div class="pv" data-pv="subs"><div class="pv-art pv-ui"><div class="mgx mg-subs"><div class="mg-h"><b>Coffee box · monthly</b><small class="ok">Active</small></div>
+<div class="mg-tl"><span class="d">Jan</span><span class="d">Feb</span><span class="d">Mar</span><span class="n">Apr</span></div>
+<div class="mg-sum"><span>Next renewal</span><span>Apr 1</span><b>$24</b></div></div></div>
+            <small>Subscription</small><h4>Recurring payments and member perks</h4><p>Vendor-specific billing that renews on its own.</p></div>
+          <div class="pv" data-pv="auction"><div class="pv-art pv-ui"><div class="mgx mg-auc"><div class="mg-h"><b>Vintage turntable</b><small class="t"><svg class="i" aria-hidden="true"><use href="#clock"/></svg> 04:12 left</small></div>
+<div class="mg-bids"><p class="top"><span>@hifi_kate</span><b>$1,310</b></p><p><span>@retroaudio</span><b>$1,240</b></p><p><span>@vinylhead</span><b>$1,180</b></p></div>
+<div class="mg-sum"><span>12 bids</span><span>Reserve met</span><b>$1,310</b></div></div></div>
+            <small>Auction</small><h4>Timed auctions and live bidding</h4><p>Vendor-managed bidding with dynamic pricing.</p></div>
+          <div class="pv" data-pv="b2b"><div class="pv-art pv-ui"><div class="mgx mg-b2b"><div class="mg-h"><b>Mugs · case of 24</b><small>B2B only</small></div><div class="mg-bids"><p><span>10+ cases</span><b>$9.50 <em>-5%</em></b></p><p class="top"><span>50+ cases</span><b>$8.80 <em>-12%</em></b></p><p><span>100+ cases</span><b>$8.00 <em>-20%</em></b></p></div><div class="mg-sum"><span>Min. order</span><span>10 cases</span><b>$2,280</b></div></div></div>
+            <small>B2B</small><h4>Wholesale between businesses</h4><p>Bulk pricing, minimum quantities and business-only catalogs.</p></div>
+        </div>
+        <a class="mm-foot" href="niche-marketplace.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#book"/></svg></span><span><b>The Ultimate Niche Marketplace Playbook</b> From zero to thriving community in 90 days.</span><em>Read the playbook <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></em></a>
+      </div></div>
+    </div>
+    <div class="item has-mega"><a class="nl " href="#" aria-haspopup="true">Resources <svg class="i" aria-hidden="true"><use href="#chev"/></svg></a>
+      <div class="mega"><div class="mega-in mm-res" data-spot>
+        <div class="mr-col"><h6>Learn</h6>
+          <a class="mr-i" href="blog.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#book"/></svg></span><div><b>Blog</b><span>Marketplace insights &amp; strategies</span></div></a>
+          <a class="mr-i" href="#"><span class="ico"><svg class="i" aria-hidden="true"><use href="#code"/></svg></span><div><b>API documentation</b><span>Docs, guides &amp; dev tools</span></div></a>
+          <a class="mr-i" href="compare-features.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#layers"/></svg></span><div><b>Compare Features</b><span>Every feature, side by side</span></div></a>
+          <a class="mr-i" href="multivendorx-vs-dokan.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#target"/></svg></span><div><b>MultiVendorX vs Dokan</b><span>The honest comparison</span></div></a>
+        </div>
+        <div class="mr-col"><h6>Get help</h6>
+          <a class="mr-i" href="support.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#headset"/></svg></span><div><b>Support</b><span>Free help or a direct line to Pro</span></div></a>
+          <a class="mr-i" href="community.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#users"/></svg></span><div><b>Community</b><span>Build smarter. Grow faster. Together.</span></div></a>
+          <a class="mr-i" href="migration.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#refresh"/></svg></span><div><b>Migration</b><span>Move from Dokan, WCFM or WC Vendors</span></div></a>
+        </div>
+        <div class="mr-col"><h6>Company</h6>
+          <a class="mr-i" href="about-us.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#info"/></svg></span><div><b>About Us</b><span>It all started with a vision</span></div></a>
+          <a class="mr-i" href="why-multivendorx.html"><span class="ico"><svg class="i" aria-hidden="true"><use href="#award"/></svg></span><div><b>Why MultiVendorX</b><span>Support, reliability, value</span></div></a>
+        </div>
+        <a class="mr-feat" href="blog.html">
+          <div class="mr-art"><svg viewBox="0 0 220 90" aria-hidden="true"><path class="g" d="M0 70 C 30 68, 50 50, 80 52 S 130 30, 160 26 S 200 12, 220 8 L220 90 L0 90Z"/><path class="l" d="M0 70 C 30 68, 50 50, 80 52 S 130 30, 160 26 S 200 12, 220 8"/></svg><span class="pill"><svg class="i" aria-hidden="true"><use href="#trend"/></svg> Predictive insights</span></div>
+          <small>From the blog · Analytics</small><b>Predictive Analytics for Marketplaces: How AI-Driven Insights Help You Grow Revenue</b><em>Read the guide <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></em></a>
+      </div></div>
+    </div>
+    <div class="item"><a class="nl " href="pricing.html">Pricing</a></div>
+    <span class="nav-pill" aria-hidden="true"></span>
+  </nav>
+  <div class="hdr-r">
+    <a class="icon-btn" href="#" aria-label="Account"><svg class="i" aria-hidden="true"><use href="#user"/></svg></a>
+    <a class="icon-btn cart" href="#" aria-label="Cart"><svg class="i" aria-hidden="true"><use href="#cart"/></svg><span class="n">0</span></a>
+    <a class="btn btn-ghost btn-sm hire" href="support.html">Hire Experts!</a>
+    <a class="btn btn-primary btn-sm go" href="pricing.html">Get Started <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+    <button class="burger" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</div></header>
+<div class="drawer" aria-hidden="true"><div class="scrim"></div><div class="panel">
+  <div class="d-top"><a class="logo" href="index.html">MultiVendor<span class="x">X</span></a><button class="d-close" aria-label="Close menu"><svg class="i" aria-hidden="true"><use href="#x"/></svg></button></div>
+  <a class="d-link" href="features.html"><svg class="i" aria-hidden="true"><use href="#grid"/></svg> Features</a>
+  <div class="d-acc"><button><span><svg class="i" aria-hidden="true"><use href="#store"/></svg> Marketplaces</span><svg class="i" aria-hidden="true"><use href="#chev"/></svg></button><div class="d-body"><a href="niche-marketplace.html"><svg class="i" aria-hidden="true"><use href="#target"/></svg> Niche</a><a href="#"><svg class="i" aria-hidden="true"><use href="#cal"/></svg> Booking</a><a href="#"><svg class="i" aria-hidden="true"><use href="#key"/></svg> Rental</a><a href="subscription-marketplace.html"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg> Subscription</a><a href="#"><svg class="i" aria-hidden="true"><use href="#gavel"/></svg> Auction</a><a href="#"><svg class="i" aria-hidden="true"><use href="#building"/></svg> B2B</a></div></div>
+  <div class="d-acc"><button><span><svg class="i" aria-hidden="true"><use href="#book"/></svg> Resources</span><svg class="i" aria-hidden="true"><use href="#chev"/></svg></button><div class="d-body"><a href="blog.html"><svg class="i" aria-hidden="true"><use href="#book"/></svg> Blog</a><a href="compare-features.html"><svg class="i" aria-hidden="true"><use href="#layers"/></svg> Compare Features</a><a href="multivendorx-vs-dokan.html"><svg class="i" aria-hidden="true"><use href="#target"/></svg> vs Dokan</a><a href="support.html"><svg class="i" aria-hidden="true"><use href="#headset"/></svg> Support</a><a href="community.html"><svg class="i" aria-hidden="true"><use href="#users"/></svg> Community</a><a href="migration.html"><svg class="i" aria-hidden="true"><use href="#refresh"/></svg> Migration</a><a href="about-us.html"><svg class="i" aria-hidden="true"><use href="#info"/></svg> About Us</a><a href="why-multivendorx.html"><svg class="i" aria-hidden="true"><use href="#award"/></svg> Why MultiVendorX</a></div></div>
+  <a class="d-link" href="pricing.html"><svg class="i" aria-hidden="true"><use href="#tag"/></svg> Pricing</a>
+  <div class="d-cta"><a class="btn btn-primary" href="pricing.html">Get Started <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-ghost" href="support.html">Hire Experts!</a></div>
+</div></div>
+
+<main>
+<!-- ================= SUBSCRIPTION MARKETPLACE PLAYBOOK ================= -->
+<section class="phero np-hero"><div class="grid-dots"></div><div class="wrap g">
+  <div class="rv">
+    <div class="crumb"><a href="index.html">Marketplaces</a> <svg class="i" aria-hidden="true"><use href="#chev"/></svg> <b>Subscription Marketplace</b></div>
+    <span class="eyebrow">Subscription marketplace playbook</span>
+    <h1 class="h-xl">Build a Subscription Marketplace That Keeps Customers <span class="accent">Coming Back</span></h1>
+    <p class="lead">A practical, honest plan to go from an idea to a live subscription marketplace with founding vendors and your first renewals in 90 days. It takes about 10-15 hours a week and a niche whose buyers need something again and again.</p>
+    <div class="acts"><a class="btn btn-primary" href="pricing.html">Launch Your Marketplace <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-ghost" href="#playbook"><svg class="i" aria-hidden="true"><use href="#book"/></svg> Is 90 days realistic?</a></div>
+    <div class="np-meta"><span><svg class="i" aria-hidden="true"><use href="#book"/></svg> 12 chapters</span><span><svg class="i" aria-hidden="true"><use href="#calendar-days"/></svg> 90-Day Action Plan</span><span><svg class="i" aria-hidden="true"><use href="#msg"/></svg> 12 FAQs</span></div>
+  </div>
+  <div class="np-orbit rv r" aria-hidden="true">
+    <div class="o-ring r1"><span class="o-chip dot"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg></span><span class="o-chip dot b"><svg class="i" aria-hidden="true"><use href="#heart"/></svg></span></div>
+    <div class="o-ring r2"><span class="o-chip"><svg class="i" aria-hidden="true"><use href="#box"/></svg> Beauty boxes</span><span class="o-chip c2"><svg class="i" aria-hidden="true"><use href="#coins"/></svg> Specialty coffee</span><span class="o-chip b"><svg class="i" aria-hidden="true"><use href="#book"/></svg> Online courses</span><span class="o-chip c"><svg class="i" aria-hidden="true"><use href="#heart"/></svg> Pet care</span></div>
+    <div class="o-ring r3"><span class="o-chip"><svg class="i" aria-hidden="true"><use href="#truck"/></svg> Meal kits</span><span class="o-chip b"><svg class="i" aria-hidden="true"><use href="#layers"/></svg> Design templates</span><span class="o-chip c"><svg class="i" aria-hidden="true"><use href="#shield"/></svg> Site maintenance</span><span class="o-chip c3"><svg class="i" aria-hidden="true"><use href="#bulb"/></svg> STEAM kits</span></div>
+    <div class="o-core"><b>X</b><small>Renews monthly</small></div>
+    <div class="o-legend">
+      <span><i class="d1"></i> Curated boxes</span><span><i class="d2"></i> Premium content</span><span><i class="d3"></i> Pro services</span>
+    </div>
+  </div>
+</div></section>
+
+
+<!-- 1. The dream -->
+<section class="sec white" id="dream"><div class="wrap nw">
+  <div>
+    <span class="eyebrow">The dream</span>
+    <h2 class="h-lg" style="margin-top:14px">Revenue that renews itself, <span class="accent">every month</span></h2>
+    <p class="lead">Picture a marketplace where your vendors' products arrive on a schedule, your customers look forward to every delivery and next month's revenue is mostly known on the 1st. That's predictable revenue with loyalty built in. PenaltyBox started in 2016 because hockey players couldn't find good gear in one place. Its secret: one audience, one real problem solved better, delivered every month so customers never had to remember to buy.</p>
+  </div>
+  <div class="nw-cmp">
+    <div class="nw-col"><small>One-time marketplace</small><b>Every sale starts at zero</b>
+      <div class="nw-row"><span>Revenue</span><em>Unpredictable</em></div><div class="nw-row"><span>Customer</span><em>Buys once, maybe returns</em></div><div class="nw-row"><span>Marketing</span><em>Pay to win every order</em></div>
+      <div class="nw-bar"><i style="--w:22%"></i></div><p>Start every month from scratch</p></div>
+    <div class="nw-col on"><small>Subscription marketplace</small><b>Every sale keeps paying</b>
+      <div class="nw-row"><span>Revenue</span><em>Recurring, forecastable</em></div><div class="nw-row"><span>Customer</span><em>Renews on a schedule</em></div><div class="nw-row"><span>Marketing</span><em>Win once, keep earning</em></div>
+      <div class="nw-bar"><i style="--w:92%"></i></div><p><svg class="i" aria-hidden="true"><use href="#repeat"/></svg> Most of next month is already booked</p></div>
+  </div>
+</div></section>
+
+<!-- 2. Reality check + the playbook -->
+<section class="sec" id="playbook"><div class="wrap">
+  <div class="np-rc rv">
+    <div class="np-rc-l"><span class="eyebrow">Reality check</span><h2 class="h-lg" style="margin-top:14px">Is 90 days really possible? <span class="accent">Yes, if you know what "done" means.</span></h2>
+      <p class="lead">In 90 days you can validate a subscription niche, launch with 15-25 founding vendors and see your first subscribers renew. A large recurring income usually takes 6-12 months, because subscriptions build up month by month. Know the difference before you start.</p></div>
+    <div class="np-rc-t" role="table" aria-label="Day 90 expectations">
+      <div class="np-rc-r hd" role="row"><span></span><span>The myth</span><span>For real</span></div>
+      <div class="np-rc-r" role="row"><span>Subscribers</span><span>Thousands</span><span>First subscribers, first renewals</span></div>
+      <div class="np-rc-r" role="row"><span>Vendors</span><span>Hundreds</span><span>15-25 founding vendors</span></div>
+      <div class="np-rc-r" role="row"><span>Churn</span><span>"They'll never cancel"</span><span>Measured, with reasons</span></div>
+      <div class="np-rc-r" role="row"><span>Time</span><span>Every waking hour</span><span>10-15 hours a week</span></div>
+      <div class="np-rc-r" role="row"><span>Fuel</span><span>Motivation</span><span>A weekly routine</span></div>
+    </div>
+  </div>
+  <div class="toc rv">
+  <div class="toc-h"><span class="eyebrow">Inside the playbook</span><h3>12 chapters, 4 stages, one 90-day plan</h3><p>Go in order. Finish each stage's "done when" checkpoint before you move to the next one.</p></div>
+  <div class="toc-g">
+    <div class="toc-s"><div class="toc-t"><b>1</b><strong>Find</strong></div><p>Days 1-7. Pick a recurring niche and prove people want it.</p><a href="#ch1"><em>01</em><span>The Subscription Opportunity</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a href="#ch2"><em>02</em><span>Choosing What Recurs</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a href="#ch3"><em>03</em><span>Pain Points &amp; 72-Hour Sprint</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    <div class="toc-s"><div class="toc-t"><b>2</b><strong>Build</strong></div><p>Days 8-30. Choose a pricing model and set up recurring billing.</p><a href="#ch4"><em>04</em><span>Pricing Models That Renew</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a href="#ch5"><em>05</em><span>Build Fast: CMS or Custom</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a href="#ch5"><em>06</em><span>Features Subscribers Need</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    <div class="toc-s"><div class="toc-t"><b>3</b><strong>Launch</strong></div><p>Days 31-60. Open to subscribers and grow to 15 vendors.</p><a href="#ch7"><em>07</em><span>Your Founding Vendors</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a href="#ch8"><em>08</em><span>Marketing That Fills Box One</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a href="#ch8"><em>09</em><span>Email Automation</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    <div class="toc-s"><div class="toc-t"><b>4</b><strong>Grow</strong></div><p>Days 61-90. Earn renewals and keep churn low.</p><a href="#ch10"><em>10</em><span>Retention &amp; Community</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a href="#ch11"><em>11</em><span>Metrics That Matter</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a><a href="#ch12"><em>12</em><span>Scaling &amp; Your Team</span><svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+  </div>
+</div>
+</div></section>
+
+<!-- 3. How: discipline as a weekly system -->
+<section class="sec white" id="discipline"><div class="wrap">
+  <div class="sec-head center rv"><span class="eyebrow">How it is possible</span><h2 class="h-lg" style="margin-top:18px">Discipline helps. <span class="accent">A weekly system gets you there.</span></h2><p class="lead">Motivation fades by week 3. A routine you decide once and repeat every week does not. This is the week that adds up to day 90.</p></div>
+  <div class="np-princ" data-stagger="90">
+    <div class="card lift"><span class="ico"><svg class="i" aria-hidden="true"><use href="#cal"/></svg></span><h4>Monday numbers · 1 hr</h4><p>New subscribers, cancellations and failed payments. Then pick only three priorities for the week.</p></div>
+    <div class="card lift"><span class="ico coral"><svg class="i" aria-hidden="true"><use href="#mail"/></svg></span><h4>Daily outreach · 30 min</h4><p>Send 10 personal messages to vendors who could ship or deliver every month.</p></div>
+    <div class="card lift"><span class="ico green"><svg class="i" aria-hidden="true"><use href="#file"/></svg></span><h4>Publish twice · 2 hrs</h4><p>One helpful guide and one vendor or unboxing spotlight a week, shared where your niche hangs out.</p></div>
+    <div class="card lift"><span class="ico amber"><svg class="i" aria-hidden="true"><use href="#msg"/></svg></span><h4>Talk to 3 subscribers · 1 hr</h4><p>Including anyone who paused or cancelled. Their reason is your next fix.</p></div>
+    <div class="card lift"><span class="ico"><svg class="i" aria-hidden="true"><use href="#check"/></svg></span><h4>Friday review · 30 min</h4><p>On track? Keep going. Behind? Cut scope, not sleep, and push one goal to next week.</p></div>
+  </div>
+  <h3 class="np-sub rv">How others get there: one founder's 90 days</h3>
+  <p class="muted np-jn rv">An example journey that shows how the weekly routine adds up. Your numbers will differ by niche.</p>
+  <div class="np-launch rv">
+    <div class="lt"><i></i></div>
+    <div><small>Week 1</small><b>Picked what she knew</b><span>A home barista chose specialty coffee, posted a "monthly roaster box" teaser in 3 groups she belonged to and got 160 signups.</span></div>
+    <div><small>Day 30</small><b>Live with 8 roasters</b><span>Set up MultiVendorX in two weekends. Each roaster created a monthly plan and the waitlist got a founding price.</span></div>
+    <div><small>Day 60</small><b>First billing cycle</b><span>70 paying subscribers. 10 vendor messages a day, two posts a week and a call with everyone who cancelled.</span></div>
+    <div class="hot"><small>Day 90</small><b>18 roasters, renewals</b><span>Most subscribers renewed. Top cancel reason was "too much coffee", so she added a pause and a half-size plan.</span></div>
+  </div>
+</div></section>
+
+
+<!-- 4. How you get there: your plan -->
+<section class="sec np-90" id="plan"><div class="wrap">
+  <div class="sec-head center rv"><span class="eyebrow">How you get there</span><h2 class="h-lg" style="margin-top:18px">Your 90-Day Action Plan</h2><p class="lead">Same routine, three phases. Each ends with a checkpoint, so you always know if you are on track. The 12 chapters below show how to do each step.</p></div>
+  <div class="np-phases" data-stagger="160">
+    <div class="ph"><small>Days 1-30</small><h3>Find &amp; build</h3><p>Week 1: pick a niche with a recurring need and run the 72-hour sprint. Weeks 2-4: set up MultiVendorX and recurring billing, write vendor terms and personally invite your first vendors. Checkpoint: 8 vendors with plans live.</p><div class="prog"><i style="--w:33%"></i></div><b class="goal"><span>8</span> vendors</b></div>
+    <div class="ph"><small>Days 31-60</small><h3>Launch</h3><p>Open to your waitlist with a founding price, publish two posts a week, keep vendor outreach going and run your first billing cycle. Checkpoint: 15 vendors and your first paying subscribers.</p><div class="prog"><i style="--w:66%"></i></div><b class="goal"><span>15</span> vendors</b></div>
+    <div class="ph"><small>Days 61-90</small><h3>Grow</h3><p>Watch the first renewals, call everyone who cancels, add pause and skip, and start a referral offer. Test a small paid budget only if organic is working. Checkpoint: 25 vendors and subscribers renewing.</p><div class="prog"><i style="--w:100%"></i></div><b class="goal"><span>25</span> vendors</b></div>
+  </div>
+</div></section>
+
+
+
+<!-- I. Opportunity -->
+<section class="np-stage" id="stage1" data-stage="0"><div class="wrap np-stage-in rv"><div class="np-stage-l"><span class="np-stage-k"><span class="np-stage-dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>Stage 1 of 4</span><h2>Find</h2><p>Days 1-7. Pick a niche with a recurring need and prove people want it before you build anything.</p><p class="np-done"><svg class="i" aria-hidden="true"><use href="#check"/></svg> Done when: You have one niche, 100+ waitlist signups and vendors asking when it opens.</p></div><ol class="np-stage-ch"><li><em>01</em>The subscription opportunity</li><li><em>02</em>Choosing what recurs</li><li><em>03</em>Pain points &amp; 72-hour sprint</li></ol></div></section>
+<section class="np-dark" id="ch1" data-stage="0"><div class="wrap">
+  <div class="np-h rv"><span class="np-n">Chapter 1 <i>· Find</i></span><h2 class="h-lg">The Subscription Opportunity <span>(and why marketplaces are next)</span></h2><p>Big marketplaces proved multi-vendor selling works. The shift now is adding recurring plans to it. These are widely cited industry figures, so treat them as direction, not promises.</p></div>
+  <div class="np-stats" data-stagger="120">
+    <div><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52" style="--p:.8"/></svg><b><span class="count" data-to="4.8" data-suf="x">4.8x</span></b><small>Faster growth for subscription businesses than S&amp;P 500 companies over a decade</small></div>
+    <div><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52" style="--p:.18"/></svg><b><span class="count" data-to="17.8" data-suf="%">17.8%</span></b><small>Yearly growth of the subscription economy since 2019</small></div>
+    <div><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52" style="--p:.75"/></svg><b><span class="count" data-to="75" data-suf="%">75%</span></b><small>Of direct-to-consumer brands expected to offer subscriptions</small></div>
+    <div><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52"/><circle class="arc" cx="60" cy="60" r="52" style="--p:.03"/></svg><b><span class="count" data-to="3" data-suf="%">3%</span></b><small>Of online marketplaces use a subscription model today, so the space is open</small></div>
+  </div>
+  <h3 class="np-sub rv">Three real subscription businesses, and what they teach</h3>
+  <div class="np-scale" data-stagger="110">
+    <div class="card lift"><span class="ico"><svg class="i" aria-hidden="true"><use href="#target"/></svg></span><h4>PenaltyBox Hockey</h4><p>Launched on Black Friday 2016 by a founder with no formal business background. Hockey players couldn't find quality gear in one place, so he curated it into a monthly box, then grew into a wider gear business.</p></div>
+    <div class="card lift"><span class="ico coral"><svg class="i" aria-hidden="true"><use href="#shield"/></svg></span><h4>Cannabox</h4><p>A curated accessories box running since 2012, despite regulation, stigma, payment processing limits and few ad channels. The approach: start small and grow step by step.</p></div>
+    <div class="card lift"><span class="ico green"><svg class="i" aria-hidden="true"><use href="#heart"/></svg></span><h4>Thrive Market</h4><p>A membership marketplace for affordable organic products, founded in 2014. It sold community and purpose, not just groceries: each paid membership funded a free one for a family in need.</p></div>
+    <div class="card lift"><span class="ico amber"><svg class="i" aria-hidden="true"><use href="#bulb"/></svg></span><h4>The lessons</h4><p>You don't need a revolutionary idea, just a real problem solved better. Deep niche knowledge beats a big budget. Start with passion, scale with systems. Community beats competition.</p></div>
+  </div>
+</div></section>
+
+<!-- II. What recurs -->
+<section class="sec" id="ch2" data-stage="0"><div class="wrap">
+  <div class="np-h rv"><span class="np-n">Chapter 2 <i>· Find</i></span><h2 class="h-lg">Choosing What Recurs <span>(the renewal question)</span></h2><p>A good subscription niche passes three tests. If people don't need it again next month, it's a store, not a subscription. <b class="np-task">Your task: write down 3 niches you already belong to and score each one on the three tests below. Keep the winner.</b></p></div>
+  <div class="np-venn-wrap">
+    <div class="np-venn rv s" aria-label="Recurring need times Delight times Willingness to pay equals Renewals">
+      <span class="v v1">Recurring<br>need</span><span class="v v2">Delight</span><span class="v v3">Willing<br>to pay</span><b class="v-core">Renewals</b>
+    </div>
+    <div class="np-tests" data-stagger="140">
+      <div class="card lift"><span class="ico"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg></span><div><h4>Recurring need test</h4><p>Do they use it up, run out of it, or want something fresh every month? Coffee, pet food and skincare pass. A sofa doesn't.</p></div></div>
+      <div class="card lift"><span class="ico coral"><svg class="i" aria-hidden="true"><use href="#sparkle"/></svg></span><div><h4>Delight test</h4><p>Is there discovery or curation they can't easily do alone? Surprise and expert picks are what make a box worth waiting for.</p></div></div>
+      <div class="card lift"><span class="ico green"><svg class="i" aria-hidden="true"><use href="#dollar"/></svg></span><div><h4>Willing to pay test</h4><p>Do they already spend on this every month, and would they rather not think about reordering? That's a plan they'll keep.</p></div></div>
+    </div>
+  </div>
+  <h3 class="np-sub rv">12 subscription ideas across boxes, content and services (still run the sprint)</h3>
+</div>
+<div class="wrap"><div class="ni-g" data-stagger="60"><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#sparkle"/></svg></span><div><b>Beauty &amp; Self-Care Boxes</b><small>Clean beauty, haircare, men's grooming</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#coins"/></svg></span><div><b>Specialty Coffee &amp; Tea</b><small>Steady consumption, seasonal roasts</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#truck"/></svg></span><div><b>Meal Kits &amp; Gourmet Food</b><small>Novelty with complex logistics</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#heart"/></svg></span><div><b>Pet Care &amp; Wellness</b><small>Steady repurchasing, emotional loyalty</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#bulb"/></svg></span><div><b>Kids' STEAM &amp; Learning Kits</b><small>Long engagement, low inventory risk</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#tag"/></svg></span><div><b>Capsule Fashion &amp; Jewelry</b><small>Personal styling, premium tiers</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#grid"/></svg></span><div><b>Sustainable Living</b><small>Eco home goods, very giftable</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#book"/></svg></span><div><b>Courses &amp; Book Clubs</b><small>Content-driven value, no shipping</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#layers"/></svg></span><div><b>Design Assets &amp; Templates</b><small>Creative resources, monthly drops</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#shield"/></svg></span><div><b>Website Maintenance</b><small>Technical support on a retainer</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#chart"/></svg></span><div><b>SEO &amp; Marketing Reports</b><small>Monthly deliverables for businesses</small></div></div><div class="ni-c"><span class="ni-i"><svg class="i" aria-hidden="true"><use href="#user"/></svg></span><div><b>Virtual Assistance &amp; Bookkeeping</b><small>Professional services, billed monthly</small></div></div></div></div>
+</section>
+
+<!-- III. Pain points & sprint -->
+<section class="sec white" id="ch3" data-stage="0"><div class="wrap">
+  <div class="np-h rv"><span class="np-n">Chapter 3 <i>· Find</i></span><h2 class="h-lg">Pain Points &amp; the 72-Hour Validation Sprint</h2><p>Know what makes subscribers and vendors quit, then spend three days proving people care before you spend three months building. <b class="np-task">Your task: read the pain points, run the three days back to back, then use the table to decide: build, narrow or switch.</b></p></div>
+  <div class="sg sg-n rv" style="margin-bottom:36px">
+    <div class="sg-h"><b>What makes subscription marketplaces fail</b><span>Design these fixes in from day one. They are cheaper than winning back a lost subscriber.</span></div>
+    <div class="sg-t">
+      <div class="sg-r hd"><span>Pain point</span><span>Who feels it</span><span>The fix</span></div>
+      <div class="sg-r"><span>Fatigue and overwhelm</span><span>Subscribers: too many plans, products they didn't want</span><span>Pause and skip options, better curation, easy cancellation</span></div>
+      <div class="sg-r"><span>Billing confusion</span><span>Subscribers: hidden fees, unclear billing cycles</span><span>Transparent billing and a reminder before every charge</span></div>
+      <div class="sg-r"><span>Low perceived value</span><span>Subscribers: "is this worth it?"</span><span>Strong curation, clear value messaging, small surprise bonuses</span></div>
+      <div class="sg-r"><span>Forecasting demand</span><span>Vendors: how much stock for next month</span><span>Subscriber reports and flexible fulfillment windows</span></div>
+      <div class="sg-r"><span>Churn</span><span>Vendors: subscribers leave after two boxes</span><span>Engagement education, satisfaction checks, feedback loops</span></div>
+      <div class="sg-r"><span>Complex plan management</span><span>Vendors: plan changes, renewals, refunds</span><span>A simple vendor dashboard that handles renewals for them</span></div>
+    </div>
+  </div>
+  <div class="np-sprint rv">
+    <div class="track"><i></i></div>
+    <div class="node"><span class="dot"><svg class="i" aria-hidden="true"><use href="#search"/></svg></span><small>Day 0-1</small><h4>Social listening</h4><p>Join 5 communities, note recurring complaints about current boxes or services, and list gaps competitors leave open.</p></div>
+    <div class="node"><span class="dot"><svg class="i" aria-hidden="true"><use href="#file"/></svg></span><small>Day 1-2</small><h4>Idea teaser &amp; waitlist</h4><p>A one-page teaser with a founding-subscriber price, a lead capture form and a quick poll. Share it, or run a tiny ad test.</p></div>
+    <div class="node"><span class="dot"><svg class="i" aria-hidden="true"><use href="#mail"/></svg></span><small>Day 2-3</small><h4>Vendor outreach</h4><p>Message 50 vendors who could deliver monthly. Ask about their repeat buyers and stock planning, and log interest.</p></div>
+  </div>
+  <div class="sg">
+    <div class="sg-h"><b>After 72 hours, check your results</b><span>Use these numbers to decide. A "rethink" costs you three days, not three months: narrow the niche (for example "coffee" to "single-origin espresso") and run the sprint again.</span></div>
+    <div class="sg-t">
+      <div class="sg-r hd"><span>What to measure</span><span class="go"><svg class="i" aria-hidden="true"><use href="#check"/></svg> Build it</span><span class="no"><svg class="i" aria-hidden="true"><use href="#x"/></svg> Rethink it</span></div>
+      <div class="sg-r"><span>Waitlist signups</span><span>100+ signups in 72 hours</span><span>Fewer than 20 signups</span></div>
+      <div class="sg-r"><span>Poll answer</span><span>Most would pay monthly at your test price</span><span>Most would only "try it once"</span></div>
+      <div class="sg-r"><span>Vendor outreach replies</span><span>30%+ response rate</span><span>Under 10% response rate</span></div>
+      <div class="sg-r"><span>Vendor interest</span><span>Vendors offering a founding plan</span><span>No one asking follow-up questions</span></div>
+      <div class="sg-r"><span>Your next step</span><span>Move to Stage 2 and start building</span><span>Narrow or switch the niche, rerun (adds about a week)</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- IV. Pricing models -->
+<section class="np-stage" id="stage2" data-stage="1"><div class="wrap np-stage-in rv"><div class="np-stage-l"><span class="np-stage-k"><span class="np-stage-dots"><i class="done"></i><i class="on"></i><i class=""></i><i class=""></i></span>Stage 2 of 4</span><h2>Build</h2><p>Days 8-30. Choose how plans are priced, set up recurring billing and invite your first 8 vendors.</p><p class="np-done"><svg class="i" aria-hidden="true"><use href="#check"/></svg> Done when: Your marketplace is live and 8 vendors have subscription plans listed.</p></div><ol class="np-stage-ch"><li><em>04</em>Pricing models that renew</li><li><em>05</em>Build fast: CMS or custom</li><li><em>06</em>Features subscribers need</li></ol></div></section>
+<section class="sec" id="ch4" data-stage="1"><div class="wrap np-money">
+  <div>
+    <div class="np-h rv" style="margin-bottom:28px"><span class="np-n">Chapter 4 <i>· Build</i></span><h2 class="h-lg">Pricing models that renew</h2><p>Decide how plans are priced and how you earn before you build. Most new subscription marketplaces start with a commission on every renewal and a fixed monthly plan per vendor. <b class="np-task">Your task: pick one pricing model and your commission. If unsure, choose fixed plans and a small commission; add tiers later.</b></p></div>
+    <div class="np-psy" data-stagger="100">
+      <div><b>Anchor</b><span>Show a premium tier so the middle plan feels fair</span></div>
+      <div><b>Annual</b><span>Offer a discount for paying a year up front</span></div>
+      <div><b>Intro</b><span>Limited-time price for new subscribers</span></div>
+      <div><b>A/B</b><span>Test price points before you lock them in</span></div>
+    </div>
+  </div>
+  <div class="np-stairs rv r" aria-label="Subscription pricing models">
+    <div class="st s1"><div class="col"><span><svg class="i" aria-hidden="true"><use href="#repeat"/></svg></span></div><small>Model 1</small><b>Fixed</b><p>The same amount every cycle. Simple to sell, simple to forecast.</p></div>
+    <div class="st s2"><div class="col"><span><svg class="i" aria-hidden="true"><use href="#chart"/></svg></span></div><small>Model 2</small><b>Usage-based</b><p>Price changes with how much they use or receive.</p></div>
+    <div class="st s3"><div class="col"><span><svg class="i" aria-hidden="true"><use href="#zap"/></svg></span></div><small>Model 3</small><b>Freemium</b><p>A free basic tier, with paid premium plans for more.</p></div>
+  </div>
+</div></section>
+
+<!-- V + VI. Build & features -->
+<section class="sec white" id="ch5" data-stage="1"><div class="wrap">
+  <div class="np-h rv"><span class="np-n">Chapters 5 &amp; 6 <i>· Build</i></span><h2 class="h-lg">Build fast on a CMS, with features subscribers <span class="accent">actually use</span></h2><p>A no-code build with WordPress, WooCommerce and MultiVendorX, how it compares with a custom build, and what you do versus what the software does. <b class="np-task">Your task: follow the 4-week build below and ship only the features subscribers need on day one.</b></p></div>
+  <div class="np-build" data-tabs>
+    <div class="tabs rv" role="tablist">
+      <span data-tab="b1" class="on"><svg class="i" aria-hidden="true"><use href="#calendar-days"/></svg> 30-day build</span><span data-tab="b2"><svg class="i" aria-hidden="true"><use href="#coins"/></svg> Starter stack</span><span data-tab="b3"><svg class="i" aria-hidden="true"><use href="#layers"/></svg> Feature set</span><span data-tab="b4"><svg class="i" aria-hidden="true"><use href="#flag"/></svg> CMS or custom</span>
+    </div>
+    <div class="card np-panel on" data-panel="b1">
+      <div class="gantt">
+        <div class="gh"><span></span><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div>
+        <div class="gr"><b>Foundation<small>Install WooCommerce and MultiVendorX, run the setup wizard, pick a theme</small></b><i style="--s:0;--w:1"></i></div>
+        <div class="gr"><b>Recurring billing<small>Connect WooCommerce Subscriptions so each vendor can create their own plans</small></b><i class="c2" style="--s:1;--w:1"></i></div>
+        <div class="gr"><b>Money &amp; trust<small>Commission on renewals, payouts, vendor terms, billing reminders</small></b><i class="c3" style="--s:2;--w:1"></i></div>
+        <div class="gr"><b>Launch prep<small>Test a full billing cycle, pause and cancel on mobile, invite your first 8 vendors</small></b><i class="c4" style="--s:3;--w:1"></i></div>
+      </div>
+      <div class="np-nocode">
+        <div><b>MultiVendorX handles</b><span>Vendor stores, vendor dashboards and product approval</span></div>
+        <div><b>MultiVendorX handles</b><span>Commission split on every order and renewal, payouts and refunds</span></div>
+        <div><b>You handle</b><span>The niche, curation standards and your vendor terms</span></div>
+        <div><b>You handle</b><span>Vendor outreach, subscriber care and content that brings subscribers</span></div>
+      </div>
+    </div>
+    <div class="card np-panel" data-panel="b2">
+      <div class="stacklist">
+        <div><i style="background:var(--brand)"></i><b>MultiVendorX</b><span>Free to start, Pro when you need it</span><em>$0-149 /yr</em></div>
+        <div><i style="background:#7a3cc4"></i><b>Recurring billing</b><span>WooCommerce Subscriptions extension</span><em>Check current price</em></div>
+        <div><i style="background:var(--coral)"></i><b>WordPress hosting</b><span>3 months</span><em>~$75</em></div>
+        <div><i style="background:var(--amber)"></i><b>Theme</b><span>WooCommerce-ready</span><em>$0-59 once</em></div>
+        <div><i style="background:var(--green)"></i><b>Domain</b><span>1 year</span><em>~$15</em></div>
+        <div><i style="background:var(--line-2)"></i><b>Email, analytics, search data</b><span>Free tiers are enough at first</span><em>Free</em></div>
+      </div>
+    </div>
+    <div class="card np-panel" data-panel="b3">
+      <div class="np-feats">
+        <div><h4><span class="ico"><svg class="i" aria-hidden="true"><use href="#store"/></svg></span> For vendors <small>Make renewals effortless</small></h4><div class="cloud"><span>Own subscription plans</span><span>Automated recurring billing</span><span>Subscriber list &amp; renewals</span><span>Renewal order notifications</span><span>Sales analytics</span><span class="p">Free trials &amp; one-time offers</span><span class="p">Churn tracking</span><span class="p">Promotions &amp; discounts</span></div></div>
+        <div><h4><span class="ico coral"><svg class="i" aria-hidden="true"><use href="#heart"/></svg></span> For subscribers <small>Make staying easy</small></h4><div class="cloud"><span>Clear billing &amp; reminders</span><span>Multiple frequencies</span><span>Pause &amp; resume</span><span>Upgrade &amp; downgrade</span><span>Secure checkout</span><span class="p">Gift subscriptions</span><span class="p">Ratings &amp; preferences</span><span class="p">Referral &amp; loyalty rewards</span><span class="p">Member-only content</span></div></div>
+      </div>
+      <p class="muted np-key"><span class="cloud"><span class="p">Premium tier</span></span> features you can add once the basics work.</p>
+    </div>
+    <div class="card np-panel" data-panel="b4">
+      <div class="np-feats">
+        <div><h4><span class="ico"><svg class="i" aria-hidden="true"><use href="#wp"/></svg></span> CMS platform <small>Recommended for most</small></h4><div class="cloud"><span>Launch in days, not months</span><span>Thousands of plugins and themes</span><span>Easy to find experts and freelancers</span><span>Forums and vendor documentation</span><span>No licence fee: domain, hosting and server only</span><span>Start free with MultiVendorX, upgrade as you grow</span></div></div>
+        <div><h4><span class="ico coral"><svg class="i" aria-hidden="true"><use href="#code"/></svg></span> Custom platform <small>For complex, funded models</small></h4><div class="cloud"><span>Fully bespoke, built by your team or an agency</span><span>Complete control over features and UI</span><span>You pay for every addition</span><span>6-12+ months to launch</span><span>Iterating and scaling can be expensive</span></div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- VII. Founding vendors -->
+<section class="np-stage" id="stage3" data-stage="2"><div class="wrap np-stage-in rv"><div class="np-stage-l"><span class="np-stage-k"><span class="np-stage-dots"><i class="done"></i><i class="done"></i><i class="on"></i><i class=""></i></span>Stage 3 of 4</span><h2>Launch</h2><p>Days 31-60. Open to subscribers, grow to 15 vendors and run your first billing cycle.</p><p class="np-done"><svg class="i" aria-hidden="true"><use href="#check"/></svg> Done when: 15 vendors are active and real subscribers have paid for their first cycle.</p></div><ol class="np-stage-ch"><li><em>07</em>Your founding vendors</li><li><em>08</em>Marketing that fills box one</li><li><em>09</em>Email automation</li></ol></div></section>
+<section class="sec" id="ch7" data-stage="2"><div class="wrap">
+  <div class="np-h rv"><span class="np-n">Chapter 7 <i>· Launch</i></span><h2 class="h-lg">Onboarding your founding vendors <span>(reliable beats many)</span></h2><p>In a subscription marketplace one late vendor means a missed delivery and a cancellation. Recruit for reliability, then give every vendor the same clear start. Expect about one "yes" for every 5-10 personal messages. <b class="np-task">Your task: send 10 personal messages a day using this template, and give every new vendor the onboarding kit on the right.</b></p></div>
+  <div class="np-50">
+    <div class="card np-mail rv l">
+      <div class="mail-h"><span><b>To:</b> [Name]</span><span><b>Subject:</b> <em data-rotate="A monthly plan for your [product]?|Recurring orders for [niche] makers|Love your [specific item], have a question">A monthly plan for your [product]?</em></span></div>
+      <div class="mail-b">Hi [Name], your [specific product] is exactly what [niche] subscribers want every month. We're launching [YourMarketplace] with:
+        <ul><li>Your own subscription plans, billed automatically</li><li>[Number] people already on our waitlist (only claim what you have)</li><li>Reduced commission for founding vendors</li></ul>
+        Would you be open to a 2-minute chat about it?<span class="caret"></span></div>
+    </div>
+    <div class="rv r">
+      <div class="card np-sellers"><div class="top"><b><span class="count" data-to="25">25</span> founding vendors</b><span class="tag green">Goal</span></div>
+        <div class="avs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="where"><span><svg class="i" aria-hidden="true"><use href="#store"/></svg> Makers with repeat buyers on other platforms</span><span><svg class="i" aria-hidden="true"><use href="#pin"/></svg> Local roasters, bakers &amp; producers</span><span><svg class="i" aria-hidden="true"><use href="#image"/></svg> Instagram hashtag mining</span><span><svg class="i" aria-hidden="true"><use href="#users"/></svg> Facebook groups in your niche</span></div>
+      </div>
+      <h4 class="np-mini">Vendor requirements, agreed up front</h4>
+      <div class="np-inc" data-stagger="80"><span><svg class="i" aria-hidden="true"><use href="#award"/></svg> Quality standards &amp; approval</span><span><svg class="i" aria-hidden="true"><use href="#percent"/></svg> Pricing &amp; commission</span><span><svg class="i" aria-hidden="true"><use href="#headset"/></svg> Customer service duties</span><span><svg class="i" aria-hidden="true"><use href="#truck"/></svg> Shipping &amp; fulfillment dates</span><span><svg class="i" aria-hidden="true"><use href="#megaphone"/></svg> Marketing guidelines</span></div>
+      <h4 class="np-mini">Onboarding kit for every vendor</h4>
+      <div class="np-inc" data-stagger="80"><span><svg class="i" aria-hidden="true"><use href="#heart"/></svg> Welcome packet</span><span><svg class="i" aria-hidden="true"><use href="#list"/></svg> Listing best-practices guide</span><span><svg class="i" aria-hidden="true"><use href="#box"/></svg> Fulfillment procedures</span><span><svg class="i" aria-hidden="true"><use href="#msg"/></svg> Communication templates</span><span><svg class="i" aria-hidden="true"><use href="#chart"/></svg> How performance is measured</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- VIII + IX. Marketing & email -->
+<section class="sec white" id="ch8" data-stage="2"><div class="wrap">
+  <div class="np-h rv"><span class="np-n">Chapters 8 &amp; 9 <i>· Launch</i></span><h2 class="h-lg">Marketing that fills box one, emails that keep them <span class="accent">subscribed</span></h2><p>Lead with value-first content and SEO, show the product where your niche scrolls, and only then add paid ads. Email does the rest, before and after they subscribe. <b class="np-task">Your task: publish two posts a week, turn on one referral offer before launch and set up the four email sequences below.</b></p></div>
+  <div class="np-grow">
+    <div class="card np-donut rv">
+      <div class="donut"><svg viewBox="0 0 42 42"><circle class="bg" cx="21" cy="21" r="15.9"/><circle class="s s1" cx="21" cy="21" r="15.9" stroke-dasharray="60 40" stroke-dashoffset="25"/><circle class="s s2" cx="21" cy="21" r="15.9" stroke-dasharray="25 75" stroke-dashoffset="65"/><circle class="s s3" cx="21" cy="21" r="15.9" stroke-dasharray="15 85" stroke-dashoffset="40"/></svg><b>Ad<br>budget</b></div>
+      <ul class="mixl"><li><i class="c1"></i><b>60%</b> Acquisition: lookalike and interest audiences, video and carousel ads</li><li><i class="c2"></i><b>25%</b> Retention: retarget visitors who didn't subscribe</li><li><i class="c3"></i><b>15%</b> Brand awareness</li></ul>
+      <p class="muted" style="grid-column:1/-1;font-size:14px;margin:0">Start paid ads at $500-1,000 a month only once organic works. Keep 70% on proven campaigns and 30% on tests.</p>
+      <div class="week"><span><small>Instagram</small>Unboxings</span><span><small>FB groups</small>Contribute</span><span><small>YouTube</small>Reviews</span><span><small>TikTok</small>Highlights</span></div>
+    </div>
+    <div class="card np-loop rv">
+      <h4>Value-first content &amp; referrals</h4>
+      <p class="vl-sub">Content brings subscribers in, referrals bring their friends. Three steps, repeated:</p>
+      <ol class="vl">
+        <li><span class="vl-i"><svg class="i" aria-hidden="true"><use href="#book"/></svg></span><div><b>Teach and show</b><small>Guides, tutorials, expert interviews and subscriber unboxings.</small></div></li>
+        <li><span class="vl-i"><svg class="i" aria-hidden="true"><use href="#search"/></svg></span><div><b>Get found</b><small>Target "subscription box for [niche]", build category pages, earn links through partners.</small></div></li>
+        <li><span class="vl-i"><svg class="i" aria-hidden="true"><use href="#share"/></svg></span><div><b>Reward sharing</b><small>Subscription credit for every referral, plus extra rewards for top referrers.</small></div></li>
+      </ol>
+      <div class="vl-back"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg><span>Then repeat with the new subscribers</span></div>
+      <div class="partners"><span><svg class="i" aria-hidden="true"><use href="#users"/></svg> Influencer collaborations</span><span><svg class="i" aria-hidden="true"><use href="#building"/></svg> Event sponsorships</span><span><svg class="i" aria-hidden="true"><use href="#coins"/></svg> Affiliate program</span></div>
+    </div>
+  </div>
+  <div class="np-launch rv">
+    <div class="lt"><i></i></div>
+    <div><small>Before they subscribe</small><b>Pre-subscription</b><span>Welcome, social proof, a vendor spotlight, a limited-time offer and an FAQ.</span></div>
+    <div><small>Week 1</small><b>Post-subscription</b><span>Welcome, meet the vendors, subscription tips, a community invite, a feedback request.</span></div>
+    <div><small>Every month</small><b>Ongoing</b><span>Next box preview, vendor spotlights, member offers, education and community highlights.</span></div>
+    <div class="hot"><small>When they waver</small><b>Retention &amp; win-back</b><span>Offer a pause before a cancel, a 5-email win-back series, loyalty and referral rewards.</span></div>
+  </div>
+</div></section>
+
+<!-- X. Retention -->
+<section class="np-stage" id="stage4" data-stage="3"><div class="wrap np-stage-in rv"><div class="np-stage-l"><span class="np-stage-k"><span class="np-stage-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span>Stage 4 of 4</span><h2>Grow</h2><p>Days 61-90, then ongoing. Earn renewals, keep churn low and grow without breaking what works.</p><p class="np-done"><svg class="i" aria-hidden="true"><use href="#check"/></svg> Done when: 25 vendors are active and most subscribers have renewed at least once.</p></div><ol class="np-stage-ch"><li><em>10</em>Retention &amp; community</li><li><em>11</em>Metrics that matter</li><li><em>12</em>Scaling &amp; your team</li></ol></div></section>
+<section class="sec" id="ch10" data-stage="3"><div class="wrap np-comm">
+  <div class="np-net rv l" aria-hidden="true">
+    <svg viewBox="0 0 400 320"><path d="M200 160L80 70M200 160L320 60M200 160L340 200M200 160L250 280M200 160L70 240M80 70L320 60M340 200L250 280M70 240L250 280"/></svg>
+    <span class="n c"><svg class="i" aria-hidden="true"><use href="#users"/></svg></span><span class="n a" style="left:20%;top:22%"><svg class="i" aria-hidden="true"><use href="#repeat"/></svg></span><span class="n b" style="left:80%;top:19%"><svg class="i" aria-hidden="true"><use href="#msg"/></svg></span><span class="n a" style="left:85%;top:62%"><svg class="i" aria-hidden="true"><use href="#star"/></svg></span><span class="n b" style="left:62%;top:88%"><svg class="i" aria-hidden="true"><use href="#box"/></svg></span><span class="n a" style="left:17%;top:75%"><svg class="i" aria-hidden="true"><use href="#heart"/></svg></span>
+  </div>
+  <div>
+    <div class="np-h rv" style="margin-bottom:24px"><span class="np-n">Chapter 10 <i>· Grow</i></span><h2 class="h-lg">Retention beats acquisition: build a community</h2><p>Keeping a subscriber is worth more than finding a new one. People stay for anticipation, surprise and belonging, so design for all three. <b class="np-task">Your task: turn on pause and skip, start one member space and add one monthly ritual, such as a next-box preview.</b></p></div>
+    <ul class="check rv" data-stagger="90"><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> Exclusive forums and member-only content</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> Early access to new vendors and drops</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> A referral program members are proud to share</li><li><svg class="i" aria-hidden="true"><use href="#check"/></svg> Celebrate subscriber stories publicly</li></ul>
+    <div class="np-tactics" data-stagger="100"><span><b>Flexible plans</b>Multiple frequencies, pause and resume, upgrades, gift subscriptions</span><span><b>Smart curation</b>Preferences, purchase history, ratings and reviews</span><span><b>Loyalty perks</b>Rewards for staying, member pricing, surprise extras</span></div>
+    <p class="muted np-track">Track churn and its reasons every week. A pause is a win compared with a cancel, and every cancel reason is a free product lesson.</p>
+  </div>
+</div></section>
+
+<!-- XI. Metrics -->
+<section class="sec white" id="ch11" data-stage="3"><div class="wrap">
+  <div class="np-h rv"><span class="np-n">Chapter 11 <i>· Grow</i></span><h2 class="h-lg">Metrics that matter <span>(and how to improve them)</span></h2><p>The numbers that tell you if subscribers are staying, and what to test next. <b class="np-task">Your task: check these numbers on a fixed day each week and compare them with the path on the right.</b></p></div>
+  <div class="np-metrics">
+    <div class="np-cad" data-stagger="120">
+      <div class="card"><span class="tag">Conversion</span><h4>Getting the sign-up</h4><p>A/B test landing pages, cut checkout friction, polish mobile, show social proof. Free: Google Analytics 4 and Search Console.</p></div>
+      <div class="card"><span class="tag coral">Retention</span><h4>Keeping them</h4><p>Churn rate, pauses vs cancels, failed payments. Improve onboarding, data-driven curation, email cadence and support speed.</p></div>
+      <div class="card"><span class="tag green">Revenue</span><h4>Growing each subscriber</h4><p>MRR, lifetime value, average plan price. Test pricing, upsells, cross-sells, annual plans and gift subscriptions.</p></div>
+    </div>
+    <div class="card np-chart rv r">
+      <div class="top"><b>A realistic path for a validated niche</b><span class="muted">Subscribers · varies by niche</span></div>
+      <svg viewBox="0 0 400 190" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="npg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5007aa" stop-opacity=".25"/><stop offset="1" stop-color="#5007aa" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0 180 L50 176 L150 158 L250 125 L370 35 L400 22 L400 190 L0 190Z" fill="url(#npg)"/><path class="ln" d="M0 180 L50 176 L150 158 L250 125 L370 35 L400 22"/></svg>
+      <div class="ms"><span style="left:12%;bottom:12%"><b>100+</b>Day 30 · on the waitlist</span><span style="left:37%;bottom:24%"><b>50+</b>Day 60 · first billing cycle</span><span style="left:62%;bottom:42%"><b>100+</b>Day 90 · first renewals</span><span style="left:88%;bottom:86%"><b>500+</b>Month 6-12 · steady MRR</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- XII. Scaling & team -->
+<section class="sec" id="ch12" data-stage="3"><div class="wrap">
+  <div class="np-h rv"><span class="np-n">Chapter 12 <i>· Grow</i></span><h2 class="h-lg">Scaling &amp; building your team</h2><p>Grow what drives repeat purchases, and hire only when a task keeps you from the work that matters. <b class="np-task">Your task: only expand once renewals are steady and the marketplace runs without you in every decision.</b></p></div>
+  <div class="np-scale" data-stagger="110">
+    <div class="card lift"><span class="ico"><svg class="i" aria-hidden="true"><use href="#layers"/></svg></span><h4>Product expansion</h4><p>Adjacent categories, seasonal boxes, marketplace-exclusive products, premium tiers.</p></div>
+    <div class="card lift"><span class="ico coral"><svg class="i" aria-hidden="true"><use href="#globe"/></svg></span><h4>Geographic expansion</h4><p>Regional, then national, then international, with localization and local fulfillment partners.</p></div>
+    <div class="card lift"><span class="ico green"><svg class="i" aria-hidden="true"><use href="#speed"/></svg></span><h4>Technology</h4><p>Performance tuning, better hosting, new features, vendor APIs and, later, a mobile app.</p></div>
+    <div class="card lift"><span class="ico amber"><svg class="i" aria-hidden="true"><use href="#users"/></svg></span><h4>Partnerships</h4><p>Influencer collaborations, corporate bulk gifting, affiliates and cross-promotions.</p></div>
+  </div>
+  <div class="sg sg-n rv" style="margin-top:28px">
+    <div class="sg-h"><b>Who to hire, and when</b><span>Rough ranges from the US market. Costs vary a lot by country and by freelance or full-time.</span></div>
+    <div class="sg-t">
+      <div class="sg-r hd"><span>Stage</span><span>Roles</span><span>Rough cost</span></div>
+      <div class="sg-r"><span>Solo · up to $50K MRR</span><span>Virtual assistant, part-time marketer, bookkeeper</span><span>$800-1,500, $1,000-2,000 and $200-500 a month</span></div>
+      <div class="sg-r"><span>Growing · $50K-200K MRR</span><span>Marketing manager, customer success manager, operations coordinator, part-time developer</span><span>$40K-70K a year per role, developer $30-80 an hour</span></div>
+      <div class="sg-r"><span>Established · $200K+ MRR</span><span>Head of growth, data analyst, vendor relations manager, customer service team</span><span>$55K-120K a year per lead role, support $30K-45K each</span></div>
+    </div>
+  </div>
+  <div class="band rv"><span class="ico"><svg class="i" aria-hidden="true"><use href="#rocket"/></svg></span><div><b>Advanced growth, once the basics run:</b> white-label licensing, personalized recommendations, sustainable packaging and shipping, community events and your own content channels such as YouTube or a podcast.</div></div>
+</div></section>
+
+<!-- FAQ -->
+<section class="sec"><div class="wrap faqwrap">
+  <div class="side rv l"><span class="eyebrow">FAQ</span><h2 class="h-lg" style="margin-top:18px">Frequently asked questions</h2>
+    <div class="card helpbox"><span class="ico"><svg class="i" aria-hidden="true"><use href="#bulb"/></svg></span><div><b>Pro tip</b><p class="muted">Success comes from executing a proven plan, not from a perfect idea. Pick the niche, run the sprint, then follow the weekly routine.</p></div></div></div>
+  <div class="faq rv r">
+    <div class="item open"><button class="q">What is a subscription marketplace?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">A multi-vendor store where many vendors sell recurring products or services: monthly boxes, memberships, digital content or ongoing services. With MultiVendorX and WooCommerce Subscriptions, each vendor manages their own plans while you run the marketplace.</div></div>
+    <div class="item"><button class="q">Why build a subscription marketplace instead of a regular store?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">Recurring revenue you can forecast, higher lifetime value per customer and less spend on winning every order again. You also get many vendors' products instead of carrying all the stock yourself.</div></div>
+    <div class="item"><button class="q">Can I really launch one in 90 days?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">You can launch with 15-25 founding vendors and see your first subscribers renew in 90 days. A large recurring income usually takes 6-12 months, because subscriptions build up month by month. It works best when you already know the niche and can give it 10-15 hours a week.</div></div>
+    <div class="item"><button class="q">How much does it cost to start?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">Hosting, a domain, a theme and MultiVendorX (free to start, Pro from $149 a year when you need more modules), plus a recurring billing extension such as WooCommerce Subscriptions. Keep paid ads until organic channels are working.</div></div>
+    <div class="item"><button class="q">Which subscription businesses started this way?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">HelloFresh, Stitch Fix, Birchbox, Thrive Market and Cannabox are well-known examples. Each started with one focused niche before it grew.</div></div>
+    <div class="item"><button class="q">What features does a subscription marketplace need?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">Recurring billing, free trials and one-time offers, flexible plans with pause and upgrade, vendor reports for renewals and churn, referral and loyalty programs, and a secure checkout.</div></div>
+    <div class="item"><button class="q">What challenges do vendors face?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">Forecasting stock, keeping subscribers past the first few cycles and handling plan changes. Subscriber reports, automated renewal emails and clear fulfillment dates make all three easier.</div></div>
+    <div class="item"><button class="q">How do I reduce churn?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">Personalize curation, let subscribers pause, skip or downgrade instead of cancelling, send a reminder before every charge, reward loyalty and give members something exclusive, like early access or a community.</div></div>
+    <div class="item"><button class="q">Sellers first or subscribers first?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">Vendors first. Subscribers won't pay for an empty box. Get 8 vendors with plans live before you open, and build the subscriber waitlist in parallel.</div></div>
+    <div class="item"><button class="q">Should I use WordPress or build a custom platform?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">For most marketplaces, WordPress with WooCommerce and MultiVendorX is faster, cheaper and yours to own, with a big ecosystem of plugins and experts. A custom build makes sense only for large, well-funded platforms with unusual requirements.</div></div>
+    <div class="item"><button class="q">How should I market it?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">Value-first content and SEO, a referral program, influencer and micro-community marketing, email automation and niche partnerships. Vendors can run their own promotions and discounts in MultiVendorX.</div></div>
+    <div class="item"><button class="q">I'm not a developer. Can I still build this?<span class="pm"><svg class="i" aria-hidden="true"><use href="#plus"/></svg></span></button><div class="a">Yes. MultiVendorX has a setup wizard, so you can launch and run your marketplace without writing code.</div></div>
+  </div>
+</div></section>
+
+<section class="cta-band" style="background:var(--bg)"><div class="wrap"><div class="cta-box rv s">
+  <div><span class="eyebrow">Your marketplace starts now</span><h2 style="margin-top:18px">Build the subscription they look forward to every month.</h2>
+  <p>Start with week 1: pick a niche with a recurring need and run the 72-hour sprint. It costs nothing, and in three days you will know if this niche is worth your next 87.</p></div>
+  <div class="acts"><a class="btn btn-primary" href="pricing.html">Launch Your Marketplace <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+  <span class="note"><svg class="i" aria-hidden="true"><use href="#shield"/></svg> 15-day full refund · No fine print</span></div></div></div></section>
+<nav class="np-snav" aria-label="Playbook stages"><a href="#stage1" data-s="0"><b>1</b>Find</a><a href="#stage2" data-s="1"><b>2</b>Build</a><a href="#stage3" data-s="2"><b>3</b>Launch</a><a href="#stage4" data-s="3"><b>4</b>Grow</a></nav>
+
+</main>
+
+<footer class="ftr"><div class="wrap">
+  <div class="ftr-top">
+    <div class="ftr-brand">
+      <a class="logo" href="index.html">MultiVendor<span class="x">X</span></a>
+      <p class="tagline">Powering Marketplaces That Scale, Sell, and Succeed.</p>
+      <div class="news"><label for="ftr-email">Email Newsletter</label>
+        <form><input id="ftr-email" type="email" placeholder="Email Address"><button type="button">Subscribe <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></button></form></div>
+      <div class="social"><a href="#" aria-label="Facebook"><svg class="i" aria-hidden="true"><use href="#fb"/></svg></a><a href="#" aria-label="Instagram"><svg class="i" aria-hidden="true"><use href="#ig"/></svg></a><a href="#" aria-label="Twitter / X"><svg class="i" aria-hidden="true"><use href="#xlogo"/></svg></a><a href="#" aria-label="WordPress"><svg class="i" aria-hidden="true"><use href="#wp"/></svg></a></div>
+    </div>
+    <div>
+      <h5>Resources</h5><p class="sub">Docs, guides &amp; dev tools</p>
+      <ul>
+        <li><a href="#">API documentation</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="migration.html">Migration guide</a></li>
+        <li><a href="#">Changelog</a></li>
+        <li><a href="#">Third party plugins</a></li>
+        <li><a href="#">Third party themes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5><p class="sub">Who we are &amp; policies</p>
+      <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="about-us.html#locate">Contact us</a></li>
+        <li><a href="#">Brand assets</a></li>
+        <li><a href="#">Support policy</a></li>
+        <li><a href="#">Refund policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>MultiVendorX vs</h5><p class="sub">Side-by-side feature comparisons</p>
+      <div class="vs">
+        <a href="compare-features.html"><em>VS</em>All alternatives <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a href="#"><em>VS</em>WCFM <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <a href="multivendorx-vs-dokan.html"><em>VS</em>Dokan <svg class="i" aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+      <h5 class="mt">Our products</h5>
+      <div class="prods">
+        <a class="prod" href="#"><i>C</i><span>CatalogX<small>Plugin</small></span></a>
+        <a class="prod" href="#"><i class="n">N</i><span>Notifima<small>Plugin</small></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="ftr-bot"><span>Copyright © 2026 MultiVendorX</span><nav><a href="#">Affiliates</a><a href="#">Terms &amp; Conditions</a><a href="#">Privacy Policy</a></nav></div>
+</div>
+<div class="ftr-word" aria-hidden="true">MultiVendorX</div>
+</footer>
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<script src="assets/js/mvx.js?v=r29"></script>
+</body>
+</html>
