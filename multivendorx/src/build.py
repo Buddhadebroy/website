@@ -20,7 +20,7 @@ PAGES = [
   ("features.html", "features", "All Features | MultiVendorX", "Every MultiVendorX feature in one place: stores, products, orders, commissions and payouts. Start free, add Pro when you grow.", "features"),
   ("blog.html", "blog", "Blog | MultiVendorX", "Marketplace insights, strategies and guides from the MultiVendorX team.", "res"),
   ("compare-features.html", "compare", "Compare Features | MultiVendorX vs WCFM, WC Vendors and Dokan", "258 marketplace features compared side by side with Dokan, WCFM and WC Vendors.", "res"),
-  ("multivendorx-vs-dokan.html", "dokan", "MultiVendorX vs Dokan | Honest Comparison", "MultiVendorX vs Dokan: features, support, pricing, reliability and credibility compared.", "res"),
+  ("multivendorx-vs-dokan.html", "dokan", "MultiVendorX vs Dokan: Build the marketplace Dokan can’t", "Rentals, appointments, franchises, multi-store owners and wallet payouts. See what MultiVendorX builds that Dokan doesn’t, side by side.", "res"),
 ]
 import sys
 only = sys.argv[1:]
@@ -29,10 +29,12 @@ for fn, src, title, desc, on in PAGES:
     hdr = rd("header.html")
     for k in ("features", "market", "res", "pricing"):
         hdr = hdr.replace("{ON_%s}" % k, "on" if k == on else "")
+    if src == "dokan":
+        hdr = re.sub(r'<div class="topbar">.*?</div></div>', '<div class="topbar"><div class="wrap">\n  <span class="fb">{i:refresh}</span>\n  <span class="tb-t"><b>Moving from Dokan?</b><span class="tb-s"> We\u2019ll migrate your store free.</span></span>\n  <a href="migration.html#partner">Book my free move {i:arrow}</a>\n</div></div>', hdr, count=1, flags=re.S)
     body = rd("pages/" + src + ".html").replace("{PLANS}", rd("parts/plans.html")).replace("{TESTI}", rd("parts/testi.html")).replace("{TESTI2}", rd("parts/testi2.html")).replace("{TRUST}", rd("parts/trust.html")).replace("{REVIEWS}", rd("parts/reviews.html"))
-    EXTRA = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">\n<link rel="stylesheet" href="assets/css/home-ref.css?v=r48"><link rel="stylesheet" href="assets/css/home-nx.css?v=r48">\n') if src == 'home' else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">\n<link rel="stylesheet" href="assets/css/pages-gen.css?v=r48"><link rel="stylesheet" href="assets/css/pages-nx.css?v=r48">\n' if src != 'home' else '')
+    EXTRA = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">\n<link rel="stylesheet" href="assets/css/home-ref.css?v=r49"><link rel="stylesheet" href="assets/css/home-nx.css?v=r49">\n') if src == 'home' else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">\n<link rel="stylesheet" href="assets/css/pages-gen.css?v=r49"><link rel="stylesheet" href="assets/css/pages-nx.css?v=r49">\n' if src != 'home' else '')
     PB = ' pg-playbook' if src in ('subscription','auction','booking','rental','b2b') else ''
-    if PB: EXTRA += '<link rel="stylesheet" href="assets/css/mkt.css?v=r48">\n'
+    if PB: EXTRA += '<link rel="stylesheet" href="assets/css/mkt.css?v=r49">\n'
     html = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -40,8 +42,8 @@ for fn, src, title, desc, on in PAGES:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="stylesheet" href="assets/css/mvx.css?v=r48">
-<link rel="stylesheet" href="assets/css/v2.css?v=r48">
+<link rel="stylesheet" href="assets/css/mvx.css?v=r49">
+<link rel="stylesheet" href="assets/css/v2.css?v=r49">
 {EXTRA}</head>
 <body class="pg-{src}{PB}">
 {rd("icons.html")}
@@ -51,7 +53,7 @@ for fn, src, title, desc, on in PAGES:
 </main>
 {rd("footer.html")}
 <script src="assets/js/jquery-3.7.1.min.js"></script>
-<script src="assets/js/mvx.js?v=r48"></script>
+<script src="assets/js/mvx.js?v=r49"></script>
 </body>
 </html>
 '''

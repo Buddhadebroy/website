@@ -650,3 +650,22 @@ $(function () {
   $q.on('input', function () { $b.scrollTop(0); edge(); });
   apply(); edge();
 });
+
+/* vs Dokan (r49): flip tiles loop + sticky bar */
+jQuery(function ($) {
+  var $t = $('[data-flip] .bw-tile'); if (!$t.length) return;
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var i = 0, paused = false, $wrap = $('[data-flip]');
+  $wrap.on('mouseenter', function () { paused = true; $t.removeClass('f'); }).on('mouseleave', function () { paused = false; });
+  if (!rm) setInterval(function () {
+    if (paused || document.hidden) return;
+    $t.removeClass('f'); $t.eq(i % $t.length).addClass('f'); i++;
+  }, 2200);
+  var $s = $('[data-bwsticky]'), $h = $('.bw-hero'), $end = $('.bw-fin');
+  $(window).on('scroll', function () {
+    var y = window.scrollY, past = y > $h.offset().top + $h.outerHeight() - 100;
+    var atEnd = y + window.innerHeight > $end.offset().top + 120;
+    var on = past && !atEnd; $s.toggleClass('on', on).attr('aria-hidden', on ? 'false' : 'true');
+    $s.find('a').attr('tabindex', on ? '0' : '-1');
+  });
+});
