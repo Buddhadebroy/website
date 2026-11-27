@@ -1001,3 +1001,19 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
  .pg-features .fl-s li small{grid-column:auto;margin-top:4px}
  .pg-features .fl-s li p{font-size:15.5px}
 }
+/* 1 reviews: quote cards (r43) */
+.pg-dokan .dz-qts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:48px}
+.pg-dokan .dz-qt{position:relative;margin:0;display:flex;flex-direction:column;gap:18px;padding:26px 24px 20px;border-radius:20px;background:#fff;border:1px solid var(--vd-line);box-shadow:0 24px 48px -36px rgba(31,27,62,.35)}
+.pg-dokan .dz-qm{position:absolute;top:8px;right:20px;font-family:Georgia,"Times New Roman",serif;font-size:72px;line-height:1;font-weight:700;color:var(--tint,#fff8e1);-webkit-text-stroke:1px #f1d98a}
+.pg-dokan .dz-qt blockquote{margin:0;flex:1;font-size:18px;line-height:1.45;font-weight:500;letter-spacing:-.01em;color:var(--vd-ink)}
+.pg-dokan .dz-qt figcaption{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px dashed var(--vd-line)}
+.pg-dokan .dz-qt .av{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#f3eefe;color:var(--vd-m);font-size:14px;font-weight:600}
+.pg-dokan .dz-qt figcaption b{display:block;font-size:14px;font-weight:600;color:var(--vd-ink)}
+.pg-dokan .dz-qt figcaption small{font-size:12.5px;color:#8a86a0}
+.pg-dokan .dz-qt figcaption a{margin-left:auto;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--vd-line);color:var(--vd-m)}
+.pg-dokan .dz-qt figcaption a:hover{background:#f3eefe}
+.pg-dokan .dz-qt figcaption svg.i{width:14px;height:14px}
+.pg-dokan .dz-qt::before{content:"★★★★★";font-size:14px;letter-spacing:2px;color:#f59e0b}
+@media(max-width:900px){.pg-dokan .dz-qts{grid-template-columns:1fr;gap:14px;margin-top:32px}.pg-dokan .dz-qt blockquote{font-size:16.5px}}
+.pg-dokan .dz-src-n a{color:var(--vd-m);font-weight:500}
+@media(max-width:900px){.pg-dokan .dz-hstage .dz-rc.m{order:-1;margin-bottom:14px}.pg-dokan .dz-hstage .dz-orb{display:none}}
