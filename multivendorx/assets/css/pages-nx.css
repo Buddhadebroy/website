@@ -2167,3 +2167,56 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
  .pg-dokan .bw-ctr .d::before{content:"Dokan ";color:#8a86a0;font-weight:500;font-size:12.5px}
  .pg-dokan .bw-ctr small{grid-area:s;font-size:12.5px}
 }
+
+/* r63: full 258-feature list */
+.pg-dokan .bw-fl{border-radius:20px;background:#fff;border:1px solid #ece9f3;overflow:hidden}
+.pg-dokan .bw-flh,.pg-dokan .bw-fg summary,.pg-dokan .bw-fg li,.pg-dokan .bw-flt{display:grid;grid-template-columns:minmax(0,1fr) 150px 150px 120px 24px;gap:14px;align-items:center;padding:0 24px}
+.pg-dokan .bw-flh{padding-top:14px;padding-bottom:14px;background:#faf9fd;border-bottom:1px solid #ece9f3;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8a86a0}
+.pg-dokan .bw-flh span{display:flex;align-items:center;gap:8px}
+.pg-dokan .bw-flh span:nth-child(2){color:var(--bw-m)}
+.pg-dokan .bw-flh .lg{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-size:10px;font-style:normal;color:#fff;letter-spacing:0}
+.pg-dokan .bw-fg{border-top:1px solid #f1eff6}
+.pg-dokan .bw-fg:first-of-type{border-top:0}
+.pg-dokan .bw-fg summary{list-style:none;cursor:pointer;padding-top:15px;padding-bottom:15px;transition:background .2s}
+.pg-dokan .bw-fg summary::-webkit-details-marker{display:none}
+.pg-dokan .bw-fg summary:hover{background:#faf7ff}
+.pg-dokan .bw-fg summary b{font-size:15px;font-weight:600;color:var(--bw-ink)}
+.pg-dokan .bw-fg summary .mv{font-size:14.5px;font-weight:600;color:#15803d}
+.pg-dokan .bw-fg summary .dk{font-size:14.5px;color:#6b6880}
+.pg-dokan .bw-fl em{justify-self:start;font-style:normal;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600}
+.pg-dokan .bw-fl em.gap{background:#fdecec;color:#b91c1c}
+.pg-dokan .bw-fl em.eq{background:#f1eff6;color:#6b6880}
+.pg-dokan .bw-fg .cv{display:grid;place-items:center;color:#8a86a0;transition:transform .2s}
+.pg-dokan .bw-fg .cv svg.i{width:16px;height:16px;position:static;display:block}
+.pg-dokan .bw-fg[open] .cv{transform:rotate(180deg)}
+.pg-dokan .bw-fg ul{list-style:none;margin:0;padding:0 0 8px;background:#fcfbfe}
+.pg-dokan .bw-fg li{padding-top:10px;padding-bottom:10px;border-top:1px dashed #efecf5;font-size:14px}
+.pg-dokan .bw-fg li .f{color:var(--bw-mut);padding-left:14px}
+.pg-dokan .bw-fg li span:not(.f){font-size:13px;font-weight:600}
+.pg-dokan .bw-fg li .y{color:#15803d}
+.pg-dokan .bw-fg li .p{color:#8a86a0}
+.pg-dokan .bw-fg li .n{color:#b91c1c}
+.pg-dokan .bw-fg li .y::before,.pg-dokan .bw-fg li .n::before,.pg-dokan .bw-fg li .p::before{display:inline-block;width:16px;font-weight:700}
+.pg-dokan .bw-fg li .y::before{content:"✓"}
+.pg-dokan .bw-fg li .n::before{content:"✕"}
+.pg-dokan .bw-fg li .p::before{content:"$"}
+.pg-dokan .bw-flt{padding-top:16px;padding-bottom:16px;background:#f6f1ff;border-top:1px solid #e6dcfa}
+.pg-dokan .bw-flt b{font-size:15px;font-weight:600;color:var(--bw-ink)}
+.pg-dokan .bw-flt .mv{font-weight:600;color:#15803d}
+.pg-dokan .bw-flt .dk{font-weight:600;color:var(--bw-ink)}
+@media(max-width:900px){
+ .pg-dokan .bw-flh{display:none}
+ .pg-dokan .bw-fg summary,.pg-dokan .bw-flt{grid-template-columns:minmax(0,1fr) auto 20px;grid-template-areas:"b e c" "s s s";gap:4px 10px;padding:14px 16px}
+ .pg-dokan .bw-fg summary b,.pg-dokan .bw-flt b{grid-area:b}
+ .pg-dokan .bw-fl em{grid-area:e}
+ .pg-dokan .bw-fg .cv{grid-area:c}
+ .pg-dokan .bw-fg summary .mv,.pg-dokan .bw-flt .mv{grid-area:s;font-size:13px}
+ .pg-dokan .bw-fg summary .dk,.pg-dokan .bw-flt .dk{grid-area:s;justify-self:end;font-size:13px}
+ .pg-dokan .bw-fg summary .mv::before,.pg-dokan .bw-flt .mv::before{content:"MultiVendorX ";color:#8a86a0;font-weight:500}
+ .pg-dokan .bw-fg summary .dk::before,.pg-dokan .bw-flt .dk::before{content:"Dokan ";color:#8a86a0;font-weight:500}
+ .pg-dokan .bw-fg li{grid-template-columns:minmax(0,1fr) auto auto;gap:4px 12px;padding:10px 16px}
+ .pg-dokan .bw-fg li .f{grid-column:1/-1;padding-left:0;color:var(--bw-ink)}
+ .pg-dokan .bw-fg li .mv::after{content:" · MultiVendorX";color:#8a86a0;font-weight:500}
+ .pg-dokan .bw-fg li .dk::after{content:" · Dokan";color:#8a86a0;font-weight:500}
+ .pg-dokan .bw-fg li .dk{justify-self:start}
+}
