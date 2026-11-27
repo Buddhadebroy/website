@@ -17,9 +17,9 @@ PAGES = [
   ("migration.html", "migration", "Migrate to MultiVendorX from Dokan, WCFM or WC Vendors", "A migration experience built on trust, guidance and simplicity.", "res"),
   ("pricing.html", "pricing", "Pricing | MultiVendorX", "Invest in success, not just software. 104+ premium features from $149/year.", "pricing"),
   ("about-us.html", "about", "About Us | MultiVendorX", "MultiVendorX: it all started with a vision.", "res"),
-  ("features.html", "features", "All Features | MultiVendorX", "Every MultiVendorX feature on one page. Filter by area, Free or Pro, or browse by module.", "features"),
+  ("features.html", "features", "All Features | MultiVendorX", "Every MultiVendorX feature in one place: stores, products, orders, commissions and payouts. Start free, add Pro when you grow.", "features"),
   ("blog.html", "blog", "Blog | MultiVendorX", "Marketplace insights, strategies and guides from the MultiVendorX team.", "res"),
-  ("compare-features.html", "compare", "Compare Features | MultiVendorX vs WCFM, WC Vendors and Dokan", "Every feature, side by side. Because smart decisions need clarity.", "res"),
+  ("compare-features.html", "compare", "Compare Features | MultiVendorX vs WCFM, WC Vendors and Dokan", "258 marketplace features compared side by side with Dokan, WCFM and WC Vendors.", "res"),
   ("multivendorx-vs-dokan.html", "dokan", "MultiVendorX vs Dokan | Honest Comparison", "MultiVendorX vs Dokan: features, support, pricing, reliability and credibility compared.", "res"),
 ]
 import sys
