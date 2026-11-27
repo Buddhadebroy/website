@@ -492,3 +492,6 @@ body:not(.pg-home) main .eyebrow::before{width:24px;height:24px;border-radius:50
 .sg.sg-n .sg-r.hd span{background:#fbfbfe}
 .pg-niche .np-stage-in>.np-done{margin:0!important;justify-self:end;font-size:15px;padding:12px 16px}
 @media(max-width:900px){.pg-niche .np-stage-in>.np-done{justify-self:start}}
+.pg-niche .toc-ex{margin:2px 0 14px!important;padding:10px 12px;border-radius:12px;background:#fff;border:1px dashed #d9cdf3;font-size:13.5px;line-height:1.45;color:#4a4664}
+.pg-niche .toc-ex em{display:block;font-style:normal;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#5007aa;margin-bottom:3px}
+.pg-niche #playbook .toc{margin-top:40px}
