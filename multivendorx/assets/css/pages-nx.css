@@ -490,3 +490,17 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
 .pg-niche .np-earn em{display:block;font-style:normal;font-size:22px;font-weight:600;color:#5007aa;margin:4px 0 6px}
 .pg-niche .np-earn p{font-size:14px;color:#6b6885;margin:0}
 @media(max-width:760px){.pg-niche .np-earn{grid-template-columns:1fr}}
+/* niche: stats as one compact row under the three tests */
+.pg-niche .np-facts{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding:16px 18px;border-radius:16px;background:#fff;border:1px dashed #d9cdf3}
+.pg-niche .np-facts>b{flex-basis:100%;font-size:13px;font-weight:600;color:#1f1b3e}
+.pg-niche .np-facts span{display:inline-flex;align-items:baseline;gap:5px;padding:6px 10px;border-radius:99px;background:#f6f2fd;font-size:13px;color:#4a4664}
+.pg-niche .np-facts em{font-style:normal;font-weight:600;color:#5007aa;font-size:14px}
+.pg-niche .np-facts small{flex-basis:100%;font-size:12px;color:#8a879c}
+/* niche: launch = sellers card + buyers card + 4-week row */
+.pg-niche .np-lc{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.pg-niche .np-lc-c{background:#fff;border:1px solid #e9e8f0;border-radius:18px;padding:22px}
+.pg-niche .np-lc-c h4{font-size:17px;font-weight:600;margin:12px 0 10px}
+.pg-niche .np-lc-c ul{list-style:none;margin:0;padding:0}
+.pg-niche .np-lc-c li{display:grid;grid-template-columns:64px 1fr;gap:10px;padding:10px 0;border-top:1px solid #f0eff5;font-size:14.5px;color:#4a4664}
+.pg-niche .np-lc-c li b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#5007aa;font-weight:600;padding-top:2px}
+@media(max-width:760px){.pg-niche .np-lc{grid-template-columns:1fr}}
