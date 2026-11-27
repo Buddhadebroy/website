@@ -520,24 +520,20 @@ $(function(){
   window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
 });
 
-/* features page: detailed list filtered by area, built for, plan and search */
+/* features page: readable list; area nav scrollspy, plan and search filters */
 $(function(){
-  var $r=$('[data-fe]'); if(!$r.length)return;
-  var st={a:'all',w:'all',p:'all',q:'',all:false},LIM=window.innerWidth<760?8:18,$c=$r.find('.fe-c');
+  var $r=$('[data-fl]'); if(!$r.length)return;
+  var st={p:'all',q:''},$a=$r.find('.fl-nav a'),secs=$a.map(function(){return document.querySelector($(this).attr('href'));}).get();
   function run(){
     var n=0;
-    $c.each(function(){var $x=$(this),ok=(st.a==='all'||$x.data('seg')===st.a)&&(st.w==='all'||(' '+$x.data('who')+' ').indexOf(' '+st.w+' ')>-1)&&(st.p==='all'||$x.data('p')===st.p)&&(!st.q||$x.text().toLowerCase().indexOf(st.q)>-1);
-      $x.toggle(ok);if(ok){n++;$x.toggleClass('cut',!st.all&&n>LIM);}});
-    $r.find('[data-fe-n]').text(n);$r.find('.fe-empty').prop('hidden',n>0);
-    $r.find('.fe-moreb').prop('hidden',st.all||n<=LIM).find('button').text('Show all '+n+' features');
-    $r.find('[data-fe-t]').text($r.find('.fe-a.on span').text());
+    $r.find('.fl-s').each(function(){var c=0;$(this).find('li').each(function(){var $l=$(this),ok=(st.p==='all'||$l.data('p')===st.p)&&(!st.q||$l.text().toLowerCase().indexOf(st.q)>-1);$l.toggle(ok);if(ok)c++;});$(this).toggle(c>0);n+=c;});
+    $r.find('.fl-empty').prop('hidden',n>0);spy();
   }
-  $r.on('click','.fe-a',function(){$r.find('.fe-a').removeClass('on');$(this).addClass('on');st.a=$(this).data('a');st.all=false;run();});
-  $r.on('click','.fe-w',function(){$r.find('.fe-w').removeClass('on');$(this).addClass('on');st.w=$(this).data('w');st.all=false;run();});
-  $r.on('click','[data-p]',function(){if(!$(this).is('button'))return;$r.find('.fe-plan button').removeClass('on');$(this).addClass('on');st.p=$(this).data('p');st.all=false;run();});
-  $r.on('input','[data-fe-q]',function(){st.q=$.trim(this.value).toLowerCase();run();});
-  $r.on('click','[data-fe-more]',function(){st.all=true;run();});
-  run();
+  function spy(){var k=-1;secs.forEach(function(s,i){if(s&&s.offsetParent&&s.getBoundingClientRect().top<=160)k=i;});$a.removeClass('on');if(k>-1)$a.eq(k).addClass('on');
+    var on=$a.filter('.on')[0];if(on&&window.innerWidth<=900){var nav=on.parentNode;nav.scrollLeft=on.offsetLeft-nav.clientWidth/2+on.clientWidth/2;}}
+  $r.on('input','[data-fl-q]',function(){st.q=$.trim(this.value).toLowerCase();run();});
+  $r.on('click','[data-fl-p]',function(){$r.find('[data-fl-p]').removeClass('on');$(this).addClass('on');st.p=$(this).data('fl-p');run();});
+  $(window).on('scroll',spy);spy();
 });
 
 /* compare features: search, differences, exclusives, collapse, area nav */
