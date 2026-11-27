@@ -650,3 +650,52 @@ $(function () {
   $q.on('input', function () { $b.scrollTop(0); edge(); });
   apply(); edge();
 });
+
+/* vs Dokan (r49): flip tiles loop + sticky bar */
+jQuery(function ($) {
+  var $t = $('[data-flip] .bw-tile'); if (!$t.length) return;
+  var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var i = 0, paused = false, $wrap = $('[data-flip]');
+  $wrap.on('mouseenter', function () { paused = true; $t.removeClass('f'); }).on('mouseleave', function () { paused = false; });
+  if (!rm) setInterval(function () {
+    if (paused || document.hidden) return;
+    $t.removeClass('f'); $t.eq(i % $t.length).addClass('f'); i++;
+  }, 2200);
+});
+jQuery(function ($) {
+  var $s = $('[data-bwsticky]'), $h = $('.bw-hero'), $end = $('.bw-fin'); if (!$s.length) return;
+  $(window).on('scroll', function () {
+    var y = window.scrollY, past = y > $h.offset().top + $h.outerHeight() - 100;
+    var atEnd = y + window.innerHeight > $end.offset().top + 120;
+    var on = past && !atEnd; $s.toggleClass('on', on).attr('aria-hidden', on ? 'false' : 'true');
+    $s.find('a').attr('tabindex', on ? '0' : '-1');
+  });
+});
+
+/* vs Dokan (r55): idea picker, tabs open one by one on scroll (desktop) */
+jQuery(function ($) {
+  var $x = $('[data-ideas]'); if (!$x.length) return;
+  var $scr = $('[data-scr]'), $tabs = $x.find('.bw-it'), n = $tabs.length, cur = -1;
+  function show(i) {
+    if (i === cur) return; cur = i;
+    $tabs.removeClass('on').attr('aria-selected', 'false').eq(i).addClass('on').attr('aria-selected', 'true');
+    $x.find('.bw-ip').removeClass('on').attr('hidden', true).filter('[data-p="' + i + '"]').addClass('on').removeAttr('hidden');
+  }
+  function desk() { return window.innerWidth > 900; }
+  function onScroll() {
+    if (!desk()) return;
+    var top = $scr.offset().top, h = $scr.outerHeight(), vh = window.innerHeight;
+    var p = (window.scrollY - top + 140) / Math.max(1, h - vh + 140);
+    p = Math.min(.999, Math.max(0, p));
+    show(Math.floor(p * n));
+    $tabs.each(function (k) { this.style.setProperty('--pg', Math.min(1, Math.max(0, p * n - k))); });
+  }
+  $(window).on('scroll resize', onScroll); onScroll();
+  $x.on('click', '.bw-it', function () {
+    var i = $(this).data('i');
+    if (!desk()) { show(i); return; }
+    var top = $scr.offset().top, h = $scr.outerHeight(), vh = window.innerHeight;
+    var y = top - 140 + (i + .5) / n * (h - vh + 140);
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+});
