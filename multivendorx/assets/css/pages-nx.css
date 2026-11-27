@@ -396,7 +396,7 @@ body:not(.pg-home) main .lead,body:not(.pg-home) main .sec-head p{color:#4b4f63;
 .pg-dokan .c svg.i{width:12px;height:12px}
 .pg-dokan .c.y{background:#ecfdf3;color:#15803d}
 .pg-dokan .c.p{background:#f1eafe;color:#5007aa}
-.pg-dokan .dz-fx-r .c.p:last-child{background:#f3f1f8;color:#5d5874}
+.pg-dokan .c.pd{background:#f3f1f8;color:#5d5874}
 .pg-dokan .c.n{background:#fdecef;color:#b4364d}
 .pg-dokan .dz-fx .c.t{white-space:normal;padding:0;background:none;font-size:13px;font-weight:400;color:var(--vd-mut);line-height:1.4}
 .pg-dokan .dz-fx-more{display:block;width:100%;margin-top:8px;padding:10px;border:1px dashed #c9d8fb;border-radius:12px;background:#fff;font:inherit;font-size:13.5px;font-weight:600;color:#1d4ed8;cursor:pointer;transition:background .2s ease}
@@ -441,6 +441,26 @@ body:not(.pg-home) main .lead,body:not(.pg-home) main .sec-head p{color:#4b4f63;
  .pg-dokan .dz-fx .c.t::before{display:block;font-size:11px}
  .pg-dokan .dz-fx-gh{padding:0 8px 6px}
  .pg-dokan .dz-fx-note a{margin-left:0}
+}
+
+.pg-dokan .dz-fx-tabs{position:static}
+.pg-dokan .dz-fx-body{position:relative;max-height:640px;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#c9d8fb transparent;outline:0}
+.pg-dokan .dz-fx-body:focus-visible{box-shadow:inset 0 0 0 2px #1d4ed8}
+.pg-dokan .dz-fx-ch{position:sticky;top:0;z-index:2;margin:0 -20px;padding-left:34px;padding-right:34px;border-radius:0;box-shadow:0 1px 0 #eef1fa}
+.pg-dokan .dz-fx-gh{position:sticky;top:36px;z-index:1;background:#fff;padding-top:10px}
+.pg-dokan .dz-fx-g{margin-top:6px}
+.pg-dokan .dz-fx-next{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:18px;padding:13px;border:0;border-radius:14px;background:#1d4ed8;color:#fff;font:inherit;font-size:14.5px;font-weight:600;cursor:pointer;transition:background .2s ease,transform .2s ease}
+.pg-dokan .dz-fx-next:hover{background:#1e40af}
+.pg-dokan .dz-fx-next svg.i{width:15px;height:15px}
+.pg-dokan .dz-fx.searching .dz-fx-next,.pg-dokan .dz-fx.open-all .dz-fx-next{display:none}
+.pg-dokan .dz-fx-main{position:relative}
+.pg-dokan .dz-fx-main::after{content:"";position:absolute;left:0;right:8px;bottom:0;height:40px;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);pointer-events:none;border-radius:0 0 22px 22px;transition:opacity .2s ease}
+.pg-dokan .dz-fx-main.at-end::after{opacity:0}
+.pg-dokan .dz-fx-t:focus-visible{outline:2px solid #1d4ed8;outline-offset:2px}
+@media(max-width:760px){
+ .pg-dokan .dz-fx-body{max-height:72vh}
+ .pg-dokan .dz-fx-ch{display:none}
+ .pg-dokan .dz-fx-gh{top:0}
 }
 
 /* ===== shared home-style section kit (inner pages) ===== */

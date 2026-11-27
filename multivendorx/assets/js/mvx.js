@@ -635,6 +635,18 @@ $(function () {
     $(this).addClass('on').siblings().removeClass('on'); f = $(this).data('v'); apply();
   });
   $q.on('input', apply);
-  $x.on('click', '.dz-fx-more', function () { $(this).closest('.dz-fx-g').addClass('open'); $(this).remove(); });
-  apply();
+  var $b = $x.find('[data-body]'), $m = $x.find('.dz-fx-main');
+  function edge() { var b = $b[0]; $m.toggleClass('at-end', b.scrollTop + b.clientHeight >= b.scrollHeight - 4); }
+  $b.on('scroll', edge);
+  $t.on('click', function () { $b.scrollTop(0); edge(); });
+  $x.on('click', '.dz-fx-next', function () { $t.eq(+$(this).data('next')).trigger('click').trigger('focus'); });
+  $t.on('keydown', function (e) {
+    var k = e.key, i = $t.index(this), n = $t.length, j = -1;
+    if (k === 'ArrowDown' || k === 'ArrowRight') j = (i + 1) % n;
+    else if (k === 'ArrowUp' || k === 'ArrowLeft') j = (i - 1 + n) % n;
+    else if (k === 'Home') j = 0; else if (k === 'End') j = n - 1;
+    if (j > -1) { e.preventDefault(); $t.eq(j).trigger('click').trigger('focus'); }
+  });
+  $q.on('input', function () { $b.scrollTop(0); edge(); });
+  apply(); edge();
 });
