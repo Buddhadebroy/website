@@ -564,3 +564,54 @@ $(function(){
   function spy(){var k=-1;secs.forEach(function(s,i){if(s&&s.offsetParent&&s.getBoundingClientRect().top<=220)k=i;});$a.removeClass('on');if(k>-1)$a.eq(k).addClass('on');}
   $(window).on('scroll',spy);spy();
 });
+
+/* vs Dokan: pricing calculator (yearly list prices, checked 27 Nov 2026) */
+$(function () {
+  var $c = $('[data-dzcalc]'); if (!$c.length) return;
+  var st = { s: 0, f: 2 };
+  var DK = [
+    { n: 'Starter', s: '1 site', m: '3 modules', p: 149 },
+    { n: 'Professional', s: '3 sites', m: '23 modules', p: 249 },
+    { n: 'Business', s: '5 sites', m: '42+ modules', p: 499 },
+    { n: 'Enterprise', s: '10 sites', m: '42+ modules', p: 4995, life: 1 }
+  ];
+  var MX = [
+    { n: 'Starter', s: '1 site', p: 149 }, { n: 'Growth', s: '3 sites', p: 199 },
+    { n: 'Agency', s: '10 sites', p: 299 }, { n: 'Agency', s: '10 sites', p: 299 }
+  ];
+  function f(n) { return '$' + n.toLocaleString('en-US'); }
+  function o(k) { return $c.find('[data-o="' + k + '"]'); }
+  function upd() {
+    var d = DK[Math.max(st.s, st.f)], m = MX[st.s];
+    o('mp').text(m.n + ' · ' + m.s + ' · every module'); o('mv').text(f(m.p)); o('mu').text('/ year');
+    o('dp').text(d.n + ' · ' + d.s + ' · ' + d.m); o('dv').text(f(d.p)); o('du').text(d.life ? 'one time' : '/ year');
+    var $s = o('sv').parent();
+    if (d.life) {
+      o('mb').css('--w', '30%'); o('db').css('--w', '100%');
+      o('sv').text('Dokan has no yearly plan for 10 sites');
+      o('s3').text('Its lifetime Enterprise plan equals ' + Math.floor(d.p / m.p) + ' years of MultiVendorX Agency.');
+      $s.removeClass('flip'); return;
+    }
+    var hi = Math.max(d.p, m.p);
+    o('mb').css('--w', (m.p / hi * 100) + '%'); o('db').css('--w', (d.p / hi * 100) + '%');
+    var sv = d.p - m.p;
+    if (sv > 0) { o('sv').text('You keep ' + f(sv) + ' a year'); o('s3').text('That is ' + f(sv * 3) + ' over three years, with every module included.'); $s.removeClass('flip'); }
+    else { o('sv').text('Same price, more included'); o('s3').text('MultiVendorX gives every module at this price. Dokan ' + d.n + ' has ' + d.m + '.'); $s.addClass('flip'); }
+  }
+  $c.on('click', '.dz-seg button', function () {
+    var $b = $(this), $g = $b.parent(); $g.find('button').removeClass('on'); $b.addClass('on');
+    st[$g.data('k')] = +$b.data('v'); upd();
+  });
+  upd();
+});
+
+/* vs Dokan: open the full feature list on demand */
+$(function () {
+  $('[data-dzopen]').on('click', function () {
+    var $f = $('[data-dzfull]'), open = $f.prop('hidden');
+    $f.prop('hidden', !open);
+    $(this).contents().first()[0].textContent = open ? 'Hide the full list ' : 'Open all 258 features ';
+    if (open) $('html,body').animate({ scrollTop: $f.offset().top - 140 }, 500);
+    $(window).trigger('scroll');
+  });
+});
