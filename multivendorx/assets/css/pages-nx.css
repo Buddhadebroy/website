@@ -2138,3 +2138,32 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
  .pg-dokan .bw-wph em{font-size:24px}
  .pg-dokan .bw-wsub{margin-top:28px}
 }
+
+/* r62: features comparison table */
+.pg-dokan .bw-ct{border-radius:20px;background:#fff;border:1px solid #ece9f3;overflow:hidden}
+.pg-dokan .bw-cth,.pg-dokan .bw-ctr{display:grid;grid-template-columns:minmax(0,1.3fr) 150px 150px minmax(0,1.6fr);gap:16px;align-items:center;padding:15px 24px}
+.pg-dokan .bw-cth{background:#faf9fd;border-bottom:1px solid #ece9f3;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8a86a0}
+.pg-dokan .bw-cth span{display:flex;align-items:center;gap:8px}
+.pg-dokan .bw-cth .lg{width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-size:10px;font-style:normal;color:#fff;letter-spacing:0}
+.pg-dokan .bw-cth span:nth-child(2){color:var(--bw-m)}
+.pg-dokan .bw-ctr{border-top:1px solid #f1eff6}
+.pg-dokan .bw-ctr:nth-child(2){border-top:0}
+.pg-dokan .bw-ctr b{font-size:15px;font-weight:600;color:var(--bw-ink)}
+.pg-dokan .bw-ctr .m{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600;color:#15803d}
+.pg-dokan .bw-ctr .m svg.i{width:15px;height:15px;position:static;display:block}
+.pg-dokan .bw-ctr .d{font-size:14.5px;font-weight:500;color:#6b6880}
+.pg-dokan .bw-ctr .d.z{color:#b91c1c;font-weight:600}
+.pg-dokan .bw-ctr small{font-size:13.5px;line-height:1.45;color:#8a86a0}
+.pg-dokan .bw-ctr.t{background:#f6f1ff;border-top:1px solid #e6dcfa}
+.pg-dokan .bw-ctr.t b,.pg-dokan .bw-ctr.t .d{color:var(--bw-ink);font-weight:600}
+.pg-dokan .bw-ctr.t small{color:#b91c1c;font-weight:600}
+@media(max-width:900px){
+ .pg-dokan .bw-cth{display:none}
+ .pg-dokan .bw-ctr{grid-template-columns:1fr auto;grid-template-areas:"a a" "m d" "s s";gap:6px 12px;padding:14px 16px}
+ .pg-dokan .bw-ctr b{grid-area:a}
+ .pg-dokan .bw-ctr .m{grid-area:m}
+ .pg-dokan .bw-ctr .d{grid-area:d;text-align:right}
+ .pg-dokan .bw-ctr .m::before{content:"MultiVendorX";font-weight:500;color:#8a86a0;font-size:12.5px;order:-1}
+ .pg-dokan .bw-ctr .d::before{content:"Dokan ";color:#8a86a0;font-weight:500;font-size:12.5px}
+ .pg-dokan .bw-ctr small{grid-area:s;font-size:12.5px}
+}
