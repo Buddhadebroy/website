@@ -1017,3 +1017,58 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
 @media(max-width:900px){.pg-dokan .dz-qts{grid-template-columns:1fr;gap:14px;margin-top:32px}.pg-dokan .dz-qt blockquote{font-size:16.5px}}
 .pg-dokan .dz-src-n a{color:var(--vd-m);font-weight:500}
 @media(max-width:900px){.pg-dokan .dz-hstage .dz-rc.m{order:-1;margin-bottom:14px}.pg-dokan .dz-hstage .dz-orb{display:none}}
+/* r44: single-story marketing layout */
+.pg-dokan .dz-hero h1{max-width:900px;margin:0 auto}
+.pg-dokan .dz-hero-tx{max-width:900px}
+.pg-dokan .dz-rct b em{font-style:normal;font-size:15px;font-weight:500;letter-spacing:0;color:#8a86a0;margin-left:2px}
+.pg-dokan .dz-proof{padding:0 0 8px;background:#fbfaff}
+.pg-dokan .dz-proof ul{list-style:none;margin:0 auto;padding:22px 12px;max-width:1000px;display:grid;grid-template-columns:repeat(4,1fr);border-radius:20px;background:#5007aa;background-image:linear-gradient(120deg,#5007aa,#7c3aed);box-shadow:0 30px 60px -36px rgba(80,7,170,.7);transform:translateY(-36px)}
+.pg-dokan .dz-proof li{display:flex;flex-direction:column;align-items:center;gap:2px;color:#fff;text-align:center}
+.pg-dokan .dz-proof li+li{border-left:1px solid rgba(255,255,255,.18)}
+.pg-dokan .dz-proof b{display:inline-flex;align-items:center;gap:6px;font-size:28px;font-weight:600;letter-spacing:-.02em}
+.pg-dokan .dz-proof b svg.i{width:20px;height:20px;color:#fcd34d}
+.pg-dokan .dz-proof span{font-size:13.5px;color:rgba(255,255,255,.78)}
+.pg-dokan .dz-hero{padding-bottom:100px}
+.pg-dokan main .dz-why{border-top:0;padding-top:48px}
+.pg-dokan .dz-head .eyebrow{display:inline-flex}
+.pg-dokan .dz-rs{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px;align-items:center;padding:48px;border-radius:32px;border:1px solid #efedf5;background:linear-gradient(180deg,#fff,#fcfbfe)}
+.pg-dokan .dz-rs+.dz-rs{margin-top:28px}
+.pg-dokan .dz-rs.flip{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.pg-dokan .dz-rs.flip .dz-tx{order:2}
+.pg-dokan .dz-rn{display:block;font-size:64px;line-height:1;font-weight:600;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px var(--acc)}
+.pg-dokan .dz-rs h3{margin:18px 0 0;font-size:34px;line-height:1.12;letter-spacing:-.03em;font-weight:600;color:var(--vd-ink)}
+.pg-dokan .dz-rs h3 .accent{display:block;color:var(--acc)}
+.pg-dokan .dz-wall .dz-qts{margin-top:0}
+.pg-dokan .dz-head h2 .accent{display:block}
+.pg-dokan .dz-cta{padding:80px 0;background:#fff}
+.pg-dokan .dz-cta-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:48px;align-items:center;padding:56px;border-radius:32px;color:#fff;background:radial-gradient(600px 300px at 90% 0%,rgba(255,255,255,.16),transparent 60%),linear-gradient(135deg,#3b0580,#5007aa 55%,#7c3aed);box-shadow:0 50px 90px -50px rgba(80,7,170,.8)}
+.pg-dokan .dz-cta h2{margin:0;font-size:40px;line-height:1.1;letter-spacing:-.03em;font-weight:600;color:#fff}
+.pg-dokan .dz-cta h2 span{display:block;color:#d8c4ff}
+.pg-dokan .dz-cta ol{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px}
+.pg-dokan .dz-cta li{display:flex;align-items:center;gap:10px;font-size:16px;color:rgba(255,255,255,.9)}
+.pg-dokan .dz-cta li svg.i{flex:none;width:18px;height:18px;padding:3px;border-radius:50%;background:rgba(255,255,255,.18)}
+.pg-dokan .dz-cta-act{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.pg-dokan .dz-btn-w{background:#fff;color:#5007aa;border-color:#fff;font-weight:600}
+.pg-dokan .dz-btn-w:hover{background:#f3eefe;color:#3b0580}
+.pg-dokan .dz-cta-l{color:#fff;text-decoration:underline;text-underline-offset:3px;font-size:15px}
+.pg-dokan .dz-cta small{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:rgba(255,255,255,.75)}
+.pg-dokan .dz-cta small svg.i{width:15px;height:15px}
+@media(max-width:900px){
+ .pg-dokan .dz-hero{padding-bottom:84px}
+ .pg-dokan .dz-proof ul{grid-template-columns:repeat(2,1fr);row-gap:18px;padding:18px 8px;transform:translateY(-30px)}
+ .pg-dokan .dz-proof li:nth-child(3){border-left:0}
+ .pg-dokan .dz-proof b{font-size:24px}
+ .pg-dokan main .dz-why{padding-top:24px}
+ .pg-dokan .dz-rs,.pg-dokan .dz-rs.flip{grid-template-columns:1fr;gap:28px;padding:24px 18px;border-radius:24px}
+ .pg-dokan .dz-rs.flip .dz-tx{order:0}
+ .pg-dokan .dz-rn{font-size:48px}
+ .pg-dokan .dz-rs h3{font-size:27px}
+ .pg-dokan .dz-cta{padding:56px 0}
+ .pg-dokan .dz-cta-in{grid-template-columns:1fr;gap:28px;padding:32px 22px;border-radius:24px}
+ .pg-dokan .dz-cta h2{font-size:30px}
+}
+.pg-dokan .dz-why .dz-flat span{display:none}
+.pg-dokan .dz-leg{display:flex;align-items:center;gap:8px;margin:0 0 14px;font-size:13.5px;font-weight:600;color:var(--vd-m)}
+.pg-dokan .dz-leg i{width:28px;height:0;border-top:3px solid var(--vd-m)}
+.pg-dokan .dz-leg .lg{width:22px;height:22px;font-size:11px;border-radius:7px;display:grid;place-items:center}
+.pg-dokan .dz-why .dz-flat{bottom:calc(52px + (100% - 108px) * .3)}
+@media(max-width:900px){.pg-dokan .dz-why .dz-ladder{height:320px}.pg-dokan .dz-why .dz-flat{bottom:calc(48px + (100% - 96px) * .3)}}
