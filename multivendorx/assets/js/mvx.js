@@ -669,3 +669,16 @@ jQuery(function ($) {
     $s.find('a').attr('tabindex', on ? '0' : '-1');
   });
 });
+
+/* vs Dokan (r50): idea picker tabs */
+jQuery(function ($) {
+  var $x = $('[data-ideas]'); if (!$x.length) return;
+  $x.on('click', '.bw-it', function () {
+    var i = $(this).data('i');
+    $x.find('.bw-it').removeClass('on').attr('aria-selected', 'false');
+    $(this).addClass('on').attr('aria-selected', 'true');
+    $x.find('.bw-ip').removeClass('on').attr('hidden', true);
+    $x.find('.bw-ip[data-p="' + i + '"]').addClass('on').removeAttr('hidden');
+    if (window.innerWidth < 900) this.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  });
+});
