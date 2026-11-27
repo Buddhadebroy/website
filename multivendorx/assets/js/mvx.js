@@ -672,15 +672,30 @@ jQuery(function ($) {
   });
 });
 
-/* vs Dokan (r50): idea picker tabs */
+/* vs Dokan (r55): idea picker, tabs open one by one on scroll (desktop) */
 jQuery(function ($) {
   var $x = $('[data-ideas]'); if (!$x.length) return;
+  var $scr = $('[data-scr]'), $tabs = $x.find('.bw-it'), n = $tabs.length, cur = -1;
+  function show(i) {
+    if (i === cur) return; cur = i;
+    $tabs.removeClass('on').attr('aria-selected', 'false').eq(i).addClass('on').attr('aria-selected', 'true');
+    $x.find('.bw-ip').removeClass('on').attr('hidden', true).filter('[data-p="' + i + '"]').addClass('on').removeAttr('hidden');
+  }
+  function desk() { return window.innerWidth > 900; }
+  function onScroll() {
+    if (!desk()) return;
+    var top = $scr.offset().top, h = $scr.outerHeight(), vh = window.innerHeight;
+    var p = (window.scrollY - top + 140) / Math.max(1, h - vh + 140);
+    p = Math.min(.999, Math.max(0, p));
+    show(Math.floor(p * n));
+    $tabs.each(function (k) { this.style.setProperty('--pg', Math.min(1, Math.max(0, p * n - k))); });
+  }
+  $(window).on('scroll resize', onScroll); onScroll();
   $x.on('click', '.bw-it', function () {
     var i = $(this).data('i');
-    $x.find('.bw-it').removeClass('on').attr('aria-selected', 'false');
-    $(this).addClass('on').attr('aria-selected', 'true');
-    $x.find('.bw-ip').removeClass('on').attr('hidden', true);
-    $x.find('.bw-ip[data-p="' + i + '"]').addClass('on').removeAttr('hidden');
-    if (window.innerWidth < 900) this.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    if (!desk()) { show(i); return; }
+    var top = $scr.offset().top, h = $scr.outerHeight(), vh = window.innerHeight;
+    var y = top - 140 + (i + .5) / n * (h - vh + 140);
+    window.scrollTo({ top: y, behavior: 'smooth' });
   });
 });
