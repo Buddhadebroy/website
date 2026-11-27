@@ -695,3 +695,19 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
  .pg-features .fe-top{align-items:flex-start;flex-direction:column}
  .pg-features .fe-plan{width:100%}.pg-features .fe-plan button{flex:1}
 }
+/* features: fewer borders, cleaner cards */
+.pg-features .fe-box{border:0;box-shadow:none;padding:0;gap:40px}
+.pg-features .fe-side{background:none;border:0;padding:0}
+.pg-features .fe-side button:hover{background:#f8f6fc}
+.pg-features .fe-top{border-bottom:0;padding-bottom:8px}
+.pg-features .fe-q{background:#f6f4fb;border-color:transparent;border-radius:99px}
+.pg-features .fe-q:focus-within{background:#fff}
+.pg-features .fe-plan{border:0}
+.pg-features .fe-c{border:0;background:#f8f6fc;border-radius:18px;padding:22px}
+.pg-features .fe-c:hover{background:#f3eefe;box-shadow:none}
+.pg-features .fe-ic{background:#fff}
+.pg-features .fe-c p+.fe-who{border-top:0;padding-top:0}
+.pg-features .fe-who span{background:#fff}
+.pg-features .fe-b.pro{background:#fff}.pg-features .fe-b.free{background:#fff}
+.pg-features .fe-moreb button{border-color:transparent;background:#f3eefe}
+@media(max-width:900px){.pg-features .fe-side{padding:0 18px 4px}.pg-features .fe-side button{border:0;background:#f6f4fb}.pg-features .fe-side button.on{background:#f1ebfb}}
