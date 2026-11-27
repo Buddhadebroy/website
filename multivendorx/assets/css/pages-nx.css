@@ -2057,3 +2057,11 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
  .pg-dokan .bw-sr .mv{grid-area:m;font-size:13.5px}.pg-dokan .bw-sr .dk{grid-area:d;font-size:13px}
 }
 @media(max-width:900px){.pg-dokan .bw-cue{width:auto;max-width:100%;text-align:center}}
+/* r59: flat compare link */
+.pg-dokan .bw-flat{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;padding:18px 22px;border-radius:14px;background:#f1ebfd;color:var(--bw-ink);font-size:16px;text-decoration:none;transition:background .2s}
+.pg-dokan .bw-flat:hover{background:#e8dffc}
+.pg-dokan .bw-flat b{font-weight:600;color:var(--bw-m)}
+.pg-dokan .bw-flat i{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--bw-m);color:#fff;font-style:normal;transition:transform .2s}
+.pg-dokan .bw-flat:hover i{transform:translateX(3px)}
+.pg-dokan .bw-flat svg.i{width:16px;height:16px;position:static;display:block}
+@media(max-width:900px){.pg-dokan .bw-flat{padding:14px 16px;font-size:14.5px;margin-top:12px}}
