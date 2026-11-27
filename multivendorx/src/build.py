@@ -7,6 +7,10 @@ PAGES = [
   ("index.html", "home", "MultiVendorX: Your Marketplace, Your Rules", "Launch franchise, B2B, rental, booking and auction multi-vendor marketplaces on WooCommerce.", ""),
   ("niche-marketplace.html", "niche", "Niche Marketplace Playbook | MultiVendorX", "Build a tightly focused marketplace around your passion, profession, or community.", "market"),
   ("subscription-marketplace.html", "subscription", "Subscription Marketplace Playbook | MultiVendorX", "Build a subscription marketplace that keeps customers coming back: a 90-day plan from niche to first renewals.", "market"),
+  ("auction-marketplace.html", "auction", "Auction Marketplace Playbook | MultiVendorX", "Launch an auction marketplace where every bid counts: a 90-day plan from niche to first closed auctions.", "market"),
+  ("booking-marketplace.html", "booking", "Booking Marketplace Playbook | MultiVendorX", "The straight-talk guide to building a booking marketplace: a 90-day plan from niche to repeat bookings.", "market"),
+  ("rental-marketplace.html", "rental", "Rental Marketplace Playbook | MultiVendorX", "Turn idle assets into revenue with a rental marketplace: a 90-day plan from niche to repeat renters.", "market"),
+  ("b2c-marketplace.html", "b2b", "B2B Marketplace Playbook | MultiVendorX", "Build a B2B marketplace businesses trust with big orders: a 90-day plan from niche to repeat business buyers.", "market"),
   ("why-multivendorx.html", "why", "Why MultiVendorX | Discover Why Thousands Choose MultiVendorX", "More than software: a complete solution with genuine community support.", "features"),
   ("community.html", "community", "Community | MultiVendorX", "Build smarter. Grow faster. Together.", "res"),
   ("support.html", "support", "Support | MultiVendorX", "Free community help for the plugin, or a direct line to our Pro support team.", "res"),
@@ -27,6 +31,8 @@ for fn, src, title, desc, on in PAGES:
         hdr = hdr.replace("{ON_%s}" % k, "on" if k == on else "")
     body = rd("pages/" + src + ".html").replace("{PLANS}", rd("parts/plans.html")).replace("{TESTI}", rd("parts/testi.html")).replace("{TESTI2}", rd("parts/testi2.html")).replace("{TRUST}", rd("parts/trust.html")).replace("{REVIEWS}", rd("parts/reviews.html"))
     EXTRA = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">\n<link rel="stylesheet" href="assets/css/home-ref.css?v=r29"><link rel="stylesheet" href="assets/css/home-nx.css?v=r29">\n') if src == 'home' else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">\n<link rel="stylesheet" href="assets/css/pages-gen.css?v=r29"><link rel="stylesheet" href="assets/css/pages-nx.css?v=r29">\n' if src != 'home' else '')
+    PB = ' pg-playbook' if src in ('subscription','auction','booking','rental','b2b') else ''
+    if PB: EXTRA += '<link rel="stylesheet" href="assets/css/mkt.css?v=r29">\n'
     html = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -37,7 +43,7 @@ for fn, src, title, desc, on in PAGES:
 <link rel="stylesheet" href="assets/css/mvx.css?v=r29">
 <link rel="stylesheet" href="assets/css/v2.css?v=r29">
 {EXTRA}</head>
-<body class="pg-{src}">
+<body class="pg-{src}{PB}">
 {rd("icons.html")}
 {hdr}
 <main>
