@@ -1621,6 +1621,10 @@ ul.mixl b{font-size:15px;color:var(--ink)}
 @media (max-width:640px){.pq-grid{grid-template-columns:1fr}.pq-inc{justify-content:flex-start}.pq-trust{justify-content:flex-start;text-align:left}.cmp2{padding:6px 14px 10px}.ch2,.cr2{grid-template-columns:1.3fr .8fr 1fr;gap:8px;font-size:13.5px}}
 .pq-trust .link{font-size:inherit}
 .pr-hero{padding-bottom:72px!important}
+/* pricing: 3 paid plans only */
+.pr-hero .pq-grid{grid-template-columns:repeat(3,1fr);max-width:980px;margin-left:auto;margin-right:auto}
+.pr-hero .pq-inc{max-width:980px;margin-left:auto;margin-right:auto}
+@media (max-width:820px){.pr-hero .pq-grid{grid-template-columns:1fr;max-width:420px}}
 /* ===== vs Dokan feature explorer (live content) ===== */
 .fc{display:grid;grid-template-columns:290px 1fr;padding:0;overflow:hidden;margin-top:16px}
 .fc-nav{display:flex;flex-direction:column;gap:4px;padding:14px;background:#faf9fd;border-right:1px solid var(--line)}

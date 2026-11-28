@@ -15,7 +15,7 @@ PAGES = [
   ("community.html", "community", "Community | MultiVendorX", "Build smarter. Grow faster. Together.", "res"),
   ("support.html", "support", "Support | MultiVendorX", "Free community help for the plugin, or a direct line to our Pro support team.", "res"),
   ("migration.html", "migration", "Migrate to MultiVendorX from Dokan, WCFM or WC Vendors", "A migration experience built on trust, guidance and simplicity.", "res"),
-  ("pricing.html", "pricing", "Pricing | MultiVendorX", "Invest in success, not just software. 104+ premium features from $149/year.", "pricing"),
+  ("pricing.html", "pricing", "Pricing | MultiVendorX", "Every Pro feature in every plan, from $149/year. Plans differ only by number of sites.", "pricing"),
   ("about-us.html", "about", "About Us | MultiVendorX", "MultiVendorX: it all started with a vision.", "res"),
   ("features.html", "features", "All Features | MultiVendorX", "Every MultiVendorX feature in one place: stores, products, orders, commissions and payouts. Start free, add Pro when you grow.", "features"),
   ("blog.html", "blog", "Blog | MultiVendorX", "Marketplace insights, strategies and guides from the MultiVendorX team.", "res"),
