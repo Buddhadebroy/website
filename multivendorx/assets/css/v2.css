@@ -2255,3 +2255,14 @@ body:not(.pg-home) main .cta-band{padding:72px 0!important}
 @keyframes mxdn{0%,75%{opacity:0}77%,94%{opacity:1}97%,100%{opacity:0}}
 @media (max-width:1100px){.mx{margin:24px auto 0}}
 @media (prefers-reduced-motion:reduce){.mx *{animation:none!important}.mx-bar i{transform:none}.mx-ok,.mx-done{opacity:1}.mx-run{opacity:0}.mx-src .d,.mx-names span:first-child{opacity:1}}
+/* about: team section (was unstyled) */
+.ab-lf-g{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.ab-lf-head{display:grid;gap:14px;justify-items:start}
+.ab-lf-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ab-lf-list li{display:flex;gap:12px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.ab-lf-list .ic{width:36px;height:36px;border-radius:9px;background:var(--brand-50);color:var(--brand);display:grid;place-items:center;flex:none}
+.ab-lf-list .ic svg.i{width:17px;height:17px}
+.ab-lf-list b{display:block;font-size:15px;font-weight:600;color:var(--ink)}
+.ab-lf-list p{font-size:13.5px;color:var(--muted);margin-top:2px}
+@media (max-width:900px){.ab-lf-g{grid-template-columns:1fr;gap:28px}}
+@media (max-width:560px){.ab-lf-list{grid-template-columns:1fr}}

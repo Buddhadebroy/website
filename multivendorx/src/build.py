@@ -16,7 +16,7 @@ PAGES = [
   ("support.html", "support", "Support | MultiVendorX", "Free community help for the plugin, or a direct line to our Pro support team.", "res"),
   ("migration.html", "migration", "Migrate to MultiVendorX from Dokan, WCFM or WC Vendors", "Move from Dokan, WCFM or WC Vendors and keep your vendors, products and orders. Free migration help.", "res"),
   ("pricing.html", "pricing", "Pricing | MultiVendorX", "Every Pro feature in every plan, from $149/year. Plans differ only by number of sites.", "pricing"),
-  ("about-us.html", "about", "About Us | MultiVendorX", "MultiVendorX: it all started with a vision.", "res"),
+  ("about-us.html", "about", "About Us | MultiVendorX", "Meet the Kolkata team behind MultiVendorX, the WooCommerce plugin for running multi-vendor marketplaces.", "res"),
   ("features.html", "features", "All Features | MultiVendorX", "Every MultiVendorX feature in one place: stores, products, orders, commissions and payouts. Start free, add Pro when you grow.", "features"),
   ("blog.html", "blog", "Blog | MultiVendorX", "Marketplace insights, strategies and guides from the MultiVendorX team.", "res"),
   ("compare-features.html", "compare", "Compare Features | MultiVendorX vs WCFM, WC Vendors and Dokan", "258 marketplace features compared side by side with Dokan, WCFM and WC Vendors.", "res"),
