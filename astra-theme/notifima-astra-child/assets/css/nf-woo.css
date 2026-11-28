@@ -1,0 +1,208 @@
+/* My Account page and BetterDocs (moved from the old Astra child theme). */
+:root {
+	--theme-color: #852AFF;
+	--theme-background: #852AFF12;
+	--section-background: #F0F4FE;
+}
+
+/* my account page style start */
+.enable-customer-support {
+	margin: 0 0 2rem;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0;
+	background: #F9F6FE;
+}
+
+.customer-support-img .support-team section {
+	display: flex;
+}
+
+.customer-support-img .support-team section .icon-container {
+	display: none;
+}
+
+.enable-customer-support .support-profile {
+	width: 30%;
+	display: flex;
+	border-bottom: none !important;
+	gap: 0.75rem;
+	padding: 1rem 30px 1rem 1rem;
+	border-right: 1px solid #0000001A;
+}
+
+.enable-customer-support .support-profile img {
+	height: 4rem;
+	width: 4rem;
+	border-radius: 0.25rem;
+	margin: 0 0 1rem;
+}
+
+.shape-text {
+	flex: 1;
+	margin-top: 0.5rem;
+}
+
+.enable-customer-support .support-profile .shape-text h3 {
+	font-size: 1.25rem;
+	margin: 0 0 0.5rem;
+}
+
+.enable-customer-support .support-profile .shape-text p {
+	font-size: 1.125rem !important;
+	margin: 0 0 1.5rem;
+	color: #5e5d60;
+}
+
+.enable-customer-support .support-profile .shape-text a.sign-out {
+	color: #3f1473;
+	float: right;
+}
+
+.enable-customer-support .customer-support-img {
+	width: 70%;
+	background-size: 100% 100%;
+	border-radius: 0.25rem;
+	overflow: hidden;
+	padding: 0 1rem;
+	position: relative;
+	margin-top: 1rem;
+}
+
+.customer-support-img:before {
+	background: url(https://catalogx.com/wp-content/uploads/2024/10/Now-you-create-coupon-for-your-valuable-customer-scaled-1.png) no-repeat 0 0;
+	position: absolute;
+	right: 10%;
+	top: 50%;
+	transform: translateY(-50%);
+	content: "";
+	width: 10rem;
+	height: 8rem;
+	background-size: cover;
+}
+
+.customer-support-img .support-team p:first-child {
+	margin: 0 0 0.5rem;
+	font-size: 1.5rem !important;
+	font-weight: 600;
+	font-family: 'Montserrat';
+	color: #5e5d60;
+}
+
+.customer-support-img .support-team a {
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.woocommerce-MyAccount-navigation {
+	padding-right: 30px;
+}
+
+.woocommerce-MyAccount-navigation ul li {
+	position: relative;
+	border: none;
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+	padding-left: 2.4rem !important;
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active a,
+.woocommerce-MyAccount-navigation ul li a:hover {
+	background: var(--theme-color);
+	color: white;
+	border-radius: 5px;
+}
+
+.woocommerce-MyAccount-navigation ul li::after {
+	font-family: WooCommerce;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 0.75rem;
+	transform: translatey(-50%);
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active::after,
+.woocommerce-MyAccount-navigation ul li:hover::after {
+	color: white;
+}
+
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--dashboard::after { content: '\e00c'; }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--orders::after { content: '\e01d'; }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--subscriptions::after { content: '\e020'; }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--api-keys::after { content: '\e025'; }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--api-downloads::after { content: '\e02e'; }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--downloads::after { content: '\e00a '; }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--edit-address::after { content: '\e01b'; }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--payment-methods::after { content: '\e01e'; }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--edit-account::after { content: '\e038'; }
+.woocommerce-MyAccount-navigation ul li.woocommerce-MyAccount-navigation-link--customer-logout::after { content: '\e030'; }
+
+.woocommerce-MyAccount-orders .api-manager-domains td {
+	padding: 1rem !important;
+}
+
+.woocommerce form .show-password-input::after,
+.woocommerce-page form .show-password-input::after {
+	font-family: WooCommerce;
+	speak: never;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	content: "\e010";
+	text-decoration: none;
+	margin-left: 0;
+	margin-top: -2px;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.woocommerce form .show-password-input {
+	position: absolute;
+	right: 0.625rem;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background: none;
+	color: black;
+	padding: 0;
+}
+
+.password-input {
+	position: relative;
+}
+
+form.edit-account input {
+	border: none;
+	background: var(--theme-background) !important;
+	border-radius: 5px;
+}
+
+form.edit-account input#account_display_name em {
+	font-size: 0.8rem;
+}
+
+form.edit-account label {
+	padding-bottom: 0.6rem !important;
+}
+
+.woocommerce-form-row label {
+	padding: 0;
+}
+
+.woocommerce-form-row label input {
+	margin-right: 0.5rem;
+}
+/* my account page style end */
+
+/* BetterDocs: see assets/css/nf-docs.css */
+
+@media (max-width: 921px) {
+	.enable-customer-support .support-profile,
+	.enable-customer-support .customer-support-img { width: 100%; border-right: 0; }
+	.customer-support-img:before { display: none; }
+}

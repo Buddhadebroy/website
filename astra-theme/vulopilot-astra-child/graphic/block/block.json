@@ -1,0 +1,76 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "category": "vulopilot",
+ "textdomain": "vulopilot",
+ "editorScript": "file:./index.js",
+ "name": "vulopilot/graphic",
+ "title": "Animated Graphic (VuloPilot)",
+ "icon": "chart-area",
+ "description": "Any animated graphic or section from the VuloPilot site (same as the [vp_graphic] shortcode).",
+ "keywords": [
+  "animation",
+  "demo",
+  "graphic",
+  "shortcode",
+  "screenshot"
+ ],
+ "render": "file:./render.php",
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "spacing": {
+   "margin": true
+  }
+ },
+ "attributes": {
+  "name": {
+   "type": "string",
+   "default": "geo-demo"
+  },
+  "maxWidth": {
+   "type": "number",
+   "default": 0
+  },
+  "colorPrimary": {
+   "type": "string",
+   "default": ""
+  },
+  "colorPrimarySoft": {
+   "type": "string",
+   "default": ""
+  },
+  "colorAccent": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBg": {
+   "type": "string",
+   "default": ""
+  },
+  "colorSurface": {
+   "type": "string",
+   "default": ""
+  },
+  "colorText": {
+   "type": "string",
+   "default": ""
+  },
+  "colorMuted": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBorder": {
+   "type": "string",
+   "default": ""
+  },
+  "radius": {
+   "type": "number",
+   "default": 4
+  }
+ }
+}

@@ -1,0 +1,182 @@
+/*
+ * VuloMail theme stylesheet source.
+ * Compiled by src/build.mjs into assets/css/vm-tailwind.css. Every utility carries the vm: prefix
+ * (vm:flex, vm:sm:px-8, vm:card), so nothing clashes with WordPress, Astra or plugin class names.
+ * Tokens mirror the original site's globals.css 1:1. Every value the theme uses is a :root variable,
+ * and every :root variable has a field in Customize → VuloMail → Design tokens.
+ */
+@import "tailwindcss/theme.css" layer(theme) prefix(vm);
+@import "./base.css";
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@source "../graphic";
+@source "../assets/js/vm-site.js";
+@source "../assets/js/vm-effects.js";
+@source "../template-parts";
+@source "../inc";
+@source "./kadence.src.css";
+@source "../pattern-files";
+@source "../template-parts";
+@source "../404.php";
+
+:root {
+  --paper: #f7f4ee;
+  --paper-deep: #efe9df;
+  --surface: #ffffff;
+  --ink: #13141b;
+  --ink-soft: #4b4c58;
+  --ink-mute: #85858f;
+  --line: #e4ddd1;
+  --line-strong: #d3cabb;
+  --red: #e5482c;
+  --red-soft: #fde6df;
+  --blue: #003bcd;
+  --blue-light: #0063fc;
+  --blue-soft: #e0e9ff;
+  --green: #17936a;
+  --green-soft: #dcf3ea;
+  --amber: #d99a12;
+  --amber-soft: #fbf0d4;
+  --amber-ink: #9a6b00;
+  --amber-deep: #6d4c00;
+  --code-bg: #14151c;
+  --code-line: #2a2b36;
+  --code-text: #e6e3dc;
+  --star: #f5b301;
+  --paid: #e0a92e;
+  --log-highlight: rgba(40, 73, 216, 0.08);
+  --traffic-red: #ff5f57;
+  --traffic-amber: #febc2e;
+  --traffic-green: #28c840;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --font-nunito: "Nunito", "Nunito Fallback";
+  --font-geist-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Content width shared by header, footer and every row (max-w-7xl in the original). */
+  --container-7xl: 80rem;
+  --vm-gutter: 1rem;
+  --vm-gutter-sm: 2rem;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-mute: var(--ink-mute);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-red: var(--red);
+  --color-red-soft: var(--red-soft);
+  --color-blue: var(--blue);
+  --color-blue-light: var(--blue-light);
+  --color-blue-soft: var(--blue-soft);
+  --color-green: var(--green);
+  --color-green-soft: var(--green-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-amber-ink: var(--amber-ink);
+  --color-amber-deep: var(--amber-deep);
+  --color-code-bg: var(--code-bg);
+  --color-code-line: var(--code-line);
+  --color-code-text: var(--code-text);
+  --color-star: var(--star);
+  --color-paid: var(--paid);
+
+  --font-sans: var(--font-nunito);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-nunito);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-spin-slow: spin 28s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-blink: blink 1.1s steps(2, start) infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes blink {
+    to { visibility: hidden; }
+  }
+}
+
+/* ---------- Brand motifs (same rules as the original globals.css) ---------- */
+
+@utility airmail {
+  background: repeating-linear-gradient(-45deg, var(--red) 0 14px, transparent 14px 22px, var(--blue) 22px 36px, transparent 36px 44px);
+}
+
+@utility stamp {
+  --r: 6px;
+  -webkit-mask:
+    linear-gradient(#000 0 0) center / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat,
+    radial-gradient(var(--r), #0000 97%, #000) calc(-1.5 * var(--r)) calc(-1.5 * var(--r)) / calc(3 * var(--r)) calc(3 * var(--r)) round;
+  mask:
+    linear-gradient(#000 0 0) center / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat,
+    radial-gradient(var(--r), #0000 97%, #000) calc(-1.5 * var(--r)) calc(-1.5 * var(--r)) / calc(3 * var(--r)) calc(3 * var(--r)) round;
+}
+
+@utility dot-grid {
+  background-image: radial-gradient(var(--line-strong) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility grain {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 0 0.33 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@utility display {
+  font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  & em { font-style: normal; }
+}
+
+@utility eyebrow {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility link-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.45s var(--ease-out);
+  &:hover { background-size: 100% 1px; }
+}
+
+@utility card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  box-shadow: 0 1px 0 rgba(19, 20, 27, 0.03), 0 12px 32px -18px rgba(19, 20, 27, 0.18);
+}
+
+@utility code-scroll {
+  &::-webkit-scrollbar { height: 6px; }
+  &::-webkit-scrollbar-thumb { background: #ffffff22; border-radius: 3px; }
+}
+
+@utility text-balance { text-wrap: balance; }
+@utility text-pretty { text-wrap: pretty; }

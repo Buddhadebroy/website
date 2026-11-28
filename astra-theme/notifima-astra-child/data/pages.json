@@ -1,0 +1,67 @@
+[
+ {
+  "slug": "home",
+  "title": "Home",
+  "front": true,
+  "patterns": [
+   "section-price-shell",
+   "section-trust"
+  ]
+ },
+ {
+  "slug": "features",
+  "title": "Features",
+  "front": false,
+  "patterns": [
+   "section-price-shell",
+   "section-tcards",
+   "section-trust"
+  ]
+ },
+ {
+  "slug": "pricing",
+  "title": "Pricing",
+  "front": false,
+  "patterns": [
+   "section-price-shell",
+   "section-tcards",
+   "section-trust"
+  ]
+ },
+ {
+  "slug": "blog",
+  "title": "Blog",
+  "front": false,
+  "patterns": []
+ },
+ {
+  "slug": "release-notes",
+  "title": "Release Notes",
+  "front": false,
+  "patterns": []
+ },
+ {
+  "slug": "release-notes-pro",
+  "title": "Release Notes Pro",
+  "front": false,
+  "patterns": []
+ },
+ {
+  "slug": "about-us",
+  "title": "About Us",
+  "front": false,
+  "patterns": []
+ },
+ {
+  "slug": "support-policy",
+  "title": "Support Policy",
+  "front": false,
+  "patterns": []
+ },
+ {
+  "slug": "contact-us",
+  "title": "Contact Us",
+  "front": false,
+  "patterns": []
+ }
+]

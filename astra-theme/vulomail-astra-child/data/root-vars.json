@@ -1,0 +1,524 @@
+[
+ {
+  "name": "--paper",
+  "value": "#f7f4ee",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--paper-deep",
+  "value": "#efe9df",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--surface",
+  "value": "#fff",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--ink",
+  "value": "#13141b",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--ink-soft",
+  "value": "#4b4c58",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--ink-mute",
+  "value": "#85858f",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--line",
+  "value": "#e4ddd1",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--line-strong",
+  "value": "#d3cabb",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--red",
+  "value": "#e5482c",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--red-soft",
+  "value": "#fde6df",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--blue",
+  "value": "#003bcd",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--blue-light",
+  "value": "#0063fc",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--blue-soft",
+  "value": "#e0e9ff",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--green",
+  "value": "#17936a",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--green-soft",
+  "value": "#dcf3ea",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--amber",
+  "value": "#d99a12",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--amber-soft",
+  "value": "#fbf0d4",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--amber-ink",
+  "value": "#9a6b00",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--amber-deep",
+  "value": "#6d4c00",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--code-bg",
+  "value": "#14151c",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--code-line",
+  "value": "#2a2b36",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--code-text",
+  "value": "#e6e3dc",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--star",
+  "value": "#f5b301",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--paid",
+  "value": "#e0a92e",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--vm-color-00000000",
+  "value": "#0000",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--vm-color-000000",
+  "value": "#000",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--font-nunito",
+  "value": "\"Nunito\", \"Nunito Fallback\"",
+  "type": "text",
+  "group": "Fonts"
+ },
+ {
+  "name": "--font-geist-mono",
+  "value": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, monospace",
+  "type": "text",
+  "group": "Fonts"
+ },
+ {
+  "name": "--vm-color-white",
+  "value": "#fff",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--vm-spacing",
+  "value": ".25rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-container-md",
+  "value": "28rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-container-2xl",
+  "value": "42rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-container-3xl",
+  "value": "48rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-container-4xl",
+  "value": "56rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-container-6xl",
+  "value": "72rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-container-7xl",
+  "value": "80rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-xs",
+  "value": ".75rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-xs--line-height",
+  "value": "calc(1 / .75)",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-sm",
+  "value": ".875rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-sm--line-height",
+  "value": "calc(1.25 / .875)",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-base",
+  "value": "1rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-base--line-height",
+  "value": "calc(1.5 / 1)",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-lg",
+  "value": "1.125rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-lg--line-height",
+  "value": "calc(1.75 / 1.125)",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-xl",
+  "value": "1.25rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-xl--line-height",
+  "value": "calc(1.75 / 1.25)",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-2xl",
+  "value": "1.5rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-2xl--line-height",
+  "value": "calc(2 / 1.5)",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-3xl",
+  "value": "1.875rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-3xl--line-height",
+  "value": "calc(2.25 / 1.875)",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-4xl",
+  "value": "2.25rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-4xl--line-height",
+  "value": "calc(2.5 / 2.25)",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-5xl",
+  "value": "3rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-5xl--line-height",
+  "value": "1",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-6xl",
+  "value": "3.75rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-6xl--line-height",
+  "value": "1",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-7xl",
+  "value": "4.5rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-7xl--line-height",
+  "value": "1",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-8xl",
+  "value": "6rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-text-8xl--line-height",
+  "value": "1",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-font-weight-medium",
+  "value": "500",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-font-weight-semibold",
+  "value": "600",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-font-weight-bold",
+  "value": "700",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-tracking-tight",
+  "value": "-.025em",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-tracking-wide",
+  "value": ".025em",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-leading-tight",
+  "value": "1.25",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-leading-snug",
+  "value": "1.375",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-leading-relaxed",
+  "value": "1.625",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-radius-sm",
+  "value": ".25rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-radius-md",
+  "value": ".375rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-radius-lg",
+  "value": ".5rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-radius-xl",
+  "value": ".75rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-radius-2xl",
+  "value": "1rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-radius-3xl",
+  "value": "1.5rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-animate-ping",
+  "value": "ping 1s cubic-bezier(0, 0, .2, 1) infinite",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-blur-3xl",
+  "value": "64px",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-default-transition-duration",
+  "value": ".15s",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-default-transition-timing-function",
+  "value": "cubic-bezier(.4, 0, .2, 1)",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--container-7xl",
+  "value": "80rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-gutter",
+  "value": "1rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--vm-gutter-sm",
+  "value": "2rem",
+  "type": "text",
+  "group": "Spacing & width"
+ },
+ {
+  "name": "--ease-out",
+  "value": "cubic-bezier(.22, 1, .36, 1)",
+  "type": "text",
+  "group": "Effects & easing"
+ },
+ {
+  "name": "--ease-spring",
+  "value": "cubic-bezier(.34, 1.56, .64, 1)",
+  "type": "text",
+  "group": "Effects & easing"
+ },
+ {
+  "name": "--log-highlight",
+  "value": "#2849d814",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--traffic-red",
+  "value": "#ff5f57",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--traffic-amber",
+  "value": "#febc2e",
+  "type": "color",
+  "group": "Colours"
+ },
+ {
+  "name": "--traffic-green",
+  "value": "#28c840",
+  "type": "color",
+  "group": "Colours"
+ }
+]

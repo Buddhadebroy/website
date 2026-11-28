@@ -1,0 +1,123 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "vuloform/privacy-words",
+ "title": "Privacy Scrolling Words (VuloForm)",
+ "category": "vuloform",
+ "icon": "shield",
+ "description": "Huge faded words slide left and right while you scroll, behind a heading and promise cards.",
+ "keywords": [
+  "vuloform",
+  "section"
+ ],
+ "textdomain": "vuloform",
+ "attributes": {
+  "band1": {
+   "type": "string",
+   "default": ""
+  },
+  "band2": {
+   "type": "string",
+   "default": ""
+  },
+  "eyebrow": {
+   "type": "string",
+   "default": ""
+  },
+  "title": {
+   "type": "string",
+   "default": ""
+  },
+  "highlight": {
+   "type": "string",
+   "default": ""
+  },
+  "titleAfter": {
+   "type": "string",
+   "default": ""
+  },
+  "intro": {
+   "type": "string",
+   "default": ""
+  },
+  "promises": {
+   "type": "string",
+   "default": ""
+  },
+  "extras": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "className": true,
+  "spacing": {
+   "margin": true
+  }
+ },
+ "editorScript": "vf-blocks-editor",
+ "style": [
+  "vf-tailwind",
+  "vf-site",
+  "vf-effects"
+ ],
+ "viewScript": [
+  "vf-effects",
+  "vf-site"
+ ],
+ "render": "file:./render.php",
+ "vfSection": "privacy",
+ "vfFields": [
+  {
+   "key": "band1",
+   "type": "text",
+   "label": "Big words, row 1 (slides left)"
+  },
+  {
+   "key": "band2",
+   "type": "text",
+   "label": "Big words, row 2 (slides right)"
+  },
+  {
+   "key": "eyebrow",
+   "type": "text",
+   "label": "Small label"
+  },
+  {
+   "key": "title",
+   "type": "text",
+   "label": "Title before the blue word"
+  },
+  {
+   "key": "highlight",
+   "type": "text",
+   "label": "Blue word"
+  },
+  {
+   "key": "titleAfter",
+   "type": "text",
+   "label": "Title after the blue word"
+  },
+  {
+   "key": "intro",
+   "type": "textarea",
+   "label": "Intro text"
+  },
+  {
+   "key": "promises",
+   "type": "textarea",
+   "label": "Cards with a tick (one per line: Title | text)"
+  },
+  {
+   "key": "extras",
+   "type": "textarea",
+   "label": "Small blue cards (one per line: Title | text)"
+  }
+ ]
+}

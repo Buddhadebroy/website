@@ -1,0 +1,71 @@
+/*
+ * Tailwind preflight equivalents (the original site runs on Tailwind's preflight), scoped to the theme's own
+ * sections: Kadence rows with vm-row / vm-row-full / vm-grid, theme graphics, header, footer, blog views and
+ * anything with the class vm-scope. Blocks you add outside those, plugins and wp-admin keep their own styles.
+ * Kept at low specificity so utilities and Kadence classes win; :is(*, :hover, :focus) lifts the
+ * reset just above Astra's generic a:hover / button:hover rules.
+ */
+html:root { font-size: 100%; line-height: 1.5; -webkit-text-size-adjust: 100%; tab-size: 4; }
+
+body.vm-tw {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(*, ::before, ::after) { box-sizing: border-box; border: 0 solid; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(h1, h2, h3, h4, h5, h6, p, blockquote, figure, pre, dl, dd, ol, ul, menu, hr) { margin: 0; padding: 0; }
+/* Same reset inside Astra's .entry-content, whose own rules (.entry-content p …) are more specific than the one above. */
+.entry-content :is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(h1, h2, h3, h4, h5, h6, p, blockquote, figure, pre, dl, dd, ol, ul, li, menu, hr, table) { margin: 0; padding: 0; }
+.entry-content :is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(ol, ul, menu) { list-style: none; }
+.entry-content :is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(h1, h2, h3, h4, h5, h6) { font-size: inherit; font-weight: inherit; line-height: inherit; color: inherit; font-family: inherit; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(h1, h2, h3, h4, h5, h6) { font-size: inherit; font-weight: inherit; line-height: inherit; color: inherit; font-family: inherit; letter-spacing: inherit; text-transform: none; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(ol, ul, menu) { list-style: none; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(a):is(*, :hover, :focus, :visited) { color: inherit; text-decoration: inherit; -webkit-text-decoration: inherit; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(b, strong) { font-weight: bolder; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(code, kbd, samp, pre) { font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1em; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(small) { font-size: 80%; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(table) { text-indent: 0; border-color: inherit; border-collapse: collapse; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(img, svg, video, canvas, audio, iframe, embed, object) { display: block; vertical-align: middle; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(img, video) { max-width: 100%; height: auto; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(button, input, select, optgroup, textarea):is(*, :hover, :focus, :active) {
+  font: inherit;
+  font-feature-settings: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  text-transform: none;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+}
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(button, [role="button"]) { cursor: pointer; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(button, input:where([type="button"], [type="reset"], [type="submit"])) { appearance: button; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(textarea) { resize: vertical; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(input, textarea)::placeholder { opacity: 1; color: color-mix(in oklab, currentColor 50%, transparent); }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(summary) { display: list-item; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where([hidden]:not([hidden="until-found"])) { display: none !important; }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :where(em) { font-style: italic; }
+
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) ::selection { background: var(--ink); color: var(--paper); }
+:is(.vm-row, .vm-row-full, .vm-grid, .vm-graphic, .vm-layout, .vm-main, .vm-site-logo, .vm-site-menu, .vm-scope) :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+
+html { color-scheme: light; -webkit-tap-highlight-color: transparent; }
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+@keyframes draw { to { stroke-dashoffset: 0; } }

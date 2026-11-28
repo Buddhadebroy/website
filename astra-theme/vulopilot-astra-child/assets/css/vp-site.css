@@ -1,0 +1,288 @@
+/* ==========================================================================
+   VuloPilot – site styles that sit next to the compiled Tailwind file.
+   1. Design tokens            5. Consultation popup
+   2. Page / Astra integration 6. Scroll reveal classes (for blocks)
+   3. Header + mega menu       7. Image zoom + browser frame classes (for blocks)
+   4. Keyframes                8. Small helpers
+   ========================================================================== */
+
+/* Plus Jakarta Sans is loaded from Google Fonts (see vp_font_url() in inc/setup.php), or by Astra/Kadence
+   if you turn that off in Customize → VuloPilot. The theme no longer ships font files. */
+
+/* 1. Design tokens (from app/globals.css) ---------------------------------- */
+:root {
+	--bg: #f5f7fc;
+	--surface: #ffffff;
+	--ink: #0a1230;
+	--muted: #5d6784;
+	--line: #e1e6f2;
+	--sage: #002991;
+	--sage-soft: #dfe7fb;
+	--apricot: #f91305b8;
+	--apricot-soft: #fde4e1;
+	--lilac: #4c6fd1;
+	--lilac-soft: #e4eafa;
+	--rose: #d8362b;
+	--flare: #ff5d50;
+	--font-jakarta: "Plus Jakarta Sans";
+	--vp-ease: cubic-bezier(.22, 1, .36, 1);
+	--vp-spring: cubic-bezier(.34, 1.36, .64, 1);
+	--vp-soft-spring: cubic-bezier(.3, 1.18, .5, 1); /* a gentle overshoot for the mega menu */
+}
+
+/* 2. Page / Astra integration ---------------------------------------------- */
+html { scroll-behavior: smooth; }
+body.vp-site {
+	background: var(--bg) !important;
+/* 	color: var(--ink); */
+	font-family: var(--font-jakarta), system-ui, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+body.vp-site #page,
+body.vp-site .site-content,
+body.vp-site.ast-separate-container,
+body.vp-site.ast-plain-container { background: transparent; }
+::selection { background: var(--apricot-soft); }
+
+.grain::before {
+	content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .05;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Full-width canvas for the Home / Pricing templates */
+body.vp-template #content,
+body.vp-template .site-content { padding: 0 !important; margin: 0; }
+body.vp-template #content > .ast-container {
+	max-width: none !important; width: 100%; padding: 0 !important; margin: 0; display: block;
+}
+body.vp-template .vp-template-main { display: block; width: 100%; }
+body.vp-template .vp-template-extra { max-width: 72rem; margin: 0 auto; padding: 2.5rem 1.25rem; }
+
+/* Graphics placed in block content: never inherit Astra's paragraph spacing */
+.entry-content .vp-mount { margin-bottom: 0; }
+.entry-content > .vp-mount + * { margin-top: 0; }
+
+/* 3. Header + mega menu ---------------------------------------------------- */
+.admin-bar .vp-header.fixed { top: calc(1rem + 2rem); }
+@media (max-width: 48.875rem) { .admin-bar .vp-header.fixed { top: calc(1rem + 2.875rem); } }
+@media (max-width: 37.5rem) { .admin-bar .vp-header.fixed { top: 1rem; } }
+.vp-scope input[type="range"].appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.vp-scope input[type="range"].appearance-none::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+}
+.vp-scope input[type="range"].appearance-none::-moz-range-track {
+  -moz-appearance: none;
+  background: transparent;
+}
+.vp-scope.vp-scope .vp-nav-pill {
+	top: 0; left: 0; width: 0; height: 0; opacity: 0; z-index: 0; pointer-events: none;
+	/* Original springy glide, with a softer spring and a little more time so it never snaps. */
+	transition: transform .46s var(--vp-soft-spring), width .46s var(--vp-soft-spring), opacity .2s ease;
+}
+.vp-scope.vp-scope .vp-nav-pill.is-on { opacity: 1; }
+.vp-scope.vp-scope .vp-nav-link.is-open { color: var(--ink); }
+.vp-scope.vp-scope .vp-nav-link.is-open .vp-chev { transform: rotate(180deg); color: var(--sage); }
+
+.vp-scope.vp-scope .vp-progress { transform: scaleX(0); will-change: transform; }
+
+.vp-scope.vp-scope .vp-pops { pointer-events: none; }
+.vp-scope.vp-scope .vp-pops.has-open { pointer-events: auto; }
+/* Original drop-and-scale entrance, slowed down and eased. */
+.vp-scope.vp-scope .vp-pop {
+	position: absolute; left: 0; right: 0; top: 0.75rem;
+	opacity: 0; visibility: hidden; pointer-events: none;
+	transform: translateY(-0.375rem) scale(.99); transform-origin: 50% 0;
+	transition: opacity .2s ease, transform .2s var(--vp-ease), visibility 0s linear .2s;
+	will-change: opacity, transform;
+}
+.vp-scope.vp-scope .vp-pop.is-open {
+	opacity: 1; visibility: visible; pointer-events: auto; transform: none;
+	transition: opacity .3s var(--vp-ease), transform .42s var(--vp-soft-spring), visibility 0s;
+}
+.vp-scope.vp-scope .vp-pop.is-entering { transform: translateY(-0.5rem) scale(.98); opacity: 0; transition: none; }
+/* Moving from one menu to another: cross-fade in place, so the panel never jumps. */
+.vp-scope.vp-scope .vp-pops.is-switching .vp-pop { transform: none; transition: opacity .2s ease, visibility 0s linear .2s; }
+.vp-scope.vp-scope .vp-pops.is-switching .vp-pop.is-open { transition: opacity .26s ease, visibility 0s; }
+
+/* left rail */
+.vp-scope.vp-scope .vp-rail-pill { left: 0.625rem; right: 0.625rem; top: 0; height: 0; opacity: 0; transition: transform .44s var(--vp-soft-spring), height .44s var(--vp-soft-spring), opacity .2s; }
+.vp-scope.vp-scope .vp-rail-pill.is-on { opacity: 1; }
+.vp-scope.vp-scope .vp-rail-btn.is-on .vp-rail-ic { background: var(--sage); color: #fff; }
+.vp-scope.vp-scope .vp-rail-btn.is-on .vp-rail-count { background: color-mix(in oklab, var(--flare) 15%, transparent); color: var(--flare); }
+
+/* category panels + rows */
+/* All categories share one grid cell, so the panel keeps the height of the tallest one
+   and never jumps when you hover another category. */
+.vp-scope.vp-scope .vp-cats { display: grid; grid-template-columns: minmax(0, 1fr); }
+.vp-scope.vp-scope .vp-cat { display: flex; grid-area: 1 / 1; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .16s ease, visibility 0s linear .16s; }
+.vp-scope.vp-scope .vp-cat.is-active { opacity: 1; visibility: inherit; pointer-events: inherit; transition: opacity .26s ease .03s, visibility 0s; }
+/* Original rows-slide-in-from-the-right, on every open and every category change, eased. */
+.vp-scope.vp-scope .vp-pop.is-open .vp-cat.is-active .vp-row-li { animation: vpRowIn .38s var(--vp-ease) both; animation-delay: calc(var(--i, 0) * 22ms); }
+.vp-scope.vp-scope .vp-row-hl { top: 0; left: 0; width: 0; height: 0; opacity: 0; z-index: 0; pointer-events: none; transition: transform .4s var(--vp-soft-spring), width .4s var(--vp-soft-spring), height .4s var(--vp-soft-spring), opacity .16s; }
+.vp-scope.vp-scope .vp-row-hl.is-on { opacity: 1; }
+.vp-scope.vp-scope .vp-row-ic { transition: transform .45s var(--vp-soft-spring), background-color .2s, color .2s, border-color .2s; }
+.vp-scope.vp-scope .vp-row.is-on .vp-row-ic { border-color: var(--sage); background: var(--sage); color: #fff; transform: scale(1.1) rotate(-6deg); }
+.vp-scope.vp-scope .vp-row.is-on .vp-row-label { color: var(--sage); }
+
+/* promo card motion */
+.vp-blob-a { animation: vpBlobA 8s ease-in-out infinite; }
+.vp-blob-b { animation: vpBlobB 9s ease-in-out infinite; }
+.vp-blob-c { animation: vpBlobC 8s ease-in-out infinite; }
+.vp-blob-d { animation: vpBlobD 9s ease-in-out infinite; }
+.vp-bob { animation: vpBob 3s ease-in-out infinite; }
+
+/* mobile */
+.vp-scope.vp-scope .vp-mobile { opacity: 0; visibility: hidden; transform: translateY(-0.5rem); transition: opacity .2s, transform .2s var(--vp-ease), visibility 0s linear .2s; }
+.vp-scope.vp-scope .vp-mobile.is-open { opacity: 1; visibility: visible; transform: none; transition: opacity .2s, transform .25s var(--vp-ease), visibility 0s; }
+.vp-scope .vp-burger-close { display: none; }
+.vp-scope [aria-expanded="true"] > .vp-burger-open { display: none; }
+.vp-scope [aria-expanded="true"] > .vp-burger-close { display: inline; }
+.vp-scope summary::-webkit-details-marker { display: none; }
+.vp-scope .vp-burger-open, .vp-scope .vp-burger-close { line-height: 0; }
+
+/* 4. Keyframes (globals.css + motion values from Nav/ConsultPopup) ---------- */
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-0.625rem); } }
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes vpFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes vpRowIn { from { opacity: 0; transform: translateX(0.5rem); } to { opacity: 1; transform: none; } }
+@keyframes vpBlobA { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(1.625rem, -0.75rem); } }
+@keyframes vpBlobB { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-1.25rem, 0.875rem); } }
+@keyframes vpBlobC { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(1.875rem, -1rem); } }
+@keyframes vpBlobD { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-1.5rem, 1.25rem); } }
+@keyframes vpBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-0.1875rem); } }
+@keyframes vpPopIn { from { transform: scale(0); } 70% { transform: scale(1.08); } to { transform: scale(1); } }
+@keyframes vpZoomIn { from { opacity: 0; transform: translateY(1.25rem) scale(.96); } to { opacity: 1; transform: none; } }
+
+/* 5. Consultation popup ----------------------------------------------------- */
+.vp-scope.vp-scope .vp-consult { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .25s ease, visibility 0s linear .25s; }
+.vp-scope.vp-scope .vp-consult.is-open { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .25s ease, visibility 0s; }
+.vp-scope .vp-consult-box { transform: translateY(1.875rem) scale(.96); opacity: 0; transition: transform .45s var(--vp-spring), opacity .3s ease; }
+.vp-consult.is-open .vp-consult-box { transform: none; opacity: 1; }
+.vp-scope.vp-scope .vp-consult.is-sent .vp-consult-form,
+.vp-consult.is-sent .vp-consult-form { display: none; }
+.vp-scope.vp-scope .vp-consult.is-sent .vp-consult-done,
+.vp-consult.is-sent .vp-consult-done { display: flex; }
+.vp-consult.is-sent .vp-pop-in { animation: vpPopIn .5s var(--vp-ease) .1s both; }
+.vp-scope.vp-scope .vp-consult-err.is-on { display: block; }
+html.vp-lock, html.vp-lock body { overflow: hidden; }
+
+/* 6. Scroll reveal --------------------------------------------------------------
+   Add one class to any block / section (Advanced → Additional CSS class):
+     vp-reveal          fade up (same as <Reveal> on the original site)
+     vp-reveal-left     slide in from the left      vp-reveal-right   from the right
+     vp-reveal-zoom     scale up                    vp-reveal-fade    fade only
+     vp-reveal-down     drop down
+     vp-stagger         reveal the children one after another (cards, columns, list items)
+     vp-delay-1 … vp-delay-8   wait 0.1s … 0.8s
+     vp-reveal-slow / vp-reveal-fast   1.2s / 0.5s
+     vp-reveal-repeat   animate every time it scrolls into view
+   Content is only hidden when JavaScript runs, so the editor and crawlers always see it. */
+html.vp-js:not(.vp-noanim) :is(.vp-reveal, .vp-reveal-left, .vp-reveal-right, .vp-reveal-zoom, .vp-reveal-fade, .vp-reveal-down, .vp-reveal-item):not(.vp-in) {
+	opacity: 0;
+}
+html.vp-js:not(.vp-noanim) .vp-reveal:not(.vp-in),
+html.vp-js:not(.vp-noanim) .vp-reveal-item:not(.vp-in) { transform: translate3d(0, 1.5rem, 0); }
+html.vp-js:not(.vp-noanim) .vp-reveal-left:not(.vp-in) { transform: translate3d(-2.5rem, 0, 0); }
+html.vp-js:not(.vp-noanim) .vp-reveal-right:not(.vp-in) { transform: translate3d(2.5rem, 0, 0); }
+html.vp-js:not(.vp-noanim) .vp-reveal-zoom:not(.vp-in) { transform: scale(.94); }
+html.vp-js:not(.vp-noanim) .vp-reveal-down:not(.vp-in) { transform: translate3d(0, -1.5rem, 0); }
+html.vp-js :is(.vp-reveal, .vp-reveal-left, .vp-reveal-right, .vp-reveal-zoom, .vp-reveal-fade, .vp-reveal-down, .vp-reveal-item):not(.vp-done) {
+	transition: opacity var(--vp-dur, .8s) var(--vp-ease), transform var(--vp-dur, .8s) var(--vp-ease);
+	transition-delay: var(--vp-delay, 0s);
+	will-change: opacity, transform;
+}
+.vp-reveal-slow { --vp-dur: 1.2s; }
+.vp-reveal-fast { --vp-dur: .5s; }
+.vp-delay-1 { --vp-delay: .1s; } .vp-delay-2 { --vp-delay: .2s; } .vp-delay-3 { --vp-delay: .3s; } .vp-delay-4 { --vp-delay: .4s; }
+.vp-delay-5 { --vp-delay: .5s; } .vp-delay-6 { --vp-delay: .6s; } .vp-delay-7 { --vp-delay: .7s; } .vp-delay-8 { --vp-delay: .8s; }
+@media (prefers-reduced-motion: reduce) {
+	html.vp-js :is(.vp-reveal, .vp-reveal-left, .vp-reveal-right, .vp-reveal-zoom, .vp-reveal-fade, .vp-reveal-down, .vp-reveal-item) { opacity: 1 !important; transform: none !important; transition: none !important; }
+	.marquee, .floaty, .vp-blob-a, .vp-blob-b, .vp-blob-c, .vp-blob-d, .vp-bob { animation: none; }
+}
+
+/* Hover lift: vp-lift on a card / column */
+.vp-lift { transition: transform .35s var(--vp-spring), box-shadow .35s ease; }
+.vp-lift:hover { transform: translateY(-0.3125rem); }
+/* Floating: vp-float (the gentle up-down on the hero chips) */
+.vp-float { animation: floaty 6s ease-in-out infinite; }
+
+/* 7. Image zoom + frame -----------------------------------------------------------
+     vp-zoom     click to open a lightbox, magnifier appears on hover (screenshot style)
+     vp-frame    browser-window frame with three dots and an address pill
+                 (address text: the image Title, else "wp-admin / VuloPilot")
+     vp-shadow   the soft blue shadow used under every screenshot
+   Put the class on the Image block (Advanced → Additional CSS class). */
+.vp-zoom-target { position: relative; display: block; cursor: zoom-in; }
+.vp-zoom-target img { display: block; }
+.vp-zoom-btn {
+	position: absolute; right: 0.75rem; top: 0.75rem; z-index: 2;
+	display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 624.9375rem;
+	background: color-mix(in oklab, var(--ink) 80%, transparent); color: var(--bg);
+	-webkit-backdrop-filter: blur(0.5rem); backdrop-filter: blur(0.5rem);
+	opacity: 0; transition: opacity .15s ease; pointer-events: none;
+}
+.vp-zoom-target:hover .vp-zoom-btn, .vp-zoom-target:focus-visible .vp-zoom-btn { opacity: 1; }
+.vp-lightbox {
+	position: fixed; inset: 0; z-index: 100000; overflow: auto; padding: 1rem;
+	background: color-mix(in oklab, var(--ink) 80%, transparent);
+	-webkit-backdrop-filter: blur(0.25rem); backdrop-filter: blur(0.25rem);
+	opacity: 0; transition: opacity .2s ease; cursor: zoom-out;
+}
+@media (min-width: 40rem) { .vp-lightbox { padding: 2.5rem; } }
+.vp-lightbox.is-open { opacity: 1; }
+.vp-lightbox img {
+	display: block; margin: 0 auto; width: 100%; height: auto; max-width: 87.5rem;
+	border-radius: 0.25rem; background: var(--surface); box-shadow: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, .25); cursor: default;
+}
+.vp-lightbox.is-open img { animation: vpZoomIn .35s var(--vp-ease) both; }
+.vp-lightbox-close {
+	position: fixed; right: 1.25rem; top: 1.25rem; z-index: 2; display: grid; place-items: center;
+	width: 2.5rem; height: 2.5rem; border: 0; padding: 0; border-radius: 624.9375rem; cursor: pointer;
+	background: var(--bg); color: var(--ink); box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, .1);
+}
+.vp-lightbox-close:hover, .vp-lightbox-close:focus { background: var(--surface); color: var(--ink); }
+.vp-lightbox-cap { margin: 0.75rem auto 0; max-width: 87.5rem; text-align: center; color: #fff; font-size: 0.875rem; }
+
+.vp-frame-box {
+	overflow: hidden; border: 0.0625rem solid var(--line); border-radius: 0.25rem; background: var(--surface);
+	box-shadow: 0 1.875rem 4.375rem -2.25rem rgba(0, 41, 145, .5);
+}
+.vp-frame-bar {
+	display: flex; align-items: center; gap: 0.375rem; padding: 0.625rem 1rem;
+	border-bottom: 0.0625rem solid var(--line); background: color-mix(in oklab, var(--bg) 80%, transparent);
+	line-height: 1;
+}
+.vp-frame-bar i { display: block; width: 0.625rem; height: 0.625rem; border-radius: 624.9375rem; }
+.vp-frame-bar i:nth-child(1) { background: color-mix(in oklab, var(--rose) 70%, transparent); }
+.vp-frame-bar i:nth-child(2) { background: color-mix(in oklab, var(--flare) 60%, transparent); }
+.vp-frame-bar i:nth-child(3) { background: color-mix(in oklab, var(--sage) 70%, transparent); }
+.vp-frame-bar span {
+	margin-left: 0.75rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+	border-radius: 0.125rem; background: var(--surface); padding: 0.1875rem 0.75rem; font-size: 0.625rem; color: var(--muted);
+	box-shadow: 0 0 0 0.0625rem var(--line); font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+.vp-frame-box img { display: block; width: 100%; height: auto; margin: 0; border-radius: 0; }
+.vp-shadow img, img.vp-shadow { box-shadow: 0 1.875rem 4.375rem -2.25rem rgba(0, 41, 145, .5); border-radius: 0.25rem; }
+.vp-frame figcaption, figure.vp-frame figcaption { margin-top: 0.75rem; text-align: center; font-size: 0.875rem; color: var(--muted); }
+
+/* 8. Helpers ------------------------------------------------------------------ */
+.vp-card { background: var(--surface); border: 0.0625rem solid var(--line); border-radius: 0.25rem; box-shadow: 0 0.0625rem 0 #fff inset, 0 1.25rem 3.125rem -1.75rem rgba(0, 41, 145, .18); }
+.vp-accent { color: var(--sage); }
+.vp-mount-ring, .vp-mount-counter { vertical-align: middle; }
+.vp-scope .vp-chk-item:active { transform: scale(.98); }
+.vp-scope .vp-chk-tick { line-height: 0; }
+
+/* Smooth menu: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.vp-scope.vp-scope .vp-pop, .vp-scope.vp-scope .vp-cat, .vp-scope.vp-scope .vp-nav-pill,
+	.vp-scope.vp-scope .vp-rail-pill, .vp-scope.vp-scope .vp-row-hl { transition: none !important; }
+	.vp-scope.vp-scope .vp-cat .vp-row-li { animation: none !important; }
+}

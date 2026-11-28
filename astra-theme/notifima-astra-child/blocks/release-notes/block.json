@@ -1,0 +1,15 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "notifima/release-notes",
+ "title": "Release Notes (Notifima)",
+ "category": "notifima",
+ "icon": "list-view",
+ "description": "Every release with its changes, read automatically from WordPress.org (and GitHub, if set) in Customize → Notifima → General. Updates itself within an hour of a new release.",
+ "keywords": [ "changelog", "release", "version", "notifima" ],
+ "textdomain": "notifima",
+ "attributes": {},
+ "supports": { "html": false, "className": true, "inserter": false },
+ "editorScript": "nf-site-blocks-editor",
+ "render": "file:./render.php"
+}

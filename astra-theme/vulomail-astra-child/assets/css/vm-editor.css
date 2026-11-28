@@ -1,0 +1,26 @@
+/* Block editor only. */
+
+/* The editor canvas looks like the site: paper background, Nunito, ink text. */
+.editor-styles-wrapper { background: var(--paper); color: var(--ink); font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif; }
+
+/* Show every graphic in its finished state. */
+.vm-graphic { display: block !important; }
+.vm-rv, .vm-st, [data-vm-reveal], [data-vm-st], .vm-split { opacity: 1 !important; transform: none !important; filter: none !important; }
+[data-vm-msg], [data-vm-diag-i], [data-vm-wordmark] { opacity: 1 !important; transform: none !important; }
+/* Rows span the canvas like on the site; their content width sits inside (.innerblocks-wrap, Kadence's
+   "Content max width"). Without this, WordPress and Astra cap every top-level block at the content width,
+   which pushes sections off centre. */
+.editor-styles-wrapper .wp-block-kadence-rowlayout:is(.vm-row, .vm-row-full, .vm-header, .vm-footer) {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* The header scrolls with the content while you edit (it is fixed only on the site), and shows its bar the way
+   it looks once the page is scrolled, so its background is visible and centred. */
+.editor-styles-wrapper .vm-header.vm-header.vm-header { position: relative; top: auto; transform: none; z-index: auto; }
+.editor-styles-wrapper .vm-header .vm-header-bar.vm-header-bar {
+  border-color: var(--line);
+  background-color: var(--surface);
+  box-shadow: 0 12px 40px -20px color-mix(in srgb, var(--ink) 35%, transparent);
+}

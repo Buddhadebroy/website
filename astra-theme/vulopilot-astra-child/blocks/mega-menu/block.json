@@ -1,0 +1,76 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "category": "vulopilot",
+ "textdomain": "vulopilot",
+ "editorScript": "file:./index.js",
+ "name": "vulopilot/mega-menu",
+ "title": "Mega Menu (VuloPilot)",
+ "icon": "menu-alt",
+ "description": "The VuloPilot header with animated mega menus. Uses the menu you pick (or the ‘VuloPilot header’ location).",
+ "keywords": [
+  "menu",
+  "navigation",
+  "header",
+  "mega"
+ ],
+ "render": "file:./render.php",
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "multiple": true
+ },
+ "attributes": {
+  "menu": {
+   "type": "number",
+   "default": 0
+  },
+  "fixed": {
+   "type": "boolean",
+   "default": false
+  },
+  "showCta": {
+   "type": "boolean",
+   "default": true
+  },
+  "colorPrimary": {
+   "type": "string",
+   "default": ""
+  },
+  "colorPrimarySoft": {
+   "type": "string",
+   "default": ""
+  },
+  "colorAccent": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBg": {
+   "type": "string",
+   "default": ""
+  },
+  "colorSurface": {
+   "type": "string",
+   "default": ""
+  },
+  "colorText": {
+   "type": "string",
+   "default": ""
+  },
+  "colorMuted": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBorder": {
+   "type": "string",
+   "default": ""
+  },
+  "radius": {
+   "type": "number",
+   "default": 4
+  }
+ }
+}

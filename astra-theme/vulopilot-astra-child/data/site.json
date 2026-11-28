@@ -1,0 +1,787 @@
+{
+ "links": {
+  "features": [
+   {
+    "label": "Search Visibility",
+    "href": "/features/search-visibility/"
+   },
+   {
+    "label": "AI Search",
+    "href": "/features/ai-search/"
+   },
+   {
+    "label": "Website Health",
+    "href": "/features/website-health/"
+   },
+   {
+    "label": "Performance",
+    "href": "/features/performance/"
+   },
+   {
+    "label": "Security",
+    "href": "/features/security/"
+   },
+   {
+    "label": "Content",
+    "href": "/features/content/"
+   },
+   {
+    "label": "WooCommerce",
+    "href": "/features/woocommerce/"
+   },
+   {
+    "label": "Automation",
+    "href": "/features/automation/"
+   }
+  ],
+  "solutions": [
+   {
+    "label": "WordPress SEO",
+    "href": "/solutions/wordpress-seo/"
+   },
+   {
+    "label": "SEO Audit",
+    "href": "/solutions/seo-audit/"
+   },
+   {
+    "label": "Website Audit",
+    "href": "/solutions/website-audit/"
+   },
+   {
+    "label": "AI Search Optimization",
+    "href": "/solutions/ai-search-optimization/"
+   },
+   {
+    "label": "Generative Engine Optimization",
+    "href": "/solutions/generative-engine-optimization/"
+   },
+   {
+    "label": "Answer Engine Optimization",
+    "href": "/solutions/answer-engine-optimization/"
+   },
+   {
+    "label": "Website Performance",
+    "href": "/solutions/website-performance/"
+   },
+   {
+    "label": "Core Web Vitals",
+    "href": "/solutions/core-web-vitals/"
+   },
+   {
+    "label": "WordPress Security",
+    "href": "/solutions/wordpress-security/"
+   },
+   {
+    "label": "Website Health",
+    "href": "/solutions/website-health/"
+   },
+   {
+    "label": "WooCommerce SEO",
+    "href": "/solutions/woocommerce-seo/"
+   },
+   {
+    "label": "Website Automation",
+    "href": "/solutions/website-automation/"
+   }
+  ],
+  "audiences": [
+   {
+    "label": "Website Owners",
+    "href": "/for/website-owners/"
+   },
+   {
+    "label": "Businesses",
+    "href": "/for/businesses/"
+   },
+   {
+    "label": "Marketers",
+    "href": "/for/marketers/"
+   },
+   {
+    "label": "Agencies",
+    "href": "/for/agencies/"
+   },
+   {
+    "label": "WooCommerce Stores",
+    "href": "/for/woocommerce-stores/"
+   }
+  ],
+  "useCases": [
+   {
+    "label": "Fix SEO Problems",
+    "href": "/use-cases/fix-seo-problems/"
+   },
+   {
+    "label": "Improve AI Visibility",
+    "href": "/use-cases/improve-ai-visibility/"
+   },
+   {
+    "label": "Improve Search Visibility",
+    "href": "/use-cases/improve-search-visibility/"
+   },
+   {
+    "label": "Improve Website Performance",
+    "href": "/use-cases/improve-website-performance/"
+   },
+   {
+    "label": "Monitor Website Health",
+    "href": "/use-cases/monitor-website-health/"
+   },
+   {
+    "label": "Improve Website Security",
+    "href": "/use-cases/improve-website-security/"
+   },
+   {
+    "label": "Optimize Website Content",
+    "href": "/use-cases/optimize-website-content/"
+   },
+   {
+    "label": "Optimize WooCommerce",
+    "href": "/use-cases/optimize-woocommerce/"
+   },
+   {
+    "label": "Automate Website Management",
+    "href": "/use-cases/automate-website-management/"
+   }
+  ],
+  "problems": [
+   {
+    "label": "Not Showing on Google",
+    "href": "/problems/not-showing-on-google/"
+   },
+   {
+    "label": "Website Too Slow",
+    "href": "/problems/website-too-slow/"
+   },
+   {
+    "label": "Not Appearing in AI Search",
+    "href": "/problems/not-appearing-in-ai-search/"
+   },
+   {
+    "label": "Pages Not Indexed",
+    "href": "/problems/pages-not-indexed/"
+   },
+   {
+    "label": "Poor Core Web Vitals",
+    "href": "/problems/poor-core-web-vitals/"
+   },
+   {
+    "label": "Low Search Traffic",
+    "href": "/problems/low-search-traffic/"
+   },
+   {
+    "label": "Poor Search Rankings",
+    "href": "/problems/poor-search-rankings/"
+   },
+   {
+    "label": "Website Security Issues",
+    "href": "/problems/website-security-issues/"
+   },
+   {
+    "label": "Website Health Issues",
+    "href": "/problems/website-health-issues/"
+   },
+   {
+    "label": "Slow WooCommerce Store",
+    "href": "/problems/slow-woocommerce-store/"
+   },
+   {
+    "label": "Too Much Manual Website Work",
+    "href": "/problems/manual-website-management/"
+   }
+  ],
+  "compare": [
+   {
+    "group": "SEO & WordPress",
+    "items": [
+     {
+      "label": "vs Yoast SEO",
+      "href": "/compare/vulopilot-vs-yoast-seo/"
+     },
+     {
+      "label": "vs Rank Math",
+      "href": "/compare/vulopilot-vs-rank-math/"
+     },
+     {
+      "label": "vs All in One SEO",
+      "href": "/compare/vulopilot-vs-all-in-one-seo/"
+     },
+     {
+      "label": "vs SEOPress",
+      "href": "/compare/vulopilot-vs-seopress/"
+     },
+     {
+      "label": "vs The SEO Framework",
+      "href": "/compare/vulopilot-vs-the-seo-framework/"
+     }
+    ]
+   },
+   {
+    "group": "Website Optimization",
+    "items": [
+     {
+      "label": "vs WP Rocket",
+      "href": "/compare/vulopilot-vs-wp-rocket/"
+     },
+     {
+      "label": "vs Wordfence",
+      "href": "/compare/vulopilot-vs-wordfence/"
+     },
+     {
+      "label": "vs Jetpack",
+      "href": "/compare/vulopilot-vs-jetpack/"
+     },
+     {
+      "label": "vs Screaming Frog",
+      "href": "/compare/vulopilot-vs-screaming-frog/"
+     }
+    ]
+   },
+   {
+    "group": "SEO Platforms",
+    "items": [
+     {
+      "label": "vs Semrush",
+      "href": "/compare/vulopilot-vs-semrush/"
+     },
+     {
+      "label": "vs Ahrefs",
+      "href": "/compare/vulopilot-vs-ahrefs/"
+     },
+     {
+      "label": "vs Surfer SEO",
+      "href": "/compare/vulopilot-vs-surfer-seo/"
+     }
+    ]
+   },
+   {
+    "group": "Google Tools",
+    "items": [
+     {
+      "label": "vs Google Search Console",
+      "href": "/compare/vulopilot-vs-google-search-console/"
+     },
+     {
+      "label": "vs PageSpeed Insights",
+      "href": "/compare/vulopilot-vs-pagespeed-insights/"
+     },
+     {
+      "label": "vs Google Lighthouse",
+      "href": "/compare/vulopilot-vs-google-lighthouse/"
+     }
+    ]
+   },
+   {
+    "group": "General",
+    "items": [
+     {
+      "label": "vs Manual SEO audits",
+      "href": "/compare/vulopilot-vs-manual-seo-audits/"
+     },
+     {
+      "label": "vs SEO plugins",
+      "href": "/compare/vulopilot-vs-seo-plugins/"
+     },
+     {
+      "label": "vs SEO tools",
+      "href": "/compare/vulopilot-vs-seo-tools/"
+     },
+     {
+      "label": "vs AI SEO tools",
+      "href": "/compare/vulopilot-vs-ai-seo-tools/"
+     }
+    ]
+   }
+  ],
+  "guides": [
+   {
+    "label": "WordPress SEO",
+    "href": "/guides/wordpress-seo/"
+   },
+   {
+    "label": "Technical SEO",
+    "href": "/guides/technical-seo/"
+   },
+   {
+    "label": "AI Search",
+    "href": "/guides/ai-search/"
+   },
+   {
+    "label": "GEO: Generative Engine Optimization",
+    "href": "/guides/geo/"
+   },
+   {
+    "label": "AEO: Answer Engine Optimization",
+    "href": "/guides/aeo/"
+   },
+   {
+    "label": "Website Audit",
+    "href": "/guides/website-audit/"
+   },
+   {
+    "label": "Website Performance",
+    "href": "/guides/website-performance/"
+   },
+   {
+    "label": "Core Web Vitals",
+    "href": "/guides/core-web-vitals/"
+   },
+   {
+    "label": "Website Security",
+    "href": "/guides/website-security/"
+   },
+   {
+    "label": "Website Health",
+    "href": "/guides/website-health/"
+   },
+   {
+    "label": "Content Optimization",
+    "href": "/guides/content-optimization/"
+   },
+   {
+    "label": "WooCommerce SEO",
+    "href": "/guides/woocommerce-seo/"
+   }
+  ],
+  "resources": [
+   {
+    "label": "SEO Checklist",
+    "href": "/checklist/seo-checklist/"
+   },
+   {
+    "label": "Website Audit Checklist",
+    "href": "/checklist/website-audit-checklist/"
+   },
+   {
+    "label": "Core Web Vitals Checklist",
+    "href": "/checklist/core-web-vitals-checklist/"
+   },
+   {
+    "label": "AI Search Optimization Checklist",
+    "href": "/checklist/ai-search-optimization-checklist/"
+   },
+   {
+    "label": "Website Health Checklist",
+    "href": "/checklist/website-health-checklist/"
+   }
+  ]
+ },
+ "iconFor": {
+  "search-visibility": "search",
+  "ai-search": "radar",
+  "website-health": "heart-pulse",
+  "performance": "gauge",
+  "security": "shield-check",
+  "content": "edit3",
+  "woocommerce": "shopping-bag",
+  "automation": "calendar-clock",
+  "wordpress-seo": "search",
+  "seo-audit": "clipboard-check",
+  "website-audit": "scan-search",
+  "ai-search-optimization": "bot",
+  "generative-engine-optimization": "sparkles",
+  "answer-engine-optimization": "message-square-quote",
+  "website-performance": "zap",
+  "core-web-vitals": "activity",
+  "wordpress-security": "lock",
+  "woocommerce-seo": "shopping-cart",
+  "website-automation": "workflow",
+  "website-owners": "user",
+  "businesses": "building2",
+  "marketers": "megaphone",
+  "agencies": "users",
+  "woocommerce-stores": "store",
+  "fix-seo-problems": "wrench",
+  "improve-ai-visibility": "eye",
+  "improve-search-visibility": "trending-up",
+  "improve-website-performance": "rocket",
+  "monitor-website-health": "activity",
+  "improve-website-security": "shield-check",
+  "optimize-website-content": "file-text",
+  "optimize-woocommerce": "shopping-bag",
+  "automate-website-management": "settings2",
+  "not-showing-on-google": "search-x",
+  "website-too-slow": "turtle",
+  "not-appearing-in-ai-search": "eye-off",
+  "pages-not-indexed": "file-x",
+  "poor-core-web-vitals": "trending-down",
+  "low-search-traffic": "bar-chart3",
+  "poor-search-rankings": "arrow-down-wide-narrow",
+  "website-security-issues": "shield-alert",
+  "website-health-issues": "heart-crack",
+  "slow-woocommerce-store": "snail",
+  "manual-website-management": "hand",
+  "vulopilot-vs-yoast-seo": "puzzle",
+  "vulopilot-vs-rank-math": "puzzle",
+  "vulopilot-vs-all-in-one-seo": "puzzle",
+  "vulopilot-vs-seopress": "puzzle",
+  "vulopilot-vs-the-seo-framework": "puzzle",
+  "vulopilot-vs-wp-rocket": "zap",
+  "vulopilot-vs-wordfence": "shield-check",
+  "vulopilot-vs-jetpack": "boxes",
+  "vulopilot-vs-screaming-frog": "bug",
+  "vulopilot-vs-semrush": "bar-chart3",
+  "vulopilot-vs-ahrefs": "link2",
+  "vulopilot-vs-surfer-seo": "waves",
+  "vulopilot-vs-google-search-console": "search",
+  "vulopilot-vs-pagespeed-insights": "gauge",
+  "vulopilot-vs-google-lighthouse": "lightbulb",
+  "vulopilot-vs-manual-seo-audits": "clipboard-list",
+  "vulopilot-vs-seo-plugins": "puzzle",
+  "vulopilot-vs-seo-tools": "wrench",
+  "vulopilot-vs-ai-seo-tools": "bot",
+  "seo-checklist": "list-checks",
+  "website-audit-checklist": "list-checks",
+  "core-web-vitals-checklist": "list-checks",
+  "ai-search-optimization-checklist": "list-checks",
+  "website-health-checklist": "list-checks",
+  "blog": "book-open",
+  "docs": "book-text"
+ },
+ "plans": [
+  {
+   "id": "go",
+   "name": "Go",
+   "monthly": 19,
+   "yearly": 149,
+   "sites": 1,
+   "credits": 1000,
+   "checkout": "https://store.vulolabs.com/checkout?org=9a1e8c91-bbb9-4f7b-b4f1-b5f1190287d3&offering=b692d772-c968-4b25-ac3c-a33feec3f81f"
+  },
+  {
+   "id": "plus",
+   "name": "Plus",
+   "monthly": 49,
+   "yearly": 399,
+   "sites": 5,
+   "credits": 5000,
+   "popular": true
+  },
+  {
+   "id": "pro",
+   "name": "Pro",
+   "monthly": 99,
+   "yearly": 799,
+   "sites": 25,
+   "credits": 10000
+  }
+ ],
+ "resources": [
+  {
+   "slug": "seo-checklist",
+   "title": "SEO Checklist",
+   "summary": "The essentials for a search-ready WordPress site.",
+   "groups": [
+    [
+     "Foundations",
+     [
+      "Every page has a unique title",
+      "Every page has a meta description",
+      "XML sitemap is published and submitted",
+      "robots.txt does not block important pages",
+      "Site uses HTTPS everywhere"
+     ]
+    ],
+    [
+     "Pages",
+     [
+      "One H1 per page",
+      "Images have alt text",
+      "Internal links connect related pages",
+      "No duplicate titles or descriptions"
+     ]
+    ],
+    [
+     "Fix and monitor",
+     [
+      "Moved pages are redirected",
+      "404s are reviewed",
+      "Search Console is connected",
+      "Scores are re-checked after fixes"
+     ]
+    ]
+   ]
+  },
+  {
+   "slug": "website-audit-checklist",
+   "title": "Website Audit Checklist",
+   "summary": "Cover every area when auditing a site.",
+   "groups": [
+    [
+     "Visibility",
+     [
+      "SEO problems reviewed",
+      "AI visibility reviewed",
+      "Crawlers allowed"
+     ]
+    ],
+    [
+     "Experience",
+     [
+      "Speed score checked",
+      "Core Web Vitals checked",
+      "Accessibility scan run",
+      "Mobile experience tested"
+     ]
+    ],
+    [
+     "Reliability",
+     [
+      "WordPress and plugins updated",
+      "Backups tested",
+      "Security issues reviewed"
+     ]
+    ],
+    [
+     "Business",
+     [
+      "Content audit completed",
+      "Store checks done (if WooCommerce)",
+      "Findings prioritized by severity"
+     ]
+    ]
+   ]
+  },
+  {
+   "slug": "core-web-vitals-checklist",
+   "title": "Core Web Vitals Checklist",
+   "summary": "Fix loading, responsiveness and layout stability.",
+   "groups": [
+    [
+     "Loading",
+     [
+      "Hero image compressed and sized",
+      "Server response time acceptable",
+      "Caching enabled",
+      "Fonts loaded efficiently"
+     ]
+    ],
+    [
+     "Responsiveness",
+     [
+      "Unneeded scripts removed or delayed",
+      "Heavy plugins reviewed"
+     ]
+    ],
+    [
+     "Layout stability",
+     [
+      "Images and embeds have set dimensions",
+      "No late-loading elements push content",
+      "Re-tested on mobile"
+     ]
+    ]
+   ]
+  },
+  {
+   "slug": "ai-search-optimization-checklist",
+   "title": "AI Search Optimization Checklist",
+   "summary": "Help AI assistants find, understand and quote you.",
+   "groups": [
+    [
+     "Access",
+     [
+      "GPTBot, ClaudeBot and PerplexityBot not blocked by accident",
+      "llms.txt published",
+      "Sitemap available"
+     ]
+    ],
+    [
+     "Content",
+     [
+      "Key pages start with a short quotable answer",
+      "FAQ added where people ask questions",
+      "Claims have sources",
+      "Key pages refreshed recently"
+     ]
+    ],
+    [
+     "Identity",
+     [
+      "Business Information filled in",
+      "About and Contact pages are clear",
+      "Brand, people and products named consistently",
+      "Schema valid on key pages"
+     ]
+    ]
+   ]
+  },
+  {
+   "slug": "website-health-checklist",
+   "title": "Website Health Checklist",
+   "summary": "Keep WordPress reliable week after week.",
+   "groups": [
+    [
+     "Maintenance",
+     [
+      "WordPress core updated",
+      "Plugins and themes updated",
+      "Unused plugins removed",
+      "Scheduled tasks running"
+     ]
+    ],
+    [
+     "Recovery",
+     [
+      "Automatic backups on",
+      "Backup copied off the server",
+      "Restore tested"
+     ]
+    ],
+    [
+     "Protection",
+     [
+      "Login protection on",
+      "Debug mode off in production",
+      "Alerts configured"
+     ]
+    ]
+   ]
+  }
+ ],
+ "features": [
+  {
+   "slug": "search-visibility",
+   "title": "Search Visibility",
+   "tagline": "Get found in Google and Bing",
+   "icon": "search",
+   "free": [
+    "SEO score and a ranked problem list",
+    "Page titles and descriptions",
+    "Sitemap and instant indexing (IndexNow)",
+    "Redirects, 404 tracking and robots.txt",
+    "Per-page SEO panel in the post editor",
+    "Table of Contents and FAQ blocks",
+    "Site verification and Google Search Console connection"
+   ],
+   "pro": [
+    "Technical SEO: schema, sitemap, duplicate descriptions, multiple H1s, focus keywords",
+    "Keyword rank tracking, opportunities and groups",
+    "One-click fixes, single or in bulk"
+   ]
+  },
+  {
+   "slug": "ai-search",
+   "title": "AI Search",
+   "tagline": "Be understood by ChatGPT, Claude, Gemini and Perplexity",
+   "icon": "radar",
+   "free": [
+    "GEO: AI summary, question coverage, evidence, structure, entity clarity, freshness",
+    "AEO: answer-readiness checks and engine testing",
+    "Brand visibility: Trust and Authority scores",
+    "Crawler traffic from GPTBot, ClaudeBot and PerplexityBot",
+    "Editable llms.txt",
+    "Business profile, knowledge graph and schema coverage"
+   ],
+   "pro": [
+    "Answer engine citation coverage and stale-content flags",
+    "AI crawler tracking with alerts when a bot stops or is blocked",
+    "Deeper brand and knowledge graph findings"
+   ]
+  },
+  {
+   "slug": "website-health",
+   "title": "Website Health",
+   "tagline": "Know your site is okay, and recover if it isn't",
+   "icon": "heart-pulse",
+   "free": [
+    "WordPress health checkup: updates, database, scheduled tasks, server",
+    "Manual and automatic backups",
+    "Download, restore or delete backups",
+    "WCAG-based accessibility scan",
+    "Manual accessibility checklist"
+   ],
+   "pro": [
+    "Copy backups to Amazon S3 or Google Drive, credentials stored encrypted",
+    "Scheduled accessibility audits (hourly to weekly) with score history"
+   ]
+  },
+  {
+   "slug": "performance",
+   "title": "Performance",
+   "tagline": "A speedometer for your website, plus what to fix first",
+   "icon": "gauge",
+   "free": [
+    "Overall speed score, mobile vs desktop",
+    "Core Web Vitals",
+    "Biggest speed opportunity and slow-page finder",
+    "AI speed assistant in plain language",
+    "Real-time monitoring and speed history",
+    "Quick fixes: clear caches, minify, optimize images, database cleanup"
+   ],
+   "pro": []
+  },
+  {
+   "slug": "security",
+   "title": "Security",
+   "tagline": "Spot weak points before attackers do",
+   "icon": "shield-check",
+   "free": [
+    "Security score and ranked problems",
+    "Login and account checks",
+    "Password-guessing protection and attack filter",
+    "Public exposure and browser protection checks",
+    "Alerts when something looks wrong"
+   ],
+   "pro": [
+    "Known vulnerability feed for WordPress core, plugins and themes",
+    "File change monitoring",
+    "Exposed files, debug mode, security headers and XML-RPC checks",
+    "Incident log with alerts"
+   ]
+  },
+  {
+   "slug": "content",
+   "title": "Content",
+   "tagline": "Write faster and keep existing pages healthy",
+   "icon": "edit3",
+   "free": [
+    "AI Writer and Blog Generator",
+    "Before and after preview, approve or reject",
+    "Duplicate title fixer",
+    "Content audit and readability checks",
+    "Content stats"
+   ],
+   "pro": [
+    "Content gaps against competitors",
+    "Readability and structure suggestions",
+    "AI drafts for titles, descriptions and summaries"
+   ]
+  },
+  {
+   "slug": "woocommerce",
+   "title": "WooCommerce",
+   "tagline": "Find what costs you sales",
+   "icon": "shopping-bag",
+   "free": [
+    "Product, checkout and store issue list",
+    "AI sales assistant with review-first suggestions",
+    "Product schema checks"
+   ],
+   "pro": [
+    "Missing images, duplicate SKUs, pricing gaps, low stock, failed payments",
+    "Revenue, top products and unsold products",
+    "Abandoned carts and revenue at risk",
+    "Daily store trends",
+    "Bulk AI product writing, up to 50 at a time"
+   ]
+  },
+  {
+   "slug": "automation",
+   "title": "Automation",
+   "tagline": "Keep it running by itself",
+   "icon": "calendar-clock",
+   "free": [
+    "Scheduled full-site scan: daily, weekly or monthly",
+    "Emailed visibility report",
+    "History timeline with search, export and undo",
+    "PDF or CSV reports"
+   ],
+   "pro": [
+    "Workflow builder with conditions, retries and run logs",
+    "Custom and health reports, scheduled and exported as PDF",
+    "AI credit analytics"
+   ]
+  }
+ ]
+}

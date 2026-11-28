@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Notifima – base for Kadence blocks.
+   The design lives in each block's own Kadence settings (padding, colours, columns, typography, borders …).
+   This file only neutralises Astra's element styles inside Notifima rows (.nf-k), with a weight that is
+   above Astra and below Kadence's per-block CSS, so a Kadence setting always wins.
+   ========================================================================== */
+.nf-k, .nf-k *, .nf-k ::before, .nf-k ::after { box-sizing: border-box; }
+
+/* Astra's element styles step aside (0-1-1: above Astra, below Kadence block settings) */
+body:not(.nf-x) :where(.nf-k) :where(h1, h2, h3, h4, h5, h6, p, blockquote, figure, ul, ol, dl, dd) { margin: 0; padding: 0; font-family: inherit; font-style: inherit; border: 0; background: none; clear: none; }
+body:not(.nf-x) :where(.nf-k) :where(h1, h2, h3, h4, h5, h6) { color: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; text-transform: none; font-size: inherit; }
+body:not(.nf-x) :where(.nf-k) :where(li, small, span, strong, b, em, label, time, cite) { color: inherit; line-height: inherit; letter-spacing: inherit; }
+body:not(.nf-x) :where(.nf-k) :where(a) { color: inherit; text-decoration: none; box-shadow: none; }
+body:not(.nf-x) :where(.nf-k) blockquote::before, body:not(.nf-x) :where(.nf-k) blockquote::after { content: none; }
+body:not(.nf-x) :where(.nf-k) :where(button, input, select, textarea), body:not(.nf-x) :where(.nf-k) :where(button, input, select, textarea):where(:hover, :focus) { padding: revert; margin: revert; background: revert; border: revert; border-radius: revert; box-shadow: none; outline: revert; color: inherit; font: inherit; line-height: inherit; text-transform: none; letter-spacing: inherit; min-height: 0; height: revert; width: revert; }
+body:not(.nf-x) :where(.nf-k) :where(img, svg) { display: block; max-width: 100%; }
+body:not(.nf-x) :where(.nf-k) mark.kt-highlight { background: transparent; padding: 0; }
+
+/* Kadence's own wrappers that have no setting: rows have no outer margin, the hero runs under the floating header */
+body:not(.nf-x) :where(.kb-row-layout-wrap.nf-k) { margin-top: 0; margin-bottom: 0; }
+html body:not(#nf_) .kb-row-layout-wrap.nf-k.hero, html body:not(#nf_) .kb-row-layout-wrap.nf-k.phero { margin-top: -96px; }
+body:not(.nf-x) :where(.nf-k) .kt-svg-icon-list { margin: 0; padding: 0; list-style: none; }
+
+/* Astra's page wrappers stay out of the way on Notifima pages */
+body.nf-template:not(#nf_) :is(#page, #content, .site-content, .ast-container, #primary, .site-main) { max-width: none; padding: 0; margin: 0; display: block; width: auto; }
+
+/* Blog post (template-parts/blog/single.php) */
+html body:not(#nf_) .nf-post-grid { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; align-items: start; }
+html body:not(#nf_) .nf-post-grid.no-toc { grid-template-columns: minmax(0, 1fr); }
+html body:not(#nf_) .nf-toc { position: sticky; top: 120px; display: grid; gap: 4px; }
+html body:not(#nf_) .nf-toc h6 { font-size: 13px; font-weight: 500; color: var(--mut); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+html body:not(#nf_) .nf-toc a { padding: 6px 12px; border-radius: 10px; font-size: 14.5px; color: var(--txt); }
+html body:not(#nf_) .nf-toc a:hover { background: var(--tint); color: var(--p); }
+html body:not(#nf_) .nf-article { max-width: 760px; font-size: 18px; line-height: 1.75; color: var(--txt); }
+html body:not(#nf_) .nf-article > * + * { margin-top: 1.1em; }
+html body:not(#nf_) .nf-article h2 { font-size: clamp(26px, 2.6vw, 34px); font-weight: 500; margin-top: 1.8em; scroll-margin-top: 110px; }
+html body:not(#nf_) .nf-article h3 { font-size: 22px; font-weight: 500; margin-top: 1.5em; }
+html body:not(#nf_) .nf-article a { color: var(--p); text-decoration: underline; text-underline-offset: 3px; }
+html body:not(#nf_) .nf-article :is(ul, ol) { padding-left: 1.3em; }
+html body:not(#nf_) .nf-article li + li { margin-top: .4em; }
+html body:not(#nf_) .nf-article blockquote { margin-left: 0; padding: 18px 24px; border-left: 3px solid var(--p); background: var(--p-50); border-radius: 0 var(--r) var(--r) 0; color: var(--head); }
+html body:not(#nf_) .nf-article img { border-radius: var(--r); height: auto; }
+html body:not(#nf_) .nf-article code { background: var(--tint); padding: 2px 6px; border-radius: 6px; font-size: .9em; }
+html body:not(#nf_) .nf-article pre { background: var(--head); color: var(--white); padding: 18px 22px; border-radius: var(--r); overflow: auto; }
+html body:not(#nf_) .nf-article table { width: 100%; border-collapse: collapse; font-size: 16px; }
+html body:not(#nf_) .nf-article :is(th, td) { border: 1px solid var(--line-2); padding: 10px 14px; text-align: left; }
+html body:not(#nf_) .nf-post-hero h1 { font-size: clamp(34px, 4.4vw, 56px); }
+html body:not(#nf_) .pager .page-numbers { min-width: 44px; height: 44px; border-radius: var(--pill); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 16px; color: var(--head); background: var(--white); }
+html body:not(#nf_) .pager .page-numbers.current { background: var(--p); border-color: var(--p); color: var(--white); }
+@media (max-width: 960px) { html body:not(#nf_) .nf-post-grid { grid-template-columns: minmax(0, 1fr); } html body:not(#nf_) .nf-toc { position: static; } }
+
+/* Header (theme blocks + the menu's own classes): Kadence wrappers step out of its layout */
+html body .kb-row-layout-wrap.nf-k.hdr > .kt-row-column-wrap { display: block !important; max-width: none !important; padding: 0 !important; margin: 0 !important; min-height: 0 !important; gap: 0 !important; grid-template-columns: none !important; }
+body:not(#nf_) :where(.hdr) .wp-block-kadence-column { display: block; flex: 0 1 auto; flex-direction: row; min-width: auto; min-height: auto; max-width: none; margin: 0; padding: 0; z-index: auto; border: 0; background: none; }
+html body .nf-k.hdr .wp-block-kadence-column > .kt-inside-inner-col { display: contents !important; }
+html body:not(#nf_) .hdr .nf-icons { display: contents; }
+html body:not(#nf_) .hdr .kb-buttons-wrap.nf-hdr-cta { display: contents; }
+body:not(#nf_) :where(.hdr .kb-buttons-wrap a.kb-button.kb-btn-global-fill), body:not(#nf_) :where(.hdr .kb-buttons-wrap a.kb-button.kb-btn-global-fill:hover, .hdr .kb-buttons-wrap a.kb-button.kb-btn-global-fill:focus) { background: transparent; color: inherit; border-color: transparent; box-shadow: none; }
+body:not(#nf_) :where(.hdr .kb-buttons-wrap a.kb-button.btn) { line-height: inherit; text-transform: none; letter-spacing: normal; min-width: max-content; text-decoration: none; font-family: inherit; }
+
+/* Release-notes / blog filters hide whole blocks */
+html body .nf-hide { display: none !important; }
+
+/* Editor */
+.editor-styles-wrapper .nf-k.hero, .editor-styles-wrapper .nf-k.phero { margin-top: 0 !important; }
+.editor-styles-wrapper .js .rv, .editor-styles-wrapper .rv { opacity: 1 !important; transform: none !important; }
+
+/* Release notes (live list): change types the original page had no colour for */
+html body:not(#nf_) .tg-tweak{background:#f1f5f9;color:#475569}
+html body:not(#nf_) .tg-dev{background:#1e293b;color:#e2e8f0}
+html body:not(#nf_) .tg-removed{background:var(--bad-bg,#ffe4ea);color:var(--bad,#e11d48)}
+
+/* Release notes (live list, inc/releases.php): the design of the original Release Notes page */
+html body:not(#nf_) .nf-release-notes :where(h2,h6,ul,p){margin:0}
+html body:not(#nf_) .nf-release-notes :where(h2,h6){color:var(--head);line-height:1.15;letter-spacing:-.025em}
+html body:not(#nf_) .nf-release-notes :where(button){font:inherit;line-height:1.65;box-shadow:none;text-transform:none;letter-spacing:0}
+html body:not(#nf_) .nf-release-notes :where(a){text-decoration:none}
+html body:not(#nf_) .nf-release-notes .cl{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start}
+html body:not(#nf_) .nf-release-notes .cl-side{position:sticky;top:120px;display:grid;gap:18px}
+html body:not(#nf_) .nf-release-notes .cl-side h6{font-size:13px;font-weight:500;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+html body:not(#nf_) .nf-release-notes .cl-filter{display:flex;flex-wrap:wrap;gap:6px}
+html body:not(#nf_) .nf-release-notes .cl-filter button{border:1px solid var(--line);background:#fff;border-radius:var(--pill);padding:6px 14px;font-size:14px;cursor:pointer;color:var(--head)}
+html body:not(#nf_) .nf-release-notes .cl-filter button.on{background:var(--p);color:#fff;border-color:var(--p)}
+html body:not(#nf_) .nf-release-notes .cl-index{display:grid;gap:2px;max-height:52vh;overflow:auto;padding-right:6px}
+html body:not(#nf_) .nf-release-notes .cl-index a{display:flex;justify-content:space-between;padding:7px 12px;border-radius:10px;font-size:14.5px;color:var(--txt)}
+html body:not(#nf_) .nf-release-notes .cl-index a:hover{background:var(--tint);color:var(--p)}
+html body:not(#nf_) .nf-release-notes .cl-index a small{color:var(--mut);font-size:12.5px}
+html body:not(#nf_) .nf-release-notes .cl-list{position:relative;display:grid;gap:18px}
+html body:not(#nf_) .nf-release-notes .cl-list::before{content:"";position:absolute;left:19px;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,var(--p-200),var(--line-2))}
+html body:not(#nf_) .nf-release-notes .rel{position:relative;padding-left:56px;scroll-margin-top:110px}
+html body:not(#nf_) .nf-release-notes .rel::before{content:"";position:absolute;left:12px;top:26px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--p);box-shadow:0 0 0 5px #fff}
+html body:not(#nf_) .nf-release-notes .rel-card{background:#fff;border:1px solid var(--line-2);border-radius:var(--r-l);padding:22px 26px}
+html body:not(#nf_) .nf-release-notes .rel-h{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+html body:not(#nf_) .nf-release-notes .rel-h h2{font-size:24px;font-weight:500;letter-spacing:-.02em}
+html body:not(#nf_) .nf-release-notes .rel-h time{font-size:14px;color:var(--mut);background:var(--tint);border-radius:var(--pill);padding:3px 12px}
+html body:not(#nf_) .nf-release-notes .rel-h .latest{font-size:12.5px;color:#fff;background:var(--p);border-radius:var(--pill);padding:3px 10px}
+html body:not(#nf_) .nf-release-notes .rel ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+html body:not(#nf_) .nf-release-notes .rel li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--txt);line-height:1.5}
+html body:not(#nf_) .nf-release-notes .rel li.hide{display:none}
+html body:not(#nf_) .nf-release-notes .rel.hide{display:none}
+html body:not(#nf_) .nf-release-notes .tg{flex:none;min-width:66px;text-align:center;font-size:12px;font-weight:500;border-radius:var(--pill);padding:3px 10px;margin-top:1px}
+html body:not(#nf_) .nf-release-notes .tg-new{background:var(--ok-bg);color:var(--ok-d)}
+html body:not(#nf_) .nf-release-notes .tg-fixed{background:#fff1e6;color:#c2410c}
+html body:not(#nf_) .nf-release-notes .tg-update{background:var(--p-50);color:var(--p)}
+html body:not(#nf_) .nf-release-notes .tg-add{background:#e0f2fe;color:#0369a1}
+@media (max-width:960px){html body:not(#nf_) .nf-release-notes .cl{grid-template-columns:1fr}html body:not(#nf_) .nf-release-notes .cl-side{position:static}html body:not(#nf_) .nf-release-notes .cl-index{display:none}}
+@media (max-width:640px){html body:not(#nf_) .nf-release-notes .rel{padding-left:40px}html body:not(#nf_) .nf-release-notes .cl-list::before{left:11px}html body:not(#nf_) .nf-release-notes .rel::before{left:4px}html body:not(#nf_) .nf-release-notes .rel-card{padding:18px}}
+
+/* Release Notes template (page-templates/template-release-notes.php) */
+html body:not(#nf_) .nf-rp-wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 28px;box-sizing:border-box}
+html body:not(#nf_) .nf-rp-hero{background:linear-gradient(180deg,var(--tint) 0%,#fff 100%);margin-top:-96px;padding:170px 0 80px;position:relative;overflow:hidden;text-align:center}
+html body:not(#nf_) .nf-rp-hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(30,41,59,.08) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 75%);mask-image:linear-gradient(180deg,#000,transparent 75%);pointer-events:none}
+html body:not(#nf_) .nf-rp-hero .nf-rp-wrap{position:relative}
+html body:not(#nf_) .nf-rp-crumbs{display:inline-flex;gap:8px;font-size:14px;line-height:1.65;color:var(--mut);margin-bottom:18px}
+html body:not(#nf_) .nf-rp-crumbs a{color:inherit;text-decoration:none}
+html body:not(#nf_) .nf-rp-crumbs a:hover{color:var(--p)}
+html body:not(#nf_) .nf-rp-hero h1{font-size:clamp(38px,5.2vw,66px);letter-spacing:-.03em;line-height:1.06;font-weight:500;color:var(--head);max-width:900px;margin:0 auto}
+html body:not(#nf_) .nf-rp-hero h1 .ac{color:var(--p)}
+html body:not(#nf_) .nf-rp-lead{font-size:19px;line-height:1.65;color:var(--txt);max-width:640px;margin:20px auto 0}
+html body:not(#nf_) .nf-rp-body{padding:24px 0 var(--sec,104px)}
+@media (max-width:1024px){html body:not(#nf_) .nf-rp-body{padding-bottom:76px}}
+@media (max-width:640px){html body:not(#nf_) .nf-rp-wrap{padding:0 18px}html body:not(#nf_) .nf-rp-hero{padding:140px 0 56px}}
+
+/* Header mini cart (WooCommerce) */
+html body:not(#nf_) .nf-cart{position:relative}
+html body:not(#nf_) .nf-mini{position:absolute;right:-8px;top:calc(100% + 14px);width:340px;max-width:calc(100vw - 24px);background:var(--ast-global-color-4);border:1px solid var(--line-2);border-radius:var(--r-l);box-shadow:var(--sh-l);padding:16px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:60;text-align:left}
+html body:not(#nf_) .nf-mini::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+html body:not(#nf_) .nf-cart.open .nf-mini{opacity:1;visibility:visible;transform:none}
+html body:not(#nf_) .nf-mini-h{font-size:12.5px;font-weight:500;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;margin:0 4px 10px}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart{list-style:none;margin:0;padding:0;display:grid;gap:6px;max-height:320px;overflow:auto}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart-item{position:relative;display:block;padding:10px 36px 10px 10px;border-radius:14px;background:var(--tint);font-size:14.5px;line-height:1.4;color:var(--head);min-height:64px}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart-item a:not(.remove){display:flex;align-items:center;gap:10px;color:var(--head);font-weight:500;text-decoration:none}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart-item img{width:44px;height:44px;object-fit:cover;border-radius:10px;margin:0;float:none;flex:none}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart-item .quantity{display:block;margin:4px 0 0 54px;font-size:13.5px;color:var(--mut)}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart-item a.remove{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:18px;line-height:1;color:var(--mut)!important;background:var(--ast-global-color-4);text-decoration:none;border:1px solid var(--line)}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart-item a.remove:hover{color:var(--ast-global-color-4)!important;background:var(--bad,#e5484d);border-color:transparent}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart__total{display:flex;justify-content:space-between;align-items:center;margin:14px 4px 12px;padding-top:12px;border-top:1px solid var(--line-2);font-size:15px;color:var(--head)}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart__total strong{font-weight:500}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart__buttons{display:grid;gap:8px;margin:0}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart__buttons .button{display:flex;align-items:center;justify-content:center;height:46px;border-radius:var(--pill);background:var(--p);color:var(--ast-global-color-4);font-weight:500;font-size:15px;text-decoration:none;margin:0;padding:0 18px;border:0}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart__buttons .button:not(.checkout){background:var(--ast-global-color-4);color:var(--head);border:1px solid var(--line)}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart__empty-message{margin:6px 4px 4px;color:var(--mut);font-size:15px;text-align:center}
+html body:not(#nf_) .nf-mini .blockUI.blockOverlay{border-radius:var(--r-l)}
+
+/* 2.3.3 · mini cart without product image */
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart-item img{display:none!important}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart-item{min-height:0;padding:12px 40px 12px 14px}
+html body:not(#nf_) .nf-mini .woocommerce-mini-cart-item .quantity{margin-left:0}
+
+/* 2.3.3 · plan cards: class-based so they survive Kadence ID changes */
+html body:not(#nf_) .wp-block-kadence-column.plan{position:relative}
+html body:not(#nf_) .wp-block-kadence-advancedheading.pl-ico{width:48px;height:48px;min-width:48px;border-radius:14px;display:grid!important;place-items:center;flex:none;padding:0;margin:0;background:var(--tint,#f6f3ff);color:var(--p,#852aff)}
+html body:not(#nf_) .plan.pop .wp-block-kadence-advancedheading.pl-ico{background:var(--p,#852aff);color:#fff}
+html body:not(#nf_) .wp-block-kadence-advancedheading.pl-ico .i{width:22px;height:22px}
+html body:not(#nf_) .wp-block-kadence-advancedheading.ribbon{position:absolute;top:26px;right:24px;z-index:2;display:inline-flex!important;align-items:center;gap:6px;width:auto;max-width:max-content;white-space:nowrap;font-size:13px;line-height:1.4;font-weight:500;color:var(--p,#852aff);background:#fff;border:1px solid var(--p-200,#d9c2ff);border-radius:999px;padding:4px 12px;margin:0}
+html body:not(#nf_) .wp-block-kadence-advancedheading.ribbon .i{width:14px;height:14px;flex:none}
+@media (max-width:640px){html body:not(#nf_) .wp-block-kadence-advancedheading.ribbon{top:20px;right:16px}}
+
+/* 2.3.3 · Kadence buttons: text + icon in one line */
+html body:not(#nf_) .kb-button.kt-button.button{display:flex;align-items:center;justify-content:center;gap:8px}
+
+/* 2.3.4 · footer CTA keeps its rounded corners on every page (BetterDocs, Woo, archives) */
+html body:not(#nf_) .cta-box,
+html body:not(#nf_) .cta-box > .kt-inside-inner-col{border-radius:var(--r-xl,32px)!important;overflow:hidden}
+@media (max-width:640px){html body:not(#nf_) .cta-box,html body:not(#nf_) .cta-box > .kt-inside-inner-col{border-radius:var(--r-l,24px)!important}}
+
+/* 2.3.6 · Notifima Pro Release Notes (inc/release-pro.php) */
+html body:not(#nf_) .nf-relpro-out{width:100%;max-width:1184px;margin:0 auto}
+html body:not(#nf_) .nf-relpro-out .tg-tweak{background:#fef9c3;color:#a16207}
+html body:not(#nf_) .nf-relpro-out .tg-dev{background:#f1f5f9;color:#334155}
+html body:not(#nf_) .nf-relpro-out .tg-removed{background:var(--bad-bg,#ffe4ea);color:var(--bad,#e11d48)}
+html body:not(#nf_) .nf-relpro-out .rel-h time{white-space:nowrap}

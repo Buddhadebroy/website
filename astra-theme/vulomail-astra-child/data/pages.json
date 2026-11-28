@@ -1,0 +1,314 @@
+{
+ "home": {
+  "title": "Home",
+  "sections": [
+   "home-hero",
+   "home-marquee",
+   "home-problem",
+   "home-pipeline",
+   "home-bento",
+   "home-numbers",
+   "home-sms",
+   "home-principles",
+   "home-compare",
+   "home-developers",
+   "home-faq",
+   "shared-cta"
+  ]
+ },
+ "features": {
+  "title": "Features",
+  "sections": [
+   "features-hero",
+   "features-body",
+   "shared-cta"
+  ]
+ },
+ "email": {
+  "title": "Email delivery",
+  "sections": [
+   "email-hero",
+   "email-try",
+   "email-sender",
+   "email-settings",
+   "email-parsing",
+   "email-cover",
+   "email-cta"
+  ]
+ },
+ "sms": {
+  "title": "SMS alerts",
+  "sections": [
+   "sms-hero",
+   "sms-alerts",
+   "sms-setup",
+   "sms-rules",
+   "sms-settings",
+   "sms-cta"
+  ]
+ },
+ "providers": {
+  "title": "Providers",
+  "sections": [
+   "providers-hero",
+   "providers-explorer",
+   "providers-connections",
+   "providers-smtp",
+   "providers-cta"
+  ]
+ },
+ "security": {
+  "title": "Security & privacy",
+  "sections": [
+   "security-hero",
+   "security-pillars",
+   "security-split-key",
+   "security-privacy",
+   "security-stored",
+   "security-no-tracking",
+   "security-cta"
+  ]
+ },
+ "developers": {
+  "title": "Developers",
+  "sections": [
+   "developers-hero",
+   "developers-code",
+   "developers-reference",
+   "developers-rest",
+   "developers-rules",
+   "developers-cta"
+  ]
+ },
+ "pricing": {
+  "title": "Pricing",
+  "sections": [
+   "pricing-hero",
+   "pricing-plan",
+   "pricing-why",
+   "shared-cta"
+  ]
+ },
+ "about": {
+  "title": "About",
+  "sections": [
+   "about-hero",
+   "about-story",
+   "about-facts",
+   "about-rules",
+   "about-family",
+   "shared-cta"
+  ]
+ },
+ "changelog": {
+  "title": "Changelog",
+  "sections": [
+   "changelog-hero",
+   "changelog-releases",
+   "shared-cta"
+  ]
+ },
+ "contact": {
+  "title": "Contact",
+  "sections": [
+   "contact-hero",
+   "contact-main",
+   "shared-cta"
+  ]
+ },
+ "get-started": {
+  "title": "Get started",
+  "sections": [
+   "get-started-hero",
+   "get-started-steps",
+   "get-started-screens",
+   "get-started-glossary",
+   "get-started-cta"
+  ]
+ },
+ "faq": {
+  "title": "FAQ & troubleshooting",
+  "sections": [
+   "faq-hero",
+   "faq-explorer",
+   "faq-errors",
+   "faq-log-exits",
+   "faq-cta"
+  ]
+ },
+ "compare": {
+  "title": "Compare",
+  "sections": [
+   "compare-hero",
+   "compare-glance",
+   "compare-overview",
+   "compare-cards",
+   "compare-method",
+   "compare-sources",
+   "compare-cta"
+  ]
+ },
+ "compare-wp-mail-smtp": {
+  "title": "VuloMail vs WP Mail SMTP",
+  "sections": [
+   "compare-wp-mail-smtp-hero",
+   "compare-wp-mail-smtp-glance",
+   "compare-wp-mail-smtp-features",
+   "compare-wp-mail-smtp-pricing",
+   "compare-wp-mail-smtp-strengths",
+   "compare-wp-mail-smtp-verdict",
+   "compare-wp-mail-smtp-switching",
+   "compare-wp-mail-smtp-sources",
+   "compare-wp-mail-smtp-more",
+   "shared-compare-cta"
+  ]
+ },
+ "compare-fluentsmtp": {
+  "title": "VuloMail vs FluentSMTP",
+  "sections": [
+   "compare-fluentsmtp-hero",
+   "compare-fluentsmtp-glance",
+   "compare-fluentsmtp-features",
+   "compare-fluentsmtp-pricing",
+   "compare-fluentsmtp-strengths",
+   "compare-fluentsmtp-verdict",
+   "compare-fluentsmtp-switching",
+   "compare-fluentsmtp-sources",
+   "compare-fluentsmtp-more",
+   "shared-compare-cta"
+  ]
+ },
+ "compare-easy-wp-smtp": {
+  "title": "VuloMail vs Easy WP SMTP",
+  "sections": [
+   "compare-easy-wp-smtp-hero",
+   "compare-easy-wp-smtp-glance",
+   "compare-easy-wp-smtp-features",
+   "compare-easy-wp-smtp-pricing",
+   "compare-easy-wp-smtp-strengths",
+   "compare-easy-wp-smtp-verdict",
+   "compare-easy-wp-smtp-switching",
+   "compare-easy-wp-smtp-sources",
+   "compare-easy-wp-smtp-more",
+   "shared-compare-cta"
+  ]
+ },
+ "compare-post-smtp": {
+  "title": "VuloMail vs Post SMTP",
+  "sections": [
+   "compare-post-smtp-hero",
+   "compare-post-smtp-glance",
+   "compare-post-smtp-features",
+   "compare-post-smtp-pricing",
+   "compare-post-smtp-strengths",
+   "compare-post-smtp-verdict",
+   "compare-post-smtp-switching",
+   "compare-post-smtp-sources",
+   "compare-post-smtp-more",
+   "shared-compare-cta"
+  ]
+ },
+ "compare-gosmtp": {
+  "title": "VuloMail vs GoSMTP",
+  "sections": [
+   "compare-gosmtp-hero",
+   "compare-gosmtp-glance",
+   "compare-gosmtp-features",
+   "compare-gosmtp-pricing",
+   "compare-gosmtp-strengths",
+   "compare-gosmtp-verdict",
+   "compare-gosmtp-switching",
+   "compare-gosmtp-sources",
+   "compare-gosmtp-more",
+   "shared-compare-cta"
+  ]
+ },
+ "compare-suremail": {
+  "title": "VuloMail vs SureMail",
+  "sections": [
+   "compare-suremail-hero",
+   "compare-suremail-glance",
+   "compare-suremail-features",
+   "compare-suremail-pricing",
+   "compare-suremail-strengths",
+   "compare-suremail-verdict",
+   "compare-suremail-switching",
+   "compare-suremail-sources",
+   "compare-suremail-more",
+   "shared-compare-cta"
+  ]
+ },
+ "compare-site-mailer": {
+  "title": "VuloMail vs Site Mailer",
+  "sections": [
+   "compare-site-mailer-hero",
+   "compare-site-mailer-glance",
+   "compare-site-mailer-features",
+   "compare-site-mailer-pricing",
+   "compare-site-mailer-strengths",
+   "compare-site-mailer-verdict",
+   "compare-site-mailer-switching",
+   "compare-site-mailer-sources",
+   "compare-site-mailer-more",
+   "shared-compare-cta"
+  ]
+ },
+ "compare-smtp-mailer": {
+  "title": "VuloMail vs SMTP Mailer",
+  "sections": [
+   "compare-smtp-mailer-hero",
+   "compare-smtp-mailer-glance",
+   "compare-smtp-mailer-features",
+   "compare-smtp-mailer-pricing",
+   "compare-smtp-mailer-strengths",
+   "compare-smtp-mailer-verdict",
+   "compare-smtp-mailer-switching",
+   "compare-smtp-mailer-sources",
+   "compare-smtp-mailer-more",
+   "shared-compare-cta"
+  ]
+ },
+ "compare-solid-mail": {
+  "title": "VuloMail vs Solid Mail",
+  "sections": [
+   "compare-solid-mail-hero",
+   "compare-solid-mail-glance",
+   "compare-solid-mail-features",
+   "compare-solid-mail-pricing",
+   "compare-solid-mail-strengths",
+   "compare-solid-mail-verdict",
+   "compare-solid-mail-switching",
+   "compare-solid-mail-sources",
+   "compare-solid-mail-more",
+   "shared-compare-cta"
+  ]
+ },
+ "compare-wsms": {
+  "title": "VuloMail vs WSMS (WP SMS)",
+  "sections": [
+   "compare-wsms-hero",
+   "compare-wsms-glance",
+   "compare-wsms-features",
+   "compare-wsms-pricing",
+   "compare-wsms-strengths",
+   "compare-wsms-verdict",
+   "compare-wsms-switching",
+   "compare-wsms-sources",
+   "compare-wsms-more",
+   "shared-compare-cta"
+  ]
+ },
+ "blog": {
+  "title": "Blog",
+  "sections": [
+   "blog-hero",
+   "blog-cta"
+  ]
+ },
+ "404": {
+  "title": "404 \u00b7 Not found",
+  "sections": [
+   "404-main"
+  ]
+ }
+}

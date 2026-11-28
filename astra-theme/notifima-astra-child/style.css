@@ -1,0 +1,15 @@
+/*
+Theme Name:   Notifima Astra Child
+Theme URI:    https://notifima.com/
+Description:  The Notifima website for Astra. Every section of every page is a synced Kadence pattern (Appearance → Design → Patterns → Notifima); the header (with mega menu) and footer are synced Kadence patterns too. Needs the Kadence Blocks plugin.
+Author:       Notifima
+Template:     astra
+Version:      2.3.7
+Requires at least: 6.5
+Requires PHP: 7.4
+License:      GNU General Public License v2 or later
+License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  notifima
+*/
+
+/* Your own CSS goes here. This file loads last, so it wins over the theme, Astra and plugins. */

@@ -1,0 +1,24 @@
+{
+  "items": [
+    { "title": "Home", "url": "/" },
+    { "title": "Features", "url": "/features/" },
+    { "title": "Pricing", "url": "/pricing/" },
+    { "title": "Resources", "url": "#", "children": [
+      { "title": "Learn", "children": [
+        { "title": "Blog", "url": "/blog/", "desc": "Guides to recover lost sales.", "icon": "file" },
+        { "title": "Documentation", "url": "@docs", "desc": "Set up Notifima step by step.", "icon": "book" }
+      ] },
+      { "title": "Get help", "children": [
+        { "title": "Support", "url": "@support", "desc": "Talk to the Notifima team.", "icon": "help" },
+        { "title": "Release Notes", "url": "/release-notes/", "desc": "What's new in each version.", "icon": "refresh" }
+      ] },
+      { "title": "Company", "children": [
+        { "title": "About Us", "url": "/about-us/", "desc": "The team behind Notifima.", "icon": "users" },
+        { "title": "Contact Us", "url": "@contact", "desc": "Sales and partnerships.", "icon": "mail" }
+      ] }
+    ] }
+  ],
+  "feature": { "title": "How smart waitlists boost your WooCommerce revenue.", "text": "Our most-read guide this month.", "link_text": "Read the post", "url": "/blog/", "row1": "Never lose a sale again", "row2": "5 min read" },
+  "foot": { "text": "<b>Try before you buy.</b> Explore the live demo store.", "link_text": "Open live demo", "url": "@demo" },
+  "cta": { "text": "Contact Sales", "url": "@contact" }
+}

@@ -1,0 +1,102 @@
+/* ==========================================================================
+   VuloPilot – animation styles for the PHP templates (read with vp-motion.js).
+   No React. Every animated element carries data-m (see vp_m() in inc/template-helpers.php).
+
+   1. Enter animations      4. Hero rotating words
+   2. Hover lift            5. Panels: tabs, stepper, tour, sort, accordion, range slider
+   3. Looping motion        6. Lightbox for screenshots
+   ========================================================================== */
+
+:root { --vp-spring2: cubic-bezier(.34, 1.56, .64, 1); }
+
+/* 1. Enter animations ------------------------------------------------------ */
+.vp-js .vp-scope [data-m] {
+	transition-property: opacity, transform, width, height, stroke-dashoffset, color, background-color, border-color;
+	transition-duration: var(--mt, .6s);
+	transition-timing-function: var(--me, var(--vp-ease));
+	transition-delay: var(--md, 0s);
+}
+.vp-js .vp-scope [data-m]:not(.m-in) {
+	opacity: var(--fo, 1);
+	transform: translate(var(--fx, 0rem), var(--fy, 0rem)) scale(var(--fs, 1)) rotate(var(--fr, 0deg));
+}
+.vp-js .vp-scope [data-m].m-done { transition-delay: 0s !important; }
+.vp-js .vp-scope [data-m].m-reset { transition: none !important; }
+.vp-scope svg [data-m] { transform-box: fill-box; transform-origin: 50% 50%; }
+.vp-scope .vp-ring-arc { transition: stroke-dashoffset 1.6s ease-out; }
+.vp-scope .vp-ring-arc.m-reset { transition: none; }
+
+/* Script failed or reduced motion: show everything. */
+.vp-noanim .vp-scope [data-m] { opacity: 1 !important; transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+	.vp-js .vp-scope [data-m], .vp-scope .vp-ring-arc { transition-duration: 0s !important; transition-delay: 0s !important; }
+	.vp-scope .vp-loop, .vp-scope .vp-drift, .vp-scope .vp-scanline { animation: none !important; }
+}
+
+/* 2. Hover lift (framer whileHover) ---------------------------------------- */
+.vp-scope.vp-scope .vp-hover { transition: transform .45s var(--vp-spring2), border-color .3s, background-color .3s, box-shadow .3s; }
+.vp-scope.vp-scope .vp-hover:hover { transform: translateY(var(--hy, -0.375rem)) rotate(var(--hr, 0deg)) scale(var(--hs, 1)); }
+.vp-scope.vp-scope .vp-press:active { transform: scale(.92); }
+
+/* 3. Looping motion -------------------------------------------------------- */
+/* Drift: a blob moving to (--dx, --dy) and back. */
+.vp-scope .vp-drift { animation: vpDrift var(--dd, 10s) ease-in-out infinite; }
+@keyframes vpDrift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(var(--dx, 0rem), var(--dy, 0rem)); } }
+
+/* Scan line moving from top to bottom. */
+.vp-scope .vp-scanline { animation: vpScan var(--sd, 1.8s) linear infinite; animation-delay: var(--sdl, 0s); }
+@keyframes vpScan { from { top: var(--s0, -10%); } to { top: var(--s1, 105%); } }
+.vp-scope .vp-scanline-gap { animation-name: vpScanGap; }
+@keyframes vpScanGap { 0% { top: -25%; } 84% { top: 105%; } 100% { top: 105%; } }
+/* One-off scan (dashboard "Run scan") */
+.vp-scope .vp-scan-once { animation: vpScanOnce 2.1s linear forwards; }
+@keyframes vpScanOnce { 0% { top: 0; opacity: 0; } 33% { opacity: 1; } 66% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+
+/* Pulsing ring around the "missing title" box. */
+.vp-scope .vp-pulse-ring { animation: vpPulseRing 1.6s ease-out infinite; }
+@keyframes vpPulseRing { from { box-shadow: 0 0 0 0 rgba(216, 54, 43, .45); } to { box-shadow: 0 0 0 0.5rem rgba(216, 54, 43, 0); } }
+
+/* Hotspot ping. */
+.vp-scope .vp-ping-out { animation: vpPingOut 1.6s ease-out infinite; }
+@keyframes vpPingOut { from { transform: scale(1); opacity: .5; } to { transform: scale(2.4); opacity: 0; } }
+
+/* 4. Hero rotating words --------------------------------------------------- */
+.vp-scope [data-rot-item] { transition: opacity .5s var(--vp-ease), transform .5s var(--vp-ease); }
+.vp-scope [data-rot-item]:not(.is-on) { opacity: 0; transform: translateY(0.875rem); }
+
+/* 5. Panels (tabs, stepper, tour) ------------------------------------------ */
+.vp-scope [data-panel][hidden] { display: none !important; }
+/* Moving highlight behind the active tab (framer layoutId). */
+.vp-scope .vp-pill { position: absolute; left: 0; top: 0; width: 0; height: 0; opacity: 0; pointer-events: none; transition: transform .45s var(--vp-spring), width .45s var(--vp-spring), height .45s var(--vp-spring), opacity .15s; }
+.vp-scope .vp-pill.is-on { opacity: 1; }
+.vp-scope .vp-pill.no-anim { transition: none; }
+
+/* Stepper icon bump. */
+.vp-scope .vp-step-ic { transition: transform .45s var(--vp-spring2), background-color .3s, border-color .3s, color .3s; }
+.vp-scope [aria-current="true"] .vp-step-ic { transform: scale(1.12); }
+.vp-scope .vp-step-bar { transition: width .5s ease-out; }
+.vp-scope .vp-step-next { animation: vpGrow var(--step, 5.6s) linear forwards; }
+@keyframes vpGrow { from { width: 0; } to { width: var(--to, 25%); } }
+
+/* Sort (FLIP) */
+.vp-scope [data-fx="sort"] li { transition: transform .5s var(--vp-spring); }
+
+/* Accordion */
+.vp-scope [data-vp-acc-body] { transition: height .3s var(--vp-ease), opacity .3s var(--vp-ease); }
+
+/* Tour sub-list open */
+.vp-scope .vp-sub { display: none; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .3s var(--vp-ease), opacity .3s; }
+.vp-scope .vp-sub > ul { min-height: 0; overflow: hidden; }
+.vp-scope .is-active > .vp-sub { grid-template-rows: 1fr; opacity: 1; }
+@media (min-width: 64rem) { .vp-scope .vp-sub { display: grid; } }
+
+/* Range slider thumb (problem section) */
+.vp-scope input.vp-range { -webkit-appearance: none; appearance: none; }
+
+/* 6. Lightbox for screenshots ---------------------------------------------- */
+.vp-shot-lb { position: fixed; inset: 0; z-index: 110; overflow: auto; background: rgba(10, 18, 48, .8); -webkit-backdrop-filter: blur(0.25rem); backdrop-filter: blur(0.25rem); padding: 1rem; opacity: 0; transition: opacity .25s ease; }
+@media (min-width: 40rem) { .vp-shot-lb { padding: 2.5rem; } }
+.vp-shot-lb.is-open { opacity: 1; }
+.vp-shot-lb img { display: block; margin: 0 auto; width: 100%; max-width: 87.5rem; height: auto; border-radius: 0.25rem; background: var(--surface); box-shadow: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, .25); transform: translateY(1.25rem) scale(.96); transition: transform .45s var(--vp-spring); }
+.vp-shot-lb.is-open img { transform: none; }
+.vp-shot-lb button { position: fixed; right: 1.25rem; top: 1.25rem; z-index: 1; display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 624.9375rem; border: 0; background: var(--bg); color: var(--ink); box-shadow: 0 0.625rem 0.9375rem -0.1875rem rgba(0, 0, 0, .1); cursor: pointer; }

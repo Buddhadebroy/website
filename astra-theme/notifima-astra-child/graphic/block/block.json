@@ -1,0 +1,46 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "notifima/graphic",
+ "title": "Animated Graphic (Notifima)",
+ "category": "notifima",
+ "icon": "chart-area",
+ "description": "Any animated Notifima graphic or Home section: hero flow, product mockups, email and dashboard previews, blog cards …",
+ "keywords": [
+  "notifima",
+  "graphic",
+  "animation",
+  "demo"
+ ],
+ "textdomain": "notifima",
+ "attributes": {
+  "name": {
+   "type": "string",
+   "default": "home-stage"
+  },
+  "maxWidth": {
+   "type": "number",
+   "default": 0
+  }
+ },
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "className": true,
+  "spacing": {
+   "margin": true
+  }
+ },
+ "editorScript": "file:./index.js",
+ "render": "file:./render.php",
+ "style": [
+  "nf-site"
+ ],
+ "viewScript": [
+  "nf-site"
+ ]
+}

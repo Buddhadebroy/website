@@ -1,0 +1,54 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "vuloform/graphic",
+ "title": "Animated Graphic (VuloForm)",
+ "category": "vuloform",
+ "icon": "chart-area",
+ "description": "Any animated VuloForm graphic or Home section: builder app, form demos, cost chart, comparison table, hero, FAQ …",
+ "keywords": [
+  "vuloform",
+  "graphic",
+  "animation",
+  "demo"
+ ],
+ "textdomain": "vuloform",
+ "attributes": {
+  "name": {
+   "type": "string",
+   "default": "builder-app"
+  },
+  "maxWidth": {
+   "type": "number",
+   "default": 0
+  },
+  "plugins": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "className": true,
+  "spacing": {
+   "margin": true
+  }
+ },
+ "editorScript": "file:./index.js",
+ "render": "file:./render.php",
+ "style": [
+  "vf-tailwind",
+  "vf-site",
+  "vf-effects",
+  "vf-kadence"
+ ],
+ "viewScript": [
+  "vf-effects",
+  "vf-site"
+ ]
+}

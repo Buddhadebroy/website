@@ -1,0 +1,19 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "notifima/site-logo",
+ "title": "Site Logo (Notifima)",
+ "category": "notifima",
+ "icon": "format-image",
+ "description": "The logo from Customize → Site Identity (Astra logo + retina logo). Without a logo: the site title as the Notifima wordmark with the purple ring.",
+ "keywords": [ "logo", "site identity", "notifima" ],
+ "textdomain": "notifima",
+ "attributes": {
+  "width": { "type": "number", "default": 130 },
+  "dot": { "type": "boolean", "default": true },
+  "link": { "type": "boolean", "default": true }
+ },
+ "supports": { "html": false, "className": true },
+ "editorScript": "nf-site-blocks-editor",
+ "render": "file:./render.php"
+}

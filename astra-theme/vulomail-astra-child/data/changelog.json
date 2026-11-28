@@ -1,0 +1,27 @@
+{
+ "source": "plugins/vulomail/readme.txt in github.com/Buddhadebroy/vulolabs (== Changelog ==). Edit here, then run python3 src/build-patterns.py.",
+ "releases": [
+  {
+   "version": "1.0.1",
+   "date": "10 November 2026",
+   "changes": [
+    {"type": "Added", "items": ["Compatibility with WordPress 7.1.4.", "Email open tracking, to see when recipients open your emails."]}
+   ]
+  },
+  {
+   "version": "1.0.0",
+   "date": "12 October 2026",
+   "changes": [
+    {"type": "First release", "items": [
+     "Send WordPress email through SMTP or a provider API, with one-click presets for popular mailboxes.",
+     "Backup email connection with automatic failover.",
+     "SMS through Twilio, Vonage, Plivo or Clickatell.",
+     "SMS alerts for site and WooCommerce order events.",
+     "Email and SMS logs with search, failure reasons and resend.",
+     "Test email, test SMS and diagnostics.",
+     "Privacy controls: masked recipients, optional message storage, log retention."
+    ]}
+   ]
+  }
+ ]
+}

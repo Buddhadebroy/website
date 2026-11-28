@@ -1,0 +1,812 @@
+{
+ "header": {
+  "title": "VuloMail Header",
+  "kind": "layout"
+ },
+ "footer": {
+  "title": "VuloMail Footer",
+  "kind": "layout"
+ },
+ "shared-cta": {
+  "title": "Shared \u00b7 Call to action",
+  "kind": "shared"
+ },
+ "shared-compare-cta": {
+  "title": "Shared \u00b7 Compare call to action",
+  "kind": "shared"
+ },
+ "home-hero": {
+  "title": "Home \u00b7 Hero",
+  "kind": "section"
+ },
+ "home-marquee": {
+  "title": "Home \u00b7 Provider marquee",
+  "kind": "section"
+ },
+ "home-problem": {
+  "title": "Home \u00b7 The quiet problem",
+  "kind": "section"
+ },
+ "home-pipeline": {
+  "title": "Home \u00b7 How a message travels (scroll story)",
+  "kind": "section"
+ },
+ "home-bento": {
+  "title": "Home \u00b7 What's inside (bento)",
+  "kind": "section"
+ },
+ "home-numbers": {
+  "title": "Home \u00b7 Numbers",
+  "kind": "section"
+ },
+ "home-sms": {
+  "title": "Home \u00b7 SMS alerts",
+  "kind": "section"
+ },
+ "home-principles": {
+  "title": "Home \u00b7 Five rules (horizontal scroll)",
+  "kind": "section"
+ },
+ "home-compare": {
+  "title": "Home \u00b7 Side by side",
+  "kind": "section"
+ },
+ "home-developers": {
+  "title": "Home \u00b7 For developers",
+  "kind": "section"
+ },
+ "home-faq": {
+  "title": "Home \u00b7 Questions",
+  "kind": "section"
+ },
+ "page-home": {
+  "title": "Page \u00b7 Home",
+  "kind": "page",
+  "page": "home"
+ },
+ "features-hero": {
+  "title": "Features \u00b7 Hero",
+  "kind": "section"
+ },
+ "features-body": {
+  "title": "Features \u00b7 All features with side index",
+  "kind": "section"
+ },
+ "page-features": {
+  "title": "Page \u00b7 Features",
+  "kind": "page",
+  "page": "features"
+ },
+ "email-hero": {
+  "title": "Email \u00b7 Hero",
+  "kind": "section"
+ },
+ "email-try": {
+  "title": "Email \u00b7 Failover simulator",
+  "kind": "section"
+ },
+ "email-sender": {
+  "title": "Email \u00b7 The sender (dark)",
+  "kind": "section"
+ },
+ "email-settings": {
+  "title": "Email \u00b7 Six settings",
+  "kind": "section"
+ },
+ "email-parsing": {
+  "title": "Email \u00b7 Under the hood",
+  "kind": "section"
+ },
+ "email-cover": {
+  "title": "Email \u00b7 Which emails",
+  "kind": "section"
+ },
+ "email-cta": {
+  "title": "Email \u00b7 Call to action",
+  "kind": "section"
+ },
+ "page-email": {
+  "title": "Page \u00b7 Email delivery",
+  "kind": "page",
+  "page": "email"
+ },
+ "sms-hero": {
+  "title": "SMS \u00b7 Hero",
+  "kind": "section"
+ },
+ "sms-alerts": {
+  "title": "SMS \u00b7 Every alert (explorer)",
+  "kind": "section"
+ },
+ "sms-setup": {
+  "title": "SMS \u00b7 Three steps",
+  "kind": "section"
+ },
+ "sms-rules": {
+  "title": "SMS \u00b7 Small rules",
+  "kind": "section"
+ },
+ "sms-settings": {
+  "title": "SMS \u00b7 Three settings",
+  "kind": "section"
+ },
+ "sms-cta": {
+  "title": "SMS \u00b7 Call to action",
+  "kind": "section"
+ },
+ "page-sms": {
+  "title": "Page \u00b7 SMS alerts",
+  "kind": "page",
+  "page": "sms"
+ },
+ "providers-hero": {
+  "title": "Providers \u00b7 Hero",
+  "kind": "section"
+ },
+ "providers-explorer": {
+  "title": "Providers \u00b7 Explorer (filter + search)",
+  "kind": "section"
+ },
+ "providers-connections": {
+  "title": "Providers \u00b7 Connections",
+  "kind": "section"
+ },
+ "providers-smtp": {
+  "title": "Providers \u00b7 SMTP in detail",
+  "kind": "section"
+ },
+ "providers-cta": {
+  "title": "Providers \u00b7 Call to action",
+  "kind": "section"
+ },
+ "page-providers": {
+  "title": "Page \u00b7 Providers",
+  "kind": "page",
+  "page": "providers"
+ },
+ "security-hero": {
+  "title": "Security \u00b7 Hero",
+  "kind": "section"
+ },
+ "security-pillars": {
+  "title": "Security \u00b7 Six pillars",
+  "kind": "section"
+ },
+ "security-split-key": {
+  "title": "Security \u00b7 Split-key encryption",
+  "kind": "section"
+ },
+ "security-privacy": {
+  "title": "Security \u00b7 Privacy defaults",
+  "kind": "section"
+ },
+ "security-stored": {
+  "title": "Security \u00b7 Everything VuloMail stores",
+  "kind": "section"
+ },
+ "security-no-tracking": {
+  "title": "Security \u00b7 No tracking",
+  "kind": "section"
+ },
+ "security-cta": {
+  "title": "Security \u00b7 Call to action",
+  "kind": "section"
+ },
+ "page-security": {
+  "title": "Page \u00b7 Security & privacy",
+  "kind": "page",
+  "page": "security"
+ },
+ "developers-hero": {
+  "title": "Developers \u00b7 Hero",
+  "kind": "section"
+ },
+ "developers-code": {
+  "title": "Developers \u00b7 Code examples (tabs)",
+  "kind": "section"
+ },
+ "developers-reference": {
+  "title": "Developers \u00b7 Functions, actions, filters",
+  "kind": "section"
+ },
+ "developers-rest": {
+  "title": "Developers \u00b7 REST routes",
+  "kind": "section"
+ },
+ "developers-rules": {
+  "title": "Developers \u00b7 Three rules",
+  "kind": "section"
+ },
+ "developers-cta": {
+  "title": "Developers \u00b7 Call to action",
+  "kind": "section"
+ },
+ "page-developers": {
+  "title": "Page \u00b7 Developers",
+  "kind": "page",
+  "page": "developers"
+ },
+ "pricing-hero": {
+  "title": "Pricing \u00b7 Hero",
+  "kind": "section"
+ },
+ "pricing-plan": {
+  "title": "Pricing \u00b7 $0 forever",
+  "kind": "section"
+ },
+ "pricing-why": {
+  "title": "Pricing \u00b7 Why free?",
+  "kind": "section"
+ },
+ "page-pricing": {
+  "title": "Page \u00b7 Pricing",
+  "kind": "page",
+  "page": "pricing"
+ },
+ "about-hero": {
+  "title": "About \u00b7 Hero",
+  "kind": "section"
+ },
+ "about-story": {
+  "title": "About \u00b7 Why we built it",
+  "kind": "section"
+ },
+ "about-facts": {
+  "title": "About \u00b7 At a glance",
+  "kind": "section"
+ },
+ "about-rules": {
+  "title": "About \u00b7 Five rules",
+  "kind": "section"
+ },
+ "about-family": {
+  "title": "About \u00b7 Made by VuloLabs",
+  "kind": "section"
+ },
+ "page-about": {
+  "title": "Page \u00b7 About",
+  "kind": "page",
+  "page": "about"
+ },
+ "changelog-hero": {
+  "title": "Changelog \u00b7 Hero",
+  "kind": "section"
+ },
+ "changelog-releases": {
+  "title": "Changelog \u00b7 Releases",
+  "kind": "section"
+ },
+ "page-changelog": {
+  "title": "Page \u00b7 Changelog",
+  "kind": "page",
+  "page": "changelog"
+ },
+ "contact-hero": {
+  "title": "Contact \u00b7 Hero",
+  "kind": "section"
+ },
+ "contact-main": {
+  "title": "Contact \u00b7 Form and ways to reach us",
+  "kind": "section"
+ },
+ "page-contact": {
+  "title": "Page \u00b7 Contact",
+  "kind": "page",
+  "page": "contact"
+ },
+ "get-started-hero": {
+  "title": "Get started \u00b7 Hero",
+  "kind": "section"
+ },
+ "get-started-steps": {
+  "title": "Get started \u00b7 Five steps",
+  "kind": "section"
+ },
+ "get-started-screens": {
+  "title": "Get started \u00b7 Five screens",
+  "kind": "section"
+ },
+ "get-started-glossary": {
+  "title": "Get started \u00b7 Glossary",
+  "kind": "section"
+ },
+ "get-started-cta": {
+  "title": "Get started \u00b7 Call to action",
+  "kind": "section"
+ },
+ "page-get-started": {
+  "title": "Page \u00b7 Get started",
+  "kind": "page",
+  "page": "get-started"
+ },
+ "faq-hero": {
+  "title": "FAQ \u00b7 Hero",
+  "kind": "section"
+ },
+ "faq-explorer": {
+  "title": "FAQ \u00b7 Searchable questions",
+  "kind": "section"
+ },
+ "faq-errors": {
+  "title": "FAQ \u00b7 Decode the error",
+  "kind": "section"
+ },
+ "faq-log-exits": {
+  "title": "FAQ \u00b7 Log issues and exits",
+  "kind": "section"
+ },
+ "faq-cta": {
+  "title": "FAQ \u00b7 Call to action",
+  "kind": "section"
+ },
+ "page-faq": {
+  "title": "Page \u00b7 FAQ & troubleshooting",
+  "kind": "page",
+  "page": "faq"
+ },
+ "compare-hero": {
+  "title": "Compare \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-glance": {
+  "title": "Compare \u00b7 At a glance",
+  "kind": "section"
+ },
+ "compare-overview": {
+  "title": "Compare \u00b7 Overview table",
+  "kind": "section"
+ },
+ "compare-cards": {
+  "title": "Compare \u00b7 Pick a comparison",
+  "kind": "section"
+ },
+ "compare-method": {
+  "title": "Compare \u00b7 Also looked at + method",
+  "kind": "section"
+ },
+ "compare-sources": {
+  "title": "Compare \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-cta": {
+  "title": "Compare \u00b7 Call to action",
+  "kind": "section"
+ },
+ "page-compare": {
+  "title": "Page \u00b7 Compare",
+  "kind": "page",
+  "page": "compare"
+ },
+ "compare-wp-mail-smtp-hero": {
+  "title": "vs WP Mail SMTP \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-wp-mail-smtp-glance": {
+  "title": "vs WP Mail SMTP \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-wp-mail-smtp-features": {
+  "title": "vs WP Mail SMTP \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-wp-mail-smtp-pricing": {
+  "title": "vs WP Mail SMTP \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-wp-mail-smtp-strengths": {
+  "title": "vs WP Mail SMTP \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-wp-mail-smtp-verdict": {
+  "title": "vs WP Mail SMTP \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-wp-mail-smtp-switching": {
+  "title": "vs WP Mail SMTP \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-wp-mail-smtp-sources": {
+  "title": "vs WP Mail SMTP \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-wp-mail-smtp-more": {
+  "title": "vs WP Mail SMTP \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-wp-mail-smtp": {
+  "title": "Page \u00b7 VuloMail vs WP Mail SMTP",
+  "kind": "page",
+  "page": "compare-wp-mail-smtp"
+ },
+ "compare-fluentsmtp-hero": {
+  "title": "vs FluentSMTP \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-fluentsmtp-glance": {
+  "title": "vs FluentSMTP \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-fluentsmtp-features": {
+  "title": "vs FluentSMTP \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-fluentsmtp-pricing": {
+  "title": "vs FluentSMTP \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-fluentsmtp-strengths": {
+  "title": "vs FluentSMTP \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-fluentsmtp-verdict": {
+  "title": "vs FluentSMTP \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-fluentsmtp-switching": {
+  "title": "vs FluentSMTP \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-fluentsmtp-sources": {
+  "title": "vs FluentSMTP \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-fluentsmtp-more": {
+  "title": "vs FluentSMTP \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-fluentsmtp": {
+  "title": "Page \u00b7 VuloMail vs FluentSMTP",
+  "kind": "page",
+  "page": "compare-fluentsmtp"
+ },
+ "compare-easy-wp-smtp-hero": {
+  "title": "vs Easy WP SMTP \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-easy-wp-smtp-glance": {
+  "title": "vs Easy WP SMTP \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-easy-wp-smtp-features": {
+  "title": "vs Easy WP SMTP \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-easy-wp-smtp-pricing": {
+  "title": "vs Easy WP SMTP \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-easy-wp-smtp-strengths": {
+  "title": "vs Easy WP SMTP \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-easy-wp-smtp-verdict": {
+  "title": "vs Easy WP SMTP \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-easy-wp-smtp-switching": {
+  "title": "vs Easy WP SMTP \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-easy-wp-smtp-sources": {
+  "title": "vs Easy WP SMTP \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-easy-wp-smtp-more": {
+  "title": "vs Easy WP SMTP \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-easy-wp-smtp": {
+  "title": "Page \u00b7 VuloMail vs Easy WP SMTP",
+  "kind": "page",
+  "page": "compare-easy-wp-smtp"
+ },
+ "compare-post-smtp-hero": {
+  "title": "vs Post SMTP \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-post-smtp-glance": {
+  "title": "vs Post SMTP \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-post-smtp-features": {
+  "title": "vs Post SMTP \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-post-smtp-pricing": {
+  "title": "vs Post SMTP \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-post-smtp-strengths": {
+  "title": "vs Post SMTP \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-post-smtp-verdict": {
+  "title": "vs Post SMTP \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-post-smtp-switching": {
+  "title": "vs Post SMTP \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-post-smtp-sources": {
+  "title": "vs Post SMTP \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-post-smtp-more": {
+  "title": "vs Post SMTP \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-post-smtp": {
+  "title": "Page \u00b7 VuloMail vs Post SMTP",
+  "kind": "page",
+  "page": "compare-post-smtp"
+ },
+ "compare-gosmtp-hero": {
+  "title": "vs GoSMTP \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-gosmtp-glance": {
+  "title": "vs GoSMTP \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-gosmtp-features": {
+  "title": "vs GoSMTP \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-gosmtp-pricing": {
+  "title": "vs GoSMTP \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-gosmtp-strengths": {
+  "title": "vs GoSMTP \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-gosmtp-verdict": {
+  "title": "vs GoSMTP \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-gosmtp-switching": {
+  "title": "vs GoSMTP \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-gosmtp-sources": {
+  "title": "vs GoSMTP \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-gosmtp-more": {
+  "title": "vs GoSMTP \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-gosmtp": {
+  "title": "Page \u00b7 VuloMail vs GoSMTP",
+  "kind": "page",
+  "page": "compare-gosmtp"
+ },
+ "compare-suremail-hero": {
+  "title": "vs SureMail \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-suremail-glance": {
+  "title": "vs SureMail \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-suremail-features": {
+  "title": "vs SureMail \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-suremail-pricing": {
+  "title": "vs SureMail \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-suremail-strengths": {
+  "title": "vs SureMail \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-suremail-verdict": {
+  "title": "vs SureMail \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-suremail-switching": {
+  "title": "vs SureMail \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-suremail-sources": {
+  "title": "vs SureMail \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-suremail-more": {
+  "title": "vs SureMail \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-suremail": {
+  "title": "Page \u00b7 VuloMail vs SureMail",
+  "kind": "page",
+  "page": "compare-suremail"
+ },
+ "compare-site-mailer-hero": {
+  "title": "vs Site Mailer \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-site-mailer-glance": {
+  "title": "vs Site Mailer \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-site-mailer-features": {
+  "title": "vs Site Mailer \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-site-mailer-pricing": {
+  "title": "vs Site Mailer \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-site-mailer-strengths": {
+  "title": "vs Site Mailer \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-site-mailer-verdict": {
+  "title": "vs Site Mailer \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-site-mailer-switching": {
+  "title": "vs Site Mailer \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-site-mailer-sources": {
+  "title": "vs Site Mailer \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-site-mailer-more": {
+  "title": "vs Site Mailer \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-site-mailer": {
+  "title": "Page \u00b7 VuloMail vs Site Mailer",
+  "kind": "page",
+  "page": "compare-site-mailer"
+ },
+ "compare-smtp-mailer-hero": {
+  "title": "vs SMTP Mailer \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-smtp-mailer-glance": {
+  "title": "vs SMTP Mailer \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-smtp-mailer-features": {
+  "title": "vs SMTP Mailer \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-smtp-mailer-pricing": {
+  "title": "vs SMTP Mailer \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-smtp-mailer-strengths": {
+  "title": "vs SMTP Mailer \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-smtp-mailer-verdict": {
+  "title": "vs SMTP Mailer \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-smtp-mailer-switching": {
+  "title": "vs SMTP Mailer \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-smtp-mailer-sources": {
+  "title": "vs SMTP Mailer \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-smtp-mailer-more": {
+  "title": "vs SMTP Mailer \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-smtp-mailer": {
+  "title": "Page \u00b7 VuloMail vs SMTP Mailer",
+  "kind": "page",
+  "page": "compare-smtp-mailer"
+ },
+ "compare-solid-mail-hero": {
+  "title": "vs Solid Mail \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-solid-mail-glance": {
+  "title": "vs Solid Mail \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-solid-mail-features": {
+  "title": "vs Solid Mail \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-solid-mail-pricing": {
+  "title": "vs Solid Mail \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-solid-mail-strengths": {
+  "title": "vs Solid Mail \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-solid-mail-verdict": {
+  "title": "vs Solid Mail \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-solid-mail-switching": {
+  "title": "vs Solid Mail \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-solid-mail-sources": {
+  "title": "vs Solid Mail \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-solid-mail-more": {
+  "title": "vs Solid Mail \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-solid-mail": {
+  "title": "Page \u00b7 VuloMail vs Solid Mail",
+  "kind": "page",
+  "page": "compare-solid-mail"
+ },
+ "compare-wsms-hero": {
+  "title": "vs WSMS (WP SMS) \u00b7 Hero",
+  "kind": "section"
+ },
+ "compare-wsms-glance": {
+  "title": "vs WSMS (WP SMS) \u00b7 The numbers",
+  "kind": "section"
+ },
+ "compare-wsms-features": {
+  "title": "vs WSMS (WP SMS) \u00b7 Features",
+  "kind": "section"
+ },
+ "compare-wsms-pricing": {
+  "title": "vs WSMS (WP SMS) \u00b7 Pricing",
+  "kind": "section"
+ },
+ "compare-wsms-strengths": {
+  "title": "vs WSMS (WP SMS) \u00b7 Strengths",
+  "kind": "section"
+ },
+ "compare-wsms-verdict": {
+  "title": "vs WSMS (WP SMS) \u00b7 Verdict",
+  "kind": "section"
+ },
+ "compare-wsms-switching": {
+  "title": "vs WSMS (WP SMS) \u00b7 Switching",
+  "kind": "section"
+ },
+ "compare-wsms-sources": {
+  "title": "vs WSMS (WP SMS) \u00b7 Sources",
+  "kind": "section"
+ },
+ "compare-wsms-more": {
+  "title": "vs WSMS (WP SMS) \u00b7 More comparisons",
+  "kind": "section"
+ },
+ "page-compare-wsms": {
+  "title": "Page \u00b7 VuloMail vs WSMS (WP SMS)",
+  "kind": "page",
+  "page": "compare-wsms"
+ },
+ "blog-hero": {
+  "title": "Blog \u00b7 Hero",
+  "kind": "shared"
+ },
+ "blog-cta": {
+  "title": "Blog \u00b7 Banner under a post",
+  "kind": "shared"
+ },
+ "page-blog": {
+  "title": "Page \u00b7 Blog",
+  "kind": "page",
+  "page": "blog"
+ },
+ "404-main": {
+  "title": "404 \u00b7 Address unknown",
+  "kind": "shared"
+ },
+ "page-404": {
+  "title": "Page \u00b7 404 \u00b7 Not found",
+  "kind": "page",
+  "page": "404"
+ }
+}

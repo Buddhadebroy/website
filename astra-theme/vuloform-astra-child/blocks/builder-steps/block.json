@@ -1,0 +1,78 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "vuloform/builder-steps",
+ "title": "Builder Sticky Steps (VuloForm)",
+ "category": "vuloform",
+ "icon": "list-view",
+ "description": "\"Three panes. Zero guesswork.\" The section stays on screen while you scroll; each step lights up and the builder app follows.",
+ "keywords": [
+  "vuloform",
+  "section"
+ ],
+ "textdomain": "vuloform",
+ "attributes": {
+  "eyebrow": {
+   "type": "string",
+   "default": ""
+  },
+  "title": {
+   "type": "string",
+   "default": ""
+  },
+  "subtitle": {
+   "type": "string",
+   "default": ""
+  },
+  "steps": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "className": true,
+  "spacing": {
+   "margin": true
+  }
+ },
+ "editorScript": "vf-blocks-editor",
+ "style": [
+  "vf-tailwind",
+  "vf-site",
+  "vf-effects"
+ ],
+ "viewScript": [
+  "vf-effects",
+  "vf-site"
+ ],
+ "render": "file:./render.php",
+ "vfSection": "builder",
+ "vfFields": [
+  {
+   "key": "eyebrow",
+   "type": "text",
+   "label": "Small label"
+  },
+  {
+   "key": "title",
+   "type": "text",
+   "label": "Title, line 1"
+  },
+  {
+   "key": "subtitle",
+   "type": "text",
+   "label": "Title, line 2 (grey)"
+  },
+  {
+   "key": "steps",
+   "type": "textarea",
+   "label": "Steps (one per line: Title | text)"
+  }
+ ]
+}

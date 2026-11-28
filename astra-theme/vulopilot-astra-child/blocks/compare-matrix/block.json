@@ -1,0 +1,241 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "category": "vulopilot",
+ "textdomain": "vulopilot",
+ "editorScript": "file:./index.js",
+ "name": "vulopilot/compare-matrix",
+ "title": "Plan Comparison (VuloPilot)",
+ "icon": "editor-table",
+ "description": "Free vs Paid feature matrix with expandable groups, a ‘Paid extras only’ switch and Expand all.",
+ "keywords": [
+  "pricing",
+  "plans",
+  "compare",
+  "matrix",
+  "features"
+ ],
+ "viewScript": "file:./view.js",
+ "render": "file:./render.php",
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  }
+ },
+ "attributes": {
+  "showHeading": {
+   "type": "boolean",
+   "default": true
+  },
+  "eyebrow": {
+   "type": "string",
+   "default": "Compare plans"
+  },
+  "title": {
+   "type": "string",
+   "default": "Every feature,"
+  },
+  "titleAccent": {
+   "type": "string",
+   "default": "side by side."
+  },
+  "subtitle": {
+   "type": "string",
+   "default": "{free} features are free. Paid plans add {paid} more."
+  },
+  "freeLabel": {
+   "type": "string",
+   "default": "Free"
+  },
+  "freePrice": {
+   "type": "string",
+   "default": "$0"
+  },
+  "paidLabel": {
+   "type": "string",
+   "default": "Paid"
+  },
+  "paidPrice": {
+   "type": "string",
+   "default": "from $19/mo"
+  },
+  "toggleLabel": {
+   "type": "string",
+   "default": "Paid extras only"
+  },
+  "expandLabel": {
+   "type": "string",
+   "default": "Expand all"
+  },
+  "collapseLabel": {
+   "type": "string",
+   "default": "Collapse all"
+  },
+  "paidTag": {
+   "type": "string",
+   "default": "Paid"
+  },
+  "freeCountLabel": {
+   "type": "string",
+   "default": "free"
+  },
+  "paidCountLabel": {
+   "type": "string",
+   "default": "paid"
+  },
+  "limits": {
+   "type": "array",
+   "default": [
+    {
+     "icon": "server",
+     "label": "Sites",
+     "free": "Free 1 ·",
+     "paid": "1 / 5 / 25"
+    },
+    {
+     "icon": "coins",
+     "label": "AI credits / mo",
+     "free": "Free 100 ·",
+     "paid": "1k / 5k / 10k"
+    }
+   ]
+  },
+  "groups": {
+   "type": "array",
+   "default": [
+    {
+     "title": "AI Copilot",
+     "icon": "bot",
+     "free": "Copilot Q&A: questions answered from your real scan results\nBlog drafting, saved as drafts and never published for you",
+     "paid": "Full interactive chat with your site\nMCP server for Claude Desktop and other AI tools",
+     "linkText": "",
+     "linkUrl": "",
+     "open": true
+    },
+    {
+     "title": "Search Visibility",
+     "icon": "search",
+     "free": "SEO score and a ranked problem list\nPage titles and descriptions\nSitemap and instant indexing (IndexNow)\nRedirects, 404 tracking and robots.txt\nPer-page SEO panel in the post editor\nTable of Contents and FAQ blocks\nSite verification and Google Search Console connection",
+     "paid": "Technical SEO: schema, sitemap, duplicate descriptions, multiple H1s, focus keywords\nKeyword rank tracking, opportunities and groups\nOne-click fixes, single or in bulk",
+     "linkText": "About Search Visibility →",
+     "linkUrl": "/features/search-visibility/",
+     "open": true
+    },
+    {
+     "title": "AI Search",
+     "icon": "radar",
+     "free": "GEO: AI summary, question coverage, evidence, structure, entity clarity, freshness\nAEO: answer-readiness checks and engine testing\nBrand visibility: Trust and Authority scores\nCrawler traffic from GPTBot, ClaudeBot and PerplexityBot\nEditable llms.txt\nBusiness profile, knowledge graph and schema coverage",
+     "paid": "Answer engine citation coverage and stale-content flags\nAI crawler tracking with alerts when a bot stops or is blocked\nDeeper brand and knowledge graph findings",
+     "linkText": "About AI Search →",
+     "linkUrl": "/features/ai-search/",
+     "open": false
+    },
+    {
+     "title": "Website Health",
+     "icon": "heart-pulse",
+     "free": "WordPress health checkup: updates, database, scheduled tasks, server\nManual and automatic backups\nDownload, restore or delete backups\nWCAG-based accessibility scan\nManual accessibility checklist",
+     "paid": "Copy backups to Amazon S3 or Google Drive, credentials stored encrypted\nScheduled accessibility audits (hourly to weekly) with score history",
+     "linkText": "About Website Health →",
+     "linkUrl": "/features/website-health/",
+     "open": false
+    },
+    {
+     "title": "Performance",
+     "icon": "gauge",
+     "free": "Overall speed score, mobile vs desktop\nCore Web Vitals\nBiggest speed opportunity and slow-page finder\nAI speed assistant in plain language\nReal-time monitoring and speed history\nQuick fixes: clear caches, minify, optimize images, database cleanup",
+     "paid": "",
+     "linkText": "About Performance →",
+     "linkUrl": "/features/performance/",
+     "open": false
+    },
+    {
+     "title": "Security",
+     "icon": "shield-check",
+     "free": "Security score and ranked problems\nLogin and account checks\nPassword-guessing protection and attack filter\nPublic exposure and browser protection checks\nAlerts when something looks wrong",
+     "paid": "Known vulnerability feed for WordPress core, plugins and themes\nFile change monitoring\nExposed files, debug mode, security headers and XML-RPC checks\nIncident log with alerts",
+     "linkText": "About Security →",
+     "linkUrl": "/features/security/",
+     "open": false
+    },
+    {
+     "title": "Content",
+     "icon": "edit3",
+     "free": "AI Writer and Blog Generator\nBefore and after preview, approve or reject\nDuplicate title fixer\nContent audit and readability checks\nContent stats",
+     "paid": "Content gaps against competitors\nReadability and structure suggestions\nAI drafts for titles, descriptions and summaries",
+     "linkText": "About Content →",
+     "linkUrl": "/features/content/",
+     "open": false
+    },
+    {
+     "title": "WooCommerce",
+     "icon": "shopping-bag",
+     "free": "Product, checkout and store issue list\nAI sales assistant with review-first suggestions\nProduct schema checks",
+     "paid": "Missing images, duplicate SKUs, pricing gaps, low stock, failed payments\nRevenue, top products and unsold products\nAbandoned carts and revenue at risk\nDaily store trends\nBulk AI product writing, up to 50 at a time",
+     "linkText": "About WooCommerce →",
+     "linkUrl": "/features/woocommerce/",
+     "open": false
+    },
+    {
+     "title": "Automation",
+     "icon": "calendar-clock",
+     "free": "Scheduled full-site scan: daily, weekly or monthly\nEmailed visibility report\nHistory timeline with search, export and undo\nPDF or CSV reports",
+     "paid": "Workflow builder with conditions, retries and run logs\nCustom and health reports, scheduled and exported as PDF\nAI credit analytics",
+     "linkText": "About Automation →",
+     "linkUrl": "/features/automation/",
+     "open": false
+    }
+   ]
+  },
+  "maxWidth": {
+   "type": "number",
+   "default": 896
+  },
+  "titleSize": {
+   "type": "number",
+   "default": 0
+  },
+  "colorPrimary": {
+   "type": "string",
+   "default": ""
+  },
+  "colorPrimarySoft": {
+   "type": "string",
+   "default": ""
+  },
+  "colorAccent": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBg": {
+   "type": "string",
+   "default": ""
+  },
+  "colorSurface": {
+   "type": "string",
+   "default": ""
+  },
+  "colorText": {
+   "type": "string",
+   "default": ""
+  },
+  "colorMuted": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBorder": {
+   "type": "string",
+   "default": ""
+  },
+  "radius": {
+   "type": "number",
+   "default": 4
+  }
+ }
+}

@@ -1,0 +1,860 @@
+[
+ {
+  "slug": "best-free-wordpress-form-plugins",
+  "title": "The best free WordPress form plugins in 2026 (and what they really include)",
+  "description": "Compare the free versions of VuloForm, Contact Form 7, WPForms, Ninja Forms, Formidable, Fluent Forms and Forminator, and see which features sit behind a paywall.",
+  "date": "2026-10-26",
+  "category": "Comparisons",
+  "compare": [
+   "wpforms",
+   "forminator",
+   "fluent-forms"
+  ],
+  "intro": [
+   "Almost every WordPress form plugin has a free version, but “free” means very different things. Some give you a full builder with logic and file uploads. Others give you a contact form and a banner pointing to the pricing page. If you are choosing a plugin for a client site or your own business, the useful question is not which one is free, but which one is free for the things you actually need.",
+   "We compared the free versions of seven popular plugins against their own pricing pages and WordPress.org listings, checked on 10 October 2026. Here is what we found, and how to choose."
+  ],
+  "sections": [
+   {
+    "h": "What to look for in a free form plugin",
+    "p": [
+     "Before comparing names, write down what your form needs to do. A simple “contact us” form needs very little. A quote request, a job application or a booking enquiry usually needs more: fields that appear depending on earlier answers, several steps, a file upload, or a calculated total.",
+     "These are the features most often held back for paid plans, so they make a good checklist:"
+    ],
+    "list": [
+     "A drag-and-drop builder, so you are not editing tags by hand",
+     "Submissions saved in your own WordPress database, with CSV export",
+     "Conditional logic, to show or hide fields based on answers",
+     "Multi-step forms, for longer forms that feel shorter",
+     "Calculations, for quotes and totals",
+     "File uploads",
+     "Webhooks, to send data to other tools",
+     "Payments, if you need to take money"
+    ]
+   },
+   {
+    "h": "How the free versions compare",
+    "p": [
+     "Contact Form 7 is free and very light, but it is built around a text editor with bracketed tags. By default it emails submissions without saving them, and conditional logic and multi-step forms come from third-party add-ons.",
+     "WPForms Lite has a friendly builder and includes Stripe payments, but in our check conditional logic, multi-step forms and file uploads were paid, calculations needed Pro and webhooks needed Elite. Gravity Forms has no free version at all; it starts at $59 a year.",
+     "Ninja Forms Core saves submissions, exports CSV and includes calculations, while logic, steps and uploads are paid add-ons. Formidable Lite saves entries and includes Stripe, with most advanced features paid. Fluent Forms Free includes conditional logic, and moves multi-step, calculations, uploads and webhooks to Pro.",
+     "VuloForm and Forminator are the two that put conditional logic, multi-step forms, calculations, file uploads and webhooks in the free plugin. Forminator also includes Stripe and PayPal. VuloForm does not take payments, but it is entirely free, with no paid tier at all."
+    ]
+   },
+   {
+    "h": "What it costs to get the essentials elsewhere",
+    "p": [
+     "If you need logic, steps, calculations, uploads and webhooks together, the cheapest single-site plan that includes all five varies a lot. We found Fluent Forms at $63 a year, Formidable at $199.50, Gravity Forms at $259, Ninja Forms at $299.40 for the first year (then $499), and WPForms at $299.50 for the first year (then $599). Contact Form 7 does not offer them as built-in features.",
+     "Those are not unreasonable prices for a business that earns from its forms. But for a small site, a charity or a side project, paying hundreds of dollars a year for a form is hard to justify when free options exist."
+    ]
+   },
+   {
+    "h": "Where your data ends up",
+    "p": [
+     "Features are only half the picture. Where submissions are stored matters just as much. A plugin that only emails entries can lose them to a spam filter. A plugin that backs entries up to its own servers means a third party holds your visitors’ data.",
+     "VuloForm stores entries in your own database, makes no external connections on its own, includes no telemetry, and does not store visitor IP addresses unless you switch that on. That makes privacy reviews simpler, especially for sites that must justify every data processor they use."
+    ]
+   },
+   {
+    "h": "Which one should you choose?",
+    "p": [
+     "There is no single winner, so here is a quick way to decide:"
+    ],
+    "list": [
+     "You only need a basic emailed contact form and like editing markup: Contact Form 7.",
+     "You need payments in a free plugin: Forminator, Fluent Forms, WPForms Lite or Formidable Lite.",
+     "You want the most features free, with nothing to upgrade and no external services: VuloForm.",
+     "You are an agency that wants a mature paid ecosystem and add-ons: Gravity Forms."
+    ]
+   },
+   {
+    "h": "A note on honesty",
+    "p": [
+     "We make VuloForm, so we have an obvious interest. We have tried to represent every plugin by what its maker states on its own pages, and to say where others are stronger: payments, direct integrations, years of community knowledge and specialist add-ons. VuloForm is at version 1.0, and that is a real trade-off against plugins with a decade of history.",
+     "Plans and prices change, so confirm anything important on the vendor’s site before you buy."
+    ]
+   }
+  ],
+  "outro": [
+   "If you want to see the full table, we publish a feature-by-feature comparison and a separate head-to-head page for every plugin above. When you are ready to try a form yourself, VuloForm installs from Plugins › Add New, and you can have a first form published in a couple of minutes."
+  ]
+ },
+ {
+  "slug": "multi-step-form-wordpress",
+  "title": "How to create a multi-step form in WordPress (free, no add-ons)",
+  "description": "A practical guide to building a multi-step form in WordPress: when to use one, how to plan the steps, and how to set it up free with VuloForm.",
+  "date": "2026-10-24",
+  "category": "How-to",
+  "compare": [
+   "contact-form-7",
+   "wpforms"
+  ],
+  "intro": [
+   "A long form feels like a chore. The same questions split into three short steps feel like a conversation. That is the whole case for multi-step forms: they ask for the same information but make the first move easier, and many sites find they help more people reach the end.",
+   "This guide covers when a multi-step form is worth it, how to plan one, and how to build it in WordPress without buying a plugin plan or installing add-ons."
+  ],
+  "sections": [
+   {
+    "h": "When a multi-step form makes sense",
+    "p": [
+     "Not every form needs steps. A name, email and message form is fine on one screen. Steps start to help once you pass roughly six or seven fields, or when your questions fall into natural groups."
+    ],
+    "list": [
+     "Quote and estimate requests, where you ask about the project, then the budget, then contact details",
+     "Job applications, with personal details, experience and a CV upload",
+     "Booking and enquiry forms with several decisions to make",
+     "Onboarding or intake forms for clients, patients or members"
+    ]
+   },
+   {
+    "h": "Plan the steps before you build",
+    "p": [
+     "Sketch the form on paper first. Group related questions together and give each group a short, plain name. Put the easiest, least personal questions first: people who have answered two simple questions are more likely to carry on than those who meet a phone number field straight away.",
+     "Ask for contact details last. By then the visitor has already invested effort, and you can explain exactly why you need their email address. Keep each step to three to five fields, and remove any field you will not actually use."
+    ]
+   },
+   {
+    "h": "Why many WordPress plugins make this harder than it should be",
+    "p": [
+     "Multi-step forms are one of the features most often placed behind a paywall. In our October 2026 check, Contact Form 7 relies on a third-party add-on, WPForms, Gravity Forms and Formidable offer it on paid plans, Ninja Forms sells it as an add-on from its Plus plan, and Fluent Forms puts it in Pro.",
+     "VuloForm and Forminator include multi-step forms in the free plugin. That matters if you are building several forms or client sites, because it removes a recurring licence from the budget."
+    ]
+   },
+   {
+    "h": "Building a multi-step form with VuloForm",
+    "p": [
+     "Install VuloForm from Plugins › Add New, then start from a template or a blank form. The builder has your field types on the left, the form in the middle, and an inspector on the right where you set labels, required fields and rules.",
+     "To create steps, add a page break field between groups of questions. Everything above the first break is step one, everything between breaks is the next step, and so on. You can drag fields between steps, or use the buttons and keyboard instead of dragging.",
+     "Use the preview to click through the form exactly as visitors will. Nothing you enter in the preview is sent or saved. Changes save as a draft by themselves, so you can leave and come back, and the form goes live only when you publish it."
+    ]
+   },
+   {
+    "h": "Combine steps with logic and calculations",
+    "p": [
+     "Steps become much more useful when paired with conditional logic. If someone chooses “Other” as their project type, show a short text box; if they choose “Website”, skip the questions about print. Visitors only see what is relevant, which keeps each step short.",
+     "You can also add a calculation field to show a running total or estimate on the final step. Both features are in the same free plugin, and the rules are re-checked on your server, so a hidden or skipped field cannot be forced through by editing the page in the browser."
+    ]
+   },
+   {
+    "h": "Publish it where people will see it",
+    "p": [
+     "When the form is ready, publish it and add it to a page with the VuloForm block in the block editor. If you prefer shortcodes, use the form’s ID, like [vuloform id=\"12\"]. There is also a snippet for sites that do not run WordPress, and submissions still arrive in your WordPress dashboard."
+    ]
+   },
+   {
+    "h": "Tips for better completion rates",
+    "p": [
+     "A few small decisions make a big difference to how many people finish:"
+    ],
+    "list": [
+     "Name the steps clearly, such as “Your project”, “Your budget”, “Your details”",
+     "Make only the fields you truly need required",
+     "Use the right field types, so mobile keyboards show numbers or email layouts",
+     "Tell people what happens next in the confirmation message",
+     "Test on a phone before you publish"
+    ]
+   }
+  ],
+  "outro": [
+   "A multi-step form does not need a premium licence. Plan your groups, keep each step short, and use logic to hide what is not needed. If you want to try it, VuloForm is free to install, and every feature mentioned here is included."
+  ]
+ },
+ {
+  "slug": "wordpress-conditional-logic-form",
+  "title": "WordPress conditional logic forms: how to show the right fields to the right people",
+  "description": "Learn how conditional logic works in WordPress forms, with real examples, common mistakes, and why server-side checking matters.",
+  "date": "2026-10-22",
+  "category": "How-to",
+  "compare": [
+   "contact-form-7",
+   "gravity-forms"
+  ],
+  "intro": [
+   "Conditional logic means a form changes based on what someone has already told it. Choose “Other” from a dropdown and a text box appears. Say you are an existing customer and the “How did you hear about us?” question disappears. The visitor sees a shorter, more relevant form, and you receive cleaner data.",
+   "It is also one of the features WordPress form plugins like to charge for. This guide explains how conditional logic works, shows practical examples, and covers a subtle problem most tutorials skip: what happens on the server."
+  ],
+  "sections": [
+   {
+    "h": "How conditional logic works",
+    "p": [
+     "Every rule has the same three parts: a condition, an operator and an action. The condition looks at a field, such as “Project type”. The operator compares it, for example “is equal to” or “is not empty”. The action decides what happens, such as showing, hiding or requiring another field.",
+     "Put together, a rule reads like a sentence: if Project type is “Website redesign”, then show “Current website address” and make it required. You can usually combine several conditions and decide whether any or all of them must match."
+    ]
+   },
+   {
+    "h": "Five practical examples",
+    "p": [
+     "These patterns cover most real-world forms:"
+    ],
+    "list": [
+     "Show an “Other, please specify” field only when “Other” is selected",
+     "Ask for a company name only when the visitor says they are enquiring for a business",
+     "Reveal a file upload only for people applying for a role that needs a portfolio",
+     "Require a phone number only when the visitor picks “Call me” as their preferred contact method",
+     "Show different final questions for new customers and existing ones"
+    ]
+   },
+   {
+    "h": "Keep it simple",
+    "p": [
+     "It is tempting to make every field conditional. Resist that. Forms with long chains of rules are hard to test, and a mistake can hide a required field from everyone. Start with the obvious cases, test each path, and stop when the form feels short.",
+     "Always test both directions. Fill in the form so a field appears, then change your answer and check that it disappears and no stale value is submitted."
+    ]
+   },
+   {
+    "h": "The problem with browser-only logic",
+    "p": [
+     "Most form logic runs in the visitor’s browser using JavaScript. That is fine for convenience, but it is not security. Anyone can turn off JavaScript, edit the page or send data directly to your site. If your server trusts whatever arrives, a required field can be skipped and a field that should have been hidden can be submitted with unexpected content.",
+     "Good practice is to evaluate the rules again on the server. VuloForm does exactly that: the rules are checked again on your site, a field hidden by its rules is never stored, and a required field cannot be skipped by turning off JavaScript. The same applies to calculations, which are re-computed on the server."
+    ]
+   },
+   {
+    "h": "What other plugins charge for it",
+    "p": [
+     "In our check on 10 October 2026, Contact Form 7 needed a third-party add-on for conditional logic. WPForms, Gravity Forms and Formidable included it on paid plans, and Ninja Forms offered it as an add-on from its Plus plan. Fluent Forms, Forminator and VuloForm include it in the free plugin.",
+     "If you are building a form that depends on logic, check the plan you would actually need, not just the headline price."
+    ]
+   },
+   {
+    "h": "Setting up a rule in VuloForm",
+    "p": [
+     "In the builder, select the field you want to control. In the inspector on the right, open its conditional logic settings, choose the field to watch, the operator and the value, and pick whether to show or hide. Use the preview to try each path; nothing you enter there is sent or saved.",
+     "When you publish, the same rules are enforced on submission, so what you tested in the preview matches what is stored."
+    ]
+   },
+   {
+    "h": "Common mistakes to avoid",
+    "p": [
+     "A short checklist before you publish:"
+    ],
+    "list": [
+     "Do not make a field required and hidden at the same time without a rule that reveals it",
+     "Avoid circular rules, where two fields depend on each other",
+     "Use clear option labels, since rules often match on them",
+     "Test with keyboard only and on a phone",
+     "Re-test after you rename a field or option"
+    ]
+   },
+   {
+    "h": "Questions people ask",
+    "p": [
+     "Can conditional logic slow a form down? Not noticeably. The rules are small, and the browser evaluates them instantly as someone fills in the form. The page weight matters more, and VuloForm’s public form ships no React and no jQuery.",
+     "What if a visitor has JavaScript turned off? On your own WordPress site the form still works without JavaScript, and because the rules are checked again on the server, nothing can slip through that should not."
+    ]
+   }
+  ],
+  "outro": [
+   "Conditional logic makes forms shorter, friendlier and more accurate, and it should not cost a licence. VuloForm includes it in the free plugin, with rules enforced on your server as well as in the browser."
+  ]
+ },
+ {
+  "slug": "save-form-submissions-wordpress-database",
+  "title": "How to save form submissions in WordPress (and export them to CSV)",
+  "description": "Why emailing form entries isn’t enough, how to store submissions in your WordPress database, and how to search, manage and export them.",
+  "date": "2026-10-20",
+  "category": "How-to",
+  "compare": [
+   "contact-form-7",
+   "wpforms"
+  ],
+  "intro": [
+   "Many WordPress sites collect leads in a way that depends entirely on email. A form sends a message, someone reads it, and that is the only record. It works until the message lands in spam, the mailbox fills up or a colleague deletes it. Then a customer’s enquiry is simply gone.",
+   "Saving submissions in your WordPress database fixes that. This guide explains why it matters, what to look for, and how to manage entries once you have them."
+  ],
+  "sections": [
+   {
+    "h": "Why email alone is risky",
+    "p": [
+     "Email delivery from a WordPress site is unreliable by default. Hosts throttle outgoing mail, spam filters are aggressive, and a small configuration mistake can silently stop notifications. When a form only emails the entry, any failure means lost data and no way to know.",
+     "A stored copy gives you a source of truth. Even if the notification fails, the submission is waiting in your dashboard."
+    ]
+   },
+   {
+    "h": "What happens in popular plugins",
+    "p": [
+     "Contact Form 7 emails submissions and does not store them by default, so you would need an additional plugin for a record. WPForms Lite also emails entries; it offers an optional backup to WPForms servers through Lite Connect, and entries can be viewed in WordPress after upgrading. CSV export is a paid feature there.",
+     "Ninja Forms Core, Formidable Lite, Fluent Forms and Forminator save entries and support CSV export in their free versions. Gravity Forms has no free version. VuloForm stores every submission in your own WordPress database and includes CSV export in the free plugin."
+    ]
+   },
+   {
+    "h": "What a good submissions screen should do",
+    "p": [
+     "Storing data is the minimum. To actually work from it, look for:"
+    ],
+    "list": [
+     "Search, to find a person or a phrase quickly",
+     "Filters by status and date",
+     "Statuses such as new, read and spam, so you can see what needs attention",
+     "CSV export, for spreadsheets, CRMs and reporting",
+     "A way to delete old entries automatically"
+    ]
+   },
+   {
+    "h": "Managing submissions in VuloForm",
+    "p": [
+     "VuloForm shows entries inside WordPress. You can search, filter by status and date, and mark each submission as new, read or spam. A spam label helps you clean up without losing the record of what happened.",
+     "When you need the data elsewhere, export to CSV and open it in a spreadsheet or import it into another tool. If you would rather send each entry to another system as it arrives, webhooks do that automatically."
+    ]
+   },
+   {
+    "h": "Keep what you need, delete what you don’t",
+    "p": [
+     "Storing everything forever is not always wise. Names, emails and messages are personal data, and holding them longer than necessary creates risk and, in many places, legal obligations.",
+     "VuloForm lets you set automatic deletion after a number of days. A sensible default for a contact form might be a few months, long enough to follow up, then gone. For job applications or support requests, choose a period that matches your policy."
+    ]
+   },
+   {
+    "h": "Privacy and ownership",
+    "p": [
+     "Where the data is stored matters as much as whether it is. With VuloForm, submissions live on your server and the plugin does not contact outside services by itself. Visitor IP addresses are not stored unless you switch that on, and it works with the WordPress Export Personal Data and Erase Personal Data tools, so handling a data request does not mean hunting through several systems."
+    ]
+   },
+   {
+    "h": "A simple routine",
+    "p": [
+     "You do not need a complicated process. A routine that works for most small teams is to check new submissions daily, mark them read once handled, label spam so patterns are visible, and export a CSV monthly if you need reporting or a backup in another tool."
+    ]
+   },
+   {
+    "h": "Questions people ask",
+    "p": [
+     "Will storing entries slow my site down? Not in normal use. Submissions are small records, and even thousands of entries are trivial for a modern database. If volume becomes very large, automatic deletion keeps things lean.",
+     "What happens to my entries if I deactivate the plugin? With VuloForm, deleting the plugin removes nothing by default, so a reinstall picks up where you left off. If you want everything removed, choose “Delete everything” under VuloForm › Settings before you uninstall.",
+     "Can I still get email notifications? Yes. Notifications are in addition to storage, not instead of it. You can email your team with placeholders for any answer and send the visitor a confirmation. One caution: a status of “Handed off” means your site’s mail system accepted the message, not that it reached an inbox, so if mail goes missing, check spam folders and consider an SMTP plugin."
+    ]
+   }
+  ],
+  "outro": [
+   "Email is a notification, not a database. If your forms matter to your business, keep a stored copy that you control. VuloForm saves, filters and exports submissions in the free plugin, with no limits on forms or entries."
+  ]
+ },
+ {
+  "slug": "contact-form-7-alternatives",
+  "title": "Contact Form 7 alternatives: 6 free options that save your submissions",
+  "description": "Looking for a Contact Form 7 alternative? Compare six free WordPress form plugins on builder, submission storage, logic and cost.",
+  "date": "2026-10-18",
+  "category": "Comparisons",
+  "compare": [
+   "contact-form-7",
+   "ninja-forms",
+   "fluent-forms"
+  ],
+  "intro": [
+   "Contact Form 7 has been a WordPress staple for years, and for a simple contact form it still does the job. But many people go looking for an alternative for the same few reasons: they do not want to edit tags by hand, they want submissions saved instead of only emailed, or they need features such as conditional logic that Contact Form 7 leaves to add-ons.",
+   "Here are six free alternatives, based on each plugin’s own pricing page and WordPress.org listing as checked on 10 October 2026."
+  ],
+  "sections": [
+   {
+    "h": "Why people move on from Contact Form 7",
+    "p": [
+     "The most common complaints are practical. Forms are built in a text editor with bracketed tags, which is quick for developers and confusing for everyone else. Submissions are emailed and not saved by default, so a lost email is a lost lead. There is no built-in CSV export, and conditional logic and multi-step forms come from third-party add-ons that you must find, vet and keep updated."
+    ]
+   },
+   {
+    "h": "1. VuloForm",
+    "p": [
+     "VuloForm is a free drag-and-drop builder that stores submissions in your WordPress database, exports to CSV, and includes conditional logic, multi-step forms, calculations, file uploads and webhooks. There is no paid tier. It does not take payments, and it is at version 1.0, so it lacks the years of community knowledge that older plugins have."
+    ]
+   },
+   {
+    "h": "2. Forminator",
+    "p": [
+     "Forminator’s free plugin also includes logic, multi-step forms, calculations, uploads and webhooks, and it adds Stripe and PayPal payments. If you need to take money through a form and want everything free, it is the strongest option on this list."
+    ]
+   },
+   {
+    "h": "3. Fluent Forms",
+    "p": [
+     "Fluent Forms Free offers a drag-and-drop builder, conditional logic, saved entries, CSV export and Stripe with a 1.9% fee. Multi-step forms, calculations, file uploads and webhooks need Pro, which is the lowest-priced paid option we compared at $63 a year."
+    ]
+   },
+   {
+    "h": "4. Ninja Forms",
+    "p": [
+     "Ninja Forms Core is free, saves submissions, exports CSV and includes calculations. Conditional logic, multi-step forms and file uploads are paid add-ons, so it suits you if you want a free base and may buy extras later."
+    ]
+   },
+   {
+    "h": "5. WPForms Lite",
+    "p": [
+     "WPForms Lite has a polished builder and includes Stripe, but it emails entries, with an optional backup to its own servers. Logic, multi-step forms, uploads and CSV export are on paid plans."
+    ]
+   },
+   {
+    "h": "6. Formidable Forms Lite",
+    "p": [
+     "Formidable Lite saves entries, exports CSV and includes Stripe. It is a powerful toolkit, especially if you later want to display entries on the front end, but conditional logic, multi-step, calculations and uploads are paid."
+    ]
+   },
+   {
+    "h": "Quick comparison",
+    "p": [
+     "In the free versions, in short:"
+    ],
+    "list": [
+     "Saves submissions and exports CSV: VuloForm, Forminator, Fluent Forms, Ninja Forms, Formidable",
+     "Conditional logic free: VuloForm, Forminator, Fluent Forms",
+     "Multi-step, calculations, uploads and webhooks free: VuloForm and Forminator",
+     "Payments in the free version: Forminator, Fluent Forms, WPForms Lite, Formidable Lite"
+    ]
+   },
+   {
+    "h": "How to switch safely",
+    "p": [
+     "Do not delete Contact Form 7 first. Build the new form, publish it on a test page, and submit it yourself to confirm the notification arrives and the entry is stored. Then swap the form on your live page, check it once more, and only then deactivate the old plugin. If you have years of Contact Form 7 emails you need to keep, export or archive them from your mailbox before you remove anything."
+    ]
+   },
+   {
+    "h": "How to choose between them",
+    "p": [
+     "Start with the single feature you cannot live without. If it is payments, look at Forminator, Fluent Forms, WPForms Lite or Formidable Lite. If it is conditional logic, multi-step forms or file uploads without paying, the shortlist shrinks to VuloForm and Forminator. If you are happy with a free base and may add paid extras later, Ninja Forms fits that model.",
+     "Then look at data handling. Think about where submissions are stored, whether anything is sent to outside servers by default, and how easily you can export or erase one person’s entries. These questions matter more once a form carries real leads or personal data.",
+     "Finally, consider maturity. Plugins that have existed for a decade have enormous communities, tutorials and third-party help. Newer ones, VuloForm included, have fewer of those resources. Weigh that against how much you value a lean, privacy-first plugin with everything included."
+    ]
+   }
+  ],
+  "outro": [
+   "One more practical point: whichever plugin you choose, run it for a week on a staging copy of your site if you can. Real submissions, real notification emails and a few deliberate test failures will tell you more about a plugin than any feature list.",
+   "If you only need a basic emailed contact form, Contact Form 7 is still a reasonable choice. If you want a visual builder and a place to review submissions, any of the options above will be a step up. VuloForm is free to try, with every feature included."
+  ]
+ },
+ {
+  "slug": "stop-wordpress-form-spam-without-captcha",
+  "title": "How to stop WordPress form spam without a CAPTCHA",
+  "description": "Honeypots, minimum fill time and rate limiting: how to block spam on WordPress forms without puzzles, third-party scripts or tracking.",
+  "date": "2026-10-16",
+  "category": "Security",
+  "compare": [
+   "contact-form-7"
+  ],
+  "intro": [
+   "If you run a WordPress site with a public form, you will get spam. Bots find forms quickly, and a few hours after launch your inbox starts filling with offers for things nobody asked for. The usual fix is a CAPTCHA, but puzzles frustrate real visitors, load third-party scripts and often share visitor data with another company.",
+   "There are quieter ways to keep bots out. Here is how they work and how to combine them."
+  ],
+  "sections": [
+   {
+    "h": "What is wrong with CAPTCHAs",
+    "p": [
+     "A CAPTCHA asks every visitor to prove they are human so you can catch the bots. Real people pay the cost: an extra click, a puzzle they sometimes fail, and a worse experience on phones and for people using assistive technology. Some services also load external scripts and set cookies, which can complicate privacy policies and cookie banners.",
+     "None of this means CAPTCHAs never help. But as the first line of defence they are a heavy tool for a problem that simpler checks solve well."
+    ]
+   },
+   {
+    "h": "Technique 1: the honeypot",
+    "p": [
+     "A honeypot is a hidden field that people never see and never fill in. Bots, which tend to complete every field they find, fill it in. If the hidden field has a value, the submission is treated as spam. It costs real visitors nothing and needs no outside service.",
+     "It is not perfect: a bot written specifically for your site could skip the trap. But it stops a large share of generic, automated spam."
+    ]
+   },
+   {
+    "h": "Technique 2: a minimum fill time",
+    "p": [
+     "A person needs at least a few seconds to read and complete a form. A bot can submit in a fraction of a second. By recording when the form loaded and rejecting submissions that arrive impossibly fast, you filter out a lot of automated traffic.",
+     "The key is to set the threshold low enough that fast, legitimate users, such as someone using browser autofill, are not caught."
+    ]
+   },
+   {
+    "h": "Technique 3: rate limiting",
+    "p": [
+     "Rate limiting caps how many submissions a single visitor can send in a given period. If one source tries to send dozens of entries in a minute, the extras are rejected. This protects you from floods, whether malicious or accidental, and keeps your database and mailbox tidy."
+    ]
+   },
+   {
+    "h": "How VuloForm combines them",
+    "p": [
+     "VuloForm uses all three by default: a hidden trap field, a minimum fill time and a per-visitor rate limit. There is no CAPTCHA, no puzzle for visitors, and no third party involved. Submissions flagged as spam can be reviewed in the submissions screen, where you can mark entries as spam and see what is being caught.",
+     "For developers who want an extra layer, such as an external anti-spam service, a filter named vuloform_spam_check lets you plug one in. That way stronger protection is your choice, not something forced on every visitor."
+    ]
+   },
+   {
+    "h": "Other habits that reduce spam",
+    "p": [
+     "A few small things help alongside the techniques above:"
+    ],
+    "list": [
+     "Keep forms short; fewer fields means fewer places for bots to dump links",
+     "Avoid showing your form on pages that do not need one",
+     "Use a real email field type, so obvious junk is rejected",
+     "Keep WordPress, your theme and plugins updated",
+     "Check the spam queue occasionally for false positives"
+    ]
+   },
+   {
+    "h": "Does it work for you?",
+    "p": [
+     "No technique is perfect. If you run a high-profile site that attracts targeted attacks, you may want to add an external service on top. For most small and medium sites, the combination of honeypot, fill time and rate limiting is enough, and your visitors never notice it."
+    ]
+   },
+   {
+    "h": "Questions people ask",
+    "p": [
+     "Will legitimate visitors ever be blocked? It is possible but rare. The minimum fill time is deliberately short, and the rate limit is applied per visitor. If you see genuine messages in your spam queue, review them and mark them as not spam, and consider whether a shared network, such as an office, is sending many entries at once.",
+     "Do these methods stop human spammers? Not entirely. A person who manually types junk into your form will get past automatic checks. For that, keep fields to what you need, avoid free-text boxes where a dropdown will do, and review the spam queue regularly. Because VuloForm stores every submission with a status, nothing is silently thrown away and you can always see what was caught.",
+     "Do I still need a CAPTCHA? For most sites, no. Add one only if you face targeted abuse that the built-in checks do not stop."
+    ]
+   }
+  ],
+  "outro": [
+   "You can protect your forms without annoying the people you want to hear from. VuloForm’s spam protection is on by default, needs no setup and sends no visitor data anywhere."
+  ]
+ },
+ {
+  "slug": "gdpr-friendly-wordpress-forms",
+  "title": "GDPR-friendly WordPress forms: a practical checklist",
+  "description": "A practical checklist for building WordPress forms that respect visitor privacy: consent, data minimisation, retention, IP addresses and data requests.",
+  "date": "2026-10-14",
+  "category": "Privacy",
+  "compare": [
+   "wpforms",
+   "gravity-forms"
+  ],
+  "intro": [
+   "Every form on your site collects personal data, usually a name and an email address, sometimes much more. If you have visitors in the EU or UK, the GDPR applies, and even elsewhere, sensible privacy habits build trust and reduce risk.",
+   "This is a practical checklist, not legal advice. Rules vary by country and situation, so check your own obligations with a qualified professional. What follows are the form-related habits that nearly every privacy review looks for."
+  ],
+  "sections": [
+   {
+    "h": "1. Collect only what you need",
+    "p": [
+     "Data minimisation is the easiest win. Look at each field and ask what you will do with the answer. If you never use a phone number, remove the field. A shorter form is better for privacy and usually converts better too."
+    ]
+   },
+   {
+    "h": "2. Be clear about why you are asking",
+    "p": [
+     "Tell people what you will do with their data, ideally next to the form. A short sentence such as “We’ll use your email to reply to your enquiry” is clearer than a link to a long policy. Link to your privacy policy for the details."
+    ]
+   },
+   {
+    "h": "3. Get consent where it is needed",
+    "p": [
+     "If you want to send marketing emails, you generally need a clear opt-in, and the box should not be pre-ticked. Keep it separate from the enquiry itself, so someone can contact you without agreeing to a newsletter. VuloForm includes a consent field type for exactly this."
+    ]
+   },
+   {
+    "h": "4. Know where the data goes",
+    "p": [
+     "List every place a submission travels: your database, your email provider, any connected tool. Each is a data processor you may need to disclose.",
+     "Some form plugins add to that list. A CAPTCHA service receives visitor data, and some plugins back entries up to their own servers. VuloForm does not contact any external service on its own, has no telemetry and no CAPTCHA, so data leaves your server only if you set up a webhook or notification."
+    ]
+   },
+   {
+    "h": "5. Think twice about IP addresses",
+    "p": [
+     "An IP address can count as personal data. Many form plugins record it with every submission by default. VuloForm does not store visitor IP addresses unless you switch that on, so if you do not need them for security or abuse handling, you hold less data to begin with."
+    ]
+   },
+   {
+    "h": "6. Decide how long you keep submissions",
+    "p": [
+     "Keeping entries forever is rarely justified. Decide how long you need them, whether for following up a sales lead or handling a support request, and delete them after that. VuloForm can delete submissions automatically after a number of days you choose, so retention does not depend on someone remembering."
+    ]
+   },
+   {
+    "h": "7. Be ready for data requests",
+    "p": [
+     "People can ask to see or delete the data you hold about them. If submissions are scattered across inboxes and several tools, that is painful. VuloForm works with the WordPress Export Personal Data and Erase Personal Data tools, so a request can be handled from one place. It also adds suggested wording to the WordPress privacy policy guide, which you can adapt to your own practices."
+    ]
+   },
+   {
+    "h": "8. Protect uploaded files",
+    "p": [
+     "If your form accepts files, treat them as sensitive. CVs, scans and photos should not be publicly reachable. VuloForm stores uploads under long random names in a folder that blocks direct access on Apache and LiteSpeed, and administrators download them through WordPress. On nginx, ask your host to block the wp-content/uploads/vuloform/ folder."
+    ]
+   },
+   {
+    "h": "A quick pre-launch check",
+    "p": [
+     "Before you publish a form, run through this list:"
+    ],
+    "list": [
+     "Every field has a purpose",
+     "A short explanation sits next to the form",
+     "Marketing consent is separate, unticked and optional",
+     "You know every system the data passes through",
+     "A retention period is set",
+     "You can find, export and erase one person’s entries"
+    ]
+   },
+   {
+    "h": "Common mistakes",
+    "p": [
+     "Pre-ticked consent boxes are the classic error, followed closely by bundling consent for marketing with the enquiry itself. Another frequent one is keeping every submission indefinitely because nobody set a deletion period.",
+     "Also watch for plugins and add-ons that quietly send data elsewhere, such as analytics, error reporting or backup services. Check each plugin’s documentation, and review what leaves your server. Finally, remember that your privacy policy needs to match reality: if the form sends data to a CRM, the policy should say so."
+    ]
+   }
+  ],
+  "outro": [
+   "Write down your decisions as you make them. A short note listing each form, the data it collects, why, where it goes and how long it is kept makes future audits, data requests and staff handovers far easier than trying to reconstruct it from memory.",
+   "Privacy-friendly forms are mostly about restraint: collect less, store it where you control it, and delete it when you are done. VuloForm is designed around that approach, but remember that tools help rather than guarantee compliance, so review your own setup."
+  ]
+ },
+ {
+  "slug": "wordpress-calculator-quote-form",
+  "title": "How to build a quote calculator form in WordPress",
+  "description": "Build a WordPress form that calculates prices live: plan your formula, use calculation fields, and make sure totals can’t be tampered with.",
+  "date": "2026-10-12",
+  "category": "How-to",
+  "compare": [
+   "wpforms",
+   "ninja-forms"
+  ],
+  "intro": [
+   "Visitors want a price before they want a conversation. A quote calculator gives them one: choose a few options, see an estimate, send the request. For you, it filters out poor-fit enquiries and gives you structured information instead of a vague message.",
+   "This guide shows how to plan and build one in WordPress, and how to avoid the biggest weakness of calculators: totals that can be changed by the visitor."
+  ],
+  "sections": [
+   {
+    "h": "What a quote calculator is good for",
+    "p": [
+     "Calculators work best when your pricing follows a pattern you can express as a formula. Think of printing jobs, cleaning services, event hire, translation, design packages, or delivery quotes."
+    ],
+    "list": [
+     "A base price plus options, such as a package with optional extras",
+     "A rate multiplied by a quantity, such as price per page or per hour",
+     "Tiered pricing, where larger quantities get a different rate",
+     "Discounts or surcharges that depend on a choice"
+    ]
+   },
+   {
+    "h": "Write the formula on paper first",
+    "p": [
+     "Before you open the builder, write the calculation in plain words. For a design quote it might be: base package price, plus the number of extra pages times the per-page price, plus 20 percent if the visitor wants a rush delivery.",
+     "List every input and decide what type of field it needs: a dropdown for packages, a number for quantity, a checkbox for rush delivery. Having this written down makes the form far quicker to build and test."
+    ]
+   },
+   {
+    "h": "Paid in most plugins, free in a few",
+    "p": [
+     "Calculations are another feature often held back. In our October 2026 check, Contact Form 7 had none. WPForms and Fluent Forms need Pro, Gravity Forms and Formidable need a paid plan, while Ninja Forms Core, Forminator and VuloForm include calculations in the free plugin."
+    ]
+   },
+   {
+    "h": "Building it in VuloForm",
+    "p": [
+     "Start a new form and add the inputs from your plan: a dropdown for the package, a number field for the quantity and any checkboxes or radio buttons for options. Then add a calculation field, which VuloForm lists among its 21 field types as “Calc”.",
+     "In the calculation settings, build the formula using your fields. As the visitor changes their choices, the total updates on screen. Add helpful labels, such as “Estimated total”, and make clear that it is an estimate if your final quote may differ.",
+     "Combine this with conditional logic if some options only matter in certain cases, and with multi-step layout if the form is long, for example options on step one and contact details on step two."
+    ]
+   },
+   {
+    "h": "Why the server must recalculate",
+    "p": [
+     "A calculator that runs only in the browser can be tampered with. Someone could edit the page, change the displayed total to zero and send it. If you rely on the number you receive, that is a real problem.",
+     "VuloForm re-computes calculations on your server when a form is submitted, so the stored total comes from your formula and the submitted answers, not from whatever the browser claims. The same server-side checking applies to conditional logic."
+    ]
+   },
+   {
+    "h": "What to do with the result",
+    "p": [
+     "Once the visitor submits, the entry, including the calculated total, is stored in your WordPress dashboard. You can email your team with placeholders for any answer, send the visitor a confirmation, or push the data to another tool with a webhook.",
+     "Note that VuloForm does not take payments. A calculator is ideal for quotes and enquiries, where you follow up and invoice separately. If you need to charge at the moment of submission, you would need a plugin with payment support."
+    ]
+   },
+   {
+    "h": "Test before you publish",
+    "p": [
+     "Calculators fail quietly, so test them carefully:"
+    ],
+    "list": [
+     "Try the smallest and largest realistic quantities",
+     "Switch every option on and off and check the total",
+     "Check rounding and currency display",
+     "Test on a phone",
+     "Compare the stored total with the one on screen"
+    ]
+   },
+   {
+    "h": "Design tips for calculators",
+    "p": [
+     "Show the total where people can see it while they choose, not only at the end. Use plain labels and say what is included. If the figure is an estimate, say so clearly and explain what could change it.",
+     "Avoid overwhelming people with options. Three or four meaningful choices beat fifteen tiny ones, and each one you remove makes the formula easier to maintain. When your prices change, update the formula in one place and test it again before you publish."
+    ]
+   }
+  ],
+  "outro": [
+   "Revisit the calculator every few months. Prices change, options come and go, and an out-of-date formula quietly damages trust. Keep a copy of your pricing rules next to the form so updates are quick.",
+   "A good quote calculator saves time for you and your visitors. Plan the formula, build it with calculation fields, and rely on a plugin that re-checks the numbers on the server. VuloForm includes all of this in its free plugin."
+  ]
+ },
+ {
+  "slug": "wordpress-form-webhooks-zapier-make",
+  "title": "WordPress form webhooks: send submissions to Zapier, Make or your CRM",
+  "description": "What webhooks are, how to send WordPress form submissions to Zapier, Make or your own endpoint, and how to handle retries and failures reliably.",
+  "date": "2026-10-10",
+  "category": "Integrations",
+  "compare": [
+   "wpforms",
+   "gravity-forms",
+   "formidable-forms"
+  ],
+  "intro": [
+   "A form is rarely the end of the story. A lead should reach your CRM, a signup should land in a spreadsheet, a support request should open a ticket. Webhooks are the simplest, most universal way to make that happen: when a form is submitted, your site sends the data to a web address you choose.",
+   "This guide explains what webhooks are, how to connect them to tools like Zapier and Make, and what separates a reliable setup from a fragile one."
+  ],
+  "sections": [
+   {
+    "h": "What a webhook is",
+    "p": [
+     "A webhook is an automatic message from one system to another. Instead of you checking for new submissions, the form tells another service as soon as one arrives. Technically it is an HTTP request, usually sending the entry as JSON, to a URL that the receiving service gave you.",
+     "Automation platforms such as Zapier and Make let you create a “catch hook” address. You paste it into your form, submit a test entry, and then map the data to whatever comes next: add a row to a sheet, create a contact, post a message."
+    ]
+   },
+   {
+    "h": "Webhooks versus built-in integrations",
+    "p": [
+     "Many plugins sell direct integrations for CRMs and email tools. Those can be convenient, but they usually sit on paid plans, and each one covers only the tools the vendor has built.",
+     "Webhooks are more general. Any service that can receive an HTTP request can be connected. In our October 2026 check, webhooks were on the Elite plan for WPForms and Gravity Forms, an Elite-included add-on for Ninja Forms, Business via the API add-on for Formidable, and Pro for Fluent Forms. Contact Form 7 does not have them built in. Forminator and VuloForm include webhooks in the free plugin."
+    ]
+   },
+   {
+    "h": "Setting up a webhook in four steps",
+    "p": [
+     "The process is the same for most tools:"
+    ],
+    "list": [
+     "Create a catch hook (Zapier) or webhook module (Make) and copy its URL",
+     "Paste the URL into your form’s webhook settings and, if offered, add a secret",
+     "Submit a test entry so the platform can see the data’s shape",
+     "Map the fields to your next step, then switch the automation on"
+    ]
+   },
+   {
+    "h": "What makes a webhook reliable",
+    "p": [
+     "A webhook that works on a good day is not enough. Receiving services go down, networks time out and endpoints return errors. A dependable setup handles those moments.",
+     "In VuloForm, each submission is sent as JSON over HTTPS with background delivery, so a slow endpoint does not hold up the visitor. If the first attempt fails, it retries twice more, and every attempt is logged, so you can see, for instance, a 500 error followed by a successful 200. You can also add an optional secret, which lets the receiving side verify the request came from your site."
+    ]
+   },
+   {
+    "h": "Verify what you receive",
+    "p": [
+     "If you build your own endpoint, do not trust every request that arrives. Check the secret, validate the fields you expect and ignore anything else. Respond quickly with a success status, and do any heavy processing afterwards so that the sender does not time out and retry unnecessarily.",
+     "Also make the receiving side idempotent where possible. Because retries exist, the same entry could occasionally arrive twice, and your system should not create duplicate records when it does."
+    ]
+   },
+   {
+    "h": "Privacy considerations",
+    "p": [
+     "A webhook sends personal data to another company. Make sure that service is covered in your privacy policy, and only send the fields that the destination actually needs. With VuloForm, data leaves your server only when you configure a webhook or notification; the plugin makes no external connections on its own."
+    ]
+   },
+   {
+    "h": "Troubleshooting",
+    "p": [
+     "If data is not arriving, work through these in order:"
+    ],
+    "list": [
+     "Check the delivery log for the status code returned",
+     "Confirm the URL is exactly as the platform gave it, with no spaces",
+     "Make sure your site can make outgoing HTTPS requests",
+     "Re-send a test entry after changing settings",
+     "Check the automation is switched on and not paused"
+    ]
+   },
+   {
+    "h": "Example workflows",
+    "p": [
+     "A few automations that small teams set up in an afternoon: send each new lead to a CRM and notify a sales channel; add job applicants to a spreadsheet and email a hiring manager; create a task in a project tool for every support request; or add newsletter signups to a mailing list once they have given consent."
+    ]
+   }
+  ],
+  "outro": [
+   "Keep a simple record of which forms send data where. When a destination changes, a tool is cancelled or an employee leaves, you will know exactly which webhooks to update, rather than discovering a broken automation weeks later.",
+   "Webhooks turn a form into the front door of your whole workflow. VuloForm includes signed, retried and logged webhooks in the free plugin, so you can connect Zapier, Make or your own system without paying for a higher plan."
+  ]
+ },
+ {
+  "slug": "secure-file-upload-forms-wordpress",
+  "title": "How to add secure file uploads to a WordPress form",
+  "description": "File uploads are one of the riskiest form features. Learn how to accept CVs, images and documents safely in WordPress, and what to check on your server.",
+  "date": "2026-10-08",
+  "category": "Security",
+  "compare": [
+   "gravity-forms",
+   "ninja-forms"
+  ],
+  "intro": [
+   "Job applications need CVs. Quote requests need photos. Support forms need screenshots. File uploads are genuinely useful, and they are also one of the riskiest things a public form can offer. An upload field is, in effect, an open door for strangers to put files on your server.",
+   "That does not mean you should avoid them. It means you should set them up carefully. This guide covers the main risks and a safe approach for WordPress."
+  ],
+  "sections": [
+   {
+    "h": "What can go wrong",
+    "p": [
+     "The worst case is someone uploading a script, such as a PHP file disguised as an image, and then running it on your server. Other risks are quieter: uploads that are publicly guessable, private documents indexed by search engines, or large files that fill your disk."
+    ],
+    "list": [
+     "Executable files uploaded under a harmless-looking name",
+     "Files whose content does not match their extension",
+     "Predictable file names that let strangers guess URLs",
+     "Sensitive documents stored in publicly accessible folders",
+     "Oversized files that exhaust storage"
+    ]
+   },
+   {
+    "h": "Principle 1: allow only the types you need",
+    "p": [
+     "Do not rely on blocking known-bad types; allow a short list of known-good ones. A CV form needs PDF and perhaps Word documents. A photo form needs JPG and PNG. Anything else should be rejected.",
+     "VuloForm only accepts a fixed list of safe file types, so there is no option to accidentally allow something dangerous."
+    ]
+   },
+   {
+    "h": "Principle 2: check the content, not just the extension",
+    "p": [
+     "A file’s name is easy to fake. Renaming a script to resume.pdf takes seconds. A safer plugin inspects the file’s actual contents and confirms they match the extension claimed. VuloForm does this check before accepting a file."
+    ]
+   },
+   {
+    "h": "Principle 3: use random names and a protected folder",
+    "p": [
+     "Uploaded files should not keep the visitor’s file name or sit at predictable addresses. VuloForm stores uploads under long random names, so a file like resume.pdf becomes something like a8f3…e1.pdf, in a folder that blocks direct access on Apache and LiteSpeed.",
+     "Administrators download files through WordPress after logging in, instead of through a public link. That means a stranger who somehow learned a file name still cannot fetch it directly."
+    ]
+   },
+   {
+    "h": "A note for nginx users",
+    "p": [
+     "Folder protection based on server configuration files works on Apache and LiteSpeed, but nginx ignores them. If your host runs nginx, ask them to block direct access to wp-content/uploads/vuloform/. It is a short request that closes an important gap, and a good host will do it quickly."
+    ]
+   },
+   {
+    "h": "Principle 4: limit size and count",
+    "p": [
+     "Set a sensible maximum file size and number of files. A CV rarely needs more than a few megabytes. Limits protect your storage and also keep your server responsive, since large uploads consume time and memory."
+    ]
+   },
+   {
+    "h": "Plugin pricing in practice",
+    "p": [
+     "File uploads are included in the free versions of Contact Form 7, Forminator and VuloForm. In our October 2026 check, WPForms, Gravity Forms and Formidable put them on paid plans, Ninja Forms made them an add-on from its Plus plan, and Fluent Forms put them in Pro. Whichever plugin you use, check how it handles the principles above rather than assuming the paid option is automatically safer."
+    ]
+   },
+   {
+    "h": "Operational habits",
+    "p": [
+     "A few routines keep uploads under control after launch:"
+    ],
+    "list": [
+     "Delete files you no longer need, for example after a hiring round",
+     "Use automatic deletion for old submissions",
+     "Back up uploads along with your database",
+     "Scan your server for unexpected files from time to time",
+     "Mention uploads in your privacy policy"
+    ]
+   },
+   {
+    "h": "Questions people ask",
+    "p": [
+     "Is it safe to let anyone upload files? It can be, if the form restricts file types, checks content, stores files away from public access and limits size. The risk comes from open-ended upload settings, so keep yours narrow.",
+     "Should uploaded files be emailed as attachments? Attachments are convenient but spread sensitive files across inboxes. Keeping files on your server and downloading them through WordPress, as VuloForm does, keeps them in one controlled place.",
+     "How do I tell people what is accepted? State the allowed file types and the maximum size in the field’s help text, so visitors do not hit an error after choosing a file. A short note on how long you keep uploads builds trust too, especially for CVs and personal documents.",
+     "Can I check my setup? Try uploading a file with a mismatched extension, and try to open an uploaded file’s address directly in a private browser window. Both should fail. If either works, review your configuration or speak to your host."
+    ]
+   }
+  ],
+  "outro": [
+   "Accepting files does not have to be a gamble. Allow few types, check contents, hide the files and limit sizes. VuloForm builds those protections in and includes file uploads in the free plugin."
+  ]
+ }
+]

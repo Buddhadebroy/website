@@ -1,0 +1,69 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "vuloform/templates-marquee",
+ "title": "Ready-made Forms Marquee (VuloForm)",
+ "category": "vuloform",
+ "icon": "slides",
+ "description": "Two rows of coloured form chips that scroll sideways forever.",
+ "keywords": [
+  "vuloform",
+  "section"
+ ],
+ "textdomain": "vuloform",
+ "attributes": {
+  "kicker": {
+   "type": "string",
+   "default": ""
+  },
+  "row1": {
+   "type": "string",
+   "default": ""
+  },
+  "row2": {
+   "type": "string",
+   "default": ""
+  }
+ },
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "className": true,
+  "spacing": {
+   "margin": true
+  }
+ },
+ "editorScript": "vf-blocks-editor",
+ "style": [
+  "vf-tailwind",
+  "vf-site",
+  "vf-effects"
+ ],
+ "viewScript": [
+  "vf-effects",
+  "vf-site"
+ ],
+ "render": "file:./render.php",
+ "vfSection": "templates",
+ "vfFields": [
+  {
+   "key": "kicker",
+   "type": "text",
+   "label": "Small title above the rows"
+  },
+  {
+   "key": "row1",
+   "type": "textarea",
+   "label": "Row 1 (one per line: emoji + name)"
+  },
+  {
+   "key": "row2",
+   "type": "textarea",
+   "label": "Row 2, scrolls the other way"
+  }
+ ]
+}

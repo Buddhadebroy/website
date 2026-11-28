@@ -1,0 +1,26 @@
+/*
+ * Brand classes from the original globals.css. There they are unlayered CSS, so they beat every Tailwind
+ * utility on the same element (e.g. `.display` line-height wins over `text-6xl`). build.mjs appends this
+ * file after the utilities, at the same specificity, to keep that behaviour.
+ */
+:root .vm\:airmail { background: repeating-linear-gradient(-45deg, var(--red) 0 14px, transparent 14px 22px, var(--blue) 22px 36px, transparent 36px 44px); }
+:root .vm\:stamp {
+  --r: 6px;
+  -webkit-mask: linear-gradient(#000 0 0) center / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat, radial-gradient(var(--r), #0000 97%, #000) calc(-1.5 * var(--r)) calc(-1.5 * var(--r)) / calc(3 * var(--r)) calc(3 * var(--r)) round;
+  mask: linear-gradient(#000 0 0) center / calc(100% - 2 * var(--r)) calc(100% - 2 * var(--r)) no-repeat, radial-gradient(var(--r), #0000 97%, #000) calc(-1.5 * var(--r)) calc(-1.5 * var(--r)) / calc(3 * var(--r)) calc(3 * var(--r)) round;
+}
+:root .vm\:dot-grid { background-image: radial-gradient(var(--line-strong) 1px, transparent 1px); background-size: 22px 22px; }
+:root .vm\:grain::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 0 0.33 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+:root .vm\:text-balance { text-wrap: balance; }
+:root .vm\:text-pretty { text-wrap: pretty; }
+:root .vm\:display { font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif; font-weight: 700; letter-spacing: -0.03em; line-height: 1.02; }
+:root .vm\:display em { font-style: normal; }
+:root .vm\:eyebrow { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+:root .vm\:link-draw { background-image: linear-gradient(currentColor, currentColor); background-size: 0% 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 0.45s var(--ease-out); }
+:root .vm\:link-draw:hover { background-size: 100% 1px; }
+:root .vm\:card { background: var(--surface); border: 1px solid var(--line); border-radius: 1.25rem; box-shadow: 0 1px 0 rgba(19, 20, 27, 0.03), 0 12px 32px -18px rgba(19, 20, 27, 0.18); }
+:root .vm\:code-scroll::-webkit-scrollbar { height: 6px; }
+:root .vm\:code-scroll::-webkit-scrollbar-thumb { background: #ffffff22; border-radius: 3px; }

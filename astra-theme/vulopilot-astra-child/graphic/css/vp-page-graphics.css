@@ -1,0 +1,214 @@
+/* ==========================================================================
+   VuloPilot – page graphics kit (graphic/parts/scenes).
+   40 topic scenes used by the solution, use-case, problem and "for" pages.
+   Colours come from the tokens in vp-site.css. Nothing here changes older graphics.
+
+   Card shell · Hero (slot 1) · Google preview · Rank tracker · Charts
+   Stacked bar · Code editor · Tiles grid · Link graph · AI chat · Toggles
+   Gauges · Waterfall · Filmstrip · Firewall log · Uptime · Calendar
+   Workflow nodes · Email report · Kanban · Editor · Product card · Narrow cards
+   ========================================================================== */
+
+.vp-scope .vpx { overflow: hidden; display: flex; flex-direction: column; font-size: 0.8125rem; color: var(--ink); text-align: left; }
+.vp-scope .vpx *, .vp-scope .vpx *::before, .vp-scope .vpx *::after { box-sizing: border-box; }
+.vp-scope .vpx-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; padding: 0.75rem 1.125rem; border-bottom: 0.0625rem solid var(--line); }
+.vp-scope .vpx-title { display: flex; align-items: center; gap: 0.625rem; font-size: 0.875rem; font-weight: 600; line-height: 1.3; }
+.vp-scope .vpx-ic { display: grid; place-items: center; width: 1.75rem; height: 1.75rem; flex: none; border-radius: var(--radius-sm, 0.25rem); background: var(--sage-soft); color: var(--sage); }
+.vp-scope .vpx-path { font-size: 0.6875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.vp-scope .vpx-body { padding: 1.125rem; flex: 1 1 auto; display: flex; flex-direction: column; gap: 0.875rem; min-width: 0; }
+.vp-scope .vpx-foot { display: flex; align-items: center; gap: 0.5rem; border-top: 0.0625rem solid var(--line); background: var(--bg); padding: 0.6875rem 1.125rem; font-size: 0.75rem; color: var(--muted); }
+.vp-scope .vpx-foot-ic { color: var(--sage); display: inline-flex; }
+.vp-scope .vpx-muted { color: var(--muted); }
+.vp-scope .vpx-small { font-size: 0.6875rem; }
+.vp-scope .vpx-cap { font-size: 0.6563rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+.vp-scope .vpx-num { font-variant-numeric: tabular-nums; font-weight: 600; }
+.vp-scope .vpx-big { font-size: 1.875rem; font-weight: 600; letter-spacing: -.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+.vp-scope .vpx-row { display: flex; align-items: center; gap: 0.625rem; min-width: 0; }
+.vp-scope .vpx-grow { flex: 1 1 auto; min-width: 0; }
+.vp-scope .vpx-trunc { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vp-scope .vpx-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.vp-scope .vpx-list > li { margin: 0; }
+.vp-scope .vpx-line { border: 0.0625rem solid var(--line); border-radius: var(--radius-sm, 0.25rem); background: var(--surface); padding: 0.5625rem 0.75rem; }
+.vp-scope .vpx-soft { background: var(--bg); border-radius: var(--radius-sm, 0.25rem); padding: 0.75rem; }
+.vp-scope .vpx-tag { display: inline-flex; align-items: center; gap: 0.25rem; flex: none; white-space: nowrap; border-radius: 62.4375rem; padding: 0.125rem 0.5rem; font-size: 0.6563rem; font-weight: 600; line-height: 1.6; }
+.vp-scope .vpx-dot { width: 0.5rem; height: 0.5rem; border-radius: 62.4375rem; flex: none; display: inline-block; }
+.vp-scope .vpx-bar { height: 0.375rem; border-radius: 62.4375rem; background: var(--line); overflow: hidden; position: relative; }
+.vp-scope .vpx-bar > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 62.4375rem; display: block; }
+.vp-scope .vpx-grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.625rem; }
+.vp-scope .vpx-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.625rem; }
+.vp-scope .vpx-tile { border: 0.0625rem solid var(--line); border-radius: var(--radius-sm, 0.25rem); padding: 0.75rem; background: var(--surface); min-width: 0; }
+.vp-scope .vpx-btn { display: inline-flex; align-items: center; gap: 0.375rem; border-radius: var(--radius-sm, 0.25rem); background: var(--ink); color: var(--bg); padding: 0.3125rem 0.625rem; font-size: 0.6875rem; font-weight: 600; white-space: nowrap; }
+.vp-scope .vpx-btn.is-ghost { background: transparent; color: var(--ink); border: 0.0625rem solid var(--line); }
+.vp-scope .vpx-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.75rem; }
+.vp-scope .vpx-sep { height: 0.0625rem; background: var(--line); }
+.vp-scope [data-when][hidden] { display: none !important; }
+
+/* Hero (slot 1): fill the height of the column it sits in. -------------------- */
+.vp-scope .vpx-hero { height: 100%; min-height: 27.5rem; }
+.vp-scope .vpx-hero .vpx-body { justify-content: space-evenly; gap: 1.125rem; padding: 1.375rem; }
+.vp-graphic:has(> .vpx-hero), .vp-graphic-block:has(.vpx-hero) { height: 100%; }
+.vp-graphic-block:has(.vpx-hero) > .vp-graphic { height: 100%; }
+.kt-inside-inner-col:has(.vpx-hero), .wp-block-column:has(.vpx-hero), .wp-block-kadence-column:has(.vpx-hero) > .kt-inside-inner-col { display: flex; flex-direction: column; }
+.kt-inside-inner-col:has(.vpx-hero) > :is(.vp-graphic, .vp-graphic-block, .wp-block-shortcode, p:has(.vpx-hero), div:has(.vpx-hero)),
+.wp-block-column:has(.vpx-hero) > :is(.vp-graphic, .vp-graphic-block, .wp-block-shortcode, p:has(.vpx-hero), div:has(.vpx-hero)) { flex: 1 1 auto; margin-bottom: 0; }
+.kt-row-column-wrap:has(.vpx-hero), .wp-block-columns:has(.vpx-hero) { align-items: stretch !important; }
+@media (max-width: 47.9375rem) { .vp-scope .vpx-hero { min-height: 0; } }
+
+/* Google result preview -------------------------------------------------------- */
+.vp-scope .vpx-search { display: flex; align-items: center; gap: 0.625rem; border: 0.0625rem solid var(--line); border-radius: 62.4375rem; padding: 0.5rem 0.875rem; color: var(--muted); background: var(--surface); box-shadow: 0 0.375rem 1.125rem -0.875rem rgba(0, 41, 145, .45); }
+.vp-scope .vpx-serp-site { display: flex; align-items: center; gap: 0.5rem; font-size: 0.7188rem; color: var(--muted); }
+.vp-scope .vpx-fav { width: 1.375rem; height: 1.375rem; border-radius: 62.4375rem; background: var(--sage-soft); color: var(--sage); display: grid; place-items: center; font-size: 0.625rem; font-weight: 700; flex: none; }
+.vp-scope .vpx-serp-title { color: #1a0dab; font-size: 1.0625rem; line-height: 1.3; margin-top: 0.25rem; }
+.vp-scope .vpx-serp-desc { color: #4d5156; font-size: 0.7813rem; line-height: 1.55; margin-top: 0.1875rem; }
+.vp-scope .vpx-serp-bad .vpx-serp-title { color: #5f6368; }
+.vp-scope .vpx-ghost-line { height: 0.5625rem; border-radius: 62.4375rem; background: var(--line); }
+
+/* Rank tracker ----------------------------------------------------------------- */
+.vp-scope .vpx-table { width: 100%; border-collapse: collapse; font-size: 0.7813rem; }
+.vp-scope .vpx-table th { text-align: left; font-size: 0.6563rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 0 0.5rem 0.5rem; border-bottom: 0.0625rem solid var(--line); }
+.vp-scope .vpx-table td { padding: 0.5625rem 0.5rem; border-bottom: 0.0625rem solid var(--line); vertical-align: middle; }
+.vp-scope .vpx-table tr:last-child td { border-bottom: 0; }
+.vp-scope .vpx-table .r { text-align: right; }
+.vp-scope .vpx-pos { display: inline-grid; place-items: center; min-width: 1.875rem; height: 1.5rem; border-radius: 0.25rem; background: var(--bg); font-weight: 600; font-variant-numeric: tabular-nums; }
+.vp-scope .vpx-up { color: var(--sage); font-weight: 600; display: inline-flex; align-items: center; gap: 0.125rem; }
+.vp-scope .vpx-down { color: var(--rose); font-weight: 600; display: inline-flex; align-items: center; gap: 0.125rem; }
+
+/* Charts ----------------------------------------------------------------------- */
+.vp-scope .vpx-chart { width: 100%; height: auto; display: block; overflow: visible; }
+.vp-scope .vpx-chart text { font-size: 0.5625rem; fill: var(--muted); }
+.vp-scope .vpx-legend { display: flex; flex-wrap: wrap; gap: 0.875rem; font-size: 0.6875rem; color: var(--muted); }
+.vp-scope .vpx-legend span { display: inline-flex; align-items: center; gap: 0.375rem; }
+
+/* Stacked bar (index coverage, funnel) ----------------------------------------- */
+.vp-scope .vpx-stack { display: flex; height: 0.875rem; border-radius: 62.4375rem; overflow: hidden; background: var(--line); }
+.vp-scope .vpx-stack > i { display: block; height: 100%; }
+.vp-scope .vpx-funnel-bar { height: 1.875rem; border-radius: 0.25rem; display: flex; align-items: center; padding: 0 0.625rem; color: #fff; font-size: 0.7188rem; font-weight: 600; white-space: nowrap; min-width: 3.375rem; }
+
+/* Code editor ------------------------------------------------------------------ */
+.vp-scope .vpx-code { background: #0d1530; color: #d7def5; border-radius: var(--radius-sm, 0.25rem); padding: 0.75rem 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.75rem; line-height: 1.75; overflow: hidden; }
+.vp-scope .vpx-code-tabs { display: flex; gap: 0.375rem; padding: 0 0.75rem 0.625rem; border-bottom: 0.0625rem solid rgba(255,255,255,.08); margin-bottom: 0.5rem; }
+.vp-scope .vpx-code-tabs span { font-size: 0.6875rem; color: #8d97b8; }
+.vp-scope .vpx-code-tabs span.is-on { color: #fff; }
+.vp-scope .vpx-code-line { display: flex; gap: 0.75rem; padding: 0 0.75rem; white-space: pre; overflow: hidden; text-overflow: ellipsis; }
+.vp-scope .vpx-code-line b { font-weight: 400; color: #5d6890; width: 1.125rem; text-align: right; flex: none; }
+.vp-scope .vpx-code-line.is-bad { background: rgba(216, 54, 43, .22); box-shadow: inset 0.1875rem 0 0 #ff5d50; }
+.vp-scope .vpx-code-line.is-del { background: rgba(216, 54, 43, .18); color: #ffb3ad; text-decoration: line-through; }
+.vp-scope .vpx-code-line.is-add { background: rgba(76, 175, 120, .18); color: #b9f3cf; box-shadow: inset 0.1875rem 0 0 #4caf78; }
+.vp-scope .vpx-code-line.is-key { color: #9fb6ff; }
+.vp-scope .vpx-code-line.is-com { color: #6f7aa0; }
+
+/* Tiles grid (audit categories, checkup) ---------------------------------------- */
+.vp-scope .vpx-tile-n { font-size: 1.5rem; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; margin-top: 0.5rem; }
+.vp-scope .vpx-tile-l { font-size: 0.7188rem; color: var(--muted); margin-top: 0.25rem; }
+.vp-scope .vpx-tile-top { display: flex; align-items: center; justify-content: space-between; gap: 0.375rem; }
+
+/* Link graph ------------------------------------------------------------------- */
+.vp-scope .vpx-graph text { font-size: 0.5938rem; fill: var(--ink); font-weight: 600; }
+
+/* AI chat ---------------------------------------------------------------------- */
+.vp-scope .vpx-q { align-self: flex-end; max-width: 86%; background: var(--ink); color: var(--bg); border-radius: 0.875rem 0.875rem 0.125rem 0.875rem; padding: 0.5625rem 0.8125rem; font-size: 0.7813rem; }
+.vp-scope .vpx-a { display: flex; gap: 0.625rem; align-items: flex-start; }
+.vp-scope .vpx-a-av { width: 1.75rem; height: 1.75rem; border-radius: 62.4375rem; display: grid; place-items: center; background: var(--lilac-soft); color: var(--lilac); flex: none; }
+.vp-scope .vpx-a-txt { font-size: 0.7813rem; line-height: 1.6; min-height: 5.2em; }
+.vp-scope .vpx-cite { display: inline-flex; align-items: center; gap: 0.375rem; border: 0.0625rem solid var(--line); border-radius: 62.4375rem; padding: 0.1875rem 0.625rem 0.1875rem 0.25rem; font-size: 0.6875rem; background: var(--surface); }
+.vp-scope .vpx-cite i { width: 1rem; height: 1rem; border-radius: 62.4375rem; background: var(--line); display: grid; place-items: center; font-style: normal; font-size: 0.5625rem; font-weight: 700; color: var(--muted); }
+.vp-scope .vpx-cite.is-you { border-color: var(--sage); background: var(--sage-soft); color: var(--sage); font-weight: 600; }
+.vp-scope .vpx-cite.is-you i { background: var(--sage); color: #fff; }
+.vp-scope .caret { animation: vpxCaret 1s steps(1) infinite; color: var(--sage); }
+@keyframes vpxCaret { 50% { opacity: 0; } }
+
+/* Toggles ---------------------------------------------------------------------- */
+.vp-scope .vpx-toggle { width: 2rem; height: 1.125rem; border-radius: 62.4375rem; background: var(--line); position: relative; flex: none; transition: background .3s; }
+.vp-scope .vpx-toggle::after { content: ""; position: absolute; top: 0.125rem; left: 0.125rem; width: 0.875rem; height: 0.875rem; border-radius: 62.4375rem; background: #fff; box-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,.2); transition: transform .3s var(--vp-ease); }
+.vp-scope .vpx-toggle.is-on { background: var(--sage); }
+.vp-scope .vpx-toggle.is-on::after { transform: translateX(0.875rem); }
+
+/* Gauges ----------------------------------------------------------------------- */
+.vp-scope .vpx-gauge { position: relative; width: 100%; max-width: 9.375rem; margin: 0 auto; }
+.vp-scope .vpx-gauge svg { display: block; width: 100%; height: auto; }
+.vp-scope .vpx-gauge-v { position: absolute; left: 0; right: 0; bottom: 0.125rem; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; font-size: 1.25rem; line-height: 1; }
+.vp-scope .vpx-gauge-v small { font-size: 0.6875rem; color: var(--muted); font-weight: 500; }
+.vp-scope .vpx-thresh { display: flex; height: 0.25rem; border-radius: 62.4375rem; overflow: hidden; }
+.vp-scope .vpx-thresh i { display: block; height: 100%; }
+
+/* Waterfall -------------------------------------------------------------------- */
+.vp-scope .vpx-wf { display: grid; grid-template-columns: minmax(0, 38%) minmax(0, 1fr); gap: 0.375rem 0.625rem; align-items: center; font-size: 0.7188rem; }
+.vp-scope .vpx-wf-track { position: relative; height: 0.75rem; background: repeating-linear-gradient(90deg, transparent 0 calc(25% - 0.0625rem), var(--line) calc(25% - 0.0625rem) 25%); border-radius: 0.125rem; }
+.vp-scope .vpx-wf-track > i { position: absolute; top: 0.125rem; bottom: 0.125rem; border-radius: 0.125rem; display: block; }
+
+/* Filmstrip -------------------------------------------------------------------- */
+.vp-scope .vpx-film { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.375rem; }
+.vp-scope .vpx-frame { aspect-ratio: 3 / 4; border: 0.0625rem solid var(--line); border-radius: 0.1875rem; background: var(--surface); padding: 0.25rem; display: flex; flex-direction: column; gap: 0.1875rem; overflow: hidden; }
+.vp-scope .vpx-frame i { display: block; border-radius: 0.125rem; background: var(--line); }
+.vp-scope .vpx-frame.is-blank i { opacity: 0; }
+.vp-scope .vpx-frame.is-part i:nth-child(n+3) { opacity: 0; }
+
+/* Firewall / log rows ---------------------------------------------------------- */
+.vp-scope .vpx-log { display: flex; flex-direction: column; gap: 0.375rem; font-size: 0.75rem; }
+.vp-scope .vpx-log-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.625rem; align-items: center; border: 0.0625rem solid var(--line); border-radius: var(--radius-sm, 0.25rem); padding: 0.5rem 0.625rem; background: var(--surface); }
+.vp-scope .vpx-flag { font-size: 0.6875rem; color: var(--muted); }
+
+/* Uptime ----------------------------------------------------------------------- */
+.vp-scope .vpx-up-bars { display: grid; grid-template-columns: repeat(30, minmax(0, 1fr)); gap: 0.1875rem; height: 2.125rem; align-items: end; }
+.vp-scope .vpx-up-bars i { display: block; height: 100%; border-radius: 0.125rem; background: var(--sage); }
+.vp-scope .vpx-up-bars i.is-slow { background: var(--lilac); }
+.vp-scope .vpx-up-bars i.is-down { background: var(--rose); }
+
+/* Calendar --------------------------------------------------------------------- */
+.vp-scope .vpx-cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.3125rem; }
+.vp-scope .vpx-cal-day { border: 0.0625rem solid var(--line); border-radius: 0.25rem; min-height: 5.75rem; padding: 0.375rem 0.3125rem; display: flex; flex-direction: column; gap: 0.25rem; background: var(--surface); }
+.vp-scope .vpx-cal-day.is-today { border-color: var(--sage); box-shadow: inset 0 0 0 0.0625rem var(--sage); }
+.vp-scope .vpx-cal-d { font-size: 0.625rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.vp-scope .vpx-job { font-size: 0.5938rem; line-height: 1.25; border-radius: 0.1875rem; padding: 0.1875rem 0.25rem; font-weight: 600; overflow: hidden; }
+
+/* Workflow nodes --------------------------------------------------------------- */
+.vp-scope .vpx-flow { display: flex; flex-direction: column; }
+.vp-scope .vpx-node { display: flex; gap: 0.75rem; align-items: center; border: 0.0625rem solid var(--line); border-radius: 0.5rem; padding: 0.625rem 0.75rem; background: var(--surface); position: relative; }
+.vp-scope .vpx-node-k { font-size: 0.625rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.vp-scope .vpx-link { width: 0.125rem; height: 1rem; margin-left: 1.6875rem; background: repeating-linear-gradient(180deg, var(--line) 0 0.25rem, transparent 0.25rem 0.4375rem); }
+
+/* Email report ----------------------------------------------------------------- */
+.vp-scope .vpx-mail-h { display: grid; grid-template-columns: auto 1fr; gap: 0.125rem 0.625rem; font-size: 0.7188rem; }
+.vp-scope .vpx-mail-h b { color: var(--muted); font-weight: 500; }
+
+/* Kanban ----------------------------------------------------------------------- */
+.vp-scope .vpx-kan { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+.vp-scope .vpx-kan-col { background: var(--bg); border-radius: 0.375rem; padding: 0.5rem; display: flex; flex-direction: column; gap: 0.375rem; min-width: 0; }
+.vp-scope .vpx-kan-card { background: var(--surface); border: 0.0625rem solid var(--line); border-radius: 0.25rem; padding: 0.4375rem 0.5rem; font-size: 0.6875rem; line-height: 1.35; }
+
+/* Editor ----------------------------------------------------------------------- */
+.vp-scope .vpx-doc { font-size: 0.7813rem; line-height: 1.75; }
+.vp-scope .vpx-doc mark { background: transparent; color: inherit; padding: 0.0625rem 0; border-bottom: 0.125rem solid; }
+.vp-scope .vpx-doc mark.is-long { background: color-mix(in srgb, var(--flare) 14%, transparent); border-color: var(--flare); }
+.vp-scope .vpx-doc mark.is-passive { background: var(--lilac-soft); border-color: var(--lilac); }
+.vp-scope .vpx-doc mark.is-kw { background: var(--sage-soft); border-color: var(--sage); }
+.vp-scope .vpx-outline { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.7188rem; }
+.vp-scope .vpx-outline span { display: flex; align-items: center; gap: 0.375rem; }
+
+/* Product card ------------------------------------------------------------------ */
+.vp-scope .vpx-prod { display: grid; grid-template-columns: 5.75rem minmax(0, 1fr); gap: 0.75rem; align-items: start; }
+.vp-scope .vpx-prod-img { aspect-ratio: 1; border-radius: 0.375rem; background: linear-gradient(135deg, var(--sage-soft), var(--lilac-soft)); display: grid; place-items: center; color: var(--sage); }
+.vp-scope .vpx-stars { color: #f5a524; letter-spacing: 0.0625rem; font-size: 0.75rem; }
+
+@media (max-width: 32.5rem) {
+	.vp-scope .vpx-grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.vp-scope .vpx-cal { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	.vp-scope .vpx-kan { grid-template-columns: minmax(0, 1fr); }
+	.vp-scope .vpx-film { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.vp-scope .vpx-film .vpx-frame:nth-child(n+4) { display: none; }
+}
+
+.vp-scope .vpx-entity-row { display: grid; grid-template-columns: 6.875rem minmax(0, 1fr) auto; gap: 0.625rem; align-items: center; }
+
+/* Narrow cards (a third of the page): the calendar becomes a list. ------------- */
+.vp-scope .vpx { container-type: inline-size; container-name: vpx; }
+@container vpx (max-width: 28.75rem) {
+	.vp-scope .vpx-cal { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }
+	.vp-scope .vpx-cal-day { min-height: 0; flex-direction: row; flex-wrap: wrap; align-items: center; padding: 0.375rem 0.5rem; }
+	.vp-scope .vpx-cal-day.is-empty { display: none; }
+	.vp-scope .vpx-cal-d { width: 2.125rem; flex: none; }
+	.vp-scope .vpx-job { font-size: 0.6875rem; padding: 0.1875rem 0.4375rem; }
+	.vp-scope .vpx-grid3 .vpx-big, .vp-scope .vpx-tile-n { font-size: 1.25rem; }
+	.vp-scope .vpx-prod { grid-template-columns: 4.5rem minmax(0, 1fr); }
+	.vp-scope .vpx-entity-row { grid-template-columns: 5.375rem minmax(0, 1fr) auto; }
+}

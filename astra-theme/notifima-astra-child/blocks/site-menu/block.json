@@ -1,0 +1,18 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "notifima/site-menu",
+ "title": "Site Menu (Notifima)",
+ "category": "notifima",
+ "icon": "menu",
+ "description": "Header menu from Appearance → Menus → \"Notifima header\" (items with sub items become mega menus). Parts: Links (desktop menu), Phone menu (the panel the burger opens), Menu button (burger), Icons (cart + account).",
+ "keywords": [ "menu", "navigation", "mega menu", "burger", "notifima" ],
+ "textdomain": "notifima",
+ "attributes": {
+  "part": { "type": "string", "default": "links", "enum": [ "links", "drawer", "toggle", "icons" ] },
+  "ctaText": { "type": "string", "default": "" }
+ },
+ "supports": { "html": false, "className": true },
+ "editorScript": "nf-site-blocks-editor",
+ "render": "file:./render.php"
+}

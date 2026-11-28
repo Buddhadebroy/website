@@ -1,0 +1,39 @@
+/* VuloMail theme: layout glue between Astra, Kadence and the patterns. */
+
+/* Pattern pages and the theme's blog views: no Astra boxes, title or header offset. */
+.vm-canvas #content.site-content,
+.vm-canvas .site-content > .ast-container,
+.vm-canvas #primary,
+.vm-canvas .site-main,
+.vm-canvas .ast-article-single,
+.vm-canvas .entry-content {
+  display: block;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  float: none;
+}
+.vm-canvas.vm-canvas .entry-content > *,
+.vm-canvas.vm-canvas .entry-content[ast-blocks-layout] > * { max-width: none; margin: 0; }
+.vm-canvas .entry-header, .vm-canvas .ast-breadcrumbs-wrapper, .vm-canvas #secondary { display: none; }
+.vm-has-header #masthead { display: none; }
+.vm-layout { display: contents; }
+#page.site { overflow: visible; }
+
+/* Header dropdowns and mobile menu */
+.vm-dropdown[hidden] { display: none; }
+.vm-mobile-menu[hidden] { display: none; }
+body.vm-menu-open { overflow: hidden; }
+.vm-menu-icon { display: inline-flex; }
+.vm-menu-icon[hidden] { display: none; }
+
+/* Kadence editor niceties */
+.vm-editor .vm-graphic { display: block; }
+.vm-editor [data-vm-pipeline], .vm-editor [data-vm-track] { height: auto !important; }
+.editor-styles-wrapper .vm\:sticky { position: relative; }
+
+/* Content-width guard: wide/full Gutenberg alignments still respect the theme width. */
+.vm-tw .alignwide { max-width: var(--vm-container-7xl); }

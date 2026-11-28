@@ -1,0 +1,208 @@
+[
+ {
+  "version": "1.1.7",
+  "date": "3rd November, 2026",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WordPress 7.1.4."
+   ],
+   [
+    "Fixed",
+    "Fixed JavaScript loading issues on all frontend pages and checked functionality."
+   ],
+   [
+    "Update",
+    "Language file."
+   ]
+  ]
+ },
+ {
+  "version": "1.1.6",
+  "date": "23rd October, 2026",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WooCommerce 11.2.1."
+   ],
+   [
+    "Added",
+    "An “Restock Time” column to the Inventory Manager."
+   ],
+   [
+    "Added",
+    "Automatic subscriber deletion functionality."
+   ],
+   [
+    "Update",
+    "Language file."
+   ]
+  ]
+ },
+ {
+  "version": "1.1.5",
+  "date": "7th October, 2026",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WordPress 7.1.3."
+   ],
+   [
+    "Added",
+    "New filter added to the Subscriber List table."
+   ],
+   [
+    "Update",
+    "Language file."
+   ]
+  ]
+ },
+ {
+  "version": "1.1.4",
+  "date": "25th September, 2026",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WordPress 7.1.2."
+   ],
+   [
+    "Added",
+    "Compatibility of WooCommerce 11.1.2."
+   ],
+   [
+    "Added",
+    "MCP support for enhanced integration and product stock notification management"
+   ],
+   [
+    "Added",
+    "SMS notifications for subscribed products when they are back in stock via Twilio and Vonage"
+   ]
+  ]
+ },
+ {
+  "version": "1.1.3",
+  "date": "1st September, 2026",
+  "items": [
+   [
+    "Fixed",
+    "Resolved an issue where the product-wise set lead time was not displayed on the single product page."
+   ]
+  ]
+ },
+ {
+  "version": "1.1.2",
+  "date": "21st August, 2026",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WordPress 7.1.0"
+   ],
+   [
+    "Added",
+    "Compatibility of WooCommerce 11.0.1"
+   ],
+   [
+    "Fixed",
+    "Issue with the subscription unsubscribe flow from the My Account page."
+   ]
+  ]
+ },
+ {
+  "version": "1.1.1",
+  "date": "21st July, 2026",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WordPress 7.0.2"
+   ],
+   [
+    "Added",
+    "Compatibility of WooCommerce 10.9.4."
+   ],
+   [
+    "Added",
+    "Subscriber count-based sorting functionality in the Inventory Manager"
+   ]
+  ]
+ },
+ {
+  "version": "1.1.0",
+  "date": "6th July, 2026",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WordPress 7.0.0"
+   ],
+   [
+    "Added",
+    "Compatibility of WooCommerce 10.9.3."
+   ],
+   [
+    "Added",
+    "Updated the overall UI/UX of the settings panel & the other pages"
+   ],
+   [
+    "Added",
+    "Support for marking products as discontinued to disable back-in-stock subscriptions"
+   ]
+  ]
+ },
+ {
+  "version": "1.0.2",
+  "date": "16th July, 2025",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WordPress 6.9.1"
+   ],
+   [
+    "Added",
+    "Compatibility of WooCommerce 10.5.1."
+   ],
+   [
+    "Fixed",
+    "Updated the license library."
+   ]
+  ]
+ },
+ {
+  "version": "1.0.1",
+  "date": "16th July, 2025",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WooCommerce 10.0.2."
+   ],
+   [
+    "Fixed",
+    "Error related to display_product_subscription_form."
+   ]
+  ]
+ },
+ {
+  "version": "1.0.0",
+  "date": "8th July, 2025",
+  "items": [
+   [
+    "Added",
+    "Compatibility of WordPress 6.8.1"
+   ],
+   [
+    "Added",
+    "Compatibility of WooCommerce 9.9.5."
+   ],
+   [
+    "Update",
+    "Language file."
+   ],
+   [
+    "Enhanced",
+    "Enhanced Structure for improved navigation and usability."
+   ],
+   [
+    "Enhanced",
+    "Optimized Coding for better performance and stability."
+   ]
+  ]
+ }
+]

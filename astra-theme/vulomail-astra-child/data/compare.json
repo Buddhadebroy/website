@@ -1,0 +1,1502 @@
+{
+ "researchedOn": "13 October 2026",
+ "featureGroups": [
+  {
+   "name": "Sending",
+   "rows": [
+    {
+     "key": "services",
+     "label": "Email services built in"
+    },
+    {
+     "key": "smtp",
+     "label": "Any SMTP server"
+    },
+    {
+     "key": "gmail",
+     "label": "Gmail / Google Workspace"
+    },
+    {
+     "key": "microsoft",
+     "label": "Microsoft 365 / Outlook"
+    },
+    {
+     "key": "ses",
+     "label": "Amazon SES"
+    },
+    {
+     "key": "ownAccount",
+     "label": "Sends through your own provider account"
+    },
+    {
+     "key": "routing",
+     "label": "Rules that route emails to different providers"
+    }
+   ]
+  },
+  {
+   "name": "Reliability & visibility",
+   "rows": [
+    {
+     "key": "backup",
+     "label": "Backup connection when the primary fails"
+    },
+    {
+     "key": "log",
+     "label": "Log of every email sent"
+    },
+    {
+     "key": "resend",
+     "label": "Resend from the log"
+    },
+    {
+     "key": "failAlerts",
+     "label": "Alert when an email fails"
+    },
+    {
+     "key": "dns",
+     "label": "Sender-domain DNS check (SPF/DMARC)"
+    },
+    {
+     "key": "tracking",
+     "label": "Open / click tracking"
+    }
+   ]
+  },
+  {
+   "name": "SMS",
+   "rows": [
+    {
+     "key": "smsAlerts",
+     "label": "Text-message (SMS) alerts"
+    },
+    {
+     "key": "wooStore",
+     "label": "WooCommerce order & stock texts to you"
+    },
+    {
+     "key": "wooCustomer",
+     "label": "Order-update texts to customers"
+    }
+   ]
+  },
+  {
+   "name": "Admin",
+   "rows": [
+    {
+     "key": "cli",
+     "label": "WP-CLI commands"
+    },
+    {
+     "key": "multisite",
+     "label": "Multisite network settings"
+    }
+   ]
+  }
+ ],
+ "vulomail": {
+  "stats": {
+   "slug": "vulomail",
+   "version": "1.0.0",
+   "activeInstalls": 0,
+   "rating": 0,
+   "reviews": 0,
+   "lastUpdated": "12 Oct 2026",
+   "listed": "12 Oct 2026",
+   "requiresWp": "6.4",
+   "requiresPhp": "7.4",
+   "testedUpTo": "7.1.3"
+  },
+  "features": {
+   "services": {
+    "v": "yes",
+    "note": "22 email APIs, plus 18 one-click SMTP presets"
+   },
+   "smtp": {
+    "v": "yes"
+   },
+   "gmail": {
+    "v": "yes",
+    "note": "SMTP preset with an app password; no Google sign-in"
+   },
+   "microsoft": {
+    "v": "yes",
+    "note": "SMTP preset with an app password; no Microsoft sign-in"
+   },
+   "ses": {
+    "v": "yes",
+    "note": "SMTP preset"
+   },
+   "ownAccount": {
+    "v": "yes"
+   },
+   "routing": {
+    "v": "no",
+    "note": "One primary and one backup for all email"
+   },
+   "backup": {
+    "v": "yes",
+    "note": "Plus WordPress's own mailer as a last resort"
+   },
+   "log": {
+    "v": "yes",
+    "note": "Email and SMS in one log"
+   },
+   "resend": {
+    "v": "yes",
+    "note": "When message-content storage is switched on"
+   },
+   "failAlerts": {
+    "v": "yes",
+    "note": "By SMS, at most one text every 15 minutes"
+   },
+   "dns": {
+    "v": "yes",
+    "note": "Checked from your own server"
+   },
+   "tracking": {
+    "v": "no"
+   },
+   "smsAlerts": {
+    "v": "yes",
+    "note": "Twilio, Vonage, Plivo or Clickatell"
+   },
+   "wooStore": {
+    "v": "yes",
+    "note": "Orders, failed payments, refunds, stock, reviews"
+   },
+   "wooCustomer": {
+    "v": "yes",
+    "note": "Processing, completed, refunded, cancelled, notes"
+   },
+   "cli": {
+    "v": "no"
+   },
+   "multisite": {
+    "v": "na",
+    "note": "Not documented"
+   }
+  },
+  "sources": [
+   {
+    "label": "VuloMail on WordPress.org",
+    "url": "https://wordpress.org/plugins/vulomail/"
+   },
+   {
+    "label": "VuloMail documentation",
+    "url": "https://github.com/vulolabs/vulolabs/tree/main/plugins/vulomail/docs"
+   }
+  ]
+ },
+ "competitors": [
+  {
+   "slug": "wp-mail-smtp",
+   "name": "WP Mail SMTP",
+   "vendor": "WPForms (Awesome Motive)",
+   "model": "Freemium",
+   "oneLiner": "The most-installed SMTP plugin. Free sending; logs, backup and alerts are in Pro.",
+   "verdict": "WP Mail SMTP is the default choice for a reason: 4 million sites, a 4.8-star rating from more than 5,000 reviews, and 19 years on WordPress.org. Its free version sends email well, but the email log, backup connection, failure alerts and Amazon SES or Microsoft 365 sending are all in Pro, from $99 a year at full price. VuloMail includes those in the free plugin and adds SMS alerts, but it is brand new and has no reviews yet.",
+   "stats": {
+    "slug": "wp-mail-smtp",
+    "version": "4.10.2",
+    "activeInstalls": 4000000,
+    "rating": 96,
+    "reviews": 5205,
+    "lastUpdated": "8 Oct 2026",
+    "listed": "12 Sep 2007",
+    "requiresWp": "5.5",
+    "requiresPhp": "7.4",
+    "testedUpTo": "7.1.3"
+   },
+   "freeTier": "Sending through 14 email services or any SMTP server, Gmail sign-in, test emails and a domain DNS check.",
+   "plans": [
+    {
+     "name": "Pro",
+     "price": "$99/yr",
+     "sites": "1 site",
+     "note": "$49 in the first year"
+    },
+    {
+     "name": "Elite",
+     "price": "$149/yr",
+     "sites": "1 site",
+     "note": "Adds White Glove Setup. $99 in the first year"
+    },
+    {
+     "name": "Developer",
+     "price": "$249/yr",
+     "sites": "20 sites",
+     "note": "$199 in the first year"
+    },
+    {
+     "name": "Agency",
+     "price": "$449/yr",
+     "sites": "100 sites",
+     "note": "$399 in the first year"
+    }
+   ],
+   "pricingNote": "Discounts are introductory; WP Mail SMTP states that renewals are at full price.",
+   "features": {
+    "services": {
+     "v": "yes",
+     "note": "14 in free; Microsoft 365, Amazon SES and Zoho need Pro"
+    },
+    "smtp": {
+     "v": "yes"
+    },
+    "gmail": {
+     "v": "yes",
+     "note": "Sign in with Google, no password stored"
+    },
+    "microsoft": {
+     "v": "paid",
+     "note": "One-click Microsoft sign-in"
+    },
+    "ses": {
+     "v": "paid"
+    },
+    "ownAccount": {
+     "v": "yes"
+    },
+    "routing": {
+     "v": "paid",
+     "note": "Smart Conditional Routing"
+    },
+    "backup": {
+     "v": "paid",
+     "note": "With automatic retry"
+    },
+    "log": {
+     "v": "paid",
+     "note": "With attachments, export and print"
+    },
+    "resend": {
+     "v": "paid",
+     "note": "Single or bulk"
+    },
+    "failAlerts": {
+     "v": "paid",
+     "note": "Email, Slack, Teams, Discord, Twilio SMS, webhooks"
+    },
+    "dns": {
+     "v": "yes",
+     "note": "Runs through WP Mail SMTP's own service"
+    },
+    "tracking": {
+     "v": "paid"
+    },
+    "smsAlerts": {
+     "v": "paid",
+     "note": "Email-failure alerts via Twilio only"
+    },
+    "wooStore": {
+     "v": "no"
+    },
+    "wooCustomer": {
+     "v": "no"
+    },
+    "cli": {
+     "v": "na"
+    },
+    "multisite": {
+     "v": "paid",
+     "note": "Network-wide settings and logs"
+    }
+   },
+   "theyWin": [
+    "Track record: 4 million active installs and 5,205 reviews averaging 4.8 out of 5. VuloMail was listed on 12 October 2026 and has no reviews yet.",
+    "Sign in with Google in the free version, so no Gmail password or app password is stored on your site. VuloMail's Gmail preset uses an app password.",
+    "Pro has features VuloMail doesn't offer at any price: open and click tracking, weekly email summaries, rate limiting, background sending queues, conditional routing and multisite network settings.",
+    "Paid one-to-one support and a White Glove Setup service that configures DNS and the mailer for you."
+   ],
+   "weWin": [
+    "Email log, resend, backup connection and failure alerts are free in VuloMail. In WP Mail SMTP each needs Pro, $99 a year for one site at full price.",
+    "Amazon SES, Microsoft 365 and Zoho presets are in the free plugin, alongside 22 email APIs. WP Mail SMTP keeps all three for Pro.",
+    "SMS: WooCommerce order, stock and review alerts for you, and order updates for customers, through Twilio, Vonage, Plivo or Clickatell. WP Mail SMTP only texts you when an email fails, and only in Pro.",
+    "No outside service in the loop: VuloMail's DNS check runs from your own server, and it never contacts a VuloLabs server. WP Mail SMTP's domain check sends your From address and domain to its own service."
+   ],
+   "chooseThem": [
+    "You want the most proven plugin and the largest support community.",
+    "You need open and click tracking, weekly reports, rate limiting or multisite network controls, and you're happy to pay for Pro.",
+    "You send through Gmail and want Google sign-in instead of an app password."
+   ],
+   "chooseUs": [
+    "You want a log, a backup connection and failure alerts without a yearly licence.",
+    "You run WooCommerce and want texts about orders and stock, or order updates sent to customers.",
+    "You use one of the less common services VuloMail supports, such as ZeptoMail, SocketLabs, Mailtrap or Bird."
+   ],
+   "sources": [
+    {
+     "label": "WP Mail SMTP on WordPress.org",
+     "url": "https://wordpress.org/plugins/wp-mail-smtp/"
+    },
+    {
+     "label": "WP Mail SMTP pricing",
+     "url": "https://wpmailsmtp.com/pricing/"
+    }
+   ]
+  },
+  {
+   "slug": "fluentsmtp",
+   "name": "FluentSMTP",
+   "vendor": "WPManageNinja",
+   "model": "Free",
+   "oneLiner": "Fully free, with no Pro version: OAuth, logs, fallback, alerts and WP-CLI included.",
+   "verdict": "FluentSMTP is VuloMail's closest match and a genuinely strong plugin: completely free, with a log, a fallback connection, failure alerts, Google and Microsoft sign-in and WP-CLI. If you only need email, it does more than VuloMail does today. VuloMail's difference is SMS: store and customer texts for WooCommerce, alongside a wider list of email services and privacy-first defaults.",
+   "stats": {
+    "slug": "fluent-smtp",
+    "version": "2.4.1",
+    "activeInstalls": 700000,
+    "rating": 96,
+    "reviews": 407,
+    "lastUpdated": "27 Sep 2026",
+    "listed": "18 Jan 2021",
+    "requiresWp": "6.5",
+    "requiresPhp": "7.4",
+    "testedUpTo": "7.1.3"
+   },
+   "freeTier": "Everything. FluentSMTP has no paid version and says it never will.",
+   "plans": [],
+   "pricingNote": "No paid plans. WPManageNinja has pledged FluentSMTP as part of its Five for the Future contribution.",
+   "features": {
+    "services": {
+     "v": "yes",
+     "note": "14 API connections, including Cloudflare and toSend"
+    },
+    "smtp": {
+     "v": "yes"
+    },
+    "gmail": {
+     "v": "yes",
+     "note": "Google sign-in (OAuth), no password stored"
+    },
+    "microsoft": {
+     "v": "yes",
+     "note": "Microsoft Graph with OAuth"
+    },
+    "ses": {
+     "v": "yes",
+     "note": "All SES regions"
+    },
+    "ownAccount": {
+     "v": "yes"
+    },
+    "routing": {
+     "v": "yes",
+     "note": "By From address"
+    },
+    "backup": {
+     "v": "yes"
+    },
+    "log": {
+     "v": "yes",
+     "note": "Full headers, body and server response"
+    },
+    "resend": {
+     "v": "yes",
+     "note": "To any recipient"
+    },
+    "failAlerts": {
+     "v": "yes",
+     "note": "Telegram, Slack, Discord, Pushover"
+    },
+    "dns": {
+     "v": "na"
+    },
+    "tracking": {
+     "v": "na"
+    },
+    "smsAlerts": {
+     "v": "no"
+    },
+    "wooStore": {
+     "v": "no"
+    },
+    "wooCustomer": {
+     "v": "no"
+    },
+    "cli": {
+     "v": "yes",
+     "note": "Test, health, stats, prune logs"
+    },
+    "multisite": {
+     "v": "na"
+    }
+   },
+   "theyWin": [
+    "Sign in with Google and Microsoft (OAuth), so no mailbox password is stored. VuloMail's Gmail and Microsoft presets use app passwords.",
+    "Failure alerts to Telegram, Slack, Discord and Pushover, plus a daily health check of every connection.",
+    "Route different From addresses to different providers, and manage it all from WP-CLI.",
+    "Option to keep credentials in wp-config.php instead of the database.",
+    "A five-year track record: 700,000 active installs and 407 reviews averaging 4.8 out of 5."
+   ],
+   "weWin": [
+    "SMS is built in: 18 alerts for your site and WooCommerce store, including order updates texted to customers. FluentSMTP has no SMS at all.",
+    "More email services: 22 email APIs and 18 SMTP presets, including Mailjet, MailerSend, Mailtrap, Mandrill, Resend, SendLayer, ZeptoMail, SocketLabs and SendPulse, which FluentSMTP doesn't list.",
+    "Privacy defaults: message bodies aren't stored unless you opt in, recipients can be masked, and old entries prune themselves after 30 days.",
+    "If both connections fail, WordPress's own mailer can still try as a last resort, and every attempt appears on a single log row.",
+    "A sender-domain check for SPF and DMARC records in Diagnostics."
+   ],
+   "chooseThem": [
+    "You only need email, and want Google or Microsoft sign-in, WP-CLI or Slack and Telegram alerts.",
+    "You want to route different senders to different providers."
+   ],
+   "chooseUs": [
+    "You also want SMS alerts, or texts to WooCommerce customers, without adding a second plugin.",
+    "Your provider is one FluentSMTP doesn't support natively, such as Mailjet, Resend or ZeptoMail.",
+    "You'd rather not store email bodies, which can contain password-reset links, by default."
+   ],
+   "sources": [
+    {
+     "label": "FluentSMTP on WordPress.org",
+     "url": "https://wordpress.org/plugins/fluent-smtp/"
+    }
+   ]
+  },
+  {
+   "slug": "easy-wp-smtp",
+   "name": "Easy WP SMTP",
+   "vendor": "Syed Balkhi (the team behind WP Mail SMTP)",
+   "model": "Freemium",
+   "oneLiner": "Popular, simple SMTP. The email log, backup, alerts and Gmail sign-in are paid.",
+   "verdict": "Easy WP SMTP has 500,000 installs and a 4.6-star rating. The free version sends through nine services or any SMTP server and records failed sends as debug events. The full email log, backup connection, alerts, and Gmail, Microsoft 365 or Amazon SES sending are all paid, from $99 a year at full price. VuloMail includes those for free and adds SMS, but it has no track record yet.",
+   "stats": {
+    "slug": "easy-wp-smtp",
+    "version": "2.15.1",
+    "activeInstalls": 500000,
+    "rating": 92,
+    "reviews": 708,
+    "lastUpdated": "12 Aug 2026",
+    "listed": "17 Apr 2013",
+    "requiresWp": "5.5",
+    "requiresPhp": "7.4",
+    "testedUpTo": "7.1.3"
+   },
+   "freeTier": "Sending through 9 email services or any SMTP server, a setup wizard, Reply-To and BCC, and debug events for failed sends.",
+   "plans": [
+    {
+     "name": "Basic",
+     "price": "$99/yr",
+     "sites": "1 site",
+     "note": "$49.50 in the first year"
+    },
+    {
+     "name": "Plus",
+     "price": "$199/yr",
+     "sites": "5 sites",
+     "note": "$99.50 in the first year"
+    },
+    {
+     "name": "Pro",
+     "price": "$399/yr",
+     "sites": "10 sites",
+     "note": "$199.50 in the first year"
+    },
+    {
+     "name": "Elite",
+     "price": "$599/yr",
+     "sites": "50 sites",
+     "note": "Priority support. $299.50 in the first year"
+    }
+   ],
+   "pricingNote": "First-year prices are introductory; renewals are at full price.",
+   "features": {
+    "services": {
+     "v": "yes",
+     "note": "9 in free; Gmail, Microsoft 365, Amazon SES and Zoho are paid"
+    },
+    "smtp": {
+     "v": "yes"
+    },
+    "gmail": {
+     "v": "paid",
+     "note": "One-click Google sign-in"
+    },
+    "microsoft": {
+     "v": "paid"
+    },
+    "ses": {
+     "v": "paid"
+    },
+    "ownAccount": {
+     "v": "yes"
+    },
+    "routing": {
+     "v": "paid",
+     "note": "Smart Conditional Routing"
+    },
+    "backup": {
+     "v": "paid"
+    },
+    "log": {
+     "v": "paid",
+     "note": "Free version logs failed sends as debug events"
+    },
+    "resend": {
+     "v": "paid"
+    },
+    "failAlerts": {
+     "v": "paid",
+     "note": "Email, Slack, Teams, Discord, SMS, webhooks"
+    },
+    "dns": {
+     "v": "na"
+    },
+    "tracking": {
+     "v": "paid"
+    },
+    "smsAlerts": {
+     "v": "paid",
+     "note": "Email-failure alerts only"
+    },
+    "wooStore": {
+     "v": "no"
+    },
+    "wooCustomer": {
+     "v": "no"
+    },
+    "cli": {
+     "v": "na"
+    },
+    "multisite": {
+     "v": "na"
+    }
+   },
+   "theyWin": [
+    "Track record: on WordPress.org since 2013, with 500,000 active installs and 708 reviews averaging 4.6 out of 5.",
+    "Paid plans add features VuloMail doesn't have: one-click Google sign-in, open and click tracking, email reports, rate limiting, background sending and conditional routing.",
+    "Paid plans include vendor support; Elite adds priority support."
+   ],
+   "weWin": [
+    "A full email log, resend, backup connection and failure alerts are free in VuloMail. Easy WP SMTP charges $99 a year for them on one site.",
+    "Gmail, Microsoft 365 and Amazon SES all work in the free plugin. Easy WP SMTP puts all three behind a paid plan.",
+    "SMS alerts for your site and WooCommerce store, and order-update texts to customers.",
+    "A sender-domain SPF and DMARC check in Diagnostics."
+   ],
+   "chooseThem": [
+    "You want a long-established plugin with paid vendor support.",
+    "You'll pay for open and click tracking, email reports or rate limiting."
+   ],
+   "chooseUs": [
+    "You want logs, backup and alerts without paying every year.",
+    "You send through Gmail, Microsoft 365 or Amazon SES and don't want a licence just for that.",
+    "You run a WooCommerce store and want SMS alerts too."
+   ],
+   "sources": [
+    {
+     "label": "Easy WP SMTP on WordPress.org",
+     "url": "https://wordpress.org/plugins/easy-wp-smtp/"
+    },
+    {
+     "label": "Easy WP SMTP pricing",
+     "url": "https://easywpsmtp.com/pricing/"
+    }
+   ]
+  },
+  {
+   "slug": "post-smtp",
+   "name": "Post SMTP",
+   "vendor": "Saad Iqbal",
+   "model": "Freemium",
+   "oneLiner": "Generous free tier with logs, fallback and alerts; a mobile app for monitoring.",
+   "verdict": "Post SMTP gives away more than most freemium plugins: the free version has an email log, single resend, a fallback mailer, a spam-score DNS check, and alerts by email, Slack, Pushover or a Chrome extension. Microsoft 365, Amazon SES, open tracking and SMS alerts via Twilio are paid. VuloMail matches the free core and adds SMS for WooCommerce stores and customers.",
+   "stats": {
+    "slug": "post-smtp",
+    "version": "4.0.2",
+    "activeInstalls": 300000,
+    "rating": 94,
+    "reviews": 528,
+    "lastUpdated": "24 Sep 2026",
+    "listed": "15 Oct 2017",
+    "requiresWp": "5.6",
+    "requiresPhp": "7.1",
+    "testedUpTo": "7.1.3"
+   },
+   "freeTier": "Sending through 20+ mailers, Gmail API sign-in, email log with resend, fallback mailer, DNS spam-score check, alerts and the mobile app.",
+   "plans": [
+    {
+     "name": "Basic",
+     "price": "$59.99/yr",
+     "sites": "1 site",
+     "note": "All Pro mailers and Gmail one-click setup"
+    },
+    {
+     "name": "Professional",
+     "price": "$79.99/yr",
+     "sites": "1 site",
+     "note": "Adds bulk resend and auto-retry"
+    },
+    {
+     "name": "Business",
+     "price": "$99.99/yr",
+     "sites": "1 site",
+     "note": "Adds Microsoft one-click, Teams alerts, mobile app Pro"
+    }
+   ],
+   "pricingNote": "Prices shown for one site; Post SMTP sells 10-, 100- and 1,000-site licences at higher prices.",
+   "features": {
+    "services": {
+     "v": "yes",
+     "note": "20+ mailers; Microsoft 365, Amazon SES and Zoho need a paid plan"
+    },
+    "smtp": {
+     "v": "yes"
+    },
+    "gmail": {
+     "v": "yes",
+     "note": "Gmail API with OAuth; one-click setup is paid"
+    },
+    "microsoft": {
+     "v": "paid"
+    },
+    "ses": {
+     "v": "paid"
+    },
+    "ownAccount": {
+     "v": "yes"
+    },
+    "routing": {
+     "v": "na"
+    },
+    "backup": {
+     "v": "yes",
+     "note": "Fallback mailer, confirmed in the free plugin's code"
+    },
+    "log": {
+     "v": "yes"
+    },
+    "resend": {
+     "v": "yes",
+     "note": "One at a time; bulk resend is paid"
+    },
+    "failAlerts": {
+     "v": "yes",
+     "note": "Email, Slack, Pushover, Chrome extension, mobile app"
+    },
+    "dns": {
+     "v": "yes",
+     "note": "SPF, DKIM and DMARC spam-score check"
+    },
+    "tracking": {
+     "v": "paid",
+     "note": "Opens"
+    },
+    "smsAlerts": {
+     "v": "paid",
+     "note": "Email-failure alerts via Twilio"
+    },
+    "wooStore": {
+     "v": "no"
+    },
+    "wooCustomer": {
+     "v": "no"
+    },
+    "cli": {
+     "v": "na"
+    },
+    "multisite": {
+     "v": "na",
+     "note": "Paid MainWP extension manages many sites"
+    }
+   },
+   "theyWin": [
+    "A mobile app and Chrome extension for watching delivery away from WordPress.",
+    "Gmail through Google's API with OAuth in the free version; VuloMail's Gmail preset uses an app password.",
+    "A DKIM check alongside SPF and DMARC. VuloMail checks SPF and DMARC and leaves DKIM to your provider's dashboard.",
+    "Paid extras VuloMail doesn't have: open tracking, automatic retries, email batching and a weekly health report.",
+    "On WordPress.org since 2017, with 300,000 active installs and 528 reviews averaging 4.7 out of 5."
+   ],
+   "weWin": [
+    "Microsoft 365 and Amazon SES work in the free plugin; Post SMTP needs a paid plan for both.",
+    "SMS alerts for your site and store, and order updates texted to customers, without a Twilio extension licence.",
+    "If both connections fail, WordPress's own mailer can still try as a last resort.",
+    "Privacy defaults: bodies aren't stored unless you opt in, recipients can be masked, and VuloMail contacts no vendor server."
+   ],
+   "chooseThem": [
+    "You want to monitor delivery from a phone app or browser extension.",
+    "You'll pay for open tracking, retries or batching."
+   ],
+   "chooseUs": [
+    "You send through Microsoft 365 or Amazon SES and don't want a paid plan just for that.",
+    "You run WooCommerce and want SMS alerts and customer texts in the same plugin."
+   ],
+   "sources": [
+    {
+     "label": "Post SMTP on WordPress.org",
+     "url": "https://wordpress.org/plugins/post-smtp/"
+    },
+    {
+     "label": "Post SMTP pricing",
+     "url": "https://postmansmtp.com/pricing/"
+    },
+    {
+     "label": "Post SMTP fallback documentation",
+     "url": "https://postmansmtp.com/docs/advance-functionality/fallback-extension/"
+    }
+   ]
+  },
+  {
+   "slug": "gosmtp",
+   "name": "GoSMTP",
+   "vendor": "Softaculous",
+   "model": "Freemium",
+   "oneLiner": "From Softaculous. Free sending only; logs, backup and alerts are paid.",
+   "verdict": "GoSMTP is made by Softaculous, the company behind the one-click installer many hosts use, and has 500,000 installs. The free version sends through eight services or any SMTP server. Email logs, a backup connection, failure alerts, Gmail, Microsoft 365 and Amazon SES are all paid, from $39 a year. It has only 10 reviews. VuloMail includes all of those for free.",
+   "stats": {
+    "slug": "gosmtp",
+    "version": "1.2.4",
+    "activeInstalls": 500000,
+    "rating": 86,
+    "reviews": 10,
+    "lastUpdated": "7 Oct 2026",
+    "listed": "20 Feb 2023",
+    "requiresWp": "5.5",
+    "requiresPhp": "5.5",
+    "testedUpTo": "7.1.3"
+   },
+   "freeTier": "Sending through 8 email services or any SMTP server, and a test email.",
+   "plans": [
+    {
+     "name": "Personal",
+     "price": "$39/yr",
+     "sites": "1 site"
+    },
+    {
+     "name": "Professional",
+     "price": "$75/yr",
+     "sites": "5 sites"
+    },
+    {
+     "name": "Business",
+     "price": "$200/yr",
+     "sites": "100 sites",
+     "note": "Your own sites only"
+    }
+   ],
+   "features": {
+    "services": {
+     "v": "yes",
+     "note": "8 in free; 8 more, including Gmail and Amazon SES, are paid"
+    },
+    "smtp": {
+     "v": "yes"
+    },
+    "gmail": {
+     "v": "paid"
+    },
+    "microsoft": {
+     "v": "paid"
+    },
+    "ses": {
+     "v": "paid"
+    },
+    "ownAccount": {
+     "v": "yes"
+    },
+    "routing": {
+     "v": "paid",
+     "note": "Smart Routing"
+    },
+    "backup": {
+     "v": "paid",
+     "note": "The setting only appears with Pro installed"
+    },
+    "log": {
+     "v": "paid"
+    },
+    "resend": {
+     "v": "paid"
+    },
+    "failAlerts": {
+     "v": "paid",
+     "note": "Email, Slack, Discord"
+    },
+    "dns": {
+     "v": "na"
+    },
+    "tracking": {
+     "v": "paid"
+    },
+    "smsAlerts": {
+     "v": "no"
+    },
+    "wooStore": {
+     "v": "no"
+    },
+    "wooCustomer": {
+     "v": "no"
+    },
+    "cli": {
+     "v": "na"
+    },
+    "multisite": {
+     "v": "na"
+    }
+   },
+   "theyWin": [
+    "The cheapest paid plan of the freemium plugins here: $39 a year for one site.",
+    "Paid plans add open and click tracking, email reports and smart routing, which VuloMail doesn't offer.",
+    "Exposes settings and test sends to AI assistants through the WordPress Abilities API."
+   ],
+   "weWin": [
+    "Email log, resend, backup connection and failure alerts are free; GoSMTP charges for all four.",
+    "Gmail, Microsoft 365, Amazon SES, Resend and MailerSend work in the free plugin.",
+    "SMS alerts and WooCommerce texts to you and your customers.",
+    "A sender-domain SPF and DMARC check in Diagnostics."
+   ],
+   "chooseThem": [
+    "You only need basic sending and it already works for you.",
+    "You want open tracking and reports for $39 a year."
+   ],
+   "chooseUs": [
+    "You want to see what your site sends, and have a backup, without a licence.",
+    "You need Gmail, Microsoft 365 or Amazon SES and don't want to pay for it."
+   ],
+   "sources": [
+    {
+     "label": "GoSMTP on WordPress.org",
+     "url": "https://wordpress.org/plugins/gosmtp/"
+    },
+    {
+     "label": "GoSMTP pricing",
+     "url": "https://gosmtp.net/pricing"
+    }
+   ]
+  },
+  {
+   "slug": "suremail",
+   "name": "SureMail",
+   "vendor": "Brainstorm Force",
+   "model": "Free",
+   "oneLiner": "Free, with multiple fallbacks, auto-retry, logs and analytics.",
+   "verdict": "SureMail, from the team behind Astra, is free with no paid tier: multiple fallback connections, automatic retries, a log with resend, and delivery analytics. It's only 21 months old but already has 200,000 installs. VuloMail's difference is SMS, with alerts and WooCommerce texts built in, plus a longer list of email services and an SPF and DMARC check.",
+   "stats": {
+    "slug": "suremails",
+    "version": "2.0.3",
+    "activeInstalls": 200000,
+    "rating": 94,
+    "reviews": 25,
+    "lastUpdated": "8 Oct 2026",
+    "listed": "22 Jan 2025",
+    "requiresWp": "5.4",
+    "requiresPhp": "7.4",
+    "testedUpTo": "7.1.3"
+   },
+   "freeTier": "Everything. SureMail describes itself as completely free.",
+   "plans": [],
+   "pricingNote": "No paid plans. Some alert channels go through SureTriggers (OttoKit), a separate Brainstorm Force service.",
+   "features": {
+    "services": {
+     "v": "yes",
+     "note": "13 services, including Brainstorm Force's SureContact"
+    },
+    "smtp": {
+     "v": "yes"
+    },
+    "gmail": {
+     "v": "yes",
+     "note": "Sign-in method not stated"
+    },
+    "microsoft": {
+     "v": "na",
+     "note": "Not listed; generic SMTP may work"
+    },
+    "ses": {
+     "v": "yes"
+    },
+    "ownAccount": {
+     "v": "yes"
+    },
+    "routing": {
+     "v": "na"
+    },
+    "backup": {
+     "v": "yes",
+     "note": "Several fallbacks in order, plus auto-retry"
+    },
+    "log": {
+     "v": "yes"
+    },
+    "resend": {
+     "v": "yes"
+    },
+    "failAlerts": {
+     "v": "yes",
+     "note": "Via SureTriggers: Slack, Telegram, Discord and more"
+    },
+    "dns": {
+     "v": "na"
+    },
+    "tracking": {
+     "v": "na"
+    },
+    "smsAlerts": {
+     "v": "na",
+     "note": "Possible through SureTriggers"
+    },
+    "wooStore": {
+     "v": "no"
+    },
+    "wooCustomer": {
+     "v": "no"
+    },
+    "cli": {
+     "v": "na"
+    },
+    "multisite": {
+     "v": "na"
+    }
+   },
+   "theyWin": [
+    "Several fallback connections tried in order, and automatic retries after a delay. VuloMail has one backup, then WordPress's mailer.",
+    "Delivery analytics and charts.",
+    "Alerts through SureTriggers can reach almost any channel, if you also use that service.",
+    "A larger installed base already: 200,000 sites."
+   ],
+   "weWin": [
+    "SMS is built in, with no second service: 18 alerts for your site and store, including order updates for customers.",
+    "22 email APIs, including Mailtrap, Mandrill, Resend, SendLayer, ZeptoMail and SocketLabs, which SureMail doesn't list.",
+    "Microsoft 365 and Outlook presets, and a sender-domain SPF and DMARC check.",
+    "Privacy defaults: bodies aren't stored unless you opt in, recipients can be masked, and nothing is sent to a vendor service."
+   ],
+   "chooseThem": [
+    "You want several fallbacks and automatic retries.",
+    "You already use SureTriggers or other Brainstorm Force products."
+   ],
+   "chooseUs": [
+    "You want SMS alerts or WooCommerce customer texts without connecting another service.",
+    "You send through Microsoft 365 or one of the providers SureMail doesn't list."
+   ],
+   "sources": [
+    {
+     "label": "SureMail on WordPress.org",
+     "url": "https://wordpress.org/plugins/suremails/"
+    }
+   ]
+  },
+  {
+   "slug": "site-mailer",
+   "name": "Site Mailer",
+   "vendor": "Elementor",
+   "model": "Hosted service",
+   "oneLiner": "Elementor's own sending service, not a connector: no SMTP or provider account.",
+   "verdict": "Site Mailer (now called Email Deliverability) works differently from every other plugin here: instead of connecting your own email provider, it sends through Elementor's service and needs an Elementor account. The free plan covers 200 emails in total, not per month. It is rated 2.5 out of 5 from 17 reviews. VuloMail is a free connector for a provider you choose and pay directly.",
+   "stats": {
+    "slug": "site-mailer",
+    "version": "1.4.7",
+    "activeInstalls": 200000,
+    "rating": 50,
+    "reviews": 17,
+    "lastUpdated": "16 Jul 2026",
+    "listed": "16 Sep 2024",
+    "requiresWp": "6.7",
+    "requiresPhp": "7.4",
+    "testedUpTo": "7.0.7"
+   },
+   "freeTier": "200 emails in total (a one-time allowance), one site, 30-day log.",
+   "plans": [
+    {
+     "name": "Paid",
+     "price": "Not published",
+     "sites": "—",
+     "note": "Monthly email quota; Elementor One users aren't subject to the quota"
+    }
+   ],
+   "pricingNote": "Elementor's product page doesn't list paid prices; the upgrade flow is inside WordPress.",
+   "features": {
+    "services": {
+     "v": "no",
+     "note": "Sends through Elementor's own service"
+    },
+    "smtp": {
+     "v": "no"
+    },
+    "gmail": {
+     "v": "no"
+    },
+    "microsoft": {
+     "v": "no"
+    },
+    "ses": {
+     "v": "no"
+    },
+    "ownAccount": {
+     "v": "no",
+     "note": "Needs an Elementor account"
+    },
+    "routing": {
+     "v": "no"
+    },
+    "backup": {
+     "v": "na"
+    },
+    "log": {
+     "v": "yes",
+     "note": "30-day retention"
+    },
+    "resend": {
+     "v": "yes"
+    },
+    "failAlerts": {
+     "v": "na"
+    },
+    "dns": {
+     "v": "na",
+     "note": "Custom-domain setup is guided"
+    },
+    "tracking": {
+     "v": "yes",
+     "note": "Opens"
+    },
+    "smsAlerts": {
+     "v": "no"
+    },
+    "wooStore": {
+     "v": "no"
+    },
+    "wooCustomer": {
+     "v": "no"
+    },
+    "cli": {
+     "v": "na"
+    },
+    "multisite": {
+     "v": "na"
+    }
+   },
+   "theyWin": [
+    "Nothing to set up with a third-party provider: no API keys, no SMTP settings.",
+    "Open tracking and a suppression list for unsubscribes.",
+    "Comes from Elementor, so it's a natural fit if you already pay for Elementor One."
+   ],
+   "weWin": [
+    "You choose and pay your own provider, so there's no quota set by the plugin vendor. Site Mailer stops sending when its quota runs out.",
+    "Free with no cap: Site Mailer's free plan ends after 200 emails in total.",
+    "A backup connection, plus WordPress's own mailer as a last resort.",
+    "Your email doesn't pass through the plugin vendor. Site Mailer sends every message's addresses, subject, body and attachments to Elementor.",
+    "SMS alerts and WooCommerce texts."
+   ],
+   "chooseThem": [
+    "You're on Elementor One and would rather not create an account with an email provider."
+   ],
+   "chooseUs": [
+    "You want to keep your provider account, and your message data, in your own hands.",
+    "You send more than a few hundred emails and don't want a monthly quota."
+   ],
+   "sources": [
+    {
+     "label": "Site Mailer on WordPress.org",
+     "url": "https://wordpress.org/plugins/site-mailer/"
+    },
+    {
+     "label": "Site Mailer product page",
+     "url": "https://elementor.com/products/site-mailer/"
+    },
+    {
+     "label": "Elementor help: Site Mailer",
+     "url": "https://elementor.com/help/explore-site-mailer/"
+    }
+   ]
+  },
+  {
+   "slug": "smtp-mailer",
+   "name": "SMTP Mailer",
+   "vendor": "Noor Alam (wphowto.net)",
+   "model": "Free + paid add-ons",
+   "oneLiner": "A minimal SMTP-only plugin. Logging is a paid add-on.",
+   "verdict": "SMTP Mailer does one thing: it sends WordPress email through an SMTP server you configure. There are no API connections, no backup and no alerts, and the email log is part of a $59.99 add-on bundle. It's a fine choice if you want the smallest possible plugin. VuloMail does far more, still for free.",
+   "stats": {
+    "slug": "smtp-mailer",
+    "version": "1.1.28",
+    "activeInstalls": 70000,
+    "rating": 92,
+    "reviews": 67,
+    "lastUpdated": "7 Sep 2026",
+    "listed": "20 Dec 2015",
+    "requiresWp": "7.1",
+    "requiresPhp": "—",
+    "testedUpTo": "7.1.3"
+   },
+   "freeTier": "One SMTP server, From name and address, and a test email.",
+   "plans": [
+    {
+     "name": "Add-on bundle",
+     "price": "$59.99",
+     "sites": "Unlimited",
+     "note": "Email Logger, Cc and Reply-To add-ons"
+    }
+   ],
+   "features": {
+    "services": {
+     "v": "no",
+     "note": "SMTP only"
+    },
+    "smtp": {
+     "v": "yes"
+    },
+    "gmail": {
+     "v": "no",
+     "note": "Only through manual SMTP settings"
+    },
+    "microsoft": {
+     "v": "no",
+     "note": "Only through manual SMTP settings"
+    },
+    "ses": {
+     "v": "no",
+     "note": "Only through manual SMTP settings"
+    },
+    "ownAccount": {
+     "v": "yes"
+    },
+    "routing": {
+     "v": "no"
+    },
+    "backup": {
+     "v": "na"
+    },
+    "log": {
+     "v": "paid",
+     "note": "Email Logger add-on"
+    },
+    "resend": {
+     "v": "na"
+    },
+    "failAlerts": {
+     "v": "na"
+    },
+    "dns": {
+     "v": "na"
+    },
+    "tracking": {
+     "v": "na"
+    },
+    "smsAlerts": {
+     "v": "no"
+    },
+    "wooStore": {
+     "v": "no"
+    },
+    "wooCustomer": {
+     "v": "no"
+    },
+    "cli": {
+     "v": "na"
+    },
+    "multisite": {
+     "v": "na"
+    }
+   },
+   "theyWin": [
+    "Very small and simple: one settings screen for one SMTP server."
+   ],
+   "weWin": [
+    "Native API connections for 22 email services, which still work when a host blocks SMTP ports.",
+    "A free email log, backup connection, failure alerts and diagnostics.",
+    "SMS alerts and WooCommerce texts."
+   ],
+   "chooseThem": [
+    "You want the smallest possible plugin and only ever use one SMTP server."
+   ],
+   "chooseUs": [
+    "You want to see what was sent, have a backup, or send over an API instead of SMTP."
+   ],
+   "sources": [
+    {
+     "label": "SMTP Mailer on WordPress.org",
+     "url": "https://wordpress.org/plugins/smtp-mailer/"
+    },
+    {
+     "label": "SMTP Mailer plugin page",
+     "url": "https://wphowto.net/smtp-mailer-plugin-for-wordpress-1482"
+    }
+   ]
+  },
+  {
+   "slug": "solid-mail",
+   "name": "Solid Mail",
+   "vendor": "Kadence (formerly SolidWP)",
+   "model": "Free",
+   "oneLiner": "Free SMTP with logs and fallback, for five providers. Not yet tested on WordPress 7.x.",
+   "verdict": "Solid Mail, formerly WP SMTP, is free and does the basics well: five API providers plus manual SMTP, multiple connections chosen by From address, a fallback, and an email log. It was last updated in May 2026 and is listed as tested up to WordPress 6.9.10, behind the current 7.1.3. VuloMail supports far more services and adds alerts, diagnostics and SMS.",
+   "stats": {
+    "slug": "wp-smtp",
+    "version": "3.0.0",
+    "activeInstalls": 60000,
+    "rating": 84,
+    "reviews": 52,
+    "lastUpdated": "12 May 2026",
+    "listed": "10 Nov 2012",
+    "requiresWp": "6.4",
+    "requiresPhp": "7.4",
+    "testedUpTo": "6.9.10"
+   },
+   "freeTier": "Everything. Solid Mail describes itself as 100% free.",
+   "plans": [],
+   "features": {
+    "services": {
+     "v": "yes",
+     "note": "SendGrid, Mailgun, Brevo, Amazon SES, Postmark"
+    },
+    "smtp": {
+     "v": "yes"
+    },
+    "gmail": {
+     "v": "no",
+     "note": "Only through manual SMTP settings"
+    },
+    "microsoft": {
+     "v": "no",
+     "note": "Only through manual SMTP settings"
+    },
+    "ses": {
+     "v": "yes"
+    },
+    "ownAccount": {
+     "v": "yes"
+    },
+    "routing": {
+     "v": "yes",
+     "note": "By From address"
+    },
+    "backup": {
+     "v": "yes"
+    },
+    "log": {
+     "v": "yes"
+    },
+    "resend": {
+     "v": "na"
+    },
+    "failAlerts": {
+     "v": "na"
+    },
+    "dns": {
+     "v": "na"
+    },
+    "tracking": {
+     "v": "na"
+    },
+    "smsAlerts": {
+     "v": "no"
+    },
+    "wooStore": {
+     "v": "no"
+    },
+    "wooCustomer": {
+     "v": "no"
+    },
+    "cli": {
+     "v": "na"
+    },
+    "multisite": {
+     "v": "na"
+    }
+   },
+   "theyWin": [
+    "Routes different From addresses to different connections.",
+    "On WordPress.org since 2012, with 60,000 active installs."
+   ],
+   "weWin": [
+    "22 email APIs against Solid Mail's five, plus 18 SMTP presets including Gmail and Microsoft 365.",
+    "Failure alerts, resend from the log, and a Diagnostics screen with an SPF and DMARC check.",
+    "Actively released and tested against the current WordPress 7.1.3.",
+    "SMS alerts and WooCommerce texts."
+   ],
+   "chooseThem": [
+    "You use one of its five providers and need per-sender routing."
+   ],
+   "chooseUs": [
+    "Your provider isn't SendGrid, Mailgun, Brevo, SES or Postmark.",
+    "You want alerts when sending fails, or SMS for your store."
+   ],
+   "sources": [
+    {
+     "label": "Solid Mail on WordPress.org",
+     "url": "https://wordpress.org/plugins/wp-smtp/"
+    },
+    {
+     "label": "Solid Mail product page",
+     "url": "https://solidwp.com/solid-mail"
+    }
+   ]
+  },
+  {
+   "slug": "wsms",
+   "name": "WSMS (WP SMS)",
+   "vendor": "VeronaLabs",
+   "model": "Freemium",
+   "oneLiner": "A dedicated SMS plugin with 200+ gateways, OTP and campaigns. It doesn't send email.",
+   "verdict": "WSMS, formerly WP SMS, is a full SMS toolkit: 200+ gateways in the free version, admin alerts, WooCommerce notifications, subscriber forms, and, on its paid plan, OTP and two-factor login, scheduled campaigns and a two-way inbox. It doesn't deliver email. VuloMail is an email delivery plugin with focused SMS alerts through four gateways. If SMS is your main channel, WSMS goes much further.",
+   "stats": {
+    "slug": "wp-sms",
+    "version": "7.2.9",
+    "activeInstalls": 7000,
+    "rating": 82,
+    "reviews": 107,
+    "lastUpdated": "1 Oct 2026",
+    "listed": "12 Mar 2012",
+    "requiresWp": "4.1",
+    "requiresPhp": "7.4",
+    "testedUpTo": "7.1.3"
+   },
+   "freeTier": "Sending through 200+ SMS gateways, admin alerts, SMS newsletter forms and integrations.",
+   "plans": [
+    {
+     "name": "All-in-One",
+     "price": "$59/yr",
+     "sites": "1 site",
+     "note": "Introductory price; 5-site and unlimited licences also sold"
+    }
+   ],
+   "pricingNote": "WSMS states that renewals are at full price, and doesn't publish the renewal amount.",
+   "omit": [
+    "gmail",
+    "microsoft",
+    "ses",
+    "ownAccount",
+    "routing",
+    "resend",
+    "dns",
+    "tracking",
+    "cli",
+    "multisite",
+    "services",
+    "smtp"
+   ],
+   "features": {
+    "backup": {
+     "v": "no"
+    },
+    "log": {
+     "v": "na",
+     "note": "Keeps an SMS outbox; doesn't handle email"
+    },
+    "failAlerts": {
+     "v": "no"
+    },
+    "smsAlerts": {
+     "v": "yes",
+     "note": "New users, logins, posts, updates"
+    },
+    "wooStore": {
+     "v": "yes",
+     "note": "Basic order notifications; advanced suite is paid"
+    },
+    "wooCustomer": {
+     "v": "yes",
+     "note": "Basic order notifications; advanced suite is paid"
+    }
+   },
+   "extraRows": [
+    {
+     "label": "Delivers WordPress email through a provider",
+     "vulomail": {
+      "v": "yes",
+      "note": "22 email APIs, 18 SMTP presets or any SMTP server"
+     },
+     "them": {
+      "v": "no"
+     }
+    },
+    {
+     "label": "SMS gateways",
+     "vulomail": {
+      "v": "yes",
+      "note": "4: Twilio, Vonage, Plivo, Clickatell"
+     },
+     "them": {
+      "v": "yes",
+      "note": "200+ free, 300+ on All-in-One"
+     }
+    },
+    {
+     "label": "OTP and two-factor login by SMS",
+     "vulomail": {
+      "v": "no"
+     },
+     "them": {
+      "v": "paid"
+     }
+    },
+    {
+     "label": "Bulk SMS and subscriber forms",
+     "vulomail": {
+      "v": "no"
+     },
+     "them": {
+      "v": "yes",
+      "note": "Scheduled and recurring sends are paid"
+     }
+    },
+    {
+     "label": "Two-way SMS inbox",
+     "vulomail": {
+      "v": "no"
+     },
+     "them": {
+      "v": "paid"
+     }
+    }
+   ],
+   "theyWin": [
+    "200+ SMS gateways in the free version, against VuloMail's four, including many regional ones.",
+    "OTP and two-factor login, scheduled campaigns, abandoned-cart texts and a two-way inbox on the paid plan.",
+    "Subscriber forms and bulk SMS for marketing."
+   ],
+   "weWin": [
+    "VuloMail also fixes your WordPress email: 22 email APIs, 18 SMTP presets or any SMTP server, a backup connection and a log of every message.",
+    "Email and SMS in one log and one dashboard, with a text alert when an email fails.",
+    "Free, with no paid plan."
+   ],
+   "chooseThem": [
+    "SMS is a main channel for you: marketing, OTP logins or local gateways VuloMail doesn't support."
+   ],
+   "chooseUs": [
+    "You need reliable WordPress email first, and want order and site alerts by text through Twilio, Vonage, Plivo or Clickatell."
+   ],
+   "sources": [
+    {
+     "label": "WSMS on WordPress.org",
+     "url": "https://wordpress.org/plugins/wp-sms/"
+    },
+    {
+     "label": "WSMS pricing",
+     "url": "https://wsms.io/pricing/"
+    }
+   ]
+  }
+ ],
+ "alsoConsidered": [
+  {
+   "name": "WP Mail Logging",
+   "slug": "wp-mail-logging",
+   "installs": 300000,
+   "why": "Logs email only; it doesn't change how mail is sent."
+  },
+  {
+   "name": "Check & Log Email",
+   "slug": "check-email",
+   "installs": 100000,
+   "why": "Email testing and logging, without SMTP or API sending."
+  },
+  {
+   "name": "Brevo",
+   "slug": "mailin",
+   "installs": 100000,
+   "why": "Brevo's own marketing plugin; transactional sending works with Brevo only."
+  },
+  {
+   "name": "Mailgun for WordPress",
+   "slug": "mailgun",
+   "installs": 80000,
+   "why": "Mailgun's official plugin, for Mailgun only."
+  },
+  {
+   "name": "SMTP2GO for WordPress",
+   "slug": "smtp2go",
+   "installs": 40000,
+   "why": "SMTP2GO's official plugin, for SMTP2GO only."
+  }
+ ]
+}

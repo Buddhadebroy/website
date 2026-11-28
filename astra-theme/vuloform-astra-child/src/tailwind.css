@@ -1,0 +1,25 @@
+/* Tailwind input for assets/css/vf-tailwind.css. Rebuild: see src/build.mjs. Same tokens as app/globals.css. */
+@import "tailwindcss/theme" source(none);
+@import "tailwindcss/utilities" source(none);
+@source "../template-parts";
+@source "../page-templates";
+@source "../graphic/parts";
+@source "../inc";
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-sky-soft: var(--sky-soft);
+  --color-peach-soft: var(--peach-soft);
+  --color-butter-soft: var(--butter-soft);
+  --color-lilac-soft: var(--lilac-soft);
+  --color-line: var(--line);
+  --font-sans: var(--font-nunito);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}

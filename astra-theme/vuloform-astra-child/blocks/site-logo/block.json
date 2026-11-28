@@ -1,0 +1,20 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "vuloform/site-logo",
+ "title": "Site Logo (VuloForm)",
+ "category": "vuloform",
+ "icon": "format-image",
+ "description": "The logo from Customize → Site Identity (Astra logo + retina logo), with the site title next to it. Falls back to the site title.",
+ "keywords": [ "logo", "site identity", "vuloform" ],
+ "textdomain": "vuloform",
+ "attributes": {
+  "showTitle": { "type": "boolean", "default": true },
+  "accent": { "type": "string", "default": "Form" },
+  "width": { "type": "number", "default": 34 },
+  "link": { "type": "boolean", "default": true }
+ },
+ "supports": { "html": false, "className": true },
+ "editorScript": "vf-site-blocks-editor",
+ "render": "file:./render.php"
+}

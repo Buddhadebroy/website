@@ -1,0 +1,159 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "category": "vulopilot",
+ "textdomain": "vulopilot",
+ "editorScript": "file:./index.js",
+ "name": "vulopilot/checklist",
+ "version": "1.2.0",
+ "title": "Interactive Checklist (VuloPilot)",
+ "icon": "yes-alt",
+ "description": "Tick-off checklist with a progress ring. Progress is saved in the visitor's browser.",
+ "keywords": [
+  "checklist",
+  "todo",
+  "progress",
+  "resources"
+ ],
+ "viewScript": "file:./view.js",
+ "render": "file:./render.php",
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  }
+ },
+ "attributes": {
+  "heading": {
+   "type": "string",
+   "default": "Work through it"
+  },
+  "storageId": {
+   "type": "string",
+   "default": "seo-checklist"
+  },
+  "groups": {
+   "type": "array",
+   "default": [
+    {
+     "title": "Foundations",
+     "items": "Every page has a unique title\nEvery page has a meta description\nXML sitemap is published and submitted\nrobots.txt does not block important pages\nSite uses HTTPS everywhere"
+    },
+    {
+     "title": "Pages",
+     "items": "One H1 per page\nImages have alt text\nInternal links connect related pages\nNo duplicate titles or descriptions"
+    },
+    {
+     "title": "Fix and monitor",
+     "items": "Moved pages are redirected\n404s are reviewed\nSearch Console is connected\nScores are re-checked after fixes"
+    }
+   ]
+  },
+  "ringLabel": {
+   "type": "string",
+   "default": "Complete"
+  },
+  "countText": {
+   "type": "string",
+   "default": "{done} of {total} done"
+  },
+  "progressText": {
+   "type": "string",
+   "default": "Tick items as you go."
+  },
+  "completeText": {
+   "type": "string",
+   "default": "All done. Nice work."
+  },
+  "resetText": {
+   "type": "string",
+   "default": "Reset"
+  },
+  "downloadText": {
+   "type": "string",
+   "default": "Or download the checklist"
+  },
+  "ctaText": {
+   "type": "string",
+   "default": "Get VuloPilot free"
+  },
+  "ctaUrl": {
+   "type": "string",
+   "default": "https://wordpress.org/plugins/vulopilot/"
+  },
+  "ctaKicker": {
+   "type": "string",
+   "default": "Skip the manual work"
+  },
+  "ctaTitle": {
+   "type": "string",
+   "default": "VuloPilot checks this list for you"
+  },
+  "ctaBody": {
+   "type": "string",
+   "default": "Install the WordPress plugin and it scans every page, flags what is missing and shows what to fix first."
+  },
+  "ctaNote": {
+   "type": "string",
+   "default": "Free plan. Works in WordPress."
+  },
+  "sticky": {
+   "type": "boolean",
+   "default": true
+  },
+  "ringSize": {
+   "type": "number",
+   "default": 140
+  },
+  "maxWidth": {
+   "type": "number",
+   "default": 1024
+  },
+  "howToSchema": {
+   "type": "boolean",
+   "default": true
+  },
+  "colorPrimary": {
+   "type": "string",
+   "default": ""
+  },
+  "colorPrimarySoft": {
+   "type": "string",
+   "default": ""
+  },
+  "colorAccent": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBg": {
+   "type": "string",
+   "default": ""
+  },
+  "colorSurface": {
+   "type": "string",
+   "default": ""
+  },
+  "colorText": {
+   "type": "string",
+   "default": ""
+  },
+  "colorMuted": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBorder": {
+   "type": "string",
+   "default": ""
+  },
+  "radius": {
+   "type": "number",
+   "default": 4
+  }
+ }
+}

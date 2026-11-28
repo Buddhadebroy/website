@@ -1,0 +1,132 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "vuloform/compare-tabs",
+ "title": "Comparison Table with Tabs (VuloForm)",
+ "category": "vuloform",
+ "icon": "editor-table",
+ "description": "\"Feature by feature\" table and \"What it costs\" chart. Facts come from data/compare.json.",
+ "keywords": [
+  "vuloform",
+  "section"
+ ],
+ "textdomain": "vuloform",
+ "attributes": {
+  "eyebrow": {
+   "type": "string",
+   "default": ""
+  },
+  "title": {
+   "type": "string",
+   "default": ""
+  },
+  "highlight": {
+   "type": "string",
+   "default": ""
+  },
+  "intro": {
+   "type": "string",
+   "default": ""
+  },
+  "tab1": {
+   "type": "string",
+   "default": ""
+  },
+  "tab2": {
+   "type": "string",
+   "default": ""
+  },
+  "showHeading": {
+   "type": "boolean",
+   "default": true
+  },
+  "showCards": {
+   "type": "boolean",
+   "default": true
+  },
+  "showLinks": {
+   "type": "boolean",
+   "default": true
+  },
+  "showSources": {
+   "type": "boolean",
+   "default": true
+  }
+ },
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "className": true,
+  "spacing": {
+   "margin": true
+  }
+ },
+ "editorScript": "vf-blocks-editor",
+ "style": [
+  "vf-tailwind",
+  "vf-site",
+  "vf-effects"
+ ],
+ "viewScript": [
+  "vf-effects",
+  "vf-site"
+ ],
+ "render": "file:./render.php",
+ "vfSection": "compare",
+ "vfFields": [
+  {
+   "key": "eyebrow",
+   "type": "text",
+   "label": "Small label"
+  },
+  {
+   "key": "title",
+   "type": "text",
+   "label": "Title"
+  },
+  {
+   "key": "highlight",
+   "type": "text",
+   "label": "Blue word(s) after the title"
+  },
+  {
+   "key": "intro",
+   "type": "textarea",
+   "label": "Intro text"
+  },
+  {
+   "key": "tab1",
+   "type": "text",
+   "label": "Tab 1 name"
+  },
+  {
+   "key": "tab2",
+   "type": "text",
+   "label": "Tab 2 name"
+  },
+  {
+   "key": "showHeading",
+   "type": "toggle",
+   "label": "Show the heading"
+  },
+  {
+   "key": "showCards",
+   "type": "toggle",
+   "label": "Show \"stands out / stronger\" cards"
+  },
+  {
+   "key": "showLinks",
+   "type": "toggle",
+   "label": "Show the head-to-head links"
+  },
+  {
+   "key": "showSources",
+   "type": "toggle",
+   "label": "Show \"Sources & method\""
+  }
+ ]
+}

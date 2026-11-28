@@ -1,0 +1,999 @@
+{
+ "site": {
+  "name": "VuloMail",
+  "tagline": "Every email and text your WordPress site sends, actually delivered.",
+  "description": "VuloMail is a free WordPress plugin that sends your site's email and SMS through the provider you already use, fails over to a backup, logs every message, and texts you when something breaks.",
+  "repo": "https://github.com/vulolabs/vulolabs/tree/main/plugins/vulomail",
+  "docs": "https://github.com/vulolabs/vulolabs/tree/main/plugins/vulomail/docs",
+  "requirements": {
+   "wordpress": "6.4",
+   "php": "7.4"
+  }
+ },
+ "nav": [
+  {
+   "label": "Product",
+   "items": [
+    {
+     "href": "/features",
+     "label": "All features",
+     "desc": "Everything VuloMail does, on one page"
+    },
+    {
+     "href": "/email",
+     "label": "Email delivery",
+     "desc": "Routing, sender, failover, last resort"
+    },
+    {
+     "href": "/sms",
+     "label": "SMS alerts",
+     "desc": "18 alerts for your site, store and customers"
+    },
+    {
+     "href": "/security",
+     "label": "Security & privacy",
+     "desc": "Encrypted keys, private logs, no tracking"
+    }
+   ]
+  },
+  {
+   "href": "/providers",
+   "label": "Providers"
+  },
+  {
+   "href": "/compare",
+   "label": "Compare"
+  },
+  {
+   "href": "/pricing",
+   "label": "Pricing"
+  },
+  {
+   "label": "Resources",
+   "items": [
+    {
+     "href": "/get-started",
+     "label": "Get started",
+     "desc": "Install, connect and send a test in minutes"
+    },
+    {
+     "href": "/developers",
+     "label": "Developers",
+     "desc": "Functions, hooks and REST routes"
+    },
+    {
+     "href": "/blog",
+     "label": "Blog",
+     "desc": "Guides on email delivery, SMTP and WooCommerce SMS"
+    },
+    {
+     "href": "/faq",
+     "label": "FAQ & troubleshooting",
+     "desc": "Answers to the common questions"
+    },
+    {
+     "href": "https://github.com/vulolabs/vulolabs/tree/main/plugins/vulomail/docs",
+     "label": "Documentation",
+     "desc": "Full user and developer guides",
+     "external": true
+    }
+   ]
+  },
+  {
+   "label": "Company",
+   "items": [
+    {
+     "href": "/about",
+     "label": "About",
+     "desc": "Who makes VuloMail, and why"
+    },
+    {
+     "href": "/changelog",
+     "label": "Changelog",
+     "desc": "What's new in each release"
+    },
+    {
+     "href": "/contact",
+     "label": "Contact",
+     "desc": "Questions, help and feedback"
+    }
+   ]
+  }
+ ],
+ "providers": [
+  {
+   "id": "smtp",
+   "kind": "smtp",
+   "name": "SMTP",
+   "channel": "email",
+   "blurb": "Any SMTP account. Works with Google Workspace, Microsoft 365, Amazon SES, Zoho and most others.",
+   "needs": [
+    "SMTP host",
+    "Port",
+    "Encryption",
+    "Username",
+    "Password"
+   ],
+   "where": "Your email host or service",
+   "note": "Uses the PHPMailer bundled with WordPress. Other plugins can still adjust content, but none can redirect the message."
+  },
+  {
+   "id": "sendgrid",
+   "kind": "api",
+   "name": "SendGrid",
+   "channel": "email",
+   "blurb": "Transactional email over SendGrid's v3 Mail Send API.",
+   "needs": [
+    "API key"
+   ],
+   "where": "SendGrid → Settings → API Keys (needs “Mail Send”)",
+   "note": "Success is HTTP 202. The provider's message id is kept for you to look up later."
+  },
+  {
+   "id": "mailgun",
+   "kind": "api",
+   "name": "Mailgun",
+   "channel": "email",
+   "blurb": "Mailgun's messages API, in the US or EU region.",
+   "needs": [
+    "API key",
+    "Sending domain",
+    "Region"
+   ],
+   "where": "Mailgun → Sending → Domains",
+   "note": "The sending domain is validated as a hostname before it is ever placed in a URL."
+  },
+  {
+   "id": "brevo",
+   "kind": "api",
+   "name": "Brevo",
+   "channel": "email",
+   "blurb": "Brevo's transactional email API.",
+   "needs": [
+    "API key (v3)"
+   ],
+   "where": "Brevo → SMTP & API",
+   "note": "Any 2xx response from Brevo counts as accepted."
+  },
+  {
+   "id": "postmark",
+   "kind": "api",
+   "name": "Postmark",
+   "channel": "email",
+   "blurb": "Postmark's email API with message streams.",
+   "needs": [
+    "Server API token",
+    "Message stream"
+   ],
+   "where": "Postmark → your server → API Tokens",
+   "note": "Postmark reports some failures as HTTP 200, so VuloMail also checks ErrorCode."
+  },
+  {
+   "id": "elastic_email",
+   "kind": "api",
+   "name": "Elastic Email",
+   "channel": "email",
+   "blurb": "Elastic Email transactional API.",
+   "needs": [
+    "API key"
+   ],
+   "note": "Create one in Elastic Email, under Settings → API."
+  },
+  {
+   "id": "mailjet",
+   "kind": "api",
+   "name": "Mailjet",
+   "channel": "email",
+   "blurb": "Mailjet transactional email API.",
+   "needs": [
+    "API key",
+    "Secret key"
+   ],
+   "note": "Find both keys in Mailjet, under Account Settings → API Key Management."
+  },
+  {
+   "id": "mailersend",
+   "kind": "api",
+   "name": "MailerSend",
+   "channel": "email",
+   "blurb": "MailerSend transactional email API.",
+   "needs": [
+    "API token"
+   ],
+   "note": "Needs the \"Email: full access\" or \"Email: send\" permission. Create one in MailerSend, under Settings → API Tokens."
+  },
+  {
+   "id": "maileroo",
+   "kind": "api",
+   "name": "Maileroo",
+   "channel": "email",
+   "blurb": "Maileroo transactional email API.",
+   "needs": [
+    "Sending key"
+   ],
+   "note": "Open your domain in Maileroo, then its Sending Keys page."
+  },
+  {
+   "id": "mailtrap",
+   "kind": "api",
+   "name": "Mailtrap",
+   "channel": "email",
+   "blurb": "Mailtrap transactional Email Sending API.",
+   "needs": [
+    "API token"
+   ],
+   "note": "Create it under Settings → API Tokens, with admin permission on the sending domain."
+  },
+  {
+   "id": "mandrill",
+   "kind": "api",
+   "name": "Mandrill",
+   "channel": "email",
+   "blurb": "Mandrill (Mailchimp Transactional) API.",
+   "needs": [
+    "API key"
+   ],
+   "note": "Needs a paid Mailchimp plan with Transactional Email. Create the key under SMTP & API Info."
+  },
+  {
+   "id": "netcore",
+   "kind": "api",
+   "name": "Netcore Email API",
+   "channel": "email",
+   "blurb": "Netcore (formerly Pepipost) transactional email API v5.",
+   "needs": [
+    "API key"
+   ],
+   "note": "Find it under Settings → Integrations → API."
+  },
+  {
+   "id": "resend",
+   "kind": "api",
+   "name": "Resend",
+   "channel": "email",
+   "blurb": "Resend transactional email API.",
+   "needs": [
+    "API key"
+   ],
+   "note": "A sending-only key is enough."
+  },
+  {
+   "id": "sendlayer",
+   "kind": "api",
+   "name": "SendLayer",
+   "channel": "email",
+   "blurb": "SendLayer transactional email API.",
+   "needs": [
+    "API key"
+   ],
+   "note": "Find it under Settings → API Keys."
+  },
+  {
+   "id": "sparkpost",
+   "kind": "api",
+   "name": "SparkPost",
+   "channel": "email",
+   "blurb": "SparkPost transactional email API.",
+   "needs": [
+    "API key",
+    "Region (optional)"
+   ],
+   "note": "The key is shown only once, when you create it. Pick the US or EU region your account is in."
+  },
+  {
+   "id": "smtp2go",
+   "kind": "api",
+   "name": "SMTP2GO",
+   "channel": "email",
+   "blurb": "SMTP2GO transactional email API.",
+   "needs": [
+    "API key"
+   ],
+   "note": "Create it under Sending → API Keys, with Email Send enabled."
+  },
+  {
+   "id": "zeptomail",
+   "kind": "api",
+   "name": "ZeptoMail",
+   "channel": "email",
+   "blurb": "Zoho ZeptoMail transactional email API.",
+   "needs": [
+    "Send mail token"
+   ],
+   "note": "Generated in your Mail Agent once a domain is verified, under Setup Info → API."
+  },
+  {
+   "id": "socketlabs",
+   "kind": "api",
+   "name": "SocketLabs",
+   "channel": "email",
+   "blurb": "SocketLabs Injection API.",
+   "needs": [
+    "Server ID",
+    "API key"
+   ],
+   "note": "The Server ID is the 4- or 5-digit number on your server dashboard. The API key is under Configuration → Key Manager."
+  },
+  {
+   "id": "sendpulse",
+   "kind": "api",
+   "name": "SendPulse",
+   "channel": "email",
+   "blurb": "SendPulse SMTP API.",
+   "needs": [
+    "Client ID",
+    "Client secret"
+   ],
+   "note": "Both are under Account → API → Client credentials."
+  },
+  {
+   "id": "bird",
+   "kind": "api",
+   "name": "Bird",
+   "channel": "email",
+   "blurb": "Bird (formerly MessageBird) email API.",
+   "needs": [
+    "Access key",
+    "Workspace region (optional)"
+   ],
+   "note": "Create the key under Developers → API keys. The region is the prefix shown with it, such as us1 or eu1."
+  },
+  {
+   "id": "mailercloud",
+   "kind": "api",
+   "name": "Mailercloud",
+   "channel": "email",
+   "blurb": "Mailercloud transactional Email API.",
+   "needs": [
+    "API key"
+   ],
+   "note": "Find it under Account → API Integrations."
+  },
+  {
+   "id": "sweego",
+   "kind": "api",
+   "name": "Sweego",
+   "channel": "email",
+   "blurb": "Sweego email and SMS API.",
+   "needs": [
+    "API key"
+   ],
+   "note": "From the Email section of your dashboard. It's shown only once."
+  },
+  {
+   "id": "emailit",
+   "kind": "api",
+   "name": "Emailit",
+   "channel": "email",
+   "blurb": "Emailit transactional email API.",
+   "needs": [
+    "API key"
+   ],
+   "note": "Create an API-type credential in your Emailit workspace."
+  },
+  {
+   "id": "gmail",
+   "kind": "preset",
+   "name": "Gmail",
+   "channel": "email",
+   "blurb": "Sends through Google's SMTP server using an app password.",
+   "needs": [
+    "Gmail address",
+    "App password"
+   ],
+   "note": "Needs 2-Step Verification on, and an app password: your normal password won't work."
+  },
+  {
+   "id": "google_workspace",
+   "kind": "preset",
+   "name": "Google Workspace",
+   "channel": "email",
+   "blurb": "Sends through Google's SMTP server using an app password.",
+   "needs": [
+    "Gmail address",
+    "App password"
+   ],
+   "note": "Needs 2-Step Verification on, and an app password: your normal password won't work."
+  },
+  {
+   "id": "outlook",
+   "kind": "preset",
+   "name": "Outlook.com",
+   "channel": "email",
+   "blurb": "Sends through Microsoft's personal-account SMTP server.",
+   "needs": [
+    "Outlook.com address",
+    "Password"
+   ],
+   "note": "Use an app password if 2-step verification is on, under Advanced security options → App passwords."
+  },
+  {
+   "id": "microsoft365",
+   "kind": "preset",
+   "name": "Microsoft 365",
+   "channel": "email",
+   "blurb": "Sends through Microsoft 365's business SMTP server.",
+   "needs": [
+    "Microsoft 365 address",
+    "Password"
+   ],
+   "note": "Use an app password if multi-factor authentication is on. Your admin must allow app passwords and SMTP AUTH."
+  },
+  {
+   "id": "zoho_mail",
+   "kind": "preset",
+   "name": "Zoho Mail",
+   "channel": "email",
+   "blurb": "Sends through Zoho Mail's SMTP server.",
+   "needs": [
+    "Zoho Mail address",
+    "Password"
+   ],
+   "note": "Use an app-specific password if two-factor authentication is on, under Security → App Passwords."
+  },
+  {
+   "id": "yahoo",
+   "kind": "preset",
+   "name": "Yahoo Mail",
+   "channel": "email",
+   "blurb": "Sends through Yahoo Mail's SMTP server.",
+   "needs": [
+    "Yahoo address",
+    "App password"
+   ],
+   "note": "Needs an app password, from Account Security → External connections. Your normal password won't work."
+  },
+  {
+   "id": "icloud",
+   "kind": "preset",
+   "name": "iCloud Mail",
+   "channel": "email",
+   "blurb": "Sends through Apple's iCloud Mail SMTP server.",
+   "needs": [
+    "iCloud address",
+    "App-specific password"
+   ],
+   "note": "Needs an app-specific password, from Sign-In and Security. Your Apple ID password won't work."
+  },
+  {
+   "id": "aol",
+   "kind": "preset",
+   "name": "AOL Mail",
+   "channel": "email",
+   "blurb": "Sends through AOL Mail's SMTP server.",
+   "needs": [
+    "AOL address",
+    "App password"
+   ],
+   "note": "Needs an app password, from your AOL Account Security page. Your normal password won't work."
+  },
+  {
+   "id": "yandex",
+   "kind": "preset",
+   "name": "Yandex Mail",
+   "channel": "email",
+   "blurb": "Sends through Yandex Mail's SMTP server.",
+   "needs": [
+    "Yandex address",
+    "App password"
+   ],
+   "note": "Needs an app password, under App passwords. New ones take 2–3 hours to become active."
+  },
+  {
+   "id": "fastmail",
+   "kind": "preset",
+   "name": "Fastmail",
+   "channel": "email",
+   "blurb": "Sends through Fastmail's SMTP server.",
+   "needs": [
+    "Fastmail address",
+    "App password"
+   ],
+   "note": "Needs an app password, under Settings → Password & Security → App passwords."
+  },
+  {
+   "id": "titan",
+   "kind": "preset",
+   "name": "Titan Email",
+   "channel": "email",
+   "blurb": "Sends through Titan Email's SMTP server.",
+   "needs": [
+    "Titan address",
+    "Password"
+   ],
+   "note": "Your Titan Email account password."
+  },
+  {
+   "id": "purelymail",
+   "kind": "preset",
+   "name": "Purelymail",
+   "channel": "email",
+   "blurb": "Sends through Purelymail's SMTP server.",
+   "needs": [
+    "Purelymail address",
+    "Password"
+   ],
+   "note": "Your Purelymail account password."
+  },
+  {
+   "id": "migadu",
+   "kind": "preset",
+   "name": "Migadu",
+   "channel": "email",
+   "blurb": "Sends through Migadu's SMTP server.",
+   "needs": [
+    "Migadu address",
+    "Password"
+   ],
+   "note": "Your Migadu mailbox password."
+  },
+  {
+   "id": "namecheap",
+   "kind": "preset",
+   "name": "Namecheap Private Email",
+   "channel": "email",
+   "blurb": "Sends through Namecheap Private Email's SMTP server.",
+   "needs": [
+    "Private Email address",
+    "Password"
+   ],
+   "note": "Your Private Email mailbox password."
+  },
+  {
+   "id": "rackspace",
+   "kind": "preset",
+   "name": "Rackspace Email",
+   "channel": "email",
+   "blurb": "Sends through Rackspace Email's SMTP server.",
+   "needs": [
+    "Rackspace Email address",
+    "Password"
+   ],
+   "note": "Your Rackspace Email mailbox password."
+  },
+  {
+   "id": "amazon_ses",
+   "kind": "preset",
+   "name": "Amazon SES",
+   "channel": "email",
+   "blurb": "Sends through Amazon SES's SMTP interface.",
+   "needs": [
+    "AWS region",
+    "SMTP username",
+    "SMTP password"
+   ],
+   "note": "Use SMTP credentials from the SES console, not your AWS access key. The region, such as us-east-1, must be the one SES is verified in."
+  },
+  {
+   "id": "amazon_workmail",
+   "kind": "preset",
+   "name": "Amazon WorkMail",
+   "channel": "email",
+   "blurb": "Sends through Amazon WorkMail's SMTP server.",
+   "needs": [
+    "AWS region",
+    "WorkMail address",
+    "Password"
+   ],
+   "note": "The region must match your WorkMail organization's."
+  },
+  {
+   "id": "cloudflare",
+   "kind": "preset",
+   "name": "Cloudflare Email Sending",
+   "channel": "email",
+   "blurb": "Sends through Cloudflare's Email Sending SMTP relay. Your sending domain must already be onboarded for Email Sending on the account that owns the token.",
+   "needs": [
+    "API token"
+   ],
+   "note": "Create the token in the Cloudflare dashboard, under Email → Email Routing → Email Sending."
+  },
+  {
+   "id": "twilio",
+   "kind": "sms",
+   "name": "Twilio",
+   "channel": "sms",
+   "blurb": "Send from a Twilio number, a sender name, or a Messaging Service.",
+   "needs": [
+    "Account SID",
+    "Auth token",
+    "Sender"
+   ],
+   "note": "A sender starting with MG is sent as a Messaging Service SID."
+  },
+  {
+   "id": "vonage",
+   "kind": "sms",
+   "name": "Vonage",
+   "channel": "sms",
+   "blurb": "Vonage SMS with automatic Unicode for non-Latin text.",
+   "needs": [
+    "API key",
+    "API secret",
+    "Sender"
+   ],
+   "note": "Vonage answers 200 for rejected messages, so VuloMail reads the per-message status."
+  },
+  {
+   "id": "plivo",
+   "kind": "sms",
+   "name": "Plivo",
+   "channel": "sms",
+   "blurb": "Plivo's messaging API.",
+   "needs": [
+    "Auth ID",
+    "Auth token",
+    "Sender"
+   ],
+   "note": "The Auth ID is format-checked before it goes into the request URL."
+  },
+  {
+   "id": "clickatell",
+   "kind": "sms",
+   "name": "Clickatell",
+   "channel": "sms",
+   "blurb": "Clickatell's platform API. Sender is optional.",
+   "needs": [
+    "API key"
+   ],
+   "note": "A 202 can still carry a per-message rejection, and VuloMail catches it."
+  }
+ ],
+ "alertGroups": [
+  {
+   "id": "site",
+   "name": "Site",
+   "to": "Admin phone",
+   "alerts": [
+    {
+     "id": "user_registered",
+     "label": "New user registered",
+     "when": "Someone creates an account",
+     "template": "New user on {site_name}: {username} ({user_email}).",
+     "placeholders": [
+      "site_name",
+      "username",
+      "user_email"
+     ]
+    },
+    {
+     "id": "admin_login",
+     "label": "Administrator logged in",
+     "when": "An administrator account logs in",
+     "template": "{username} logged in to {site_name} from {user_ip}.",
+     "placeholders": [
+      "site_name",
+      "username",
+      "user_email",
+      "user_ip"
+     ]
+    },
+    {
+     "id": "new_comment",
+     "label": "New comment",
+     "when": "A visitor comments on a post. Spam is ignored",
+     "template": "{comment_author} commented on “{post_title}”.",
+     "placeholders": [
+      "site_name",
+      "comment_author",
+      "post_title"
+     ]
+    },
+    {
+     "id": "email_failed",
+     "label": "An email failed to send",
+     "when": "No connection could deliver an email. At most one text every 15 minutes",
+     "template": "{site_name}: an email failed. “{subject}”: {error}",
+     "placeholders": [
+      "site_name",
+      "subject",
+      "error"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "store",
+   "name": "Store",
+   "to": "Admin phone",
+   "requires": "WooCommerce",
+   "alerts": [
+    {
+     "id": "wc_new_order",
+     "label": "New order",
+     "when": "A new order is placed",
+     "template": "New order #{order_number} from {customer_name}: {order_total}.",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "order_total",
+      "customer_name"
+     ]
+    },
+    {
+     "id": "wc_order_failed",
+     "label": "Order payment failed",
+     "when": "An order moves to “Failed”",
+     "template": "Payment failed for order #{order_number} ({order_total}).",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "order_total",
+      "customer_name"
+     ]
+    },
+    {
+     "id": "wc_order_cancelled",
+     "label": "Order cancelled",
+     "when": "An order is cancelled",
+     "template": "Order #{order_number} was cancelled.",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "order_total",
+      "customer_name"
+     ]
+    },
+    {
+     "id": "wc_order_refunded",
+     "label": "Order refunded",
+     "when": "A full or partial refund is issued",
+     "template": "Refund issued on order #{order_number}.",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "order_total",
+      "customer_name"
+     ]
+    },
+    {
+     "id": "wc_low_stock",
+     "label": "Product low in stock",
+     "when": "A product reaches its low-stock threshold",
+     "template": "Low stock: {product_name} ({product_sku}) has {stock_quantity} left.",
+     "placeholders": [
+      "site_name",
+      "product_name",
+      "product_sku",
+      "stock_quantity"
+     ]
+    },
+    {
+     "id": "wc_out_of_stock",
+     "label": "Product out of stock",
+     "when": "A product sells out",
+     "template": "Sold out: {product_name} ({product_sku}).",
+     "placeholders": [
+      "site_name",
+      "product_name",
+      "product_sku"
+     ]
+    },
+    {
+     "id": "wc_backorder",
+     "label": "Product backordered",
+     "when": "A customer orders a product on backorder",
+     "template": "Backorder placed for {product_name}.",
+     "placeholders": [
+      "site_name",
+      "product_name",
+      "product_sku"
+     ]
+    },
+    {
+     "id": "wc_new_review",
+     "label": "New product review",
+     "when": "A customer reviews a product",
+     "template": "New {rating}-star review on {product_name}.",
+     "placeholders": [
+      "site_name",
+      "product_name",
+      "rating"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "customer",
+   "name": "Customer",
+   "to": "Billing phone",
+   "requires": "WooCommerce",
+   "alerts": [
+    {
+     "id": "wc_customer_processing",
+     "label": "Order confirmed (processing)",
+     "when": "Payment is received and the order is being prepared",
+     "template": "Hi {customer_name}, we've got order #{order_number} and are preparing it. {site_name}",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "order_total",
+      "customer_name"
+     ]
+    },
+    {
+     "id": "wc_customer_completed",
+     "label": "Order completed",
+     "when": "The order is marked complete",
+     "template": "Good news {customer_name}: order #{order_number} is complete. Thanks for shopping with {site_name}!",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "order_total",
+      "customer_name"
+     ]
+    },
+    {
+     "id": "wc_customer_refunded",
+     "label": "Order refunded",
+     "when": "The order is fully refunded",
+     "template": "Order #{order_number} has been refunded ({order_total}).",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "order_total",
+      "customer_name"
+     ]
+    },
+    {
+     "id": "wc_customer_cancelled",
+     "label": "Order cancelled",
+     "when": "The order is cancelled",
+     "template": "Order #{order_number} has been cancelled. Questions? Reply to {site_name}.",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "customer_name"
+     ]
+    },
+    {
+     "id": "wc_order_status_changed",
+     "label": "Any other status change",
+     "when": "Any status change without its own alert, including custom statuses",
+     "template": "Order #{order_number} is now {order_status}.",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "order_status",
+      "customer_name"
+     ]
+    },
+    {
+     "id": "wc_customer_note",
+     "label": "Note added to an order",
+     "when": "You add a note to customer, such as a tracking number",
+     "template": "Update on order #{order_number}: {note}",
+     "placeholders": [
+      "site_name",
+      "order_number",
+      "note",
+      "customer_name"
+     ]
+    }
+   ]
+  }
+ ],
+ "sampleValues": {
+  "site_name": "Juniper & Co.",
+  "username": "maya",
+  "user_email": "maya@example.com",
+  "user_ip": "203.0.113.24",
+  "comment_author": "Theo",
+  "post_title": "Spring planting guide",
+  "subject": "Your order receipt",
+  "error": "HTTP 401 from SendGrid",
+  "order_number": "1042",
+  "order_total": "$86.00",
+  "customer_name": "Ava",
+  "order_status": "on-hold",
+  "note": "Shipped with UPS, tracking 1Z999AA10123456784",
+  "product_name": "Ceramic planter",
+  "product_sku": "CP-12",
+  "stock_quantity": "3",
+  "rating": "5"
+ },
+ "principles": [
+  {
+   "title": "Unconfigured means untouched",
+   "body": "Activating VuloMail changes nothing. WordPress keeps sending as it always has until you set a primary connection."
+  },
+  {
+   "title": "Adapters never throw, never leak",
+   "body": "A provider failure becomes a clean, failed result with credentials scrubbed out of the error text."
+  },
+  {
+   "title": "Secrets never leave the server",
+   "body": "Saved keys come back masked. The browser never holds the real value, so it can never send it anywhere."
+  },
+  {
+   "title": "One log row per message",
+   "body": "Primary, backup, last resort: every attempt is recorded on a single entry, not scattered across many."
+  },
+  {
+   "title": "Privacy by default",
+   "body": "Message bodies aren't stored unless you opt in. Recipients can be masked. Old entries prune themselves."
+  }
+ ],
+ "faqs": [
+  {
+   "cat": "Basics",
+   "q": "Does activating VuloMail change how my site sends email?",
+   "a": "No. Nothing changes until you add a connection and set it as primary. Until then WordPress sends exactly as it did before."
+  },
+  {
+   "cat": "Basics",
+   "q": "Do I need a VuloLabs account or a paid plan?",
+   "a": "No. VuloMail is free, has no Pro edition, and contacts no VuloLabs server. You use email and SMS providers you already have."
+  },
+  {
+   "cat": "Basics",
+   "q": "Which emails does it cover?",
+   "a": "Everything sent with WordPress's standard wp_mail() function: password resets, new-user emails, comment notifications, WooCommerce order emails, contact form notifications and emails from most plugins. A plugin that talks to an email service directly, without wp_mail(), is not affected."
+  },
+  {
+   "cat": "Basics",
+   "q": "What do I need to run it?",
+   "a": "WordPress 6.4 or newer, PHP 7.4 or newer, an administrator account, and an email account: any SMTP server, one of 22 email APIs such as SendGrid, Postmark or Resend, or a one-click preset such as Gmail, Microsoft 365 or Amazon SES. An SMS provider and WooCommerce are optional."
+  },
+  {
+   "cat": "Delivery",
+   "q": "Does “Sent” mean the email was delivered?",
+   "a": "It means your provider accepted it. Delivery to the inbox is reported in your provider's own dashboard, and you can look the message up there using the Provider ID in the log entry."
+  },
+  {
+   "cat": "Delivery",
+   "q": "Will a customer get the same email twice when the backup is used?",
+   "a": "Normally no: the backup is only tried when the primary reports a failure. In the rare case where a provider accepts a message but reports an error, the backup would send it again."
+  },
+  {
+   "cat": "Delivery",
+   "q": "What happens when both my primary and backup fail?",
+   "a": "With “Fall back to the WordPress default mailer” on (the default), the email is handed to WordPress as a last resort. Switch it off if your host's mailer is unreliable or your provider must be the only sender for your domain."
+  },
+  {
+   "cat": "Delivery",
+   "q": "My emails are sent but land in spam. Why?",
+   "a": "Run Tools → Diagnostics and read Sender domain DNS. Add any missing SPF or DMARC record, check DKIM in your provider's dashboard, and use a sender address on your own domain rather than a free mailbox."
+  },
+  {
+   "cat": "Delivery",
+   "q": "Another email plugin is installed. Is that a problem?",
+   "a": "Two plugins delivering email compete for the same messages. Diagnostics lists the ones it recognises. To switch: add the same account as a VuloMail connection, set it as primary, send a test, then deactivate the other plugin."
+  },
+  {
+   "cat": "Security",
+   "q": "Where are my passwords stored?",
+   "a": "In your WordPress database, encrypted with libsodium. They are never shown again (only dots and the last four characters) and never sent anywhere except to the provider they belong to."
+  },
+  {
+   "cat": "Security",
+   "q": "Why does a connection suddenly say “Incomplete”?",
+   "a": "Either a required detail is empty, or a saved key can no longer be read. The second happens when the security keys in wp-config.php change, for example after a migration. Edit the connection and enter the key again."
+  },
+  {
+   "cat": "Security",
+   "q": "Does VuloMail send my data anywhere?",
+   "a": "Only to the providers you connect, and only the messages sent through them. It has no tracking and the delivery log never leaves your site."
+  },
+  {
+   "cat": "SMS",
+   "q": "Can I use it for marketing text messages?",
+   "a": "VuloMail sends what your site asks it to. You are responsible for having your recipients' consent and for the rules on text messages in your country."
+  },
+  {
+   "cat": "SMS",
+   "q": "Why was my text message rejected for an invalid number?",
+   "a": "Numbers should be in international format, like +14155550123. If your customers enter numbers without a country code, set a Default country code under Settings → SMS."
+  },
+  {
+   "cat": "SMS",
+   "q": "How long can a text message be?",
+   "a": "Up to 1,530 characters. A text over 160 plain characters is billed as two or more messages, and emoji or non-Latin scripts lower that to 70. Every alert template shows its placeholders so you can keep messages short."
+  },
+  {
+   "cat": "Data",
+   "q": "What happens to my data if I uninstall?",
+   "a": "Deactivating never deletes anything. When you delete the plugin, your data is kept by default. Choose Settings → Data → Delete everything first if you want the table, settings and connections removed."
+  }
+ ]
+}

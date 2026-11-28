@@ -1,0 +1,172 @@
+{
+ "functions": [
+  [
+   "vulomail_api_version()",
+   "string",
+   "e.g. \"1.0\""
+  ],
+  [
+   "vulomail_is_email_ready()",
+   "bool",
+   "A usable email connection exists and routing is on."
+  ],
+  [
+   "vulomail_is_sms_ready()",
+   "bool",
+   "A usable SMS connection exists and SMS is on."
+  ],
+  [
+   "vulomail_send_email( array $args )",
+   "true|WP_Error",
+   "to, subject, message required; headers, attachments, source optional."
+  ],
+  [
+   "vulomail_send_sms( $to, $message, $args )",
+   "true|WP_Error",
+   "source optional. HTML stripped; 1,530 characters max."
+  ]
+ ],
+ "actions": [
+  [
+   "vulomail_loaded",
+   "VuloMail has booted"
+  ],
+  [
+   "vulomail_email_sent",
+   "Message $message, Result $result"
+  ],
+  [
+   "vulomail_email_failed",
+   "Every connection failed"
+  ],
+  [
+   "vulomail_sms_sent",
+   "$number, $body, Result $result"
+  ],
+  [
+   "vulomail_sms_failed",
+   "$number, $body, Result $result"
+  ]
+ ],
+ "filters": [
+  [
+   "vulomail_should_handle_email",
+   "Return false to leave one message to WordPress"
+  ],
+  [
+   "vulomail_email_message",
+   "Change a message before it's sent and logged"
+  ],
+  [
+   "vulomail_sms_message",
+   "Change an SMS; return '' to cancel it"
+  ],
+  [
+   "vulomail_email_providers",
+   "Add or replace email adapters"
+  ],
+  [
+   "vulomail_sms_providers",
+   "Add or replace SMS adapters"
+  ],
+  [
+   "vulomail_sms_triggers",
+   "Add SMS alert definitions"
+  ],
+  [
+   "vulomail_log_data",
+   "Change a log row, or return false to skip it"
+  ],
+  [
+   "vulomail_diagnostics",
+   "Add rows to Tools → Diagnostics"
+  ],
+  [
+   "vulomail_http_timeout · vulomail_smtp_timeout",
+   "Seconds; default 15"
+  ],
+  [
+   "vulomail_rest_controllers",
+   "Add REST controllers"
+  ]
+ ],
+ "routes": [
+  [
+   "GET",
+   "/overview",
+   "Dashboard data for 7, 30 or 90 days"
+  ],
+  [
+   "GET · POST",
+   "/settings",
+   "Read or save settings"
+  ],
+  [
+   "GET · POST",
+   "/connections",
+   "List, create or update connections (secrets masked)"
+  ],
+  [
+   "DELETE",
+   "/connections/{id}",
+   "Remove; a deleted primary is replaced by the backup"
+  ],
+  [
+   "GET · DELETE",
+   "/logs",
+   "Query or clear the log"
+  ],
+  [
+   "GET",
+   "/logs/{id}",
+   "One entry with attempts and headers"
+  ],
+  [
+   "POST",
+   "/logs/{id}/resend",
+   "Resend through current routing"
+  ],
+  [
+   "POST",
+   "/tools/test-email · /tools/test-sms",
+   "Test through live routing or one connection"
+  ],
+  [
+   "GET",
+   "/tools/diagnostics",
+   "Every check's result"
+  ]
+ ],
+ "tabs": [
+  {
+   "label": "Delegate SMS",
+   "file": "my-plugin/includes/sms.php",
+   "note": "Make it opt-in, send once, and only fall back to your own gateway after VuloMail returns a WP_Error. Check readiness at send time, not at load.",
+   "code": "function my_plugin_send_sms( $number, $text ) {\n\t$delegate = function_exists( 'vulomail_send_sms' )\n\t\t&& version_compare( vulomail_api_version(), '1.0', '>=' )\n\t\t&& vulomail_is_sms_ready()\n\t\t&& get_option( 'my_plugin_use_vulomail' ); // your own opt-in\n\n\tif ( $delegate ) {\n\t\t$sent = vulomail_send_sms( $number, $text, array( 'source' => 'my-plugin' ) );\n\t\tif ( true === $sent ) {\n\t\t\treturn true;\n\t\t}\n\t}\n\n\treturn my_plugin_own_gateway()->send( $number, $text );\n}"
+  },
+  {
+   "label": "Send email",
+   "file": "my-plugin/includes/mail.php",
+   "note": "Plain wp_mail() is already routed through VuloMail. Use this only for your plugin's name in the log and the real error back.",
+   "code": "$result = vulomail_send_email( array(\n\t'to'      => $customer_email,\n\t'subject' => 'Your booking is confirmed',\n\t'message' => $html,\n\t'headers' => array( 'Content-Type: text/html; charset=UTF-8' ),\n\t'source'  => 'my-plugin',\n) );\n\nif ( is_wp_error( $result ) ) {\n\terror_log( $result->get_error_message() );\n}"
+  },
+  {
+   "label": "Add a provider",
+   "file": "my-gateway.php",
+   "note": "Adapters must never throw and never put a credential in an error. HttpClient::post() only allows HTTPS and never follows redirects. The connection form is generated from definition(): no JavaScript needed.",
+   "code": "use VuloMail\\Delivery\\Result;\nuse VuloMail\\Sms\\GatewayInterface;\n\nclass My_Gateway implements GatewayInterface {\n\tprivate $config;\n\tprivate $http;\n\n\tpublic function __construct( array $config, $http ) {\n\t\t$this->config = $config; // secrets already decrypted\n\t\t$this->http   = $http;   // VuloMail\\Security\\HttpClient\n\t}\n\n\tpublic static function definition() {\n\t\treturn array(\n\t\t\t'label'  => 'My Gateway',\n\t\t\t'fields' => array(\n\t\t\t\tarray( 'key' => 'api_key', 'label' => 'API key', 'type' => 'password', 'secret' => true, 'required' => true ),\n\t\t\t),\n\t\t);\n\t}\n\n\tpublic function send( $to, $body ) {\n\t\t$response = $this->http->post( 'https://api.example.com/sms',\n\t\t\tarray( 'Authorization' => 'Bearer ' . $this->config['api_key'] ),\n\t\t\tarray( 'to' => $to, 'text' => $body ) );\n\n\t\tif ( is_wp_error( $response ) || 200 !== $response['code'] ) {\n\t\t\treturn Result::fail( 'my_gateway_error', 'Could not send.' );\n\t\t}\n\t\treturn Result::ok( $response['json']['id'] ?? '' );\n\t}\n}\n\nadd_filter( 'vulomail_sms_providers', function ( $providers ) {\n\t$providers['my_gateway'] = My_Gateway::class;\n\treturn $providers;\n} );"
+  },
+  {
+   "label": "Add an alert",
+   "file": "my-forms/alerts.php",
+   "note": "Set requires to 'woocommerce' (and available accordingly) to have the admin lock your alert when WooCommerce is missing.",
+   "code": "add_filter( 'vulomail_sms_triggers', function ( $triggers ) {\n\t$triggers['my_form_submitted'] = array(\n\t\t'label'        => 'Form submitted',\n\t\t'desc'         => 'Text the site admin when the contact form is submitted.',\n\t\t'recipient'    => 'admin',\n\t\t'template'     => 'New enquiry from {name} on {site_name}.',\n\t\t'placeholders' => array( 'site_name', 'name' ),\n\t\t'available'    => true,\n\t\t'requires'     => '',\n\t);\n\treturn $triggers;\n} );\n\n// When it happens:\nVuloMail()->sms_triggers->fire( 'my_form_submitted', '', array( 'name' => $name ) );"
+  },
+  {
+   "label": "Report in Diagnostics",
+   "file": "my-plugin/includes/diagnostics.php",
+   "note": "VuloMail ships no checks for other plugins. Add your own row so site owners can see whether your plugin delivers through VuloMail, and why not.",
+   "code": "add_filter( 'vulomail_diagnostics', function ( $checks ) {\n\t$checks[] = array(\n\t\t'id'      => 'my_plugin',\n\t\t'label'   => 'My Plugin',\n\t\t'status'  => vulomail_is_sms_ready() ? 'good' : 'warning',\n\t\t'message' => vulomail_is_sms_ready()\n\t\t\t? 'My Plugin sends its text messages through VuloMail.'\n\t\t\t: 'VuloMail has no SMS connection, so My Plugin uses its own gateway.',\n\t);\n\treturn $checks;\n} );"
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "name": "vuloform/site-menu",
+ "title": "Site Menu (VuloForm)",
+ "category": "vuloform",
+ "icon": "menu",
+ "description": "Header menu from Appearance → Menus → \"VuloForm header\". Part \"Links\" = the pill links + the phone menu; part \"Menu button\" = the round burger button for phones.",
+ "keywords": [ "menu", "navigation", "burger", "vuloform" ],
+ "textdomain": "vuloform",
+ "attributes": {
+  "part": { "type": "string", "default": "links", "enum": [ "links", "toggle" ] },
+  "location": { "type": "string", "default": "vf_header" }
+ },
+ "supports": { "html": false, "className": true },
+ "editorScript": "vf-site-blocks-editor",
+ "render": "file:./render.php"
+}

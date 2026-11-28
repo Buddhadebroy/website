@@ -1,0 +1,1652 @@
+{
+	"snippet-demo": {
+		"group": "Feature pages",
+		"label": "features/search-visibility-1 \u00b7 Search result + per-page SEO panel",
+		"page": "/features/search-visibility/",
+		"ssr": true,
+		"num": "features/search-visibility-1"
+	},
+	"problems-demo": {
+		"group": "Feature pages",
+		"label": "features/search-visibility-2 \u00b7 SEO score + ranked problems",
+		"page": "/features/search-visibility/",
+		"ssr": true,
+		"num": "features/search-visibility-2"
+	},
+	"seo-signals-demo": {
+		"group": "Feature pages",
+		"label": "features/search-visibility-3 \u00b7 Six on-page checks with page score",
+		"page": "/features/search-visibility/",
+		"ssr": true,
+		"num": "features/search-visibility-3"
+	},
+	"click-demo": {
+		"group": "Feature pages",
+		"label": "features/search-visibility-4 \u00b7 Win the click: Google preview before/after",
+		"page": "/features/search-visibility/",
+		"ssr": true,
+		"num": "features/search-visibility-4"
+	},
+	"redirect-demo": {
+		"group": "Feature pages",
+		"label": "features/search-visibility-5 \u00b7 Redirects and 404s",
+		"page": "/features/search-visibility/",
+		"ssr": true,
+		"num": "features/search-visibility-5"
+	},
+	"speed-demo": {
+		"group": "Feature pages",
+		"label": "features/performance-1 \u00b7 Speed gauge, mobile/desktop",
+		"page": "/features/performance/",
+		"ssr": true,
+		"num": "features/performance-1"
+	},
+	"vitals-demo": {
+		"group": "Feature pages",
+		"label": "features/performance-2 \u00b7 Core Web Vitals (Loading, Responsiveness, Stability)",
+		"page": "/features/performance/",
+		"ssr": true,
+		"num": "features/performance-2"
+	},
+	"slow-pages-demo": {
+		"group": "Feature pages",
+		"label": "features/performance-3 \u00b7 Slow pages grouped by cause",
+		"page": "/features/performance/",
+		"ssr": true,
+		"num": "features/performance-3"
+	},
+	"quick-fix-demo": {
+		"group": "Feature pages",
+		"label": "features/performance-4 \u00b7 One-click speed fixes",
+		"page": "/features/performance/",
+		"ssr": true,
+		"num": "features/performance-4"
+	},
+	"ask-demo": {
+		"group": "Feature pages",
+		"label": "features/ai-search-1 \u00b7 Ask an AI assistant, before/after",
+		"page": "/features/ai-search/",
+		"ssr": true,
+		"num": "features/ai-search-1"
+	},
+	"crawler-demo": {
+		"group": "Feature pages",
+		"label": "features/ai-search-2 \u00b7 AI crawler visits + robots.txt",
+		"page": "/features/ai-search/",
+		"ssr": true,
+		"num": "features/ai-search-2"
+	},
+	"geo-demo": {
+		"group": "Feature pages",
+		"label": "features/ai-search-3 \u00b7 GEO score, six checks",
+		"page": "/features/ai-search/",
+		"ssr": true,
+		"num": "features/ai-search-3"
+	},
+	"aeo-demo": {
+		"group": "Feature pages",
+		"label": "features/ai-search-4 \u00b7 AEO check, engine test, brand scores",
+		"page": "/features/ai-search/",
+		"ssr": true,
+		"num": "features/ai-search-4"
+	},
+	"checkup-demo": {
+		"group": "Feature pages",
+		"label": "features/website-health-1 \u00b7 Website health checkup",
+		"page": "/features/website-health/",
+		"ssr": true,
+		"num": "features/website-health-1"
+	},
+	"health-score-demo": {
+		"group": "Feature pages",
+		"label": "features/website-health-2 \u00b7 Health Score timeline by area",
+		"page": "/features/website-health/",
+		"ssr": true,
+		"num": "features/website-health-2"
+	},
+	"backup-demo": {
+		"group": "Feature pages",
+		"label": "features/website-health-3 \u00b7 Backups and one-click restore",
+		"page": "/features/website-health/",
+		"ssr": true,
+		"num": "features/website-health-3"
+	},
+	"alt-text-demo": {
+		"group": "Feature pages",
+		"label": "features/website-health-4 \u00b7 Image alt text / screen reader",
+		"page": "/features/website-health/",
+		"ssr": true,
+		"num": "features/website-health-4"
+	},
+	"security-score-demo": {
+		"group": "Feature pages",
+		"label": "features/security-1 \u00b7 Security score with ranked findings",
+		"page": "/features/security/",
+		"ssr": true,
+		"num": "features/security-1"
+	},
+	"login-demo": {
+		"group": "Feature pages",
+		"label": "features/security-2 \u00b7 Login attempts blocked",
+		"page": "/features/security/",
+		"ssr": true,
+		"num": "features/security-2"
+	},
+	"exposure-demo": {
+		"group": "Feature pages",
+		"label": "features/security-3 \u00b7 What your site gives away (auto scan)",
+		"page": "/features/security/",
+		"ssr": true,
+		"num": "features/security-3"
+	},
+	"alarm-demo": {
+		"group": "Feature pages",
+		"label": "features/security-4 \u00b7 Security alerts + incident log",
+		"page": "/features/security/",
+		"ssr": true,
+		"num": "features/security-4"
+	},
+	"content-hero-demo": {
+		"group": "Feature pages",
+		"label": "features/content-1 \u00b7 Topic to AI draft",
+		"page": "/features/content/",
+		"ssr": true,
+		"num": "features/content-1"
+	},
+	"backlog-demo": {
+		"group": "Feature pages",
+		"label": "features/content-2 \u00b7 Your content list",
+		"page": "/features/content/",
+		"ssr": true,
+		"num": "features/content-2"
+	},
+	"draft-demo": {
+		"group": "Feature pages",
+		"label": "features/content-3 \u00b7 Before and after: product description",
+		"page": "/features/content/",
+		"ssr": true,
+		"num": "features/content-3"
+	},
+	"readability-demo": {
+		"group": "Feature pages",
+		"label": "features/content-4 \u00b7 Readability score",
+		"page": "/features/content/",
+		"ssr": true,
+		"num": "features/content-4"
+	},
+	"store-issues-demo": {
+		"group": "Feature pages",
+		"label": "features/woocommerce-1 \u00b7 Store issues by area",
+		"page": "/features/woocommerce/",
+		"ssr": true,
+		"num": "features/woocommerce-1"
+	},
+	"store-leaks-demo": {
+		"group": "Feature pages",
+		"label": "features/woocommerce-2 \u00b7 AI sales assistant: sales leaks ranked",
+		"page": "/features/woocommerce/",
+		"ssr": true,
+		"num": "features/woocommerce-2"
+	},
+	"product-schema-demo": {
+		"group": "Feature pages",
+		"label": "features/woocommerce-3 \u00b7 Product schema in the search result",
+		"page": "/features/woocommerce/",
+		"ssr": true,
+		"num": "features/woocommerce-3"
+	},
+	"carts-demo": {
+		"group": "Feature pages",
+		"label": "features/woocommerce-4 \u00b7 Abandoned carts, revenue at risk",
+		"page": "/features/woocommerce/",
+		"ssr": true,
+		"num": "features/woocommerce-4"
+	},
+	"schedule-demo": {
+		"group": "Feature pages",
+		"label": "features/automation-1 \u00b7 Pick a schedule",
+		"page": "/features/automation/",
+		"ssr": true,
+		"num": "features/automation-1"
+	},
+	"report-demo": {
+		"group": "Feature pages",
+		"label": "features/automation-2 \u00b7 Weekly visibility report email",
+		"page": "/features/automation/",
+		"ssr": true,
+		"num": "features/automation-2"
+	},
+	"history-demo": {
+		"group": "Feature pages",
+		"label": "features/automation-3 \u00b7 History timeline with undo",
+		"page": "/features/automation/",
+		"ssr": true,
+		"num": "features/automation-3"
+	},
+	"workflow-demo": {
+		"group": "Feature pages",
+		"label": "features/automation-4 \u00b7 Workflow builder and run log",
+		"page": "/features/automation/",
+		"ssr": true,
+		"num": "features/automation-4"
+	},
+	"feature-scan": {
+		"group": "Feature pages",
+		"label": "features/overview-1 \u00b7 Scan of all eight areas",
+		"page": "/features/",
+		"ssr": true,
+		"num": "features/overview-1"
+	},
+	"home": {
+		"group": "Template",
+		"label": "Full home page",
+		"page": "",
+		"ssr": true
+	},
+	"hero": {
+		"group": "Home section",
+		"label": "Home hero (typer, chips, scan visual)",
+		"page": "/",
+		"ssr": true
+	},
+	"problem": {
+		"group": "Home section",
+		"label": "Problem: noise to ranked list",
+		"page": "/",
+		"ssr": true
+	},
+	"answers": {
+		"group": "Home section",
+		"label": "Answers",
+		"page": "/",
+		"ssr": true
+	},
+	"how": {
+		"group": "Home section",
+		"label": "How it works stepper",
+		"page": "/",
+		"ssr": true
+	},
+	"automation": {
+		"group": "Home section",
+		"label": "Automation",
+		"page": "/",
+		"ssr": true
+	},
+	"ai": {
+		"group": "Home section",
+		"label": "AI copilot",
+		"page": "/",
+		"ssr": true
+	},
+	"dashboard": {
+		"group": "Home section",
+		"label": "Dashboard",
+		"page": "/",
+		"ssr": true
+	},
+	"product-tour": {
+		"group": "Home section",
+		"label": "Product tour with hotspots",
+		"page": "/",
+		"ssr": true
+	},
+	"features": {
+		"group": "Home section",
+		"label": "Features",
+		"page": "/",
+		"ssr": true
+	},
+	"wp-compare": {
+		"group": "Home section",
+		"label": "WordPress compare",
+		"page": "/",
+		"ssr": true
+	},
+	"pricing": {
+		"group": "Home section",
+		"label": "Pricing section (compact plans)",
+		"page": "/",
+		"ssr": true
+	},
+	"blog-preview": {
+		"group": "Home section",
+		"label": "Blog preview",
+		"page": "/",
+		"ssr": true
+	},
+	"home-faq": {
+		"group": "Home section",
+		"label": "Home FAQ",
+		"page": "/",
+		"ssr": true
+	},
+	"start": {
+		"group": "Home section",
+		"label": "Start",
+		"page": "/",
+		"ssr": true
+	},
+	"finale": {
+		"group": "Home section",
+		"label": "Finale",
+		"page": "/",
+		"ssr": true
+	},
+	"cta-band": {
+		"group": "Section",
+		"label": "Dark CTA band (all inner pages)",
+		"page": "all",
+		"ssr": true
+	},
+	"plans": {
+		"group": "Section",
+		"label": "Plan cards with monthly/yearly toggle",
+		"page": "/pricing/",
+		"ssr": true
+	},
+	"compare-matrix": {
+		"group": "Section",
+		"label": "Plan comparison matrix (React version)",
+		"page": "",
+		"ssr": true
+	},
+	"hero-visual": {
+		"group": "Graphic",
+		"label": "Website being scanned",
+		"page": "/",
+		"ssr": true
+	},
+	"how-find": {
+		"group": "Graphic",
+		"label": "How: Find",
+		"page": "/",
+		"ssr": true
+	},
+	"how-understand": {
+		"group": "Graphic",
+		"label": "How: Understand",
+		"page": "/",
+		"ssr": true
+	},
+	"how-prioritize": {
+		"group": "Graphic",
+		"label": "How: Prioritize",
+		"page": "/",
+		"ssr": true
+	},
+	"how-fix": {
+		"group": "Graphic",
+		"label": "How: Fix",
+		"page": "/",
+		"ssr": true
+	},
+	"how-verify": {
+		"group": "Graphic",
+		"label": "How: Verify",
+		"page": "/",
+		"ssr": true
+	},
+	"about-visual": {
+		"group": "Graphic",
+		"label": "Three tools vs one scan",
+		"page": "/about/",
+		"ssr": true
+	},
+	"noise-signal": {
+		"group": "Graphic",
+		"label": "Noise to signal slider (problem card)",
+		"page": "/",
+		"ssr": true
+	},
+	"dashboard-demo": {
+		"group": "Graphic",
+		"label": "Dashboard window (tabs, run scan, fix)",
+		"page": "/",
+		"ssr": true
+	},
+	"ai-answer": {
+		"group": "Graphic",
+		"label": "AI answer with three score rings",
+		"page": "/",
+		"ssr": true
+	},
+	"how-stepper": {
+		"group": "Graphic",
+		"label": "How it works stepper (no heading)",
+		"page": "/",
+		"ssr": true
+	},
+	"feature-tabs": {
+		"group": "Graphic",
+		"label": "Feature tabs, Free and Pro (no heading)",
+		"page": "/",
+		"ssr": true
+	},
+	"content-demo": {
+		"group": "Graphic",
+		"label": "Content hero (same as content-hero-demo)",
+		"page": "/features/content/",
+		"ssr": true,
+		"alias": "content-hero-demo"
+	},
+	"ring": {
+		"group": "Widget",
+		"label": "Animated score ring [vp_ring value=76 label=\"Score\"]",
+		"ssr": false
+	},
+	"counter": {
+		"group": "Widget",
+		"label": "Count-up number [vp_counter to=96 suffix=\"%\"]",
+		"ssr": false
+	},
+	"spark": {
+		"group": "Widget",
+		"label": "Sparkline [vp_spark points=\"3,5,4,8,9\"]",
+		"ssr": false
+	},
+	"shot-overview": {
+		"group": "Screenshot",
+		"label": "Screenshot: Visibility Overview",
+		"page": "",
+		"ssr": true
+	},
+	"shot-overview-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Visibility Overview (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-seo": {
+		"group": "Screenshot",
+		"label": "Screenshot: SEO Health",
+		"page": "",
+		"ssr": true
+	},
+	"shot-seo-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: SEO Health (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-geo": {
+		"group": "Screenshot",
+		"label": "Screenshot: GEO Score",
+		"page": "",
+		"ssr": true
+	},
+	"shot-geo-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: GEO Score (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-aeo": {
+		"group": "Screenshot",
+		"label": "Screenshot: AEO Score",
+		"page": "",
+		"ssr": true
+	},
+	"shot-aeo-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: AEO Score (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-brand": {
+		"group": "Screenshot",
+		"label": "Screenshot: Brand Visibility",
+		"page": "",
+		"ssr": true
+	},
+	"shot-brand-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Brand Visibility (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-crawl": {
+		"group": "Screenshot",
+		"label": "Screenshot: Crawl & URLs",
+		"page": "",
+		"ssr": true
+	},
+	"shot-crawl-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Crawl & URLs (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-schema": {
+		"group": "Screenshot",
+		"label": "Screenshot: Business Identity & Schema",
+		"page": "",
+		"ssr": true
+	},
+	"shot-schema-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Business Identity & Schema (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-copilot": {
+		"group": "Screenshot",
+		"label": "Screenshot: AI Copilot",
+		"page": "",
+		"ssr": true
+	},
+	"shot-copilot-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: AI Copilot (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-content": {
+		"group": "Screenshot",
+		"label": "Screenshot: Content tools",
+		"page": "",
+		"ssr": true
+	},
+	"shot-content-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Content tools (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-performance": {
+		"group": "Screenshot",
+		"label": "Screenshot: Performance",
+		"page": "",
+		"ssr": true
+	},
+	"shot-performance-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Performance (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-health": {
+		"group": "Screenshot",
+		"label": "Screenshot: Site Health",
+		"page": "",
+		"ssr": true
+	},
+	"shot-health-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Site Health (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-accessibility": {
+		"group": "Screenshot",
+		"label": "Screenshot: Accessibility",
+		"page": "",
+		"ssr": true
+	},
+	"shot-accessibility-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Accessibility (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-security": {
+		"group": "Screenshot",
+		"label": "Screenshot: Security",
+		"page": "",
+		"ssr": true
+	},
+	"shot-security-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Security (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"shot-automations": {
+		"group": "Screenshot",
+		"label": "Screenshot: Automations",
+		"page": "",
+		"ssr": true
+	},
+	"shot-automations-caption": {
+		"group": "Screenshot",
+		"label": "Screenshot: Automations (with caption)",
+		"page": "",
+		"ssr": true
+	},
+	"wordpress-seo-1": {
+		"group": "Solutions",
+		"label": "solutions/wordpress-seo-1 \u00b7 hero \u00b7 Google result preview, before and after",
+		"page": "/solutions/wordpress-seo/",
+		"ssr": true,
+		"num": "solutions/wordpress-seo-1"
+	},
+	"wordpress-seo-2": {
+		"group": "Solutions",
+		"label": "solutions/wordpress-seo-2 \u00b7 findings sorted by impact",
+		"page": "/solutions/wordpress-seo/",
+		"ssr": true,
+		"num": "solutions/wordpress-seo-2"
+	},
+	"wordpress-seo-3": {
+		"group": "Solutions",
+		"label": "solutions/wordpress-seo-3 \u00b7 internal link map with the orphan page",
+		"page": "/solutions/wordpress-seo/",
+		"ssr": true,
+		"num": "solutions/wordpress-seo-3"
+	},
+	"wordpress-seo-4": {
+		"group": "Solutions",
+		"label": "solutions/wordpress-seo-4 \u00b7 changes waiting for approval",
+		"page": "/solutions/wordpress-seo/",
+		"ssr": true,
+		"num": "solutions/wordpress-seo-4"
+	},
+	"seo-audit-1": {
+		"group": "Solutions",
+		"label": "solutions/seo-audit-1 \u00b7 hero \u00b7 audit result by category",
+		"page": "/solutions/seo-audit/",
+		"ssr": true,
+		"num": "solutions/seo-audit-1"
+	},
+	"seo-audit-2": {
+		"group": "Solutions",
+		"label": "solutions/seo-audit-2 \u00b7 trend chart with the moment the fix shipped",
+		"page": "/solutions/seo-audit/",
+		"ssr": true,
+		"num": "solutions/seo-audit-2"
+	},
+	"seo-audit-3": {
+		"group": "Solutions",
+		"label": "solutions/seo-audit-3 \u00b7 week of scheduled jobs",
+		"page": "/solutions/seo-audit/",
+		"ssr": true,
+		"num": "solutions/seo-audit-3"
+	},
+	"seo-audit-4": {
+		"group": "Solutions",
+		"label": "solutions/seo-audit-4 \u00b7 report email",
+		"page": "/solutions/seo-audit/",
+		"ssr": true,
+		"num": "solutions/seo-audit-4"
+	},
+	"website-audit-1": {
+		"group": "Solutions",
+		"label": "solutions/website-audit-1 \u00b7 hero \u00b7 findings sorted by impact",
+		"page": "/solutions/website-audit/",
+		"ssr": true,
+		"num": "solutions/website-audit-1"
+	},
+	"website-audit-2": {
+		"group": "Solutions",
+		"label": "solutions/website-audit-2 \u00b7 site checkup tiles",
+		"page": "/solutions/website-audit/",
+		"ssr": true,
+		"num": "solutions/website-audit-2"
+	},
+	"website-audit-3": {
+		"group": "Solutions",
+		"label": "solutions/website-audit-3 \u00b7 file and malware scan",
+		"page": "/solutions/website-audit/",
+		"ssr": true,
+		"num": "solutions/website-audit-3"
+	},
+	"website-audit-4": {
+		"group": "Solutions",
+		"label": "solutions/website-audit-4 \u00b7 speed score gauge",
+		"page": "/solutions/website-audit/",
+		"ssr": true,
+		"num": "solutions/website-audit-4"
+	},
+	"ai-search-optimization-1": {
+		"group": "Solutions",
+		"label": "solutions/ai-search-optimization-1 \u00b7 hero \u00b7 an AI answer and the sources it cites",
+		"page": "/solutions/ai-search-optimization/",
+		"ssr": true,
+		"num": "solutions/ai-search-optimization-1"
+	},
+	"ai-search-optimization-2": {
+		"group": "Solutions",
+		"label": "solutions/ai-search-optimization-2 \u00b7 which crawlers may read the site",
+		"page": "/solutions/ai-search-optimization/",
+		"ssr": true,
+		"num": "solutions/ai-search-optimization-2"
+	},
+	"ai-search-optimization-3": {
+		"group": "Solutions",
+		"label": "solutions/ai-search-optimization-3 \u00b7 how often AI engines mention you",
+		"page": "/solutions/ai-search-optimization/",
+		"ssr": true,
+		"num": "solutions/ai-search-optimization-3"
+	},
+	"ai-search-optimization-4": {
+		"group": "Solutions",
+		"label": "solutions/ai-search-optimization-4 \u00b7 the file or tag behind the problem, and the fix",
+		"page": "/solutions/ai-search-optimization/",
+		"ssr": true,
+		"num": "solutions/ai-search-optimization-4"
+	},
+	"generative-engine-optimization-1": {
+		"group": "Solutions",
+		"label": "solutions/generative-engine-optimization-1 \u00b7 hero \u00b7 business facts AI engines read",
+		"page": "/solutions/generative-engine-optimization/",
+		"ssr": true,
+		"num": "solutions/generative-engine-optimization-1"
+	},
+	"generative-engine-optimization-2": {
+		"group": "Solutions",
+		"label": "solutions/generative-engine-optimization-2 \u00b7 audit result by category",
+		"page": "/solutions/generative-engine-optimization/",
+		"ssr": true,
+		"num": "solutions/generative-engine-optimization-2"
+	},
+	"generative-engine-optimization-3": {
+		"group": "Solutions",
+		"label": "solutions/generative-engine-optimization-3 \u00b7 content editor with highlights",
+		"page": "/solutions/generative-engine-optimization/",
+		"ssr": true,
+		"num": "solutions/generative-engine-optimization-3"
+	},
+	"generative-engine-optimization-4": {
+		"group": "Solutions",
+		"label": "solutions/generative-engine-optimization-4 \u00b7 how often AI engines mention you",
+		"page": "/solutions/generative-engine-optimization/",
+		"ssr": true,
+		"num": "solutions/generative-engine-optimization-4"
+	},
+	"answer-engine-optimization-1": {
+		"group": "Solutions",
+		"label": "solutions/answer-engine-optimization-1 \u00b7 hero \u00b7 a short quotable answer block",
+		"page": "/solutions/answer-engine-optimization/",
+		"ssr": true,
+		"num": "solutions/answer-engine-optimization-1"
+	},
+	"answer-engine-optimization-2": {
+		"group": "Solutions",
+		"label": "solutions/answer-engine-optimization-2 \u00b7 Google result preview, before and after",
+		"page": "/solutions/answer-engine-optimization/",
+		"ssr": true,
+		"num": "solutions/answer-engine-optimization-2"
+	},
+	"answer-engine-optimization-3": {
+		"group": "Solutions",
+		"label": "solutions/answer-engine-optimization-3 \u00b7 the file or tag behind the problem, and the fix",
+		"page": "/solutions/answer-engine-optimization/",
+		"ssr": true,
+		"num": "solutions/answer-engine-optimization-3"
+	},
+	"answer-engine-optimization-4": {
+		"group": "Solutions",
+		"label": "solutions/answer-engine-optimization-4 \u00b7 keyword positions, before and after",
+		"page": "/solutions/answer-engine-optimization/",
+		"ssr": true,
+		"num": "solutions/answer-engine-optimization-4"
+	},
+	"website-performance-1": {
+		"group": "Solutions",
+		"label": "solutions/website-performance-1 \u00b7 hero \u00b7 speed score gauge",
+		"page": "/solutions/website-performance/",
+		"ssr": true,
+		"num": "solutions/website-performance-1"
+	},
+	"website-performance-2": {
+		"group": "Solutions",
+		"label": "solutions/website-performance-2 \u00b7 request waterfall",
+		"page": "/solutions/website-performance/",
+		"ssr": true,
+		"num": "solutions/website-performance-2"
+	},
+	"website-performance-3": {
+		"group": "Solutions",
+		"label": "solutions/website-performance-3 \u00b7 heavy images and their savings",
+		"page": "/solutions/website-performance/",
+		"ssr": true,
+		"num": "solutions/website-performance-3"
+	},
+	"website-performance-4": {
+		"group": "Solutions",
+		"label": "solutions/website-performance-4 \u00b7 KPI tiles with sparklines",
+		"page": "/solutions/website-performance/",
+		"ssr": true,
+		"num": "solutions/website-performance-4"
+	},
+	"core-web-vitals-1": {
+		"group": "Solutions",
+		"label": "solutions/core-web-vitals-1 \u00b7 hero \u00b7 Core Web Vitals gauges",
+		"page": "/solutions/core-web-vitals/",
+		"ssr": true,
+		"num": "solutions/core-web-vitals-1"
+	},
+	"core-web-vitals-2": {
+		"group": "Solutions",
+		"label": "solutions/core-web-vitals-2 \u00b7 loading filmstrip",
+		"page": "/solutions/core-web-vitals/",
+		"ssr": true,
+		"num": "solutions/core-web-vitals-2"
+	},
+	"core-web-vitals-3": {
+		"group": "Solutions",
+		"label": "solutions/core-web-vitals-3 \u00b7 the file or tag behind the problem, and the fix",
+		"page": "/solutions/core-web-vitals/",
+		"ssr": true,
+		"num": "solutions/core-web-vitals-3"
+	},
+	"core-web-vitals-4": {
+		"group": "Solutions",
+		"label": "solutions/core-web-vitals-4 \u00b7 trend chart with the moment the fix shipped",
+		"page": "/solutions/core-web-vitals/",
+		"ssr": true,
+		"num": "solutions/core-web-vitals-4"
+	},
+	"wordpress-security-1": {
+		"group": "Solutions",
+		"label": "solutions/wordpress-security-1 \u00b7 hero \u00b7 security switches turning on",
+		"page": "/solutions/wordpress-security/",
+		"ssr": true,
+		"num": "solutions/wordpress-security-1"
+	},
+	"wordpress-security-2": {
+		"group": "Solutions",
+		"label": "solutions/wordpress-security-2 \u00b7 live firewall and login log",
+		"page": "/solutions/wordpress-security/",
+		"ssr": true,
+		"num": "solutions/wordpress-security-2"
+	},
+	"wordpress-security-3": {
+		"group": "Solutions",
+		"label": "solutions/wordpress-security-3 \u00b7 plugins with known vulnerabilities",
+		"page": "/solutions/wordpress-security/",
+		"ssr": true,
+		"num": "solutions/wordpress-security-3"
+	},
+	"wordpress-security-4": {
+		"group": "Solutions",
+		"label": "solutions/wordpress-security-4 \u00b7 file and malware scan",
+		"page": "/solutions/wordpress-security/",
+		"ssr": true,
+		"num": "solutions/wordpress-security-4"
+	},
+	"website-health-1": {
+		"group": "Solutions",
+		"label": "solutions/website-health-1 \u00b7 hero \u00b7 site checkup tiles",
+		"page": "/solutions/website-health/",
+		"ssr": true,
+		"num": "solutions/website-health-1"
+	},
+	"website-health-2": {
+		"group": "Solutions",
+		"label": "solutions/website-health-2 \u00b7 30 days of uptime",
+		"page": "/solutions/website-health/",
+		"ssr": true,
+		"num": "solutions/website-health-2"
+	},
+	"website-health-3": {
+		"group": "Solutions",
+		"label": "solutions/website-health-3 \u00b7 backup timeline",
+		"page": "/solutions/website-health/",
+		"ssr": true,
+		"num": "solutions/website-health-3"
+	},
+	"website-health-4": {
+		"group": "Solutions",
+		"label": "solutions/website-health-4 \u00b7 alerts with what to do",
+		"page": "/solutions/website-health/",
+		"ssr": true,
+		"num": "solutions/website-health-4"
+	},
+	"woocommerce-seo-1": {
+		"group": "Solutions",
+		"label": "solutions/woocommerce-seo-1 \u00b7 hero \u00b7 structured data and the rich result it gives",
+		"page": "/solutions/woocommerce-seo/",
+		"ssr": true,
+		"num": "solutions/woocommerce-seo-1"
+	},
+	"woocommerce-seo-2": {
+		"group": "Solutions",
+		"label": "solutions/woocommerce-seo-2 \u00b7 findings sorted by impact",
+		"page": "/solutions/woocommerce-seo/",
+		"ssr": true,
+		"num": "solutions/woocommerce-seo-2"
+	},
+	"woocommerce-seo-3": {
+		"group": "Solutions",
+		"label": "solutions/woocommerce-seo-3 \u00b7 URLs with their status codes",
+		"page": "/solutions/woocommerce-seo/",
+		"ssr": true,
+		"num": "solutions/woocommerce-seo-3"
+	},
+	"woocommerce-seo-4": {
+		"group": "Solutions",
+		"label": "solutions/woocommerce-seo-4 \u00b7 product page check",
+		"page": "/solutions/woocommerce-seo/",
+		"ssr": true,
+		"num": "solutions/woocommerce-seo-4"
+	},
+	"website-automation-1": {
+		"group": "Solutions",
+		"label": "solutions/website-automation-1 \u00b7 hero \u00b7 When / If / Then automation",
+		"page": "/solutions/website-automation/",
+		"ssr": true,
+		"num": "solutions/website-automation-1"
+	},
+	"website-automation-2": {
+		"group": "Solutions",
+		"label": "solutions/website-automation-2 \u00b7 week of scheduled jobs",
+		"page": "/solutions/website-automation/",
+		"ssr": true,
+		"num": "solutions/website-automation-2"
+	},
+	"website-automation-3": {
+		"group": "Solutions",
+		"label": "solutions/website-automation-3 \u00b7 hours by hand versus automated",
+		"page": "/solutions/website-automation/",
+		"ssr": true,
+		"num": "solutions/website-automation-3"
+	},
+	"website-automation-4": {
+		"group": "Solutions",
+		"label": "solutions/website-automation-4 \u00b7 alerts with what to do",
+		"page": "/solutions/website-automation/",
+		"ssr": true,
+		"num": "solutions/website-automation-4"
+	},
+	"website-owners-1": {
+		"group": "For",
+		"label": "for/website-owners-1 \u00b7 hero \u00b7 report email",
+		"page": "/for/website-owners/",
+		"ssr": true,
+		"num": "for/website-owners-1"
+	},
+	"website-owners-2": {
+		"group": "For",
+		"label": "for/website-owners-2 \u00b7 site checkup tiles",
+		"page": "/for/website-owners/",
+		"ssr": true,
+		"num": "for/website-owners-2"
+	},
+	"website-owners-3": {
+		"group": "For",
+		"label": "for/website-owners-3 \u00b7 changes waiting for approval",
+		"page": "/for/website-owners/",
+		"ssr": true,
+		"num": "for/website-owners-3"
+	},
+	"website-owners-4": {
+		"group": "For",
+		"label": "for/website-owners-4 \u00b7 plugins with known vulnerabilities",
+		"page": "/for/website-owners/",
+		"ssr": true,
+		"num": "for/website-owners-4"
+	},
+	"businesses-1": {
+		"group": "For",
+		"label": "for/businesses-1 \u00b7 hero \u00b7 KPI tiles with sparklines",
+		"page": "/for/businesses/",
+		"ssr": true,
+		"num": "for/businesses-1"
+	},
+	"businesses-2": {
+		"group": "For",
+		"label": "for/businesses-2 \u00b7 changes waiting for approval",
+		"page": "/for/businesses/",
+		"ssr": true,
+		"num": "for/businesses-2"
+	},
+	"businesses-3": {
+		"group": "For",
+		"label": "for/businesses-3 \u00b7 alerts with what to do",
+		"page": "/for/businesses/",
+		"ssr": true,
+		"num": "for/businesses-3"
+	},
+	"businesses-4": {
+		"group": "For",
+		"label": "for/businesses-4 \u00b7 site checkup tiles",
+		"page": "/for/businesses/",
+		"ssr": true,
+		"num": "for/businesses-4"
+	},
+	"marketers-1": {
+		"group": "For",
+		"label": "for/marketers-1 \u00b7 hero \u00b7 content pipeline board",
+		"page": "/for/marketers/",
+		"ssr": true,
+		"num": "for/marketers-1"
+	},
+	"marketers-2": {
+		"group": "For",
+		"label": "for/marketers-2 \u00b7 keyword positions, before and after",
+		"page": "/for/marketers/",
+		"ssr": true,
+		"num": "for/marketers-2"
+	},
+	"marketers-3": {
+		"group": "For",
+		"label": "for/marketers-3 \u00b7 how often AI engines mention you",
+		"page": "/for/marketers/",
+		"ssr": true,
+		"num": "for/marketers-3"
+	},
+	"marketers-4": {
+		"group": "For",
+		"label": "for/marketers-4 \u00b7 report email",
+		"page": "/for/marketers/",
+		"ssr": true,
+		"num": "for/marketers-4"
+	},
+	"agencies-1": {
+		"group": "For",
+		"label": "for/agencies-1 \u00b7 hero \u00b7 all client sites in one table",
+		"page": "/for/agencies/",
+		"ssr": true,
+		"num": "for/agencies-1"
+	},
+	"agencies-2": {
+		"group": "For",
+		"label": "for/agencies-2 \u00b7 report email",
+		"page": "/for/agencies/",
+		"ssr": true,
+		"num": "for/agencies-2"
+	},
+	"agencies-3": {
+		"group": "For",
+		"label": "for/agencies-3 \u00b7 hours by hand versus automated",
+		"page": "/for/agencies/",
+		"ssr": true,
+		"num": "for/agencies-3"
+	},
+	"agencies-4": {
+		"group": "For",
+		"label": "for/agencies-4 \u00b7 week of scheduled jobs",
+		"page": "/for/agencies/",
+		"ssr": true,
+		"num": "for/agencies-4"
+	},
+	"woocommerce-stores-1": {
+		"group": "For",
+		"label": "for/woocommerce-stores-1 \u00b7 hero \u00b7 product page check",
+		"page": "/for/woocommerce-stores/",
+		"ssr": true,
+		"num": "for/woocommerce-stores-1"
+	},
+	"woocommerce-stores-2": {
+		"group": "For",
+		"label": "for/woocommerce-stores-2 \u00b7 store funnel",
+		"page": "/for/woocommerce-stores/",
+		"ssr": true,
+		"num": "for/woocommerce-stores-2"
+	},
+	"woocommerce-stores-3": {
+		"group": "For",
+		"label": "for/woocommerce-stores-3 \u00b7 structured data and the rich result it gives",
+		"page": "/for/woocommerce-stores/",
+		"ssr": true,
+		"num": "for/woocommerce-stores-3"
+	},
+	"woocommerce-stores-4": {
+		"group": "For",
+		"label": "for/woocommerce-stores-4 \u00b7 KPI tiles with sparklines",
+		"page": "/for/woocommerce-stores/",
+		"ssr": true,
+		"num": "for/woocommerce-stores-4"
+	},
+	"fix-seo-problems-1": {
+		"group": "Use cases",
+		"label": "use-cases/fix-seo-problems-1 \u00b7 hero \u00b7 changes waiting for approval",
+		"page": "/use-cases/fix-seo-problems/",
+		"ssr": true,
+		"num": "use-cases/fix-seo-problems-1"
+	},
+	"fix-seo-problems-2": {
+		"group": "Use cases",
+		"label": "use-cases/fix-seo-problems-2 \u00b7 the file or tag behind the problem, and the fix",
+		"page": "/use-cases/fix-seo-problems/",
+		"ssr": true,
+		"num": "use-cases/fix-seo-problems-2"
+	},
+	"fix-seo-problems-3": {
+		"group": "Use cases",
+		"label": "use-cases/fix-seo-problems-3 \u00b7 trend chart with the moment the fix shipped",
+		"page": "/use-cases/fix-seo-problems/",
+		"ssr": true,
+		"num": "use-cases/fix-seo-problems-3"
+	},
+	"fix-seo-problems-4": {
+		"group": "Use cases",
+		"label": "use-cases/fix-seo-problems-4 \u00b7 audit result by category",
+		"page": "/use-cases/fix-seo-problems/",
+		"ssr": true,
+		"num": "use-cases/fix-seo-problems-4"
+	},
+	"improve-ai-visibility-1": {
+		"group": "Use cases",
+		"label": "use-cases/improve-ai-visibility-1 \u00b7 hero \u00b7 how often AI engines mention you",
+		"page": "/use-cases/improve-ai-visibility/",
+		"ssr": true,
+		"num": "use-cases/improve-ai-visibility-1"
+	},
+	"improve-ai-visibility-2": {
+		"group": "Use cases",
+		"label": "use-cases/improve-ai-visibility-2 \u00b7 an AI answer and the sources it cites",
+		"page": "/use-cases/improve-ai-visibility/",
+		"ssr": true,
+		"num": "use-cases/improve-ai-visibility-2"
+	},
+	"improve-ai-visibility-3": {
+		"group": "Use cases",
+		"label": "use-cases/improve-ai-visibility-3 \u00b7 business facts AI engines read",
+		"page": "/use-cases/improve-ai-visibility/",
+		"ssr": true,
+		"num": "use-cases/improve-ai-visibility-3"
+	},
+	"improve-ai-visibility-4": {
+		"group": "Use cases",
+		"label": "use-cases/improve-ai-visibility-4 \u00b7 the file or tag behind the problem, and the fix",
+		"page": "/use-cases/improve-ai-visibility/",
+		"ssr": true,
+		"num": "use-cases/improve-ai-visibility-4"
+	},
+	"improve-search-visibility-1": {
+		"group": "Use cases",
+		"label": "use-cases/improve-search-visibility-1 \u00b7 hero \u00b7 URLs with their status codes",
+		"page": "/use-cases/improve-search-visibility/",
+		"ssr": true,
+		"num": "use-cases/improve-search-visibility-1"
+	},
+	"improve-search-visibility-2": {
+		"group": "Use cases",
+		"label": "use-cases/improve-search-visibility-2 \u00b7 KPI tiles with sparklines",
+		"page": "/use-cases/improve-search-visibility/",
+		"ssr": true,
+		"num": "use-cases/improve-search-visibility-2"
+	},
+	"improve-search-visibility-3": {
+		"group": "Use cases",
+		"label": "use-cases/improve-search-visibility-3 \u00b7 Google result preview, before and after",
+		"page": "/use-cases/improve-search-visibility/",
+		"ssr": true,
+		"num": "use-cases/improve-search-visibility-3"
+	},
+	"improve-search-visibility-4": {
+		"group": "Use cases",
+		"label": "use-cases/improve-search-visibility-4 \u00b7 internal link map with the orphan page",
+		"page": "/use-cases/improve-search-visibility/",
+		"ssr": true,
+		"num": "use-cases/improve-search-visibility-4"
+	},
+	"improve-website-performance-1": {
+		"group": "Use cases",
+		"label": "use-cases/improve-website-performance-1 \u00b7 hero \u00b7 request waterfall",
+		"page": "/use-cases/improve-website-performance/",
+		"ssr": true,
+		"num": "use-cases/improve-website-performance-1"
+	},
+	"improve-website-performance-2": {
+		"group": "Use cases",
+		"label": "use-cases/improve-website-performance-2 \u00b7 speed score gauge",
+		"page": "/use-cases/improve-website-performance/",
+		"ssr": true,
+		"num": "use-cases/improve-website-performance-2"
+	},
+	"improve-website-performance-3": {
+		"group": "Use cases",
+		"label": "use-cases/improve-website-performance-3 \u00b7 checkout timings",
+		"page": "/use-cases/improve-website-performance/",
+		"ssr": true,
+		"num": "use-cases/improve-website-performance-3"
+	},
+	"improve-website-performance-4": {
+		"group": "Use cases",
+		"label": "use-cases/improve-website-performance-4 \u00b7 heavy images and their savings",
+		"page": "/use-cases/improve-website-performance/",
+		"ssr": true,
+		"num": "use-cases/improve-website-performance-4"
+	},
+	"monitor-website-health-1": {
+		"group": "Use cases",
+		"label": "use-cases/monitor-website-health-1 \u00b7 hero \u00b7 30 days of uptime",
+		"page": "/use-cases/monitor-website-health/",
+		"ssr": true,
+		"num": "use-cases/monitor-website-health-1"
+	},
+	"monitor-website-health-2": {
+		"group": "Use cases",
+		"label": "use-cases/monitor-website-health-2 \u00b7 alerts with what to do",
+		"page": "/use-cases/monitor-website-health/",
+		"ssr": true,
+		"num": "use-cases/monitor-website-health-2"
+	},
+	"monitor-website-health-3": {
+		"group": "Use cases",
+		"label": "use-cases/monitor-website-health-3 \u00b7 site checkup tiles",
+		"page": "/use-cases/monitor-website-health/",
+		"ssr": true,
+		"num": "use-cases/monitor-website-health-3"
+	},
+	"monitor-website-health-4": {
+		"group": "Use cases",
+		"label": "use-cases/monitor-website-health-4 \u00b7 report email",
+		"page": "/use-cases/monitor-website-health/",
+		"ssr": true,
+		"num": "use-cases/monitor-website-health-4"
+	},
+	"improve-website-security-1": {
+		"group": "Use cases",
+		"label": "use-cases/improve-website-security-1 \u00b7 hero \u00b7 live firewall and login log",
+		"page": "/use-cases/improve-website-security/",
+		"ssr": true,
+		"num": "use-cases/improve-website-security-1"
+	},
+	"improve-website-security-2": {
+		"group": "Use cases",
+		"label": "use-cases/improve-website-security-2 \u00b7 security switches turning on",
+		"page": "/use-cases/improve-website-security/",
+		"ssr": true,
+		"num": "use-cases/improve-website-security-2"
+	},
+	"improve-website-security-3": {
+		"group": "Use cases",
+		"label": "use-cases/improve-website-security-3 \u00b7 trend chart with the moment the fix shipped",
+		"page": "/use-cases/improve-website-security/",
+		"ssr": true,
+		"num": "use-cases/improve-website-security-3"
+	},
+	"improve-website-security-4": {
+		"group": "Use cases",
+		"label": "use-cases/improve-website-security-4 \u00b7 backup timeline",
+		"page": "/use-cases/improve-website-security/",
+		"ssr": true,
+		"num": "use-cases/improve-website-security-4"
+	},
+	"optimize-website-content-1": {
+		"group": "Use cases",
+		"label": "use-cases/optimize-website-content-1 \u00b7 hero \u00b7 content editor with highlights",
+		"page": "/use-cases/optimize-website-content/",
+		"ssr": true,
+		"num": "use-cases/optimize-website-content-1"
+	},
+	"optimize-website-content-2": {
+		"group": "Use cases",
+		"label": "use-cases/optimize-website-content-2 \u00b7 content pipeline board",
+		"page": "/use-cases/optimize-website-content/",
+		"ssr": true,
+		"num": "use-cases/optimize-website-content-2"
+	},
+	"optimize-website-content-3": {
+		"group": "Use cases",
+		"label": "use-cases/optimize-website-content-3 \u00b7 keyword positions, before and after",
+		"page": "/use-cases/optimize-website-content/",
+		"ssr": true,
+		"num": "use-cases/optimize-website-content-3"
+	},
+	"optimize-website-content-4": {
+		"group": "Use cases",
+		"label": "use-cases/optimize-website-content-4 \u00b7 a short quotable answer block",
+		"page": "/use-cases/optimize-website-content/",
+		"ssr": true,
+		"num": "use-cases/optimize-website-content-4"
+	},
+	"optimize-woocommerce-1": {
+		"group": "Use cases",
+		"label": "use-cases/optimize-woocommerce-1 \u00b7 hero \u00b7 store funnel",
+		"page": "/use-cases/optimize-woocommerce/",
+		"ssr": true,
+		"num": "use-cases/optimize-woocommerce-1"
+	},
+	"optimize-woocommerce-2": {
+		"group": "Use cases",
+		"label": "use-cases/optimize-woocommerce-2 \u00b7 checkout timings",
+		"page": "/use-cases/optimize-woocommerce/",
+		"ssr": true,
+		"num": "use-cases/optimize-woocommerce-2"
+	},
+	"optimize-woocommerce-3": {
+		"group": "Use cases",
+		"label": "use-cases/optimize-woocommerce-3 \u00b7 product page check",
+		"page": "/use-cases/optimize-woocommerce/",
+		"ssr": true,
+		"num": "use-cases/optimize-woocommerce-3"
+	},
+	"optimize-woocommerce-4": {
+		"group": "Use cases",
+		"label": "use-cases/optimize-woocommerce-4 \u00b7 KPI tiles with sparklines",
+		"page": "/use-cases/optimize-woocommerce/",
+		"ssr": true,
+		"num": "use-cases/optimize-woocommerce-4"
+	},
+	"automate-website-management-1": {
+		"group": "Use cases",
+		"label": "use-cases/automate-website-management-1 \u00b7 hero \u00b7 week of scheduled jobs",
+		"page": "/use-cases/automate-website-management/",
+		"ssr": true,
+		"num": "use-cases/automate-website-management-1"
+	},
+	"automate-website-management-2": {
+		"group": "Use cases",
+		"label": "use-cases/automate-website-management-2 \u00b7 When / If / Then automation",
+		"page": "/use-cases/automate-website-management/",
+		"ssr": true,
+		"num": "use-cases/automate-website-management-2"
+	},
+	"automate-website-management-3": {
+		"group": "Use cases",
+		"label": "use-cases/automate-website-management-3 \u00b7 hours by hand versus automated",
+		"page": "/use-cases/automate-website-management/",
+		"ssr": true,
+		"num": "use-cases/automate-website-management-3"
+	},
+	"automate-website-management-4": {
+		"group": "Use cases",
+		"label": "use-cases/automate-website-management-4 \u00b7 changes waiting for approval",
+		"page": "/use-cases/automate-website-management/",
+		"ssr": true,
+		"num": "use-cases/automate-website-management-4"
+	},
+	"not-showing-on-google-1": {
+		"group": "Problems",
+		"label": "problems/not-showing-on-google-1 \u00b7 hero \u00b7 the file or tag behind the problem, and the fix",
+		"page": "/problems/not-showing-on-google/",
+		"ssr": true,
+		"num": "problems/not-showing-on-google-1"
+	},
+	"not-showing-on-google-2": {
+		"group": "Problems",
+		"label": "problems/not-showing-on-google-2 \u00b7 Google result preview, before and after",
+		"page": "/problems/not-showing-on-google/",
+		"ssr": true,
+		"num": "problems/not-showing-on-google-2"
+	},
+	"not-showing-on-google-3": {
+		"group": "Problems",
+		"label": "problems/not-showing-on-google-3 \u00b7 URLs with their status codes",
+		"page": "/problems/not-showing-on-google/",
+		"ssr": true,
+		"num": "problems/not-showing-on-google-3"
+	},
+	"not-showing-on-google-4": {
+		"group": "Problems",
+		"label": "problems/not-showing-on-google-4 \u00b7 index coverage and the reasons",
+		"page": "/problems/not-showing-on-google/",
+		"ssr": true,
+		"num": "problems/not-showing-on-google-4"
+	},
+	"website-too-slow-1": {
+		"group": "Problems",
+		"label": "problems/website-too-slow-1 \u00b7 hero \u00b7 heavy images and their savings",
+		"page": "/problems/website-too-slow/",
+		"ssr": true,
+		"num": "problems/website-too-slow-1"
+	},
+	"website-too-slow-2": {
+		"group": "Problems",
+		"label": "problems/website-too-slow-2 \u00b7 speed score gauge",
+		"page": "/problems/website-too-slow/",
+		"ssr": true,
+		"num": "problems/website-too-slow-2"
+	},
+	"website-too-slow-3": {
+		"group": "Problems",
+		"label": "problems/website-too-slow-3 \u00b7 loading filmstrip",
+		"page": "/problems/website-too-slow/",
+		"ssr": true,
+		"num": "problems/website-too-slow-3"
+	},
+	"website-too-slow-4": {
+		"group": "Problems",
+		"label": "problems/website-too-slow-4 \u00b7 request waterfall",
+		"page": "/problems/website-too-slow/",
+		"ssr": true,
+		"num": "problems/website-too-slow-4"
+	},
+	"not-appearing-in-ai-search-1": {
+		"group": "Problems",
+		"label": "problems/not-appearing-in-ai-search-1 \u00b7 hero \u00b7 which crawlers may read the site",
+		"page": "/problems/not-appearing-in-ai-search/",
+		"ssr": true,
+		"num": "problems/not-appearing-in-ai-search-1"
+	},
+	"not-appearing-in-ai-search-2": {
+		"group": "Problems",
+		"label": "problems/not-appearing-in-ai-search-2 \u00b7 an AI answer and the sources it cites",
+		"page": "/problems/not-appearing-in-ai-search/",
+		"ssr": true,
+		"num": "problems/not-appearing-in-ai-search-2"
+	},
+	"not-appearing-in-ai-search-3": {
+		"group": "Problems",
+		"label": "problems/not-appearing-in-ai-search-3 \u00b7 the file or tag behind the problem, and the fix",
+		"page": "/problems/not-appearing-in-ai-search/",
+		"ssr": true,
+		"num": "problems/not-appearing-in-ai-search-3"
+	},
+	"not-appearing-in-ai-search-4": {
+		"group": "Problems",
+		"label": "problems/not-appearing-in-ai-search-4 \u00b7 business facts AI engines read",
+		"page": "/problems/not-appearing-in-ai-search/",
+		"ssr": true,
+		"num": "problems/not-appearing-in-ai-search-4"
+	},
+	"pages-not-indexed-1": {
+		"group": "Problems",
+		"label": "problems/pages-not-indexed-1 \u00b7 hero \u00b7 index coverage and the reasons",
+		"page": "/problems/pages-not-indexed/",
+		"ssr": true,
+		"num": "problems/pages-not-indexed-1"
+	},
+	"pages-not-indexed-2": {
+		"group": "Problems",
+		"label": "problems/pages-not-indexed-2 \u00b7 URLs with their status codes",
+		"page": "/problems/pages-not-indexed/",
+		"ssr": true,
+		"num": "problems/pages-not-indexed-2"
+	},
+	"pages-not-indexed-3": {
+		"group": "Problems",
+		"label": "problems/pages-not-indexed-3 \u00b7 internal link map with the orphan page",
+		"page": "/problems/pages-not-indexed/",
+		"ssr": true,
+		"num": "problems/pages-not-indexed-3"
+	},
+	"pages-not-indexed-4": {
+		"group": "Problems",
+		"label": "problems/pages-not-indexed-4 \u00b7 trend chart with the moment the fix shipped",
+		"page": "/problems/pages-not-indexed/",
+		"ssr": true,
+		"num": "problems/pages-not-indexed-4"
+	},
+	"poor-core-web-vitals-1": {
+		"group": "Problems",
+		"label": "problems/poor-core-web-vitals-1 \u00b7 hero \u00b7 loading filmstrip",
+		"page": "/problems/poor-core-web-vitals/",
+		"ssr": true,
+		"num": "problems/poor-core-web-vitals-1"
+	},
+	"poor-core-web-vitals-2": {
+		"group": "Problems",
+		"label": "problems/poor-core-web-vitals-2 \u00b7 Core Web Vitals gauges",
+		"page": "/problems/poor-core-web-vitals/",
+		"ssr": true,
+		"num": "problems/poor-core-web-vitals-2"
+	},
+	"poor-core-web-vitals-3": {
+		"group": "Problems",
+		"label": "problems/poor-core-web-vitals-3 \u00b7 request waterfall",
+		"page": "/problems/poor-core-web-vitals/",
+		"ssr": true,
+		"num": "problems/poor-core-web-vitals-3"
+	},
+	"poor-core-web-vitals-4": {
+		"group": "Problems",
+		"label": "problems/poor-core-web-vitals-4 \u00b7 the file or tag behind the problem, and the fix",
+		"page": "/problems/poor-core-web-vitals/",
+		"ssr": true,
+		"num": "problems/poor-core-web-vitals-4"
+	},
+	"low-search-traffic-1": {
+		"group": "Problems",
+		"label": "problems/low-search-traffic-1 \u00b7 hero \u00b7 trend chart with the moment the fix shipped",
+		"page": "/problems/low-search-traffic/",
+		"ssr": true,
+		"num": "problems/low-search-traffic-1"
+	},
+	"low-search-traffic-2": {
+		"group": "Problems",
+		"label": "problems/low-search-traffic-2 \u00b7 keyword positions, before and after",
+		"page": "/problems/low-search-traffic/",
+		"ssr": true,
+		"num": "problems/low-search-traffic-2"
+	},
+	"low-search-traffic-3": {
+		"group": "Problems",
+		"label": "problems/low-search-traffic-3 \u00b7 how often AI engines mention you",
+		"page": "/problems/low-search-traffic/",
+		"ssr": true,
+		"num": "problems/low-search-traffic-3"
+	},
+	"low-search-traffic-4": {
+		"group": "Problems",
+		"label": "problems/low-search-traffic-4 \u00b7 changes waiting for approval",
+		"page": "/problems/low-search-traffic/",
+		"ssr": true,
+		"num": "problems/low-search-traffic-4"
+	},
+	"poor-search-rankings-1": {
+		"group": "Problems",
+		"label": "problems/poor-search-rankings-1 \u00b7 hero \u00b7 keyword positions, before and after",
+		"page": "/problems/poor-search-rankings/",
+		"ssr": true,
+		"num": "problems/poor-search-rankings-1"
+	},
+	"poor-search-rankings-2": {
+		"group": "Problems",
+		"label": "problems/poor-search-rankings-2 \u00b7 findings sorted by impact",
+		"page": "/problems/poor-search-rankings/",
+		"ssr": true,
+		"num": "problems/poor-search-rankings-2"
+	},
+	"poor-search-rankings-3": {
+		"group": "Problems",
+		"label": "problems/poor-search-rankings-3 \u00b7 internal link map with the orphan page",
+		"page": "/problems/poor-search-rankings/",
+		"ssr": true,
+		"num": "problems/poor-search-rankings-3"
+	},
+	"poor-search-rankings-4": {
+		"group": "Problems",
+		"label": "problems/poor-search-rankings-4 \u00b7 trend chart with the moment the fix shipped",
+		"page": "/problems/poor-search-rankings/",
+		"ssr": true,
+		"num": "problems/poor-search-rankings-4"
+	},
+	"website-security-issues-1": {
+		"group": "Problems",
+		"label": "problems/website-security-issues-1 \u00b7 hero \u00b7 file and malware scan",
+		"page": "/problems/website-security-issues/",
+		"ssr": true,
+		"num": "problems/website-security-issues-1"
+	},
+	"website-security-issues-2": {
+		"group": "Problems",
+		"label": "problems/website-security-issues-2 \u00b7 plugins with known vulnerabilities",
+		"page": "/problems/website-security-issues/",
+		"ssr": true,
+		"num": "problems/website-security-issues-2"
+	},
+	"website-security-issues-3": {
+		"group": "Problems",
+		"label": "problems/website-security-issues-3 \u00b7 live firewall and login log",
+		"page": "/problems/website-security-issues/",
+		"ssr": true,
+		"num": "problems/website-security-issues-3"
+	},
+	"website-security-issues-4": {
+		"group": "Problems",
+		"label": "problems/website-security-issues-4 \u00b7 security switches turning on",
+		"page": "/problems/website-security-issues/",
+		"ssr": true,
+		"num": "problems/website-security-issues-4"
+	},
+	"website-health-issues-1": {
+		"group": "Problems",
+		"label": "problems/website-health-issues-1 \u00b7 hero \u00b7 alerts with what to do",
+		"page": "/problems/website-health-issues/",
+		"ssr": true,
+		"num": "problems/website-health-issues-1"
+	},
+	"website-health-issues-2": {
+		"group": "Problems",
+		"label": "problems/website-health-issues-2 \u00b7 site checkup tiles",
+		"page": "/problems/website-health-issues/",
+		"ssr": true,
+		"num": "problems/website-health-issues-2"
+	},
+	"website-health-issues-3": {
+		"group": "Problems",
+		"label": "problems/website-health-issues-3 \u00b7 30 days of uptime",
+		"page": "/problems/website-health-issues/",
+		"ssr": true,
+		"num": "problems/website-health-issues-3"
+	},
+	"website-health-issues-4": {
+		"group": "Problems",
+		"label": "problems/website-health-issues-4 \u00b7 backup timeline",
+		"page": "/problems/website-health-issues/",
+		"ssr": true,
+		"num": "problems/website-health-issues-4"
+	},
+	"slow-woocommerce-store-1": {
+		"group": "Problems",
+		"label": "problems/slow-woocommerce-store-1 \u00b7 hero \u00b7 checkout timings",
+		"page": "/problems/slow-woocommerce-store/",
+		"ssr": true,
+		"num": "problems/slow-woocommerce-store-1"
+	},
+	"slow-woocommerce-store-2": {
+		"group": "Problems",
+		"label": "problems/slow-woocommerce-store-2 \u00b7 request waterfall",
+		"page": "/problems/slow-woocommerce-store/",
+		"ssr": true,
+		"num": "problems/slow-woocommerce-store-2"
+	},
+	"slow-woocommerce-store-3": {
+		"group": "Problems",
+		"label": "problems/slow-woocommerce-store-3 \u00b7 product page check",
+		"page": "/problems/slow-woocommerce-store/",
+		"ssr": true,
+		"num": "problems/slow-woocommerce-store-3"
+	},
+	"slow-woocommerce-store-4": {
+		"group": "Problems",
+		"label": "problems/slow-woocommerce-store-4 \u00b7 store funnel",
+		"page": "/problems/slow-woocommerce-store/",
+		"ssr": true,
+		"num": "problems/slow-woocommerce-store-4"
+	},
+	"manual-website-management-1": {
+		"group": "Problems",
+		"label": "problems/manual-website-management-1 \u00b7 hero \u00b7 hours by hand versus automated",
+		"page": "/problems/manual-website-management/",
+		"ssr": true,
+		"num": "problems/manual-website-management-1"
+	},
+	"manual-website-management-2": {
+		"group": "Problems",
+		"label": "problems/manual-website-management-2 \u00b7 alerts with what to do",
+		"page": "/problems/manual-website-management/",
+		"ssr": true,
+		"num": "problems/manual-website-management-2"
+	},
+	"manual-website-management-3": {
+		"group": "Problems",
+		"label": "problems/manual-website-management-3 \u00b7 When / If / Then automation",
+		"page": "/problems/manual-website-management/",
+		"ssr": true,
+		"num": "problems/manual-website-management-3"
+	},
+	"manual-website-management-4": {
+		"group": "Problems",
+		"label": "problems/manual-website-management-4 \u00b7 site checkup tiles",
+		"page": "/problems/manual-website-management/",
+		"ssr": true,
+		"num": "problems/manual-website-management-4"
+	}
+}

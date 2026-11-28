@@ -1,0 +1,1822 @@
+/*
+Theme Name:   VuloPilot Astra Child
+Theme URI:    https://vulopilot.com/
+Description:  Astra child theme for VuloPilot: the Home page template (plain PHP sections), mega menu header, footer, consultation popup, editable blocks, shortcodes and the animated graphics in /graphic. This file holds the site's custom CSS (moved from Customize → Additional CSS).
+Author:       VuloPilot
+Template:     astra
+Version:      2.7.0
+Requires at least: 6.3
+Requires PHP: 7.4
+Text Domain:  vulopilot
+*/
+
+/* ==========================================================================
+   TABLE OF CONTENTS  (search for the number + name, e.g. "6. SINGLE BLOG")
+   --------------------------------------------------------------------------
+    1. DESIGN TOKENS ........... --theme-color, --heading-color, --border-radius …
+    2. GLOBAL .................. heading reset, Gutenberg spacing, lists, quotes
+    3. TABLES .................. core table block
+    4. HEADER + MEGA MENU ...... Astra glass header, .mega-menu-content, menu items
+    5. BETTERDOCS .............. a layout · b hidden · c article · d TOC
+                                 e sidebar · f categories · g search · h footer
+    6. SINGLE BLOG ............. a layout · b .b-chip · c lists · d .vp-eyebrow
+                                 e .vp-check-box · f .vp-takeaways · g .vp-timeline
+                                 h .vp-bordered-list · i .vp-table · j .vp-card
+                                 k .vp-mistakes
+    7. FORMINATOR FORMS ........ fields, radio pills, submit button
+    8. FAQ BLOCK ............... .vulopilot-faq (Vercel style)
+    9. HORIZONTAL SCROLL ....... .scroll-section-wrapper
+   10. BUTTONS ................. .kb-button, .white-border-btn
+   11. SECTION TITLE ........... .title-wrapper, .title-tag, .title-text, .title-desc
+   12. HERO .................... .hero-section-desc, .hero-section-buttons
+   13. CARDS ................... .features-number-card, .archive-page-card, .common-arrow-card
+   14. BACKGROUND GLOW ......... .background-effect
+   15. ICON BOXES .............. .icon-section-40, .icon-48, .icon-40
+   16. KADENCE TOC ............. .kb-table-of-content-*
+   17. FEATURE PAGE STEPS ...... .vp-step-progress
+   18. IMAGE SLIDER ............ .image-slider-wrapper
+
+   Sizes are in rem (1rem = 16px). Other theme CSS: assets/css (Tailwind, site,
+   motion) and graphic/css (graphics).
+   ========================================================================== */
+
+/* ==========================================================================
+   1. DESIGN TOKENS
+   The VuloPilot palette (--bg, --surface, --ink, --sage, --flare …) is defined in
+   assets/css/vp-site.css. These are the extra site tokens.
+   ========================================================================== */
+:root {
+	--theme-color: #002991;
+	--theme-second-color: #ff5d50;
+	--body-background: #f5f7fc;
+	--theme-background: #00288f0f;
+	--heading-color: #0a1230;
+	--text-color: #5d6784;
+	--border-color: #e1e6f2;
+	--border-radius: 0.25rem;
+}
+
+/* ==========================================================================
+   2. GLOBAL: headings, content spacing, lists, quotes
+   ========================================================================== */
+body:not(.home.wp-singular.page-template):not(.single-post) :is(h1, h2, h3, h4, h5, h6) {
+	margin: 0 !important;
+}
+
+/* Gutenberg headings and paragraphs (single blog + block pages) */
+.entry-content .wp-block-heading,
+.entry-content .wp-block-paragraph {
+	margin: 0.938rem 0 0.5rem 0 !important;
+}
+
+.wp-block-list {
+	margin-left: 1.125rem;
+}
+
+.ast-separate-container #primary {
+	margin-top: 1.5rem !important;
+}
+
+/* Quote: speech-bubble look */
+blockquote {
+	padding: 0 !important;
+	margin-top: -1.25rem !important;
+	margin-bottom: 0.4375rem !important;
+}
+blockquote p {
+	position: relative;
+	display: inline-block;
+	max-width: 34rem;
+	margin: 0 !important;
+	padding: 0.3125rem 0.625rem;
+	border: 0.0625rem solid var(--line);
+	border-radius: var(--b-radius);
+	background: var(--surface);
+	color: var(--sage);
+	font-size: 0.913rem;
+	font-style: italic;
+	font-weight: 500;
+}
+blockquote p::after {
+	content: "";
+	position: absolute;
+	bottom: -0.4375rem;
+	left: 50%;
+	width: 0.75rem;
+	height: 0.75rem;
+	margin-left: -0.375rem;
+	background: var(--surface);
+	border-right: 0.0625rem solid var(--line);
+	border-bottom: 0.0625rem solid var(--line);
+	transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   3. TABLES (core table block)
+   ========================================================================== */
+.wp-block-table thead,
+.wp-block-table thead th,
+.wp-block-table tbody td {
+	border: none;
+}
+.wp-block-table thead {
+	background: var(--theme-background);
+}
+.wp-block-table thead th {
+	color: var(--theme-color);
+}
+.wp-block-table .has-fixed-layout,
+.wp-block-table tbody tr {
+	border: 0.063rem solid #00000014;
+}
+
+/* ==========================================================================
+   4. HEADER (Astra) + MEGA MENU
+   ========================================================================== */
+.ast-primary-header-bar {
+	position: fixed;
+	width: 100%;
+	background: transparent;
+}
+.site-primary-header-wrap {
+	margin-top: 1rem;
+	border: 0.063rem solid #e1e6f2;
+	border-radius: var(--border-radius);
+	background-color: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 0.625rem 2.5rem -1.25rem rgba(0, 41, 145, 0.35);
+	-webkit-backdrop-filter: blur(1.5rem);
+	backdrop-filter: blur(1.5rem);
+}
+.site-branding.ast-site-identity {
+	padding: 0.5rem 0;
+}
+.main-header-menu {
+	min-height: 2rem;
+}
+.main-header-menu a {
+	max-height: 1rem;
+}
+.main-header-menu .single-section.menu-item.menu-item-type-custom {
+	position: relative;
+}
+
+/* Mega menu panel */
+.mega-menu-content {
+	position: absolute;
+	top: 1rem !important;
+	left: 0;
+	width: 75rem !important;
+}
+.mega-menu-enabled .mega-menu-content {
+	top: 100% !important;
+	transform: translatex(-40%) !important;
+}
+.docs-template-default .mega-menu-content p {
+	font-size: 0.9375rem !important;
+	line-height: 1.25rem !important;
+}
+
+/* Mega menu items */
+.mega-menu-item h6,
+.mega-menu-item-bg-white,
+.mega-menu-item-bg-white h6 {
+	transition: all 0.5s ease;
+}
+.mega-menu-item:hover h6,
+.mega-menu-item-bg-white:hover h6 {
+	color: var(--theme-color);
+}
+.mega-menu-item-bg-white {
+	margin-right: 0.5rem;
+}
+.mega-menu-item-bg-white:hover {
+	margin-left: 0.5rem;
+	margin-right: 0;
+}
+
+/* ==========================================================================
+   5. BETTERDOCS (docs pages)
+   ========================================================================== */
+
+/* 5a. Layout and wrappers */
+.betterdocs-content-wrapper {
+	padding: 0 !important;
+}
+.betterdocs-content-wrapper.betterdocs-content-wrapper,
+.betterdocs-wrapper.betterdocs-taxonomy-wrapper {
+	max-width: 75rem !important;
+	margin: auto;
+	padding-top: 3rem !important;
+}
+.betterdocs-wrapper.betterdocs-single-wrapper {
+	background: transparent !important;
+}
+.betterdocs-wrapper.betterdocs-single-wrapper.betterdocs-single-layout-1 .betterdocs-content-area {
+	padding-top: 0 !important;
+	padding-right: 0;
+}
+.betterdocs-wrapper.betterdocs-docs-archive-wrapper {
+	background: var(--body-background) !important;
+}
+.betterdocs-wrapper.betterdocs-docs-archive-wrapper .betterdocs-category-title {
+	color: var(--theme-color) !important;
+}
+
+/* 5b. Hidden extras */
+.betterdocs-live-search::before,
+.betterdocs-toc.toc-list-number,
+.betterdocs-print-pdf,
+.betterdocs-breadcrumb,
+.betterdocs-credit,
+.betterdocs-last-update,
+.betterdocs-content-area .betterdocs.reading-time {
+	display: none;
+}
+
+/* 5c. Article header + content */
+.betterdocs-entry-header {
+	margin: 0 0 0.938rem !important;
+	padding: 0 0.625rem !important;
+	border-radius: 0.25rem;
+	background: #fff;
+}
+.betterdocs-content {
+	padding: 1.625rem !important;
+}
+.betterdocs-entry-content .betterdocs-content {
+	background: #fff;
+}
+.betterdocs-entry-content .betterdocs-content h3 {
+	font-size: 1.4rem;
+	line-height: 1.5;
+}
+.betterdocs-single-wrapper .docs-single-title .betterdocs-entry-title {
+	padding: 1rem 0.5rem;
+	color: #000 !important;
+	font-size: 1.4rem !important;
+	line-height: 1;
+	text-transform: capitalize !important;
+}
+.single-docs p.wp-block-paragraph,
+.single-docs li,
+.single-docs .toc-list.betterdocs-hierarchial-toc a {
+	margin: 0.125rem 0 !important;
+	font-size: 1.25rem !important;
+	font-weight: 300 !important;
+	line-height: 2.1875rem !important;
+}
+.betterdocs-content-wrapper blockquote {
+	background: var(--theme-background);
+	border-left: 0.125rem solid var(--theme-color) !important;
+}
+.betterdocs-content-wrapper .wp-block-quote cite {
+	margin: 0 !important;
+	font-size: 1.0625rem;
+	line-height: 1.5;
+}
+
+/* 5d. Table of contents */
+.betterdocs-toc {
+	width: 100%;
+}
+.sticky-toc-container {
+	top: 2rem !important;
+}
+.betterdocs-single-wrapper.betterdocs-single-layout-1 .betterdocs-toc {
+	padding-top: 1.25rem;
+}
+.betterdocs-single-wrapper.betterdocs-single-layout-1 .betterdocs-toc > .toc-title {
+	color: #000 !important;
+	font-size: 1.5rem !important;
+	font-weight: 500;
+}
+.betterdocs-single-wrapper.betterdocs-single-layout-1 .betterdocs-toc > .toc-list li a,
+.betterdocs-single-wrapper.betterdocs-single-layout-1 .betterdocs-toc > .toc-list li a::before {
+	margin: 0;
+	color: #000 !important;
+	font-size: 1rem !important;
+}
+.betterdocs-single-wrapper.betterdocs-single-layout-1 .betterdocs-toc .toc-list li a {
+	font-size: 1rem !important;
+}
+.betterdocs-single-wrapper.betterdocs-single-layout-1 .betterdocs-toc .toc-list li a:hover {
+	color: var(--theme-color) !important;
+}
+
+/* 5e. Sidebar + category lists */
+.betterdocs-single-wrapper:not(.betterdocs-fluid-wrapper) .betterdocs-content-wrapper .betterdocs-sidebar,
+.betterdocs-taxonomy-wrapper:not(.betterdocs-fluid-wrapper) .betterdocs-content-wrapper .betterdocs-sidebar {
+	max-width: 20rem !important;
+}
+.betterdocs-sidebar-content.betterdocs-category-sidebar {
+	background: transparent !important;
+}
+.betterdocs-sidebar.betterdocs-sidebar-layout-1 .betterdocs-sidebar-content .betterdocs-single-category-wrapper.active .betterdocs-single-category-inner .betterdocs-category-header {
+	border-color: var(--theme-color) !important;
+}
+.betterdocs-sidebar.betterdocs-sidebar-layout-1 .betterdocs-single-category-wrapper .betterdocs-single-category-inner .betterdocs-articles-list li a {
+	font-size: 1rem !important;
+}
+.betterdocs-sidebar.betterdocs-sidebar-layout-1 .betterdocs-single-category-wrapper .betterdocs-single-category-inner .betterdocs-articles-list li svg {
+	margin-top: 0.125rem;
+}
+.betterdocs-articles-list li {
+	display: flex !important;
+	align-items: start !important;
+}
+.betterdocs-articles-list li svg {
+	margin-top: 0.4rem;
+}
+.betterdocs-single-category-inner .betterdocs-articles-list li a {
+	color: #000 !important;
+}
+.betterdocs-single-category-inner .betterdocs-articles-list li a.active,
+.betterdocs-single-category-inner .betterdocs-articles-list li a:hover {
+	color: var(--theme-color) !important;
+}
+.single-docs .betterdocs-category-title {
+	color: #030508 !important;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.25rem;
+}
+
+/* 5f. Category boxes, headers and counts */
+.betterdocs-category-box-wrapper {
+	padding-bottom: 5rem;
+}
+.betterdocs-category-box-wrapper .betterdocs-category-title {
+	font-size: 1.3rem !important;
+	font-weight: 700 !important;
+}
+.betterdocs-category-box-wrapper .betterdocs-sub-category-items-counts {
+	color: var(--theme-color) !important;
+}
+.betterdocs-category-box-wrapper .betterdocs-folder-icon {
+	width: 3.125rem;
+}
+.betterdocs-category-grid-inner-wrapper .betterdocs-single-category-wrapper:first-child {
+	margin: 0 !important;
+}
+.betterdocs-category-header img {
+	margin: 0 !important;
+}
+.betterdocs-category-header-inner {
+	padding: 0 !important;
+	border: none !important;
+	letter-spacing: 0.063rem !important;
+}
+.betterdocs-category-header-inner h2 {
+	font-size: 1.125rem !important;
+	font-weight: 400 !important;
+	letter-spacing: 0;
+}
+.betterdocs-category-items-counts {
+	padding: 0.063rem !important;
+}
+.betterdocs-category-items-counts span,
+.betterdocs-category-header-inner .betterdocs-category-items-counts {
+	background: var(--theme-color) !important;
+}
+.archive .betterdocs-category-items-counts span,
+.archive .betterdocs-category-header-inner .betterdocs-category-items-counts {
+	background: none !important;
+	color: var(--theme-color) !important;
+}
+.post-type-archive-docs .betterdocs-mkb-wrapper .betterdocs-content-wrapper a.category-box:hover {
+	background: #f7f7fd !important;
+}
+
+/* 5g. Search */
+.betterdocs-live-search {
+	position: relative;
+}
+.betterdocs-live-search .betterdocs-searchform-input-wrap {
+	max-height: 2rem;
+	margin: 0;
+	padding: 0.063rem;
+	border: 0;
+}
+.betterdocs-search-form-wrapper {
+	padding-top: 7rem !important;
+	padding-bottom: 1rem !important;
+	background: #f2f4f7 !important;
+}
+.betterdocs-search-form-wrapper.betterdocs-search-form-wrap {
+	border: none !important;
+}
+.betterdocs-search-layout-1 {
+	background: transparent !important;
+}
+.betterdocs-search-layout-1 .search-bar {
+	border-radius: 0.313rem !important;
+}
+.betterdocs-search-layout-1 .search-button {
+	background: var(--theme-color) !important;
+}
+.betterdocs-searchform {
+	padding: 0.125rem !important;
+	border: 0.063rem solid #ff6c305e !important;
+	background: #ffff !important;
+}
+.betterdocs-searchform .docs-search-icon {
+	height: 1.25rem !important;
+	margin: 0 !important;
+}
+.betterdocs-searchform .betterdocs-search-field {
+	padding: 0 !important;
+}
+select.betterdocs-search-category {
+	border-radius: 0;
+}
+.betterdocs-live-search .betterdocs-searchform .search-submit {
+	padding: 0.75rem 0.875rem !important;
+	border-radius: 0.25rem !important;
+	background: var(--theme-color) !important;
+	letter-spacing: 0 !important;
+	text-transform: capitalize !important;
+}
+.betterdocs-live-search .betterdocs-popular-search-keyword .popular-keyword {
+	border: none !important;
+	color: #000 !important;
+}
+.docs-search-result li:hover {
+	background: #fff !important;
+}
+.betterdocs-live-search .betterdocs-searchform .betterdocs-search-result-wrap .docs-search-result li a .betterdocs-search-category,
+.betterdocs-live-search .betterdocs-searchform .betterdocs-search-result-wrap .docs-search-result li a .betterdocs-search-title {
+	color: #000 !important;
+}
+.betterdocs-live-search .betterdocs-searchform .betterdocs-search-result-wrap .docs-search-result li a .betterdocs-search-title {
+	font-size: 0.75rem;
+}
+
+/* 5h. Footer navigation */
+.docs-navigation a {
+	width: auto;
+}
+.betterdocs-footer a {
+	padding: 0.313rem 0.875rem !important;
+	border: none !important;
+	border-radius: 0.25rem !important;
+	background: var(--theme-color) !important;
+	color: #fff !important;
+}
+.betterdocs-footer a:hover {
+	background: #000 !important;
+}
+
+/* ==========================================================================
+   6. SINGLE BLOG
+   ========================================================================== */
+
+/* 6a. Layout */
+.single-post .sidebar-main {
+	position: sticky;
+	top: 6rem;
+}
+.single-post p {
+	margin-bottom: 1.25rem;
+}
+.single-post h2 {
+	margin: 3.5rem 0 1.25rem 0 !important;
+}
+.wp-block-kadence-posts .entry-taxonomies {
+	text-transform: capitalize;
+}
+.blog-image-background {
+	background:
+		radial-gradient(color-mix(in srgb, var(--sage) 20%, transparent) 0.0625rem, transparent 0.0938rem) 0 0 / 1.25rem 1.25rem,
+		linear-gradient(135deg, var(--sage-soft), color-mix(in srgb, var(--apricot-soft) 70%, var(--bg)));
+}
+
+/* 6b. Chips (b-chip) */
+.b-chip {
+	display: inline-block;
+	padding: 0.35rem 0.8rem;
+	border: 0.0625rem solid var(--line);
+	border-radius: var(--b-radius);
+	background: var(--surface);
+	color: var(--ink);
+	font-size: 0.9rem;
+	line-height: 1.35;
+	box-shadow: 0 0.25rem 0.625rem -0.5rem #00299180;
+	transition:
+		transform 0.25s var(--b-ease),
+		border-color 0.25s;
+}
+.b-chip:hover {
+	border-color: color-mix(in srgb, var(--sage) 40%, var(--line));
+	transform: translateY(-0.125rem);
+}
+.b-chip::before {
+	content: "";
+	display: inline-block;
+	width: 0.3125rem;
+	height: 0.3125rem;
+	margin: 0 0.45rem 0.15rem 0;
+	border-radius: 50%;
+	background: var(--sage);
+	opacity: 0.55;
+}
+
+/* 6c. Simple lists */
+.background-white-list li {
+	padding: 0.5rem 0.8125rem !important;
+	border-radius: 0.313rem !important;
+	background: #fff !important;
+}
+.list-number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.625rem;
+	max-width: 1.625rem;
+	height: 1.625rem;
+	border-radius: 0.313rem;
+	background: var(--theme-background);
+	color: var(--theme-color);
+}
+
+/* 6d. Eyebrow label */
+.vp-eyebrow {
+	align-self: flex-start;
+	margin: 0 0 0.875rem !important;
+	color: var(--sage) !important;
+	font-size: 0.75rem !important;
+	font-weight: 700 !important;
+	line-height: 1.4 !important;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+/* 6e. Check box + check list */
+.vp-check-box > .kt-inside-inner-col {
+	padding: 1.5rem 1.75rem;
+	border-left: 0.1875rem solid var(--sage);
+	border-radius: 0.25rem;
+	background: #fff;
+}
+.vp-check-list .kt-svg-icon-list {
+	row-gap: 0.625rem !important;
+	column-gap: 1.75rem !important;
+}
+.vp-check-list .kt-svg-icon-list-item-wrap {
+	align-items: flex-start !important;
+	margin: 0 !important;
+}
+.vp-check-list .kt-svg-icon-list-single {
+	display: inline-flex !important;
+	align-items: center;
+	justify-content: center;
+	width: 1.375rem;
+	min-width: 1.375rem;
+	height: 1.375rem;
+	margin: 0.25rem 0.875rem 0 0 !important;
+	border-radius: 50%;
+	background: var(--sage-soft);
+	color: var(--sage) !important;
+	font-size: 0.6875rem !important;
+}
+.vp-check-list .kt-svg-icon-list-text {
+	color: #3b4159;
+	font-size: 1.0625rem;
+	line-height: 1.75;
+}
+
+/* 6f. Dark key takeaways */
+.vp-takeaways > .kt-inside-inner-col {
+	padding: 4rem 4.5rem;
+	border-radius: 0.25rem;
+	background: radial-gradient(circle at 100% 0%, rgba(29, 45, 145, 0.9) 0%, rgba(10, 18, 48, 0) 45%), radial-gradient(circle at 0% 100%, rgba(255, 93, 80, 0.22) 0%, rgba(10, 18, 48, 0) 38%),
+		linear-gradient(180deg, #0e1634 0%, #0a1230 100%);
+	box-shadow: 0 1.875rem 3.75rem -1.875rem rgba(10, 18, 48, 0.55);
+}
+.vp-takeaways-title {
+	margin: 0 0 1.375rem !important;
+	color: #fff !important;
+	font-size: 2rem !important;
+	font-weight: 700 !important;
+	line-height: 1.2 !important;
+	letter-spacing: -0.02em;
+}
+ol.vp-tk-list {
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style: none !important;
+	counter-reset: tk;
+}
+ol.vp-tk-list li {
+	display: flex;
+	align-items: flex-start;
+	gap: 1.125rem;
+	margin: 0;
+	padding: 0.875rem 0;
+	border-top: 0.0625rem solid rgba(255, 255, 255, 0.1);
+	color: #cfd3e2;
+	font-size: 1.0625rem;
+	line-height: 1.75;
+	counter-increment: tk;
+}
+ol.vp-tk-list li::before {
+	content: counter(tk, decimal-leading-zero);
+	flex: 0 0 auto;
+	margin-top: 0.1875rem;
+	padding: 0.0625rem 0.5rem;
+	border-radius: 0.1875rem;
+	background: rgba(255, 255, 255, 0.08);
+	color: #ff6b5f;
+	font-size: 0.6875rem;
+	font-weight: 700;
+	line-height: 2;
+}
+@media (max-width: 47.9375rem) {
+	.vp-takeaways > .kt-inside-inner-col {
+		padding: 2.5rem 1.5rem;
+	}
+}
+
+/* 6g. Step timeline */
+.vp-timeline > .kt-inside-inner-col {
+	margin-left: 0.625rem;
+	padding-left: 1.875rem;
+	border-left: 0.125rem solid #c9d3f2;
+}
+.vp-tl-step {
+	position: relative;
+	margin: 0 0 1.875rem !important;
+}
+.vp-tl-step:last-child {
+	margin-bottom: 0 !important;
+}
+.vp-tl-step::before {
+	content: "";
+	position: absolute;
+	top: 0.1875rem;
+	left: -2.5625rem;
+	width: 1.125rem;
+	height: 1.125rem;
+	box-sizing: border-box;
+	border: 0.25rem solid var(--sage);
+	border-radius: 50%;
+	background: #fff;
+}
+.vp-step-badge {
+	display: inline-block !important;
+	align-self: flex-start !important;
+	width: auto !important;
+	margin: 0 0 0.5rem !important;
+	padding: 0.125rem 0.5625rem;
+	border-radius: 0.1875rem;
+	background: #fde4e1;
+	color: #d8362b !important;
+	font-size: 0.6875rem !important;
+	font-weight: 700 !important;
+	line-height: 1.6 !important;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+.vp-step-title {
+	margin: 0 0 0.625rem !important;
+	color: var(--ink) !important;
+	font-size: 1.5rem !important;
+	font-weight: 700 !important;
+	line-height: 1.3 !important;
+	letter-spacing: -0.02em;
+}
+
+/* 6h. Bordered pill list (diamond bullets) */
+.vp-bordered-list .kt-svg-icon-list {
+	gap: 0.75rem !important;
+}
+.vp-bordered-list .kt-svg-icon-list-item-wrap {
+	display: flex !important;
+	align-items: center !important;
+	margin: 0 !important;
+	padding: 0.625rem 0.875rem !important;
+	border: 0.0625rem solid var(--line);
+	border-radius: 0.1875rem;
+	background: #fff;
+}
+.vp-bordered-list .kt-svg-icon-list-single {
+	display: none !important;
+}
+.vp-bordered-list .kt-svg-icon-list-item-wrap::before {
+	content: "";
+	flex: 0 0 0.4375rem;
+	width: 0.4375rem;
+	height: 0.4375rem;
+	margin-right: 0.75rem;
+	background: var(--sage);
+	transform: rotate(45deg);
+}
+.vp-bordered-list .kt-svg-icon-list-text {
+	color: #3b4159;
+	font-size: 0.9375rem;
+	line-height: 1.5;
+}
+
+/* 6i. Gradient-header table (vp-table) */
+.vp-table {
+	margin: 1.75rem 0 !important;
+}
+.wp-block-table.vp-table table {
+	margin: 0;
+}
+.vp-table table {
+	width: 100%;
+	overflow: hidden;
+	border: 0.0625rem solid var(--line) !important;
+	border-collapse: separate !important;
+	border-spacing: 0;
+	border-radius: 0.25rem;
+	background: #fff;
+}
+.vp-table thead {
+	border: 0 !important;
+	background: linear-gradient(90deg, #0a1230 0%, #1d2d91 100%) !important;
+}
+.vp-table thead th {
+	padding: 1rem 1.125rem !important;
+	border: 0 !important;
+	color: #fff !important;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-align: left;
+	text-transform: uppercase;
+}
+.vp-table tbody tr {
+	border: 0 !important;
+}
+.vp-table tbody td {
+	padding: 0.9375rem 1.125rem !important;
+	border: 0 !important;
+	border-top: 0.0625rem solid var(--line) !important;
+	color: #3b4159;
+	font-size: 1rem;
+}
+.vp-table tbody td:first-child {
+	color: var(--ink);
+	font-weight: 700;
+}
+.vp-table tbody tr:nth-child(even) td {
+	background: #f7f8fc;
+}
+
+/* 6j. Numbered cards (content brief) */
+.vp-card {
+	height: 100%;
+}
+.vp-card > .kt-inside-inner-col {
+	height: 100%;
+	box-sizing: border-box;
+	padding: 1.375rem 1.5rem;
+	border: 0.0625rem solid var(--line);
+	border-radius: 0.25rem;
+	background: #fff;
+}
+.vp-card-num {
+	margin: 0 0 0.75rem !important;
+	color: #e2574c !important;
+	font-size: 0.75rem !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.14em;
+}
+.vp-card-title {
+	margin: 0 0 0.375rem !important;
+	color: var(--ink) !important;
+	font-size: 1.0625rem !important;
+	font-weight: 700 !important;
+	line-height: 1.4 !important;
+}
+.vp-card-text {
+	margin: 0 !important;
+	color: #5d6784 !important;
+	font-size: 1rem !important;
+	line-height: 1.6 !important;
+}
+
+/* 6k. Mistakes box */
+.vp-mistakes > .kt-inside-inner-col {
+	padding: 1.5rem 1.75rem;
+	border-left: 0.1875rem solid #e2574c;
+	border-radius: 0.25rem;
+	background: #f9e9e8;
+}
+.vp-mistake-first {
+	margin: 0 0 0.5rem !important;
+	color: #d8362b !important;
+	font-size: 0.75rem !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+.vp-mistake-label {
+	margin: 0.875rem 0 0.5rem !important;
+	color: var(--ink) !important;
+	font-size: 0.9375rem !important;
+	font-weight: 700 !important;
+}
+.vp-mistake-text {
+	margin: 0 !important;
+	color: #5d6784 !important;
+	font-size: 1.0625rem !important;
+	line-height: 1.7 !important;
+}
+
+/* ==========================================================================
+   7. FORMINATOR FORMS
+   ========================================================================== */
+.forminator-row {
+	margin-bottom: 0.625rem !important;
+}
+.forminator-label {
+	margin-bottom: 0.25rem !important;
+	color: #0f172a !important;
+	font-size: 1rem !important;
+}
+.forminator-field .forminator-label {
+	text-align: left;
+}
+.forminator-row .selection {
+	border: 0.063rem solid #00000030 !important;
+	border-radius: 0.313rem;
+	background: #fff !important;
+}
+.forminator-row input,
+.forminator-row .selection,
+.forminator-row textarea {
+	border-color: #0000003b;
+	border-radius: 0.313rem !important;
+}
+.forminator-row input:focus,
+.forminator-row .selection:focus,
+.forminator-row textarea:focus {
+	border-color: #ff6c30 !important;
+}
+
+/* Radio buttons as bordered pills with a tick */
+.forminator-radio .forminator-radio-bullet {
+	display: none !important;
+}
+.forminator-radio .forminator-radio-label {
+	margin: 0 !important;
+}
+.forminator-row label.forminator-radio .forminator-radio-label {
+	position: relative;
+	padding: 0.5rem 2.1875rem;
+	border: 0.063rem solid #ff6b3038;
+	border-radius: 0.313rem;
+	background: #ffffff4f;
+	color: var(--theme-color);
+	font-size: 0.913rem !important;
+	font-weight: 600;
+	cursor: pointer;
+}
+.forminator-radio.forminator-is_checked .forminator-radio-label {
+	position: relative;
+	border: 0.06rem solid #ff6c30 !important;
+}
+.forminator-radio.forminator-is_checked .forminator-radio-label::after {
+	content: "\1F5F9"; /* 🗹 tick */
+	position: absolute;
+	top: 50%;
+	left: 0.875rem;
+	font-size: 0.913rem;
+	transform: translatey(-50%);
+}
+
+/* Submit button */
+.forminator-row:has(button) .forminator-field {
+	text-align: right;
+}
+.forminator-row:has(button) .forminator-button {
+	padding: 0.75rem !important;
+	border: 0.063rem solid !important;
+	border-radius: 0.313rem !important;
+	font-size: 0.813rem !important;
+	line-height: 1 !important;
+}
+.forminator-row:has(button) .forminator-button:hover {
+	border: 0.063rem solid !important;
+	background: #fff;
+	box-shadow: none !important;
+}
+
+/* ==========================================================================
+   8. FAQ BLOCK (vulopilot/faq, Vercel style)
+   ========================================================================== */
+.vulopilot-faq.wp-block-vulopilot-faq,
+.vulopilot-faq.wp-block-vulopilot-faq *,
+.vulopilot-faq.wp-block-vulopilot-faq *::before,
+.vulopilot-faq.wp-block-vulopilot-faq *::after {
+	box-sizing: border-box;
+}
+.vulopilot-faq.wp-block-vulopilot-faq {
+	--vpf-ink: #0a1230;
+	--vpf-muted: #5d6784;
+	--vpf-line: #e1e6f2;
+	--vpf-surface: #fff;
+	display: block;
+	width: 95%;
+	margin: auto;
+	padding: 0;
+	overflow: hidden;
+	border: 0.0625rem solid var(--vpf-line);
+	border-radius: 0.125rem;
+	background: var(--vpf-surface);
+	box-shadow: none;
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__item {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-top: 0.0625rem solid var(--vpf-line);
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__item:first-child {
+	border-top: 0;
+}
+
+/* Question row */
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__question {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	width: 100%;
+	margin: 0;
+	padding: 1.25rem 1.5rem;
+	border: 0;
+	background: transparent;
+	color: var(--vpf-ink);
+	text-align: left;
+	list-style: none;
+	cursor: pointer;
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__question::-webkit-details-marker {
+	display: none;
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__question::marker {
+	content: "";
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__question:focus-visible {
+	outline: 0.125rem solid #002991;
+	outline-offset: -0.125rem;
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__question-text {
+	flex: 1;
+	margin: 0;
+	padding: 0;
+	color: var(--vpf-ink);
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.5rem;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+/* Plus icon that turns into × when open */
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__icon {
+	position: relative;
+	display: block;
+	flex-shrink: 0;
+	width: 1.125rem;
+	height: 1.125rem;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: var(--vpf-ink);
+	font-size: 0;
+	line-height: 0;
+	transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__icon > span {
+	display: none;
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__icon::before,
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__icon::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0.6563rem;
+	height: 0.0938rem;
+	border-radius: 0.125rem;
+	background: currentColor;
+	transform: translate(-50%, -50%);
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__icon::after {
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__item[open] .vulopilot-faq__icon {
+	transform: rotate(45deg);
+}
+
+/* Answer */
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__answer {
+	margin: 0;
+	padding: 0 1.5rem 1.25rem;
+	border: 0;
+	background: transparent;
+	color: var(--vpf-muted);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5rem;
+}
+.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__answer > *:last-child {
+	margin-bottom: 0;
+}
+
+/* Smooth open and close (newer browsers; others just open instantly) */
+@supports (interpolate-size: allow-keywords) {
+	.vulopilot-faq.wp-block-vulopilot-faq {
+		interpolate-size: allow-keywords;
+	}
+	.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__item::details-content {
+		height: 0;
+		overflow: hidden;
+		opacity: 0;
+		transition:
+			height 0.3s ease,
+			opacity 0.3s ease,
+			content-visibility 0.3s allow-discrete;
+	}
+	.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__item[open]::details-content {
+		height: auto;
+		opacity: 1;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__icon,
+	.vulopilot-faq.wp-block-vulopilot-faq .vulopilot-faq__item::details-content {
+		transition: none;
+	}
+}
+
+/* ==========================================================================
+   9. HORIZONTAL SCROLL SECTION (scroll-section-wrapper)
+   Row > intro column + cards with a "section-…" class. Cards get an automatic
+   01, 02 … watermark. The progress line reads --scroll-progress.
+   ========================================================================== */
+.page .scroll-section-wrapper {
+	--card-width: 28rem;
+	--intro-width: 24rem;
+	--card-gap: 2.5rem;
+	--section-padding: 2rem;
+	position: relative;
+}
+.page .scroll-section-wrapper,
+.page .scroll-section-wrapper * {
+	box-sizing: border-box;
+}
+
+/* Sticky track */
+.page .scroll-section-wrapper > div {
+	position: sticky;
+	top: 0;
+	display: flex !important;
+	flex-wrap: nowrap !important;
+	align-items: center !important;
+	gap: var(--card-gap) !important;
+	width: 78%;
+	max-width: none !important;
+	height: 100vh;
+	height: 100svh;
+	padding: 3rem var(--section-padding) !important;
+	overflow: hidden;
+	counter-reset: scroll-step;
+}
+
+/* Intro column */
+.page .scroll-section-wrapper > div > div:first-child {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex: 0 0 var(--intro-width);
+	align-self: stretch;
+	align-items: center;
+}
+.page .scroll-section-wrapper > div > div:first-child > div > div:first-child {
+	margin-bottom: 1.25rem;
+	color: #176b36;
+	font-size: 0.9rem;
+}
+
+/* Cards */
+.page .scroll-section-wrapper > div > :is([class^="section-"], [class*=" section-"]):not(:first-child) {
+	position: relative;
+	flex: 0 0 var(--card-width);
+	width: var(--card-width);
+	min-width: 0;
+	height: min(30rem, 78svh);
+	min-height: 25rem;
+	overflow: hidden;
+	border-radius: 2rem;
+	transform-origin: center;
+	will-change: transform;
+	counter-increment: scroll-step;
+}
+.page .scroll-section-wrapper > div > :is([class^="section-"], [class*=" section-"]):not(:first-child) > div {
+	position: relative;
+	height: 100%;
+}
+.page .scroll-section-wrapper > div > :is([class^="section-"], [class*=" section-"]):not(:first-child) > div > div {
+	color: #585653;
+	font-size: 1.05rem;
+	line-height: 1.65;
+}
+
+/* Automatic number watermark */
+.page .scroll-section-wrapper > div > :is([class^="section-"], [class*=" section-"]):not(:first-child)::after {
+	content: counter(scroll-step, decimal-leading-zero);
+	position: absolute;
+	top: -2rem;
+	right: -0.4rem;
+	color: #201c17;
+	font-size: 10rem;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: -0.09em;
+	opacity: 0.055;
+	pointer-events: none;
+}
+
+/* Scroll progress line */
+.page .scroll-section-wrapper > div::after {
+	content: "";
+	position: absolute;
+	right: var(--section-padding);
+	bottom: 2rem;
+	left: var(--section-padding);
+	z-index: 999;
+	height: 0.2rem;
+	border-radius: 1rem;
+	background: linear-gradient(to right, var(--theme-color) 0 var(--scroll-progress, 0%), #e1ded8 var(--scroll-progress, 0%) 100%);
+}
+
+@media (min-width: 93.75rem) {
+	.page .scroll-section-wrapper {
+		--section-padding: max(2rem, calc((100vw - 82rem) / 2));
+	}
+}
+@media (max-width: 68.75rem) and (min-width: 48rem) {
+	.page .scroll-section-wrapper {
+		--intro-width: 19rem;
+		--card-width: 25rem;
+		--card-gap: 2rem;
+	}
+}
+
+/* Phones and short screens: stacked, no sticky track */
+@media (max-width: 47.9375rem), (max-height: 37.5rem) {
+	.page .scroll-section-wrapper {
+		height: auto !important;
+	}
+	.page .scroll-section-wrapper > div {
+		position: relative;
+		display: flex !important;
+		flex-direction: column;
+		align-items: stretch !important;
+		gap: 1.25rem !important;
+		height: auto;
+		padding: 2rem 1.25rem !important;
+		overflow: visible;
+	}
+	.page .scroll-section-wrapper > div > div:first-child {
+		flex: none;
+		width: 100%;
+		box-shadow: none;
+	}
+	.page .scroll-section-wrapper > div > :is([class^="section-"], [class*=" section-"]):not(:first-child) {
+		flex: none;
+		width: 100%;
+		height: auto;
+		min-height: 24rem;
+		transform: none !important;
+		will-change: auto;
+	}
+	.page .scroll-section-wrapper > div > :is([class^="section-"], [class*=" section-"]):not(:first-child) > div {
+		padding: 1.75rem !important;
+	}
+	.page .scroll-section-wrapper > div::after {
+		display: none;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.page .scroll-section-wrapper > div > :is([class^="section-"], [class*=" section-"]):not(:first-child) {
+		will-change: auto;
+	}
+}
+
+/* ==========================================================================
+   10. BUTTONS (Kadence kb-button)
+   ========================================================================== */
+.kb-button {
+	box-sizing: border-box !important;
+	padding: 0.75rem 1.5rem !important;
+	border: 0.0625rem solid !important;
+	background: var(--heading-color) !important;
+	font-size: 1rem !important;
+	line-height: 1.5rem;
+}
+.kb-button:hover {
+	background: var(--theme-color) !important;
+}
+
+/* White button with border */
+.kb-button.white-border-btn {
+	border-color: var(--border-color) !important;
+	background: #fff !important;
+	color: var(--heading-color);
+}
+.kb-button.white-border-btn:hover {
+	border-color: var(--heading-color) !important;
+	color: var(--heading-color);
+}
+
+/* ==========================================================================
+   11. SECTION TITLE (title-wrapper, title-tag, title-text, title-desc)
+   ========================================================================== */
+.title-wrapper {
+	width: 65%;
+}
+.title-wrapper.full {
+	width: 100%;
+}
+.title-wrapper .kt-inside-inner-col {
+	align-items: start !important;
+}
+.title-tag {
+	position: relative;
+	margin-bottom: 1.25rem;
+	padding: 0.25rem 0.75rem 0.25rem 1.4375rem;
+	border: 0.0625rem solid var(--border-color);
+	border-radius: 0;
+	background: #fff;
+	color: var(--theme-color);
+	font-size: 0.6875rem;
+	font-weight: 400;
+	line-height: 1rem;
+	letter-spacing: 0.0963rem;
+	text-transform: uppercase;
+}
+.title-tag::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0.625rem;
+	width: 0.375rem;
+	height: 0.375rem;
+	border-radius: 50%;
+	background: red;
+	transform: translatey(-50%);
+}
+.title-text {
+	font-size: 2.25rem !important;
+	line-height: 2.8125rem;
+}
+.title-text mark {
+	color: var(--theme-color) !important;
+}
+.title-desc {
+	padding-top: 1.25rem !important;
+	font-size: 1.063rem;
+}
+
+/* Centred title */
+.title-wrapper.center .kt-inside-inner-col,
+.title-wrapper.center .title-desc,
+.title-wrapper.center .title-text {
+	align-items: center !important;
+	text-align: center;
+}
+
+/* ==========================================================================
+   12. HERO (without image)
+   ========================================================================== */
+.hero-section-desc {
+	padding-top: 1.0625rem;
+}
+.hero-section-buttons {
+	padding-top: 2rem;
+}
+
+/* ==========================================================================
+   13. CARDS: numbered feature card, archive card, arrow card
+   ========================================================================== */
+
+/* 13a. Feature card with a big outlined number */
+.features-number-card {
+	position: relative;
+}
+.features-number-card:hover {
+	translate: 0 -0.25rem;
+	transition: all 0.5s ease;
+}
+.features-number-card .absolute-number {
+	color: transparent;
+	font-size: 4.5rem !important;
+	line-height: 3.125rem;
+	-webkit-text-stroke: 0.0938rem var(--border-color);
+}
+.features-number-card:hover .icon-container {
+	background: var(--theme-color) !important;
+}
+.features-number-card:hover .icon-container svg {
+	stroke: #fff !important;
+}
+
+/* 13b. Archive card */
+.archive-page-card {
+	transition: all 0.4s ease;
+}
+.archive-page-card:hover {
+	transform: translatey(-0.25rem);
+}
+.archive-page-card .kt-inside-inner-col {
+	position: relative;
+}
+.archive-card-icon {
+	position: absolute;
+	right: 1.75rem;
+}
+.archive-card-icon svg {
+	fill: var(--text-color);
+}
+.archive-page-card:hover .archive-card-icon svg {
+	fill: var(--heading-color);
+}
+.archive-card-title {
+	font-size: 1.25rem !important;
+	line-height: 1.75rem;
+}
+.archive-card-desc {
+	padding-top: 0.375rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}
+
+/* 13c. Card with an arrow in the top-right corner */
+.common-arrow-card {
+	position: relative;
+}
+.common-arrow-card .arrow-icon {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/* ==========================================================================
+   14. BACKGROUND GLOW (background-effect)
+   ========================================================================== */
+.background-effect {
+	position: relative;
+	overflow: hidden;
+}
+.background-effect::before,
+.background-effect::after {
+	content: "";
+	position: absolute;
+	bottom: -3.75rem;
+	width: 24rem;
+	height: 24rem;
+	border-radius: 50%;
+	filter: blur(4rem);
+}
+.background-effect::before {
+	left: -10%;
+	background: var(--sage-soft);
+}
+.background-effect::after {
+	right: -10%;
+	background: var(--apricot-soft);
+}
+
+/* ==========================================================================
+   15. ICON BOXES (icon-section-40, icon-48, icon-40)
+   ========================================================================== */
+.icon-section-40,
+.icon-section-40 .kt-inside-inner-col {
+	min-width: 2.5rem !important;
+	max-width: 2.5rem !important;
+	min-height: 2.5rem !important;
+	max-height: 2.5rem !important;
+}
+.icon-48 .icon-container,
+.icon-40 .icon-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: var(--border-radius);
+}
+.icon-48 .icon-container {
+	min-width: 3rem;
+	max-width: 3rem;
+	min-height: 3rem;
+	max-height: 3rem;
+}
+.icon-48 .icon-container svg {
+	width: 1.375rem;
+}
+.icon-40 .icon-container {
+	min-width: 2.5rem;
+	max-width: 2.5rem;
+	min-height: 2.5rem;
+	max-height: 2.5rem;
+}
+.icon-40 .icon-container svg {
+	width: 1.125rem;
+}
+
+/* ==========================================================================
+   16. KADENCE TABLE OF CONTENTS (active item is set by vp-site.js)
+   ========================================================================== */
+.kb-table-of-content-nav ul {
+	max-height: 78vh;
+	overflow: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--line) transparent;
+}
+.kb-table-of-content-list {
+	border-left: 0.063rem solid var(--border-color);
+}
+.kb-table-of-content-list li {
+	position: relative;
+	margin-bottom: 0 !important;
+	padding: 0.375rem 0 0.375rem 1rem;
+}
+.kb-table-of-content-list li.active::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0.063rem;
+	height: 100%;
+	background: var(--theme-color);
+}
+
+/* ==========================================================================
+   17. FEATURE PAGE STEPS (vp-step-progress)
+   ========================================================================== */
+.link-text {
+	text-decoration: underline;
+}
+.vp-step-progress {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0 0 1.5rem !important;
+	padding: 0 !important;
+	list-style: none;
+}
+.vp-step-progress li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0.375rem 0.875rem 0.375rem 0.375rem;
+	border: 0.0625rem solid #dce2ec;
+	border-radius: 0.3125rem;
+	background: #ffffff;
+	color: #4b5768;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	line-height: 1;
+}
+.vp-step-progress .vp-step-num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.375rem;
+	height: 1.375rem;
+	border-radius: 0.3125rem;
+	background: #eef1f6;
+	color: #4b5768;
+	font-size: 0.75rem;
+	font-weight: 800;
+}
+.vp-step-progress .vp-step-num svg {
+	width: 0.75rem;
+	height: 0.75rem;
+}
+
+/* Current step */
+.vp-step-progress li.is-current {
+	border-color: #1e4fd8;
+	background: #fff;
+	color: #1e4fd8;
+}
+.vp-step-progress li.is-current .vp-step-num {
+	background: #1e4fd8;
+	color: #fff;
+}
+
+/* Finished step */
+.vp-step-progress li.is-done {
+	border-color: #bfdcc6;
+	background: #e9f5ec;
+	color: #1c6b35;
+}
+.vp-step-progress li.is-done .vp-step-num {
+	background: #1c6b35;
+	color: #ffffff;
+}
+
+/* ==========================================================================
+   18. IMAGE SLIDER (image-slider-wrapper)
+   Kadence row "image-slider-wrapper" > columns "image-slider" > image + caption
+   heading "image-slider-title". Arrows, dots and swipe come from vp-site.js.
+   (Moved here from the CSS string that vp-site.js used to inject.)
+   ========================================================================== */
+
+.image-slider-wrapper {
+	--vp-slider-accent: var(--ast-global-color-0, #1e4fd8);
+	--vp-slider-ink: #0b1220;
+	--vp-slider-muted: #4b5768;
+	--vp-slider-line: #e1e6ef;
+	--vp-slider-soft: #f5f7fc;
+	--vp-slider-radius: 1rem;
+	--vp-slider-speed: 450ms;
+}
+
+/* Before the script runs: show only the first slide, so the page never
+   flashes three stacked screenshots. */
+.image-slider-wrapper:not(.vp-slider-ready) .image-slider ~ .image-slider {
+	display: none;
+}
+
+/* ---------- Viewport and track ---------- */
+
+.image-slider-wrapper .vp-slider-viewport {
+	position: relative;
+	overflow: hidden;
+	max-width: 67.5rem;
+	margin: 0 auto;
+	padding: 0;
+	border-radius: calc(var(--vp-slider-radius) + 0.75rem);
+	background: var(--vp-slider-soft);
+	box-sizing: border-box;
+}
+
+.image-slider-wrapper .vp-slider-track {
+	display: flex !important;
+	flex-wrap: nowrap !important;
+	gap: 0 !important;
+	grid-template-columns: none !important;
+	transition: transform var(--vp-slider-speed) cubic-bezier(0.22, 0.61, 0.36, 1);
+	will-change: transform;
+}
+
+.image-slider-wrapper .vp-slider-track > .image-slider {
+	flex: 0 0 100% !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	min-width: 0;
+	margin: 0 !important;
+	padding: 1.75rem !important;
+	box-sizing: border-box;
+	opacity: 0.35;
+	transition: opacity var(--vp-slider-speed) ease;
+}
+
+.image-slider-wrapper .vp-slider-track > .image-slider.is-active {
+	opacity: 1;
+}
+
+/* ---------- Screenshot ---------- */
+
+.image-slider-wrapper .slider-image,
+.image-slider-wrapper .slider-image figure {
+	margin: 0 !important;
+}
+
+.image-slider-wrapper .slider-image img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border: 0.0625rem solid var(--vp-slider-line) !important;
+	border-radius: var(--vp-slider-radius) !important;
+	background: #fff;
+	box-shadow:
+		0 0.0625rem 0.125rem rgba(15, 30, 70, 0.06),
+		0 1.125rem 2.5rem rgba(15, 30, 70, 0.1);
+}
+
+/* The caption lives in each slide for SEO, but is shown once in the
+   controls bar after the script runs. */
+.image-slider-wrapper.vp-slider-ready .vp-slide .image-slider-title {
+	position: absolute !important;
+	width: 0.0625rem;
+	height: 0.0625rem;
+	padding: 0;
+	margin: -0.0625rem;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Hide the leftover caption column spacing inside each slide. */
+.image-slider-wrapper.vp-slider-ready .vp-slide .kb-section-dir-horizontal {
+	margin: 0 !important;
+	padding: 0 !important;
+	min-height: 0 !important;
+}
+
+/* ---------- Controls bar ---------- */
+
+.image-slider-wrapper .vp-slider-controls {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	max-width: 67.5rem;
+	margin: 1.5rem auto 0;
+	padding: 0 0.25rem;
+	box-sizing: border-box;
+}
+
+.image-slider-wrapper .vp-slider-meta {
+	flex: 1 1 auto;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.75rem;
+	text-align: center;
+}
+
+.image-slider-wrapper .vp-slider-caption {
+	margin: 0;
+	font-size: 1.0625rem;
+	line-height: 1.45;
+	font-weight: 600;
+	color: var(--vp-slider-ink);
+}
+
+.image-slider-wrapper .vp-slider-bottom {
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+}
+
+.image-slider-wrapper .vp-slider-counter {
+	font-size: 0.8125rem;
+	font-weight: 600;
+	color: var(--vp-slider-muted);
+	font-variant-numeric: tabular-nums;
+}
+
+/* Reset theme button styles (Astra/Kadence) */
+.image-slider-wrapper .vp-slider-controls button.vp-slider-btn,
+.image-slider-wrapper .vp-slider-controls button.vp-slider-dot {
+	-webkit-appearance: none !important;
+	appearance: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	min-height: 0 !important;
+	min-width: 0 !important;
+	line-height: 1 !important;
+	font-size: 0 !important;
+	text-transform: none !important;
+	letter-spacing: normal !important;
+}
+
+/* Arrow buttons */
+.image-slider-wrapper .vp-slider-controls button.vp-slider-btn {
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.25rem !important;
+	height: 3.25rem !important;
+	border-radius: 62.4375rem !important;
+	border: 0.0625rem solid var(--vp-slider-line) !important;
+	background: #fff !important;
+	color: var(--vp-slider-ink) !important;
+	cursor: pointer;
+	box-shadow: 0 0.25rem 0.75rem rgba(15, 30, 70, 0.08) !important;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease,
+		border-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.image-slider-wrapper .vp-slider-controls button.vp-slider-btn:hover,
+.image-slider-wrapper .vp-slider-controls button.vp-slider-btn:focus-visible {
+	background: var(--vp-slider-accent) !important;
+	border-color: var(--vp-slider-accent) !important;
+	color: #fff !important;
+}
+
+.image-slider-wrapper .vp-slider-prev:hover {
+	transform: translateX(-0.125rem);
+}
+.image-slider-wrapper .vp-slider-next:hover {
+	transform: translateX(0.125rem);
+}
+
+.image-slider-wrapper .vp-slider-btn:focus-visible,
+.image-slider-wrapper .vp-slider-dot:focus-visible {
+	outline: 0.1875rem solid var(--vp-slider-accent);
+	outline-offset: 0.1875rem;
+}
+
+/* Dots */
+.image-slider-wrapper .vp-slider-dots {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.image-slider-wrapper .vp-slider-controls button.vp-slider-dot {
+	position: relative;
+	width: 1.75rem !important;
+	height: 1.75rem !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	cursor: pointer;
+}
+
+/* Visible pill inside a larger tap area */
+.image-slider-wrapper .vp-slider-dot::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 62.4375rem;
+	background: #c3ccdb;
+	transform: translate(-50%, -50%);
+	transition:
+		width 0.25s ease,
+		background-color 0.25s ease;
+}
+
+.image-slider-wrapper .vp-slider-dot:hover::before {
+	background: #8a96aa;
+}
+
+.image-slider-wrapper .vp-slider-dot.is-active::before {
+	width: 1.375rem;
+	background: var(--vp-slider-accent);
+}
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 47.9375rem) {
+	.image-slider-wrapper .vp-slider-viewport {
+		border-radius: calc(var(--vp-slider-radius) + 0.25rem);
+	}
+
+	.image-slider-wrapper .vp-slider-track > .image-slider {
+		padding: 0.75rem !important;
+	}
+
+	.image-slider-wrapper .slider-image img {
+		border-radius: 0.625rem !important;
+	}
+
+	.image-slider-wrapper .vp-slider-controls {
+		gap: 0.75rem;
+		margin-top: 1rem;
+	}
+
+	.image-slider-wrapper .vp-slider-controls button.vp-slider-btn {
+		width: 2.75rem !important;
+		height: 2.75rem !important;
+	}
+
+	.image-slider-wrapper .vp-slider-caption {
+		font-size: 0.9375rem;
+	}
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+	.image-slider-wrapper .vp-slider-track,
+	.image-slider-wrapper .vp-slider-track > .image-slider,
+	.image-slider-wrapper .vp-slider-btn,
+	.image-slider-wrapper .vp-slider-dot::before {
+		transition: none !important;
+	}
+}
+
+.image-slider-wrapper .vp-slider-controls button.vp-slider-btn svg {
+	display: block;
+	width: 1.25rem;
+	height: 1.25rem;
+	pointer-events: none;
+}

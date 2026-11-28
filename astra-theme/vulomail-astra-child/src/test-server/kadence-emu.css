@@ -1,0 +1,18 @@
+/* Kadence Blocks 3.8 front-end CSS for the blocks the theme uses (copied from src/blocks/*/style.scss). */
+.kt-row-layout-inner,.kb-row-layout-wrap{position:relative;border:0 solid transparent}
+.kt-row-layout-inner:before,.kb-row-layout-wrap:before{clear:both;display:table;content:""}
+.kt-row-column-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--global-row-gutter-md,2rem) var(--global-row-gutter-md,2rem);grid-auto-rows:minmax(min-content,max-content);z-index:1;position:relative}
+.wp-block-kadence-rowlayout .kt-row-column-wrap.kb-theme-content-width{margin-left:auto;margin-right:auto}
+.kt-row-has-bg>.kt-row-column-wrap{padding-left:var(--global-content-edge-padding,15px);padding-right:var(--global-content-edge-padding,15px)}
+.alignfull>.kt-row-layout-inner>.kt-row-column-wrap,.alignfull>.kt-row-column-wrap{padding-left:var(--global-content-edge-padding,15px);padding-right:var(--global-content-edge-padding,15px)}
+.wp-block-kadence-column{display:flex;flex-direction:column;z-index:1;min-width:0;min-height:0}
+.kt-inside-inner-col{flex-direction:column;border:0 solid transparent;position:relative;transition:all .3s ease}
+.wp-block-kadence-advancedheading mark{background:transparent;border-style:solid;border-width:0}
+.kb-buttons-wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--global-kb-gap-xs,.5rem)}
+.kb-button{z-index:1;position:relative;overflow:hidden;display:inline-flex;text-align:center;align-items:center;justify-content:center}
+.wp-block-kadence-advancedbtn .kb-button:not(.specificity):not(.extra-specificity){text-decoration:none}
+.kb-button:not(.kb-btn-global-inherit){border:0 solid transparent;padding:var(--kb-btn-padding,.4em 1em .4em 1em);cursor:pointer;font-size:var(--kb-token--semantic--font-size--control,1.125rem);border-radius:var(--kb-btn-radius,var(--kb-token--semantic--radius--control,3px));transition:all .3s ease-in-out;box-shadow:none}
+.kb-button.kb-btn-global-fill{border:0 solid transparent;border-radius:var(--kb-btn-radius,var(--kb-token--semantic--radius--control,3px));background:var(--global-palette-btn-bg,#3633e1);color:var(--global-palette-btn,#fff)}
+.kb-button.kb-btn-global-fill:hover,.kb-button.kb-btn-global-fill:focus{color:var(--global-palette-btn-hover,#fff);background:var(--global-palette-btn-bg-hover,#2f2ffc)}
+.kb-button::before{position:absolute;content:"";top:0;right:0;bottom:0;left:0;z-index:-1;opacity:0;background:transparent}
+.kb-button:hover::before,.kb-button:focus::before{opacity:1}

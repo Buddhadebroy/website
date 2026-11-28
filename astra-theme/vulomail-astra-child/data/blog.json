@@ -1,0 +1,1770 @@
+[
+ {
+  "slug": "smtp-vs-email-api-wordpress",
+  "title": "SMTP vs Email API for WordPress: SendGrid, Mailgun, Postmark, SES and Resend",
+  "description": "SMTP or email API for WordPress? Compare SendGrid, Mailgun, Postmark, Amazon SES and Resend on setup, credentials and common pitfalls to pick the right one.",
+  "keyword": "best email service for WordPress",
+  "keywords": [
+   "best email service for WordPress",
+   "SMTP vs API WordPress",
+   "SendGrid WordPress",
+   "Amazon SES WordPress",
+   "Postmark WordPress",
+   "transactional email WordPress"
+  ],
+  "category": "Comparison",
+  "published": "2026-10-24",
+  "updated": "2026-10-27",
+  "answer": "Use an email API when you can: it sends over HTTPS, avoids blocked SMTP ports and returns clear per-message errors. Use SMTP when your provider only offers it or you want a universal option. For WordPress, Postmark, SendGrid, Mailgun, Amazon SES and Resend all work well. The right pick depends on your volume, region and budget.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Every email delivery plugin ultimately connects to a provider in one of two ways: SMTP or an HTTP API. The choice affects reliability, error visibility and how hard setup is."
+   },
+   {
+    "t": "h2",
+    "x": "SMTP vs email API in plain terms"
+   },
+   {
+    "t": "table",
+    "head": [
+     "",
+     "SMTP",
+     "Email API"
+    ],
+    "rows": [
+     [
+      "How it connects",
+      "Mail protocol over a port such as 587 or 465",
+      "HTTPS request to the provider"
+     ],
+     [
+      "Blocked by hosts?",
+      "Sometimes, especially port 25",
+      "Rarely"
+     ],
+     [
+      "Error detail",
+      "Server reply codes",
+      "Structured per-message responses"
+     ],
+     [
+      "Setup",
+      "Host, port, encryption, username, password",
+      "Usually one API key"
+     ],
+     [
+      "Best for",
+      "Mailboxes, universal compatibility",
+      "Transactional and store email"
+     ]
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Five providers, what each needs"
+   },
+   {
+    "t": "table",
+    "head": [
+     "Provider",
+     "What you enter",
+     "Watch out for"
+    ],
+    "rows": [
+     [
+      "SendGrid",
+      "API key with Mail Send permission",
+      "A successful send returns HTTP 202, not 200"
+     ],
+     [
+      "Mailgun",
+      "API key, sending domain, region",
+      "Choose the US or EU region your domain is in"
+     ],
+     [
+      "Postmark",
+      "Server API token, message stream",
+      "Some failures come back as HTTP 200 with an ErrorCode"
+     ],
+     [
+      "Amazon SES",
+      "AWS region, SMTP username and password",
+      "Use SES SMTP credentials, not AWS access keys, and match the verified region"
+     ],
+     [
+      "Resend",
+      "API key",
+      "A sending-only key is enough"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "x": "VuloMail handles these quirks for you. For Postmark it checks the ErrorCode, for Vonage SMS it reads the per-message status, and for Mailgun it validates the domain before building a request URL. All 22 email APIs and 18 SMTP presets are on the [providers page](/providers)."
+   },
+   {
+    "t": "h2",
+    "x": "How to pick"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Want a focused transactional service:** Postmark or Resend.",
+     "**Already live on AWS and want low per-message cost at scale:** Amazon SES, accepting more setup work.",
+     "**Want a well-known all-rounder:** SendGrid or Mailgun.",
+     "**Only have a mailbox:** use a [Gmail or Microsoft 365 preset](/blog/gmail-smtp-wordpress-app-password) for low volume."
+    ]
+   },
+   {
+    "t": "callout",
+    "title": "Check current pricing yourself",
+    "x": "Plans and free allowances change often, so compare the providers' own pricing pages before you commit. The plugin you pick should not lock you to one."
+   },
+   {
+    "t": "h2",
+    "x": "Set it up in five steps"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "Create the provider account and verify your sending domain.",
+     "Add the provider's SPF and DKIM records ([guide](/blog/spf-dkim-dmarc-wordpress-email-deliverability)).",
+     "Create an API key or SMTP credentials with send-only permission.",
+     "Add it as a connection in your email plugin and send a test.",
+     "Add a second provider as a backup."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Why your plugin choice matters"
+   },
+   {
+    "t": "p",
+    "x": "The provider moves the mail. The plugin decides what you can see and do when it goes wrong. Look for a log, a backup connection, failure alerts, encrypted credentials and support for the provider you already use. Several plugins keep those behind paid plans, while VuloMail includes them free. Compare options in our [best SMTP plugin roundup](/blog/best-wordpress-smtp-plugin)."
+   },
+   {
+    "t": "p",
+    "x": "Whichever you choose, use your own account. VuloMail sends only to providers you connect and never routes mail through a VuloLabs server."
+   },
+   {
+    "t": "h2",
+    "x": "Common mistakes when connecting a provider"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Using AWS access keys for Amazon SES SMTP.** SES SMTP needs its own credentials from the SES console.",
+     "**Picking the wrong region.** Mailgun, SparkPost and SES each tie your account to a region, and a mismatch returns authentication errors.",
+     "**Skipping domain verification.** Providers reject mail from unverified domains.",
+     "**Giving the key too much power.** Create a key limited to sending, not full account access.",
+     "**Assuming an API response of 200 means success.** Some providers return 200 with an error inside, so your plugin must read the body."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "A plugin that normalises these differences saves you from learning each provider's quirks the hard way."
+   },
+   {
+    "t": "h2",
+    "x": "The short version"
+   },
+   {
+    "t": "p",
+    "x": "Pick a provider you trust, authenticate your domain, connect it through the simplest method it offers, and add a second provider as a backup. Then check the log after the first week. If a provider's first-week failure rate looks wrong, you will see it immediately and can switch without touching your site's code."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Is an email API better than SMTP for WordPress?",
+    "a": "Usually. APIs avoid blocked ports and return clearer errors. SMTP remains a good universal option, especially for mailboxes."
+   },
+   {
+    "q": "Which email service is best for WordPress?",
+    "a": "Postmark and Resend are popular for clean transactional delivery, Amazon SES for scale, and SendGrid and Mailgun as all-rounders. Compare current pricing."
+   },
+   {
+    "q": "Do I need a domain to send through these providers?",
+    "a": "Yes. Verify a sending domain you own and add SPF and DKIM records so your mail is authenticated."
+   },
+   {
+    "q": "Can I use more than one provider?",
+    "a": "Yes. Use one as primary and another as a backup so an outage does not stop your email."
+   }
+  ],
+  "related": [
+   "best-wordpress-smtp-plugin",
+   "gmail-smtp-wordpress-app-password",
+   "wordpress-email-failover-backup-smtp"
+  ]
+ },
+ {
+  "slug": "gmail-smtp-wordpress-app-password",
+  "title": "Send WordPress Email With Gmail or Microsoft 365 SMTP (and When Not To)",
+  "description": "Set up Gmail, Google Workspace or Microsoft 365 SMTP in WordPress with an app password, and learn the limits that make an email API a better choice.",
+  "keyword": "Gmail SMTP WordPress",
+  "keywords": [
+   "Gmail SMTP WordPress",
+   "Google Workspace SMTP WordPress",
+   "Microsoft 365 SMTP WordPress",
+   "Gmail app password WordPress",
+   "WordPress Outlook SMTP"
+  ],
+  "category": "Guide",
+  "published": "2026-10-23",
+  "updated": "2026-10-27",
+  "answer": "To send WordPress email through Gmail, Google Workspace or Microsoft 365, turn on two-step verification, create an app password, then enter your address and that password in an SMTP plugin's Gmail or Microsoft preset. It suits low-volume sites. Higher-volume or e-commerce sites are better served by a transactional email API.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Using the mailbox you already pay for is the quickest way to get WordPress email working. It is also the setup that most often breaks, because normal passwords no longer work for SMTP. Here is how to do it right and when to choose something else."
+   },
+   {
+    "t": "h2",
+    "x": "Why your normal password fails"
+   },
+   {
+    "t": "p",
+    "x": "Google, Microsoft, Yahoo and iCloud block ordinary passwords for SMTP when two-step verification is on. They want an **app password**: a separate, revocable password made just for one app. Entering your normal password is the number one cause of \"authentication failed\" errors."
+   },
+   {
+    "t": "h2",
+    "x": "Set up Gmail or Google Workspace"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "Turn on 2-Step Verification for the Google account.",
+     "Create an app password in your Google account's security settings and copy it.",
+     "In VuloMail, add a connection and pick the **Gmail** or **Google Workspace** preset.",
+     "Enter the full address and paste the app password.",
+     "Set the From address to the same mailbox, then send a test."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Set up Microsoft 365 or Outlook.com"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "If multi-factor authentication is on, create an app password. For Outlook.com, use Advanced security options → App passwords.",
+     "For Microsoft 365, ask your admin to allow app passwords and SMTP AUTH. Without that, sign-in fails.",
+     "Pick the **Microsoft 365** or **Outlook.com** preset in VuloMail and enter your address and password.",
+     "Send a test email."
+    ]
+   },
+   {
+    "t": "callout",
+    "title": "Other mailbox presets",
+    "x": "VuloMail also has one-click presets for Zoho Mail, Yahoo, iCloud, AOL, Yandex, Fastmail, Titan, Purelymail, Migadu, Namecheap Private Email and Rackspace. Most need an app password too."
+   },
+   {
+    "t": "h2",
+    "x": "The limits you should know"
+   },
+   {
+    "t": "table",
+    "head": [
+     "Limit",
+     "What it means for your site"
+    ],
+    "rows": [
+     [
+      "Daily sending caps",
+      "Personal Gmail allows roughly 500 messages a day and Workspace roughly 2,000. Check Google's current limits"
+     ],
+     [
+      "From address locked to the mailbox",
+      "Sending as another address often gets rewritten or rejected"
+     ],
+     [
+      "No transactional features",
+      "No bounce webhooks or per-message delivery dashboards"
+     ],
+     [
+      "Shared reputation",
+      "Your mailbox mixes human and automated mail"
+     ],
+     [
+      "Credential risk",
+      "The app password sits on your site, so revoke it if the site is ever compromised"
+     ]
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "When to use an email API instead"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "You run WooCommerce or send more than a few hundred messages a day.",
+     "You want delivery and bounce reporting per message.",
+     "You want to keep sending separate from your team's inbox."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Services such as Postmark, SendGrid, Amazon SES or Resend are built for this. Our [SMTP vs email API guide](/blog/smtp-vs-email-api-wordpress) explains the trade-offs, and the [providers page](/providers) shows what each one needs."
+   },
+   {
+    "t": "h2",
+    "x": "Make Gmail a backup, not the only route"
+   },
+   {
+    "t": "p",
+    "x": "A mailbox preset is a handy second connection. Set an API provider as primary and Gmail as the backup, and an outage on either side no longer stops your site. See the [failover guide](/blog/wordpress-email-failover-backup-smtp) for the setup."
+   },
+   {
+    "t": "p",
+    "x": "VuloMail stores your app password encrypted with libsodium, masks it after saving and sends it only to the provider it belongs to. If a connection suddenly reads \"Incomplete\" after a site migration, your wp-config security keys changed, so re-enter the password."
+   },
+   {
+    "t": "h2",
+    "x": "Troubleshooting checklist"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Authentication failed:** you used a normal password. Create an app password.",
+     "**App password option missing:** 2-Step Verification is off, or an admin has disabled app passwords.",
+     "**Microsoft 365 sign-in refused:** SMTP AUTH is disabled for the mailbox. Ask your admin to enable it.",
+     "**Emails sent but in spam:** add SPF, DKIM and DMARC for your domain. See our [deliverability guide](/blog/spf-dkim-dmarc-wordpress-email-deliverability).",
+     "**Worked, then stopped:** the app password was revoked, or the account hit its daily cap."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Yandex app passwords can take two to three hours to become active, so wait before assuming a new one is wrong."
+   },
+   {
+    "t": "h2",
+    "x": "Your next step"
+   },
+   {
+    "t": "p",
+    "x": "If you are starting from scratch, set up the mailbox preset today to get email flowing, then plan a move to a transactional provider before traffic grows. Because VuloMail lets you hold several connections, you can add the new provider as primary without removing the mailbox, and keep it as your safety net."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Can I use Gmail SMTP with WordPress?",
+    "a": "Yes. Turn on 2-Step Verification, create an app password and use it in a Gmail preset or SMTP settings. It suits low-volume sites."
+   },
+   {
+    "q": "Why does Gmail SMTP say authentication failed?",
+    "a": "You probably used your normal password. Gmail needs an app password when 2-Step Verification is on."
+   },
+   {
+    "q": "Is Gmail SMTP good enough for WooCommerce?",
+    "a": "For a very small store, perhaps. Daily caps and no delivery reporting make a transactional email API the safer choice."
+   },
+   {
+    "q": "Does VuloMail support Google sign-in?",
+    "a": "No. Its Gmail preset uses an app password. Some other plugins offer Google sign-in."
+   }
+  ],
+  "related": [
+   "smtp-vs-email-api-wordpress",
+   "wordpress-not-sending-emails",
+   "wp-mail-smtp-alternatives-free"
+  ]
+ },
+ {
+  "slug": "wordpress-email-log-and-resend",
+  "title": "WordPress Email Log: How to Track, Search and Resend Every Email",
+  "description": "Track every WordPress email with a delivery log. Learn what to record, how to search and resend failed messages, and how to keep the log private.",
+  "keyword": "WordPress email log",
+  "keywords": [
+   "WordPress email log",
+   "WordPress email logging plugin",
+   "resend WordPress email",
+   "track WordPress emails",
+   "email delivery log"
+  ],
+  "category": "Guide",
+  "published": "2026-10-22",
+  "updated": "2026-10-27",
+  "answer": "A WordPress email log records every message your site sends, with its recipient, subject, status, provider and any error. Use it to confirm delivery, debug failures and resend messages. Choose a logger that stores bodies only if you opt in, masks recipients and prunes old entries.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "\"Did the customer get that email?\" is the most common support question a WordPress site owner faces, and without a log the honest answer is \"no idea.\" An email log turns that guess into a lookup."
+   },
+   {
+    "t": "h2",
+    "x": "What a good email log records"
+   },
+   {
+    "t": "table",
+    "head": [
+     "Field",
+     "Why it matters"
+    ],
+    "rows": [
+     [
+      "Date and time",
+      "Match a send to a customer's complaint"
+     ],
+     [
+      "Recipient and subject",
+      "Find a message in seconds"
+     ],
+     [
+      "Status (sent or failed)",
+      "See what needs attention"
+     ],
+     [
+      "Provider and connection used",
+      "Know whether the primary or the backup delivered it"
+     ],
+     [
+      "Error text",
+      "Debug rejections and bad credentials"
+     ],
+     [
+      "Provider message ID",
+      "Look up inbox placement in your provider's dashboard"
+     ]
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "What \"Sent\" does and does not mean"
+   },
+   {
+    "t": "p",
+    "x": "This is the part most people get wrong. A \"Sent\" status means your provider accepted the message. It does not prove the inbox received it. Delivery, bounces and spam placement are reported in your provider's dashboard, and you find the message there using the Provider ID stored in the log entry."
+   },
+   {
+    "t": "callout",
+    "title": "Rule of thumb",
+    "x": "Log tells you WordPress and the provider did their part. The provider dashboard tells you what the receiving mailbox did."
+   },
+   {
+    "t": "h2",
+    "x": "Search, filter and resend"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "Open the log and filter by status to see failures first.",
+     "Search by recipient or subject to find a specific message.",
+     "Open the entry to read the error, such as an HTTP 401 from SendGrid, which points to a bad API key.",
+     "Fix the cause, then resend from the log."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Resending requires the message content to have been stored, which is why VuloMail makes content storage an opt-in setting. Turn it on only if you need resend, since stored bodies can contain personal data."
+   },
+   {
+    "t": "h2",
+    "x": "Keep the log private"
+   },
+   {
+    "t": "p",
+    "x": "An email log is a record of your customers' messages, which makes it sensitive. Look for these controls:"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Message bodies off by default,** stored only if you choose.",
+     "**Recipient masking,** so addresses are partly hidden in the admin.",
+     "**Automatic pruning** of old entries so data does not pile up.",
+     "**No outside copy.** The log should stay in your own database."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "VuloMail's log stays on your site, never leaves it, and has no tracking. See the [security page](/security) for the encryption and privacy details. Check your own privacy obligations, since what you may keep depends on your jurisdiction."
+   },
+   {
+    "t": "h2",
+    "x": "One log for email and SMS"
+   },
+   {
+    "t": "p",
+    "x": "VuloMail keeps email and SMS in one log, with one row per message even when failover was used. A row shows the primary attempt, the backup and the last resort together, rather than scattering them across several lines."
+   },
+   {
+    "t": "h2",
+    "x": "Free versus paid logs"
+   },
+   {
+    "t": "p",
+    "x": "Many popular plugins gate the log. WP Mail SMTP's log and resend are Pro features from $99 a year at full price, and the full log is paid in Easy WP SMTP and GoSMTP too. FluentSMTP, Post SMTP, SureMail and VuloMail include a log free. The [full comparison](/blog/best-wordpress-smtp-plugin) has the details."
+   },
+   {
+    "t": "p",
+    "x": "Pair your log with [failure alerts](/blog/wordpress-email-failover-backup-smtp) so you learn about a problem from the dashboard, not from a customer."
+   },
+   {
+    "t": "h2",
+    "x": "When a log saves you hours"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**A customer says they never got a receipt.** Search their address and see the send, the status and the provider ID.",
+     "**Password resets stop working.** Filter by failed and read the error. An expired key shows up immediately.",
+     "**A form plugin goes quiet.** If nothing from it appears in the log, it bypasses wp_mail() and needs its own mail settings.",
+     "**You switch providers.** Compare the failure rate before and after the move."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Set it up in two minutes"
+   },
+   {
+    "t": "p",
+    "x": "Install the plugin, add a connection, send a test and open the log to confirm the entry appears. Decide whether you need resend. If you do, switch on content storage and set a retention period so old messages are pruned automatically. If you do not, leave bodies off and keep only the metadata, which is enough to answer most delivery questions."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "How do I see emails sent from WordPress?",
+    "a": "Install an email plugin with a delivery log. It records every message that passes through wp_mail(), with status, recipient and errors."
+   },
+   {
+    "q": "Can I resend a failed WordPress email?",
+    "a": "Yes, if the plugin stored the message content. In VuloMail, turn on message-content storage, then resend from the log entry."
+   },
+   {
+    "q": "Does the email log store message bodies?",
+    "a": "Not in VuloMail unless you opt in. That keeps customer content out of your database by default."
+   },
+   {
+    "q": "Does 'Sent' mean the email was delivered?",
+    "a": "No. It means the provider accepted it. Check the provider's dashboard with the Provider ID for delivery status."
+   }
+  ],
+  "related": [
+   "wordpress-not-sending-emails",
+   "wp-mail-smtp-alternatives-free",
+   "wordpress-email-failover-backup-smtp"
+  ]
+ },
+ {
+  "slug": "woocommerce-emails-not-sending-or-going-to-spam",
+  "title": "WooCommerce Emails Not Sending or Going to Spam? A Store Owner's Fix List",
+  "description": "WooCommerce order emails not sending or landing in spam? Fix missing receipts, failed-order alerts and password resets with SMTP, DNS records and a delivery log.",
+  "keyword": "WooCommerce emails not sending",
+  "keywords": [
+   "WooCommerce emails not sending",
+   "WooCommerce order emails spam",
+   "WooCommerce SMTP",
+   "WooCommerce new order email not received",
+   "WooCommerce email deliverability"
+  ],
+  "category": "Troubleshooting",
+  "published": "2026-10-21",
+  "updated": "2026-10-27",
+  "answer": "WooCommerce emails fail for the same reason other WordPress emails do: they leave through unauthenticated PHP mail. Connect an SMTP or email-API provider, send from an address on your own domain, publish SPF, DKIM and DMARC records, and keep a delivery log so a missing order receipt is never a mystery.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "A missing order confirmation costs real money. Customers email support, open disputes or assume the store is a scam. WooCommerce sends all its emails through WordPress's standard `wp_mail()` function, so the fix lives at the WordPress level, not in WooCommerce settings."
+   },
+   {
+    "t": "h2",
+    "x": "Which WooCommerce emails are at risk?"
+   },
+   {
+    "t": "table",
+    "head": [
+     "Email",
+     "Sent to",
+     "Cost of losing it"
+    ],
+    "rows": [
+     [
+      "New order",
+      "You",
+      "You miss a sale to ship"
+     ],
+     [
+      "Processing and completed order",
+      "Customer",
+      "Support tickets and chargebacks"
+     ],
+     [
+      "Failed order",
+      "You",
+      "You miss a recoverable payment"
+     ],
+     [
+      "Refund and cancellation notices",
+      "Customer",
+      "Confusion and disputes"
+     ],
+     [
+      "Password reset and new account",
+      "Customer",
+      "Locked-out buyers"
+     ]
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Why they go missing"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Host mail is unauthenticated.** Receivers distrust it, so order emails land in spam.",
+     "**The From address doesn't match your domain.** WooCommerce defaults to an address based on your site. Set one on your domain and verify it with your provider.",
+     "**Provider limits.** A flash sale can exceed a free plan's daily cap.",
+     "**A plugin bypassing `wp_mail()`.** Some marketing plugins send directly, so your SMTP plugin never touches those messages.",
+     "**Spam-folder routing for the admin address.** Your own new-order email lands in spam because it is sent from and to the same domain."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "The fix list, in order"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "Install an email delivery plugin and connect a transactional provider such as Postmark, SendGrid, Amazon SES or Resend. Our [providers page](/providers) lists what each needs.",
+     "Set WooCommerce's From name and address to a real mailbox on your domain.",
+     "Add SPF, DKIM and DMARC records ([how-to here](/blog/spf-dkim-dmarc-wordpress-email-deliverability)).",
+     "Place a test order and confirm the customer and admin emails both arrive in the inbox.",
+     "Add a backup connection on a second provider.",
+     "Turn on failure alerts so a broken connection reaches you by text, not by a customer complaint."
+    ]
+   },
+   {
+    "t": "callout",
+    "title": "Prove an email was sent",
+    "x": "When a customer says they never got their receipt, the delivery log settles it. It shows when WooCommerce sent the message, which provider accepted it and the provider's message ID so you can check inbox placement there."
+   },
+   {
+    "t": "h2",
+    "x": "Add SMS so a missed email does not mean a missed update"
+   },
+   {
+    "t": "p",
+    "x": "Even healthy email gets filtered. Texting the customer when an order is confirmed, completed or refunded gives them a second channel. VuloMail has six customer alerts and eight store alerts for WooCommerce; see our [WooCommerce SMS guide](/blog/woocommerce-sms-notifications)."
+   },
+   {
+    "t": "h2",
+    "x": "Choose a plugin that fits a store"
+   },
+   {
+    "t": "p",
+    "x": "For a store, three features matter more than anything else: a log, a backup connection and failure alerts. Several popular plugins reserve those for paid plans, which adds a yearly cost per store. VuloMail includes all three for free, along with the WooCommerce SMS alerts, with no Pro edition."
+   },
+   {
+    "t": "p",
+    "x": "One honest limit: VuloMail does not track opens or clicks, so if marketing analytics matter, pair it with a dedicated email service. Use our [comparison page](/compare) to see where each plugin stands."
+   },
+   {
+    "t": "h2",
+    "x": "A quick weekly habit"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Skim the log for failed sends.",
+     "Re-run the DNS check after any hosting or domain change.",
+     "Send a test order after plugin updates."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Test your store the way a customer would"
+   },
+   {
+    "t": "p",
+    "x": "Open a private browser window and place a real low-value order, or use a free product. Check three inboxes: the customer's, your admin address and one on a different provider such as Gmail. If any lands in spam or never arrives, open the delivery log for that message before changing anything. The log tells you whether the problem is at WordPress, the provider or the receiving mailbox, which saves hours of guessing."
+   },
+   {
+    "t": "h2",
+    "x": "Your next step"
+   },
+   {
+    "t": "p",
+    "x": "Do the test order today, before your next campaign or sale. A store that discovers its email problem during a promotion loses both the sales and the trust. A store that finds it on a quiet Tuesday loses nothing. Start with the [setup guide](/get-started), connect a provider and run the five-minute check."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Why are my WooCommerce order emails not sending?",
+    "a": "Usually the site is sending through unauthenticated PHP mail, which hosts block or inboxes filter. Connect an SMTP or email-API provider and add SPF, DKIM and DMARC records."
+   },
+   {
+    "q": "Why do WooCommerce emails go to spam?",
+    "a": "The sending domain isn't authenticated, or the From address doesn't match the sending domain. Fix both."
+   },
+   {
+    "q": "Does an SMTP plugin work with WooCommerce?",
+    "a": "Yes. WooCommerce sends through wp_mail(), so any plugin that handles wp_mail() covers its emails."
+   },
+   {
+    "q": "Can I get a text when a WooCommerce email fails?",
+    "a": "Yes. VuloMail can text you when an email fails to send, at most once every 15 minutes."
+   }
+  ],
+  "related": [
+   "woocommerce-sms-notifications",
+   "spf-dkim-dmarc-wordpress-email-deliverability",
+   "wordpress-email-log-and-resend"
+  ]
+ },
+ {
+  "slug": "woocommerce-sms-notifications",
+  "title": "WooCommerce SMS Notifications: 14 Order and Stock Alerts to Set Up",
+  "description": "Set up WooCommerce SMS notifications for new orders, failed payments, low stock and customer order updates using Twilio, Vonage, Plivo or Clickatell.",
+  "keyword": "WooCommerce SMS notifications",
+  "keywords": [
+   "WooCommerce SMS notifications",
+   "WooCommerce order SMS",
+   "WordPress SMS alerts",
+   "WooCommerce low stock alert",
+   "WooCommerce customer text updates"
+  ],
+  "category": "SMS & WooCommerce",
+  "published": "2026-10-20",
+  "updated": "2026-10-27",
+  "answer": "WooCommerce SMS notifications are text messages sent to you or your customers when store events happen, such as a new order, failed payment, low stock or shipped order. Connect an SMS gateway like Twilio, Vonage, Plivo or Clickatell through a plugin, then enable the alerts and edit their templates.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Email is easy to miss. A text about a failed payment or a sold-out bestseller is read within minutes. That is why store owners add SMS on top of email, not instead of it."
+   },
+   {
+    "t": "h2",
+    "x": "Which WooCommerce events deserve a text?"
+   },
+   {
+    "t": "p",
+    "x": "VuloMail ships 14 WooCommerce alerts, split between messages to you and messages to your customers, plus 4 site alerts such as a failed-email warning."
+   },
+   {
+    "t": "table",
+    "head": [
+     "Group",
+     "Sent to",
+     "Alerts"
+    ],
+    "rows": [
+     [
+      "Store (8)",
+      "Your admin phone",
+      "New order, payment failed, cancelled, refunded, low stock, out of stock, backorder, new review"
+     ],
+     [
+      "Customer (6)",
+      "The billing phone on the order",
+      "Order confirmed, completed, refunded, cancelled, any other status change, note added"
+     ]
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Start with these five"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**New order** so you know the store is working.",
+     "**Order payment failed** to recover a sale quickly.",
+     "**Product out of stock** so you can restock or pause ads.",
+     "**Customer order confirmed** to reassure buyers.",
+     "**Customer note added** to send tracking numbers."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "How to set it up"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "Create an account with an SMS gateway and note your credentials and sender. Twilio needs an Account SID, auth token and sender, while Plivo and Vonage use their own key pairs.",
+     "Install VuloMail and add the SMS connection under Settings → SMS.",
+     "Set your admin phone number in international format, such as `+14155550123`.",
+     "Enable the alerts you want and open each template to edit it.",
+     "Place a test order and confirm both texts arrive."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Customers' numbers come from the billing phone on each order. If shoppers type numbers without a country code, set a default country code in the SMS settings so messages are not rejected."
+   },
+   {
+    "t": "h2",
+    "x": "Write short templates with placeholders"
+   },
+   {
+    "t": "p",
+    "x": "Templates use placeholders that fill in real data. A new-order alert looks like this:"
+   },
+   {
+    "t": "p",
+    "x": "`New order #{order_number} from {customer_name}: {order_total}.`"
+   },
+   {
+    "t": "p",
+    "x": "Keep texts tight. A message over 160 plain characters is billed as two or more, and emoji or non-Latin scripts drop that limit to 70. The live editor on our [SMS page](/sms) shows the segment count as you type, so you can see the cost before you send."
+   },
+   {
+    "t": "callout",
+    "title": "Consent is your responsibility",
+    "x": "VuloMail sends what your site asks it to. You need your recipients' consent and must follow the rules on text messages in your country. In the US, carriers also expect business senders to register their numbers, so check your gateway's requirements."
+   },
+   {
+    "t": "h2",
+    "x": "How much does it cost?"
+   },
+   {
+    "t": "p",
+    "x": "VuloMail is free and has no Pro edition, so you pay only your SMS gateway, per message. Pricing varies by country and provider, so check your gateway's current rates. Keeping templates short and enabling only the alerts you need is the simplest way to control spend."
+   },
+   {
+    "t": "h2",
+    "x": "What if you need more than alerts?"
+   },
+   {
+    "t": "p",
+    "x": "VuloMail focuses on delivery and alerts across four gateways. If SMS is your main channel and you need OTP login, scheduled campaigns, subscriber forms or a two-way inbox, a dedicated SMS suite such as WSMS goes much further. See our [honest comparison](/compare/wsms)."
+   },
+   {
+    "t": "p",
+    "x": "Pair texts with reliable email. Our guide to [WooCommerce emails going to spam](/blog/woocommerce-emails-not-sending-or-going-to-spam) covers the other half, and our [features page](/features) lists everything else the plugin does."
+   },
+   {
+    "t": "h2",
+    "x": "Mistakes that waste money or annoy customers"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Enabling every alert.** Texts about every comment and login add noise. Start with the five above.",
+     "**Long templates.** Each extra segment is billed separately.",
+     "**No default country code.** Local-format numbers get rejected as invalid.",
+     "**Texting without consent.** Add a clear opt-in at checkout, and honour opt-outs.",
+     "**Testing on live customers.** Place a test order to your own phone first."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Treat SMS as the urgent channel and email as the record. Reserve texts for things people act on."
+   },
+   {
+    "t": "h2",
+    "x": "Your next step"
+   },
+   {
+    "t": "p",
+    "x": "Pick one gateway, enable the new-order and payment-failed alerts, and place a test order. Once you trust the flow, add stock alerts and customer updates one at a time. Adding alerts gradually shows you what each one costs and which ones your customers actually appreciate. The full list of alerts is on the [SMS page](/sms)."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Does WooCommerce have built-in SMS notifications?",
+    "a": "No. WooCommerce sends email by default. You need a plugin that connects an SMS gateway, such as VuloMail."
+   },
+   {
+    "q": "Which SMS gateways does VuloMail support?",
+    "a": "Twilio, Vonage, Plivo and Clickatell. Email goes through any SMTP server, 22 email APIs or 18 presets."
+   },
+   {
+    "q": "Can customers get order status texts?",
+    "a": "Yes. Six customer alerts cover processing, completed, refunded, cancelled, other status changes and order notes."
+   },
+   {
+    "q": "How many characters can an alert have?",
+    "a": "Up to 1,530 characters. Anything over 160 plain characters, or 70 with emoji, is billed as multiple messages."
+   }
+  ],
+  "related": [
+   "woocommerce-emails-not-sending-or-going-to-spam",
+   "wordpress-email-failover-backup-smtp",
+   "wordpress-not-sending-emails"
+  ]
+ },
+ {
+  "slug": "spf-dkim-dmarc-wordpress-email-deliverability",
+  "title": "SPF, DKIM and DMARC for WordPress: Fix Emails Going to Spam",
+  "description": "WordPress emails landing in spam? Learn what SPF, DKIM and DMARC records do, see copy-ready examples, and check them for your sending domain in minutes.",
+  "keyword": "WordPress emails going to spam",
+  "keywords": [
+   "WordPress emails going to spam",
+   "SPF DKIM DMARC WordPress",
+   "WordPress email deliverability",
+   "fix WordPress spam emails",
+   "DMARC record WordPress"
+  ],
+  "category": "Troubleshooting",
+  "published": "2026-10-18",
+  "updated": "2026-10-27",
+  "answer": "WordPress emails go to spam when your domain can't prove it authorised the sending server. SPF lists allowed servers, DKIM adds a cryptographic signature, and DMARC tells inboxes what to do when either fails. Publish all three as DNS records for your sending domain, then send from an address on that domain.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "If your contact form notifications and order emails keep landing in spam, the content is rarely the problem. Mailbox providers decide mostly on one question: can this domain prove it sent this message? Three DNS records answer it."
+   },
+   {
+    "t": "h2",
+    "x": "What SPF, DKIM and DMARC actually do"
+   },
+   {
+    "t": "table",
+    "head": [
+     "Record",
+     "What it does",
+     "Where it lives"
+    ],
+    "rows": [
+     [
+      "SPF",
+      "Lists the servers allowed to send for your domain",
+      "A TXT record on your domain"
+     ],
+     [
+      "DKIM",
+      "Signs each message so receivers can verify it was not altered",
+      "A TXT or CNAME record your provider gives you"
+     ],
+     [
+      "DMARC",
+      "Tells receivers what to do if SPF or DKIM fails, and sends you reports",
+      "A TXT record at _dmarc.yourdomain"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Since 2024, Google and Yahoo have required authentication from bulk senders, and in practice every site now benefits from having all three in place."
+   },
+   {
+    "t": "h2",
+    "x": "Copy-ready examples"
+   },
+   {
+    "t": "code",
+    "x": "example.com.   TXT   \"v=spf1 include:_spf.example-provider.com ~all\"\n_dmarc.example.com.   TXT   \"v=DMARC1; p=none; rua=mailto:reports@example.com\"",
+    "title": "DNS records (replace with your provider's values)"
+   },
+   {
+    "t": "p",
+    "x": "Your email provider shows the exact SPF include and DKIM records to add. Never copy another site's values."
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**One SPF record only.** Two SPF records break SPF. Combine all senders into one.",
+     "**Mind the lookup limit.** SPF allows 10 DNS lookups. Too many `include:` entries fail silently.",
+     "**Start DMARC at `p=none`.** Read the reports first, then move to `quarantine` and `reject`."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "The five-step fix"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "Pick a sending domain you own and use it as the From address, not a free Gmail or Yahoo address.",
+     "Add your provider's SPF and DKIM records at your DNS host.",
+     "Add a DMARC record starting at `p=none` with a reporting address.",
+     "Run a DNS check from your WordPress dashboard.",
+     "Send a test and open the message headers to confirm SPF, DKIM and DMARC all show **pass**."
+    ]
+   },
+   {
+    "t": "callout",
+    "title": "Check from your own site",
+    "x": "VuloMail's Tools → Diagnostics page includes a sender-domain DNS check for SPF and DMARC that runs from your own server, so your domain is not sent to an outside service. DKIM lives in your provider's dashboard, so confirm it there."
+   },
+   {
+    "t": "h2",
+    "x": "Other reasons emails reach spam"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**A From address that doesn't match your sending domain.** Mismatch fails DMARC alignment.",
+     "**A shared or low-reputation IP.** Cheap hosts mail from shared IPs. A dedicated provider connection avoids that.",
+     "**Sending through PHP mail.** Unauthenticated messages are suspect by default.",
+     "**Spammy content.** All-image emails, URL shorteners and misleading subjects all hurt."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Moving from PHP mail to an authenticated provider is usually the single biggest improvement. See our guide to [WordPress not sending emails](/blog/wordpress-not-sending-emails) for the full list."
+   },
+   {
+    "t": "h2",
+    "x": "Keep watching after setup"
+   },
+   {
+    "t": "p",
+    "x": "Deliverability drifts. DNS records get edited, providers change, and a plugin update can change the sender. Review your DMARC reports, re-run diagnostics after any change, and keep a [backup connection](/blog/wordpress-email-failover-backup-smtp) so a reputation problem on one provider does not stop all mail."
+   },
+   {
+    "t": "p",
+    "x": "Remember that \"Sent\" in your log means a provider accepted the message. Inbox placement is shown in your provider's own dashboard, where you can look up the message by its provider ID."
+   },
+   {
+    "t": "h2",
+    "x": "Read a message header to confirm it works"
+   },
+   {
+    "t": "p",
+    "x": "After you publish your records, send a test to a Gmail address, open the message and choose **Show original**. Gmail displays three lines, one each for SPF, DKIM and DMARC. You want to see **PASS** on all three."
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**SPF fail or softfail:** the sending server is missing from your SPF record.",
+     "**DKIM none:** the DKIM record was not published, or your provider is not signing yet.",
+     "**DMARC fail:** SPF or DKIM passed for a different domain than your From address. Align them."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Fix the first failing line, wait for DNS to update, and test again. Change one thing at a time so you know which edit worked."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Why do my WordPress emails go to spam?",
+    "a": "Usually because the domain lacks SPF, DKIM or DMARC records, the From address doesn't match the sending domain, or the site sends through unauthenticated PHP mail."
+   },
+   {
+    "q": "Do I need all three of SPF, DKIM and DMARC?",
+    "a": "Yes. They work together, and major inboxes expect all three, especially for higher-volume senders."
+   },
+   {
+    "q": "Can a WordPress plugin fix my DNS records?",
+    "a": "A plugin can check them and tell you what is missing. You still add the records at your DNS host."
+   },
+   {
+    "q": "How long do DNS changes take?",
+    "a": "Often minutes, but allow up to 48 hours for changes to propagate everywhere."
+   }
+  ],
+  "related": [
+   "wordpress-not-sending-emails",
+   "woocommerce-emails-not-sending-or-going-to-spam",
+   "smtp-vs-email-api-wordpress"
+  ]
+ },
+ {
+  "slug": "wordpress-email-failover-backup-smtp",
+  "title": "WordPress Email Failover: How to Set Up a Backup SMTP Connection",
+  "description": "Set up WordPress email failover with a backup SMTP or API connection so password resets and order emails still send when your main provider goes down.",
+  "keyword": "WordPress email failover",
+  "keywords": [
+   "WordPress email failover",
+   "backup SMTP WordPress",
+   "SMTP fallback WordPress",
+   "WordPress email redundancy",
+   "email provider outage WordPress"
+  ],
+  "category": "Guide",
+  "published": "2026-10-17",
+  "updated": "2026-10-27",
+  "answer": "WordPress email failover means configuring a second sending connection that takes over automatically when your primary provider rejects or can't send a message. Choose a backup on a different provider, set it as the fallback in your SMTP plugin, then test by deliberately breaking the primary key.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Your site depends on email more than it seems to. Password resets, order confirmations, booking notices and admin alerts all flow through one provider account. If that account is suspended, rate-limited or simply having a bad afternoon, those messages stop, and nobody tells you."
+   },
+   {
+    "t": "h2",
+    "x": "What is email failover?"
+   },
+   {
+    "t": "p",
+    "x": "Failover is a standby sending route. Your plugin tries the primary connection first. If the primary reports a failure, it tries the backup. A third tier hands the message to WordPress's own mailer as a last resort. The visitor never notices, and you still see what happened."
+   },
+   {
+    "t": "table",
+    "head": [
+     "Tier",
+     "What it is",
+     "When it runs"
+    ],
+    "rows": [
+     [
+      "Primary",
+      "Your main provider, such as SendGrid or Postmark",
+      "Every message"
+     ],
+     [
+      "Backup",
+      "A second provider or SMTP account",
+      "When the primary reports a failure"
+     ],
+     [
+      "Last resort",
+      "WordPress's default mailer",
+      "When both fail, if enabled"
+     ]
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Why a single provider is a risk"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Outages.** Even the biggest providers have incidents.",
+     "**Account holds.** A billing lapse or a spam flag can pause sending without warning.",
+     "**Expired credentials.** API keys get rotated or revoked.",
+     "**Limits.** Free and entry plans cap daily volume, and sales spikes hit those caps."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "A backup does not need to be expensive. A free-tier account on a second provider is enough to keep password resets and order emails moving."
+   },
+   {
+    "t": "h2",
+    "x": "How to choose a backup provider"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "**Use a different company from your primary.** Two accounts at one vendor share the same outage.",
+     "**Match the sending domain.** Add the backup's SPF and DKIM records so mail from your domain still passes authentication.",
+     "**Prefer simple setup.** A Gmail or Microsoft 365 SMTP preset works, though daily limits are lower than a transactional provider.",
+     "**Verify the From address** on both accounts, because a rejected sender looks like a failed send."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Set up failover in VuloMail"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "Install and activate [VuloMail](/get-started). Nothing changes until you add a connection.",
+     "Add your primary connection: any SMTP server, one of 22 email APIs or a preset.",
+     "Add a second connection on a different provider and mark it as the backup.",
+     "Leave \"Fall back to the WordPress default mailer\" on unless your host's mailer is unreliable or your provider must be the only sender for your domain.",
+     "Send a test email."
+    ]
+   },
+   {
+    "t": "callout",
+    "title": "Test it properly",
+    "x": "Temporarily edit the primary's API key to a wrong value, send a test, and confirm the log shows the primary failing and the backup delivering. Then restore the key. A failover you have never triggered is a guess."
+   },
+   {
+    "t": "h2",
+    "x": "Watch the duplicate-email edge case"
+   },
+   {
+    "t": "p",
+    "x": "The backup runs only after the primary reports a failure, so customers normally get one copy. In the rare case where a provider accepts a message but still reports an error, the backup would send it again. That trade-off is why it is better to risk a duplicate than to lose a password reset."
+   },
+   {
+    "t": "h2",
+    "x": "Get alerted when failover happens"
+   },
+   {
+    "t": "p",
+    "x": "A backup that quietly saves you can also hide a broken primary for weeks. VuloMail records every attempt on a single log row, so you can see which connection delivered, and it can text you when an email fails to send. Alerts are limited to one text every 15 minutes, so an outage does not flood your phone."
+   },
+   {
+    "t": "p",
+    "x": "Read more about [email delivery and failover](/email), or see how failover compares across plugins in our [plugin comparison](/blog/best-wordpress-smtp-plugin)."
+   },
+   {
+    "t": "h2",
+    "x": "A realistic failover example"
+   },
+   {
+    "t": "p",
+    "x": "Imagine a store with Postmark as primary and a Google Workspace SMTP preset as backup. One morning Postmark rejects every request because a billing card expired. Without failover, order receipts stop and nobody notices until customers complain. With failover, each message fails once at Postmark, succeeds through the backup, and the log shows exactly when the primary started failing. You fix the card the same day instead of finding out next week."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "What is a backup SMTP connection?",
+    "a": "A second sending account that your plugin switches to automatically when the primary connection fails to deliver a message."
+   },
+   {
+    "q": "Will failover send duplicate emails?",
+    "a": "Rarely. The backup is tried only after the primary reports a failure. A duplicate is possible only if a provider accepts a message but still returns an error."
+   },
+   {
+    "q": "Do I need a paid provider for the backup?",
+    "a": "No. A free-tier account with a second provider is enough for transactional mail such as password resets and order receipts."
+   },
+   {
+    "q": "Is failover free in VuloMail?",
+    "a": "Yes. The backup connection, the last-resort fallback and the delivery log are all in the free plugin, with no Pro edition."
+   }
+  ],
+  "related": [
+   "wordpress-not-sending-emails",
+   "wordpress-email-log-and-resend",
+   "best-wordpress-smtp-plugin"
+  ]
+ },
+ {
+  "slug": "wp-mail-smtp-alternatives-free",
+  "title": "WP Mail SMTP Alternatives: Free Plugins With Logs, Backup and Alerts",
+  "description": "Looking for a WP Mail SMTP alternative? See free plugins that include an email log, backup connection and alerts, plus what you give up and how to switch safely.",
+  "keyword": "WP Mail SMTP alternatives",
+  "keywords": [
+   "WP Mail SMTP alternatives",
+   "free WP Mail SMTP alternative",
+   "WP Mail SMTP Pro cost",
+   "WP Mail SMTP vs FluentSMTP",
+   "switch SMTP plugin WordPress"
+  ],
+  "category": "Comparison",
+  "published": "2026-10-16",
+  "updated": "2026-10-27",
+  "answer": "Good free WP Mail SMTP alternatives are FluentSMTP, Post SMTP, SureMail and VuloMail. Each includes an email log and a backup connection, which WP Mail SMTP reserves for Pro from $99 a year. You give up WP Mail SMTP's size and, in most cases, its open and click tracking.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "WP Mail SMTP is the most-installed SMTP plugin on WordPress.org, and for good reason. But many site owners start looking elsewhere the first time they want to see which emails failed and discover the log is a Pro feature."
+   },
+   {
+    "t": "h2",
+    "x": "Why people leave WP Mail SMTP"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Cost.** Pro is $99 a year for one site at full price, and Elite is $149. Developer ($249) covers 20 sites and Agency ($449) covers 100.",
+     "**Locked basics.** The email log, resend, backup connection, failure alerts, Amazon SES and Microsoft 365 sending are paid features.",
+     "**Outside service in the loop.** Its domain check sends your From address and domain to its own service."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "None of that makes it a bad plugin. It makes it a freemium one, and that matters if you manage several sites."
+   },
+   {
+    "t": "h2",
+    "x": "The best free alternatives"
+   },
+   {
+    "t": "table",
+    "head": [
+     "Plugin",
+     "Free log",
+     "Free backup",
+     "Free alerts",
+     "SMS",
+     "Best for"
+    ],
+    "rows": [
+     [
+      "FluentSMTP",
+      "Yes",
+      "Yes",
+      "Yes",
+      "No",
+      "Email only, all free"
+     ],
+     [
+      "Post SMTP",
+      "Yes",
+      "Yes",
+      "Yes (email, Slack)",
+      "Paid (Twilio)",
+      "A generous free tier"
+     ],
+     [
+      "SureMail",
+      "Yes",
+      "Yes",
+      "Not documented",
+      "No",
+      "Retries and analytics"
+     ],
+     [
+      "VuloMail",
+      "Yes",
+      "Yes",
+      "Yes (by SMS)",
+      "Yes (4 gateways)",
+      "WooCommerce text alerts"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Compare any of them directly: [VuloMail vs WP Mail SMTP](/compare/wp-mail-smtp), [VuloMail vs FluentSMTP](/compare/fluentsmtp) and [VuloMail vs Post SMTP](/compare/post-smtp)."
+   },
+   {
+    "t": "h2",
+    "x": "What you give up by switching"
+   },
+   {
+    "t": "p",
+    "x": "Be honest about the trade-offs before you move."
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Track record.** WP Mail SMTP has 4 million installs and more than 5,000 reviews. VuloMail launched in October 2026 and has no reviews yet.",
+     "**Google sign-in.** WP Mail SMTP lets you sign in with Google instead of storing an app password. VuloMail's Gmail preset uses an app password.",
+     "**Tracking and extras.** Open and click tracking, weekly summaries, rate limiting and multisite network controls are Pro-only features VuloMail does not offer at any price.",
+     "**Paid support.** WP Mail SMTP sells one-to-one help and a done-for-you setup."
+    ]
+   },
+   {
+    "t": "callout",
+    "title": "Do the math",
+    "x": "One site on WP Mail SMTP Pro costs $99 a year at full price, or $297 over three years. Ten sites on separate Pro licences cost far more. A free plugin with the same log and backup removes that line item."
+   },
+   {
+    "t": "h2",
+    "x": "How to switch without losing a single email"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "Note your current sender name, From address and provider credentials.",
+     "Install the new plugin alongside the old one. Do not activate its sending yet.",
+     "Add the same provider account as a new connection and set it as primary.",
+     "Send a test email and confirm it arrives in an inbox, not spam.",
+     "Add a backup connection with a different provider.",
+     "Deactivate the old plugin so two plugins do not compete for messages."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "VuloMail's diagnostics page lists the email plugins it recognises, which makes step six easy to verify. Activating VuloMail alone never changes sending until you set a primary connection."
+   },
+   {
+    "t": "h2",
+    "x": "Which alternative should you pick?"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Email only and want the biggest free feature set:** FluentSMTP.",
+     "**Want alerts through Slack or a mobile app:** Post SMTP.",
+     "**WooCommerce store that wants texts about orders, stock and customers:** [VuloMail](/features).",
+     "**Need open and click tracking:** stay on WP Mail SMTP Pro."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Not sure which provider to connect behind the plugin? Our [SMTP vs email API guide](/blog/smtp-vs-email-api-wordpress) explains the difference."
+   },
+   {
+    "t": "h2",
+    "x": "Questions to ask before you pick"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**Does it cover every provider I use?** A plugin that lacks your email service forces a second migration later.",
+     "**Where do my credentials live?** Look for encryption at rest and masked display after saving.",
+     "**Does anything leave my site?** Some features call the vendor's own servers. Read the privacy notes.",
+     "**Is it maintained?** Check the last-updated date and the WordPress version it was tested against."
+    ]
+   },
+   {
+    "t": "p",
+    "x": "A five-minute check on those four points tells you more than a feature checklist."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "What is the best free alternative to WP Mail SMTP?",
+    "a": "For email only, FluentSMTP. For email plus WooCommerce SMS alerts, VuloMail. Both include an email log and backup connection free."
+   },
+   {
+    "q": "Why is the WP Mail SMTP email log not free?",
+    "a": "The log, resend, backup connection and failure alerts are part of the Pro plan. The free version focuses on sending."
+   },
+   {
+    "q": "Will I lose my old email logs when I switch?",
+    "a": "Logs are stored per plugin, so export anything you need from the old plugin before deactivating it."
+   },
+   {
+    "q": "Is VuloMail a drop-in replacement for WP Mail SMTP?",
+    "a": "For sending, logging, backup and alerts, yes. It lacks open and click tracking, rate limiting and Google sign-in."
+   }
+  ],
+  "related": [
+   "best-wordpress-smtp-plugin",
+   "wordpress-email-log-and-resend",
+   "gmail-smtp-wordpress-app-password"
+  ]
+ },
+ {
+  "slug": "best-wordpress-smtp-plugin",
+  "title": "Best WordPress SMTP Plugins in 2026: 7 Compared on Price, Logs and Failover",
+  "description": "The best WordPress SMTP plugins in 2026 compared on installs, ratings, email logs, backup connections and real yearly cost. See which ones are free.",
+  "keyword": "best WordPress SMTP plugin",
+  "keywords": [
+   "best WordPress SMTP plugin",
+   "WordPress SMTP plugin comparison",
+   "free WordPress SMTP plugin",
+   "WP Mail SMTP vs FluentSMTP",
+   "email log plugin WordPress"
+  ],
+  "category": "Comparison",
+  "published": "2026-10-15",
+  "updated": "2026-10-27",
+  "answer": "The best WordPress SMTP plugin depends on what you need free. WP Mail SMTP is the most proven (4 million installs). FluentSMTP, Post SMTP, SureMail and VuloMail include an email log and backup connection at no cost, while WP Mail SMTP, Easy WP SMTP and GoSMTP put those behind paid plans.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Choosing an SMTP plugin looks simple until you notice that the features that matter most, an email log, a backup connection and failure alerts, are free in some plugins and paid in others. This comparison uses WordPress.org data and each vendor's pricing page, checked on 13 October 2026."
+   },
+   {
+    "t": "h2",
+    "x": "The comparison table"
+   },
+   {
+    "t": "table",
+    "head": [
+     "Plugin",
+     "Active installs",
+     "Rating",
+     "Email log",
+     "Backup connection",
+     "Cheapest paid plan"
+    ],
+    "rows": [
+     [
+      "WP Mail SMTP",
+      "4M+",
+      "4.8 (5,205)",
+      "Pro only",
+      "Pro only",
+      "$99/yr full price"
+     ],
+     [
+      "FluentSMTP",
+      "700K+",
+      "4.8 (407)",
+      "Free",
+      "Free",
+      "None, fully free"
+     ],
+     [
+      "Easy WP SMTP",
+      "500K+",
+      "4.6 (708)",
+      "Paid",
+      "Paid",
+      "$99/yr full price"
+     ],
+     [
+      "Post SMTP",
+      "300K+",
+      "4.7 (528)",
+      "Free",
+      "Free",
+      "$59.99/yr"
+     ],
+     [
+      "GoSMTP",
+      "500K+",
+      "4.3 (10)",
+      "Paid",
+      "Paid",
+      "$39/yr"
+     ],
+     [
+      "SureMail",
+      "200K+",
+      "4.7 (25)",
+      "Free",
+      "Free",
+      "None, fully free"
+     ],
+     [
+      "VuloMail",
+      "New",
+      "No reviews yet",
+      "Free",
+      "Free",
+      "None, fully free"
+     ]
+    ]
+   },
+   {
+    "t": "p",
+    "x": "Introductory first-year discounts exist on several paid plans, but vendors state renewals are at full price, so the table shows the full-price figure."
+   },
+   {
+    "t": "h2",
+    "x": "What each plugin does best"
+   },
+   {
+    "t": "h3",
+    "x": "WP Mail SMTP: the safe, proven choice"
+   },
+   {
+    "t": "p",
+    "x": "With 4 million installs and 19 years on WordPress.org, it has the largest community and paid support. Its free tier sends well, but the log, backup, alerts and Amazon SES or Microsoft 365 sending need Pro. It also offers open and click tracking, which most free plugins lack."
+   },
+   {
+    "t": "h3",
+    "x": "FluentSMTP: the strongest all-free option"
+   },
+   {
+    "t": "p",
+    "x": "Completely free with Google and Microsoft sign-in, a log, fallback, failure alerts and WP-CLI. For email only, it is hard to beat."
+   },
+   {
+    "t": "h3",
+    "x": "Post SMTP: generous free tier"
+   },
+   {
+    "t": "p",
+    "x": "The free version includes a log, single resend, a fallback mailer and alerts by email, Slack or Pushover. Microsoft 365, Amazon SES and SMS alerts are paid."
+   },
+   {
+    "t": "h3",
+    "x": "SureMail: new but fully free"
+   },
+   {
+    "t": "p",
+    "x": "From the Astra team, with multiple fallbacks, automatic retries and delivery analytics. It is under two years old yet already has 200,000 installs."
+   },
+   {
+    "t": "h3",
+    "x": "VuloMail: email plus SMS, free"
+   },
+   {
+    "t": "p",
+    "x": "VuloMail supports [22 email APIs and 18 SMTP presets](/providers), logs every message, falls back from primary to backup to WordPress's own mailer, and sends SMS alerts through Twilio, Vonage, Plivo or Clickatell. It also adds WooCommerce order, stock and customer texts. Its limits are honest ones: it is brand new, has no reviews, and offers no open or click tracking."
+   },
+   {
+    "t": "h2",
+    "x": "How to choose in 60 seconds"
+   },
+   {
+    "t": "ul",
+    "items": [
+     "**You want the most battle-tested plugin and will pay for extras:** WP Mail SMTP Pro.",
+     "**You only need email and want everything free:** FluentSMTP or SureMail.",
+     "**You run WooCommerce and want text alerts for orders, stock and customers:** VuloMail.",
+     "**You need email open tracking:** WP Mail SMTP Pro or Post SMTP's paid tier.",
+     "**You use an unusual provider such as ZeptoMail, SocketLabs or Mailtrap:** check the supported list first. VuloMail covers all three."
+    ]
+   },
+   {
+    "t": "callout",
+    "title": "The real cost of \"free\"",
+    "x": "A plugin that is free to install but charges $99 a year for the log and backup costs $297 over three years for one site. Count the features you will actually use, then compare."
+   },
+   {
+    "t": "h2",
+    "x": "What to check before you commit"
+   },
+   {
+    "t": "p",
+    "x": "Look for a plugin that has been tested on your WordPress version, supports the provider you already pay for, and lets you leave without lock-in. Your credentials should be stored encrypted, and your messages should not pass through a third party you did not choose."
+   },
+   {
+    "t": "p",
+    "x": "VuloMail sends only to the providers you connect, stores keys encrypted with libsodium and contacts no VuloLabs server. Read the full [security details](/security) or see [feature-by-feature comparisons](/compare) with each plugin above."
+   },
+   {
+    "t": "h2",
+    "x": "How we compared them"
+   },
+   {
+    "t": "p",
+    "x": "Install counts, ratings and review numbers come from the WordPress.org plugin directory. Feature and price claims come from each plugin's directory description and vendor pricing page. Where a vendor did not document a feature, we did not assume it. The [compare hub](/compare) lists sources for every plugin and notes where a competitor does something better than VuloMail."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "What is the best free WordPress SMTP plugin?",
+    "a": "FluentSMTP, SureMail, Post SMTP and VuloMail all include an email log and backup connection in the free version. Pick by whether you also need SMS, Google sign-in or tracking."
+   },
+   {
+    "q": "Is WP Mail SMTP free?",
+    "a": "The core plugin is free and sends email through 14 services or any SMTP server. The email log, backup connection and failure alerts require Pro, from $99 a year at full price."
+   },
+   {
+    "q": "Do I need an SMTP plugin if my host sends email?",
+    "a": "Usually yes. Host mail is often unauthenticated and filtered as spam, so email delivery plugins are the standard fix."
+   },
+   {
+    "q": "Can I switch SMTP plugins without losing email?",
+    "a": "Yes. Add the same account to the new plugin, set it as primary, send a test, then deactivate the old one."
+   }
+  ],
+  "related": [
+   "wp-mail-smtp-alternatives-free",
+   "wordpress-email-failover-backup-smtp",
+   "smtp-vs-email-api-wordpress"
+  ]
+ },
+ {
+  "slug": "wordpress-not-sending-emails",
+  "title": "WordPress Not Sending Emails? 8 Causes and How to Fix Each One",
+  "description": "WordPress not sending emails? Find the real cause (PHP mail, blocked ports, missing SPF/DKIM, plugin conflicts) and fix it with a step-by-step checklist.",
+  "keyword": "WordPress not sending emails",
+  "keywords": [
+   "WordPress not sending emails",
+   "WordPress email not working",
+   "fix WordPress email",
+   "wp_mail not working",
+   "WordPress SMTP"
+  ],
+  "category": "Troubleshooting",
+  "published": "2026-10-14",
+  "updated": "2026-10-27",
+  "answer": "WordPress usually fails to send email because it hands messages to your web host's basic PHP mail function, which hosts throttle or block and inboxes distrust. The fix is to send through an authenticated SMTP or email-API connection, add SPF, DKIM and DMARC records for your domain, and keep a log so every failure is visible.",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "When WordPress stops sending email, password resets, order receipts and contact-form messages all disappear at once, and you usually find out from an unhappy customer. The cause is rarely WordPress itself. It is almost always how the message leaves your server."
+   },
+   {
+    "t": "h2",
+    "x": "Why WordPress emails fail in the first place"
+   },
+   {
+    "t": "p",
+    "x": "Every email WordPress creates goes through one function, `wp_mail()`. Out of the box, that function passes the message to PHP's `mail()`, which asks your web server to deliver it with no login and no proof that your site owns the sender address. Receiving servers treat that as suspicious, and many hosts disable or rate-limit it to stop spam."
+   },
+   {
+    "t": "p",
+    "x": "Fixing it means giving WordPress a proper, authenticated route out. That is what an SMTP plugin or email-API connector does."
+   },
+   {
+    "t": "h2",
+    "x": "The 8 most common causes, with fixes"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "**Your host blocks PHP mail.** Many shared hosts switch it off. Fix: send through SMTP or an email API instead.",
+     "**The message is sent but lands in spam.** The domain has no SPF, DKIM or DMARC record. Fix: add all three (see our [SPF, DKIM and DMARC guide](/blog/spf-dkim-dmarc-wordpress-email-deliverability)).",
+     "**A mismatched From address.** Sending as `you@gmail.com` from a different server fails authentication. Fix: use an address on your own domain that your provider has verified.",
+     "**Wrong SMTP port or encryption.** Port 25 is commonly blocked. Fix: use 587 with STARTTLS or 465 with SSL.",
+     "**Bad credentials.** Gmail, Yahoo, iCloud and others need an app password, not your normal one. Fix: generate an app password.",
+     "**Two email plugins fighting.** Both try to deliver the same message. Fix: keep one and deactivate the other.",
+     "**A plugin that bypasses `wp_mail()`.** It talks to an email service directly, so your SMTP plugin never sees it. Fix: check that plugin's own mail settings.",
+     "**A provider rejection you never see.** The provider refuses the message and nothing records it. Fix: use a plugin with a delivery log and failure alerts."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Symptom-to-cause cheat sheet"
+   },
+   {
+    "t": "table",
+    "head": [
+     "What you see",
+     "Most likely cause",
+     "First thing to try"
+    ],
+    "rows": [
+     [
+      "No email at all, no error",
+      "Host blocks PHP mail",
+      "Connect SMTP or an email API"
+     ],
+     [
+      "Arrives in spam",
+      "Missing SPF, DKIM or DMARC",
+      "Run a DNS check on your sending domain"
+     ],
+     [
+      "Connection or timeout error",
+      "Blocked port or wrong host",
+      "Switch to port 587 or 465"
+     ],
+     [
+      "Authentication failed",
+      "Wrong or normal password",
+      "Create an app password or API key"
+     ],
+     [
+      "Only some emails send",
+      "A plugin bypasses wp_mail()",
+      "Review that plugin's mail settings"
+     ]
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "How to fix it in five steps"
+   },
+   {
+    "t": "ol",
+    "items": [
+     "Install an email delivery plugin such as [VuloMail](/get-started). Activating it changes nothing until you add a connection.",
+     "Add a primary connection: any SMTP server, one of [22 email APIs](/providers) or a preset such as Gmail or Amazon SES.",
+     "Send a test email from the plugin and confirm it arrives.",
+     "Open the diagnostics page and read the sender-domain DNS result. Add any missing SPF or DMARC record.",
+     "Add a backup connection so one provider outage cannot silence your site."
+    ]
+   },
+   {
+    "t": "callout",
+    "title": "Check the log before you guess",
+    "x": "A delivery log tells you whether WordPress tried to send, which provider answered and what error came back. Without one you are debugging blind."
+   },
+   {
+    "t": "h2",
+    "x": "How to stop it happening again"
+   },
+   {
+    "t": "p",
+    "x": "Reliable email comes down to three habits: authenticate your domain, add a backup connection, and get told when something fails. VuloMail covers all three in the free plugin. It logs every message, falls back from the primary to a backup and then to WordPress's own mailer, and can text you when an email fails to send, at most once every 15 minutes."
+   },
+   {
+    "t": "p",
+    "x": "Other plugins can do this too, but several keep the log, backup and alerts behind a paid plan. See how the options compare on our [comparison page](/compare)."
+   },
+   {
+    "t": "ul",
+    "items": [
+     "Test after every host, plugin or DNS change.",
+     "Use a sender address on a domain you control.",
+     "Keep a backup connection with a different provider than your primary."
+    ]
+   },
+   {
+    "t": "h2",
+    "x": "Know what \"sent\" really means"
+   },
+   {
+    "t": "p",
+    "x": "A \"Sent\" status means your provider accepted the message. Whether it reached the inbox is reported in the provider's own dashboard. VuloMail keeps the provider's message ID in each log entry so you can look it up there."
+   }
+  ],
+  "faqs": [
+   {
+    "q": "Why are my WordPress emails not sending?",
+    "a": "Most often your host blocks or throttles PHP mail, or the message fails authentication. Send through SMTP or an email API and add SPF, DKIM and DMARC records."
+   },
+   {
+    "q": "How do I test whether WordPress can send email?",
+    "a": "Use an email plugin's test-send feature to email yourself. If it fails, the plugin's log shows the provider error. If it succeeds but lands in spam, check your DNS records."
+   },
+   {
+    "q": "Do I need an SMTP plugin to send WordPress email?",
+    "a": "It is strongly recommended. Without one, WordPress relies on your host's PHP mail, which is the most common reason emails go missing."
+   },
+   {
+    "q": "Will VuloMail change how my site sends email as soon as I install it?",
+    "a": "No. Nothing changes until you add a connection and set it as primary. Until then WordPress sends exactly as before."
+   }
+  ],
+  "related": [
+   "wordpress-email-failover-backup-smtp",
+   "spf-dkim-dmarc-wordpress-email-deliverability",
+   "wordpress-email-log-and-resend"
+  ]
+ }
+]

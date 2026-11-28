@@ -1,0 +1,164 @@
+{
+ "$schema": "https://schemas.wp.org/trunk/block.json",
+ "apiVersion": 3,
+ "category": "vulopilot",
+ "textdomain": "vulopilot",
+ "editorScript": "file:./index.js",
+ "name": "vulopilot/how-stepper",
+ "title": "How It Works Stepper (VuloPilot)",
+ "icon": "controls-forward",
+ "description": "Auto-playing step-by-step section (Find, Understand, Prioritize, Fix, Verify). Edit every step: icon, title, text, points and the graphic or image on the right.",
+ "keywords": [
+  "steps",
+  "how it works",
+  "stepper",
+  "process",
+  "timeline"
+ ],
+ "render": "file:./render.php",
+ "supports": {
+  "html": false,
+  "align": [
+   "wide",
+   "full"
+  ],
+  "anchor": true,
+  "spacing": {
+   "margin": true,
+   "padding": true
+  }
+ },
+ "attributes": {
+  "showHeading": {
+   "type": "boolean",
+   "default": true
+  },
+  "wrap": {
+   "type": "boolean",
+   "default": true
+  },
+  "sectionId": {
+   "type": "string",
+   "default": ""
+  },
+  "eyebrow": {
+   "type": "string",
+   "default": "How VuloPilot works"
+  },
+  "title": {
+   "type": "string",
+   "default": "“What’s wrong?” becomes"
+  },
+  "titleAccent": {
+   "type": "string",
+   "default": "“We’ve got this.”"
+  },
+  "intro": {
+   "type": "string",
+   "default": "Every problem goes from found to fixed, and proven."
+  },
+  "interval": {
+   "type": "number",
+   "default": 5600
+  },
+  "playLabel": {
+   "type": "string",
+   "default": "Auto-playing"
+  },
+  "pauseLabel": {
+   "type": "string",
+   "default": "Paused"
+  },
+  "steps": {
+   "type": "array",
+   "default": [
+    {
+     "icon": "scan-search",
+     "title": "Find",
+     "desc": "One scan looks at your whole website.",
+     "points": "Pages, plugins, speed, search, content and AI visibility\nRuns from your WordPress dashboard\nRe-run any time, or on a schedule",
+     "graphic": "how-find",
+     "image": "",
+     "imageId": 0,
+     "imageAlt": ""
+    },
+    {
+     "icon": "eye",
+     "title": "Understand",
+     "desc": "See the exact page with the problem, what is wrong, and why it matters.",
+     "points": "The exact page and element\nA plain-language explanation\nSeverity, so you can judge the impact",
+     "graphic": "how-understand",
+     "image": "",
+     "imageId": 0,
+     "imageAlt": ""
+    },
+    {
+     "icon": "list-ordered",
+     "title": "Prioritize",
+     "desc": "Know what to fix first and what can wait.",
+     "points": "Ranked from critical to low\nQuick wins surfaced first\nSkip what can safely wait",
+     "graphic": "how-prioritize",
+     "image": "",
+     "imageId": 0,
+     "imageAlt": ""
+    },
+    {
+     "icon": "wand-sparkles",
+     "title": "Fix",
+     "desc": "One click, an AI draft you approve, or a clear note for your developer.",
+     "points": "One-click AI fix\nPreview before and after, then approve\nOr send a note to your developer",
+     "graphic": "how-fix",
+     "image": "",
+     "imageId": 0,
+     "imageAlt": ""
+    },
+    {
+     "icon": "badge-check",
+     "title": "Verify",
+     "desc": "See the result for yourself, with proof it worked.",
+     "points": "Scan again after the fix\nScores and history show the change\nUndo any applied change",
+     "graphic": "how-verify",
+     "image": "",
+     "imageId": 0,
+     "imageAlt": ""
+    }
+   ]
+  },
+  "colorPrimary": {
+   "type": "string",
+   "default": ""
+  },
+  "colorPrimarySoft": {
+   "type": "string",
+   "default": ""
+  },
+  "colorAccent": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBg": {
+   "type": "string",
+   "default": ""
+  },
+  "colorSurface": {
+   "type": "string",
+   "default": ""
+  },
+  "colorText": {
+   "type": "string",
+   "default": ""
+  },
+  "colorMuted": {
+   "type": "string",
+   "default": ""
+  },
+  "colorBorder": {
+   "type": "string",
+   "default": ""
+  },
+  "radius": {
+   "type": "number",
+   "default": 4
+  }
+ }
+}

@@ -1,0 +1,267 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "category": "vulopilot",
+    "textdomain": "vulopilot",
+    "editorScript": "file:./index.js",
+    "name": "vulopilot/product-tour",
+    "title": "Product Tour (VuloPilot)",
+    "icon": "images-alt2",
+    "description": "Screenshot tour with groups on the left, numbered hotspots, prev/next arrows and three callout cards. Edit every group, screen, image and hotspot.",
+    "keywords": [
+        "tour",
+        "screenshots",
+        "hotspots",
+        "showcase",
+        "tabs"
+    ],
+    "render": "file:./render.php",
+    "supports": {
+        "html": false,
+        "align": [
+            "wide",
+            "full"
+        ],
+        "anchor": true,
+        "spacing": {
+            "margin": true,
+            "padding": true
+        }
+    },
+    "attributes": {
+        "showHeading": {
+            "type": "boolean",
+            "default": false
+        },
+        "wrap": {
+            "type": "boolean",
+            "default": true
+        },
+        "sectionId": {
+            "type": "string",
+            "default": "tour"
+        },
+        "eyebrow": {
+            "type": "string",
+            "default": "See the real thing"
+        },
+        "title": {
+            "type": "string",
+            "default": "Inside your"
+        },
+        "titleAccent": {
+            "type": "string",
+            "default": "WordPress dashboard."
+        },
+        "intro": {
+            "type": "string",
+            "default": "Real screens from the plugin, not mock-ups. Pick a screen, follow the numbered markers, or click the screenshot to enlarge it."
+        },
+        "interval": {
+            "type": "number",
+            "default": 4200
+        },
+        "groups": {
+            "type": "array",
+            "default": [
+                {
+                    "icon": "search",
+                    "title": "Search & AI visibility",
+                    "hint": "SEO, GEO, AEO, brand, crawl and schema",
+                    "screens": [
+                        {
+                            "title": "Visibility Overview",
+                            "where": "wp-admin / VuloPilot / SEO & Visibility → Overview",
+                            "screen": "overview",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot visibility overview with an overall score of 96 and a 30-day trend chart",
+                            "hotspots": "19, 37 | Combined visibility score | Brand, SEO, GEO and Crawl scores rolled into one number.\n74, 44 | 30-day trend | See whether your visibility is rising or falling.\n28, 84 | Traffic by source | Connect Google Analytics to see sessions here."
+                        },
+                        {
+                            "title": "SEO Health",
+                            "where": "wp-admin / VuloPilot / SEO & Visibility → SEO",
+                            "screen": "seo",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot SEO Health score with titles, content structure, images and linking breakdown",
+                            "hotspots": "19, 39 | SEO Health score | One score for the whole site, with open issue counts.\n38, 57 | Breakdown by area | Titles, structure, images, linking, indexability and social tags.\n75, 49 | Progress over time | Track issues fixed and new issues over 7, 30 or 90 days."
+                        },
+                        {
+                            "title": "GEO Score",
+                            "where": "wp-admin / VuloPilot / SEO & Visibility → GEO",
+                            "screen": "geo",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot GEO score covering AI summary, question coverage, evidence and entity clarity",
+                            "hotspots": "33, 38 | GEO score | How easy your content is for AI assistants to use.\n72, 56 | Six checks | AI summary, question coverage, evidence, structure, entity clarity and freshness."
+                        },
+                        {
+                            "title": "AEO Score",
+                            "where": "wp-admin / VuloPilot / SEO & Visibility → AEO",
+                            "screen": "aeo",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot AEO score for questions and answers, direct answers and schema markup",
+                            "hotspots": "12.5, 39 | AEO score | How ready your content is to be quoted by answer engines.\n26, 40 | Questions and schema | Questions and answers, direct answers and schema markup.\n74, 56 | Engine coverage | Test whether AI recognizes your pages. Needs a VuloCloud connection."
+                        },
+                        {
+                            "title": "Brand Visibility",
+                            "where": "wp-admin / VuloPilot / SEO & Visibility → Brand Visibility",
+                            "screen": "brand",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot brand, trust and authority scores with knowledge panel optimization",
+                            "hotspots": "17, 32 | Brand, Trust and Authority | Three scores for how trustworthy your brand looks.\n72, 58 | Knowledge panel | Add Organization and author schema where it is missing."
+                        },
+                        {
+                            "title": "Crawl & URLs",
+                            "where": "wp-admin / VuloPilot / SEO & Visibility → Crawl & URLs",
+                            "screen": "crawl",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot crawl health and AI crawler requests over time",
+                            "hotspots": "18, 52 | Crawl health | robots.txt, sitemap and AI-bot access checks in one score.\n76, 63 | AI crawler traffic | Requests from AI crawlers over time."
+                        },
+                        {
+                            "title": "Business Identity & Schema",
+                            "where": "wp-admin / VuloPilot / SEO & Visibility → Business Identity & Schema",
+                            "screen": "schema",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot business identity completeness and knowledge graph",
+                            "hotspots": "26, 36 | Business information | How complete your business details are.\n70, 57 | Key information found | Name, type, services, locations, people and contact details.\n21, 86 | Knowledge graph | How the things on your site connect."
+                        }
+                    ]
+                },
+                {
+                    "icon": "bot",
+                    "title": "Copilot & content",
+                    "hint": "Chat with your site, write with AI",
+                    "screens": [
+                        {
+                            "title": "AI Copilot",
+                            "where": "wp-admin / VuloPilot / AI Copilot",
+                            "screen": "copilot",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot AI Copilot chat with suggested prompts and recommended actions",
+                            "hotspots": "34, 49 | Suggested prompts | One click to common questions and tasks.\n83, 29 | Site overview | Overall health and category scores beside the chat.\n34, 86 | Recommended actions | The highest-impact fixes, ready to investigate with AI."
+                        },
+                        {
+                            "title": "Content tools",
+                            "where": "wp-admin / VuloPilot / Content",
+                            "screen": "content",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot content page with AI chat, content stats and writing tools",
+                            "hotspots": "34, 44 | Chat for content | Write blogs, FAQs, meta titles and calls to action.\n83, 19 | Content stats | Content created, words generated and time saved.\n34, 92 | Content tools | AI Writer, Blog Generator and landing pages."
+                        }
+                    ]
+                },
+                {
+                    "icon": "gauge",
+                    "title": "Performance",
+                    "hint": "Speed score and Core Web Vitals",
+                    "screens": [
+                        {
+                            "title": "Performance",
+                            "where": "wp-admin / VuloPilot / Performance → Overview",
+                            "screen": "performance",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot performance overview with speed score, Core Web Vitals and quick actions",
+                            "hotspots": "18, 28 | Speed score | Overall speed, from Google PageSpeed data.\n76, 36 | Core Web Vitals | Real-user vitals over time.\n76, 77 | Quick actions | Clear caches, minify code, optimize images, clean the database."
+                        }
+                    ]
+                },
+                {
+                    "icon": "heart-pulse",
+                    "title": "Site care",
+                    "hint": "Health, accessibility and security",
+                    "screens": [
+                        {
+                            "title": "Site Health",
+                            "where": "wp-admin / VuloPilot / Site Health",
+                            "screen": "health",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot site health score with WordPress, updates, database and server checks",
+                            "hotspots": "22, 11 | Health score | WordPress, updates, tasks, database and server in one score.\n66, 23 | Checks by area | Open findings and severity for each area.\n23, 63 | Issues list | Filter by priority and open the details."
+                        },
+                        {
+                            "title": "Accessibility",
+                            "where": "wp-admin / VuloPilot / Accessibility",
+                            "screen": "accessibility",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot accessibility score with page structure, images, links and readability checks",
+                            "hotspots": "21, 19 | Accessibility score | How usable your site is for everyone.\n44, 35 | Problem groups | Page structure, images, links and forms, keyboard use and readability.\n67, 87 | Manual checks | Keyboard, screen reader and zoom checks a tool cannot judge."
+                        },
+                        {
+                            "title": "Security",
+                            "where": "wp-admin / VuloPilot / Security",
+                            "screen": "security",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot security score with malware, firewall, login protection and file change checks",
+                            "hotspots": "21, 25 | Security score | Rated from your open security findings.\n53, 44 | What it checks | Malware, firewall, login protection, vulnerabilities, file changes and SSL.\n78, 34 | Security trend | Your daily score over 30 days."
+                        }
+                    ]
+                },
+                {
+                    "icon": "calendar-clock",
+                    "title": "Automation",
+                    "hint": "Scheduled scans and reports",
+                    "screens": [
+                        {
+                            "title": "Automations",
+                            "where": "wp-admin / VuloPilot / Automations",
+                            "screen": "automations",
+                            "image": "",
+                            "imageId": 0,
+                            "alt": "VuloPilot automations for scheduled scans and email visibility reports",
+                            "hotspots": "20, 19 | Automation library | Ready-made automations to start from.\n51, 38 | Running agents | Pro agents for monitoring, content, security and reporting. Sample data shown.\n26, 73 | Scheduled scan and report | Switch on the automatic scan and the emailed visibility report."
+                        }
+                    ]
+                }
+            ]
+        },
+        "colorPrimary": {
+            "type": "string",
+            "default": ""
+        },
+        "colorPrimarySoft": {
+            "type": "string",
+            "default": ""
+        },
+        "colorAccent": {
+            "type": "string",
+            "default": ""
+        },
+        "colorBg": {
+            "type": "string",
+            "default": ""
+        },
+        "colorText": {
+            "type": "string",
+            "default": ""
+        },
+        "colorMuted": {
+            "type": "string",
+            "default": ""
+        },
+        "colorSurface": {
+            "type": "string",
+            "default": ""
+        },
+        "colorBorder": {
+            "type": "string",
+            "default": ""
+        },
+        "radius": {
+            "type": "number",
+            "default": 4
+        }
+    }
+}
