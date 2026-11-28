@@ -1137,3 +1137,11 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
 .pg-booking #plan .bk-wk-g .e{font-size:12px;min-height:34px;padding:7px 10px}
 .pg-booking #plan .bk-wk-g .e small{font-size:11px}
 @media(max-width:900px){.pg-booking #plan .bk-how-t{margin:40px 0 18px}.pg-booking #plan .bk-wk h4 small{display:block;margin:4px 0 0}.pg-booking .bk-goal .bk-why{gap:16px}}
+
+/* r70: booking stage checkpoints */
+.pg-booking .bk-road em{display:inline-flex;align-items:center;gap:6px}
+.pg-booking .bk-road em svg.i{position:static;width:14px;height:14px}
+.pg-booking .bk-road i{display:flex;gap:8px;align-items:flex-start;font-style:normal;font-size:12.5px;line-height:1.45;color:#8a86a0;margin-top:6px;padding-top:10px;border-top:1px dashed var(--bk-line)}
+.pg-booking .bk-road i svg.i{position:static;flex:none;width:14px;height:14px;margin-top:2px;color:var(--c)}
+.pg-booking .bk-road .d{text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;color:var(--c)}
+.pg-booking .bk-road{gap:24px}
