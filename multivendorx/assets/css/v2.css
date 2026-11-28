@@ -2158,3 +2158,29 @@ body:not(.pg-home) main .sec{padding:80px 0!important}
 body:not(.pg-home) main .np-dark{padding:80px 0!important}
 body:not(.pg-home) main .cta-band{padding:72px 0!important}
 @media(max-width:760px){section.nx-sec:not(.nx-prod),section.rf-live.mg{padding-top:56px!important;padding-bottom:56px!important}body:not(.pg-home) main .sec,body:not(.pg-home) main .np-dark{padding:56px 0!important}body:not(.pg-home) main .cta-band{padding:48px 0!important}}
+/* pricing: flat "included in every plan" grid */
+.inc-grid{columns:3 300px;column-gap:16px;margin-top:8px}
+.inc-c{break-inside:avoid;margin-bottom:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.inc-h{display:flex;align-items:center;gap:10px}
+.inc-ic{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;background:var(--brand-50);color:var(--brand);flex:none}
+.inc-ic svg.i{width:16px;height:16px}
+.inc-h h3{font-size:16px;font-weight:600;line-height:1.3;flex:1}
+.inc-h em{font-style:normal;font-size:12px;font-weight:600;color:var(--brand);background:var(--brand-50);padding:2px 8px;border-radius:99px}
+.inc-c p{font-size:13.5px;color:var(--muted);margin:10px 0 12px}
+.inc-c ul{list-style:none;display:grid;gap:7px;padding-top:12px;border-top:1px solid var(--line)}
+.inc-c li{position:relative;padding-left:18px;font-size:14px;color:var(--ink-2);line-height:1.4}
+.inc-c li:before{content:"";position:absolute;left:2px;top:7px;width:6px;height:6px;border-radius:50%;background:var(--brand)}
+.inc-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 20px;margin-top:24px;font-size:14px;color:var(--muted)}
+.inc-foot span{display:inline-flex;align-items:center;gap:7px}.inc-foot svg.i{width:15px;height:15px;color:var(--brand)}
+/* pricing: flat plan cards */
+.pr-hero .pq{box-shadow:none!important;border:1px solid var(--line);border-radius:14px!important;padding:24px;gap:16px}
+.pr-hero .pq.pop{background:#fff;border:2px solid var(--brand);box-shadow:none!important}
+.pr-hero .pq .rib{border-radius:6px;font-weight:600}
+.pr-hero .pq .pqi{width:34px;height:34px;border-radius:8px!important}
+.pr-hero .pq.pop .pqi{background:var(--brand-50);color:var(--brand)}
+.pr-hero .pq .pqp b{font-size:40px}
+.pr-hero .pq.pop .pqp b{color:var(--ink)}
+.pr-hero .pq .pqs{background:none;padding:12px 0 0;border-top:1px solid var(--line);border-radius:0!important}
+.pr-hero .pq .dots i{height:6px;border-radius:2px}
+.pr-hero .pq .btn{border-radius:8px}
+.pr-hero .pq-inc{background:#fff;border:1px solid var(--line);border-radius:14px!important}
