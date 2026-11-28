@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
  * Validates every pattern (and every converted blog post) with the real WordPress block parser and validator
- * (@wordpress/blocks), using stubs of the Kadence blocks whose save() output follows src/kb.py.
- * A block is "invalid" when its saved HTML doesn't match what save() produces for its attributes, which is
- * exactly what makes the editor show "This block contains unexpected or invalid content".
+ * (@wordpress/blocks), using stubs of the Kadence blocks whose save() output follows Kadence Blocks 3.x's own
+ * save functions. A block is "invalid" when its saved HTML doesn't match what save() produces for its
+ * attributes, which is exactly what makes the editor show "This block contains unexpected or invalid content".
  *
  *   cd src && npm run validate
  *
- * Without your Kadence markup sample the stubs mirror Kadence Blocks 3.x as described in kb.py; send a
- * sample and the stubs + kb.py can be aligned to it.
+ * Without your Kadence markup sample the stubs mirror Kadence Blocks 3.x as read from its source; send a
+ * sample and the stubs can be aligned to it.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -91,7 +91,7 @@ function check(list, file, out) {
   }
 }
 
-const files = fs.readdirSync(path.join(theme, "pattern-files")).filter((f) => f.endsWith(".html")).map((f) => path.join(theme, "pattern-files", f));
+const files = fs.readdirSync(path.join(theme, "patterns")).filter((f) => f.endsWith(".html")).map((f) => path.join(theme, "patterns", f));
 const blogDir = path.join(theme, "data/blog");
 if (fs.existsSync(blogDir)) files.push(...fs.readdirSync(blogDir).filter((f) => f.endsWith(".html")).map((f) => path.join(blogDir, f)));
 const out = { total: 0, bad: [], core: [], php: [], links: [] };

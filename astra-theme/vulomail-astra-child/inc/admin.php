@@ -14,7 +14,7 @@ add_action(
 	}
 );
 
-/** Page slug => [ title, parent slug ]. Built from data/pages.json (written by src/build-patterns.py). */
+/** Page slug => [ title, parent slug ]. Built from data/pages.json (the generator, src/build-patterns.py, has been removed — edit the JSON directly). */
 function vm_admin_pages() {
 	$pages = array();
 	foreach ( vm_data( 'pages' ) as $slug => $p ) {
@@ -293,7 +293,7 @@ function vm_admin_page() {
 		</form>
 
 		<h2>4. Blog posts</h2>
-		<p>Imports the 10 original articles as posts (from data/blog.json + data/blog/*.html) (Kadence blocks, categories, excerpt = "The short answer"). New posts: write Markdown and convert it with <code>python3 src/build-blog.py post.md out.html</code>, then paste into the Code editor.</p>
+		<p>Imports the 10 original articles as posts (from data/blog.json + data/blog/*.html) (Kadence blocks, categories, excerpt = "The short answer"). New posts: build the layout directly with Kadence blocks in the editor, following the look of an existing post in <code>data/blog/</code>.</p>
 		<form method="post"><?php wp_nonce_field( 'vm_admin' ); ?><input type="hidden" name="vm_action" value="posts"><label><input type="checkbox" name="vm_replace" value="1"> Update posts that already exist</label><br><br><?php submit_button( 'Import blog posts', 'secondary', '', false ); ?></form>
 
 		<h2>Cheat sheet: classes (Kadence → Advanced → Additional CSS class)</h2>
@@ -309,7 +309,7 @@ function vm_admin_page() {
 			<tr><td><code>vm-rv</code> · <code>vm-rv-d12</code> · <code>vm-rv-now</code> · <code>vm-rv-y10</code></td><td>Reveal on scroll (0.9s, rise 28px, blur 8px); delay in hundredths; on load; distance</td></tr>
 			<tr><td><code>vm-stagger</code> (row) + <code>vm-st</code> (columns)</td><td>Columns rise in one after another, 0.08s apart</td></tr>
 			<tr><td><code>vm-split</code> · <code>vm-split-25</code></td><td>Headline words rise in (0.06s apart); delay of the italic part in hundredths</td></tr>
-			<tr><td><code>vm-b-*</code></td><td>Blog body styles written by src/build-blog.py</td></tr>
+			<tr><td><code>vm-b-*</code></td><td>Blog body styles (the generator, src/build-blog.py, has been removed — edit the CSS directly)</td></tr>
 		</tbody></table>
 		<p>Design tokens (every colour, font, size, radius and the content width): Customize → VuloMail → Design tokens.</p>
 	</div>

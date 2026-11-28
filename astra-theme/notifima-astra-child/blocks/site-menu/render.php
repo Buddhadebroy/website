@@ -5,7 +5,7 @@
  *   part "drawer"  phone menu panel (opened by the burger), ends with the call-to-action button
  *   part "toggle"  the burger button (phones and tablets)
  *   part "icons"   cart + my account icon buttons (Customize → Notifima → General links; WooCommerce cart count when active)
- * Links: Appearance → Menus → "Notifima header" (see inc/header-footer.php), else data/menu.json.
+ * Links: Appearance → Menus → "Notifima header" (see inc/header.php), else data/menu.json.
  * Markup and classes are the original site's (.nav, .nav-item, .has-mega, .mega, .drawer …), styled by assets/css/nf-site.css.
  *
  * @var array $attributes

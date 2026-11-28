@@ -34,7 +34,7 @@ define( 'VM_DIR', $root . '/' );
 define( 'VM_URI', '/theme/' );
 require VM_DIR . 'inc/helpers.php';
 require VM_DIR . 'inc/content-data.php';
-require VM_DIR . 'inc/menus.php';
+require VM_DIR . 'inc/features/menus.php';
 require VM_DIR . 'graphic/shared.php';
 function vm_render_graphic( $attributes ) {
 	$part  = isset( $attributes['part'] ) ? sanitize_key( $attributes['part'] ) : '';
@@ -48,7 +48,7 @@ function vm_render_site_menu( $a ) { $parts = array( 'header' => 'nav-desktop', 
 require VM_DIR . 'inc/root-vars.php';
 
 function vmt_pattern( $slug ) {
-	$f = VM_DIR . 'pattern-files/' . $slug . '.html';
+	$f = VM_DIR . 'patterns/' . $slug . '.html';
 	return is_file( $f ) ? file_get_contents( $f ) : '';
 }
 
@@ -60,7 +60,7 @@ $single = preg_match( '#^/s/([a-z0-9-]+)#', $uri, $m ) ? $m[1] : '';
 $body   = $single ? vmt_pattern( $single ) : vmt_pattern( 'page-' . $page );
 if ( 0 === strpos( $uri, '/blog' ) ) {
 	$body = '';
-	require VM_DIR . 'inc/blog.php';
+	require VM_DIR . 'inc/features/blog.php';
 	require __DIR__ . '/blog.php'; // renders through the same functions as the theme templates
 }
 $main   = vmt_do_blocks( $body );

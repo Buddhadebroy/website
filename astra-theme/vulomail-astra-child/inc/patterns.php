@@ -2,7 +2,7 @@
 /**
  * Patterns.
  *
- * The original designs live in pattern-files/*.html (plain block markup, no PHP). data/patterns.json gives each a kind:
+ * The original designs live in patterns/*.html (plain block markup, no PHP). data/patterns.json gives each a kind:
  *   - "layout" (VuloMail Header, VuloMail Footer) and "shared" (sections with the same look and content wherever they
  *     appear: the call to action band, the compare call to action, the blog header and banner, the 404 section)
  *     become synced patterns. Edit one and every page that shows it changes.
@@ -22,10 +22,10 @@ function vm_pattern_list() {
 	return is_array( $list ) ? $list : array();
 }
 
-/** The original design of a pattern (pattern-files/<slug>.html). */
+/** The original design of a pattern (patterns/<slug>.html). */
 function vm_pattern_content( $slug ) {
 	$slug = sanitize_key( $slug );
-	$file = VM_DIR . 'pattern-files/' . $slug . '.html';
+	$file = VM_DIR . 'patterns/' . $slug . '.html';
 	return is_readable( $file ) ? trim( (string) file_get_contents( $file ) ) : ''; // phpcs:ignore WordPress.WP.AlternativeFunctions
 }
 
@@ -167,7 +167,7 @@ function vm_register_plain_patterns() {
 		}
 		$args = array( 'title' => $p['title'], 'categories' => array( 'vulomail' ), 'viewportWidth' => 1440 );
 		if ( $lazy ) {
-			$args['filePath'] = VM_DIR . 'pattern-files/' . sanitize_key( $slug ) . '.html';
+			$args['filePath'] = VM_DIR . 'patterns/' . sanitize_key( $slug ) . '.html';
 		} else {
 			$args['content'] = vm_pattern_content( $slug );
 		}

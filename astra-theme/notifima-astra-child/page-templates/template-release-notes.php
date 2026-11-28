@@ -5,7 +5,7 @@
  *
  * The Release Notes page, filled automatically: the page title, then every release read from WordPress.org
  * (and GitHub, if set) in Customize → Notifima → General. Whatever is in the page editor is not shown, so the
- * list never goes out of date. A new release appears within an hour (see inc/releases.php).
+ * list never goes out of date. A new release appears within an hour (see inc/features/releases.php).
  *
  * @package Notifima
  */

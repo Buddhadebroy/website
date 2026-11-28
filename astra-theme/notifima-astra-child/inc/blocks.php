@@ -6,7 +6,7 @@
  *   blocks/site-logo    Site Logo (Notifima)          Site Identity logo or the wordmark
  *   blocks/site-menu    Site Menu (Notifima)          menu + mega menus, phone menu, burger, cart/account icons
  *
- * Patterns: synced patterns made from pattern-files/*.php (inc/patterns.php), category "Notifima".
+ * Patterns: synced patterns made from patterns/*.php (inc/patterns.php), category "Notifima".
  *
  * @package Notifima
  */

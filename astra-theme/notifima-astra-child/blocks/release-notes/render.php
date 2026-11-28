@@ -1,6 +1,6 @@
 <?php
 /**
- * Release Notes (Notifima): the live list from inc/releases.php.
+ * Release Notes (Notifima): the live list from inc/features/releases.php.
  *
  * @package Notifima
  */

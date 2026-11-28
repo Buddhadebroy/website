@@ -1,12 +1,13 @@
 <?php
 /**
- * Header and footer, built in WordPress with Kadence blocks.
+ * Header, built in WordPress with Kadence blocks. Shared with inc/footer.php: nf_hf_slug(), nf_hf_edit_url(),
+ * nf_hf_render() work for either part by parameter; this file also handles the site icon import, the header
+ * menu (mega menu data, tree, creation) and registers the Site Logo / Site Menu blocks used by both parts.
  *
- *   Content   the synced patterns "Site · Header" and "Site · Footer" (inc/patterns.php makes them from
- *             pattern-files/site-header.php and site-footer.php). Edit them in Appearance → Design → Patterns,
- *             or Appearance → Notifima → Edit header / Edit footer (Kadence editor).
- *   Output    printed in place of Astra's header and footer (astra_header / astra_footer) on every page.
- *             Customize → Notifima → General: turn either off to get Astra's own back.
+ *   Content   the synced pattern "Site · Header" (inc/patterns.php makes it from patterns/site-header.php).
+ *             Edit it in Appearance → Design → Patterns, or Appearance → Notifima → Edit header (Kadence editor).
+ *   Output    printed in place of Astra's header (astra_header) on every page.
+ *             Customize → Notifima → General: turn it off to get Astra's own back.
  *   Logo      Site Logo (Notifima) block = Customize → Site Identity → Logo (else the "Notifima" wordmark); favicon = Site Icon.
  *   Menu      Site Menu (Notifima) block = Appearance → Menus → "Notifima header". A top item with sub items
  *             becomes a mega menu: level 2 = column titles, level 3 = links (Description = small text,
@@ -60,17 +61,13 @@ function nf_import_identity() {
 	update_option( 'site_icon', (int) $id );
 }
 
-/** Print ours in place of Astra's header / footer. */
+/** Print ours in place of Astra's header. */
 add_action(
 	'wp',
 	function () {
 		if ( nf_opt( 'nf_use_header' ) ) {
 			remove_all_actions( 'astra_header' );
 			add_action( 'astra_header', function () { echo nf_hf_render( 'header' ); } ); // phpcs:ignore
-		}
-		if ( nf_opt( 'nf_use_footer' ) ) {
-			remove_all_actions( 'astra_footer' );
-			add_action( 'astra_footer', function () { echo nf_hf_render( 'footer' ); } ); // phpcs:ignore
 		}
 	}
 );

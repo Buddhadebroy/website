@@ -1,5 +1,5 @@
 <?php
-/** Test server: blog index / single post from data/blog.json + data/blog/<slug>.html (the build-blog.py output). */
+/** Test server: blog index / single post from data/blog.json + data/blog/<slug>.html (originally the build-blog.py output; posts are now written directly as Kadence blocks). */
 function vmt_minutes( $p ) {
 	$parts = array( $p['answer'] );
 	foreach ( $p['blocks'] as $b ) {

@@ -3,8 +3,8 @@
  * Design tokens: Appearance → Customize → Notifima → Design tokens.
  *
  * One field for every :root variable of the theme (colours, font, font sizes, line heights, letter spacing,
- * radii, content width, spacing, easing …). The list and the original values are data/tokens.json
- * (made by src/build-tokens.mjs from the theme CSS). All theme CSS uses these variables, so a change here
+ * radii, content width, spacing, easing …). The list and the original values are data/tokens.json,
+ * maintained by hand. All theme CSS uses these variables, so a change here
  * changes the header, footer, every pattern and the blog.
  * The theme prints them as one inline  html:root { … }  block after its CSS (front end and editor).
  *

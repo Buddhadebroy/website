@@ -1,5 +1,5 @@
 {
- "source": "plugins/vulomail/readme.txt in github.com/Buddhadebroy/vulolabs (== Changelog ==). Edit here, then run python3 src/build-patterns.py.",
+ "source": "plugins/vulomail/readme.txt in github.com/Buddhadebroy/vulolabs (== Changelog ==). Edit here, then update the changelog Kadence blocks on the page by hand to match (the regeneration script has been removed).",
  "releases": [
   {
    "version": "1.0.1",

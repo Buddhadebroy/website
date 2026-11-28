@@ -9,9 +9,9 @@
  *   graphic/block              Animated Graphic (VuloForm)              any graphic or Home section
  *   blocks/site-logo           Site Logo (VuloForm)                     Site Identity logo + title (header, footer)
  *   blocks/site-menu           Site Menu (VuloForm)                     header links, phone menu, burger
- *   (the last two are registered in inc/header-footer.php)
+ *   (the last two are registered in inc/header.php)
  *
- * Patterns: synced patterns made from pattern-files/*.php (inc/patterns.php), category "VuloForm", editable in Appearance → Design → Patterns.
+ * Patterns: synced patterns made from patterns/*.php (inc/patterns.php), category "VuloForm", editable in Appearance → Design → Patterns.
  *
  * Each section block renders the same PHP file as the Home page (template-parts/home/…), so it looks exactly the same.
  * Text is edited in the block sidebar; the fields start with the default text (vf_section_defaults()).

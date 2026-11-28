@@ -1,7 +1,9 @@
 <?php
 /**
- * Header and footer: the synced patterns "VuloMail Header" and "VuloMail Footer" (Kadence blocks + the theme's
- * Site Logo and Site Menu blocks), printed in place of Astra's header and footer. No header or footer markup in PHP.
+ * Header: the synced pattern "VuloMail Header" (Kadence blocks + the theme's Site Logo and Site Menu blocks),
+ * printed in place of Astra's header. No header markup in PHP.
+ *
+ * Shared with inc/footer.php: vm_layout_block_id(), vm_render_layout_part() render either layout part by slug.
  *
  * @package vulomail
  */
@@ -20,7 +22,7 @@ function vm_render_layout_part( $part ) {
 	echo '<div class="vm-layout vm-layout-' . esc_attr( $part ) . '">' . vm_render_pattern( $part ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput
 }
 
-/** Swap Astra's header and footer for ours, unless switched off in Customize → VuloMail. */
+/** Swap Astra's header for ours, unless switched off in Customize → VuloMail. */
 add_action(
 	'wp',
 	function () {
@@ -31,15 +33,6 @@ add_action(
 				'astra_header',
 				function () {
 					vm_render_layout_part( 'header' );
-				}
-			);
-		}
-		if ( vm_opt( 'use_footer' ) ) {
-			remove_all_actions( 'astra_footer' );
-			add_action(
-				'astra_footer',
-				function () {
-					vm_render_layout_part( 'footer' );
 				}
 			);
 		}

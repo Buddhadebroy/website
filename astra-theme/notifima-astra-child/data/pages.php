@@ -1,5 +1,5 @@
 <?php
-// Generated from data/pages.json by src/build-kadence.py.
+// Originally generated from data/pages.json by src/build-kadence.py (now removed — edited directly).
 defined( 'ABSPATH' ) || exit;
 return array (
   0 => 

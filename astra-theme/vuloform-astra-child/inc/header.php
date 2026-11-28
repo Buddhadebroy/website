@@ -1,12 +1,13 @@
 <?php
 /**
- * Header and footer, built in WordPress with Kadence blocks.
+ * Header, built in WordPress with Kadence blocks. Shared with inc/footer.php: vf_hf_slug(), vf_hf_edit_url(),
+ * vf_hf_render() work for either part by parameter; this file also handles logo/favicon import and registers
+ * the Site Logo / Site Menu blocks used by both header and footer.
  *
- *   Content   the synced patterns "Site · Header" and "Site · Footer" (inc/patterns.php makes them from
- *             pattern-files/site-header.php and site-footer.php). Edit them in Appearance → Design → Patterns,
- *             or Appearance → VuloForm → Edit header / Edit footer (Kadence editor).
- *   Output    printed in place of Astra's header and footer (astra_header / astra_footer hooks) on every page.
- *             Customize → VuloForm → "Use the VuloForm header/footer" off = Astra's own header/footer.
+ *   Content   the synced pattern "Site · Header" (inc/patterns.php makes it from patterns/site-header.php).
+ *             Edit it in Appearance → Design → Patterns, or Appearance → VuloForm → Edit header (Kadence editor).
+ *   Output    printed in place of Astra's header (astra_header hook) on every page.
+ *             Customize → VuloForm → "Use the VuloForm header" off = Astra's own header.
  *   Logo      the Site Logo (VuloForm) block = Customize → Site Identity (logo, Astra retina logo); favicon = Site Icon.
  *   Menu      the Site Menu (VuloForm) block = Appearance → Menus → "VuloForm header".
  *
@@ -75,17 +76,13 @@ function vf_import_identity() {
 	}
 }
 
-/** Print ours in place of Astra's header / footer. */
+/** Print ours in place of Astra's header. */
 add_action(
 	'wp',
 	function () {
 		if ( vf_opt( 'vf_use_header' ) ) {
 			remove_all_actions( 'astra_header' );
 			add_action( 'astra_header', function () { echo vf_hf_render( 'header' ); } ); // phpcs:ignore WordPress.Security.EscapeOutput
-		}
-		if ( vf_opt( 'vf_use_footer' ) ) {
-			remove_all_actions( 'astra_footer' );
-			add_action( 'astra_footer', function () { echo vf_hf_render( 'footer' ); } ); // phpcs:ignore WordPress.Security.EscapeOutput
 		}
 	}
 );

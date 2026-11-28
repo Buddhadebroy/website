@@ -1,5 +1,5 @@
 <?php
-// Generated from data/tokens.json by src/build-patterns.py.
+// Originally generated from data/tokens.json by src/build-patterns.py (now removed — edited directly).
 defined( 'ABSPATH' ) || exit;
 return array (
   '--ast-global-color-0' => 

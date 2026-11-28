@@ -27,7 +27,7 @@ The Notifima website (Home, Features, Pricing, Blog, Release Notes, About Us, th
 style.css, functions.php     theme header, loads inc/
 inc/                         setup, customizer, design tokens, patterns, pages, header/footer, admin page, helpers
 page-content/                the six pages as Kadence blocks ({{ref:…}} = a shared synced pattern)
-pattern-files/               the 5 synced patterns: header, footer, and the 3 sections used on several pages
+patterns/               the 5 synced patterns: header, footer, and the 3 sections used on several pages
 blocks/site-logo, site-menu  theme blocks used by the header pattern
 graphic/                     the Animated Graphic block and its 78 parts
 page-templates/              Notifima Canvas (Kadence), Notifima Release Notes (automatic)
@@ -37,7 +37,6 @@ assets/css                   nf-site.css (header, menus, graphics), nf-blocks.cs
                              nf-kadence.css (Kadence adjustments), nf-fonts.css
 assets/js/nf-site.js         menu, mega menu, phone menu, FAQ, tabs, filters, reveal on scroll
 data/                        pages, menu and design tokens (.php and .json)
-src/                         build-kadence.py (pages), build-blog.py (posts) and the source site
 ```
 
 ## What changed in 2.2.4
@@ -73,7 +72,7 @@ src/                         build-kadence.py (pages), build-blog.py (posts) and
 - **New single blog post design**, laid out like the VuloForm and VuloMail posts in the Notifima style: breadcrumb, category, big title, author · date · reading time, a sticky "On this page" list (from the H2 headings, highlights the section you are reading) with a "Get Notifima" card, an author box and "Keep reading".
 - **Post components** as Kadence blocks: illustrated banner, opening line, compare cards, icon chips, stat tiles, tip and warning boxes, step pills, step cards, numbered steps, code box, table, "common mistakes" list, dark "Key takeaways" box and FAQ. Their look is in `assets/css/nf-blog.css`, loaded only on posts and in the editor.
 - **Sample post**: Appearance → Notifima → **Create the sample blog post** adds a post that uses every component, so you can copy sections into your own posts.
-- **Write posts in Markdown**: `python3 src/build-blog.py post.md post.html` turns a Markdown file (with `:::note`, `:::steps`, `:::takeaways`, `:::faq` … boxes, see the top of the script) into Kadence blocks. Paste the result into a post's Code editor.
+- **Writing posts**: build each post directly with the Kadence blocks listed above (banner, compare cards, icon chips, stat tiles, tip/warning boxes, step pills, FAQ, etc.) in the block editor. The Markdown → Kadence build script (`src/build-blog.py`) has been removed; use the sample post (Appearance → Notifima → Create the sample blog post) as a starting template to copy sections from instead.
 
 ## What changed in 2.0.0
 

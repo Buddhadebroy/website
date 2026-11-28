@@ -173,7 +173,7 @@ function nf_admin_page() {
 		<form method="post">
 			<?php wp_nonce_field( 'nf_setup' ); ?>
 			<input type="hidden" name="nf_action" value="sample">
-			<p>Every post uses the Notifima single post design (title, author, date, reading time, "On this page" from the H2 headings, "Keep reading"). The sample post shows every component (compare cards, chips, stats, tip and warning boxes, steps, table, takeaways, FAQ) as Kadence blocks you can copy. New posts can also be written in Markdown and turned into blocks with <code>src/build-blog.py</code>.</p>
+			<p>Every post uses the Notifima single post design (title, author, date, reading time, "On this page" from the H2 headings, "Keep reading"). The sample post shows every component (compare cards, chips, stats, tip and warning boxes, steps, table, takeaways, FAQ) as Kadence blocks you can copy. Copy the sample post's sections into a new post to start from a working layout.</p>
 			<?php submit_button( 'Create the sample blog post', 'secondary', 'submit', false ); ?>
 		</form>
 

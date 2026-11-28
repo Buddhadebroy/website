@@ -4,7 +4,7 @@
  * Template Post Type: page
  *
  * The Notifima Pro Release Notes page in the same design as the free Release Notes page. The versions come from
- * the page editor (the Kadence Section "nf-relpro", see inc/release-pro.php). Pages holding that Section use this
+ * the page editor (the Kadence Section "nf-relpro", see inc/features/release-pro.php). Pages holding that Section use this
  * template automatically.
  *
  * @package Notifima

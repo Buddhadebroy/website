@@ -3,7 +3,7 @@
  * Graphic folder – loader.
  *
  *   graphic/parts/   one PHP file per graphic (every mockup, demo, card picture and form of the site);
- *                    the file name is the graphic name. Made by src/build-patterns.py from the original HTML.
+ *                    the file name is the graphic name. Originally made by src/build-patterns.py (now removed — edited directly) from the original HTML.
  *   graphic/block/   the block "Animated Graphic (Notifima)" (notifima/graphic)
  *
  * Use a graphic anywhere: the block (pick one from the list), the shortcode [nf_graphic name="home-stage"],

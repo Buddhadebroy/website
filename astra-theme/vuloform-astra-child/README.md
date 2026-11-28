@@ -24,9 +24,9 @@ VuloPilot child theme, but nothing is shared with VuloPilot.
 |---|---|
 | `style.css` | Theme header + **your own custom CSS** (printed last, wins over everything) |
 | `functions.php` | Loads everything below |
-| `inc/` | `setup.php` (assets, Astra layout, blog templates), `header-footer.php` (synced header/footer, Astra hooks, logo + menu blocks), `root-vars.php` (Design tokens), `customizer.php`, `shortcodes.php`, `blocks.php` (VuloForm blocks + category), `admin.php` (setup screen), `helpers.php`, `content-data.php` (menu, footer, products), `template-helpers.php` (table, chart, banner) |
+| `inc/` | `setup.php` (assets, Astra layout, blog templates), `header.php` + `footer.php` (synced header/footer, Astra hooks, logo + menu blocks), `root-vars.php` (Design tokens), `customizer.php`, `shortcodes.php`, `blocks.php` (VuloForm blocks + category), `admin.php` (setup screen), `helpers.php`, `content-data.php` (menu, footer, products), `template-helpers.php` (table, chart, banner) |
 | `page-templates/` | **VuloForm Home**, **VuloForm Compare (all plugins)**, **VuloForm Compare (one plugin)**, **VuloForm Canvas (Kadence)** (empty full-width page for the patterns) |
-| `pattern-files/` | Originals of the 28 **synced patterns** (Inserter → Patterns → VuloForm): every section of every page + whole pages |
+| `patterns/` | Originals of the 28 **synced patterns** (Inserter → Patterns → VuloForm): every section of every page + whole pages |
 | `template-parts/home/` | One file per Home section: hero, templates, builder, logic, features, compare, embed, privacy, faq, cta |
 | `template-parts/shared/`, `template-parts/blog/` | Sources fold-out; blog index + single post (TOC from the H2s) |
 | `blocks/` | The 4 section blocks (`block.json` + `render.php` each) and `editor.js` (their sidebar); `site-logo/`, `site-menu/` + `site-editor.js` (header and footer blocks) |
@@ -34,7 +34,7 @@ VuloPilot child theme, but nothing is shared with VuloPilot.
 | `assets/css/` | `vf-tailwind.css` (compiled), `vf-site.css` (tokens, header, widgets, graphics, blog), `vf-effects.css` (effects), `vf-kadence.css` (the class names the Kadence patterns use) |
 | `assets/js/` | `vf-effects.js` (reveal, scroll, marquee, pointer), `vf-site.js` (header, tabs, FAQ, copy, demos, TOC) |
 | `data/` | `compare.json` (all comparison facts and prices), `posts.json` (the 10 articles for the importer), `tokens.json` (the design tokens and their original values) |
-| `src/` | Tailwind input + `build.mjs` to rebuild `vf-tailwind.css` (runs `build-tokens.mjs`); `build-patterns.py` regenerates `patterns/`; `build-blog.py` Markdown → Kadence |
+| `src/` | Tailwind input + `build.mjs` to rebuild `vf-tailwind.css` (runs `build-tokens.mjs`). The old `build-patterns.py` / `build-blog.py` Python scripts have been removed — `patterns/` and blog posts are now edited directly in Kadence |
 
 ## Kadence block patterns (every page, every section)
 
@@ -138,13 +138,13 @@ Turn it off in Customize → VuloForm → *Base size 1rem = 16px* (`inc/setup.ph
 
 ## Blog posts as Kadence blocks (1.3.3)
 
-`python3 src/build-blog.py post.md post-kadence.html` turns a Markdown post into Kadence blocks (Row Layout → Section →
-Advanced Text) styled by the `vf-b-*` classes (section 9 of `assets/css/vf-kadence.css`). The `#` title is dropped
-(put it in the WordPress title field). The single-post template adds breadcrumb, title, date, "On this page" (from every
-H2) and "Keep reading". Recognised: bold first line (tagline), `> a → b → c` (flow), `> question?` (Ask yourself),
-`**Term** — text` (rows), `**Title**` + text (cards, `Mistake N:` = red), `**Label:**` + line (examples), short lists
-(chips), tables, `### Step/Week/Priority N:` (badges), `## Key Takeaways` (dark card), `## Where … Helps` (closing card).
-Paste: post → ⋮ → Code editor → paste → Exit code editor → Update.
+The Markdown → Kadence build script (`src/build-blog.py`) has been removed; build each post directly with Kadence
+blocks (Row Layout → Section → Advanced Text) styled by the `vf-b-*` classes (section 9 of `assets/css/vf-kadence.css`).
+The single-post template adds breadcrumb, title, date, "On this page" (from every H2) and "Keep reading". The classes
+to reuse by hand: bold first line (tagline), `> a → b → c` (flow), `> question?` (Ask yourself), `**Term** — text`
+(rows), `**Title**` + text (cards, `Mistake N:` = red), `**Label:**` + line (examples), short lists (chips), tables,
+`### Step/Week/Priority N:` (badges), `## Key Takeaways` (dark card), `## Where … Helps` (closing card). Paste the
+finished markup: post → ⋮ → Code editor → paste → Exit code editor → Update.
 
 ## What changed in 2.0.0
 
@@ -180,7 +180,7 @@ re-activating the theme). Your pages stay as they are.
 ## What changed in 2.1.0
 
 **Every pattern is a synced pattern you can edit.** Patterns that come from theme files are shown locked
-(read-only) in Appearance → Design → Patterns, so the files moved from `patterns/` to `pattern-files/` and are no
+(read-only) in Appearance → Design → Patterns, so the files moved from `patterns/` to `patterns/` and are no
 longer registered as theme patterns. Instead each one becomes a **synced pattern** (category VuloForm) when the theme
 is activated, or with Appearance → VuloForm → **Create synced patterns** (only missing ones are made; tick *Put the
 original design back* to overwrite them, a revision is kept). Edit them in Appearance → Design → Patterns.

@@ -27,23 +27,26 @@ inc/setup.php                    assets, fonts, inline :root tokens, full-width 
 inc/customizer.php               Customize → VuloMail (header/footer on/off, links, fonts, smooth scroll, width)
 inc/root-vars.php                Customize → VuloMail → Design tokens (every :root variable) + "Reset to original"
 inc/admin.php                    Appearance → VuloMail (build pages, header/footer, posts, logo, cheat sheet)
-inc/patterns.php                 synced (header, footer, shared) and plain patterns from pattern-files/, update from 1.1
-inc/header-footer.php            prints the synced Header/Footer patterns in place of Astra's
-inc/contact.php                  contact form handler (emails the message)
-inc/menus.php                    header + footer menus (created on activation)
-inc/blog.php                     blog index / single markup
+inc/patterns.php                 synced (header, footer, shared) and plain patterns from patterns/, update from 1.1
+inc/header.php                   prints the synced Header pattern in place of Astra's; shared helpers
+inc/footer.php                   prints the synced Footer pattern in place of Astra's
+inc/features/contact.php                  contact form handler (emails the message)
+inc/features/menus.php                    header + footer menus (created on activation)
+inc/features/blog.php                     blog index / single markup
 inc/content-data.php, helpers.php, blocks.php
 template-parts/blog/             index.php, single.php
 graphic/                         blocks "Animated Graphic", "Site Logo", "Site Menu" (VuloMail) + parts/ (one file per graphic)
-pattern-files/                   196 original designs as plain block markup (data/patterns.json says which are synced)
+patterns/                   196 original designs as plain block markup (data/patterns.json says which are synced)
 assets/css/                      vm-tailwind.css (vm: utilities), vm-site.css, vm-effects.css, vm-kadence.css,
                                  vm-kadence-editor.css (Kadence layout rules for the editor's markup), vm-editor.css
 assets/js/                       vm-effects.js (reveal, split words, parallax, tilt, magnetic, count-up, header),
                                  vm-site.js (menus, live log, scroll stories, demos, explorers), vendor/lenis
 data/                            site.json, compare.json, developers.json, blog.json + blog/*.md|html, icons.json,
                                  root-vars.json, pages.json, patterns.json, changelog.json
-src/                             build.mjs, build-tokens.mjs, build-patterns.py (+ kb.py, pages_inner.py),
-                                 build-blog.py, validate-patterns.mjs, test-colors.cjs, test-server/
+src/                             build.mjs, build-tokens.mjs, validate-patterns.mjs, test-colors.cjs, test-server/
+                                 (the old build-patterns.py / build-blog.py / kb.py / pages_inner.py / editable.py
+                                 Python scripts have been removed — patterns, changelog and blog posts are now
+                                 edited directly in Kadence)
 ```
 
 ## How to edit
@@ -67,32 +70,35 @@ src/                             build.mjs, build-tokens.mjs, build-patterns.py 
   token (`var()` or `color-mix()`); `npm run build` stops if a raw colour is left.
 - **Pricing**: as on the website: free, "$0 / forever". The included list is the Animated Graphic's `included` prop
   (Code editor), the "Why free?" cards are Kadence blocks.
-- **Changelog**: Kadence blocks on the page. To regenerate from data, edit `data/changelog.json` (copied from the
-  plugin's readme.txt) and run `python3 src/build-patterns.py`.
+- **Changelog**: Kadence blocks on the page, edited directly. `data/changelog.json` (copied from the plugin's
+  readme.txt) is kept as the source-of-truth reference, but the regeneration script has been removed — update the
+  Kadence blocks by hand to match.
 - **Contact form**: messages go to Customize → VuloMail → Links → Contact form email (default: the admin email).
 - **Demos and data** (providers, alerts, FAQ, comparisons, API tables): `data/*.json`. The demos are
   "Animated Graphic (VuloMail)" blocks; pick another part in the block's settings.
-- **New blog post**: write Markdown (front matter: title, slug, category, published, updated, answer, keywords,
-  related), then `python3 src/build-blog.py post.md out.html` and paste `out.html` in the Code editor.
-  Put the "short answer" in the Excerpt. Supported extras: `> [!WARNING]`, `> [!TIP]`, `> [!TAKEAWAYS]`, `::: cards`.
+- **New blog post**: the Markdown → Kadence build script (`src/build-blog.py`) has been removed; build the post
+  directly with Kadence blocks in the editor instead, following the look of an existing post in `data/blog/`.
+  Put the "short answer" in the Excerpt.
 
 ## Rebuild
 
 ```
 cd src && npm install
-python3 build-patterns.py     # patterns + src/kadence.sections.css
 npm run build                 # CSS (Tailwind 4.3.3, same as the original) + tokens pass + data/root-vars.json
 npm run validate              # must print "0 invalid · 0 core blocks · 0 with PHP · 0 bad links"
 node test-colors.cjs http://127.0.0.1:8090 / /p/features …   # before/after tokens: must print 0 differences
 php -S 127.0.0.1:8090 test-server/router.php   # local render with Kadence emulation, for measuring
 ```
 
+The old `build-patterns.py` step is gone — patterns are now maintained directly in Kadence, so there is nothing to
+regenerate before `npm run build`.
+
 ## Notes
 
 - Kadence markup follows Kadence Blocks 3.8's own save functions (read from its source): Row Layout and Button are
   rendered by Kadence in PHP (no saved HTML), Section and Advanced Text save the exact HTML Kadence expects. Lists and
   the FAQ use Advanced Text instead of Icon List / Accordion, whose saved icon markup is generated dynamically.
-  All of it lives in `src/kb.py`.
+  (The reference notes on this used to live in `src/kb.py`, now removed — check the patterns in `patterns/` directly.)
 - There are no page templates: pattern pages use Astra's page template with full width, no sidebar and no title
   (set by Build pages, and detected for any page made of VuloMail patterns).
 - The local test server emulates Kadence (row wrapper + padding CSS) and hostile Astra defaults; check on a real
@@ -170,7 +176,7 @@ Appearance → VuloMail → *Build pages* with **Replace** ticked (a revision is
 - Blog: posts import from `data/blog.json` (titles, categories, dates, excerpts); cards fall back cleanly for posts
   without a title or category.
 - Pricing redesigned with three licences (1, 3 and 10 sites); new Contact page with a working form.
-- Synced patterns: originals moved to `pattern-files/` (no PHP in saved content); every section, the header, footer and
+- Synced patterns: originals moved to `patterns/` (no PHP in saved content); every section, the header, footer and
   each "Page · …" become editable synced patterns in the VuloMail category, with "Put the original design back".
   Pages are made of references to the section patterns.
 - Design tokens: `build-tokens.mjs` turns every colour into `var()` / `color-mix()` and fails on any raw colour;

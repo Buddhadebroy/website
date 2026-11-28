@@ -3,11 +3,13 @@ Theme Name:   VuloForm Astra Child
 Theme URI:    https://vuloform.com/
 Description:  Astra child theme for VuloForm: the Home page (plain PHP sections ported from the Next.js site), Compare pages, blog layout, header and footer built with Kadence blocks (synced patterns), design tokens for every CSS variable, VuloForm blocks, animated graphics and class-based section + scroll effects.
 Author:       VuloLabs
+Author URI:   https://www.vulolabs.com
 Template:     astra
 Version:      2.1.0
 Requires at least: 6.6
 Requires PHP: 7.4
-License:      GPLv2 or later
+License:      GPL-2.0-or-later
+License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain:  vuloform
 */
 
