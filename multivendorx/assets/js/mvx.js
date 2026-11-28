@@ -699,3 +699,12 @@ jQuery(function ($) {
     window.scrollTo({ top: y, behavior: 'smooth' });
   });
 });
+
+/* r73: booking earnings calculator */
+document.querySelectorAll('[data-calc]').forEach(function(c){
+  var f=function(n){return '$'+Math.round(n).toLocaleString('en-US')};
+  var run=function(){var v={};c.querySelectorAll('input[data-k]').forEach(function(i){v[i.dataset.k]=+i.value});
+    c.querySelector('[data-o=p]').textContent=v.p;c.querySelector('[data-o=b]').textContent=v.b;c.querySelector('[data-o=v]').textContent=f(v.v);c.querySelector('[data-o=c]').textContent=v.c+'%';
+    var n=v.p*v.b,g=n*v.v;c.querySelector('[data-r=n]').textContent=n.toLocaleString('en-US');c.querySelector('[data-r=g]').textContent=f(g);c.querySelector('[data-r=m]').textContent=f(g*v.c/100);};
+  c.querySelectorAll('input').forEach(function(i){i.addEventListener('input',run)});run();
+});
