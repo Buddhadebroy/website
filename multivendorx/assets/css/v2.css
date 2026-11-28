@@ -2184,3 +2184,31 @@ body:not(.pg-home) main .cta-band{padding:72px 0!important}
 .pr-hero .pq .dots i{height:6px;border-radius:2px}
 .pr-hero .pq .btn{border-radius:8px}
 .pr-hero .pq-inc{background:#fff;border:1px solid var(--line);border-radius:14px!important}
+/* pricing: plan cards (Notifima style) */
+.np-shell{max-width:1080px;margin:48px auto 0;background:#fff;border:1px solid var(--line);border-radius:22px;padding:12px;text-align:left}
+.np-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.np-plan{position:relative;display:flex;flex-direction:column;padding:30px 28px;border-radius:16px;background:#fff;box-shadow:-1px 0 0 var(--line)}
+.np-plan:first-child{box-shadow:none}
+.np-plan.pop{background:linear-gradient(180deg,var(--brand-50),#fff 70%);box-shadow:inset 0 0 0 1.5px var(--brand-100)}
+.np-plan.pop+.np-plan{box-shadow:none}
+.np-rib{position:absolute;top:18px;right:18px;display:inline-flex;align-items:center;gap:5px;background:var(--brand);color:#fff;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:99px}
+.np-rib svg.i{width:11px;height:11px;fill:#fff;stroke:none}
+.np-top{display:flex;align-items:center;gap:14px}
+.np-ico{width:46px;height:46px;border-radius:12px;background:var(--brand-50);color:var(--brand);display:grid;place-items:center;flex:none}
+.np-ico svg.i{width:21px;height:21px}
+.np-plan.pop .np-ico{background:var(--brand);color:#fff}
+.np-plan h3{font-size:21px;font-weight:600;letter-spacing:-.015em}
+.np-top p{font-size:14.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+.np-price{display:flex;align-items:flex-start;gap:2px;margin:26px 0 4px;color:var(--ink)}
+.np-price sup{font-size:22px;font-weight:500;line-height:1;margin-top:8px}
+.np-price strong{font-size:54px;line-height:1;font-weight:600;letter-spacing:-.03em}
+.np-price span{align-self:flex-end;color:var(--muted);font-size:15px;padding:0 0 8px 6px}
+.np-per{font-size:14.5px;color:var(--muted);margin-bottom:22px}.np-per b{color:var(--ink);font-weight:600}
+.np-plan .btn{width:100%;justify-content:center}
+.np-plan ul{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.np-plan li{display:flex;gap:11px;align-items:center;font-size:15px;color:var(--ink-2)}
+.np-plan li svg.i{width:20px;height:20px;padding:3.5px;border-radius:50%;background:var(--green-50);color:var(--green);stroke-width:3;flex:none}
+.np-plan li.site{color:var(--ink);font-weight:600}
+.np-plan li.site svg.i{background:var(--brand-50);color:var(--brand);stroke-width:2}
+.pr-hero .pq-trust{margin-top:22px}
+@media (max-width:900px){.np-plans{grid-template-columns:1fr}.np-plan{box-shadow:0 -1px 0 var(--line);padding:26px 20px}.np-plan:first-child,.np-plan.pop+.np-plan{box-shadow:none}}
