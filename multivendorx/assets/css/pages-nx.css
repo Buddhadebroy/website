@@ -1053,3 +1053,32 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
 .pg-booking .bk-mx .ax.y{left:-16px;top:50%;bottom:auto;transform:translate(-50%,-50%) rotate(-90deg);transform-origin:center;translate:none}
 .pg-booking .bk-heat{padding:22px}
 @media(max-width:900px){.pg-booking .bk-leg{margin-top:12px}.pg-booking .bk-hero{padding-top:10px}.pg-booking .bk-90-st{grid-template-columns:1fr 1fr}.pg-booking .bk-heat{padding:16px}}
+
+/* r68: booking "how it is possible" */
+.pg-booking .bk-how{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;margin-bottom:44px}
+.pg-booking .bk-done{border-radius:22px;background:#fff;border:1px solid var(--bk-line);overflow:hidden}
+.pg-booking .bk-done .h,.pg-booking .bk-done .r{display:grid;grid-template-columns:110px minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:center;padding:14px 22px}
+.pg-booking .bk-done .h{background:#faf8fe;border-bottom:1px solid var(--bk-line);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.pg-booking .bk-done .h span{display:flex;align-items:center;gap:6px}
+.pg-booking .bk-done .h svg.i{position:static;display:block;width:14px;height:14px}
+.pg-booking .bk-done .h .x{color:#b91c1c}.pg-booking .bk-done .h .y{color:#15803d}
+.pg-booking .bk-done .r{border-top:1px solid #f3f1f7}
+.pg-booking .bk-done .h+.r{border-top:0}
+.pg-booking .bk-done .r b{font-size:14.5px;font-weight:600;color:var(--bk-ink)}
+.pg-booking .bk-done .r .x{font-size:14.5px;color:#a09cb4;text-decoration:line-through;text-decoration-color:rgba(185,28,28,.45)}
+.pg-booking .bk-done .r .y{font-size:14.5px;font-weight:600;color:var(--bk)}
+.pg-booking .bk-why{padding:24px;border-radius:22px;background:linear-gradient(160deg,#fff,#f6f1ff);border:1px solid #d9c9f7}
+.pg-booking .bk-why h4{margin:0 0 16px;font-size:17px;font-weight:600;color:var(--bk-ink)}
+.pg-booking .bk-why>div{display:flex;gap:12px;margin-top:14px}
+.pg-booking .bk-why .n{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--bk);color:#fff;font-size:13px;font-weight:600}
+.pg-booking .bk-why p{margin:0;font-size:14.5px;line-height:1.55;color:var(--bk-mut)}
+.pg-booking .bk-why p b{color:var(--bk-ink);font-weight:600}
+.pg-booking .bk-how-t{margin:0 0 18px;font-size:20px;font-weight:600;color:var(--bk-ink);text-align:center}
+@media(max-width:900px){
+ .pg-booking .bk-how{grid-template-columns:1fr;gap:14px;margin-bottom:32px}
+ .pg-booking .bk-done .h{display:none}
+ .pg-booking .bk-done .r{grid-template-columns:1fr 1fr;grid-template-areas:"b b" "x y";gap:4px 12px;padding:12px 16px}
+ .pg-booking .bk-done .r b{grid-area:b}.pg-booking .bk-done .r .x{grid-area:x;font-size:13.5px}.pg-booking .bk-done .r .y{grid-area:y;font-size:13.5px}
+ .pg-booking .bk-why{padding:18px}
+ .pg-booking .bk-how-t{font-size:18px}
+}

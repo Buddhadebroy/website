@@ -30,9 +30,9 @@ for fn, src, title, desc, on in PAGES:
     for k in ("features", "market", "res", "pricing"):
         hdr = hdr.replace("{ON_%s}" % k, "on" if k == on else "")
     body = rd("pages/" + src + ".html").replace("{PLANS}", rd("parts/plans.html")).replace("{TESTI}", rd("parts/testi.html")).replace("{TESTI2}", rd("parts/testi2.html")).replace("{TRUST}", rd("parts/trust.html")).replace("{REVIEWS}", rd("parts/reviews.html"))
-    EXTRA = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">\n<link rel="stylesheet" href="assets/css/home-ref.css?v=r67"><link rel="stylesheet" href="assets/css/home-nx.css?v=r67">\n') if src == 'home' else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">\n<link rel="stylesheet" href="assets/css/pages-gen.css?v=r67"><link rel="stylesheet" href="assets/css/pages-nx.css?v=r67">\n' if src != 'home' else '')
+    EXTRA = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">\n<link rel="stylesheet" href="assets/css/home-ref.css?v=r68"><link rel="stylesheet" href="assets/css/home-nx.css?v=r68">\n') if src == 'home' else ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap">\n<link rel="stylesheet" href="assets/css/pages-gen.css?v=r68"><link rel="stylesheet" href="assets/css/pages-nx.css?v=r68">\n' if src != 'home' else '')
     PB = ' pg-playbook' if src in ('subscription','auction','rental','b2b') else (' pg-niche' if src == 'booking' else '')
-    if PB == ' pg-playbook': EXTRA += '<link rel="stylesheet" href="assets/css/mkt.css?v=r67">\n'
+    if PB == ' pg-playbook': EXTRA += '<link rel="stylesheet" href="assets/css/mkt.css?v=r68">\n'
     html = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -40,8 +40,8 @@ for fn, src, title, desc, on in PAGES:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="stylesheet" href="assets/css/mvx.css?v=r67">
-<link rel="stylesheet" href="assets/css/v2.css?v=r67">
+<link rel="stylesheet" href="assets/css/mvx.css?v=r68">
+<link rel="stylesheet" href="assets/css/v2.css?v=r68">
 {EXTRA}</head>
 <body class="pg-{src}{PB}">
 {rd("icons.html")}
@@ -51,7 +51,7 @@ for fn, src, title, desc, on in PAGES:
 </main>
 {rd("footer.html")}
 <script src="assets/js/jquery-3.7.1.min.js"></script>
-<script src="assets/js/mvx.js?v=r67"></script>
+<script src="assets/js/mvx.js?v=r68"></script>
 </body>
 </html>
 '''
