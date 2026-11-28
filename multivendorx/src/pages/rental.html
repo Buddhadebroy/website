@@ -42,11 +42,11 @@
 <!-- 1a. Proof -->
 <section class="sec" id="proof"><div class="wrap">
   <div class="sec-head center rv"><span class="eyebrow">Proof it works</span><h2 class="h-lg" style="margin-top:18px">Has anyone actually done this? <span class="accent">You've probably rented through one.</span></h2><p class="lead">Rental marketplaces already run whole industries. Yours can start much smaller.</p></div>
-  <div class="bk-proof rv" data-stagger="90">
-    <div><span class="ico">{i:building}</span><b>Airbnb</b><em>Homes and rooms</em><p>Rents out spare rooms and holiday homes.</p></div>
-    <div><span class="ico coral">{i:truck}</span><b>Turo</b><em>Cars</em><p>Lets people rent cars from their owners.</p></div>
-    <div><span class="ico green">{i:image}</span><b>Fat Llama</b><em>Cameras and tech</em><p>Rents out cameras, drones and sound gear.</p></div>
-    <div><span class="ico">{i:box}</span><b>Hygglo</b><em>Everyday items</em><p>Rents tools, gear and party items between neighbours.</p></div>
+  <div class="rt-proof rv" data-stagger="90">
+    <div class="l"><div class="im a">{i:building}<em>per night</em></div><b>Airbnb</b><span>Spare rooms and holiday homes</span></div>
+    <div class="l"><div class="im b">{i:truck}<em>per day</em></div><b>Turo</b><span>Cars, rented from their owners</span></div>
+    <div class="l"><div class="im c">{i:image}<em>per day</em></div><b>Fat Llama</b><span>Cameras, drones and sound gear</span></div>
+    <div class="l"><div class="im d">{i:box}<em>per day</em></div><b>Hygglo</b><span>Tools and party gear between neighbours</span></div>
   </div>
   <div class="bk-trust rv"><span><b>10,000+</b>marketplace owners use MultiVendorX</span><span><b>4.9 / 5</b>rating on WordPress.org</span><span><b>15,000+</b>builders in the community</span></div>
   <p class="bk-mx-n rv">{i:info} <span>The examples above aren't built on MultiVendorX. They show the model works.</span></p>
@@ -55,26 +55,20 @@
 <!-- 1b. The rental flow -->
 <section class="sec" id="flow"><div class="wrap">
   <div class="sec-head center rv"><span class="eyebrow">The rental flow</span><h2 class="h-lg" style="margin-top:18px">How does a rental actually work? <span class="accent">Six steps, from listing to deposit back.</span></h2><p class="lead">From the moment an owner lists an item to the moment it comes home.</p></div>
-  <div class="bk-flow six rv" data-stagger="90">
-    <div class="st"><span class="n">1</span><span class="who">Owner</span><h4>Lists the item</h4>
-      <div class="ui"><div class="r"><span>Units</span><b>2</b></div><div class="r"><span>Price</span><b>$50 / day</b></div><div class="r"><span>Available</span><b>Mar-Oct</b></div></div>
-      <p>In their MultiVendorX store dashboard.</p></div>
-    <div class="st"><span class="n">2</span><span class="who c">Renter</span><h4>Picks the dates</h4>
-      <div class="ui"><div class="rt-cal"><i class="x">10</i><i class="x">11</i><i class="s">12</i><i class="m">13</i><i class="s">14</i><i>15</i><i>16</i></div></div>
-      <p>Dates already rented are blocked, so nothing is double-booked.</p></div>
-    <div class="st"><span class="n">3</span><span class="who c">Renter</span><h4>Pays rent and deposit</h4>
-      <div class="ui"><div class="r"><span>Rent · 2 days</span><b>$100</b></div><div class="r"><span>Deposit, held</span><b>$150</b></div><span class="btn-m">{i:card} Pay and reserve</span></div>
-      <p>Through any WooCommerce payment gateway.</p></div>
-    <div class="st"><span class="n">4</span><span class="who y">Both</span><h4>Hand over</h4>
-      <div class="ui"><div class="r"><span>{i:pin} Pickup point</span><b>Fri 12</b></div><div class="r ok"><span>{i:image} Condition photos taken</span></div></div>
-      <p>Your process: a pickup point and photos of the item's condition.</p></div>
-    <div class="st"><span class="n">5</span><span class="who">Owner</span><h4>Checks the return</h4>
-      <div class="ui"><div class="r"><span>{i:refresh} Returned</span><b>Sun 14</b></div><div class="r ok"><span>{i:check} Matches pickup photos</span></div></div>
-      <p>Compare against the pickup photos. All good? The rental is done.</p></div>
-    <div class="st"><span class="n">6</span><span class="who a">MultiVendorX</span><h4>Everyone gets paid</h4>
-      <div class="ui"><div class="r"><span>Owner</span><b>$88</b></div><div class="r you"><span>You, 12%</span><b>$12</b></div><div class="r"><span>Deposit back to renter</span><b>$150</b></div></div>
-      <p>MultiVendorX takes your commission and pays the owner.</p></div>
+  <div class="rt-lane rv">
+    <div class="hd"><span></span><b><i>1</i>List</b><b><i>2</i>Reserve</b><b><i>3</i>Pick up</b><b><i>4</i>Use</b><b><i>5</i>Return</b><b><i>6</i>Settle</b></div>
+    <div class="ln it"><span class="lb">{i:box} The item</span><i>At the owner's<small>2 units at $50 a day</small></i><i>At the owner's<small>Fri 12 to Sun 14 blocked</small></i><i class="mv">With the renter<small>Condition photos taken</small></i><i class="mv">With the renter<small>Out on rent</small></i><i>Back with the owner<small>Checked against photos</small></i><i class="ok">Ready to rent again<small>Dates open up</small></i></div>
+    <div class="ln mo"><span class="lb">{i:coins} The money</span><i class="no">Nothing yet<small>Listing is free</small></i><i class="pay">$250 paid<small>$100 rent + $150 deposit</small></i><i class="hold">Deposit held<small>$150</small></i><i class="hold">Deposit held<small>$150</small></i><i class="hold">Deposit held<small>Until the check</small></i><i class="ok">Split and paid<small>Owner $88 · you $12 · deposit refunded</small></i></div>
+    <div class="ln wh"><span class="lb">{i:users} Who acts</span><i>Owner</i><i>Renter</i><i>Both</i><i>Renter</i><i>Owner</i><i>MultiVendorX + you</i></div>
   </div>
+  <ol class="rt-lane-m rv">
+    <li><b>1 · List</b><span>{i:box} At the owner's: 2 units at $50 a day</span><span>{i:coins} Nothing yet</span><em>Owner</em></li>
+    <li><b>2 · Reserve</b><span>{i:box} Fri 12 to Sun 14 blocked</span><span class="pay">{i:coins} $250 paid: $100 rent + $150 deposit</span><em>Renter</em></li>
+    <li><b>3 · Pick up</b><span class="mv">{i:box} With the renter, photos taken</span><span class="hold">{i:coins} Deposit held</span><em>Both</em></li>
+    <li><b>4 · Use</b><span class="mv">{i:box} Out on rent</span><span class="hold">{i:coins} Deposit held</span><em>Renter</em></li>
+    <li><b>5 · Return</b><span>{i:box} Back, checked against photos</span><span class="hold">{i:coins} Deposit held until the check</span><em>Owner</em></li>
+    <li><b>6 · Settle</b><span class="ok">{i:box} Ready to rent again</span><span class="ok">{i:coins} Owner $88 · you $12 · deposit refunded</span><em>MultiVendorX + you</em></li>
+  </ol>
   <div class="bk-gloss rv"><div class="h"><b>New to this?</b><small>Six words you'll see on this page</small></div>
     <dl><div><dt>Owner</dt><dd>The person or business that lists an item for rent.</dd></div><div><dt>Listing</dt><dd>One item for rent, with its price, units and dates.</dd></div><div><dt>Security deposit</dt><dd>Money held during the rental and returned if the item comes back fine.</dd></div><div><dt>Commission</dt><dd>Your share of every rental.</dd></div><div><dt>Payout</dt><dd>The money you send an owner for their rentals.</dd></div><div><dt>Waitlist page</dt><dd>One web page where people leave their email before you launch.</dd></div></dl>
   </div>
@@ -85,16 +79,18 @@
 <section class="sec white" id="mvx"><div class="wrap">
   <div class="sec-head center rv"><span class="eyebrow">Powered by MultiVendorX</span><h2 class="h-lg" style="margin-top:18px">So what does MultiVendorX do? <span class="accent">Everything between the listing and the payout.</span></h2><p class="lead">Every owner gets their own store and dashboard. You get the controls, the commission and the payouts.</p></div>
   <div class="bk-mvx rv">
-    <div class="bk-dash" aria-hidden="true">
-      <div class="top"><span class="lg">{i:store}</span><div><b>Maya's Gear</b><small>Store dashboard · MultiVendorX</small></div><span class="live"><i></i>Live</span></div>
-      <div class="tb"><span class="on">{i:cal} Rentals</span><span>{i:box} Inventory</span><span>{i:coins} Earnings</span></div>
-      <div class="rows">
-        <div class="r"><span class="t">Fri-Sun</span><span class="w">Camera kit · Leo M.</span><span class="s rs">Out on rent</span></div>
-        <div class="r"><span class="t">Today</span><span class="w">Drone · Sara K.</span><span class="s ap">Due back</span></div>
-        <div class="r"><span class="t">Mon-Wed</span><span class="w">50mm lens · Ana R.</span><span class="s ok">Confirmed</span></div>
-        <div class="r"><span class="t">Next week</span><span class="w">Tripod · Tom B.</span><span class="s ok">Confirmed</span></div>
+    <div class="rt-inv" aria-hidden="true">
+      <div class="top"><span class="lg">{i:store}</span><div><b>Maya's Gear</b><small>Rental calendar · MultiVendorX</small></div><span class="live"><i></i>Live</span></div>
+      <div class="g">
+        <div class="r hd"><span></span><b>Mon</b><b>Tue</b><b>Wed</b><b>Thu</b><b>Fri</b><b>Sat</b><b>Sun</b></div>
+        <div class="r"><span>Camera kit · 1</span><em class="out" style="grid-column:6/9">Leo M. · out</em></div>
+        <div class="r"><span>Camera kit · 2</span><em class="ok" style="grid-column:2/5">Ana R.</em></div>
+        <div class="r"><span>Drone</span><em class="due" style="grid-column:2/3">Due</em><em class="ok" style="grid-column:7/9">Sara K.</em></div>
+        <div class="r"><span>50mm lens</span><em class="ok" style="grid-column:3/7">Tom B.</em></div>
+        <div class="r"><span>Tripod</span><em class="blk" style="grid-column:4/6">Owner using</em></div>
       </div>
-      <div class="ft"><div><small>This month</small><b>$1,120</b></div><div><small>Next payout</small><b>Friday</b></div><div><small>Items listed</small><b>14</b></div></div>
+      <div class="ft"><span><i class="out"></i>Out on rent</span><span><i class="ok"></i>Booked</span><span><i class="due"></i>Due back</span><span><i class="blk"></i>Blocked</span></div>
+      <div class="st"><div><small>This month</small><b>$1,120</b></div><div><small>Next payout</small><b>Friday</b></div><div><small>Out today</small><b>3 items</b></div></div>
     </div>
     <div class="bk-feat">
       <div class="g"><h4><span class="ico">{i:store}</span>For owners</h4><ul><li>Their own store and dashboard, no wp-admin</li><li>Add items with units available</li><li>Daily or hourly prices</li><li>Dates each item can be rented</li><li>Rental calendar that blocks booked dates</li></ul></div>
@@ -108,68 +104,66 @@
 <!-- 1d. What you need -->
 <section class="sec" id="start"><div class="wrap">
   <div class="sec-head center rv"><span class="eyebrow">What you need</span><h2 class="h-lg" style="margin-top:18px">What do you need to start? <span class="accent">Less than you think.</span></h2></div>
-  <div class="bk-start rv" data-stagger="90">
-    <div><span class="ico">{i:globe}</span><b>A website</b><p>WordPress hosting and a domain. Any standard host will do.</p></div>
-    <div class="main"><span class="ico">{i:store}</span><b>The software</b><p>MultiVendorX Pro <em>from $149 a year</em> with the WooCommerce Rental &amp; Booking plugin, sold on CodeCanyon.</p></div>
-    <div><span class="ico green">{i:code}</span><b>No coding</b><p>Everything is set up from WordPress settings and the MultiVendorX setup wizard.</p></div>
-    <div><span class="ico coral">{i:file}</span><b>Clear rental terms</b><p>A simple damage policy and deposit rules. That's what makes owners say yes.</p></div>
+  <div class="rt-kit rv">
+    <div class="tg">{i:box} Your starter kit</div>
+    <ul>
+      <li><span class="cb">{i:check}</span><div><b>A website</b><p>WordPress hosting and a domain. Any standard host will do.</p></div><em>Any host</em></li>
+      <li><span class="cb">{i:check}</span><div><b>The software</b><p>MultiVendorX Pro with the WooCommerce Rental &amp; Booking plugin, sold on CodeCanyon.</p></div><em>From $149 a year + plugin</em></li>
+      <li><span class="cb">{i:check}</span><div><b>No coding</b><p>Everything is set up from WordPress settings and the MultiVendorX setup wizard.</p></div><em>Setup wizard</em></li>
+      <li><span class="cb">{i:check}</span><div><b>Clear rental terms</b><p>A simple damage policy and deposit rules. That's what makes owners say yes.</p></div><em>One page</em></li>
+    </ul>
   </div>
 </div></section>
 
 <!-- 2. How it works: stages and checkpoints -->
 <section class="sec" id="plan"><div class="wrap">
   <div class="sec-head center rv"><span class="eyebrow">How it works</span><h2 class="h-lg" style="margin-top:18px">Where do you even start? <span class="accent">Four stages, four checkpoints.</span></h2><p class="lead">No deadlines to chase. Each stage ends with a checkpoint you can count. Hit it, then move on.</p></div>
-  <div class="bk-goal rv">
-    <div class="bk-fin"><div class="bk-fin-h">{i:flag} What "done" looks like</div>
-      <div class="bk-fin-g">
-        <div><b>60+</b><span>active listings from local owners</span><s>not thousands of items</s></div>
-        <div><b>1 + 1</b><span>one area, one kind of item</span><s>not the whole country, everything</s></div>
-        <div><b>100%</b><span>of first rentals back in good shape</span><s>not rentals every day</s></div>
-        <div><b>2nd</b><span>rentals: renters coming back</span><s>not one-off renters</s></div>
-      </div>
-    </div>
-    <div class="bk-why"><h4>Why this works</h4>
-      <div><span class="n">{i:target}</span><p><b>Small scope.</b> A few dozen owners to win, not thousands.</p></div>
-      <div><span class="n">{i:code}</span><p><b>No code.</b> MultiVendorX Pro and the Rental &amp; Booking plugin handle listings, dates, deposits, commissions and payouts.</p></div>
-      <div><span class="n">{i:flag}</span><p><b>Checkpoints, not dates.</b> You move on when the numbers say so, not when the calendar does.</p></div>
-    </div>
+  <div class="rt-tags rv" data-stagger="90">
+    <div class="tg"><b>60+</b><span>active listings from local owners</span><s>not thousands of items</s></div>
+    <div class="tg"><b>1 + 1</b><span>one area, one kind of item</span><s>not the whole country</s></div>
+    <div class="tg"><b>100%</b><span>of first rentals back in good shape</span><s>not rentals every day</s></div>
+    <div class="tg"><b>2nd</b><span>rentals: renters coming back</span><s>not one-off renters</s></div>
   </div>
-  <h3 class="bk-how-t rv">The road to your first repeat renters</h3>
-  <div class="bk-road rv">
-    <a href="#stage1" class="s f" style="--w:1"><span class="d">Stage 1</span><span class="dot"></span><b>Find</b><em>{i:check} 100+ signups, 20 owners ready</em><small>Pick one kind of item in one area and prove demand.</small><i>{i:refresh} Missed it? Narrow the item or area and test again.</i></a>
-    <a href="#stage2" class="s b" style="--w:1"><span class="d">Stage 2</span><span class="dot"></span><b>Build</b><em>{i:check} 20 listings live</em><small>Set up prices, deposits, dates and rental terms.</small><i>{i:refresh} Missed it? List items for owners yourself, one by one.</i></a>
-    <a href="#stage3" class="s l" style="--w:1"><span class="d">Stage 3</span><span class="dot"></span><b>Launch</b><em>{i:check} 40 listings, first rentals returned</em><small>Open to renters and make every handover safe.</small><i>{i:refresh} Missed it? Ask renters what stopped them booking.</i></a>
-    <a href="#stage4" class="s g" style="--w:1"><span class="d">Stage 4</span><span class="dot"></span><b>Grow</b><em>{i:check} 60+ listings, repeat renters</em><small>Turn first rentals into second ones.</small><i>{i:refresh} Missed it? Fix return reminders and make renting again easy.</i></a>
+  <div class="rt-why rv"><span>{i:target}<b>Small scope.</b> A few dozen owners to win, not thousands.</span><span>{i:code}<b>No code.</b> MultiVendorX Pro and the Rental &amp; Booking plugin do the heavy lifting.</span><span>{i:flag}<b>Checkpoints, not dates.</b> Move on when the numbers say so.</span></div>
+  <h3 class="bk-how-t rv">Watch the shelf fill up, stage by stage</h3>
+  <div class="rt-shelf rv">
+    <a href="#stage1" class="sh f"><span class="d">Stage 1 · Find</span><div class="bx"><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i></div><em>{i:check} 100+ signups, 20 owners ready</em><small>Pick one kind of item in one area and prove demand.</small><span class="m">{i:refresh} Missed it? Narrow the item or area and test again.</span></a>
+    <a href="#stage2" class="sh b"><span class="d">Stage 2 · Build</span><div class="bx"><i></i><i></i><i></i><i></i></div><em>{i:check} 20 listings live</em><small>Set up prices, deposits, dates and rental terms.</small><span class="m">{i:refresh} Missed it? List items for owners yourself.</span></a>
+    <a href="#stage3" class="sh l"><span class="d">Stage 3 · Launch</span><div class="bx"><i class="r"></i><i></i><i class="r"></i><i></i><i></i><i class="r"></i><i></i><i></i></div><em>{i:check} 40 listings, first rentals back</em><small>Open to renters and make every handover safe.</small><span class="m">{i:refresh} Missed it? Ask renters what stopped them.</span></a>
+    <a href="#stage4" class="sh g"><span class="d">Stage 4 · Grow</span><div class="bx"><i class="r"></i><i class="r"></i><i></i><i class="r"></i><i class="r"></i><i></i><i class="r"></i><i class="r"></i><i></i><i class="r"></i><i class="r"></i><i class="r"></i></div><em>{i:check} 60+ listings, repeat renters</em><small>Turn first rentals into second ones.</small><span class="m">{i:refresh} Missed it? Fix return reminders and rebooking.</span></a>
   </div>
+  <div class="rt-sk rv"><span><i></i>5 listings on the shelf</span><span><i class="r"></i>5 listings out on rent</span><span><i class="e"></i>5 owners ready to list</span></div>
 </div></section>
 
 <!-- Stage 1: Find -->
 <section class="np-stage" id="stage1" data-stage="0"><div class="wrap np-stage-in rv"><div class="np-stage-l"><span class="np-stage-k"><span class="np-stage-dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>Stage 1 of 4</span><h2>Find</h2></div><p class="np-done">{i:check} Done when: 100+ signups and 20 owners ready to list.</p></div></section>
 <section class="sec" id="ch2" data-stage="0"><div class="wrap">
   <div class="np-h rv"><span class="np-n">Find</span><h2 class="h-lg">What should people rent on your marketplace? <span class="accent">The things that cost a lot and sit idle.</span></h2><p>Score any item with four questions. Three or four yeses and you're onto something.</p></div>
-  <div class="bk-score rv">
-    <div class="bk-q"><h4>The four questions</h4>
-      <div><span class="ico green">{i:dollar}</span><p><b>Cost.</b> Does it cost $300 or more to buy?</p></div>
-      <div><span class="ico">{i:clock}</span><p><b>Idle.</b> Do most owners use it only a few times a year?</p></div>
-      <div><span class="ico coral">{i:truck}</span><p><b>Easy handover.</b> Does it fit in a car, and is damage easy to spot?</p></div>
-      <div><span class="ico">{i:heart}</span><p><b>Inside view.</b> Do you know it as an owner or a renter?</p></div>
-      <div class="key"><span class="g">4-3 yes: build here</span><span class="a">2: narrow it</span><span class="r">0-1: pick another</span></div>
+  <div class="rt-spec rv">
+    <div class="qs"><span>{i:dollar}<b>Cost</b> $300+ to buy?</span><span>{i:clock}<b>Idle</b> Used a few times a year?</span><span>{i:truck}<b>Handover</b> Fits in a car, damage easy to spot?</span><span>{i:heart}<b>Inside view</b> You know it as an owner or renter?</span></div>
+    <div class="cs">
+      <div class="c win"><div class="t"><b>Camera kits</b><span class="stamp g">Build here</span></div>
+        <div class="m"><span>Cost</span><i data-v="5"></i><em>Yes</em></div><div class="m"><span>Idle</span><i data-v="4"></i><em>Yes</em></div><div class="m"><span>Handover</span><i data-v="4"></i><em>Yes</em></div><div class="m"><span>Inside view</span><i data-v="5"></i><em>Yes</em></div></div>
+      <div class="c"><div class="t"><b>Power drills</b><span class="stamp a">Narrow it</span></div>
+        <div class="m"><span>Cost</span><i data-v="1"></i><em class="n">No</em></div><div class="m"><span>Idle</span><i data-v="5"></i><em>Yes</em></div><div class="m"><span>Handover</span><i data-v="5"></i><em>Yes</em></div><div class="m"><span>Inside view</span><i data-v="1"></i><em class="n">No</em></div></div>
     </div>
-    <div class="bk-ex">
-      <div class="c win"><div class="t"><b>Camera kits</b><span class="g">4 / 4 · Build here</span></div><ul><li class="y">{i:check} Cost</li><li class="y">{i:check} Idle</li><li class="y">{i:check} Easy handover</li><li class="y">{i:check} Inside view</li></ul></div>
-      <div class="c"><div class="t"><b>Power drills</b><span class="a">2 / 4 · Narrow it</span></div><ul><li class="n">{i:x} Cost</li><li class="y">{i:check} Idle</li><li class="y">{i:check} Easy handover</li><li class="n">{i:x} Inside view</li></ul></div>
-      <p class="bk-mx-n">{i:info} Examples only. Score your own item, in your own area.</p>
-    </div>
+    <p class="bk-mx-n">{i:info} <span>3-4 yes: build here · 2: narrow it · 0-1: pick another. Examples only. Score your own item, in your own area.</span></p>
   </div>
 </div></section>
 
 <!-- Demand test -->
 <section class="sec white" id="ch3" data-stage="0"><div class="wrap">
   <div class="np-h rv"><span class="np-n">Find</span><h2 class="h-lg">Is it worth building? <span class="accent">A quick test will tell you.</span></h2><p>Prove owners and renters care before you build a thing.</p></div>
-  <div class="bk-pages rv" data-stagger="120">
-    <div class="bk-pg"><span class="top">Step</span><b>1</b><h4>{i:search} Map demand</h4><ul><li>Search "rent [item] near me"</li><li>Join local groups</li><li>Note what people ask to rent</li></ul></div>
-    <div class="bk-pg"><span class="top">Step</span><b>2</b><h4>{i:file} Waitlist page</h4><ul><li>"Rent [item] in [city] from people nearby"</li><li>Collect emails with a free form tool</li><li>Ask what they'd rent first</li></ul></div>
-    <div class="bk-pg"><span class="top">Step</span><b>3</b><h4>{i:mail} Owner outreach</h4><ul><li>Message 50 owners</li><li>Ask how often it sits idle</li><li>Ask what would make them lend it</li></ul></div>
+  <div class="rt-test rv" data-stagger="120">
+    <div class="st"><span class="k">Step 1 · Map demand</span>
+      <div class="srch"><div class="bar">{i:search} rent camera near me</div><div class="po"><b>Local photographers group</b><p>"Anyone renting a drone this weekend?"</p></div><div class="po"><b>City events group</b><p>"Where can I rent a projector for one night?"</p></div></div>
+      <p>Search, join local groups and note what people ask to rent.</p></div>
+    <div class="st"><span class="k">Step 2 · Waitlist page</span>
+      <div class="web"><div class="ch"><i></i><i></i><i></i><span>yourmarket.com</span></div><div class="bd"><b>Rent cameras in [city] from people nearby</b><div class="in">your@email.com<span>Join</span></div><small>What would you rent first?</small><div class="tg"><em>Camera</em><em class="on">Drone</em><em>Lens</em><em>Lights</em></div></div></div>
+      <p>One page with a free form tool. Ask what they'd rent first.</p></div>
+    <div class="st"><span class="k">Step 3 · Owner outreach</span>
+      <div class="fn"><div style="--w:100%"><b>50</b>owners messaged</div><div style="--w:62%"><b>15</b>replied</div><div style="--w:34%"><b>5</b>said yes</div></div>
+      <p>Ask how often it sits idle and what would make them lend it. Example numbers.</p></div>
   </div>
   <div class="sg">
     <div class="sg-h"><b>Then check your results</b><span>Our suggested targets, not industry data. Not there yet? Narrow the item or the area and run it again.</span></div>
@@ -193,9 +187,10 @@
     </div>
     <div class="card np-panel on" data-panel="b0">
       <div class="bk-earn">
-        <div class="bk-rc"><div class="h"><span class="ic">{i:image}</span><div><b>Mirrorless camera kit</b><small>Fri 12 to Sun 14 · Maya's Gear</small></div></div>
-          <ul><li><span>Rent, 2 days × $50</span><b>$100</b></li><li class="you"><span>Your commission, 12%</span><b>$12</b></li><li><span>Owner receives</span><b>$88</b></li></ul>
-          <p>{i:check} MultiVendorX takes your commission and pays the owner. 12% is an example: you set the rate. The deposit goes back to the renter.</p></div>
+        <div class="rt-split"><div class="h"><span class="ic">{i:image}</span><div><b>Mirrorless camera kit, 2 days</b><small>Where the renter's $250 goes · example</small></div></div>
+          <div class="bar"><i class="o" style="--w:35.2%"><span>$88</span></i><i class="y" style="--w:4.8%"></i><i class="d" style="--w:60%"><span>$150 held</span></i></div>
+          <ul><li class="o"><b>$88</b>to the owner</li><li class="y"><b>$12</b>to you, 12% of the rent</li><li class="d"><b>$150</b>deposit, back to the renter after the return</li></ul>
+          <p>{i:check} MultiVendorX takes your commission and pays the owner. 12% is an example: you set the rate.</p></div>
         <div class="bk-earn-m">
           <div><span class="ico">{i:percent}</span><b>Commission</b><em>Per rental</em><p>A percentage, a fixed fee or both. You earn when owners do.</p></div>
           <div><span class="ico coral">{i:repeat}</span><b>Owner memberships</b><em>Monthly or yearly</em><p>Charge owners to list, once they see rentals.</p></div>
@@ -205,13 +200,10 @@
     </div>
     <div class="card np-panel" data-panel="b1">
       <div class="bk-eng">
-        <div class="bk-set"><div class="h"><b>Rental settings</b><small>For one listing</small></div>
-          <div class="r"><span>Units available</span><em>3 (set by owner)</em></div>
-          <div class="r"><span>Price type</span><em>Daily (set by owner)</em></div>
-          <div class="r"><span>Price</span><em>$50 a day (set by owner)</em></div>
-          <div class="r"><span>Available dates</span><em>Mar 1 to Oct 31 (set by owner)</em></div>
-          <div class="r"><span>Security deposit</span><em>$150 (set by you)</em></div>
-          <div class="r"><span>Pickup point</span><em>City centre (set by you)</em></div>
+        <div class="rt-form"><div class="h"><b>Add a rental item</b><small>The listing form, simplified</small></div>
+          <div class="f2"><label><span>Units available <em>owner</em></span><div class="ip">3</div></label><label><span>Price type <em>owner</em></span><div class="ip sel">Daily</div></label></div>
+          <div class="f2"><label><span>Price <em>owner</em></span><div class="ip">$50 a day</div></label><label><span>Available dates <em>owner</em></span><div class="ip">Mar 1 to Oct 31</div></label></div>
+          <div class="f2"><label><span>Security deposit <em class="y">you</em></span><div class="ip lk">{i:lock} $150</div></label><label><span>Pickup point <em class="y">you</em></span><div class="ip lk">{i:lock} City centre</div></label></div>
         </div>
         <div class="bk-eng-n"><h4>Why it matters</h4>
           <p><b>No double renting.</b> Once every unit is rented for those dates, the dates are blocked.</p>
@@ -255,15 +247,15 @@
 <!-- Stage 4: Grow -->
 <section class="np-stage" id="stage4" data-stage="3"><div class="wrap np-stage-in rv"><div class="np-stage-l"><span class="np-stage-k"><span class="np-stage-dots"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></span>Stage 4 of 4</span><h2>Grow</h2></div><p class="np-done">{i:check} Done when: 60+ listings and renters renting again.</p></div></section>
 <section class="sec" id="ch10" data-stage="3"><div class="wrap np-comm">
-  <div class="bk-loop rv l" aria-hidden="true">
-    <div class="bk-loop-c"><b>{i:repeat}</b><small>One renter,<br>every season</small></div>
-    <span class="st s1"><i>{i:search}</i>Find</span>
-    <span class="st s2"><i>{i:card}</i>Pay</span>
-    <span class="st s3"><i>{i:pin}</i>Pick up</span>
-    <span class="st s4"><i>{i:heart}</i>Use</span>
-    <span class="st s5"><i>{i:refresh}</i>Return</span>
-    <span class="st s6"><i>{i:star}</i>Review</span>
-    <span class="st s7"><i>{i:repeat}</i>Rent again</span>
+  <div class="rt-seasons rv l" aria-hidden="true">
+    <div class="who"><span class="av">AR</span><div><b>Ana R.</b><small>One renter, four seasons · example</small></div><em>4 rentals</em></div>
+    <div class="sn">
+      <div class="s sp"><small>Spring</small><span class="ic">{i:compass}</span><b>Camping tent</b><em>3 days</em></div>
+      <div class="s su"><small>Summer</small><span class="ic">{i:image}</span><b>Camera kit</b><em>2 days</em></div>
+      <div class="s au"><small>Autumn</small><span class="ic">{i:video}</span><b>Projector</b><em>1 night</em></div>
+      <div class="s wi"><small>Winter</small><span class="ic">{i:sparkle}</span><b>Party lights</b><em>1 weekend</em></div>
+    </div>
+    <p>{i:repeat} One sign-up, four rentals. That's the second rental at work.</p>
   </div>
   <div>
     <div class="np-h rv" style="margin-bottom:24px"><span class="np-n">Grow</span><h2 class="h-lg">Where does the money come from? <span class="accent">The second rental.</span></h2><p>A renter who comes back every season is worth more than ten who rent once.</p></div>
