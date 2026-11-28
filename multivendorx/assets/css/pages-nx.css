@@ -1710,3 +1710,4 @@ body:not(.pg-home) .cta-box{max-width:none!important;width:100%;box-sizing:borde
 .pg-rental .rt-why b{margin-right:4px}
 @media(max-width:640px){.pg-rental .rt-why{flex-direction:column;align-items:flex-start;gap:10px}}
 .pg-rental .rt-lane-m span svg.i{min-width:14px;display:block}
+.pg-rental .rt-proof .im.logo{background:#fff;border-bottom:1px solid var(--bk-line)}.pg-rental .rt-proof .im.logo img{display:block;width:128px;height:auto}
